@@ -16,6 +16,8 @@ public:
     vector<T> xypVector();
     // polar position function
     vector<T> rtpVector();
+    // overload operator == defined
+    bool operator==(const Vector2D<T>& rhs) const;
     
 private:
     // private variables

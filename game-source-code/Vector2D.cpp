@@ -42,3 +42,15 @@ vector<T> Vector2D<T>::rtpVector()
     temp.push_back(_phi);
     return temp;
 }
+
+template<class T>
+bool Vector2D<T>::operator==(const Vector2D<T>& rhs) const
+{
+    if(_x_val != rhs._x_val)
+        return false;
+    if(_y_val != rhs._y_val)
+        return false;
+    if(_phi != rhs._phi)
+        return false;
+    return true;
+}
