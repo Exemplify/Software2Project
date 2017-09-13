@@ -4,5 +4,7 @@
 int main()
 {
 	GameManager gm;
-	gm.BeginGameLoop();
+	gm.GameLoop();
+	
+	return EXIT_SUCCESS;
 }

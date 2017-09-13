@@ -3,7 +3,9 @@
 
 #include <SFML/Graphics.hpp>
 #include <string>
+
 #include "DisplayManager.h"
+#include "EventManager.h"
 
 using namespace sf;
 using std::string;
@@ -14,7 +16,7 @@ struct WindowSettings
     unsigned int screenWidth = 1920;
 	unsigned int screenHeight = 1080;
 	string Style = "Default";
-	string game_name = "MyGame";
+	string game_name = "Gyrus";
 };
 
 class GameManager
@@ -22,13 +24,14 @@ class GameManager
 	
 public:
 	GameManager();
-	void BeginGameLoop();
+	void GameLoop();
 private:
     // Variables
 	WindowSettings _defaultSetup;
 	
 	RenderWindow _gameWindow;
 	DisplayManager _dispManager;
+	EventManager _eventManager;
 	
     
     // Methods

@@ -1,15 +1,15 @@
 #include "DisplayManager.h"
 
-DisplayManager::DisplayManager(sf::RenderWindow* dispWindow):
+DisplayManager::DisplayManager(RenderWindow* dispWindow):
 _dispwindow_ptr(dispWindow)
 {}
 
-// Function that runs in a different thread (Seperation of concerns)
+// Method used within the display thred
 void DisplayManager::renderThread()
 {
 	while(_dispwindow_ptr->isOpen())
 	{
-		_dispwindow_ptr->clear(sf::Color::Black);
+		_dispwindow_ptr->clear(Color::Black);
 		Draw();
 		_dispwindow_ptr->display();
 	}
@@ -20,5 +20,6 @@ void DisplayManager::InitialiseThread()
 	std::thread dispthread(&DisplayManager::renderThread, this);
 	dispthread.detach();
 }
+
 void DisplayManager::Draw()
 {}
