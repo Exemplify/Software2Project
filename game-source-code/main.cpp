@@ -1,6 +1,8 @@
 #include "BackEndSystems/GameManager.h"
+#include <iostream>
 
 int main()
 {
-	GameManager Gyrus;
+	GameManager gm;
+	gm.BeginGameLoop();
 }

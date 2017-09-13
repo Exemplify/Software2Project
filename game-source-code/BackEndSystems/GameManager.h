@@ -3,10 +3,12 @@
 
 #include <SFML/Graphics.hpp>
 #include <string>
+#include "DisplayManager.h"
 
 using namespace sf;
 using std::string;
 
+// Struct that contains the default settings for the window
 struct WindowSettings
 {
     unsigned int screenWidth = 1920;
@@ -21,11 +23,13 @@ class GameManager
 public:
 	GameManager();
 	void BeginGameLoop();
-	void Quit();
 private:
     // Variables
 	WindowSettings _defaultSetup;
+	
 	RenderWindow _gameWindow;
+	DisplayManager _dispManager;
+	
     
     // Methods
     void initialiseWindow();
