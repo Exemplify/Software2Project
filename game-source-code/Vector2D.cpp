@@ -56,3 +56,24 @@ bool Vector2D<T>::operator==(const Vector2D<T>& rhs) const
         return false;
     return true;
 }
+
+//template<class T>
+//T Vector2D<T>::magnitude(const Vector2D<T>& lhs)
+//{
+//    T dx = lhs._x_val-_origin._x_val;
+//    T dy = lhs._y_val-_origin._y_val;
+//    T temp = sqrt(pow(dx,2)+pow(dy,2));
+//    return temp;
+//}
+
+template<class T>
+T Vector2D<T>::magnitude(const Vector2D<T>& lhs, const Vector2D<T>& rhs)
+{
+    T dx = lhs._x_val-rhs._x_val;
+    T dy = lhs._y_val-rhs._y_val;
+    T temp = sqrt(pow(dx,2)+pow(dy,2));
+    return temp;
+}
+
+template<class T>
+Vector2D<T> Vector2D<T>::_origin{vector<T> {0,0,0}};

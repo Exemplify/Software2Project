@@ -20,6 +20,9 @@ public:
     vector<T> rtpVector();
     // overload operator == defined
     bool operator==(const Vector2D<T>& rhs) const;
+    // magnitude function
+//    T magnitude(const Vector2D<T>& lhs);
+    T magnitude(const Vector2D<T>& lhs, const Vector2D<T>& rhs);
     
 private:
     // private variables
@@ -28,6 +31,8 @@ private:
     T _radius;
     T _theta;
     T _phi;
+    //static variable Vector2D _origin
+    static Vector2D<T> _origin;
     
     //private class functions
     // calculates the radius

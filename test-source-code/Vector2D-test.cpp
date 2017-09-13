@@ -162,3 +162,12 @@ TEST_CASE("3.10: vector in fourth quadrant, angle = -pi/4"){
     CHECK(myVecObj.rtpVector().at(1) == testvec.at(1));
     CHECK(myVecObj.rtpVector().at(2) == testvec.at(2));
 }
+
+// magnitude function testing
+TEST_CASE("4.1: Basic magnitude function test"){
+    Vector2D<float> myVecObj1(vector<float> {1,1,0});
+    Vector2D<float> myVecObj2(vector<float> {-1,1,0});
+    
+    float dist = myVecObj1.magnitude(myVecObj1,myVecObj2);
+    CHECK(doctest::Approx(dist)==2);
+}
