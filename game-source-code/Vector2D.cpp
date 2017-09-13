@@ -3,6 +3,8 @@
 template<class T>
 Vector2D<T>::Vector2D(vector<T> cartesianPosition)
 {
+    if (cartesianPosition.size() != 3)
+        throw VectorSizeError{};
     _x_val = cartesianPosition.at(0);
     _y_val = cartesianPosition.at(1);
     _phi = cartesianPosition.at(2);

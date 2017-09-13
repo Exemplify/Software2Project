@@ -6,6 +6,8 @@
 
 using namespace std;
 
+class VectorSizeError {};
+
 template<class T>
 class Vector2D
 {
