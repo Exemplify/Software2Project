@@ -1,6 +1,6 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "doctest.h"
-#include "Vector2D.cpp" //need to make compatable with .h file
+#include "Vector2D.hpp"
 
 // simple test on Vector2D constructor
 TEST_CASE("1.1: A Vector2D object can be created correctly and returned"){

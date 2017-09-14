@@ -1,5 +1,5 @@
-#ifndef VECTOR2D
-#define VECTOR2D
+#ifndef VECTOR2D_HPP
+#define VECTOR2D_HPP
 
 #include <cmath>
 #include <vector>
@@ -46,5 +46,7 @@ private:
     // calculates theta
     void theta();
 };
+
+#include "Vector2D.tpp"
 
 #endif

@@ -1,4 +1,4 @@
-#include "Vector2D.h"
+#include "Vector2D.hpp"
 
 template<class T>
 Vector2D<T>::Vector2D(vector<T> cartesianPosition)
