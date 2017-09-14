@@ -12,8 +12,6 @@ _eventManager(&_gameWindow)
 		_defaultSetup.winStyle);
 	// Sets the game window to be inactive so that the display
 	// can be done in a seperate thread
-	
-	_gameWindow.setVerticalSyncEnabled(true);
     _gameWindow.setActive(false);
 }
 void GameManager::GameLoop()
@@ -28,5 +26,6 @@ void GameManager::GameLoop()
 			activeScene->SceneUpdate();
 	}
 }
+
 std::shared_ptr<Scene> GameManager::activeScene = NULL;
 

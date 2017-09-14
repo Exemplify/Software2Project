@@ -8,7 +8,7 @@
 
 #include "DisplayManager.h"
 #include "EventManager.h"
-#include "FrontEndSystems/Scene.h"
+#include "../FrontEndSystems/Scene.h"
 
 using namespace sf;
 using std::string;

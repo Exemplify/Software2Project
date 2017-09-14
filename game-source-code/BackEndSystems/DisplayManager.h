@@ -4,10 +4,9 @@
 #include <SFML/Graphics.hpp>
 #include <memory>
 #include <thread>
-#include "FrontEndSystems/Scene.h"
-
-
-
+#include <string>
+#include "../FrontEndSystems/Scene.h"
+#include "../FrontEndSystems/GameObject.h"
 using namespace sf;
 
 class DisplayManager
@@ -20,5 +19,6 @@ private:
 	void renderThread();
 	void Draw();
 };
+
 
 #endif 
