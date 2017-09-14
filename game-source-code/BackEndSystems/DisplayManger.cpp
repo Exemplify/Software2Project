@@ -1,6 +1,8 @@
 #include "DisplayManager.h"
 #include "GameManager.h"
 #include <vector>
+#include "../FrontEndSystems/GraphicObject.h"
+#include <typeinfo>
 
 DisplayManager::DisplayManager(RenderWindow* dispWindow):
 _dispwindow_ptr(dispWindow)
@@ -43,14 +45,12 @@ void DisplayManager::Draw()
 	if(activeScene == NULL)
 		return;
 		
-	const std::vector<gameObj_ptr> gameObjects = activeScene->getGameObjectList();
-	bool temp = gameObjects[0]->getActive();
-	
-//	for(auto GO : activeScene->getGameObjectList())
-//	{
-//		//Checks if the Gameobject is active and has a graphic
-//		if(GO->getHasGraphic() && GO->getActive())
-//		{
-//		}
-//	}
+	for(auto GO : activeScene->getGameObjectList())
+	{
+		//Checks if the Gameobject is active and has a graphic
+		if(GO->HasGraphic() && GO->isActive())
+		{
+			
+		}
+	}
 }

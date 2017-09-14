@@ -13,13 +13,11 @@ class GameObject
 public:
 	virtual void Start();
 	virtual void Update();
-	bool getActive() {return _active;}
-	bool getHasGraphic(){return _hasGraphic;}
-	
-private:
+	bool isActive() {return _active;}
+	virtual bool HasGraphic(){return false;}
+protected:
 	Vector2D position;
 	bool _active;
-	bool _hasGraphic;
 };
 
 #endif

@@ -4,11 +4,12 @@
 #include <string>
 #include <SFML/Graphics.hpp>
 
-class SpriteInfo
+struct SpriteInfo
 {
 	string textureLocation;
 	Sprite sprite;
 	Texture texture;
 };
+
 
 #endif 
