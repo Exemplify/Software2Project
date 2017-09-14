@@ -15,7 +15,7 @@ void EventManager::EventLoop()
             _eventWindow->close();
             break;
 		
-		// we don't process other types of events
+		// we don't process other types of events at the moment
         default:
             break;
 		}
