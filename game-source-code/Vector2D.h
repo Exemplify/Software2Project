@@ -20,6 +20,12 @@ public:
     vector<T> rtpVector();
     // overload operator == defined
     bool operator ==(const Vector2D<T>& rhs) const;
+    Vector2D<T> operator + (const Vector2D<T>& rhs);
+    Vector2D<T> operator - (const Vector2D<T>& rhs);
+    Vector2D<T>& operator += (const Vector2D<T>& rhs);
+    Vector2D<T>& operator -= (const Vector2D<T>& rhs);
+    Vector2D<T>& operator *= (const T scale);
+    Vector2D<T>& operator /= (const T scale);
     // magnitude function
     static T magnitude(const Vector2D<T>& lhs);
     static T magnitude(const Vector2D<T>& lhs, const Vector2D<T>& rhs);

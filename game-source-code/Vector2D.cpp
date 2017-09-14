@@ -58,6 +58,60 @@ bool Vector2D<T>::operator==(const Vector2D<T>& rhs) const
 }
 
 template<class T>
+Vector2D<T> Vector2D<T>::operator + (const Vector2D<T>& rhs)
+{
+    T x = _x_val + rhs._x_val;
+    T y = _y_val + rhs._y_val;
+    T phi = _phi + rhs._phi;
+    Vector2D<T> temp(vector<T> {x,y,phi});
+    return temp;
+}
+
+template<class T>
+Vector2D<T> Vector2D<T>::operator - (const Vector2D<T>& rhs)
+{
+    T x = _x_val - rhs._x_val;
+    T y = _y_val - rhs._y_val;
+    T phi = _phi - rhs._phi;
+    Vector2D<T> temp(vector<T> {x,y,phi});
+    return temp;
+}
+
+template<class T>
+Vector2D<T>& Vector2D<T>::operator += (const Vector2D<T>& rhs)
+{
+    this->_x_val += rhs._x_val;
+    this->_y_val += rhs._y_val;
+    this->_phi += rhs._phi;
+    return *this;
+}
+
+template<class T>
+Vector2D<T>& Vector2D<T>::operator -= (const Vector2D<T>& rhs)
+{
+    this->_x_val -= rhs._x_val;
+    this->_y_val -= rhs._y_val;
+    this->_phi -= rhs._phi;
+    return *this;
+}
+
+template<class T>
+Vector2D<T>& Vector2D<T>::operator *= (const T scale)
+{
+    this->_x_val *= scale;
+    this->_y_val *= scale;
+    return *this;
+}
+
+template<class T>
+Vector2D<T>& Vector2D<T>::operator /= (const T scale)
+{
+    this->_x_val /= scale;
+    this->_y_val /= scale;
+    return *this;
+}
+
+template<class T>
 T Vector2D<T>::magnitude(const Vector2D<T>& lhs)
 {
     return magnitude(lhs, _origin);

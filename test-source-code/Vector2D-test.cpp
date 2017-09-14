@@ -176,3 +176,71 @@ TEST_CASE("4.2: Magnitude of one vector element is with reference to origin"){
     CHECK(doctest::Approx(Vector2D<float>::magnitude(myVecObj)) == sqrt(2));
     CHECK(doctest::Approx(Vector2D<float>::magnitude(myVecObj)) == myVecObj.rtpVector().at(0));
 }
+
+// Other bitwise operators defined
+// the addition operator
+TEST_CASE("5.1: The addition + of two Vector2Ds"){
+    Vector2D<float> myVecObj1(vector<float> {1,2,3});
+    Vector2D<float> myVecObj2(vector<float> {4,5,6});
+    Vector2D<float> myVecTest(vector<float> {5,7,9});
+    
+    CHECK((myVecObj1+myVecObj2) == myVecTest);
+}
+
+//the subtraction operator
+TEST_CASE("5.2: The subtraction - of two Vector2Ds"){
+    Vector2D<float> myVecObj1(vector<float> {1,2,3});
+    Vector2D<float> myVecObj2(vector<float> {4,5,6});
+    Vector2D<float> myVecTest(vector<float> {3,3,3});
+    
+    CHECK((myVecObj2-myVecObj1) == myVecTest);
+}
+
+// the addition assignment operator
+TEST_CASE("5.3: The addition assignment += of two Vector2Ds"){
+    Vector2D<float> myVecObj1(vector<float> {1,2,3});
+    Vector2D<float> myVecObj2(vector<float> {4,5,6});
+    Vector2D<float> myVecTest(vector<float> {5,7,9});
+    
+    myVecObj1+=myVecObj2;
+    
+    CHECK(myVecObj1 == myVecTest);
+}
+
+// the addition assignment operator
+TEST_CASE("5.3: The subtraction assignment -= of two Vector2Ds"){
+    Vector2D<float> myVecObj1(vector<float> {1,2,3});
+    Vector2D<float> myVecObj2(vector<float> {4,5,6});
+    Vector2D<float> myVecTest(vector<float> {-3,-3,-3});
+    
+    myVecObj1-=myVecObj2;
+    
+    CHECK(myVecObj1 == myVecTest);
+}
+
+// the scalar multiple assignment operator
+TEST_CASE("5.4: The scalar multiple and assignment *= opperator on a Vector2D"){
+    float scale1 = 2;
+    float scale2 = -1;
+    Vector2D<float> myVecObj(vector<float> {1,2,3});
+    Vector2D<float> myVecTest1(vector<float> {2,4,3});
+    Vector2D<float> myVecTest2(vector<float> {-2,-4,3});
+    
+    myVecObj*=scale1;    
+    CHECK(myVecObj == myVecTest1);
+    myVecObj*=scale2;
+    CHECK(myVecObj == myVecTest2);
+}
+
+TEST_CASE("5.4: The scalar division and assignment /= opperator on a Vector2D"){
+    float scale1 = 2;
+    float scale2 = -2;
+    Vector2D<float> myVecObj(vector<float> {2,4,3});
+    Vector2D<float> myVecTest1(vector<float> {1,2,3});
+    Vector2D<float> myVecTest2(vector<float> {-0.5,-1,3});
+    
+    myVecObj/=scale1;    
+    CHECK(myVecObj == myVecTest1);
+    myVecObj/=scale2;
+    CHECK(myVecObj == myVecTest2);
+}
