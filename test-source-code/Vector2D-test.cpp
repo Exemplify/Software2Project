@@ -168,6 +168,11 @@ TEST_CASE("4.1: Basic magnitude function test"){
     Vector2D<float> myVecObj1(vector<float> {1,1,0});
     Vector2D<float> myVecObj2(vector<float> {-1,1,0});
     
-    float dist = myVecObj1.magnitude(myVecObj1,myVecObj2);
-    CHECK(doctest::Approx(dist)==2);
+    CHECK(doctest::Approx(Vector2D<float>::magnitude(myVecObj1,myVecObj2))==2);
+}
+
+TEST_CASE("4.2: Magnitude of one vector element is with reference to origin"){
+    Vector2D<float> myVecObj(vector<float> {1,1,0});
+    CHECK(doctest::Approx(Vector2D<float>::magnitude(myVecObj)) == sqrt(2));
+    CHECK(doctest::Approx(Vector2D<float>::magnitude(myVecObj)) == myVecObj.rtpVector().at(0));
 }

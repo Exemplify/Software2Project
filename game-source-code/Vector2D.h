@@ -19,10 +19,10 @@ public:
     // polar position function
     vector<T> rtpVector();
     // overload operator == defined
-    bool operator==(const Vector2D<T>& rhs) const;
+    bool operator ==(const Vector2D<T>& rhs) const;
     // magnitude function
-//    T magnitude(const Vector2D<T>& lhs);
-    T magnitude(const Vector2D<T>& lhs, const Vector2D<T>& rhs);
+    static T magnitude(const Vector2D<T>& lhs);
+    static T magnitude(const Vector2D<T>& lhs, const Vector2D<T>& rhs);
     
 private:
     // private variables
