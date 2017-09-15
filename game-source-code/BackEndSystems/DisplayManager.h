@@ -8,6 +8,7 @@
 #include "../FrontEndSystems/Scene.h"
 #include "../FrontEndSystems/GameObject.h"
 using namespace sf;
+using std::shared_ptr;
 
 class DisplayManager
 {
@@ -18,6 +19,7 @@ private:
 	std::shared_ptr<RenderWindow> _dispwindow_ptr;
 	void renderThread();
 	void Draw();
+	void DrawSpriteFromGameObject(shared_ptr<GameObject> GO);
 };
 
 
