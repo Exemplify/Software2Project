@@ -12,8 +12,12 @@ template<class T>
 class Vector2D
 {
 public:
+    // Default Constructor
+    Vector2D<T>();
     // Constructor
     Vector2D(vector<T> cartesianPosition);
+    // Copy constructor
+    Vector2D(const Vector2D<T>& rhs);
     // cartesian position function
     vector<T> xypVector();
     // polar position function

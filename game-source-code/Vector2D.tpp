@@ -1,6 +1,29 @@
 #include "Vector2D.hpp"
 
 template<class T>
+Vector2D<T>::Vector2D()
+{
+//    _x_val = 0;
+//    _y_val = 0;
+//    _phi = 0;
+//    
+//    Vector2D::raduis();
+//    Vector2D::theta();
+    *this = Vector2D<T>::_origin;
+}
+
+template<class T>
+Vector2D<T>::Vector2D(const Vector2D<T>& rhs)
+{
+    _x_val == rhs._x_val;
+    _y_val == rhs._y_val;
+    _phi == rhs._phi;
+    
+    Vector2D::raduis();
+    Vector2D::theta();
+}
+
+template<class T>
 Vector2D<T>::Vector2D(vector<T> cartesianPosition)
 {
     if (cartesianPosition.size() != 3)

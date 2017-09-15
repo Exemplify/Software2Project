@@ -4,6 +4,8 @@
 #include <string>
 #include <SFML/Graphics.hpp>
 
+using namespace sf;
+
 struct SpriteInfo
 {
 	string textureLocation;
