@@ -30,35 +30,40 @@ void DisplayManager::InitialiseThread()
 
 void DisplayManager::Draw()
 {
-	Texture texture;
-	if (!texture.loadFromFile("resources/PlayerShield.png"))
-	{
-		// error...
-	}
-	else
-	{
-		Sprite sprite;
-		sprite.setTexture(texture);
-		sprite.setScale(Vector2f(0.1f,0.1f));
-		_dispwindow_ptr->draw(sprite);
-
-	}
+//	Texture texture;
+//	if (!texture.loadFromFile("resources/PlayerShield.png"))
+//	{
+//		// error...
+//	}
+//	else
+//	{
+//		Sprite sprite;
+//		sprite.setTexture(texture);
+//		sprite.setScale(Vector2f(0.1f,0.1f));
+//		_dispwindow_ptr->draw(sprite);
+//
+//	}
 	shared_ptr<Scene> activeScene = GameManager::activeScene;
 	//Guard Clause
 	if(activeScene == NULL)
 		return;
-		
-	for(auto GO : activeScene->getGameObjectList())
+	else
 	{
+		for(auto GO : activeScene->getGameObjectList())
+		{
 
+		}
 	}
 }
 
-void DisplayManager::DrawSpriteFromGameObject(shared_ptr<GameObject> GO)
+void DisplayManager::DrawSpriteFromGameObject(GameObject& GO)
 {
-	//Checks if the Gameobject is active and has a graphic
-	if(GO->HasGraphic() && GO->isActive())
+	//Checks if the current game object is active
+	if(!GO.isActive())
+		return;
+	//Checks if the Gameobject is of to
+	if(GraphicObject* graphicObj = dynamic_cast<GraphicObject*>(&GO))
 	{
-		
 	}
 }
+

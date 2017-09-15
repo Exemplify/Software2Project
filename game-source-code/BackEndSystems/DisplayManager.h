@@ -19,7 +19,7 @@ private:
 	std::shared_ptr<RenderWindow> _dispwindow_ptr;
 	void renderThread();
 	void Draw();
-	void DrawSpriteFromGameObject(shared_ptr<GameObject> GO);
+	void DrawSpriteFromGameObject(GameObject& GO);
 };
 
 
