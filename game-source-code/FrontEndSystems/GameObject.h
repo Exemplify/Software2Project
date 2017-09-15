@@ -1,12 +1,7 @@
 #ifndef GAME_OBJ_H
 #define GAME_OBJ_H
 #include <string>
-
-struct Vector2D
-{
-	float x;
-	float y;
-};
+#include "../Vector2D.hpp"
 
 class GameObject
 {
@@ -16,7 +11,7 @@ public:
 	bool isActive() {return _active;}
 	virtual bool HasGraphic(){return false;}
 protected:
-	Vector2D position;
+	Vector2D<double> position;
 	bool _active;
 };
 
