@@ -6,6 +6,7 @@
 class GameObject
 {
 public:
+	GameObject();
 	virtual void Start();
 	virtual void Update();
 	bool isActive() {return _active;}
