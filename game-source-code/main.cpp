@@ -1,5 +1,10 @@
 #include "BackEndSystems/GameManager.h"
-#include <iostream>
+#include <memory>
+#include "FrontEndSystems/Scene.h"
+
+using std::shared_ptr;
+
+shared_ptr<Scene> SplashScreen();
 
 int main()
 {
@@ -8,3 +13,10 @@ int main()
 	
 	return EXIT_SUCCESS;
 }
+
+shared_ptr<Scene> SplashScreen()
+{
+	shared_ptr<Scene> splashScene{new Scene()};
+	
+}
+

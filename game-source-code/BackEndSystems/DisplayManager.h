@@ -7,6 +7,8 @@
 #include <string>
 #include "../FrontEndSystems/Scene.h"
 #include "../FrontEndSystems/GameObject.h"
+#include "../FrontEndSystems/GraphicObject.h"
+
 using namespace sf;
 using std::shared_ptr;
 
@@ -20,6 +22,8 @@ private:
 	void renderThread();
 	void Draw();
 	void DrawSpriteFromGameObject(GameObject& GO);
+	Vector2f GameObjectScreenPosition(const GraphicObject& graphicObj);
+	void InitialiseGraphicObject(SpriteInfo& initialSpriteInfo);
 };
 
 

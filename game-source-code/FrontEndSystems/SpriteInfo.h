@@ -8,6 +8,7 @@ using namespace sf;
 
 struct SpriteInfo
 {
+	bool isdefined = false;
 	string textureLocation;
 	Sprite sprite;
 	Texture texture;

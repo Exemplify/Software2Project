@@ -11,6 +11,7 @@ public:
 	virtual void Update() {}
 	bool isActive() {return _active;}
 	virtual bool HasGraphic(){return false;}
+	Vector2D<double> getPosition() const {return _position;}
 protected:
 	Vector2D<double> _position;
 	bool _active;
