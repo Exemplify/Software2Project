@@ -8,7 +8,7 @@
 class GraphicObject : public GameObject
 {
 public:
-	GraphicObject(): 
+	GraphicObject():
 	_spriteInfo(new SpriteInfo())
 	{}
 	bool HasGraphic() override { return true; }
