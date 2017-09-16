@@ -1,8 +1,8 @@
 #include "Player.h"
 
 Player::Player(Vector2D<double>& startPosition):
-_leftUnitVector{1, -1*M_PI/200, 0, VectorType::rtp},
-_rightUnitVector{1, M_PI/200, 0, VectorType::rtp}
+_leftUnitVector{1, -1*M_PI/100000, 0, VectorType::rtp},
+_rightUnitVector{1, M_PI/100000, 0, VectorType::rtp}
 {
     _position = startPosition;
 }
