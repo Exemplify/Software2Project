@@ -23,7 +23,8 @@ shared_ptr<Scene> SplashScreen()
 	shared_ptr<Scene> splashScene{new Scene()};
 	shared_ptr<GraphicObject> background{new GraphicObject()};
 	shared_ptr<SpriteInfo> backgroundInfo =  background->getSpriteInfo();
-	backgroundInfo->textureLocation = "resources/PlayerShield.png";
+	backgroundInfo->textureLocation = "resources/MceboDlamini.jpg";
+	backgroundInfo->scale = Vector2f(2.5f,2.0f);
 	splashScene->Instantiate(background);
 	background->setActive(true);
 	return splashScene;
