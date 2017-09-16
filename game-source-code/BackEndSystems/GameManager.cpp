@@ -1,33 +1,32 @@
 #include "GameManager.h"
 
+std::shared_ptr<Scene> GameManager::activeScene = NULL;
+
 void GameManager::GameLoop()
 {
-	// Function Scope Declarations
-	RenderWindow window(sf::VideoMode(800, 600), "My window");
+	
+	// Initial Declarations
+	if (_game_scenes.size() != 0)
+		activeScene = _game_scenes[0];
+	RenderWindow window;
 	// Set-up window to current specifications
 	initialiseWindow(window);
-
+	
+	// initialises the display thread
 	_dispManager.InitialiseThread(window);
 
-    // run the program as long as the window is open
+    // The main game loop
     while (window.isOpen())
     {
         // check all the window's events that were triggered since the last iteration of the loop
 		_eventManager.EventLoop(window);
-	
-    }
-	// initialise physics and display threads 
-//	_dispManager.InitialiseThread();
-//	
-//	while (_gameWindow.isOpen())
-//	{
-//		_eventManager.EventLoop();
-//		if(activeScene != NULL)
-//			activeScene->SceneUpdate();
-//	}
+		// Calls the SceneUpdate function to run the game functionality
+		if(activeScene != NULL)
+			activeScene->SceneUpdate();
+	}
 }
 
-std::shared_ptr<Scene> GameManager::activeScene = NULL;
+
 
 void GameManager::initialiseWindow(RenderWindow&_gameWindow) 
 {
@@ -39,4 +38,8 @@ void GameManager::initialiseWindow(RenderWindow&_gameWindow)
 	// Sets the game window to be inactive so that the display
 	// can be done in a seperate thread
     _gameWindow.setActive(false);
+}
+void GameManager::AddScene(std::shared_ptr<Scene> newScene)
+{
+	_game_scenes.push_back(newScene);
 }

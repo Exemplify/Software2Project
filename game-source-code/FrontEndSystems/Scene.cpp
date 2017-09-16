@@ -16,3 +16,9 @@ const std::vector<gameObj_ptr> Scene::getGameObjectList()
 {
 	return _gameObject_list;
 }
+void Scene::Instantiate(GameObject* gameObj)
+{
+	gameObj->Start();
+	gameObj_ptr thisGameObj_ptr{gameObj};
+	_gameObject_list.push_back(thisGameObj_ptr);
+}

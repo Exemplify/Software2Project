@@ -29,6 +29,7 @@ public:
 	GameManager() {};
 	void GameLoop();
 	static scene_ptr activeScene;
+	void AddScene(scene_ptr newScene);
 private:
     // Variables
 	WindowSettings _defaultSetup;
