@@ -5,7 +5,8 @@
 #include "FrontEndSystems/SplashScreen.h"
 #include "FrontEndSystems/SpriteInfo.h"
 #include "BackEndSystems/Input.h"
-
+#include "FrontEndSystems/Player.h"
+#include "Vector2D.hpp"
 using std::shared_ptr;
 shared_ptr<Scene> SplashScreenFunc();
 shared_ptr<Scene> GameSceneFunc();
@@ -26,8 +27,7 @@ shared_ptr<Scene> SplashScreenFunc()
 	shared_ptr<Scene> splashScene{new Scene()};
 	shared_ptr<SplashScreen> background{new SplashScreen()};
 	shared_ptr<SpriteInfo> backgroundInfo =  background->getSpriteInfo();
-	backgroundInfo->textureLocation = "resources/MceboDlamini.jpg";
-	backgroundInfo->scale = Vector2f(2.5f,2.0f);
+	backgroundInfo->textureLocation = "resources/MceboDlamini.png";
 	splashScene->Instantiate(background);
 	background->setActive(true);
 	return splashScene;
@@ -36,11 +36,16 @@ shared_ptr<Scene> SplashScreenFunc()
 shared_ptr<Scene> GameSceneFunc()
 {
 	shared_ptr<Scene> gameScene{new Scene()};
-	shared_ptr<GraphicObject> background{new GraphicObject()};
+	shared_ptr<GraphicObject> background{new SplashScreen()};
+	Vector2D<double> playerStart(0,-400,0);
+	shared_ptr<Player> player{new Player(playerStart)};
+	shared_ptr<SpriteInfo> playerInfo = player->getSpriteInfo();
+	playerInfo->textureLocation = "resources/PlayerShield.png";
+	playerInfo->scale = Vector2f(0.1f,0.1f);
 	shared_ptr<SpriteInfo> backgroundInfo =  background->getSpriteInfo();
 	backgroundInfo->textureLocation = "resources/greathall0_hr.jpg";
 	backgroundInfo->scale = Vector2f(2.0f,2.0f);
 	gameScene->Instantiate(background);
-	background->setActive(true);
+	gameScene->Instantiate(player);
 	return gameScene;
 }

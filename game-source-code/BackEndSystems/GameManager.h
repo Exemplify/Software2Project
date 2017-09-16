@@ -19,7 +19,7 @@ struct WindowSettings
 {
     unsigned int screenWidth = 1920;
 	unsigned int screenHeight = 1080;
-	Uint32 winStyle = Style::Default;
+	Uint32 winStyle = Style::Fullscreen;
 	string game_name = "Gyrus";
 };
 
