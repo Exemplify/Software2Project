@@ -11,11 +11,16 @@ class Player : public GraphicObject
 {
 public:
     Player(Vector2D<double>& startPosition);
+    void Update() override;
     
+    void TestMoveLeft();
+    void TestMoveRight();
 private:
+    
     void moveLeft();
-    void moveRight();    
-    double _speed;
+    void moveRight();
+    Vector2D<double> _leftUnitVector;
+    Vector2D<double> _rightUnitVector;
 };
 
 #endif

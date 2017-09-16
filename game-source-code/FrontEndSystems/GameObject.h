@@ -1,5 +1,6 @@
 #ifndef GAME_OBJ_H
 #define GAME_OBJ_H
+#include "../BackEndSystems/Input.h"
 #include <string>
 #include "../Vector2D.hpp"
 
