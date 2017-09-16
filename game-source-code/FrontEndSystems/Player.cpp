@@ -1,16 +1,36 @@
 #include "Player.h"
 
-Player::Player(Vector2D<double>& startPosition)
+Player::Player(Vector2D<double>& startPosition):
+_leftUnitVector{1, -1*M_PI/200, 0, VectorType::rtp},
+_rightUnitVector{1, M_PI/200, 0, VectorType::rtp}
 {
     _position = startPosition;
 }
 
 void Player::moveLeft()
 {
-    vector<double> tempvec = _position.rtpVector();
-    auto radius  = tempvec.at(0);
-    auto theta = -tempvec.at(1)*_speed;
-    auto phi = tempvec.at(2);
-    Vector2D<double> temp(radius,theta,phi,VectorType::rtp);
-    _position = temp;
+    _position*=_leftUnitVector;
+}
+
+void Player::moveRight()
+{
+    _position*=_rightUnitVector;
+}
+
+void Player::Update()
+{
+    if(Input::IsButtonPressed(Keys::left))
+        moveLeft();
+    if(Input::IsButtonPressed(Keys::right))
+        moveRight();
+}
+
+void Player::TestMoveLeft()
+{
+    _position*=_leftUnitVector;
+}
+
+void Player::TestMoveRight()
+{
+    _position*=_rightUnitVector;
 }
