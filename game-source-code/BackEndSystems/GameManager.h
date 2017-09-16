@@ -26,24 +26,24 @@ struct WindowSettings
 class GameManager
 {
 public:
-	GameManager();
+	GameManager() {};
 	void GameLoop();
 	static scene_ptr activeScene;
+	static void Exit();
+	static void LoadScene(unsigned int index);
+	void AddScene(scene_ptr newScene);
 private:
     // Variables
 	WindowSettings _defaultSetup;
 	// Backend Objects 
-	RenderWindow _gameWindow;
+	static bool closeWindow;
 	DisplayManager _dispManager;
 	EventManager _eventManager;
 	// Scene Objects
-	std::vector<scene_ptr> _game_scenes;
+	static std::vector<scene_ptr> _game_scenes;
 	
     // Methods
-    void initialiseWindow();
+    void initialiseWindow(RenderWindow&_gameWindow);
 };
-
-
-
 
 #endif

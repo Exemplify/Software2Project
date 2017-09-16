@@ -8,7 +8,9 @@ using namespace sf;
 
 struct SpriteInfo
 {
+	bool isdefined = false;
 	string textureLocation;
+	Vector2f scale{1.0f,1.0f};
 	Sprite sprite;
 	Texture texture;
 };
