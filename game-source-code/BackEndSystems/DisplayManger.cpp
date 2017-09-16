@@ -23,9 +23,10 @@ void DisplayManager::renderThread()
 	while(_dispwindow_ptr->isOpen())
 	{
 		_dispwindow_ptr->clear(Color::Black);
-		//Draw();
+		Draw();
 		_dispwindow_ptr->display();
 	}
+	_dispwindow_ptr = NULL;
 }
 
 void DisplayManager::InitialiseThread(RenderWindow& dispWindow)
@@ -37,21 +38,21 @@ void DisplayManager::InitialiseThread(RenderWindow& dispWindow)
 
 void DisplayManager::Draw()
 {
-	Texture texture;
-	if (!texture.loadFromFile("resources/PlayerShield.png"))
-	{
-		// error...
-	}
-	else
-	{
-		Sprite sprite;
-		sprite.setTexture(texture);
-		auto bounds = sprite.getGlobalBounds();
-		sprite.setOrigin(Vector2f((bounds.width/2),(bounds.height/2)));
-		sprite.setScale(Vector2f(0.1f,0.1f));
-		sprite.setPosition(Vector2f(1920,1080));
-		_dispwindow_ptr->draw(sprite);
-	}
+//	Texture texture;
+//	if (!texture.loadFromFile("resources/PlayerShield.png"))
+//	{
+//		// error...
+//	}
+//	else
+//	{
+//		Sprite sprite;
+//		sprite.setTexture(texture);
+//		auto bounds = sprite.getGlobalBounds();
+//		sprite.setOrigin(Vector2f((bounds.width/2),(bounds.height/2)));
+//		sprite.setScale(Vector2f(0.1f,0.1f));
+//		sprite.setPosition(Vector2f(1920,1080));
+//		_dispwindow_ptr->draw(sprite);
+//	}
 	shared_ptr<Scene> activeScene = GameManager::activeScene;
 	//Guard Clause
 	if(activeScene == NULL)
@@ -60,27 +61,29 @@ void DisplayManager::Draw()
 	{
 		for(auto GO : activeScene->getGameObjectList())
 		{
-			DrawSpriteFromGameObject(*GO);
+			DrawSpriteFromGameObject(GO);
 		}
 	}
 }
 
-void DisplayManager::DrawSpriteFromGameObject(GameObject& GO)
+void DisplayManager::DrawSpriteFromGameObject(shared_ptr<GameObject> GO)
 {
 	//Checks if the current game object is active
-	if(!GO.isActive())
+	if(!GO->isActive())
 		return;
 		
 	//Checks if the Gameobject forms part of the graphics child class
-	if(GraphicObject* graphicObj = dynamic_cast<GraphicObject*>(&GO))
+	auto graphicCast = std::dynamic_pointer_cast<GraphicObject>(GO);
+	if(graphicCast)
 	{
-		shared_ptr<SpriteInfo> currentSpriteInfo = graphicObj->getSpriteInfo();
+		auto currentSpriteInfo = graphicCast->getSpriteInfo();
 		if(!currentSpriteInfo->isdefined)
 		{
 			InitialiseGraphicObject(*currentSpriteInfo);
 		}
-		auto screenPosition = GameObjectScreenPosition(*graphicObj);
+		auto screenPosition = GameObjectScreenPosition(*graphicCast);
 		currentSpriteInfo->sprite.setPosition(screenPosition);
+		currentSpriteInfo->sprite.setScale(currentSpriteInfo->scale);
 		_dispwindow_ptr->draw(currentSpriteInfo->sprite);
 	}
 }

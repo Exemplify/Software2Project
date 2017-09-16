@@ -8,10 +8,11 @@ void GameManager::GameLoop()
 	// Initial Declarations
 	if (_game_scenes.size() != 0)
 		activeScene = _game_scenes[0];
+	
 	RenderWindow window;
 	// Set-up window to current specifications
 	initialiseWindow(window);
-	
+
 	// initialises the display thread
 	_dispManager.InitialiseThread(window);
 
@@ -25,8 +26,6 @@ void GameManager::GameLoop()
 			activeScene->SceneUpdate();
 	}
 }
-
-
 
 void GameManager::initialiseWindow(RenderWindow&_gameWindow) 
 {

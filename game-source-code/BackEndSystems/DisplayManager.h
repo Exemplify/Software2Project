@@ -23,7 +23,7 @@ private:
 	RenderWindow* _dispwindow_ptr;
 	void renderThread();
 	void Draw();
-	void DrawSpriteFromGameObject(GameObject& GO);
+	void DrawSpriteFromGameObject(shared_ptr<GameObject> GO);
 	Vector2f GameObjectScreenPosition(const GraphicObject& graphicObj);
 	void InitialiseGraphicObject(SpriteInfo& initialSpriteInfo);
 };

@@ -14,7 +14,6 @@ void EventManager::EventLoop(RenderWindow& eventWindow)
         case Event::Closed:
             eventWindow.close();
             break;
-		
 		// we don't process other types of events at the moment
         default:
             break;
