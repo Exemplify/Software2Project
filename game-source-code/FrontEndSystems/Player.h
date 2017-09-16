@@ -11,10 +11,10 @@ class Player : public GraphicObject
 {
 public:
     Player(Vector2D<double>& startPosition);
-    void moveLeft();
-    void moveRight();
     
 private:
+    void moveLeft();
+    void moveRight();    
     double _speed;
 };
 

@@ -1,53 +1,95 @@
 #include "Vector2D.hpp"
 
+// Default Constructor
 template<class T>
 Vector2D<T>::Vector2D()
 {
-//    _x_val = 0;
-//    _y_val = 0;
-//    _phi = 0;
-//    
-//    Vector2D::raduis();
-//    Vector2D::theta();
-    *this = Vector2D<T>::_origin;
+    *this = _origin;
 }
 
+// Scalar Constructor
+template<class T>
+Vector2D<T>::Vector2D(T val1, T val2, T phi, const VectorType& vectype)
+{
+    if (vectype == VectorType::xyp)
+    {
+        _x_val = val1;
+        _y_val = val2;
+        _phi = phi;
+        radius();
+        theta();
+    }
+    else if (vectype == VectorType::rtp)
+    {
+        _radius = val1;
+        _theta = val2;
+        _phi = phi;
+        xVal();
+        yVal();
+        theta();
+    }
+}
+// Vector Constructor
+template<class T>
+Vector2D<T>::Vector2D(const vector<T>& vec, const VectorType& vectype)
+{
+    if(vec.size()!=3)
+        throw VectorSizeError();
+    if(vectype == VectorType::xyp)
+    {
+        _x_val = vec.at(0);
+        _y_val = vec.at(1);
+        _phi = vec.at(2);
+        radius();
+        theta();
+    }
+    else if(vectype == VectorType::rtp)
+    {
+        _radius = vec.at(0);
+        _theta = vec.at(1);
+        _phi = vec.at(2);
+        xVal();
+        yVal();
+        theta();
+    }
+}
+
+// Copy Constructor
 template<class T>
 Vector2D<T>::Vector2D(const Vector2D<T>& rhs)
 {
-    _x_val == rhs._x_val;
-    _y_val == rhs._y_val;
-    _phi == rhs._phi;
-    
-    Vector2D::raduis();
-    Vector2D::theta();
+    *this = rhs;
 }
 
+//private calculate radius
 template<class T>
-Vector2D<T>::Vector2D(vector<T> cartesianPosition)
-{
-    if (cartesianPosition.size() != 3)
-        throw VectorSizeError{};
-    _x_val = cartesianPosition.at(0);
-    _y_val = cartesianPosition.at(1);
-    _phi = cartesianPosition.at(2);
-    
-    Vector2D::raduis();
-    Vector2D::theta();
-}
-
-template<class T>
-void Vector2D<T>::raduis()
+void Vector2D<T>::radius()
 {
     _radius = sqrt(pow(_x_val,2)+pow(_y_val,2));
 }
 
+//private calculate theta
 template<class T>
 void Vector2D<T>::theta()
 {
     _theta = atan2(_y_val,_x_val);
 }
 
+//private calculate x
+template<class T>
+void Vector2D<T>::xVal()
+{
+    _x_val = _radius*cos(_theta);
+}
+
+//private calculate y
+template<class T>
+void Vector2D<T>::yVal()
+{
+    _y_val = _radius*sin(_theta);
+}
+
+// return the Vector2D as a vector<T> in cartesian form
 template<class T>
 vector<T> Vector2D<T>::xypVector()
 {
@@ -55,9 +97,13 @@ vector<T> Vector2D<T>::xypVector()
     temp.push_back(_x_val);
     temp.push_back(_y_val);
     temp.push_back(_phi);
+//    temp.push_back(trunc(_x_val*_vectorPrecision)/_vectorPrecision);
+//    temp.push_back(trunc(_y_val*_vectorPrecision)/_vectorPrecision);
+//    temp.push_back(trunc(_phi*_vectorPrecision)/_vectorPrecision);
     return temp;
 }
 
+//return the Vector2D as a vector<T> in polar form
 template<class T>
 vector<T> Vector2D<T>::rtpVector()
 {
@@ -65,9 +111,14 @@ vector<T> Vector2D<T>::rtpVector()
     temp.push_back(_radius);
     temp.push_back(_theta);
     temp.push_back(_phi);
+//    temp.push_back(trunc(_radius*_vectorPrecision)/_vectorPrecision);
+//    temp.push_back(trunc(_theta*_vectorPrecision)/_vectorPrecision);
+//    temp.push_back(trunc(_phi*_vectorPrecision)/_vectorPrecision);
     return temp;
 }
 
+//overload operators
+// equivalancy operator, Vector2D == Vector2d
 template<class T>
 bool Vector2D<T>::operator==(const Vector2D<T>& rhs) const
 {
@@ -80,8 +131,9 @@ bool Vector2D<T>::operator==(const Vector2D<T>& rhs) const
     return true;
 }
 
+// addition and create operator: newVector2D = Vector2D + Vector2D
 template<class T>
-Vector2D<T> Vector2D<T>::operator + (const Vector2D<T>& rhs)
+Vector2D<T> Vector2D<T>::operator + (const Vector2D<T>& rhs) const
 {
     T x = _x_val + rhs._x_val;
     T y = _y_val + rhs._y_val;
@@ -90,8 +142,9 @@ Vector2D<T> Vector2D<T>::operator + (const Vector2D<T>& rhs)
     return temp;
 }
 
+// subtraction and create operator: newVector2D = Vector2D - Vector2D
 template<class T>
-Vector2D<T> Vector2D<T>::operator - (const Vector2D<T>& rhs)
+Vector2D<T> Vector2D<T>::operator - (const Vector2D<T>& rhs) const
 {
     T x = _x_val - rhs._x_val;
     T y = _y_val - rhs._y_val;
@@ -100,37 +153,102 @@ Vector2D<T> Vector2D<T>::operator - (const Vector2D<T>& rhs)
     return temp;
 }
 
+// Vector multiply and create operator: newVector2D = Vector2D * Vector2D
+template<class T>
+Vector2D<T> Vector2D<T>::operator * (const Vector2D<T>& rhs) const
+{
+    T r = _radius*rhs._radius;
+    T t = _theta+rhs._theta;
+    T p = 0;
+    Vector2D<T> temp(r,t,p,VectorType::rtp);
+    return temp;
+}
+
+// scalar multiply and create operator: newVector2D = Vector2D * scalar
+template<class T>
+Vector2D<T> Vector2D<T>::operator * (const T& scalar) const
+{
+    T x = _x_val*scalar;
+    T y = _y_val*scalar;
+    T phi = 0;
+    Vector2D<T> temp(x,y,phi);
+    return temp;
+}
+
+// scalar division and create operator: newVector2D = Vector2D / scalar
+template<class T>
+Vector2D<T> Vector2D<T>::operator / (const T& scalar) const
+{
+    T x = _x_val/scalar;
+    T y = _y_val/scalar;
+    T p = 0;
+    Vector2D<T> temp(x,y,p);
+    return temp;
+}
+
+// addition assignment operator: thisVector2d = thisVector2D + Vector2D
 template<class T>
 Vector2D<T>& Vector2D<T>::operator += (const Vector2D<T>& rhs)
 {
-    this->_x_val += rhs._x_val;
-    this->_y_val += rhs._y_val;
-    this->_phi += rhs._phi;
+    _x_val += rhs._x_val;
+    _y_val += rhs._y_val;
+    _phi += rhs._phi;
+    radius();
+    theta();
     return *this;
 }
 
+// subtraction assignment operator: thisVector2D = thisVector2D - Vector2D
 template<class T>
 Vector2D<T>& Vector2D<T>::operator -= (const Vector2D<T>& rhs)
 {
-    this->_x_val -= rhs._x_val;
-    this->_y_val -= rhs._y_val;
-    this->_phi -= rhs._phi;
+    _x_val -= rhs._x_val;
+    _y_val -= rhs._y_val;
+    _phi -= rhs._phi;
+    radius();
+    theta();
     return *this;
 }
 
+// Vector multiply assignemnt operator: thisVector2D = thisVector2D*Vector2D
+template<class T>
+Vector2D<T>& Vector2D<T>::operator *= (const Vector2D<T>& rhs)
+{
+    _radius *= rhs._radius;
+    _radius = _radius;
+    _theta += rhs._theta;
+    _theta = _theta;
+     _phi += rhs._phi;
+     _phi = _phi;
+    xVal();
+    yVal();
+    theta();
+    return *this;
+}
+
+// scalar multiply assignment operator: thisVector2D = thisVector2D*scalar
 template<class T>
 Vector2D<T>& Vector2D<T>::operator *= (const T scale)
 {
-    this->_x_val *= scale;
-    this->_y_val *= scale;
+    _x_val *= scale;
+    _x_val = _x_val;
+    _y_val *= scale;
+    _y_val = _y_val;
+    radius();
+    theta(); //should have on effect
     return *this;
 }
 
+// scalar division assignment operator: thisVector2D = thisVector2D/scalar
 template<class T>
 Vector2D<T>& Vector2D<T>::operator /= (const T scale)
 {
-    this->_x_val /= scale;
-    this->_y_val /= scale;
+    _x_val /= scale;
+    _x_val = _x_val;
+    _y_val /= scale;
+    _y_val = _y_val;
+    radius();
+    theta(); // should have no effect
     return *this;
 }
 
@@ -150,4 +268,7 @@ T Vector2D<T>::magnitude(const Vector2D<T>& lhs, const Vector2D<T>& rhs)
 }
 
 template<class T>
-Vector2D<T> Vector2D<T>::_origin{vector<T> {0,0,0}};
+Vector2D<T> Vector2D<T>::_origin{0,0,0};
+
+template<class T>
+unsigned int Vector2D<T>::_vectorPrecision = 10000000000;
