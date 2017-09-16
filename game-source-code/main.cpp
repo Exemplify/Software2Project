@@ -2,26 +2,26 @@
 #include <memory>
 #include <iostream>
 #include "FrontEndSystems/Scene.h"
-#include "FrontEndSystems/GraphicObject.h"
+#include "FrontEndSystems/SplashScreen.h"
 #include "FrontEndSystems/SpriteInfo.h"
 #include "BackEndSystems/Input.h"
 
 using std::shared_ptr;
-shared_ptr<Scene> SplashScreen();
+shared_ptr<Scene> SplashScreenFunc();
 
 int main()
 {
-	shared_ptr<Scene> splashScene =  SplashScreen();
+	shared_ptr<Scene> splashScene =  SplashScreenFunc();
 	GameManager gm;
 	gm.AddScene(splashScene);
 	gm.GameLoop();
 	return EXIT_SUCCESS;
 }
 
-shared_ptr<Scene> SplashScreen()
+shared_ptr<Scene> SplashScreenFunc()
 {
 	shared_ptr<Scene> splashScene{new Scene()};
-	shared_ptr<GraphicObject> background{new GraphicObject()};
+	shared_ptr<GraphicObject> background{new SplashScreen()};
 	shared_ptr<SpriteInfo> backgroundInfo =  background->getSpriteInfo();
 	backgroundInfo->textureLocation = "resources/MceboDlamini.jpg";
 	backgroundInfo->scale = Vector2f(2.5f,2.0f);

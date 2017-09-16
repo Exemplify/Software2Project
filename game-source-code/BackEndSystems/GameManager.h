@@ -19,7 +19,7 @@ struct WindowSettings
 {
     unsigned int screenWidth = 1920;
 	unsigned int screenHeight = 1080;
-	Uint32 winStyle = Style::Fullscreen;
+	Uint32 winStyle = Style::Default;
 	string game_name = "Gyrus";
 };
 
@@ -29,12 +29,14 @@ public:
 	GameManager() {};
 	void GameLoop();
 	static scene_ptr activeScene;
+	static void Exit();
 	void AddScene(scene_ptr newScene);
+	
 private:
     // Variables
 	WindowSettings _defaultSetup;
 	// Backend Objects 
-	RenderWindow _gameWindow;
+	static bool closeWindow;
 	DisplayManager _dispManager;
 	EventManager _eventManager;
 	// Scene Objects

@@ -9,9 +9,7 @@ public:
 	SplashScreen(){}
 	void Update() override;
 private:
-	void isPlayPressed()
-	{
-	}
-}
+	void QuitGame();
+};
 
 #endif 

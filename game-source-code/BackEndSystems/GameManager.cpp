@@ -4,7 +4,6 @@ std::shared_ptr<Scene> GameManager::activeScene = NULL;
 
 void GameManager::GameLoop()
 {
-	
 	// Initial Declarations
 	if (_game_scenes.size() != 0)
 		activeScene = _game_scenes[0];
@@ -24,21 +23,32 @@ void GameManager::GameLoop()
 		// Calls the SceneUpdate function to run the game functionality
 		if(activeScene != NULL)
 			activeScene->SceneUpdate();
+		// Checks if Input causes window to be closed
+		if(closeWindow)
+			window.close();
 	}
 }
 
-void GameManager::initialiseWindow(RenderWindow&_gameWindow) 
+void GameManager::initialiseWindow(RenderWindow& gameWindow) 
 {
 	// Creates the initial sfml window  with settings defined in default Setup
-	_gameWindow.create(
+	gameWindow.create(
 	VideoMode(_defaultSetup.screenWidth,_defaultSetup.screenHeight),
 	_defaultSetup.game_name,
 	_defaultSetup.winStyle);
 	// Sets the game window to be inactive so that the display
 	// can be done in a seperate thread
-    _gameWindow.setActive(false);
+    gameWindow.setActive(false);
 }
+
 void GameManager::AddScene(std::shared_ptr<Scene> newScene)
 {
 	_game_scenes.push_back(newScene);
 }
+void GameManager::Exit()
+{
+	closeWindow = true;
+}
+bool GameManager::closeWindow = false;
+
+
