@@ -8,12 +8,15 @@
 
 using std::shared_ptr;
 shared_ptr<Scene> SplashScreenFunc();
+shared_ptr<Scene> GameSceneFunc();
 
 int main()
 {
 	shared_ptr<Scene> splashScene =  SplashScreenFunc();
+	shared_ptr<Scene> gameScene = GameSceneFunc();
 	GameManager gm;
 	gm.AddScene(splashScene);
+	gm.AddScene(gameScene);
 	gm.GameLoop();
 	return EXIT_SUCCESS;
 }
@@ -21,7 +24,7 @@ int main()
 shared_ptr<Scene> SplashScreenFunc()
 {
 	shared_ptr<Scene> splashScene{new Scene()};
-	shared_ptr<GraphicObject> background{new SplashScreen()};
+	shared_ptr<SplashScreen> background{new SplashScreen()};
 	shared_ptr<SpriteInfo> backgroundInfo =  background->getSpriteInfo();
 	backgroundInfo->textureLocation = "resources/MceboDlamini.jpg";
 	backgroundInfo->scale = Vector2f(2.5f,2.0f);
@@ -30,3 +33,14 @@ shared_ptr<Scene> SplashScreenFunc()
 	return splashScene;
 }
 
+shared_ptr<Scene> GameSceneFunc()
+{
+	shared_ptr<Scene> gameScene{new Scene()};
+	shared_ptr<GraphicObject> background{new GraphicObject()};
+	shared_ptr<SpriteInfo> backgroundInfo =  background->getSpriteInfo();
+	backgroundInfo->textureLocation = "resources/greathall0_hr.jpg";
+	backgroundInfo->scale = Vector2f(2.0f,2.0f);
+	gameScene->Instantiate(background);
+	background->setActive(true);
+	return gameScene;
+}

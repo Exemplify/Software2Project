@@ -31,13 +31,16 @@ void EventManager::KeyInput(const Event& event, bool state)
 	switch(event.key.code)
 	{
 		case Keyboard::Key::Escape:
-			Input::setButton(Keys::esc,true);
+			Input::setButton(Keys::esc,state);
 			break;
 		case Keyboard::Key::Left:
-			Input::setButton(Keys::left,true);
+			Input::setButton(Keys::left,state);
 			break;
 		case Keyboard::Key::Right:
-			Input::setButton(Keys::right,true);
+			Input::setButton(Keys::right,state);
+			break;
+		case Keyboard::Key::Space:
+			Input::setButton(Keys::space,state);
 			break;
 		default:
 			break;

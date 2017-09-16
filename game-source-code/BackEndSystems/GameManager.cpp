@@ -1,6 +1,11 @@
 #include "GameManager.h"
 
 std::shared_ptr<Scene> GameManager::activeScene = NULL;
+std::vector<std::shared_ptr<Scene>> GameManager::_game_scenes{};
+
+bool GameManager::closeWindow = false;
+
+class SceneDoesntExist{};
 
 void GameManager::GameLoop()
 {
@@ -45,10 +50,21 @@ void GameManager::AddScene(std::shared_ptr<Scene> newScene)
 {
 	_game_scenes.push_back(newScene);
 }
+
 void GameManager::Exit()
 {
 	closeWindow = true;
 }
-bool GameManager::closeWindow = false;
+
+void GameManager::LoadScene(unsigned int index)
+{
+	if(_game_scenes.size() <= index)
+		throw SceneDoesntExist();
+	else
+	{
+		activeScene = _game_scenes.at(index);
+	}
+}
+
 
 

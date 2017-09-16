@@ -10,6 +10,7 @@ public:
 	void Update() override;
 private:
 	void QuitGame();
+	void PlayGame();
 };
 
 #endif 

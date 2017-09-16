@@ -12,6 +12,7 @@ void Scene::SceneUpdate()
 		GO->Update();
 	}
 }
+
 std::vector<gameObj_ptr> Scene::getGameObjectList()
 {
 	return _gameObject_list;
