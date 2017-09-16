@@ -9,8 +9,9 @@ using namespace sf;
 class EventManager
 {
 public:
+	EventManager(){}
 	EventManager(RenderWindow* eventWindow);
-	void EventLoop();
+	void EventLoop(RenderWindow& eventWindow);
 private:
 	Event _currentEvent;
 	std::shared_ptr<RenderWindow> _eventWindow;

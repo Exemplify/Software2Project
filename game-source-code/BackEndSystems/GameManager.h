@@ -26,7 +26,7 @@ struct WindowSettings
 class GameManager
 {
 public:
-	GameManager();
+	GameManager() {};
 	void GameLoop();
 	static scene_ptr activeScene;
 private:
@@ -40,7 +40,7 @@ private:
 	std::vector<scene_ptr> _game_scenes;
 	
     // Methods
-    void initialiseWindow();
+    void initialiseWindow(RenderWindow&_gameWindow);
 };
 
 

@@ -3,16 +3,16 @@
 EventManager::EventManager(RenderWindow* eventWindow):
 _eventWindow(eventWindow)
 {}
-void EventManager::EventLoop()
+void EventManager::EventLoop(RenderWindow& eventWindow)
 {
 	Event event;
-	while(_eventWindow->pollEvent(event))
+	while(eventWindow.pollEvent(event))
 	{
 		switch(event.type)
 		{
 		// window closed
         case Event::Closed:
-            _eventWindow->close();
+            eventWindow.close();
             break;
 		
 		// we don't process other types of events at the moment

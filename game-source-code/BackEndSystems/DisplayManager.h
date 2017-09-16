@@ -15,10 +15,12 @@ using std::shared_ptr;
 class DisplayManager
 {
 public:
+	DisplayManager() {}
 	DisplayManager(RenderWindow* dispWindow);
-	void InitialiseThread();
+	void InitialiseThread(RenderWindow& dispWindow);
+	~DisplayManager() {_dispwindow_ptr = NULL;}
 private:
-	std::shared_ptr<RenderWindow> _dispwindow_ptr;
+	RenderWindow* _dispwindow_ptr;
 	void renderThread();
 	void Draw();
 	void DrawSpriteFromGameObject(GameObject& GO);

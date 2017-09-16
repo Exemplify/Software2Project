@@ -23,13 +23,14 @@ void DisplayManager::renderThread()
 	while(_dispwindow_ptr->isOpen())
 	{
 		_dispwindow_ptr->clear(Color::Black);
-		Draw();
+		//Draw();
 		_dispwindow_ptr->display();
 	}
 }
 
-void DisplayManager::InitialiseThread()
+void DisplayManager::InitialiseThread(RenderWindow& dispWindow)
 {
+	_dispwindow_ptr = &dispWindow;
 	std::thread dispthread(&DisplayManager::renderThread, this);
 	dispthread.detach();
 }
