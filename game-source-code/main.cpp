@@ -1,20 +1,20 @@
 #include "BackEndSystems/GameManager.h"
 #include <memory>
+#include <iostream>
 #include "FrontEndSystems/Scene.h"
 #include "FrontEndSystems/GraphicObject.h"
 #include "FrontEndSystems/SpriteInfo.h"
+#include "BackEndSystems/Input.h"
 
 using std::shared_ptr;
-
 shared_ptr<Scene> SplashScreen();
 
 int main()
 {
-	shared_ptr<Scene> ss =  SplashScreen();
+	shared_ptr<Scene> splashScene =  SplashScreen();
 	GameManager gm;
-	gm.AddScene(ss);
+	gm.AddScene(splashScene);
 	gm.GameLoop();
-	
 	return EXIT_SUCCESS;
 }
 

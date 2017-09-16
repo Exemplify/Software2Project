@@ -13,8 +13,8 @@ public:
 	EventManager(RenderWindow* eventWindow);
 	void EventLoop(RenderWindow& eventWindow);
 private:
-	Event _currentEvent;
 	std::shared_ptr<RenderWindow> _eventWindow;
+	void KeyInput(const Event& event, bool state);
 };
 
 

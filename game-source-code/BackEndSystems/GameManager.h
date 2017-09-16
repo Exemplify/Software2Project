@@ -44,7 +44,4 @@ private:
     void initialiseWindow(RenderWindow&_gameWindow);
 };
 
-
-
-
 #endif

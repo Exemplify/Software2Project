@@ -38,21 +38,6 @@ void DisplayManager::InitialiseThread(RenderWindow& dispWindow)
 
 void DisplayManager::Draw()
 {
-//	Texture texture;
-//	if (!texture.loadFromFile("resources/PlayerShield.png"))
-//	{
-//		// error...
-//	}
-//	else
-//	{
-//		Sprite sprite;
-//		sprite.setTexture(texture);
-//		auto bounds = sprite.getGlobalBounds();
-//		sprite.setOrigin(Vector2f((bounds.width/2),(bounds.height/2)));
-//		sprite.setScale(Vector2f(0.1f,0.1f));
-//		sprite.setPosition(Vector2f(1920,1080));
-//		_dispwindow_ptr->draw(sprite);
-//	}
 	shared_ptr<Scene> activeScene = GameManager::activeScene;
 	//Guard Clause
 	if(activeScene == NULL)
