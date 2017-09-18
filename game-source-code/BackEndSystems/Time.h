@@ -7,7 +7,7 @@ class GameTime
 {
 	friend class GameManager;
 public:
-	static double getDelaTime();
+	static double getDeltaTime();
 private:
 	// Methods
 	double calcProcessTime();

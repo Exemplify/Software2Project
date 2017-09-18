@@ -33,7 +33,7 @@ public:
 	static void LoadScene(unsigned int index);
 	void AddScene(scene_ptr newScene);
 private:
-	//GameTime* _gameTime;
+	GameTime* _gameTime;
     // Variables
 	WindowSettings _defaultSetup;
 	// Backend Objects 

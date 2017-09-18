@@ -25,7 +25,7 @@ void GameManager::GameLoop()
     while (window.isOpen())
     {
 		// Determines the Time Between each frame
-		//_gameTime->TimeFrame();
+		_gameTime->TimeFrame();
         // check all the window's events that were triggered since the last iteration of the loop
 		_eventManager.EventLoop(window);
 		// Calls the SceneUpdate function to run the game functionality

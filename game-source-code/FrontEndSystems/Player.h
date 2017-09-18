@@ -19,8 +19,11 @@ private:
     
     void moveLeft();
     void moveRight();
+	
     Vector2D<double> _leftUnitVector;
     Vector2D<double> _rightUnitVector;
+	double _movespeed = 5;
+	
 };
 
 #endif

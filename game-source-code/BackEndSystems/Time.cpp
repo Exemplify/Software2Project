@@ -16,7 +16,7 @@ void GameTime::calcCurrentTime()
 {
 	_current_time = calcProcessTime();
 }
-double GameTime::getDelaTime()
+double GameTime::getDeltaTime()
 {
 	return _deltaTime;
 }
