@@ -19,6 +19,7 @@ private:
     
     void moveLeft();
     void moveRight();
+	void move();
 	
     Vector2D<double> _leftUnitVector;
     Vector2D<double> _rightUnitVector;
