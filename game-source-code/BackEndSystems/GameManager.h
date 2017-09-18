@@ -22,7 +22,7 @@ struct WindowSettings
 	Uint32 winStyle = Style::Fullscreen;
 	string game_name = "Gyrus";
 };
-
+class GameTime; 
 class GameManager
 {
 public:
@@ -33,6 +33,7 @@ public:
 	static void LoadScene(unsigned int index);
 	void AddScene(scene_ptr newScene);
 private:
+	//GameTime* _gameTime;
     // Variables
 	WindowSettings _defaultSetup;
 	// Backend Objects 

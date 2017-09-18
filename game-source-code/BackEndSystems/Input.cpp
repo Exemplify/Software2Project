@@ -1,6 +1,5 @@
 #include "Input.h"
 #include <algorithm>
-const int MAX_NUM_INPUTS = 4;
 
 void Input::clear()
 {

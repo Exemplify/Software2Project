@@ -1,4 +1,5 @@
 #include "GameManager.h"
+#include "Time.h"
 
 std::shared_ptr<Scene> GameManager::activeScene = NULL;
 std::vector<std::shared_ptr<Scene>> GameManager::_game_scenes{};
@@ -23,6 +24,8 @@ void GameManager::GameLoop()
     // The main game loop
     while (window.isOpen())
     {
+		// Determines the Time Between each frame
+		//_gameTime->TimeFrame();
         // check all the window's events that were triggered since the last iteration of the loop
 		_eventManager.EventLoop(window);
 		// Calls the SceneUpdate function to run the game functionality
