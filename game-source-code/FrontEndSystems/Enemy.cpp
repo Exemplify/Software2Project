@@ -1,7 +1,7 @@
 #include "Enemy.h"
 #include <stdlib.h>
 #include <time.h>
-#include "../BackEndSystems/Time.h"
+#include "../BackEndSystems/GameTime.h"
 
 int const MAX_DEGREES = 360;
 double const RAD_2_DEG = 3.141592653589793/180.0;
