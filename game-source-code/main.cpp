@@ -44,12 +44,12 @@ shared_ptr<Scene> GameSceneFunc()
 	Character playerStats{3,5};
 	shared_ptr<Player> player{new Player(playerStart, playerStats)};
 	shared_ptr<SpriteInfo> playerInfo = player->getSpriteInfo();
-	playerInfo->textureLocation = "resources/PlayerShield.png";
-	playerInfo->scale = Vector2f(0.1f,0.1f);
+	playerInfo->textureLocation = "resources/playerSprite.png";
+	playerInfo->scale = Vector2f(0.5f,0.5f);
 	
 	shared_ptr<SpriteInfo> backgroundInfo =  background->getSpriteInfo();
-	backgroundInfo->textureLocation = "resources/greathall0_hr.jpg";
-	backgroundInfo->scale = Vector2f(2.0f,2.0f);
+	backgroundInfo->textureLocation = "resources/greathall0_hr.png";
+	backgroundInfo->scale = Vector2f(1920.0f/914.0f,1080.0f/569.0f);
 	shared_ptr<GameObject> EnemyCon = std::make_shared<EnemyController>();
 	
 	gameScene->Instantiate(background);

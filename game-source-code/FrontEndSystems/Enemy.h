@@ -9,8 +9,8 @@ public:
 	Enemy(Character enem):
 	_enemyStats{enem}
 	{
-		_spriteInfo->textureLocation = "resources/PlayerShield.png";
-		_spriteInfo->scale = sf::Vector2f{0.05f,0.05f};
+		_spriteInfo->textureLocation = "resources/AdamHabib.png";
+		_spriteInfo->scale = sf::Vector2f{0.25f,0.25f};
 	}
 	virtual void Start() override; 
 	virtual void Update() override;
