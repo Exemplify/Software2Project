@@ -19,6 +19,10 @@ private:
 	void Initialise();
 	
 	Character _enemyStats;
+	void CheckOutsideScreen();
+	bool CheckxOutofBounds(double xPos);
+	bool CheckyOutofBounds(double yPos);
+	
 };
 
 #endif 

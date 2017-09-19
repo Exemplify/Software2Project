@@ -5,12 +5,13 @@
 
 int const MAX_DEGREES = 360;
 double const RAD_2_DEG = 3.141592653589793/180.0;
-const int PLAY_SCREEN_WIDTH = ;
-const int HALF_SCREEN = 540;
+const int PLAY_SCREEN_HALF_WIDTH = 1200;
+const int PLAY_SCREEN_HALF_HEIGHT = 700;
 
 void Enemy::Update()
 {
 	Move();
+	CheckOutsideScreen();
 }
 void Enemy::Start()
 {
@@ -34,7 +35,23 @@ void Enemy::Move()
 void Enemy::CheckOutsideScreen()
 {
 	auto curPos = getPosition().xypVector();
-	if(curPos[0] > ,   curPos[1])
+	if(CheckxOutofBounds(curPos[0]) || CheckyOutofBounds(curPos[1]))
+	{
+		Initialise();
+	}
 }
-
+bool Enemy::CheckxOutofBounds(double xPos)
+{
+	if(xPos <= -PLAY_SCREEN_HALF_WIDTH || xPos >= PLAY_SCREEN_HALF_WIDTH)
+		return true;
+	else
+		return false;
+}
+bool Enemy::CheckyOutofBounds(double yPos)
+{
+	if(yPos <= -PLAY_SCREEN_HALF_HEIGHT || yPos >= PLAY_SCREEN_HALF_HEIGHT)
+		return true;
+	else
+		return false;
+}
 

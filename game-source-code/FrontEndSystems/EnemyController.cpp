@@ -16,7 +16,7 @@ void EnemyController::Update()
 void EnemyController::SpawnEnemyCountDown()
 {
 	auto deltaTime = GameTime::getDeltaTime();
-	_timeBetweenSpawns -= GameTime::getDeltaTime();
+	_timeBetweenSpawns -= deltaTime;
 	if(_timeBetweenSpawns <= 0 && enemyCount < 10)
 	{
 		SpawnEnemy();
@@ -27,7 +27,7 @@ void EnemyController::SpawnEnemyCountDown()
 void EnemyController::SpawnEnemy()
 {
 	auto scene = GameManager::activeScene;
-	Character enem1{1,150};
+	Character enem1{1,200};
 	std::shared_ptr<GameObject> enemy = std::make_shared<Enemy>(enem1);
 	scene->Instantiate(enemy);
 	enemyCount++;
