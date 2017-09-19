@@ -7,7 +7,7 @@
 class GameObject
 {
 public:
-    	GameObject() {}
+	GameObject() {}
 	virtual void Start() {}
 	virtual void Update() {}
 	bool isActive() {return _active;}
