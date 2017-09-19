@@ -7,7 +7,10 @@
 #include "BackEndSystems/Input.h"
 #include "FrontEndSystems/Player.h"
 #include "Vector2D.hpp"
+#include "FrontEndSystems/Character.h"
+#include "FrontEndSystems/EnemyController.h"
 using std::shared_ptr;
+
 shared_ptr<Scene> SplashScreenFunc();
 shared_ptr<Scene> GameSceneFunc();
 
@@ -38,14 +41,19 @@ shared_ptr<Scene> GameSceneFunc()
 	shared_ptr<Scene> gameScene{new Scene()};
 	shared_ptr<GraphicObject> background{new SplashScreen()};
 	Vector2D<double> playerStart(0,-400,0);
-	shared_ptr<Player> player{new Player(playerStart)};
+	Character playerStats{3,5};
+	shared_ptr<Player> player{new Player(playerStart, playerStats)};
 	shared_ptr<SpriteInfo> playerInfo = player->getSpriteInfo();
 	playerInfo->textureLocation = "resources/PlayerShield.png";
 	playerInfo->scale = Vector2f(0.1f,0.1f);
+	
 	shared_ptr<SpriteInfo> backgroundInfo =  background->getSpriteInfo();
 	backgroundInfo->textureLocation = "resources/greathall0_hr.jpg";
 	backgroundInfo->scale = Vector2f(2.0f,2.0f);
+	shared_ptr<GameObject> EnemyCon = std::make_shared<EnemyController>();
+	
 	gameScene->Instantiate(background);
 	gameScene->Instantiate(player);
+	gameScene->Instantiate(EnemyCon);
 	return gameScene;
 }

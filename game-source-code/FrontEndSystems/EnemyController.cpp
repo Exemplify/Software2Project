@@ -1,4 +1,5 @@
 #include "EnemyController.h"
+#include "Character.h"
 #include "../BackEndSystems/GameManager.h"
 #include "../BackEndSystems/Time.h"
 #include <memory>
@@ -14,8 +15,9 @@ void EnemyController::Update()
 }
 void EnemyController::SpawnEnemyCountDown()
 {
+	auto deltaTime = GameTime::getDeltaTime();
 	_timeBetweenSpawns -= GameTime::getDeltaTime();
-	if(_timeBetweenSpawns <= 0)
+	if(_timeBetweenSpawns <= 0 && enemyCount < 10)
 	{
 		SpawnEnemy();
 		_timeBetweenSpawns = ENEMY_SPAWN_DELAY;
@@ -25,7 +27,8 @@ void EnemyController::SpawnEnemyCountDown()
 void EnemyController::SpawnEnemy()
 {
 	auto scene = GameManager::activeScene;
-	std::shared_ptr<GameObject> enemy = std::make_shared<GameObject>();
+	Character enem1{1,150};
+	std::shared_ptr<GameObject> enemy = std::make_shared<Enemy>(enem1);
 	scene->Instantiate(enemy);
 	enemyCount++;
 }

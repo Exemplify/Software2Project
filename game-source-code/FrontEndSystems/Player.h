@@ -4,13 +4,14 @@
 #include "GraphicObject.h"
 #include "../Vector2D.hpp"
 #include <memory>
+#include "Character.h"
 
 using namespace std;
 
 class Player : public GraphicObject
 {
 public:
-    Player(Vector2D<double>& startPosition);
+    Player(Vector2D<double>& startPosition, Character playerStats);
     void Update() override;
     
     void TestMoveLeft();
@@ -23,7 +24,7 @@ private:
 	
     Vector2D<double> _leftUnitVector;
     Vector2D<double> _rightUnitVector;
-	double _movespeed = 5;
+	Character _playerStats;
 	
 };
 

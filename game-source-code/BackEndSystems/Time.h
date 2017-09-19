@@ -7,6 +7,10 @@ class GameTime
 {
 	friend class GameManager;
 public:
+	GameTime()
+	{
+		srand(time(NULL));
+	}
 	static double getDeltaTime();
 private:
 	// Methods
