@@ -7,6 +7,7 @@
 class ShootComponent
 {
 public:
+	ShootComponent(){}
 	ShootComponent(std::shared_ptr<SpriteInfo> spriteInfo);
 	void Shoot(	
 		Vector2D<double> target,

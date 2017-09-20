@@ -3,6 +3,7 @@
 #include "GraphicObject.h"
 #include "Character.h"
 #include "DelayComponent.h"
+#include "ShootComponent.h"
 
 class Enemy: public GraphicObject
 {
@@ -15,6 +16,7 @@ private:
 	void Shoot();
 	DelayComponent _shootDelay;
 	Character _enemyStats;
+	ShootComponent _enemyShoot;
 	void CheckOutsideScreen();
 	bool CheckxOutofBounds(double xPos);
 	bool CheckyOutofBounds(double yPos);
