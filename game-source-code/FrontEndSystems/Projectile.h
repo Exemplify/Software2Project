@@ -5,9 +5,10 @@
 class Projectile: public GraphicObject
 {
 public:
-	Projectile(Vector2D<double> startingPos, Vector2D<double> direction, double moveSpeed);
+	Projectile(std::shared_ptr<SpriteInfo> spriteInfo);
+	Projectile(const Projectile& copyProjectile);
 	virtual void Update() override;
-
+	void Initialise(Vector2D<double> startingPos, Vector2D<double> direction, double moveSpeed);
 private:
 	Vector2D<double> _direction;
 	double _moveSpeed;

@@ -6,11 +6,13 @@
 const double SHOOT_DELAY = 0.5; 
 const double SHOOT_SPEED = 150;
 
-Player::Player(Vector2D<double>& startPosition, Character playerStats):
+Player::Player(Vector2D<double>& startPosition, Character playerStats, std::shared_ptr<SpriteInfo> bulletSprite):
+GraphicObject(),
 _leftUnitVector{1, -M_PI, 0, VectorType::rtp},
 _rightUnitVector{1, M_PI, 0, VectorType::rtp},
 _playerStats{playerStats},
-_shootDelay{SHOOT_DELAY}
+_shootDelay{SHOOT_DELAY},
+_shootComp{bulletSprite}
 {
     _position = startPosition;
 }
@@ -43,18 +45,9 @@ void Player::ShootConditionalCheck()
 	_shootDelay.reduceTime();
 	if(Input::IsButtonPressed(Keys::space) && _shootDelay.DelayFinished())
 	{
-		Shoot();
+		
 		_shootDelay.resetDelay();
 	}
 }
 
-void Player::Shoot()
-{
-	
-	auto scene = GameManager::activeScene;
-	auto shotDirec = _position * -1.0;
-	shotDirec /= shotDirec.magnitude(shotDirec);
-	auto bullet = std::make_shared<Projectile>(_position, shotDirec,SHOOT_SPEED);
-	scene->Instantiate(bullet);
-}
 

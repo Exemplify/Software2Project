@@ -8,11 +8,14 @@
 class GraphicObject : public GameObject
 {
 public:
+	GraphicObject(std::shared_ptr<SpriteInfo> spriteInfo):
+	_spriteInfo(spriteInfo)
+	{}
 	GraphicObject():
 	_spriteInfo(new SpriteInfo())
 	{}
 	bool HasGraphic() override { return true; }
-	std::shared_ptr<SpriteInfo> getSpriteInfo() 
+	std::shared_ptr<SpriteInfo> getSpriteInfo() const
 	{
 		return _spriteInfo; 
 	}

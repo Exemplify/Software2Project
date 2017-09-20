@@ -6,13 +6,14 @@
 #include <memory>
 #include "Character.h"
 #include "DelayComponent.h"
+#include "ShootComponent.h"
 
 using namespace std;
 
 class Player : public GraphicObject
 {
 public:
-    Player(Vector2D<double>& startPosition, Character playerStats);
+    Player(Vector2D<double>& startPosition, Character playerStats, std::shared_ptr<SpriteInfo> bulletSprite);
 	
     void Update() override;
     
@@ -26,8 +27,7 @@ private:
 	// Composition Variables 
 	Character _playerStats;
 	DelayComponent _shootDelay;
-	
-	void Shoot();
+	ShootComponent _shootComp;
 	void ShootConditionalCheck();
 	
 };

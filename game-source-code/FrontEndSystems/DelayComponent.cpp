@@ -1,6 +1,13 @@
 #include "DelayComponent.h"
 #include "../BackEndSystems/GameTime.h"
 
+
+DelayComponent::DelayComponent(double value, bool immediateUse):
+_currentValue{value},
+_delayValue{value},
+_delayFinished{immediateUse}
+{}
+
 bool DelayComponent::DelayFinished()
 {
 	return _delayFinished;
