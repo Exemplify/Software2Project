@@ -44,7 +44,7 @@ shared_ptr<Scene> GameSceneFunc()
 	Character playerStats{3,5};
 	shared_ptr<SpriteInfo> playerBullet = std::make_shared<SpriteInfo>();
 	playerBullet->textureLocation = "resources/Rock.png";
-	playerBullet->scale = Vector2f(0.1f,0.1f);
+	playerBullet->scale = Vector2f(0.05f,0.05f);
 	shared_ptr<Player> player{new Player(playerStart, playerStats, playerBullet)};
 	shared_ptr<SpriteInfo> playerInfo = player->getSpriteInfo();
 	playerInfo->textureLocation = "resources/playerSprite.png";

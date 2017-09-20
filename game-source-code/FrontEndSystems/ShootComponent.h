@@ -7,7 +7,7 @@
 class ShootComponent
 {
 public:
-	ShootComponent(const Projectile& bullet);
+	ShootComponent(std::shared_ptr<SpriteInfo> spriteInfo);
 	void Shoot(	
 		Vector2D<double> target,
 		Vector2D<double> startPosition, 
@@ -15,7 +15,7 @@ public:
 		Scene& scene
 		);
 private:
-	Projectile _bulletType;
+	std::shared_ptr<SpriteInfo> _bulletSpriteInfo;
 };
 
 #endif

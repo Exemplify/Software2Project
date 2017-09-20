@@ -45,7 +45,8 @@ void Player::ShootConditionalCheck()
 	_shootDelay.reduceTime();
 	if(Input::IsButtonPressed(Keys::space) && _shootDelay.DelayFinished())
 	{
-		
+		Vector2D<double> origin;
+		_shootComp.Shoot(origin, _position, SHOOT_SPEED, *GameManager::activeScene);
 		_shootDelay.resetDelay();
 	}
 }
