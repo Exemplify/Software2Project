@@ -1,26 +1,40 @@
 #include "Enemy.h"
 #include <stdlib.h>
 #include <time.h>
-#include "../BackEndSystems/Time.h"
+#include "../BackEndSystems/GameTime.h"
 
-int const MAX_DEGREES = 360;
-double const RAD_2_DEG = 3.141592653589793/180.0;
+
+const int MAX_DEGREES = 360;
+const double DEG_2_RAD = 3.141592653589793/180.0;
 const int PLAY_SCREEN_HALF_WIDTH = 1200;
 const int PLAY_SCREEN_HALF_HEIGHT = 700;
+const double ENEMY_SHOOT_DELAY = 2; 
 
+
+Enemy::Enemy(Character enem):
+_shootDelay{ENEMY_SHOOT_DELAY, true},
+_enemyStats{enem}
+{
+	_spriteInfo->textureLocation = "resources/AdamHabib.png";
+	_spriteInfo->scale = sf::Vector2f{0.25f,0.25f};
+	InitialisePosition();
+	auto bulletSpriteInfo = std::make_shared<SpriteInfo>();
+	bulletSpriteInfo->textureLocation = "resources/SouthAfricanPS.png";
+	bulletSpriteInfo->scale = Vector2f(0.1f,0.1f);
+	_enemyShoot = ShootComponent(bulletSpriteInfo);
+	
+}
 void Enemy::Update()
 {
 	Move();
+	Shoot();
 	CheckOutsideScreen();
+	
 }
-void Enemy::Start()
-{
-	Initialise();
-}
-void Enemy::Initialise()
+void Enemy::InitialisePosition()
 {
 	double angle = rand()%MAX_DEGREES;
-	angle*=RAD_2_DEG;
+	angle*=DEG_2_RAD;
 	Vector2D<double> startPos{1, angle, 0, VectorType::rtp};
 	_position = startPos;
 }
@@ -37,7 +51,7 @@ void Enemy::CheckOutsideScreen()
 	auto curPos = getPosition().xypVector();
 	if(CheckxOutofBounds(curPos[0]) || CheckyOutofBounds(curPos[1]))
 	{
-		Initialise();
+		InitialisePosition();
 	}
 }
 bool Enemy::CheckxOutofBounds(double xPos)
@@ -54,4 +68,17 @@ bool Enemy::CheckyOutofBounds(double yPos)
 	else
 		return false;
 }
+void Enemy::Shoot()
+{
+	_shootDelay.reduceTime();
+	if(_shootDelay.DelayFinished())
+	{
+		_shootDelay.resetDelay();
+		auto target = _position.rtpVector();
+		target[0] += 1;
+		Vector2D<double> targetVec{target, VectorType::rtp};
+		_enemyShoot.Shoot(targetVec, _position, 3*_enemyStats.getMoveSpeed(), *GameManager::activeScene);
+	}
+}
+
 

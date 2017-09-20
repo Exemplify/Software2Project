@@ -42,10 +42,13 @@ shared_ptr<Scene> GameSceneFunc()
 	shared_ptr<GraphicObject> background{new SplashScreen()};
 	Vector2D<double> playerStart(0,-400,0);
 	Character playerStats{3,5};
-	shared_ptr<Player> player{new Player(playerStart, playerStats)};
+	shared_ptr<SpriteInfo> playerBullet = std::make_shared<SpriteInfo>();
+	playerBullet->textureLocation = "resources/Rock.png";
+	playerBullet->scale = Vector2f(0.05f,0.05f);
+	shared_ptr<Player> player{new Player(playerStart, playerStats, playerBullet)};
 	shared_ptr<SpriteInfo> playerInfo = player->getSpriteInfo();
 	playerInfo->textureLocation = "resources/playerSprite.png";
-	playerInfo->scale = Vector2f(0.5f,0.5f);
+	playerInfo->scale = Vector2f(0.3f,0.3f);
 	
 	shared_ptr<SpriteInfo> backgroundInfo =  background->getSpriteInfo();
 	backgroundInfo->textureLocation = "resources/greathall0_hr.png";

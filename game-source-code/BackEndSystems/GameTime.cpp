@@ -1,4 +1,4 @@
-#include "Time.h"
+#include "GameTime.h"
 
 double GameTime::_current_time = 0;
 double GameTime::_deltaTime = 0;
