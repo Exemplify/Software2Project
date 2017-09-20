@@ -6,8 +6,10 @@ void Scene::SceneUpdate()
 {
 	if(_gameObject_list.size() == 0)
 		return;
+		
+	auto temporyGameObjList = _gameObject_list;
 	
-	for(auto GO : _gameObject_list)
+	for(auto GO : temporyGameObjList)
 	{
 		GO->Update();
 	}

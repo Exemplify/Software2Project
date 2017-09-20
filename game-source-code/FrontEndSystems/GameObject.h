@@ -7,7 +7,10 @@
 class GameObject
 {
 public:
-    	GameObject() {}
+	GameObject() {}
+	GameObject(Vector2D<double> startingPosition): 
+	_position{startingPosition}
+	{}
 	virtual void Start() {}
 	virtual void Update() {}
 	bool isActive() {return _active;}

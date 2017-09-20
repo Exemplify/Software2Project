@@ -16,7 +16,6 @@ public:
 	// Adds a gameobject to the list objects in the scene
 	void Instantiate(GameObject* gameObj);
 	void Instantiate(shared_ptr<GameObject> gameObj);
-	
 	std::vector<gameObj_ptr> getGameObjectList();
 private:
 	std::vector<gameObj_ptr> _gameObject_list;

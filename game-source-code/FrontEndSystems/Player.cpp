@@ -1,28 +1,26 @@
 #include "Player.h"
+#include "../BackEndSystems/Time.h"
 
-Player::Player(Vector2D<double>& startPosition):
-_leftUnitVector{1, -1*M_PI/100000, 0, VectorType::rtp},
-_rightUnitVector{1, M_PI/100000, 0, VectorType::rtp}
+Player::Player(Vector2D<double>& startPosition, Character playerStats):
+_leftUnitVector{1, -M_PI, 0, VectorType::rtp},
+_rightUnitVector{1, M_PI, 0, VectorType::rtp},
+_playerStats{playerStats}
 {
     _position = startPosition;
 }
 
 void Player::moveLeft()
 {
-    _position*=_leftUnitVector;
 }
 
 void Player::moveRight()
 {
-    _position*=_rightUnitVector;
+
 }
 
 void Player::Update()
 {
-    if(Input::IsButtonPressed(Keys::left))
-        moveLeft();
-    if(Input::IsButtonPressed(Keys::right))
-        moveRight();
+	move();
 }
 
 void Player::TestMoveLeft()
@@ -33,4 +31,12 @@ void Player::TestMoveLeft()
 void Player::TestMoveRight()
 {
     _position*=_rightUnitVector;
+}
+void Player::move()
+{
+	auto direc = Input::getAxis(Axis::horizontal);
+	auto curPos = _position.rtpVector();
+	curPos[1] += GameTime::getDeltaTime() * _playerStats.getMoveSpeed() * direc;
+	Vector2D<double> newPos{curPos[0], curPos[1], curPos[2], VectorType::rtp};
+    _position = newPos;
 }
