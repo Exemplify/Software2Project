@@ -79,8 +79,8 @@ Vector2f DisplayManager::GameObjectScreenPosition(const GraphicObject& graphicOb
 	auto gameVector = graphicObj.getPosition();
 	auto gamePosition = gameVector.xypVector();
 	
-	auto x_pos = round(gamePosition[0]);
-	auto y_pos = round(gamePosition[1]);
+	auto x_pos = gamePosition[0];
+	auto y_pos = gamePosition[1];
 	
 	screenPosition.x = x_pos + HALF_SCREEN_WIDTH;
 	screenPosition.y = -y_pos + HALF_SCREEN_HEIGHT;
