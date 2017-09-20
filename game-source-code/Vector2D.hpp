@@ -65,7 +65,6 @@ private:
     T _radius;
     T _theta;
     T _phi;
-    static unsigned int _vectorPrecision;
     //static variable Vector2D _origin
     static Vector2D<T> _origin;
     

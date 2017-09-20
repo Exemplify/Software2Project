@@ -97,9 +97,6 @@ vector<T> Vector2D<T>::xypVector()
     temp.push_back(_x_val);
     temp.push_back(_y_val);
     temp.push_back(_phi);
-//    temp.push_back(trunc(_x_val*_vectorPrecision)/_vectorPrecision);
-//    temp.push_back(trunc(_y_val*_vectorPrecision)/_vectorPrecision);
-//    temp.push_back(trunc(_phi*_vectorPrecision)/_vectorPrecision);
     return temp;
 }
 
@@ -111,9 +108,6 @@ vector<T> Vector2D<T>::rtpVector()
     temp.push_back(_radius);
     temp.push_back(_theta);
     temp.push_back(_phi);
-//    temp.push_back(trunc(_radius*_vectorPrecision)/_vectorPrecision);
-//    temp.push_back(trunc(_theta*_vectorPrecision)/_vectorPrecision);
-//    temp.push_back(trunc(_phi*_vectorPrecision)/_vectorPrecision);
     return temp;
 }
 
@@ -138,7 +132,7 @@ Vector2D<T> Vector2D<T>::operator + (const Vector2D<T>& rhs) const
     T x = _x_val + rhs._x_val;
     T y = _y_val + rhs._y_val;
     T phi = _phi + rhs._phi;
-    Vector2D<T> temp(vector<T> {x,y,phi});
+    Vector2D<T> temp(x,y,phi);
     return temp;
 }
 
@@ -149,7 +143,7 @@ Vector2D<T> Vector2D<T>::operator - (const Vector2D<T>& rhs) const
     T x = _x_val - rhs._x_val;
     T y = _y_val - rhs._y_val;
     T phi = _phi - rhs._phi;
-    Vector2D<T> temp(vector<T> {x,y,phi});
+    Vector2D<T> temp(x,y,phi);
     return temp;
 }
 
@@ -159,8 +153,8 @@ Vector2D<T> Vector2D<T>::operator * (const Vector2D<T>& rhs) const
 {
     T r = _radius*rhs._radius;
     T t = _theta+rhs._theta;
-    T p = 0;
-    Vector2D<T> temp(r,t,p,VectorType::rtp);
+    T phi = 0;
+    Vector2D<T> temp(r,t,phi, VectorType::rtp);
     return temp;
 }
 
@@ -168,10 +162,10 @@ Vector2D<T> Vector2D<T>::operator * (const Vector2D<T>& rhs) const
 template<class T>
 Vector2D<T> Vector2D<T>::operator * (const T& scalar) const
 {
-    T x = _x_val*scalar;
-    T y = _y_val*scalar;
+    T r = _radius*scalar;
+    T t = _theta;
     T phi = 0;
-    Vector2D<T> temp(x,y,phi);
+    Vector2D<T> temp(r,t,phi, VectorType::rtp);
     return temp;
 }
 
@@ -179,10 +173,10 @@ Vector2D<T> Vector2D<T>::operator * (const T& scalar) const
 template<class T>
 Vector2D<T> Vector2D<T>::operator / (const T& scalar) const
 {
-    T x = _x_val/scalar;
-    T y = _y_val/scalar;
-    T p = 0;
-    Vector2D<T> temp(x,y,p);
+    T r = _radius/scalar;
+    T t = _theta;
+    T phi = 0;
+    Vector2D<T> temp(r,t,phi, VectorType::rtp);
     return temp;
 }
 
@@ -215,11 +209,8 @@ template<class T>
 Vector2D<T>& Vector2D<T>::operator *= (const Vector2D<T>& rhs)
 {
     _radius *= rhs._radius;
-    _radius = _radius;
     _theta += rhs._theta;
-    _theta = _theta;
-     _phi += rhs._phi;
-     _phi = _phi;
+    _phi += rhs._phi;
     xVal();
     yVal();
     theta();
@@ -230,12 +221,9 @@ Vector2D<T>& Vector2D<T>::operator *= (const Vector2D<T>& rhs)
 template<class T>
 Vector2D<T>& Vector2D<T>::operator *= (const T scale)
 {
-    _x_val *= scale;
-    _x_val = _x_val;
-    _y_val *= scale;
-    _y_val = _y_val;
-    radius();
-    theta(); //should have on effect
+    _radius *= scale;
+    xVal();
+    yVal();
     return *this;
 }
 
@@ -243,21 +231,21 @@ Vector2D<T>& Vector2D<T>::operator *= (const T scale)
 template<class T>
 Vector2D<T>& Vector2D<T>::operator /= (const T scale)
 {
-    _x_val /= scale;
-    _x_val = _x_val;
-    _y_val /= scale;
-    _y_val = _y_val;
-    radius();
-    theta(); // should have no effect
+    _radius /= scale;
+    xVal();
+    yVal();
     return *this;
 }
 
+// default single input magnitude function
 template<class T>
 T Vector2D<T>::magnitude(const Vector2D<T>& lhs)
 {
-    return magnitude(lhs, _origin);
+    return magnitude(lhs, _origin); // also could return _raduis
 }
 
+
+// magnttude between two vectors
 template<class T>
 T Vector2D<T>::magnitude(const Vector2D<T>& lhs, const Vector2D<T>& rhs)
 {
@@ -269,6 +257,3 @@ T Vector2D<T>::magnitude(const Vector2D<T>& lhs, const Vector2D<T>& rhs)
 
 template<class T>
 Vector2D<T> Vector2D<T>::_origin{0,0,0};
-
-template<class T>
-unsigned int Vector2D<T>::_vectorPrecision = 10000000000;
