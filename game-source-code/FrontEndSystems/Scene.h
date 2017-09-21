@@ -4,6 +4,7 @@
 #include <vector>
 #include <memory>
 
+
 #include "GameObject.h"
 
 using gameObj_ptr = std::shared_ptr<GameObject>;
@@ -16,9 +17,12 @@ public:
 	// Adds a gameobject to the list objects in the scene
 	void Instantiate(GameObject* gameObj);
 	void Instantiate(shared_ptr<GameObject> gameObj);
-	std::vector<gameObj_ptr> getGameObjectList();
+	void DestroyGameObject(GameObject* gameObject);
+	std::vector<gameObj_ptr> getGameObjectList() const;
+	bool getUpdateList() const {return _updatingList;}
 private:
 	std::vector<gameObj_ptr> _gameObject_list;
+	bool _updatingList = false;
 };
 
 #endif

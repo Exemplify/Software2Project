@@ -19,6 +19,7 @@ public:
 	{
 		return _spriteInfo; 
 	}
+	virtual ~GraphicObject(){}
 protected:
 	std::shared_ptr<SpriteInfo>  _spriteInfo;
 };

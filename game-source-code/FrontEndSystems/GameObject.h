@@ -17,6 +17,7 @@ public:
 	virtual bool HasGraphic(){return false;}
 	Vector2D<double> getPosition() const {return _position;}
 	void setActive(bool active_state) {_active = active_state;} 
+	virtual ~GameObject(){}
 protected:
 	Vector2D<double> _position;
 	bool _active = true;
