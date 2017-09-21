@@ -257,3 +257,10 @@ T Vector2D<T>::magnitude(const Vector2D<T>& lhs, const Vector2D<T>& rhs)
 
 template<class T>
 Vector2D<T> Vector2D<T>::_origin{0,0,0};
+
+template<class T>
+Vector2D<T> Vector2D<T>::normalize() const
+{
+    Vector2D<T> temp(_radius/_radius, _theta, _phi - _phi, VectorType::rtp);
+    return temp;
+}

@@ -58,6 +58,9 @@ public:
     static T magnitude(const Vector2D<T>& lhs);
     static T magnitude(const Vector2D<T>& lhs, const Vector2D<T>& rhs);
     
+    // normalize function
+    Vector2D<T> normalize() const;
+    
 private:
     // private variables
     T _x_val;

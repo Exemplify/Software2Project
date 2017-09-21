@@ -470,3 +470,23 @@ TEST_CASE("5.16: The scalar division and assignment /= opperator on a Vector2D (
     CHECK(doctest::Approx(myVec.xypVector().at(2)) == vecTest.at(2));
     
 }
+
+//===============================================================================================
+//Section 6
+// Nocmalised vector function TEST_CASE
+
+TEST_CASE("6.1: A Vector2D can be normalized (in rtp declated form)"){
+    Vector2D<double> myVec(5,M_PI/8,1, VectorType::rtp);
+    Vector2D<double> vecTest(1,M_PI/8,0, VectorType::rtp);
+    Vector2D<double> normVec = myVec.normalize();
+    
+    CHECK(normVec == vecTest);
+}
+
+TEST_CASE("6.1: A Vector2D can be normalized (in xyp declated form)"){
+    Vector2D<double> myVec(-1,2,1);
+    Vector2D<double> vecTest(1,atan2(2,-1),0, VectorType::rtp);
+    Vector2D<double> normVec = myVec.normalize();
+    
+    CHECK(normVec == vecTest);
+}
