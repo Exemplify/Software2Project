@@ -3,7 +3,7 @@
 #include "../BackEndSystems/GameManager.h"
 #include <memory>
 
-const double PROJECTILE_DESTROY_REGION = 10;
+
 Projectile::Projectile(std::shared_ptr<SpriteInfo> spriteInfo):
 GraphicObject(spriteInfo)
 {
@@ -26,8 +26,9 @@ void Projectile::DestroySelf()
 {
 	if(_position.magnitude(_position) < PROJECTILE_DESTROY_REGION)
 	{
-	
-		GameManager::activeScene->DestroyGameObject(this);
+		std::shared_ptr<GameObject> thisObj{this};
+		GameManager::activeScene->DestroyGameObject(thisObj);
+		thisObj = std::make_shared<GameObject>();
 	}
 }
 void Projectile::Initialise(Vector2D<double> startingPos, Vector2D<double> direction, double moveSpeed)

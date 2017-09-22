@@ -23,7 +23,7 @@ void DisplayManager::renderThread()
 	while(_dispwindow_ptr->isOpen())
 	{
 		_dispwindow_ptr->clear(Color::Black);
-		//Draw();
+		Draw();
 		_dispwindow_ptr->display();
 	}
 	_dispwindow_ptr = NULL;

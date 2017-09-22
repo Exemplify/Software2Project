@@ -8,11 +8,15 @@ void Scene::SceneUpdate()
 	if(_gameObject_list.size() == 0)
 		return;
 		
-	auto temporyGameObjList = _gameObject_list;
+	vector<GameObject> temporyGameObjList;
+	for(auto GO_ptr : _gameObject_list)
+	{
+		temporyGameObjList.push_back(*GO_ptr);
+	}
 	
 	for(auto GO : temporyGameObjList)
 	{
-		GO->Update();
+		GO.Update();
 	}
 }
 
@@ -31,10 +35,17 @@ void Scene::Instantiate(gameObj_ptr gameObj)
 	gameObj->Start();
 	_gameObject_list.push_back(gameObj);
 }
-void Scene::DestroyGameObject(GameObject* gameObj)
+void Scene::DestroyGameObject(gameObj_ptr gameObj)
 {
 	_updatingList = true;
-	std::shared_ptr<GameObject> gameObject_ptr{gameObj};
-	std::remove(std::begin(_gameObject_list), std::end(_gameObject_list), gameObject_ptr);
+	for(auto idx = begin(_gameObject_list); idx != end(_gameObject_list); )
+	{
+		if(*idx == gameObj)
+		{
+			auto gameObject_ptr = *_gameObject_list.erase(idx);
+		}
+		else
+			idx++;
+	}
 	_updatingList = false;
 }

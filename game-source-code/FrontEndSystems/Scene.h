@@ -17,7 +17,7 @@ public:
 	// Adds a gameobject to the list objects in the scene
 	void Instantiate(GameObject* gameObj);
 	void Instantiate(shared_ptr<GameObject> gameObj);
-	void DestroyGameObject(GameObject* gameObject);
+	void DestroyGameObject(gameObj_ptr gameObject);
 	std::vector<gameObj_ptr> getGameObjectList() const;
 	bool getUpdateList() const {return _updatingList;}
 private:

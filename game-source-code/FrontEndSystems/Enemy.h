@@ -8,6 +8,7 @@
 class Enemy: public GraphicObject
 {
 public:
+	Enemy() {}
 	Enemy(Character enem);
 	virtual void Update() override;
 private:

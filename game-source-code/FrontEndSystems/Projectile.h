@@ -2,9 +2,12 @@
 #define PROJ_H
 #include "GraphicObject.h"
 
+const double PROJECTILE_DESTROY_REGION = 10;
+
 class Projectile: public GraphicObject
 {
 public:
+	Projectile(){}
 	Projectile(std::shared_ptr<SpriteInfo> spriteInfo);
 	Projectile(const Projectile& copyProjectile);
 	virtual void Update() override;
