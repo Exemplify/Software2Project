@@ -8,6 +8,25 @@
 #include "../game-source-code/FrontEndSystems/Projectile.h"
 #include <memory>
 #include <vector>
+
+TEST_CASE("Scene Successfully Instantiates Objects")
+{
+	auto testScene = std::make_shared<Scene>();
+	auto testgameObj = std::make_shared<GameObject>();
+	testScene->Instantiate(testgameObj);
+	SUBCASE("Scene adds GameObjects to the vector correctly")
+	{
+		CHECK_EQ(testScene->getGameObjectList().size(), 1);
+		CHECK_EQ(testScene->getGameObjectList().at(0), testgameObj);
+	}
+	SUBCASE("Scene correctly sets itself in each GameObject")
+	{
+		auto retrievedGameObject = testScene->getGameObjectList().at(0);
+		CHECK_EQ(retrievedGameObject->getScene(), testScene);
+		CHECK_EQ(testgameObj->getScene(), testScene );
+	}
+}
+
 TEST_CASE("Scene Destroys Objects correctly")
 {
 	auto testScene = std::make_shared<Scene>();

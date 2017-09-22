@@ -12,7 +12,7 @@ TEST_CASE("Projectiles")
 	auto testProj = std::make_shared<Projectile>();
 	testScene->Instantiate(testProj);
 	gm.AddScene(testScene);
-	SUBCASE("Projectile Moves in the correctly")
+	SUBCASE("Projectile moves correctly")
 	{
 		Vector2D<double> pos{PROJECTILE_DESTROY_REGION, M_PI_2, 0, VectorType::rtp};
 		Vector2D<double> dir{0,1,0,VectorType::xyp};

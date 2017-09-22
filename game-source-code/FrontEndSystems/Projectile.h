@@ -8,7 +8,7 @@ class Projectile: public GraphicObject
 {
 public:
 	Projectile(){}
-	Projectile(std::shared_ptr<SpriteInfo> spriteInfo);
+	Projectile(std::shared_ptr<SpriteInfo> spriteInfo, GameObjectType projectileType);
 	Projectile(const Projectile& copyProjectile);
 	virtual void Update() override;
 	void Initialise(Vector2D<double> startingPos, Vector2D<double> direction, double moveSpeed);

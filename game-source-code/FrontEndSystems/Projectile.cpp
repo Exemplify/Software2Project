@@ -4,14 +4,16 @@
 #include <memory>
 
 
-Projectile::Projectile(std::shared_ptr<SpriteInfo> spriteInfo):
+Projectile::Projectile(std::shared_ptr<SpriteInfo> spriteInfo, GameObjectType projectileType):
 GraphicObject(spriteInfo)
 {
+	_type = projectileType;
 }
 Projectile::Projectile(const Projectile& copyProjectile):
 GraphicObject()
 {
 	_spriteInfo = copyProjectile.getSpriteInfo();
+	_type = copyProjectile.getType();
 }
 void Projectile::Update()
 {
@@ -26,8 +28,7 @@ void Projectile::DestroySelf()
 {
 	if(_position.magnitude(_position) < PROJECTILE_DESTROY_REGION)
 	{
-		std::shared_ptr<GameObject> thisObj = shared_from_this();
-		GameManager::activeScene->DestroyGameObject(thisObj);
+		Destroy();
 	}
 }
 void Projectile::Initialise(Vector2D<double> startingPos, Vector2D<double> direction, double moveSpeed)

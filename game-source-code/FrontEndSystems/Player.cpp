@@ -12,7 +12,7 @@ _leftUnitVector{1, -M_PI, 0, VectorType::rtp},
 _rightUnitVector{1, M_PI, 0, VectorType::rtp},
 _playerStats{playerStats},
 _shootDelay{SHOOT_DELAY},
-_shootComp{bulletSprite}
+_shootComp{bulletSprite, GameObjectType::playerBullet}
 {
     _position = startPosition;
 }

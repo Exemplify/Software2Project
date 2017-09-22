@@ -8,7 +8,8 @@ class ShootComponent
 {
 public:
 	ShootComponent(){}
-	ShootComponent(std::shared_ptr<SpriteInfo> spriteInfo);
+	ShootComponent(std::shared_ptr<SpriteInfo> bulletInfo, GameObjectType bulletType);
+	ShootComponent(std::shared_ptr<Projectile> bullet);
 	void Shoot(	
 		Vector2D<double> target,
 		Vector2D<double> startPosition, 
@@ -16,7 +17,7 @@ public:
 		Scene& scene
 		);
 private:
-	std::shared_ptr<SpriteInfo> _bulletSpriteInfo;
+	std::shared_ptr<Projectile> _bullet;
 };
 
 #endif

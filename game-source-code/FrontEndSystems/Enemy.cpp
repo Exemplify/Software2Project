@@ -21,7 +21,7 @@ _enemyStats{enem}
 	auto bulletSpriteInfo = std::make_shared<SpriteInfo>();
 	bulletSpriteInfo->textureLocation = "resources/SouthAfricanPS.png";
 	bulletSpriteInfo->scale = Vector2f(0.1f,0.1f);
-	_enemyShoot = ShootComponent(bulletSpriteInfo);
+	_enemyShoot = ShootComponent(bulletSpriteInfo, GameObjectType::enemyBullet);
 	
 }
 void Enemy::Update()
