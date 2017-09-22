@@ -20,28 +20,28 @@ TEST_CASE("Scene Destroys Objects correctly")
 	}
 	SUBCASE("Scene Destroys a GraphicsObject")
 	{
-		auto testgraphObj = std::make_shared<GraphicObject>();
+		std::shared_ptr<GameObject> testgraphObj = std::make_shared<GraphicObject>();
 		testScene->Instantiate(testgraphObj);
 		testScene->DestroyGameObject(testgraphObj);
 		CHECK_EQ(testScene->getGameObjectList().size(), 0);
 	}
 	SUBCASE("Scene Destroys a Player Object")
 	{
-		auto testplayObj = std::make_shared<Player>();
+		std::shared_ptr<GameObject> testplayObj = std::make_shared<Player>();
 		testScene->Instantiate(testplayObj);
 		testScene->DestroyGameObject(testplayObj);
 		CHECK_EQ(testScene->getGameObjectList().size(), 0);
 	}
 	SUBCASE("Scene Destroys an Enemy Object")
 	{
-		auto testenemObj = std::make_shared<Enemy>();
+		std::shared_ptr<GameObject> testenemObj = std::make_shared<Enemy>();
 		testScene->Instantiate(testenemObj);
 		testScene->DestroyGameObject(testenemObj);
 		CHECK_EQ(testScene->getGameObjectList().size(), 0);
 	}
 	SUBCASE("Scene Destroys a Projectile Object")
 	{
-		auto testprojObj = std::make_shared<Projectile>();
+		std::shared_ptr<GameObject> testprojObj = std::make_shared<Projectile>();
 		testScene->Instantiate(testprojObj);
 		testScene->DestroyGameObject(testprojObj);
 		CHECK_EQ(testScene->getGameObjectList().size(), 0);

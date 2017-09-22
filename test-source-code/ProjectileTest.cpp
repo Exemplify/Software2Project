@@ -13,15 +13,17 @@ TEST_CASE("Projectiles")
 	gm.AddScene(testScene);
 	SUBCASE("Projectile Moves in the correctly")
 	{
-		Vector2D<double> pos{PROJECTILE_DESTROY_REGION, 0, 0, VectorType::rtp};
+		Vector2D<double> pos{PROJECTILE_DESTROY_REGION, M_PI_2, 0, VectorType::rtp};
 		Vector2D<double> dir{0,1,0,VectorType::xyp};
 		testProj->Initialise(pos,dir,1);
 		testProj->Update();
 		auto positionCheckVec = pos+dir;
-		CHECK(testProj->getPosition() == positionCheckVec);
+		CHECK(doctest::Approx(testProj->getPosition().xypVector().at(0)) == positionCheckVec.xypVector().at(0));
+		CHECK(doctest::Approx(testProj->getPosition().xypVector().at(1)) == positionCheckVec.xypVector().at(1));
+		CHECK(doctest::Approx(testProj->getPosition().xypVector().at(2)) == positionCheckVec.xypVector().at(2));
 	}
 
-	SUBCASE("Projectile is Destroyed when in near Origin")
+	SUBCASE("Projectile is Destroyed when near the Origin")
 	{
 		Vector2D<double> pos{PROJECTILE_DESTROY_REGION-5, 0, 0, VectorType::rtp};
 		Vector2D<double> dir{0,1,0,VectorType::xyp};

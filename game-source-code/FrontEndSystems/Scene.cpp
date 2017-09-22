@@ -35,14 +35,14 @@ void Scene::Instantiate(gameObj_ptr gameObj)
 	gameObj->Start();
 	_gameObject_list.push_back(gameObj);
 }
-void Scene::DestroyGameObject(gameObj_ptr gameObj)
+void Scene::DestroyGameObject(gameObj_ptr& gameObj)
 {
 	_updatingList = true;
 	for(auto idx = begin(_gameObject_list); idx != end(_gameObject_list); )
 	{
 		if(*idx == gameObj)
 		{
-			auto gameObject_ptr = *_gameObject_list.erase(idx);
+			_gameObject_list.erase(idx);
 		}
 		else
 			idx++;

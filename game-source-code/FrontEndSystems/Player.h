@@ -17,7 +17,6 @@ public:
     Player(Vector2D<double>& startPosition, Character playerStats, std::shared_ptr<SpriteInfo> bulletSprite);
 	
     void Update() override;
-    
     void TestMoveLeft();
     void TestMoveRight();
 private:

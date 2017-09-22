@@ -1,7 +1,8 @@
 #include "GameTime.h"
 
 double GameTime::_current_time = 0;
-double GameTime::_deltaTime = 0;
+//default time for performing tests
+double GameTime::_deltaTime = 1;
 
 double GameTime::calcProcessTime()
 {

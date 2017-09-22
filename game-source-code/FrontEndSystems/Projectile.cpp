@@ -28,7 +28,6 @@ void Projectile::DestroySelf()
 	{
 		std::shared_ptr<GameObject> thisObj{this};
 		GameManager::activeScene->DestroyGameObject(thisObj);
-		thisObj = std::make_shared<GameObject>();
 	}
 }
 void Projectile::Initialise(Vector2D<double> startingPos, Vector2D<double> direction, double moveSpeed)

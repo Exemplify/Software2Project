@@ -12,7 +12,7 @@ public:
 	Projectile(const Projectile& copyProjectile);
 	virtual void Update() override;
 	void Initialise(Vector2D<double> startingPos, Vector2D<double> direction, double moveSpeed);
-	~Projectile(){}
+	~Projectile() override{}
 private:
 	Vector2D<double> _direction;
 	double _moveSpeed;
