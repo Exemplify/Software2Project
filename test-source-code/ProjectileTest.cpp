@@ -2,6 +2,7 @@
 #include <memory>
 #include "../game-source-code/FrontEndSystems/Projectile.h"
 #include "../game-source-code/BackEndSystems/GameManager.h"
+#include <iostream>
 
 TEST_CASE("Projectiles")
 {
@@ -31,4 +32,5 @@ TEST_CASE("Projectiles")
 		testProj->Update();
 		CHECK_EQ(testScene->getGameObjectList().size(), 0);
 	}
+
 }

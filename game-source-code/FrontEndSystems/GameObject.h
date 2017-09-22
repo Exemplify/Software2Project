@@ -3,8 +3,9 @@
 #include "../BackEndSystems/Input.h"
 #include <string>
 #include "../Vector2D.hpp"
+#include <memory>
 
-class GameObject
+class GameObject: public std::enable_shared_from_this<GameObject>
 {
 public:
 	GameObject() {}

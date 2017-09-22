@@ -26,7 +26,7 @@ void Projectile::DestroySelf()
 {
 	if(_position.magnitude(_position) < PROJECTILE_DESTROY_REGION)
 	{
-		std::shared_ptr<GameObject> thisObj{this};
+		std::shared_ptr<GameObject> thisObj = shared_from_this();
 		GameManager::activeScene->DestroyGameObject(thisObj);
 	}
 }
