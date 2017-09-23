@@ -5,15 +5,19 @@
 
 
 Projectile::Projectile(std::shared_ptr<SpriteInfo> spriteInfo, GameObjectType projectileType):
-GraphicObject(spriteInfo)
+GraphicObject(spriteInfo),
+_enemyDestroyBounds{},
+_playerDestroyBounds{PLAYER_PROJECTILE_DESTROY_REGION, PLAYER_PROJECTILE_DESTROY_REGION}
 {
 	_type = projectileType;
 }
 Projectile::Projectile(const Projectile& copyProjectile):
 GraphicObject()
 {
-	_spriteInfo = copyProjectile.getSpriteInfo();
-	_type = copyProjectile.getType();
+	_enemyDestroyBounds = copyProjectile._enemyDestroyBounds;
+	_playerDestroyBounds = copyProjectile._playerDestroyBounds;
+	_spriteInfo = copyProjectile._spriteInfo;
+	_type = copyProjectile._type;
 }
 void Projectile::Update()
 {
@@ -26,7 +30,22 @@ void Projectile::Move()
 }
 void Projectile::DestroySelf()
 {
-	if(_position.magnitude(_position) < PROJECTILE_DESTROY_REGION)
+	if(_type == GameObjectType::playerBullet)
+ 		DestroyPlayerProjectile();
+	else
+		DestroyEnemyProjectile();
+}
+void Projectile::DestroyPlayerProjectile()
+{
+	if(_playerDestroyBounds.insideOfBounds(_position))
+	{
+		Destroy();
+	}
+	
+}
+void Projectile::DestroyEnemyProjectile()
+{
+	if(_enemyDestroyBounds.OutOfBounds(_position))
 	{
 		Destroy();
 	}

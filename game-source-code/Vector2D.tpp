@@ -91,7 +91,7 @@ void Vector2D<T>::yVal()
 
 // return the Vector2D as a vector<T> in cartesian form
 template<class T>
-vector<T> Vector2D<T>::xypVector()
+vector<T> Vector2D<T>::xypVector() const
 {
     vector<T> temp;
     temp.push_back(_x_val);

@@ -13,7 +13,11 @@ using namespace std;
 class Player : public GraphicObject
 {
 public:
-	Player(){}
+	Player()
+	{
+		_type = GameObjectType::player;
+	}
+	Player(Vector2D<double>& startPosition, Character playerStats);
     Player(Vector2D<double>& startPosition, Character playerStats, std::shared_ptr<SpriteInfo> bulletSprite);
 	
     void Update() override;

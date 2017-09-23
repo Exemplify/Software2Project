@@ -9,6 +9,7 @@
 #include "Vector2D.hpp"
 #include "FrontEndSystems/Character.h"
 #include "FrontEndSystems/EnemyController.h"
+#include <string>
 using std::shared_ptr;
 
 shared_ptr<Scene> SplashScreenFunc();
@@ -27,12 +28,11 @@ int main()
 
 shared_ptr<Scene> SplashScreenFunc()
 {
-	shared_ptr<Scene> splashScene{new Scene()};
-	shared_ptr<SplashScreen> background{new SplashScreen()};
+	shared_ptr<Scene> splashScene = std::make_shared<Scene>();
+	shared_ptr<SplashScreen> background = std::make_shared<SplashScreen>();
 	shared_ptr<SpriteInfo> backgroundInfo =  background->getSpriteInfo();
 	backgroundInfo->textureLocation = "resources/MceboDlamini.png";
 	splashScene->Instantiate(background);
-	background->setActive(true);
 	return splashScene;
 }
 
@@ -42,10 +42,8 @@ shared_ptr<Scene> GameSceneFunc()
 	shared_ptr<GraphicObject> background{new SplashScreen()};
 	Vector2D<double> playerStart(0,-400,0);
 	Character playerStats{3,5};
-	shared_ptr<SpriteInfo> playerBullet = std::make_shared<SpriteInfo>();
-	playerBullet->textureLocation = "resources/Rock.png";
-	playerBullet->scale = Vector2f(0.05f,0.05f);
-	shared_ptr<Player> player{new Player(playerStart, playerStats, playerBullet)};
+
+	shared_ptr<Player> player{new Player(playerStart, playerStats)};
 	shared_ptr<SpriteInfo> playerInfo = player->getSpriteInfo();
 	playerInfo->textureLocation = "resources/playerSprite.png";
 	playerInfo->scale = Vector2f(0.3f,0.3f);

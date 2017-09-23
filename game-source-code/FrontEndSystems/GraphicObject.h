@@ -12,7 +12,7 @@ public:
 	{}
 	GraphicObject():
 	GameObject(),
-	_spriteInfo{}
+	_spriteInfo{new SpriteInfo()}
 	{}
 	std::shared_ptr<SpriteInfo> getSpriteInfo() const
 	{

@@ -12,8 +12,10 @@ void ShootComponent::Shoot(	Vector2D<double> target,
 	Vector2D<double> startPosition, double shootSpeed, Scene& scene)
 {	
 	auto shotDirec = target - startPosition;
-	shotDirec /= shotDirec.magnitude(shotDirec);
+	auto shotDirecVec = shotDirec.rtpVector();
+	shotDirecVec[0] = 1;
+	auto shotDirecTwo = Vector2D<double>(shotDirecVec, VectorType::rtp);
 	auto bullet = std::make_shared<Projectile>(*_bullet);
-	bullet->Initialise(startPosition, shotDirec, shootSpeed);
+	bullet->Initialise(startPosition, shotDirecTwo, shootSpeed);
 	scene.Instantiate(bullet);
 }
