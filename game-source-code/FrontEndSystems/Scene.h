@@ -4,6 +4,7 @@
 #include <vector>
 #include <memory>
 #include "GameObject.h"
+#include <mutex>
 
 
 using gameObj_ptr = std::shared_ptr<GameObject>;
@@ -17,7 +18,8 @@ public:
 	void Instantiate(shared_ptr<GameObject> gameObj);
 	void DestroyGameObject(gameObj_ptr gameObject);
 	std::vector<gameObj_ptr> getGameObjectList() const;
-	bool getUpdateList() const {return _updatingList;}
+	bool UpdatingList() const {return _updatingList;}
+	std::mutex _gameObj_list_mutex;
 private:
 	std::vector<gameObj_ptr> _gameObject_list;
 	bool _updatingList = false;

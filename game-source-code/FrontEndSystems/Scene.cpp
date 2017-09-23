@@ -1,5 +1,7 @@
 #include "Scene.h"
 #include <algorithm>
+#include <mutex>
+#include "../BackEndSystems/GameManager.h"
 
 using gameObj_ptr = std::shared_ptr<GameObject>;
 
@@ -7,11 +9,14 @@ void Scene::SceneUpdate()
 {
 	if(_gameObject_list.size() == 0)
 		return;
-		
+	
 	auto temporyGameObjList = _gameObject_list;	
+	std::lock_guard<std::mutex> lock(_gameObj_list_mutex);
 	for(auto GO : temporyGameObjList)
 	{
+		_updatingList = true;
 		GO->Update();
+		_updatingList = false;
 	}
 }
 
@@ -28,7 +33,7 @@ void Scene::Instantiate(gameObj_ptr gameObj)
 }
 void Scene::DestroyGameObject(gameObj_ptr gameObj)
 {
-	_updatingList = true;
+	
 	for(auto idx = _gameObject_list.begin(); idx != _gameObject_list.end(); idx++)
 	{
 		if(*idx == gameObj)
@@ -37,5 +42,6 @@ void Scene::DestroyGameObject(gameObj_ptr gameObj)
 			break;
 		}
 	}
-	_updatingList = false;
+
+
 }

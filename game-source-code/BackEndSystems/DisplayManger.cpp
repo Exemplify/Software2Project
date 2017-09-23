@@ -1,10 +1,10 @@
 #include "DisplayManager.h"
 #include "GameManager.h"
-#include <vector>
 #include "../FrontEndSystems/GraphicObject.h"
-#include <typeinfo>
+#include <mutex>
 #include <cmath>
 #include <string>
+#include <vector>
 
 using std::string;
 using graphicObj_ptr = shared_ptr<GraphicObject>;
@@ -23,7 +23,7 @@ void DisplayManager::renderThread()
 	while(_dispwindow_ptr->isOpen())
 	{
 		_dispwindow_ptr->clear(Color::Black);
-		//Draw();
+		Draw();
 		_dispwindow_ptr->display();
 	}
 	_dispwindow_ptr = NULL;
@@ -39,15 +39,18 @@ void DisplayManager::InitialiseThread(RenderWindow& dispWindow)
 void DisplayManager::Draw()
 {
 	shared_ptr<Scene> activeScene = GameManager::activeScene;
-	//Guard Clause
-	if(activeScene == NULL || activeScene->getUpdateList())
+	//Guard Clauses
+	//Short circuit or so ensures that scene is active befor checking for UpdateList
+	if(activeScene == NULL )
 		return;
 	else
 	{
+		std::lock_guard<std::mutex> lock(activeScene->_gameObj_list_mutex);
 		auto displayObjects = activeScene->getGameObjectList();
 		for(auto GO : displayObjects)
 		{
-			DrawSpriteFromGameObject(GO);
+			if(GO != NULL)
+				DrawSpriteFromGameObject(GO);
 		}
 	}
 }

@@ -3,7 +3,7 @@
 #include "../BackEndSystems/GameTime.h"
 #include "Projectile.h"
 
-const double SHOOT_DELAY = 0.5; 
+const double SHOOT_DELAY = 0.35; 
 const double SHOOT_SPEED = 150;
 Player::Player(Vector2D<double>& startPosition, Character playerStats):
 _leftUnitVector{1, -M_PI, 0, VectorType::rtp},
@@ -14,7 +14,7 @@ _shootDelay{SHOOT_DELAY}
 	_position = startPosition;
 	auto playerBulletSprite = std::make_shared<SpriteInfo>();
 	playerBulletSprite->textureLocation = "resources/Rock.png";
-	playerBulletSprite->scale = Vector2f(0.03f,0.03f);
+	playerBulletSprite->scale = Vector2f(0.05f,0.05f);
 	
 	_shootComp = ShootComponent(playerBulletSprite, GameObjectType::playerBullet);
 }
