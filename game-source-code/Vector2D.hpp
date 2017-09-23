@@ -26,7 +26,7 @@ public:
     // Copy constructor
     Vector2D(const Vector2D<T>& rhs);
     // cartesian position function
-    vector<T> xypVector();
+    vector<T> xypVector() const;
     // polar position function
     vector<T> rtpVector();
     

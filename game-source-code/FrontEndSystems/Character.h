@@ -4,6 +4,7 @@
 class Character
 {
 public:
+	Character(){}
 	Character(int health, double moveSpeed):
 	_health{health},
 	_moveSpeed{moveSpeed}

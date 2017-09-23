@@ -19,6 +19,7 @@ public:
 	DisplayManager(RenderWindow* dispWindow);
 	void InitialiseThread(RenderWindow& dispWindow);
 	~DisplayManager() {_dispwindow_ptr = NULL;}
+	
 private:
 	RenderWindow* _dispwindow_ptr;
 	void renderThread();

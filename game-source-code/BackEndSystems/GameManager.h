@@ -5,6 +5,7 @@
 #include <string>
 #include <memory>
 #include <vector>
+#include <mutex>
 
 #include "DisplayManager.h"
 #include "EventManager.h"
@@ -20,7 +21,7 @@ struct WindowSettings
     unsigned int screenWidth = 1920;
 	unsigned int screenHeight = 1080;
 	Uint32 winStyle = Style::Default;
-	string game_name = "Gyrus";
+	string game_name = "#FMF";
 };
 class GameTime; 
 class GameManager
