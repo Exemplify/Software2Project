@@ -4,6 +4,7 @@
 class DelayComponent
 {
 public:
+	DelayComponent(){}
 	DelayComponent(double value, bool immediateUse = false);
 	void reduceTime();
 	bool DelayFinished();

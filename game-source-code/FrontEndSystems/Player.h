@@ -14,10 +14,14 @@ class Player : public GraphicObject
 {
     friend class movement;
 public:
+	Player()
+	{
+		_type = GameObjectType::player;
+	}
+	Player(Vector2D<double>& startPosition, Character playerStats);
     Player(Vector2D<double>& startPosition, Character playerStats, std::shared_ptr<SpriteInfo> bulletSprite);
 	
     void Update() override;
-    
     void TestMoveLeft();
     void TestMoveRight();
 private:
