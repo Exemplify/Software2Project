@@ -11,11 +11,14 @@ using graphicObj_ptr = shared_ptr<GraphicObject>;
 
 const int HALF_SCREEN_WIDTH = 960;
 const int HALF_SCREEN_HEIGHT = 540;
+// should the above not come directly from the GameManager which has a struct directly containing this info?
 class FailedToLoadTexture{};
+// should this not rather be located in the header
 
 DisplayManager::DisplayManager(RenderWindow* dispWindow):
 _dispwindow_ptr(dispWindow)
 {}
+// can the RenderWindow pointer not rather be implemented with a smart unique pointer?
 
 // Method used within the display thread
 void DisplayManager::renderThread()
@@ -28,6 +31,7 @@ void DisplayManager::renderThread()
 	}
 	_dispwindow_ptr = NULL;
 }
+// infinite loop issues, why does this not entre an infinite loop, or does it, and is it intended to?
 
 void DisplayManager::InitialiseThread(RenderWindow& dispWindow)
 {
@@ -35,6 +39,7 @@ void DisplayManager::InitialiseThread(RenderWindow& dispWindow)
 	std::thread dispthread(&DisplayManager::renderThread, this);
 	dispthread.detach();
 }
+// so It does run an infinite loop through a separate thread? Cleaver...
 
 void DisplayManager::Draw()
 {
@@ -47,6 +52,7 @@ void DisplayManager::Draw()
 	{
 		std::lock_guard<std::mutex> lock(activeScene->_gameObj_list_mutex);
 		auto displayObjects = activeScene->getGameObjectList();
+        // can't the above be done in the for loop by const reference on displayObjects? i.e. for(const GraphicObject& Go :: displayObjects) , or similar?
 		for(auto GO : displayObjects)
 		{
 			if(GO != NULL)
@@ -63,6 +69,7 @@ void DisplayManager::DrawSpriteFromGameObject(shared_ptr<GameObject> GO)
 		
 	//Checks if the Gameobject forms part of the graphics child class
 	auto graphicCast = std::dynamic_pointer_cast<GraphicObject>(GO);
+    // good use of dynamic casting GameObject into Graphic object
 	if(graphicCast)
 	{
 		auto currentSpriteInfo = graphicCast->getSpriteInfo();
@@ -70,27 +77,40 @@ void DisplayManager::DrawSpriteFromGameObject(shared_ptr<GameObject> GO)
 		{
 			InitialiseGraphicObject(*currentSpriteInfo);
 		}
+        // what is the purpose of the above if statement?
+        
 		auto screenPosition = GameObjectScreenPosition(*graphicCast);
+        // does this convert the vector position used for the game physics to the actual screen pixel postion?
 		currentSpriteInfo->sprite.setPosition(screenPosition);
+        // currentSpriteInfo in this function scope points to the sprite info of the GameObject (now a GraphicObject) that is concerned?
 		currentSpriteInfo->sprite.setScale(currentSpriteInfo->scale);
+        // What does the abov actually do?
+        //how is the currentSpriteInfo not overwritten?
 		_dispwindow_ptr->draw(currentSpriteInfo->sprite);
+        // given that the currentSpriteInfo seems to be overwritten, what exactly does draw function act on in terms of currentSpriteInfo?
 	}
 }
 
+// Converts the GameObjects functional game position to the actual screen position?
 Vector2f DisplayManager::GameObjectScreenPosition(const GraphicObject& graphicObj)
 {
 	Vector2f screenPosition;
 	auto gameVector = graphicObj.getPosition();
 	auto gamePosition = gameVector.xypVector();
+    // can this rather not be done in one line or be more explicitly defind in the type declaration
+    // i.e. It is not obvious that gameVector is of our own Vector2D type.. and thus auto declearation
+    // hides the intuitive reason as to why this is necessary...
 	
 	auto x_pos = gamePosition[0];
 	auto y_pos = gamePosition[1];
+    // is a .at(index) not a better way of declaring the vector extraction here?
 	
 	screenPosition.x = x_pos + HALF_SCREEN_WIDTH;
 	screenPosition.y = -y_pos + HALF_SCREEN_HEIGHT;
 	
 	return screenPosition;
 }
+
 
 void DisplayManager::InitialiseGraphicObject(SpriteInfo& initialSpriteInfo)
 {

@@ -4,11 +4,14 @@
 EventManager::EventManager(RenderWindow* eventWindow):
 _eventWindow(eventWindow)
 {}
+
 void EventManager::EventLoop(RenderWindow& eventWindow)
 {
 	Event event;
+    // What is the above line for | Event part of SFML lib, and typsets event to an Event
 	while(eventWindow.pollEvent(event))
 	{
+        // Events are logged and thus must be looped through as reccomended in the function declaration of .pollEvent(Event& event) of a RenderWindow
 		switch(event.type)
 		{
 		// window closed
@@ -24,8 +27,10 @@ void EventManager::EventLoop(RenderWindow& eventWindow)
         default:
             break;
 		}
+        // Switch checks the relevant events that are of concern
 	}
 }
+
 void EventManager::KeyInput(const Event& event, bool state)
 {
 	switch(event.key.code)
@@ -46,3 +51,4 @@ void EventManager::KeyInput(const Event& event, bool state)
 			break;
 	}
 }
+// this specifically checks the case of a keypress event

@@ -17,6 +17,7 @@ enum class Axis
 	horizontal,
 	vertical
 };
+// is this realy necessary given the above enum class
 
 class Input
 {
