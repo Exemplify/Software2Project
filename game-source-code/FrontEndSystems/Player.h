@@ -12,6 +12,7 @@ using namespace std;
 
 class Player : public GraphicObject
 {
+    friend class movement;
 public:
     Player(Vector2D<double>& startPosition, Character playerStats, std::shared_ptr<SpriteInfo> bulletSprite);
 	
@@ -24,6 +25,7 @@ private:
 	
     Vector2D<double> _leftUnitVector;
     Vector2D<double> _rightUnitVector;
+    double _speed;
 	// Composition Variables 
 	Character _playerStats;
 	DelayComponent _shootDelay;
