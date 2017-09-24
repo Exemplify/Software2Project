@@ -17,6 +17,7 @@ enum class GameObjectType
 	enemy,
 	playerBullet,
 	enemyBullet
+    // May need to implement a Physics object
 };
 class GameObject: public std::enable_shared_from_this<GameObject>
 {
@@ -59,5 +60,5 @@ protected:
 	Vector2D<double> _position;
 	bool _active = true;
 };
-
+//Happy with the implementation of this class but could it be more polymorphic?
 #endif

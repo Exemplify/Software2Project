@@ -1,6 +1,8 @@
 #ifndef CHARACTER_H
 #define CHARACTER_H
 
+// What is this class for, why is it necessaryshould this not be based in the objects themselves?
+
 class Character
 {
 public:

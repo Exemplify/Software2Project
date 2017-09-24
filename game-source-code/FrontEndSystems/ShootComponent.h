@@ -4,6 +4,8 @@
 #include "Scene.h"
 #include "Projectile.h"
 
+//What exactly is the necessaty of this class? is it not already defined in projectile class?
+
 class ShootComponent
 {
 public:

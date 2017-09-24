@@ -19,6 +19,7 @@ private:
 	void CheckOutsideScreen();
 	DelayComponent _shootDelay;
 	Character _enemyStats;
+    // does this class really need to know enemy character statistics. Should it not just execute the action of an enemy (and have those charateristics and stats handled elsewhere)?
 	ShootComponent _enemyShoot;
 	Boundary _screenBounds;
 

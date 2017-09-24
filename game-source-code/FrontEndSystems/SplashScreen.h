@@ -12,5 +12,6 @@ private:
 	void QuitGame();
 	void PlayGame();
 };
+// happy with this class in its entirety
 
 #endif 

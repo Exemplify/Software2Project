@@ -32,3 +32,5 @@ void EnemyController::SpawnEnemy()
 	scene->Instantiate(enemy);
 	enemyCount++;
 }
+
+//refer to EnemyController.h file for comments on this class as it's implementation may need to change entirely.
