@@ -9,6 +9,7 @@ void EventManager::EventLoop(RenderWindow& eventWindow)
 {
 	Event event;
     // What is the above line for | Event part of SFML lib, and typsets event to an Event
+	/// This was taken directly from the sfml page for looping through events
 	while(eventWindow.pollEvent(event))
 	{
         // Events are logged and thus must be looped through as reccomended in the function declaration of .pollEvent(Event& event) of a RenderWindow

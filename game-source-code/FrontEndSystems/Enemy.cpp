@@ -6,18 +6,22 @@
 
 const int MAX_DEGREES = 360;
 // why is this necessary? | refere to InitialisePosition()
-
+///refer to InitialisePosition()
 const double DEG_2_RAD = 3.141592653589793/180.0;
 // Ok might be usefull but why exactly | refere to InitialisePosition()
+///refer to InitialisePosition()
 
 const double ENEMY_SHOOT_DELAY = 2; 
 // ok.. why
-
+/// Rate of fire for each enemy how often do we want the to shoot
 Enemy::Enemy(Character enem):
 _shootDelay{ENEMY_SHOOT_DELAY, true},
 //what is the true for?
+/// causes the enemy to shoot immediately after being spawned was doing this for bug testing forgot to remove
 _enemyStats{enem}
 // similar to Player, should the enemy object have access to enemy statistics?
+/// yes because there are multiple Enemy objects being created this means that each one will have a different set of values to
+/// store and control that elsewhere will be difficult to implement properly esspecially because objects will be deleted as the game progresses.
 {
 	_spriteInfo->textureLocation = "resources/AdamHabib.png";
 	_spriteInfo->scale = sf::Vector2f{0.25f,0.25f};
@@ -45,7 +49,7 @@ void Enemy::InitialisePosition()
 {
 	double angle = rand()%MAX_DEGREES;
 	angle*=DEG_2_RAD;
-    // surely the above becomes redundant if simply
+    // surely the above becomes redundant if simpl
     
 	Vector2D<double> startPos{1, angle, 0, VectorType::rtp};
     // I understand now, there may be some ambiguity with the Vector2D class, by default (and the only implementation deployed) the theta is declared in radians

@@ -22,8 +22,10 @@ void Input::setButton(Keys key, bool state)
 	auto index_bool = static_cast<int>(key);
 	_buttons[index_bool] = state;
     // possibly use the same syntax as above with .at(index)?
+	/// as stated before not sure which is better, dont think it makes much difference
 }
 // allows for outside state control on the buttons. Agreably necessary.
+/// Yes but speciffically the event manager, implemented before learning about friendships may be something 
 
 // since there is an indivdual state check button why is the below functions necessary?
 int Input::getAxis(Axis axis)
@@ -45,3 +47,5 @@ int Input::CheckButtonForAxis(Keys negativeKey, Keys positiveKey)
 		return 0;
 }
 // Refering to above, what's the point if this state is checked anyway?
+/// This returns direction as well as input state. so is useful for player movement and reduces the code 
+/// required for movement implementation. but with the movement class may not be so.

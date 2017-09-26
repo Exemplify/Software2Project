@@ -26,6 +26,8 @@ struct WindowSettings
 
 class GameTime;
 // why is the above necessary, and how is GameTime defined in terms of an include .h?
+/// GameManager is a friend of GameTime and it is a forward declaration to allow for GameManager to run 
+/// setTime functions as I did not want it to be publically accessable, and have something override the current time values.
 class GameManager
 {
 public:
@@ -39,6 +41,7 @@ public:
 private:
 	GameTime* _gameTime;
     // why a GameTime pointer, also can this be implemented as a unique pointer
+	/// Yes it can be a unique pointer, wasnt sure that it worked for forward declarations
     // Variables
 	WindowSettings _defaultSetup;
 	// Backend Objects 
@@ -46,12 +49,14 @@ private:
     // why is this a static?
 	DisplayManager _dispManager;
     // creates an instance of the DisplayManeger class as a _dispManager object, why?
+	/// composition class so that the implmentation is passed to gameManager but without the need for inheritance
 	EventManager _eventManager;
     // creates an instance of the EventManager class as an _eventManager object, why?
+	/// same as _dispManager
 	// Scene Objects
 	static std::vector<scene_ptr> _game_scenes;
     // understandably the above vector stores all the scenes that is intended to be run by the game.
-	
+	/// Yes
     // Methods
     void initialiseWindow(RenderWindow&_gameWindow);
 };

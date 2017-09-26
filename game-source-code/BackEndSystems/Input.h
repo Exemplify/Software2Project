@@ -9,7 +9,7 @@ enum class Keys
 	left,
 	right,
 	esc,
-	Count
+	Count /// should be renamed NumberOfButtons
 };
 
 enum class Axis
@@ -18,6 +18,7 @@ enum class Axis
 	vertical
 };
 // is this realy necessary given the above enum class
+/// An Axis provides direction as well as state so is useful but maybe not neccesary for our purpose
 
 class Input
 {
