@@ -72,8 +72,10 @@ void DisplayManager::DrawSpriteFromGameObject(shared_ptr<GameObject> GO)
 		}
 		auto screenPosition = GameObjectScreenPosition(*graphicCast);
 		currentSpriteInfo->sprite.setPosition(screenPosition);
-		currentSpriteInfo->sprite.setScale(currentSpriteInfo->scale);
+		auto objectScale = graphicCast->getScale().xypVector();
+		currentSpriteInfo->sprite.setScale(Vector2f(objectScale.at(0), objectScale.at(1)));
 		_dispwindow_ptr->draw(currentSpriteInfo->sprite);
+		
 	}
 }
 

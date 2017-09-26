@@ -4,15 +4,17 @@
 #include <string>
 #include <SFML/Graphics.hpp>
 
-using namespace sf;
+class DisplayManager;
 
-struct SpriteInfo
+class SpriteInfo
 {
+	friend class DisplayManager;
+public:
+	std::string spritekey;
 	bool isdefined = false;
 	std::string textureLocation;
-	Vector2f scale{1.0f,1.0f};
-	Sprite sprite;
-	Texture texture;
+private:
+	sf::Sprite sprite;
 };
 
 

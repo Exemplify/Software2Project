@@ -14,7 +14,7 @@ _shootDelay{ENEMY_SHOOT_DELAY, true},
 _enemyStats{enem}
 {
 	_spriteInfo->textureLocation = "resources/AdamHabib.png";
-	_spriteInfo->scale = sf::Vector2f{0.25f,0.25f};
+	_scale = Vector2D<double>(0.25f,0.25f, VectorType::xyp);
 	InitialisePosition();
 	
 	auto bulletSpriteInfo = std::make_shared<SpriteInfo>();

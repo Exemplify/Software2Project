@@ -18,6 +18,7 @@ enum class GameObjectType
 	playerBullet,
 	enemyBullet
 };
+
 class GameObject: public std::enable_shared_from_this<GameObject>
 {
 public:
@@ -41,22 +42,24 @@ public:
 	GameObjectType getType() const {return _type;}
 	// Returns the scene the object is stored in
 	std::shared_ptr<Scene> getScene() const {return _scene;}
-	
+	// Returns the current scale of the object
+	Vector2D<double> getScale() const {return _scale;}
 		// class setters //
 		
 	// sets the state of the current game object
 	void setActive(bool active_state) {_active = active_state;} 
 	void setScene(std::shared_ptr<Scene> scene) {_scene = scene;}
 
-	
 	// class invariance that a gameobject must be destroyed in a specific way 
 	void Destroy();
 	virtual ~GameObject(){}
+	
 protected:
 	std::shared_ptr<Scene> _scene;
 	// Invariance that _type should never be null
 	GameObjectType _type;
 	Vector2D<double> _position;
+	Vector2D<double> _scale;
 	bool _active = true;
 };
 
