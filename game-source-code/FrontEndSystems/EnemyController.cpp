@@ -52,7 +52,7 @@ void EnemyController::SpawnEnemyType1()
 {
 	auto scene = GameManager::activeScene;
 	// health and lives
-	Character enem1{1,100};
+	Character enem1{1,150};
 	std::shared_ptr<GameObject> enemy = std::make_shared<Enemy>(enem1, GameObjectType::enemy1);
 	scene->Instantiate(enemy);
 	enemyCount++;

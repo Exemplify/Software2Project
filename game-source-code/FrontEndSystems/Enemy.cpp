@@ -68,6 +68,7 @@ void Enemy::CheckOutsideScreen()
 
 void Enemy::Shoot()
 {
+	const double SHOOTSPEED = 200;
 	_shootDelay.reduceTime();
 	if(_shootDelay.DelayFinished())
 	{
@@ -75,7 +76,7 @@ void Enemy::Shoot()
 		auto target = _position.rtpVector();
 		target[0] += 1;
 		Vector2D<double> targetVec{target, VectorType::rtp};
-		_enemyShoot.Shoot(targetVec, _position, 3*_enemyStats.getMoveSpeed(), *_scene);
+		_enemyShoot.Shoot(targetVec, _position, SHOOTSPEED, *_scene);
 	}
 }
 
@@ -90,7 +91,7 @@ void Enemy::ComplexMove()
 {
 	auto deltaTime = GameTime::getDeltaTime();
 	auto deltaTheta = _enemyStats.getMoveSpeed()*deltaTime*_direction;
-	auto deltaRadius = 1 +_enemyStats.getMoveSpeed()*deltaTime;
+	auto deltaRadius = 1 +1*deltaTime;
 	
 	Vector2D<double> changeInPosition(deltaRadius, deltaTheta, 0, VectorType::rtp);
 	_position *= changeInPosition;
