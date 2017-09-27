@@ -1,5 +1,5 @@
 #include "GameManager.h"
-#include "Time.h"
+#include "GameTime.h"
 
 std::shared_ptr<Scene> GameManager::activeScene = NULL;
 std::vector<std::shared_ptr<Scene>> GameManager::_game_scenes{};
@@ -10,10 +10,7 @@ class SceneDoesntExist{};
 
 void GameManager::GameLoop()
 {
-	// Initial Declarations
-	if (_game_scenes.size() != 0)
-		activeScene = _game_scenes[0];
-	
+	// Initial Declarations	
 	RenderWindow window;
 	// Set-up window to current specifications
 	initialiseWindow(window);
@@ -51,6 +48,8 @@ void GameManager::initialiseWindow(RenderWindow& gameWindow)
 
 void GameManager::AddScene(std::shared_ptr<Scene> newScene)
 {
+	if (_game_scenes.size() == 0)
+		activeScene = newScene;
 	_game_scenes.push_back(newScene);
 }
 

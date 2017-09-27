@@ -4,26 +4,35 @@
 #include "GraphicObject.h"
 #include "../Vector2D.hpp"
 #include <memory>
+#include "Character.h"
+#include "DelayComponent.h"
+#include "ShootComponent.h"
 
 using namespace std;
 
 class Player : public GraphicObject
 {
 public:
-    Player(Vector2D<double>& startPosition);
+	Player()
+	{
+		_type = GameObjectType::player;
+	}
+	Player(Vector2D<double>& startPosition, Character playerStats);
+    Player(Vector2D<double>& startPosition, Character playerStats, std::shared_ptr<SpriteInfo> bulletSprite);
+	
     void Update() override;
-    
     void TestMoveLeft();
     void TestMoveRight();
 private:
-    
-    void moveLeft();
-    void moveRight();
 	void move();
 	
     Vector2D<double> _leftUnitVector;
     Vector2D<double> _rightUnitVector;
-	double _movespeed = 5;
+	// Composition Variables 
+	Character _playerStats;
+	DelayComponent _shootDelay;
+	ShootComponent _shootComp;
+	void ShootConditionalCheck();
 	
 };
 

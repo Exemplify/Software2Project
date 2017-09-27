@@ -1,0 +1,395 @@
+[33mcommit da10a71d5886b7addf1122f48abc31a9f367d567[m[33m ([m[1;36mHEAD -> [m[1;32mShootingSystem[m[33m, [m[1;31morigin/ShootingSystem[m[33m)[m
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Wed Sep 20 09:11:17 2017 +0200
+
+    Updated resourcesw
+
+[33mcommit e55e62364ef9bf6713b4343ff53348b9b2e8f601[m
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Tue Sep 19 22:51:20 2017 +0200
+
+    Player shooting Implemented
+    
+    Player shooting implemented with images, A delay composition class is also implemented
+
+[33mcommit 1baaad58b8c6bc8e54c499b1eac975b858f6eaa6[m[33m ([m[1;31morigin/TimMain[m[33m)[m
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Tue Sep 19 18:01:36 2017 +0200
+
+    Implemented new art for the player and enemies
+
+[33mcommit 53b7e611dba873eaa017b5b329a613bf3af1b573[m[33m ([m[1;31morigin/EnemySystem[m[33m, [m[1;32mall[m[33m, [m[1;32mEnemySystem[m[33m)[m
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Tue Sep 19 16:25:33 2017 +0200
+
+    Enemy Spawning Basic Functionality Achieved
+
+[33mcommit 563a40a4e83aadfb730e0a9c2b7c01f6697b4b65[m
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Tue Sep 19 15:54:15 2017 +0200
+
+    Enemy implementation and spawning
+
+[33mcommit c470c5b4f7f4664625a06c9197b2d2b5314006bd[m
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Mon Sep 18 23:31:00 2017 +0200
+
+    Enemy Controller initial implementation
+
+[33mcommit 9a3f7222d3e45a9df10d04a89ac5d456112251b0[m[33m ([m[1;31morigin/InputGetAxis[m[33m)[m
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Mon Sep 18 19:36:56 2017 +0200
+
+    Input Get Axis working with player
+
+[33mcommit b9e536862356d384f0e07e6128115e52dd6dfbc8[m[33m ([m[1;31morigin/Timer[m[33m)[m
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Mon Sep 18 19:01:15 2017 +0200
+
+    Delta Time Implemented with Player Movement
+    
+    Movement is much smoother than previous implementations
+
+[33mcommit 64634058fe9b4754418e3ee51f0bd1fae2c0ee4f[m
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Mon Sep 18 17:59:25 2017 +0200
+
+    Timer Class initial Implementation
+
+[33mcommit 05a10dab96d5aea914e0cc589f3593a8a40fe92a[m
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Sat Sep 16 22:38:19 2017 +0200
+
+    Game Executable Commit
+
+[33mcommit f426ef87ba7a94cc1a5db781f68add8382797a7a[m
+Merge: 4e42ba2 53fd0a6
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Sat Sep 16 22:04:15 2017 +0200
+
+    Merge branch 'SplashScreenObject' into TimMain
+
+[33mcommit 4e42ba2d22ba6c3a5236bd06e807501ad8034d8a[m
+Merge: d32d497 1464df8
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Sat Sep 16 22:03:13 2017 +0200
+
+    Merge branch 'PlayerObject' into TimMain
+    Plaeyr Merged with TimMain to implement the sprite movement
+
+[33mcommit 1464df8d741ebf381acf348d868712ed2699c594[m[33m ([m[1;31morigin/PlayerObject[m[33m, [m[1;32mPlayerObject[m[33m)[m
+Author: Unknown <jeandebjordaan@gmail.com>
+Date:   Sat Sep 16 21:57:37 2017 +0200
+
+    Player movement implemented
+    
+    The moveLeft and moveRight functions are defined and private. The Update is overridden such that it checks for the appropriate keypress and runs the corresponding move function. Doctests however need to be done more appropriately; this will be done by better implementation of the Vector2D return precision.
+
+[33mcommit 53fd0a6ca4fdcdeacc0eba08087154b748ad5784[m[33m ([m[1;31morigin/SplashScreenObject[m[33m, [m[1;32mSplashScreenObject[m[33m)[m
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Sat Sep 16 20:56:00 2017 +0200
+
+    Sprite heirachy Test
+
+[33mcommit d32d49789b0b346e1975dfbcce4c81ab68911a92[m[33m ([m[1;32mJeanMain[m[33m)[m
+Merge: aa80157 2219f7a
+Author: Unknown <jeandebjordaan@gmail.com>
+Date:   Sat Sep 16 20:32:00 2017 +0200
+
+    Merge branch 'PlayerObject' into JeanMain
+
+[33mcommit 2219f7a3a7d6ec01b6f4e5efe850efeae3211517[m
+Merge: f862c5a 274d3f3
+Author: Unknown <jeandebjordaan@gmail.com>
+Date:   Sat Sep 16 20:14:51 2017 +0200
+
+    Merge branch 'TimMain' into PlayerObject
+
+[33mcommit 274d3f3a53a8f542da2a08e40d3c5576ad34fa02[m
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Sat Sep 16 20:11:23 2017 +0200
+
+    Executables and resources added
+
+[33mcommit 59a08d9cfcaf5295df8597e010e0de0d27f702e2[m
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Sat Sep 16 20:02:19 2017 +0200
+
+    Splash to GameScene
+    
+    Splash Screen Successfully able to load the game scene and background
+
+[33mcommit 01bc2417e62693fc8f47254ed58198fe9bc1f01c[m
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Sat Sep 16 18:24:21 2017 +0200
+
+    Input Working From GameObject
+    
+    Only tested escape button
+
+[33mcommit fb189a043f2230ff9a226ae7a5d90b4ca5754e1f[m
+Merge: 4f2e3c7 6238e28
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Sat Sep 16 17:45:15 2017 +0200
+
+    Merge branch 'TimMain' into SplashScreenObject
+    Includes the changes done to the on the InputSystems branch
+
+[33mcommit 6238e2827b0a4f195063e9a224d6f1c063cb2eff[m[33m ([m[1;31morigin/InputSystem[m[33m, [m[1;32mInputSystem[m[33m)[m
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Sat Sep 16 17:42:49 2017 +0200
+
+    Static Input System implemented
+
+[33mcommit f862c5a524160e8a2dd573b5a7302b3d27458ccc[m
+Author: Unknown <jeandebjordaan@gmail.com>
+Date:   Sat Sep 16 17:29:05 2017 +0200
+
+    Vector2D update
+    
+    improvement on Vector2D functionality, there are additional test cases that need to still be implemented.
+
+[33mcommit 4f2e3c74b5185d0af77884c8851005fcb948beeb[m
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Sat Sep 16 13:57:44 2017 +0200
+
+    SplashScreen Class Initial Commit
+    
+    Requires the use of the an input class to progress further
+
+[33mcommit 9e66b093fabcc8188cc84b9f72b6f18c4d7e00d8[m
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Sat Sep 16 13:21:10 2017 +0200
+
+    Dlamini Background
+
+[33mcommit a533ce8f59e1f4afc816bf17673321c7c3b94ee2[m[33m ([m[1;31morigin/GameObjectDisplay[m[33m)[m
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Sat Sep 16 11:53:19 2017 +0200
+
+    Display Correctly Displayed image from GameObject
+
+[33mcommit 3d9e1ab377c52631033477547b649296cbbe17c8[m
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Sat Sep 16 10:30:17 2017 +0200
+
+    splashscreen function implemented
+    
+    splash screen function implemented with addscene and instantiate functions to, program still functional but have not added the scene to game manager yet
+
+[33mcommit a0be06b8dc177dfed4a62d1a56a2cfd9018b5992[m
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Sat Sep 16 09:56:23 2017 +0200
+
+    Fixed Game Crash on Exit
+    
+    reconstructed Manager classes so that the game does not crash when the close button is pressed, scene implementation is currently commendted out
+
+[33mcommit 77a31b0fc73547106f204e1f5daa1f343c8a19fe[m[33m ([m[1;32mGameObjectDisplay[m[33m)[m
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Fri Sep 15 16:45:20 2017 +0200
+
+    Display and Graphic Object implemenation
+
+[33mcommit 28d8d29f7c70e24256762e2602c1f3bbc797f56d[m
+Merge: 2d3b8f5 b15e885
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Fri Sep 15 12:48:01 2017 +0200
+
+    Fixed GameObject merge issues
+
+[33mcommit 2d3b8f5ec06e23de1897e061fd4936ccbbc83064[m
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Fri Sep 15 12:37:43 2017 +0200
+
+    Display Manager Editing
+
+[33mcommit b15e8852234aafb3569ff3655875d884dd76a8dc[m
+Author: Unknown <jeandebjordaan@gmail.com>
+Date:   Fri Sep 15 12:32:33 2017 +0200
+
+    Implementation and Fixes for Player
+    
+    Player is first defined and implemented. A copy and default constructor for the Vector2D class is implemented for compatability issues. minor fixes to GameObject and Graphicss object for compatability
+
+[33mcommit db530a6a7f9df3ae577f6069cf8288d74800ff02[m
+Author: Unknown <jeandebjordaan@gmail.com>
+Date:   Fri Sep 15 10:32:25 2017 +0200
+
+    Player initial commit
+    
+    the player .h and .cpp files are created
+
+[33mcommit 1fe2c2a3df763691b72d95427946c4a2825c0d04[m
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Fri Sep 15 10:31:57 2017 +0200
+
+    GameObject Constructor Included, project builds
+
+[33mcommit 11d1b154071e9a1901e9e4ce709d8e461e69d96d[m
+Merge: 6849470 631d973
+Author: Unknown <jeandebjordaan@gmail.com>
+Date:   Fri Sep 15 10:09:59 2017 +0200
+
+    Merge remote-tracking branch 'origin/TimMain' into PlayerObject
+
+[33mcommit 631d973f8e3353599fabbf093b8e19213fd52dd7[m
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Fri Sep 15 10:07:46 2017 +0200
+
+    GameObject with Vector
+
+[33mcommit 6849470dbdb8fab3c5eaf00a702248ec2bb49d15[m
+Merge: 29294f4 757e8fb
+Author: Unknown <jeandebjordaan@gmail.com>
+Date:   Fri Sep 15 09:49:26 2017 +0200
+
+    Merge remote-tracking branch 'origin/TimMain' into PlayerObject
+
+[33mcommit 757e8fb6f9ede60d72ad556a2b5543239c951b04[m
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Fri Sep 15 09:42:53 2017 +0200
+
+    Working State for Player Object Creation
+
+[33mcommit f176eeaa21554e6fb15e608d2bd7bd915944e7be[m
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Thu Sep 14 22:41:32 2017 +0200
+
+    GraphicObject created
+    
+    Created to test within the display class
+
+[33mcommit 29294f49bcb7d3ede06e149cfe1ab90ad924c7b2[m[33m ([m[1;31morigin/My_Vector2D[m[33m)[m
+Author: Unknown <jeandebjordaan@gmail.com>
+Date:   Thu Sep 14 21:07:04 2017 +0200
+
+    File structure redefinition
+    
+    the propper implementation of the template header file (.hpp) and the template implementation file (.tpp) files and the use of the template header (.hpp) in the main doctest
+
+[33mcommit 5539dc5ad636ae3729179d82f5db12c06af6ee74[m
+Author: Unknown <jeandebjordaan@gmail.com>
+Date:   Thu Sep 14 20:38:21 2017 +0200
+
+    Additional Vector2D operators
+    
+    the definition and implementation of other possibly usefull Vector2D operators +,-,+=,-=,*=,/= and tested. Note the *=, and /= take in a T type scalar and only operate on the x,y values and leave phi unchanged, all other added operators affect phi.
+
+[33mcommit 9d3289cb0289f376b8ca8a1e742bc4db2565f54b[m
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Thu Sep 14 18:58:14 2017 +0200
+
+    Initial Scene and GameObject Implementation
+
+[33mcommit c914d776f6805e11d7312c065dadd5a20ab2282f[m
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Thu Sep 14 13:52:55 2017 +0200
+
+    Front End Systems
+    
+    Adding the scene and game object class the the repo, folder was located outside of the files being tracked
+
+[33mcommit c40fad731a1b32d5d185b4b646b9aaa626b3986f[m
+Author: Unknown <jeandebjordaan@gmail.com>
+Date:   Thu Sep 14 11:30:07 2017 +0200
+
+    Magnitude function completed
+    
+    magnitude function better implemented, default magnitude function override defined and the use of a static variable _origin vector
+
+[33mcommit 62bef0388bfb81081d7d6f92d0cbcb81821b077e[m
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Thu Sep 14 09:38:47 2017 +0200
+
+    Commit for laptop clone
+
+[33mcommit fdfa295ccf58de99bf3d6e8d10fdae9747952de0[m
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Wed Sep 13 13:13:50 2017 +0200
+
+    Initial EventManager Implementation
+    
+    Event manager working within the game manager interface, window displays and correctly checks for the close window event
+
+[33mcommit eb9396c747bf408d31be10b4cc0d27e647a90cd3[m
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Wed Sep 13 11:04:48 2017 +0200
+
+    DisplayManager Class Constructed
+    
+    basic structure for the display manager class is created, runs the draw calls inside of a different thread using the C++ std library for threads
+
+[33mcommit 202e469f1fc3dc14ffa4f651ece1bac9a3dcf178[m
+Author: Unknown <jeandebjordaan@gmail.com>
+Date:   Wed Sep 13 03:03:43 2017 +0200
+
+    Magnitude function defined
+
+[33mcommit a57334fc4addc47bd9dadc81e1b0c4774319f0ab[m
+Author: Unknown <jeandebjordaan@gmail.com>
+Date:   Wed Sep 13 02:26:29 2017 +0200
+
+    More Constructor testing
+    
+    testing the class only takes in a vector of size 3 in the constructor, and special case testing on the vectors
+
+[33mcommit 09530d60b869c0fb5501757438c8df314dbe3f2e[m
+Author: Unknown <jeandebjordaan@gmail.com>
+Date:   Wed Sep 13 01:53:56 2017 +0200
+
+    operator== defined
+    
+    the overload operator == is defined and tested
+
+[33mcommit 16a657fd1f17ebbd846fbf63e1bf7251f1344168[m
+Author: Unknown <jeandebjordaan@gmail.com>
+Date:   Wed Sep 13 01:36:02 2017 +0200
+
+    Vector2D class defined
+    
+    our defined Vector2D template class defined and simple test
+
+[33mcommit ca0de7ede5e9fb0684c6e9fa1d67d4c012485d17[m
+Author: Unknown <jeandebjordaan@gmail.com>
+Date:   Wed Sep 13 00:46:56 2017 +0200
+
+    Initial my Vector2D commit
+
+[33mcommit 12d4fc54ccbd5adafed75fe1acdc574eeed64163[m
+Author: Unknown <jeandebjordaan@gmail.com>
+Date:   Wed Sep 13 00:36:44 2017 +0200
+
+    Start My Vector2D
+    
+    making my own Vector2D class for a 2D vector space
+
+[33mcommit b20f03123806c258e60722bb20c407e526d6f5a6[m
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Tue Sep 12 21:05:31 2017 +0200
+
+    GM Initial Implementation
+    
+    The initial implementation of the GameManager class and an attempt at using a singleton structure to ensure only one instance of the class exists at time. Did not work due to errors elements being predefined, research showed that implemenation needs rethinking.
+
+[33mcommit 2d7057ad1683ea231442e34939d3d57d24b3d419[m[33m ([m[1;31morigin/BackendSystems[m[33m, [m[1;32mBackendSystems[m[33m)[m
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Mon Sep 11 16:05:03 2017 +0200
+
+    game-manager initial commit
+    
+    initial game-manager class files commit
+
+[33mcommit aa801578374a6b31574fe1bf6397d28afedeadaa[m
+Author: Unknown <jeandebjordaan@gmail.com>
+Date:   Mon Sep 11 15:09:44 2017 +0200
+
+    vector2d initial commit
+    
+    initial vector2d class files commit
+
+[33mcommit b19d69607c91039969ba46fa9c16ce3582ef08ce[m
+Author: Timothy McBride <tmcbride0333@gmail.com>
+Date:   Mon Sep 11 08:25:10 2017 +0200
+
+    initial Commit

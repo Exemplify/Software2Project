@@ -1,10 +1,10 @@
 #include "DisplayManager.h"
 #include "GameManager.h"
-#include <vector>
 #include "../FrontEndSystems/GraphicObject.h"
-#include <typeinfo>
+#include <mutex>
 #include <cmath>
 #include <string>
+#include <vector>
 
 using std::string;
 using graphicObj_ptr = shared_ptr<GraphicObject>;
@@ -39,14 +39,18 @@ void DisplayManager::InitialiseThread(RenderWindow& dispWindow)
 void DisplayManager::Draw()
 {
 	shared_ptr<Scene> activeScene = GameManager::activeScene;
-	//Guard Clause
-	if(activeScene == NULL)
+	//Guard Clauses
+	//Short circuit or so ensures that scene is active befor checking for UpdateList
+	if(activeScene == NULL )
 		return;
 	else
 	{
-		for(auto GO : activeScene->getGameObjectList())
+		std::lock_guard<std::mutex> lock(activeScene->_gameObj_list_mutex);
+		auto displayObjects = activeScene->getGameObjectList();
+		for(auto GO : displayObjects)
 		{
-			DrawSpriteFromGameObject(GO);
+			if(GO != NULL)
+				DrawSpriteFromGameObject(GO);
 		}
 	}
 }
@@ -79,8 +83,8 @@ Vector2f DisplayManager::GameObjectScreenPosition(const GraphicObject& graphicOb
 	auto gameVector = graphicObj.getPosition();
 	auto gamePosition = gameVector.xypVector();
 	
-	auto x_pos = round(gamePosition[0]);
-	auto y_pos = round(gamePosition[1]);
+	auto x_pos = gamePosition[0];
+	auto y_pos = gamePosition[1];
 	
 	screenPosition.x = x_pos + HALF_SCREEN_WIDTH;
 	screenPosition.y = -y_pos + HALF_SCREEN_HEIGHT;

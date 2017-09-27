@@ -1,21 +1,24 @@
 #ifndef GRAPHIC_OBJ_H
 #define GRAPHIC_OBJ_H
-
-#include "GameObject.h"
 #include "SpriteInfo.h"
-#include <memory>
+#include "GameObject.h"
 
 class GraphicObject : public GameObject
 {
 public:
-	GraphicObject():
-	_spriteInfo(new SpriteInfo())
+	GraphicObject(std::shared_ptr<SpriteInfo> spriteInfo):
+	GameObject(),
+	_spriteInfo{spriteInfo}
 	{}
-	bool HasGraphic() override { return true; }
-	std::shared_ptr<SpriteInfo> getSpriteInfo() 
+	GraphicObject():
+	GameObject(),
+	_spriteInfo{new SpriteInfo()}
+	{}
+	std::shared_ptr<SpriteInfo> getSpriteInfo() const
 	{
 		return _spriteInfo; 
 	}
+	virtual ~GraphicObject(){}
 protected:
 	std::shared_ptr<SpriteInfo>  _spriteInfo;
 };

@@ -39,3 +39,7 @@ TEST_CASE("2.1 Test Player is moving Left"){
     CHECK(player1.getPosition() == testPlayer1);
     CHECK(player2.getPosition() == testPlayer2);
 }
+//magazine 
+//	1 page missing 
+//	2 total pages missing
+//	total sum to 525 pages
