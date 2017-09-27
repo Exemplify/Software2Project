@@ -37,7 +37,7 @@ void Enemy::InitialiseObject()
 	
 	const auto MAX_MOVEMENT_RAND_VALUE = 100;
 	auto randVal = rand();
-	randVal = 40;
+
 	InitialiseMovementType(randVal%MAX_MOVEMENT_RAND_VALUE);
 	InitialiseStartingPosition();
 }
@@ -76,6 +76,7 @@ void Enemy::InitialiseStartingPosition()
 			InitialiseSpiralMovement(randomAngle);
 			break;
 		case EnemyMoveType::parabolic:
+			InitialiseParabolicMovement();
 		break;
 		default:
 		break;
@@ -92,13 +93,15 @@ void Enemy::InitialiseLinearMovement(const double& angle)
 
 void Enemy::InitialiseSpiralMovement(const double& angle)
 {
-
 	Vector2D<double> startPos{1, angle, 0, VectorType::rtp};
 	_position = startPos;
 	
 }
-void Enemy::InitialiseParabolicMovement(const double& angle)
-{}
+void Enemy::InitialiseParabolicMovement()
+{
+	Vector2D<double> startPos{-400, -400, 0, VectorType::xyp};
+	_position = startPos;
+}
 
 double Enemy::GenerateRandomAngle()
 {
@@ -118,6 +121,10 @@ void Enemy::Move()
 		break;
 		case EnemyMoveType::spiral:
 			SpiralMove();
+			break;
+		case EnemyMoveType::parabolic:
+			ParabolicMove();
+			break;
 		default:
 		break;
 	}
@@ -165,6 +172,15 @@ void Enemy::SpiralMove()
 	Vector2D<double> newPos{curPos, VectorType::rtp};
 	
 	_position = newPos;
+}
+void Enemy::ParabolicMove()
+{
+	const auto parabolic_a = -0.002824019;
+	double moveSpeed = 100;
+	auto curPos = getPosition().xypVector();
+	curPos[0] += moveSpeed * GameTime::getDeltaTime();
+	curPos[1] = parabolic_a * pow(curPos[0],2);
+	_position = Vector2D<double>(curPos);
 }
 
 

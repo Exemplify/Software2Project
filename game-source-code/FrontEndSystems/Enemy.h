@@ -37,7 +37,7 @@ private:
 	void ConstructSpriteInfo();
 	void InitialiseStartingPosition();
 	void InitialiseLinearMovement(const double& angle);
-	void InitialiseParabolicMovement(const double& angle);
+	void InitialiseParabolicMovement();
 	void InitialiseSpiralMovement(const double& angle);
 	void DetermineDirection();
 	double GenerateRandomAngle();
