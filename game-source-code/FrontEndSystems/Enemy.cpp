@@ -4,65 +4,130 @@
 #include "../BackEndSystems/GameTime.h"
 
 
-const int MAX_DEGREES = 360;
-const double DEG_2_RAD = 3.141592653589793/180.0;
-const double ENEMY_SHOOT_DELAY = 2; 
-const double thetaToRadiusMovementRatio = 0.5;
+const double ENEMY_SHOOT_DELAY = 3; 
+const auto DEG_2_RAD = 3.141592653589793/180.0;
 
-Enemy::Enemy(Character enem, GameObjectType enemytype):
-_shootDelay{ENEMY_SHOOT_DELAY, true},
-_enemyStats{enem}
+Enemy::Enemy():
+_shootDelay{ENEMY_SHOOT_DELAY, false}
+{
+	ConstructSpriteInfo();
+		InitialiseObject();
+}
+void Enemy::ConstructSpriteInfo()
 {
 	_spriteInfo->textureLocation = "resources/AdamHabib.png";
 	_spriteInfo->scale = sf::Vector2f{0.25f,0.25f};
-	InitialisePosition();
+
 	
 	auto bulletSpriteInfo = std::make_shared<SpriteInfo>();
 	bulletSpriteInfo->textureLocation = "resources/SouthAfricanPS.png";
 	bulletSpriteInfo->scale = Vector2f(0.1f,0.1f);
 	_enemyShoot = ShootComponent(bulletSpriteInfo, GameObjectType::enemyBullet);
-	_type = enemytype;
-	
-	Enemy2Direction();
 }
 
-void Enemy::Enemy2Direction()
-{
-	auto randDir = rand()%50;
-	if(randDir > 25)
-		_direction = 1;
-	else
-		_direction = -1;
-	
-}
 void Enemy::Update()
 {
 	Move();
 	Shoot();
 	CheckOutsideScreen();
-	
 }
-void Enemy::InitialisePosition()
+
+void Enemy::InitialiseObject()
 {
-	double angle = rand()%MAX_DEGREES;
-	angle*=DEG_2_RAD;
+	
+	const auto MAX_MOVEMENT_RAND_VALUE = 100;
+	auto randVal = rand();
+	randVal = 40;
+	InitialiseMovementType(randVal%MAX_MOVEMENT_RAND_VALUE);
+	InitialiseStartingPosition();
+}
+
+void Enemy::InitialiseMovementType(const int& randomChanceValue)
+{
+	// Probability Ranges for the different Movement Types
+	const auto SPIRAL_MOVE_CHANCE = 30;
+	const auto BASIC_MOVE_CHANCE = 50;
+	
+	// Tempory to ensure plain movement is working first
+	if(randomChanceValue > BASIC_MOVE_CHANCE)
+	{
+		_movementType = EnemyMoveType::linear;
+	}
+	else if(randomChanceValue >SPIRAL_MOVE_CHANCE)
+	{
+		_movementType = EnemyMoveType::spiral;
+	}
+	else // PARABOLIC_MOVE_CHANCE = 20%
+	{
+		_movementType = EnemyMoveType::parabolic;
+	}
+}
+
+// initialises the starting position based off of the various movement types
+void Enemy::InitialiseStartingPosition()
+{
+	auto randomAngle = GenerateRandomAngle();
+	switch(_movementType)
+	{
+		case EnemyMoveType::linear:
+			InitialiseLinearMovement(randomAngle);
+		break;
+		case EnemyMoveType::spiral:
+			InitialiseSpiralMovement(randomAngle);
+			break;
+		case EnemyMoveType::parabolic:
+		break;
+		default:
+		break;
+	}
+}
+
+void Enemy::InitialiseLinearMovement(const double& angle)
+{
+	const auto PLAYER_LINEAR_MOVE_SPEED = 100;
 	Vector2D<double> startPos{1, angle, 0, VectorType::rtp};
 	_position = startPos;
+	_enemyStats.setMoveSpeed(PLAYER_LINEAR_MOVE_SPEED);
+}
+
+void Enemy::InitialiseSpiralMovement(const double& angle)
+{
+
+	Vector2D<double> startPos{1, angle, 0, VectorType::rtp};
+	_position = startPos;
+	
+}
+void Enemy::InitialiseParabolicMovement(const double& angle)
+{}
+
+double Enemy::GenerateRandomAngle()
+{
+	const auto MAX_DEGREE_RAND_VALUE = 360;
+
+	// Generates the random start angle
+	auto angle = static_cast<double>(rand()%MAX_DEGREE_RAND_VALUE);
+	angle*=DEG_2_RAD;
+	return angle;
 }
 void Enemy::Move()
 {
-	// If enemy is of type 1 or type 2 it performs a different movement type;
-	if(_type == GameObjectType::enemy1)
-		BasicMove();
-	else
-		ComplexMove();
+	switch(_movementType)
+	{
+		case EnemyMoveType::linear:
+			LinearMove();
+		break;
+		case EnemyMoveType::spiral:
+			SpiralMove();
+		default:
+		break;
+	}
 }
 
 void Enemy::CheckOutsideScreen()
 {
 	if(_screenBounds.OutOfBounds(_position))
 	{
-		InitialisePosition();
+		InitialiseObject();
 	}
 }
 
@@ -80,21 +145,26 @@ void Enemy::Shoot()
 	}
 }
 
-void Enemy::BasicMove()
+void Enemy::LinearMove()
 {
 	auto curPos = getPosition().rtpVector();
 	curPos[0] += _enemyStats.getMoveSpeed() * GameTime::getDeltaTime();
 	Vector2D<double> newPos{curPos, VectorType::rtp};
 	_position = newPos;
 }
-void Enemy::ComplexMove()
+void Enemy::SpiralMove()
 {
-	auto deltaTime = GameTime::getDeltaTime();
-	auto deltaTheta = _enemyStats.getMoveSpeed()*deltaTime*_direction;
-	auto deltaRadius = 1 +1*deltaTime;
+	auto PLAYER_ANGULAR_MOVEMENT_SPEED = 180*DEG_2_RAD;
+	auto PLAYER_RADIAL_MOVEMENT_SPEED = 10;
+
 	
-	Vector2D<double> changeInPosition(deltaRadius, deltaTheta, 0, VectorType::rtp);
-	_position *= changeInPosition;
+	auto curPos = getPosition().rtpVector();
+	curPos[0] += PLAYER_RADIAL_MOVEMENT_SPEED * GameTime::getDeltaTime();
+	//PLAYER_ANGULAR_MOVEMENT_SPEED/=(2*3.141592*curPos[0]);
+	curPos[1] += PLAYER_ANGULAR_MOVEMENT_SPEED* GameTime::getDeltaTime();
+	Vector2D<double> newPos{curPos, VectorType::rtp};
+	
+	_position = newPos;
 }
 
 
