@@ -18,6 +18,7 @@ enum class GameObjectType
 	playerBullet,
 	enemyBullet
     // May need to implement a Physics object
+	/// could be a problem if you want to check if something is a physics object
 };
 class GameObject: public std::enable_shared_from_this<GameObject>
 {
@@ -61,4 +62,6 @@ protected:
 	bool _active = true;
 };
 //Happy with the implementation of this class but could it be more polymorphic?
+/// going forward could become an interface class which provides a the polymorphic contract but is unadvised as
+/// every gameobject does not need to override the virtual functions
 #endif

@@ -15,6 +15,7 @@ using std::shared_ptr;
 shared_ptr<Scene> SplashScreenFunc();
 // I don't understand this at all. A pointer to a function?
 // or a function belonging to the shared_ptr<Scene> class type?
+
 shared_ptr<Scene> GameSceneFunc();
 
 int main()

@@ -28,14 +28,16 @@ _enemyStats{enem}
 	InitialisePosition();
     // The enemy object should access this through a get graphic function
     // a simillar is not present in the player, why?
-	
+	/// So this will change to the responsibility of the database and DisplayManager as they  will hold the data and pull the information
 	auto bulletSpriteInfo = std::make_shared<SpriteInfo>();
 	bulletSpriteInfo->textureLocation = "resources/SouthAfricanPS.png";
 	bulletSpriteInfo->scale = Vector2f(0.1f,0.1f);
     // similarly this should not be instantiated by the enemy. the enemy should not know anything about the bullet sprite
+	/// this was implemented like this incase we had a different enemy type which shoots different bullets but yes it can be replaced with an enumerator instead
     
 	_enemyShoot = ShootComponent(bulletSpriteInfo, GameObjectType::enemyBullet);
     // investigate..
+	/// ???
 	
 }
 void Enemy::Update()
@@ -50,10 +52,12 @@ void Enemy::InitialisePosition()
 	double angle = rand()%MAX_DEGREES;
 	angle*=DEG_2_RAD;
     // surely the above becomes redundant if simpl
+	/// so it is easier to conceptualise degrees and the rand function produces a random integer, so by using degrees then converting to radians
+	/// the resolution of the angle is smaller
     
 	Vector2D<double> startPos{1, angle, 0, VectorType::rtp};
     // I understand now, there may be some ambiguity with the Vector2D class, by default (and the only implementation deployed) the theta is declared in radians
-    
+    /// I used radians
 	_position = startPos;
 }
 void Enemy::Move()
@@ -63,6 +67,7 @@ void Enemy::Move()
 	Vector2D<double> newPos{curPos, VectorType::rtp};
 	_position = newPos;
     // there is better implementation for this. Additional movement class functionality implementation
+	/// As discussed this can be moved into a movement composition class but i feel that the DeltaTIme Element must stay
 }
 
 void Enemy::CheckOutsideScreen()
@@ -72,6 +77,7 @@ void Enemy::CheckOutsideScreen()
 		InitialisePosition();
 	}
     // good simple implementation 
+	/// I am not entirely happy with the function name 
 }
 
 void Enemy::Shoot()
@@ -81,16 +87,21 @@ void Enemy::Shoot()
 	{
 		_shootDelay.resetDelay();
         // should this not rather be at the end of this if statement? to avoid functional overrun
+		/// yes.
         
 		auto target = _position.rtpVector();
 		target[0] += 1;
 		Vector2D<double> targetVec{target, VectorType::rtp};
         // there is much better implementation possible with the Vector2D operators
+		/// possibly this is caused by my lack of understanding within the vector class
         
 		_enemyShoot.Shoot(targetVec, _position, 3*_enemyStats.getMoveSpeed(), *_scene);
         // investigate.
 	}
     // there is better implementation for this
+	/// I would disagree this seperates the responsibility of instantiating the game objects from the enemy
+	/// the current functionality provides versitility to the enemy to decide where they want to shoot from. 
+	/// It can be refined though
 }
 
 
