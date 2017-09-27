@@ -19,7 +19,7 @@ _shootDelay{SHOOT_DELAY}
     
 	auto playerBulletSprite = std::make_shared<SpriteInfo>();
     //The player doesn't need to know about the bullet data, It should just call a weapon/bullet and the bullet must generate its own graphic
-	
+	/// will be adjusted with database
     playerBulletSprite->textureLocation = "resources/Rock.png";
     // refere to above
     
@@ -73,7 +73,7 @@ void Player::move()
     
     _position = newPos;
     // is this realy necessary with the vector operators?
-
+	/// from what i saw the vector operators add the scalar to each value, this only increases the theta
 }
 
 void Player::ShootConditionalCheck()
@@ -89,6 +89,7 @@ void Player::ShootConditionalCheck()
 		_shootDelay.resetDelay();
 	}
     // is there a better implementation of the delay functionality?
+	/// Not that i can think of but it could be improvec
 }
 
 

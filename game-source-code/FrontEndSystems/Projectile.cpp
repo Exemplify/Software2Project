@@ -9,6 +9,8 @@ GraphicObject(spriteInfo),
 _enemyDestroyBounds{},
 _playerDestroyBounds{PLAYER_PROJECTILE_DESTROY_REGION, PLAYER_PROJECTILE_DESTROY_REGION}
 // What is this and why is it necessary?
+/// Enemy Destroy Bounds and Player Destroy bounds is the region in which the projectile destroys itself when it moves into that 
+/// region depending on which object type it is
 {
 	_type = projectileType;
 }
@@ -32,7 +34,8 @@ void Projectile::Move()
 	_position += _direction * _moveSpeed * GameTime::getDeltaTime();
 }
 // Happy with this implementation, but where has _moveSpeed been defined?
-
+/// _movespeed and direction is defined by the Initialise function, this is done so that the copy constructor can be cloned and then the game 
+/// information is applied to it to tell it where to move to and how fast it can move.
 void Projectile::DestroySelf()
 {
 	if(_type == GameObjectType::playerBullet)
@@ -46,6 +49,7 @@ void Projectile::DestroySelf()
 // Further, this implementation suggests that the player/enemy has knowledge about the projectile functionality; should it.
 // would it not be easier to shift this responsiblity onto the projectile itself? can this not be done in a way that can prevent
 // the necessary projectiles from destroying eachother?
+/// this is the projectile class?? and it does ensure that only the projectile can destroy itself
 
 void Projectile::DestroyPlayerProjectile()
 {

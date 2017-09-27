@@ -22,4 +22,5 @@ void ShootComponent::Shoot(	Vector2D<double> target,
 	scene.Instantiate(bullet);
     // there is better implementation possible.
     // why does this class have access to scene, and how does it have acces to scene?
+	/// it needs to know which scene the object is in so that it can create a new projectile inside of it
 }

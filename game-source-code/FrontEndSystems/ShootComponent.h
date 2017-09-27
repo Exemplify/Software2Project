@@ -5,7 +5,7 @@
 #include "Projectile.h"
 
 //What exactly is the necessaty of this class? is it not already defined in projectile class?
-
+/// this is essentially a weapon class
 class ShootComponent
 {
 public:

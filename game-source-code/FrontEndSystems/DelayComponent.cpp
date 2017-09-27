@@ -9,7 +9,7 @@ _delayFinished{immediateUse}
 {}
 // Again, what is the immediate use flag for.
 // follow-up immidiate use is a default to false, if true the delay is autoflagged to true, this then needs to be reset by the function call resetDelay? 
-/// Delay is a tricy class, but i found myself repeating the code a lot within the enemy spwaner and the shoot class so its main purpose is to 
+/// Delay is a tricky class, but i found myself repeating the code a lot within the enemy spwaner and the shoot class so its main purpose is to 
 /// ensure that it is easy to implement a delay but it does put responsibility on the client to reset the delay once they have checked the delay condition
 /// Immediate use is so that there is no delay apon construction in the example of the player they must be able to shoot immediately after construction rather 
 /// than having to wait the allocated delay time, or as an alternative example the enemy spawner if we wanted enemies to spawn immediatley rather than wait 2 seconds then spawn.

@@ -39,7 +39,7 @@ shared_ptr<Scene> SplashScreenFunc()
 	return splashScene;
 }
 // aganin, What is this function for? including the below function.s
-
+/// just yes
 shared_ptr<Scene> GameSceneFunc()
 {
 	shared_ptr<Scene> gameScene{new Scene()};
