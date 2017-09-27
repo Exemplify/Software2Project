@@ -7,9 +7,9 @@
 const int MAX_DEGREES = 360;
 const double DEG_2_RAD = 3.141592653589793/180.0;
 const double ENEMY_SHOOT_DELAY = 2; 
+const double thetaToRadiusMovementRatio = 0.5;
 
-
-Enemy::Enemy(Character enem):
+Enemy::Enemy(Character enem, GameObjectType enemytype):
 _shootDelay{ENEMY_SHOOT_DELAY, true},
 _enemyStats{enem}
 {
@@ -21,6 +21,18 @@ _enemyStats{enem}
 	bulletSpriteInfo->textureLocation = "resources/SouthAfricanPS.png";
 	bulletSpriteInfo->scale = Vector2f(0.1f,0.1f);
 	_enemyShoot = ShootComponent(bulletSpriteInfo, GameObjectType::enemyBullet);
+	_type = enemytype;
+	
+	Enemy2Direction();
+}
+
+void Enemy::Enemy2Direction()
+{
+	auto randDir = rand()%50;
+	if(randDir > 25)
+		_direction = 1;
+	else
+		_direction = -1;
 	
 }
 void Enemy::Update()
@@ -39,10 +51,11 @@ void Enemy::InitialisePosition()
 }
 void Enemy::Move()
 {
-	auto curPos = getPosition().rtpVector();
-	curPos[0] += _enemyStats.getMoveSpeed() * GameTime::getDeltaTime();
-	Vector2D<double> newPos{curPos, VectorType::rtp};
-	_position = newPos;
+	// If enemy is of type 1 or type 2 it performs a different movement type;
+	if(_type == GameObjectType::enemy1)
+		BasicMove();
+	else
+		ComplexMove();
 }
 
 void Enemy::CheckOutsideScreen()
@@ -64,6 +77,23 @@ void Enemy::Shoot()
 		Vector2D<double> targetVec{target, VectorType::rtp};
 		_enemyShoot.Shoot(targetVec, _position, 3*_enemyStats.getMoveSpeed(), *_scene);
 	}
+}
+
+void Enemy::BasicMove()
+{
+	auto curPos = getPosition().rtpVector();
+	curPos[0] += _enemyStats.getMoveSpeed() * GameTime::getDeltaTime();
+	Vector2D<double> newPos{curPos, VectorType::rtp};
+	_position = newPos;
+}
+void Enemy::ComplexMove()
+{
+	auto deltaTime = GameTime::getDeltaTime();
+	auto deltaTheta = _enemyStats.getMoveSpeed()*deltaTime*_direction;
+	auto deltaRadius = 1 +_enemyStats.getMoveSpeed()*deltaTime;
+	
+	Vector2D<double> changeInPosition(deltaRadius, deltaTheta, 0, VectorType::rtp);
+	_position *= changeInPosition;
 }
 
 

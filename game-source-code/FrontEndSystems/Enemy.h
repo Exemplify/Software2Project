@@ -10,7 +10,7 @@ class Enemy: public GraphicObject
 {
 public:
 	Enemy() {}
-	Enemy(Character enem);
+	Enemy(Character enem, GameObjectType _Enemtype);
 	virtual void Update() override;
 private:
 	void Move();
@@ -21,6 +21,10 @@ private:
 	Character _enemyStats;
 	ShootComponent _enemyShoot;
 	Boundary _screenBounds;
+	int _direction;
+	void ComplexMove();
+	void BasicMove();
+	void Enemy2Direction();
 
 	
 };

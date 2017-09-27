@@ -14,7 +14,8 @@ enum class GameObjectType
 	gameObject,
 	graphicObject,
 	player,
-	enemy,
+	enemy1,
+	enemy2,
 	playerBullet,
 	enemyBullet
 };

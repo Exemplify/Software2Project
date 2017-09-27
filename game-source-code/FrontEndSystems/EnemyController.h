@@ -12,6 +12,8 @@ public:
 private:
 	void SpawnEnemyCountDown();
 	void SpawnEnemy();
+	void SpawnEnemyType1();
+	void SpawnEnemyType2();
 	
 	const double ENEMY_SPAWN_DELAY = 2;
 	double _timeBetweenSpawns;
