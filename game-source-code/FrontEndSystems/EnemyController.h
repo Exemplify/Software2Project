@@ -13,7 +13,7 @@ private:
 	void SpawnEnemyCountDown();
 	void SpawnEnemy();
 	
-	const double ENEMY_SPAWN_DELAY = 2;
+	const double ENEMY_SPAWN_DELAY = 3;
 	double _timeBetweenSpawns;
 	int enemyCount = 0;
 };

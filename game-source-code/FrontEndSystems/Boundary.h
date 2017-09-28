@@ -3,7 +3,7 @@
 #include "../Vector2D.hpp"
 
 // Default for bounds is the Screen boundary
-const int PLAY_SCREEN_HALF_WIDTH = 1200;
+const int PLAY_SCREEN_HALF_WIDTH = 960;
 const int PLAY_SCREEN_HALF_HEIGHT = 700;
 
 class Boundary

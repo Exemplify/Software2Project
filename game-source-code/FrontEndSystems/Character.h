@@ -12,6 +12,7 @@ public:
 	int getHealth() {return _health;}
 	void setHealth(int health) {_health = health;}
 	double getMoveSpeed() {return _moveSpeed;}
+	void setMoveSpeed(double moveSpeed) {_moveSpeed = moveSpeed;}
 private:
 	int _health;
 	double _moveSpeed;
