@@ -19,6 +19,7 @@ public:
 	Enemy();
 	virtual void Update() override;
     virtual void collisionAction(GameObjectType objectType) override;
+    EnemyMoveType getMoveType() const {return _movementType;}
 private:
 	void Move();
 	void Shoot();

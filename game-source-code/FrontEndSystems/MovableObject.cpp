@@ -22,25 +22,34 @@ void MovableObject::moveDown(Vector2D<double>& position, const double& speed)
 
 void MovableObject::rotateClockwise(Vector2D<double>& position, const double& speed, const Vector2D<double>& centrePoint)
 {
-    Vector2D<double> tempClockwise(1,-speed,0);
+    Vector2D<double> tempClockwise(1,-speed,0,VectorType::rtp);
+    position-=centrePoint;
     position*=tempClockwise;
+    position+=centrePoint;
 }
 
 void MovableObject::rotateAntiClockwise(Vector2D<double>& position, const double& speed, const Vector2D<double>& centrePoint)
 {
-    Vector2D<double> tempClockwise(1,speed,0);
+    Vector2D<double> tempClockwise(1,speed,0,VectorType::rtp);
+    position-=centrePoint;
     position*=tempClockwise;
+    position+=centrePoint;
 }
 
 void MovableObject::radialIn(Vector2D<double>& position, const double& speed, const Vector2D<double>& centrePoint)
 {
-    Vector2D<double> unitVec = position.normalize();
-    
+    position-=centrePoint;
+    Vector2D<double> unitVec = position.normalize()*speed;
+    position-=unitVec;
+    position+=centrePoint;
 }
 
 void MovableObject::radialOut(Vector2D<double>& position, const double& speed,const Vector2D<double>& centrePoint)
 {
-    
+    position-=centrePoint;
+    Vector2D<double> unitVec = position.normalize()*speed;
+    position+=unitVec;
+    position+=centrePoint;
 }
 
 
