@@ -1,8 +1,7 @@
-#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "doctest.h"
 #include <iostream>
 #include <cmath>
-#include "Vector2D.hpp"
+#include "../game-source-code/Vector2D.hpp"
 
 //===============================================================================================
 //Section 1
