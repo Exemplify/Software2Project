@@ -21,6 +21,7 @@ public:
     virtual void collisionAction(GameObjectType objectType) override;
 	virtual Enemy* Clone() override 
 	{return new Enemy(*this);}
+    EnemyMoveType getMoveType() const {return _movementType;}
 private:
 	void Move();
 	void Shoot();
