@@ -13,6 +13,7 @@ enum class GameObjectType
 {
 	gameObject,
 	graphicObject,
+    physicsObject,
 	player,
 	enemy,
 	playerBullet,
