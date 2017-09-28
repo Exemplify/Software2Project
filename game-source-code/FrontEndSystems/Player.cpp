@@ -6,8 +6,6 @@
 const double SHOOT_DELAY = 0.35; 
 const double SHOOT_SPEED = 150;
 Player::Player(Vector2D<double>& startPosition, Character playerStats):
-_leftUnitVector{1, -M_PI, 0, VectorType::rtp},
-_rightUnitVector{1, M_PI, 0, VectorType::rtp},
 _playerStats{playerStats},
 _shootDelay{SHOOT_DELAY}
 {	
@@ -20,8 +18,6 @@ _shootDelay{SHOOT_DELAY}
 }
 Player::Player(Vector2D<double>& startPosition, Character playerStats, std::shared_ptr<SpriteInfo> bulletSprite):
 GraphicObject(),
-_leftUnitVector{1, -M_PI, 0, VectorType::rtp},
-_rightUnitVector{1, M_PI, 0, VectorType::rtp},
 _playerStats{playerStats},
 _shootDelay{SHOOT_DELAY},
 _shootComp{bulletSprite, GameObjectType::playerBullet}
@@ -34,15 +30,6 @@ void Player::Update()
 	ShootConditionalCheck();
 }
 
-void Player::TestMoveLeft()
-{
-    _position*=_leftUnitVector;
-}
-
-void Player::TestMoveRight()
-{
-    _position*=_rightUnitVector;
-}
 void Player::move()
 {
 	auto direc = Input::getAxis(Axis::horizontal);

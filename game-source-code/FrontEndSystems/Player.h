@@ -21,13 +21,9 @@ public:
     Player(Vector2D<double>& startPosition, Character playerStats, std::shared_ptr<SpriteInfo> bulletSprite);
 	
     void Update() override;
-    void TestMoveLeft();
-    void TestMoveRight();
 private:
 	void move();
 	
-    Vector2D<double> _leftUnitVector;
-    Vector2D<double> _rightUnitVector;
 	// Composition Variables 
 	Character _playerStats;
 	DelayComponent _shootDelay;
