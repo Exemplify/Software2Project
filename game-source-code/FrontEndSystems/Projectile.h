@@ -18,6 +18,8 @@ public:
 	virtual void Update() override;
 	void Initialise(Vector2D<double> startingPos, Vector2D<double> direction, double moveSpeed);
     virtual void collisionAction(GameObjectType objectType) override;
+	virtual Projectile* Clone() override 
+	{return new Projectile(*this);}
 	~Projectile() override{}
 private:
 	Vector2D<double> _direction;

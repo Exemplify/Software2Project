@@ -18,6 +18,8 @@ public:
 	{
 		return _spriteInfo; 
 	}
+	virtual GraphicObject* Clone() override
+	{return new GraphicObject(*this);}
 	virtual ~GraphicObject(){}
 protected:
 	std::shared_ptr<SpriteInfo>  _spriteInfo;

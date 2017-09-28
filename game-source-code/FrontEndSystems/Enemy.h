@@ -19,6 +19,8 @@ public:
 	Enemy();
 	virtual void Update() override;
     virtual void collisionAction(GameObjectType objectType) override;
+	virtual Enemy* Clone() override 
+	{return new Enemy(*this);}
 private:
 	void Move();
 	void Shoot();
@@ -47,6 +49,9 @@ private:
 	void SpiralMove();
 	void LinearMove();
 	void ParabolicMove();
+	
+	// On Collision Functions
+	void PlayerProjectileCollision();
 };
 
 

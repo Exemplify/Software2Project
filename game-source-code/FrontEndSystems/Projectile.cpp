@@ -11,7 +11,7 @@ _playerDestroyBounds{PLAYER_PROJECTILE_DESTROY_REGION, PLAYER_PROJECTILE_DESTROY
 {
 	_type = projectileType;
     _spriteInfo = spriteInfo;
-    _objectSize = 50;
+    _objectSize = 5;
 }
 
 Projectile::Projectile(const Projectile& copyProjectile):
@@ -21,7 +21,7 @@ PhysicsObject()
 	_playerDestroyBounds = copyProjectile._playerDestroyBounds;
 	_spriteInfo = copyProjectile._spriteInfo;
 	_type = copyProjectile._type;
-    _objectSize = 50;
+    _objectSize = copyProjectile._objectSize;
 }
 void Projectile::Update()
 {
@@ -45,7 +45,6 @@ void Projectile::DestroyPlayerProjectile()
 	{
 		Destroy();
 	}
-	
 }
 void Projectile::DestroyEnemyProjectile()
 {

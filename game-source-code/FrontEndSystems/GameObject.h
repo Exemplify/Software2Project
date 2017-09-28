@@ -12,6 +12,7 @@ class DestroyedObjectOutsideScene{};
 enum class GameObjectType
 {
 	gameObject,
+	enemyController,
 	graphicObject,
     physicsObject,
 	player,
@@ -24,6 +25,7 @@ class GameObject: public std::enable_shared_from_this<GameObject>
 public:
 		// Constructors //
 	GameObject();
+	GameObject(const GameObject& copyObj);
 	GameObject(Vector2D<double> startingPosition);
 	
 		// virtual callbacks for the class //
@@ -48,8 +50,12 @@ public:
 	// sets the state of the current game object
 	void setActive(bool active_state) {_active = active_state;} 
 	void setScene(std::shared_ptr<Scene> scene) {_scene = scene;}
-
 	
+	// covarient return type so that the gameobject list can be copied successfully
+	// this is necessary for to create a copy of the original active scene so that the game can be reloaded
+	// smart pointers unfortunately cannot be used
+	virtual GameObject* Clone() 
+	{return new GameObject(*this);}
 	// class invariance that a gameobject must be destroyed in a specific way 
 	void Destroy();
 	virtual ~GameObject(){}
@@ -59,6 +65,7 @@ protected:
 	GameObjectType _type;
 	Vector2D<double> _position;
 	bool _active = true;
+	std::shared_ptr<GameObject> FindGameObjectByType(GameObjectType searchType); 
 };
 
 #endif

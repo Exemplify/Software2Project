@@ -17,7 +17,9 @@ public:
     GraphicObject(),
     _objectSpeed{objectSpeed}
     { _type=GameObjectType::physicsObject; }
-    
+	// Clone function
+	virtual PhysicsObject* Clone() override 
+	{return new PhysicsObject(*this);}
     //Commands
     //set speed of the physics object
     void setSpeed(double newSpeed) {_objectSpeed = newSpeed;}

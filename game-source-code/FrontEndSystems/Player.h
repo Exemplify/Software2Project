@@ -19,7 +19,8 @@ public:
 	}
 	Player(Vector2D<double>& startPosition, Character playerStats);
     Player(Vector2D<double>& startPosition, Character playerStats, std::shared_ptr<SpriteInfo> bulletSprite);
-	
+	virtual Player* Clone() override 
+	{return new Player(*this);}
     void Update() override;
     virtual void collisionAction(GameObjectType objectType) override;
 private:

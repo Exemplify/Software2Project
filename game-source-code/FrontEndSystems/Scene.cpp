@@ -5,18 +5,26 @@
 
 using gameObj_ptr = std::shared_ptr<GameObject>;
 
+Scene::Scene(const Scene& rhs)
+{
+	for(auto GO : rhs._gameObject_list)
+	{
+		auto temp_ptr = std::make_shared<GameObject>(*(GO->Clone()));
+		_gameObject_list.push_back(temp_ptr);
+	}
+}
+
+
 void Scene::SceneUpdate()
 {
 	if(_gameObject_list.size() == 0)
 		return;
 	
+	std::lock_guard<std::mutex> lock(_gameObject_list_mutex);
 	auto temporyGameObjList = _gameObject_list;	
-	std::lock_guard<std::mutex> lock(_gameObj_list_mutex);
 	for(auto GO : temporyGameObjList)
 	{
-		_updatingList = true;
 		GO->Update();
-		_updatingList = false;
 	}
 }
 
@@ -42,6 +50,10 @@ void Scene::DestroyGameObject(gameObj_ptr gameObj)
 			break;
 		}
 	}
+}
 
-
+Scene& Scene::operator =(const Scene& rhs)
+{
+	_gameObject_list = rhs._gameObject_list;
+	return *this;
 }

@@ -4,9 +4,10 @@
 
 std::shared_ptr<Scene> GameManager::activeScene = NULL;
 std::vector<std::shared_ptr<Scene>> GameManager::_game_scenes{};
+std::shared_ptr<Scene> GameManager::original_activeScene = NULL;
 
 bool GameManager::closeWindow = false;
-
+int GameManager::_scene_index = 0;
 class SceneDoesntExist{};
 
 void GameManager::GameLoop()
@@ -51,7 +52,11 @@ void GameManager::initialiseWindow(RenderWindow& gameWindow)
 void GameManager::AddScene(std::shared_ptr<Scene> newScene)
 {
 	if (_game_scenes.size() == 0)
+	{
 		activeScene = newScene;
+		original_activeScene = std::make_shared<Scene>(*newScene);
+	}
+
 	_game_scenes.push_back(newScene);
 }
 
@@ -66,7 +71,10 @@ void GameManager::LoadScene(unsigned int index)
 		throw SceneDoesntExist();
 	else
 	{
+		*_game_scenes.at(_scene_index) = *original_activeScene;
+		original_activeScene = std::make_shared<Scene>(*_game_scenes.at(index));
 		activeScene = _game_scenes.at(index);
+		_scene_index = index;
 	}
 }
 

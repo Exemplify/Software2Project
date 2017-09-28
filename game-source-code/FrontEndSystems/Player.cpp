@@ -13,8 +13,8 @@ _shootDelay{SHOOT_DELAY}
 	auto playerBulletSprite = std::make_shared<SpriteInfo>();
 	playerBulletSprite->textureLocation = "resources/Rock.png";
 	playerBulletSprite->scale = Vector2f(0.05f,0.05f);
-    _objectSize = 100;
-	
+    _objectSize = 25;
+	_type = GameObjectType::player;
 	_shootComp = ShootComponent(playerBulletSprite, GameObjectType::playerBullet);
 }
 Player::Player(Vector2D<double>& startPosition, Character playerStats, std::shared_ptr<SpriteInfo> bulletSprite):
@@ -23,8 +23,9 @@ _playerStats{playerStats},
 _shootDelay{SHOOT_DELAY},
 _shootComp{bulletSprite, GameObjectType::playerBullet}
 {
+	_type = GameObjectType::player;
     _position = startPosition;
-    _objectSize = 100;
+    _objectSize = 25;
 }
 void Player::Update()
 {
@@ -56,5 +57,5 @@ void Player::ShootConditionalCheck()
 void Player::collisionAction(GameObjectType objectType)
 {
     if (objectType == GameObjectType::enemyBullet || objectType == GameObjectType::enemy)
-        auto TIM = 0;
+        GameManager::LoadScene(3);
 }

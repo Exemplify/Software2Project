@@ -17,7 +17,7 @@ void SplashScreen::QuitGame()
 }
 void SplashScreen::PlayGame()
 {
-	if(Input::IsButtonPressed(Keys::space))
+	if(Input::IsButtonPressed(Keys::space)&&GameManager::getScene() == 0 )
 		GameManager::LoadScene(GameSceneIndex);
 }
 

@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "../BackEndSystems/GameTime.h"
+#include "EnemyController.h"
 
 
 const double ENEMY_SHOOT_DELAY = 3; 
@@ -13,7 +14,8 @@ _shootDelay{ENEMY_SHOOT_DELAY, false}
 {
 	ConstructSpriteInfo();
 	InitialiseObject();
-    _objectSize = 100;
+    _objectSize = 30;
+	_type = GameObjectType::enemy;
 }
 void Enemy::ConstructSpriteInfo()
 {
@@ -165,11 +167,8 @@ void Enemy::SpiralMove()
 {
 	auto PLAYER_ANGULAR_MOVEMENT_SPEED = 180*DEG_2_RAD;
 	auto PLAYER_RADIAL_MOVEMENT_SPEED = 10;
-
-	
 	auto curPos = getPosition().rtpVector();
 	curPos[0] += PLAYER_RADIAL_MOVEMENT_SPEED * GameTime::getDeltaTime();
-	//PLAYER_ANGULAR_MOVEMENT_SPEED/=(2*3.141592*curPos[0]);
 	curPos[1] += PLAYER_ANGULAR_MOVEMENT_SPEED* GameTime::getDeltaTime();
 	Vector2D<double> newPos{curPos, VectorType::rtp};
 	
@@ -188,5 +187,15 @@ void Enemy::ParabolicMove()
 void Enemy::collisionAction(GameObjectType objectType)
 {
     if(objectType == GameObjectType::playerBullet || objectType == GameObjectType::player)
-        Destroy();
+	{
+		PlayerProjectileCollision();
+	}
+}
+void Enemy::PlayerProjectileCollision()
+{
+	auto enemCon = FindGameObjectByType(GameObjectType::enemyController);
+	auto enemyControllerCast = std::dynamic_pointer_cast<EnemyController>(enemCon); 
+	if(enemyControllerCast)
+		enemyControllerCast->EnemyKilled();
+	Destroy();
 }

@@ -6,7 +6,9 @@
 
 CollisionDetection::CollisionDetection(RenderWindow* dispWindow):
 _dispwindow_ptr(dispWindow)
-{}
+{
+	initializeCollisionThread();
+}
 
 void CollisionDetection::initializeCollisionThread()
 {
@@ -25,7 +27,7 @@ void CollisionDetection::runCollisionThread()
 void CollisionDetection::checkCollisions()
 {
     auto _activeScene = GameManager::activeScene;
-    std::lock_guard<std::mutex> lock(_activeScene->_gameObj_list_mutex);
+    std::lock_guard<std::mutex> lock(_activeScene->_gameObject_list_mutex);
     auto tempGameObjList = _activeScene->getGameObjectList();
 //    vector<std::shared_ptr<PhysicsObject>> physObj_prtVec;
 //    transform(tempGameObjList.begin(), tempGameObjList.end(), physObj_ptrVec.begin(), std::dynamic_pointer_cast<PhysicsObject>);
@@ -55,6 +57,8 @@ void CollisionDetection::checkObjects(shared_ptr<GameObject> gameObj1, shared_pt
         auto collisionBoundary = PhysicsObject1->getSize()+PhysicsObject2->getSize();
         
         if(magnitudeBetweenObjectPositions <= collisionBoundary)
-            PhysicsObject1->collisionAction(PhysicsObject2->getType());
+		{
+			PhysicsObject1->collisionAction(PhysicsObject2->getType());
+		}
     }
 }

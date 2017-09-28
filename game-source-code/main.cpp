@@ -14,14 +14,20 @@ using std::shared_ptr;
 
 shared_ptr<Scene> SplashScreenFunc();
 shared_ptr<Scene> GameSceneFunc();
+shared_ptr<Scene> WinScreenFunc();
+shared_ptr<Scene> LoseScreenFunc();
 
 int main()
 {
-	shared_ptr<Scene> splashScene =  SplashScreenFunc();
-	shared_ptr<Scene> gameScene = GameSceneFunc();
+	auto splashScene =  SplashScreenFunc();
+	auto gameScene = GameSceneFunc();
+	auto winScene = WinScreenFunc();
+	auto loseScene = LoseScreenFunc();
 	GameManager gm;
 	gm.AddScene(splashScene);
 	gm.AddScene(gameScene);
+	gm.AddScene(winScene);
+	gm.AddScene(loseScene);
 	gm.GameLoop();
 	return EXIT_SUCCESS;
 }
@@ -57,4 +63,24 @@ shared_ptr<Scene> GameSceneFunc()
 	gameScene->Instantiate(player);
 	gameScene->Instantiate(EnemyCon);
 	return gameScene;
+}
+
+shared_ptr<Scene> WinScreenFunc()
+{
+	shared_ptr<Scene> splashScene = std::make_shared<Scene>();
+	shared_ptr<SplashScreen> background = std::make_shared<SplashScreen>();
+	shared_ptr<SpriteInfo> backgroundInfo =  background->getSpriteInfo();
+	backgroundInfo->textureLocation = "resources/WinScreen.png";
+	splashScene->Instantiate(background);
+	return splashScene;
+}
+
+shared_ptr<Scene> LoseScreenFunc()
+{
+	shared_ptr<Scene> splashScene = std::make_shared<Scene>();
+	shared_ptr<SplashScreen> background = std::make_shared<SplashScreen>();
+	shared_ptr<SpriteInfo> backgroundInfo =  background->getSpriteInfo();
+	backgroundInfo->textureLocation = "resources/LoseScreen.png";
+	splashScene->Instantiate(background);
+	return splashScene;
 }

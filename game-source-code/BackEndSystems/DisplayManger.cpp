@@ -45,7 +45,7 @@ void DisplayManager::Draw()
 		return;
 	else
 	{
-		std::lock_guard<std::mutex> lock(activeScene->_gameObj_list_mutex);
+		std::lock_guard<std::mutex> lock(activeScene->_gameObject_list_mutex);
 		auto displayObjects = activeScene->getGameObjectList();
 		for(auto GO : displayObjects)
 		{

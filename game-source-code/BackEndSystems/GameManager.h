@@ -33,8 +33,11 @@ public:
 	static void Exit();
 	static void LoadScene(unsigned int index);
 	void AddScene(scene_ptr newScene);
+	static int getScene() {return _scene_index;}
 private:
 	GameTime* _gameTime;
+	// represents the current scene that the player is in
+	static int _scene_index;
     // Variables
 	WindowSettings _defaultSetup;
 	// Backend Objects 
@@ -43,7 +46,7 @@ private:
 	EventManager _eventManager;
 	// Scene Objects
 	static std::vector<scene_ptr> _game_scenes;
-	
+	static scene_ptr original_activeScene;
     // Methods
     void initialiseWindow(RenderWindow&_gameWindow);
 };
