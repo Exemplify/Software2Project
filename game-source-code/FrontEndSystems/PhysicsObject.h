@@ -9,6 +9,10 @@ class PhysicsObject : public GraphicObject
 {
 public:
     // Constructor
+    PhysicsObject()
+    {
+        _type = GameObjectType::physicsObject;
+    }
     PhysicsObject(double objectSpeed, std::shared_ptr<SpriteInfo> spriteInfo, Vector2D<double> position):
     GraphicObject(),
     _objectSpeed{objectSpeed}
@@ -24,7 +28,7 @@ public:
     virtual void collisionAction(GameObjectType objectType) {}
     
     //Destructor
-    virtual ~PhysicsObject();
+    virtual ~PhysicsObject() {}
     
 protected:
     double _objectSpeed;

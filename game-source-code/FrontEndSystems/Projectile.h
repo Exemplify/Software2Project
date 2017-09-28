@@ -1,11 +1,11 @@
 #ifndef PROJ_H
 #define PROJ_H
-#include "GraphicObject.h"
+#include "PhysicsObject.h"
 #include "Boundary.h"
 
 const double PLAYER_PROJECTILE_DESTROY_REGION = 10;
 
-class Projectile: public GraphicObject
+class Projectile: public PhysicsObject
 {
 public:
 	Projectile(){}
@@ -17,6 +17,7 @@ public:
 	Projectile(const Projectile& copyProjectile);
 	virtual void Update() override;
 	void Initialise(Vector2D<double> startingPos, Vector2D<double> direction, double moveSpeed);
+    virtual void collisionAction(GameObjectType objectType) override;
 	~Projectile() override{}
 private:
 	Vector2D<double> _direction;

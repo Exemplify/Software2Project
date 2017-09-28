@@ -1,6 +1,6 @@
 #ifndef ENEM_H
 #define ENEM_H
-#include "GraphicObject.h"
+#include "PhysicsObject.h"
 #include "Character.h"
 #include "DelayComponent.h"
 #include "ShootComponent.h"
@@ -13,11 +13,12 @@ enum class EnemyMoveType
 	spiral
 };
 
-class Enemy: public GraphicObject
+class Enemy: public PhysicsObject
 {
 public:
 	Enemy();
 	virtual void Update() override;
+    virtual void collisionAction(GameObjectType objectType) override;
 private:
 	void Move();
 	void Shoot();

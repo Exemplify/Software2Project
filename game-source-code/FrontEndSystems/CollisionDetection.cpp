@@ -1,5 +1,5 @@
 #include "CollisionDetection.h"
-#include "GameManager.h"
+#include "../BackEndSystems/GameManager.h"
 #include "PhysicsObject.h"
 #include <mutex>
 #include <thread>
@@ -18,7 +18,7 @@ void CollisionDetection::runCollisionThread()
 {
     while(_dispwindow_ptr->isOpen())
     {
-        
+        checkCollisions();
     }
 }
 
