@@ -1,7 +1,7 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include "GraphicObject.h"
+#include "PhysicsObject.h"
 #include "../Vector2D.hpp"
 #include <memory>
 #include "Character.h"
@@ -10,7 +10,7 @@
 
 using namespace std;
 
-class Player : public GraphicObject
+class Player : public PhysicsObject
 {
 public:
 	Player()
@@ -21,6 +21,7 @@ public:
     Player(Vector2D<double>& startPosition, Character playerStats, std::shared_ptr<SpriteInfo> bulletSprite);
 	
     void Update() override;
+    virtual void collisionAction(GameObjectType objectType) override;
 private:
 	void move();
 	

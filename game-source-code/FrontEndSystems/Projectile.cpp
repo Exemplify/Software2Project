@@ -5,19 +5,23 @@
 
 
 Projectile::Projectile(std::shared_ptr<SpriteInfo> spriteInfo, GameObjectType projectileType):
-GraphicObject(spriteInfo),
+PhysicsObject(),
 _enemyDestroyBounds{},
 _playerDestroyBounds{PLAYER_PROJECTILE_DESTROY_REGION, PLAYER_PROJECTILE_DESTROY_REGION}
 {
 	_type = projectileType;
+    _spriteInfo = spriteInfo;
+    _objectSize = 50;
 }
+
 Projectile::Projectile(const Projectile& copyProjectile):
-GraphicObject()
+PhysicsObject()
 {
 	_enemyDestroyBounds = copyProjectile._enemyDestroyBounds;
 	_playerDestroyBounds = copyProjectile._playerDestroyBounds;
 	_spriteInfo = copyProjectile._spriteInfo;
 	_type = copyProjectile._type;
+    _objectSize = 50;
 }
 void Projectile::Update()
 {
@@ -55,4 +59,14 @@ void Projectile::Initialise(Vector2D<double> startingPos, Vector2D<double> direc
 	_position = startingPos;
 	_direction = direction;
 	_moveSpeed = moveSpeed;
+}
+
+void Projectile::collisionAction(GameObjectType objectType)
+{
+    if(_type != objectType && (objectType == GameObjectType::enemyBullet || objectType == GameObjectType::playerBullet))
+        Destroy();
+    else if(objectType == GameObjectType::enemy && _type == GameObjectType::playerBullet)
+        Destroy();
+    else if(objectType == GameObjectType::player && _type == GameObjectType::enemyBullet)
+        Destroy();
 }

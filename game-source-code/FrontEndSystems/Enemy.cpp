@@ -8,10 +8,12 @@ const double ENEMY_SHOOT_DELAY = 3;
 const auto DEG_2_RAD = 3.141592653589793/180.0;
 
 Enemy::Enemy():
+PhysicsObject(),
 _shootDelay{ENEMY_SHOOT_DELAY, false}
 {
 	ConstructSpriteInfo();
-		InitialiseObject();
+	InitialiseObject();
+    _objectSize = 100;
 }
 void Enemy::ConstructSpriteInfo()
 {
@@ -183,4 +185,8 @@ void Enemy::ParabolicMove()
 	_position = Vector2D<double>(curPos);
 }
 
-
+void Enemy::collisionAction(GameObjectType objectType)
+{
+    if(objectType == GameObjectType::playerBullet || objectType == GameObjectType::player)
+        Destroy();
+}

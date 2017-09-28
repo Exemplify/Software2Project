@@ -1,5 +1,6 @@
 #include "GameManager.h"
 #include "GameTime.h"
+#include "../FrontEndSystems/CollisionDetection.h"
 
 std::shared_ptr<Scene> GameManager::activeScene = NULL;
 std::vector<std::shared_ptr<Scene>> GameManager::_game_scenes{};
@@ -17,6 +18,7 @@ void GameManager::GameLoop()
 
 	// initialises the display thread
 	_dispManager.InitialiseThread(window);
+    CollisionDetection collisionDetection(&window);
 
     // The main game loop
     while (window.isOpen())
