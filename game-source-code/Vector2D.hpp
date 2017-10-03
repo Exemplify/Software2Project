@@ -53,6 +53,20 @@ using namespace std;
  * a double through a cast. Additionally the way it stands breaks that invariance I can make a Vector<CollisionDetection> myVec;
  * this will break in the default constructor as it will try to assign 0 0 0 to the object. Templating is meant for generic objects of any type like the vector it is just a list
  * and performs list operations but it never tries to assign the values to the object itself, it just holds the information. 
+ * 
+ * Edit: 
+ * In the Lecture you missed due to the doctors appointment levit mentioned that using a strcut to hold the data is a good idea as it is a purely utility object and is used to pass
+ * information states around, so we could have a 
+ * struct xyVector
+ * {
+ * 		double x, y; 
+ * };
+ * struct trVector
+ * {
+ * 		double t, r; 
+ * };
+ * 
+ * 
  */	  
 enum class VectorType
 {
@@ -79,6 +93,7 @@ public:
     vector<T> rtpVector();
     
     // overload operators defined
+	/// need to incorporate a standard assignment opperator =
     // equivalancy operator, Vector2D == Vector2d
     bool operator ==(const Vector2D<T>& rhs) const;
     // addition and create operator: newVector2D = Vector2D + Vector2D
