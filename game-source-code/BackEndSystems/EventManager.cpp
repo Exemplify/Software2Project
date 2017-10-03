@@ -4,14 +4,16 @@
 EventManager::EventManager(RenderWindow* eventWindow):
 _eventWindow(eventWindow)
 {}
+// performs the sfml event loop
 void EventManager::EventLoop(RenderWindow& eventWindow)
 {
+	// loads all events that have been triggered
 	Event event;
 	while(eventWindow.pollEvent(event))
 	{
 		switch(event.type)
 		{
-		// window closed
+		// window closed called by UI as well as the OS
         case Event::Closed:
             eventWindow.close();
             break;
@@ -26,8 +28,11 @@ void EventManager::EventLoop(RenderWindow& eventWindow)
 		}
 	}
 }
+// Assigns whether an key has been pressed or released
 void EventManager::KeyInput(const Event& event, bool state)
 {
+	// switch statement that checks for which keys are pressed, 
+	// allows additional keys to be added easily
 	switch(event.key.code)
 	{
 		case Keyboard::Key::Escape:
