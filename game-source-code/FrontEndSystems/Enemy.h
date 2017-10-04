@@ -29,6 +29,7 @@ public:
 	// Clone function necessary to duplicate the class using a covarient return type
 	virtual Enemy* Clone() override 
 	{return new Enemy(*this);}
+    EnemyMoveType getMoveType() const {return _movementType;}
 private:
 	// Move function that is called inside update to move the current enemy object
 	void Move();
