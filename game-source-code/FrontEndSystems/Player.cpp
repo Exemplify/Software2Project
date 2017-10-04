@@ -3,12 +3,15 @@
 #include "../BackEndSystems/GameTime.h"
 #include "Projectile.h"
 
+/// Information needs to be stored in a database
 const double SHOOT_DELAY = 0.35; 
 const double SHOOT_SPEED = 150;
+/// Player constructor needs to be reworked too much database implementation is used 
 Player::Player(Vector2D<double>& startPosition, Character playerStats):
 _playerStats{playerStats},
 _shootDelay{SHOOT_DELAY}
 {	
+	/// Needs to be stored in a database
 	_position = startPosition;
 	auto playerBulletSprite = std::make_shared<SpriteInfo>();
 	playerBulletSprite->textureLocation = "resources/Rock.png";
@@ -17,6 +20,7 @@ _shootDelay{SHOOT_DELAY}
 	_type = GameObjectType::player;
 	_shootComp = ShootComponent(playerBulletSprite, GameObjectType::playerBullet);
 }
+
 Player::Player(Vector2D<double>& startPosition, Character playerStats, std::shared_ptr<SpriteInfo> bulletSprite):
 PhysicsObject(),
 _playerStats{playerStats},
@@ -27,12 +31,13 @@ _shootComp{bulletSprite, GameObjectType::playerBullet}
     _position = startPosition;
     _objectSize = 25;
 }
+// Each update a check to move and shoot is done
 void Player::Update()
 {
 	move();
 	ShootConditionalCheck();
 }
-
+/// needs to be put into a movement interface
 void Player::move()
 {
 	auto direc = Input::getAxis(Axis::horizontal);
@@ -40,11 +45,14 @@ void Player::move()
 	curPos[1] += GameTime::getDeltaTime() * _playerStats.getMoveSpeed() * direc;
 	Vector2D<double> newPos{curPos[0], curPos[1], curPos[2], VectorType::rtp};
     _position = newPos;
-
 }
+// Checks if the player must shoot
 void Player::ShootConditionalCheck()
 {
+	/// Shoot Delay reduceTime must be removed and incorportaed into DelayFinished
 	_shootDelay.reduceTime();
+	// Checks if the space key has been pressed and if the delay has finished then creates 
+	// a player bullet in the current scene at the specified shootspeed and position
 	if(Input::IsButtonPressed(Keys::space) && _shootDelay.DelayFinished())
 	{
 		Vector2D<double> origin;
@@ -56,6 +64,8 @@ void Player::ShootConditionalCheck()
 
 void Player::collisionAction(GameObjectType objectType)
 {
+	// if the player collides with the enemy or enemy bullet the player loses and the lose screen is loaded
+	/// Magic Number needs to be removed (can be replaced by an enumerator class or static variable)
     if (objectType == GameObjectType::enemyBullet || objectType == GameObjectType::enemy)
         GameManager::LoadScene(3);
 }

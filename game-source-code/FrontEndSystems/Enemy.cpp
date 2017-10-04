@@ -17,6 +17,7 @@ _shootDelay{ENEMY_SHOOT_DELAY, false}
     _objectSize = 30;
 	_type = GameObjectType::enemy;
 }
+/// Needs to be moved to a Database
 void Enemy::ConstructSpriteInfo()
 {
 	_spriteInfo->textureLocation = "resources/AdamHabib.png";
@@ -35,7 +36,7 @@ void Enemy::Update()
 	Shoot();
 	CheckOutsideScreen();
 }
-
+/// All movement functions need to be moved into a polymorphic class structure
 void Enemy::InitialiseObject()
 {
 	
@@ -183,19 +184,23 @@ void Enemy::ParabolicMove()
 	curPos[1] = parabolic_a * pow(curPos[0],2);
 	_position = Vector2D<double>(curPos);
 }
-
+// Function override from PhysicsObject, called by CollisionDetection
 void Enemy::collisionAction(GameObjectType objectType)
 {
+	// Checks if object is either the player or the players projectile
     if(objectType == GameObjectType::playerBullet || objectType == GameObjectType::player)
 	{
 		PlayerProjectileCollision();
 	}
 }
+// collision function for when enemy object is destroyed
 void Enemy::PlayerProjectileCollision()
 {
+	// Access the Enemy Controller to communicate that an enemy was destroyed
 	auto enemCon = FindGameObjectByType(GameObjectType::enemyController);
 	auto enemyControllerCast = std::dynamic_pointer_cast<EnemyController>(enemCon); 
 	if(enemyControllerCast)
 		enemyControllerCast->EnemyKilled();
+	// Removes the current object from the scene
 	Destroy();
 }
