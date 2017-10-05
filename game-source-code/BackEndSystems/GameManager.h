@@ -45,6 +45,7 @@ public:
 	// returns the current scenes index within the vector of scenes 
 	static int getScene() {return _scene_index;}
 private:
+	/// convert to unique pointer
 	GameTime* _gameTime;
 	// represents the current scene that the player is in
 	static int _scene_index;
@@ -52,7 +53,6 @@ private:
 	WindowSettings _defaultSetup;
 	// Backend Objects 
 	static bool closeWindow;
-	DisplayManager _dispManager;
 	EventManager _eventManager;
 	// Scene Objects
 	static std::vector<scene_ptr> _game_scenes;

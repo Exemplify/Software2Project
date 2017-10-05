@@ -18,20 +18,16 @@ using std::shared_ptr;
 class DisplayManager
 {
 public:
-	/// Default constructor is redundant and can be removed
-	DisplayManager() {}
-	/// Constructor with a RenderWindow pointer is most likely going to be used to replace the 
-	/// current implementation which uses the Initialise thread fucntion
-	DisplayManager(RenderWindow* dispWindow);
-	/// Intialise thread initialises the display thread and assigns the _dispwindow_ptr object 
-	/// this should possibly be replaced with smart pointers in future
-	void InitialiseThread(RenderWindow& dispWindow);
-	/// destructor required for the standard pointer
+	// constructs a DisplayManager Object that intitialises a seperate thread used for the presentation layer
+	DisplayManager(RenderWindow& renderWindow);
+	// destructor required for the standard pointer
 	~DisplayManager() {_dispwindow_ptr = NULL;}
 	
 private:
 	// pointer to the active render window
 	RenderWindow* _dispwindow_ptr;
+	// Intialises the display thread from the DisplayManager constructor
+	void InitialiseThread();
 	// runs the display loop and is created in a seperate thread
 	void renderThread();
 	// Draws each sfml sprite object to the game window

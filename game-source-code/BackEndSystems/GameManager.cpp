@@ -18,7 +18,7 @@ void GameManager::GameLoop()
 	initialiseWindow(window);
 
 	// initialises the display thread
-	_dispManager.InitialiseThread(window);
+	DisplayManager _displayThread(window);
     CollisionDetection collisionDetection(&window);
 
     // The main game loop

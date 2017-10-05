@@ -15,9 +15,11 @@ const int HALF_SCREEN_HEIGHT = 540;
 class FailedToLoadTexture{};
 
 // Assigns dispWindow
-DisplayManager::DisplayManager(RenderWindow* dispWindow):
-_dispwindow_ptr(dispWindow)
-{}
+DisplayManager::DisplayManager(RenderWindow& renderWindow):
+_dispwindow_ptr{&renderWindow}
+{
+	InitialiseThread();
+}
 
 // Method used within the display thread
 void DisplayManager::renderThread()
@@ -37,9 +39,8 @@ void DisplayManager::renderThread()
 }
 
 // Initialises the display thread 
-void DisplayManager::InitialiseThread(RenderWindow& dispWindow)
+void DisplayManager::InitialiseThread()
 {
-	_dispwindow_ptr = &dispWindow;
 	std::thread dispthread(&DisplayManager::renderThread, this);
 	dispthread.detach();
 }
