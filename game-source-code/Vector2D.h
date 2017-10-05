@@ -70,69 +70,81 @@ using namespace std;
  */	  
 enum class VectorType
 {
-    xyp = 1,
-    rtp
+    xy = 1,
+    rt
 };
 class VectorSizeError {};
 
-template<class T>
+struct xyVector
+{
+    double x;
+    double y;
+};
+struct rtVector
+{
+    double r;
+    double t;
+};
+
 class Vector2D
 {
 public:
     // Default Constructor
-    Vector2D<T>();
+    Vector2D();
     // Scalar Constructor
-    Vector2D<T>(T val1, T val2, T phi, const VectorType& vectype = VectorType::xyp);
-    // Vector Constructor
-    Vector2D<T>(const vector<T>& vec, const VectorType& vectype = VectorType::xyp);
+    Vector2D(double val1, double val2, const VectorType& vectype = VectorType::xy);
+    // Vector Constructor for xyVector
+    Vector2D(const xyVector vec);
+    // Vector Constructor for rtVector
+    Vector2D(const rtVector vec);
     // Copy constructor
-    Vector2D(const Vector2D<T>& rhs);
+    Vector2D(const Vector2D& rhs);
     // cartesian position function
-    vector<T> xypVector() const;
+    xyVector getXYVector() const;
     // polar position function
-    vector<T> rtpVector();
+    rtVector getRTVector() const;
     
     // overload operators defined
-	/// need to incorporate a standard assignment opperator =
-    // equivalancy operator, Vector2D == Vector2d
-    bool operator ==(const Vector2D<T>& rhs) const;
+    // assignment operator, Vector2D = Vector2D
+    Vector2D& operator = (const Vector2D& rhs); 
+    // equivalancy operator, Vector2D == Vector2D
+    bool operator ==(const Vector2D& rhs) const;
     // addition and create operator: newVector2D = Vector2D + Vector2D
-    Vector2D<T> operator + (const Vector2D<T>& rhs) const;
+    Vector2D operator + (const Vector2D& rhs) const;
     // subtraction and create operator: newVector2D = Vector2D - Vector2D
-    Vector2D<T> operator - (const Vector2D<T>& rhs) const;
+    Vector2D operator - (const Vector2D& rhs) const;
     // Vector multiply and create operator: newVector2D = Vector2D * Vector2D
-    Vector2D<T> operator * (const Vector2D<T>& rhs) const;
+    Vector2D operator * (const Vector2D& rhs) const;
     // scalar multiply and create operator: newVector2D = Vector2D * scalar
-    Vector2D<T> operator * (const T& scalar) const;
+    Vector2D operator * (const double& scalar) const;
     // scalar division and create operator: newVector2D = Vector2D / scalar
-    Vector2D<T> operator / (const T& scalar) const;
+    Vector2D operator / (const double& scalar) const;
     // addition assignment operator: thisVector2d = thisVector2D + Vector2D
-    Vector2D<T>& operator += (const Vector2D<T>& rhs);
+    Vector2D& operator += (const Vector2D& rhs);
     // subtraction assignment operator: thisVector2D = thisVector2D - Vector2D
-    Vector2D<T>& operator -= (const Vector2D<T>& rhs);
+    Vector2D& operator -= (const Vector2D& rhs);
     // Vector multiply assignemnt operator: thisVector2D = thisVector2D*Vector2D
-    Vector2D<T>& operator *= (const Vector2D<T>& rhs);
+    Vector2D& operator *= (const Vector2D& rhs);
     // scalar multiply assignment operator: thisVector2D = thisVector2D*scalar
-    Vector2D<T>& operator *= (const T scale);
+    Vector2D& operator *= (const double scale);
     // scalar division assignment operator: thisVector2D = thisVector2D/scalar
-    Vector2D<T>& operator /= (const T scale);
+    Vector2D& operator /= (const double scale);
     
     // magnitude function
-    static T magnitude(const Vector2D<T>& lhs);
-    static T magnitude(const Vector2D<T>& lhs, const Vector2D<T>& rhs);
+    static double magnitude(const Vector2D& lhs);
+    static double magnitude(const Vector2D& lhs, const Vector2D& rhs);
     
     // normalize function
-    Vector2D<T> normalize() const;
+    Vector2D normalize() const;
     
 private:
-    // private variables
-    T _x_val;
-    T _y_val;
-    T _radius;
-    T _theta;
-    T _phi;
+    //private variables
+    xyVector _xyvec;
+    rtVector _rtvec;
+    
     //static variable Vector2D _origin
-    static Vector2D<T> _origin;
+    static Vector2D _origin;
+    static double magnitude_tolerance;
     
     //private class functions
     // calculates radius
@@ -144,7 +156,5 @@ private:
     // calculates y
     void yVal();
 };
-
-#include "Vector2D.tpp"
 
 #endif
