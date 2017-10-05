@@ -116,10 +116,9 @@ void DisplayManager::InitialiseGraphicObject(SpriteInfo& initialSpriteInfo)
 	initialSpriteInfo.isdefined = true;
 	
 	// declarations for the spriteInfo components to improve readability
-	/// redeclare as auto&
-	Texture& curr_texture = initialSpriteInfo.texture;
-	string& texture_location = initialSpriteInfo.textureLocation;
-	Sprite& sprite = initialSpriteInfo.sprite;
+	auto& curr_texture = initialSpriteInfo.texture;
+	auto& texture_location = initialSpriteInfo.textureLocation;
+	auto& sprite = initialSpriteInfo.sprite;
 	// if the resourse does not exist then an exception is thrown
 	if(!curr_texture.loadFromFile(texture_location))
 	{
@@ -127,6 +126,8 @@ void DisplayManager::InitialiseGraphicObject(SpriteInfo& initialSpriteInfo)
 	}
 	else
 	{
+		//Initialise the hash table instead of the gameobject
+		
 		// sets the current texture to the sprite
 		sprite.setTexture(curr_texture);
 		

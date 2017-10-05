@@ -5,6 +5,8 @@
 #include <memory>
 #include <thread>
 #include <string>
+#include <unordered_map>
+#include "../FrontEndSystems/SpriteInfo.h"
 #include "../FrontEndSystems/Scene.h"
 #include "../FrontEndSystems/GameObject.h"
 #include "../FrontEndSystems/GraphicObject.h"
@@ -14,7 +16,7 @@ using std::shared_ptr;
 // Display manager is in charge of running and managing the presentation of the game
 // It runs in a seperate thread and draws the location of each graphic object based on their game position 
 // and how it is relative to the screen position
-/// can be converted into a singlton
+/// can be converted into a singleton
 class DisplayManager
 {
 public:
@@ -24,8 +26,10 @@ public:
 	~DisplayManager() {_dispwindow_ptr = NULL;}
 	
 private:
-	// pointer to the active render window
+	// pointer to the active render window, uses a standard pointer because a shared pointer causes the application to crash when closed 
 	RenderWindow* _dispwindow_ptr;
+	// Hashtable used to store the different sprite and texture elements
+	std::unordered_map<string, SpriteInfo> spriteInfoTable;
 	// Intialises the display thread from the DisplayManager constructor
 	void InitialiseThread();
 	// runs the display loop and is created in a seperate thread
