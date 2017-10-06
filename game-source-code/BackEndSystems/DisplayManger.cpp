@@ -1,6 +1,7 @@
 #include "DisplayManager.h"
 #include "GameManager.h"
 #include "../FrontEndSystems/GraphicObject.h"
+#include "../FrontEndSystems/SpriteInfo.h"
 #include <mutex>
 #include <cmath>
 #include <string>
@@ -82,7 +83,7 @@ void DisplayManager::DrawSpriteFromGameObject(shared_ptr<GameObject> GO)
 		if(!currentSpriteInfo->isdefined)
 		{
 			// defines the texture and sprite information for the newly created object
-			InitialiseGraphicObject(*currentSpriteInfo);
+			InitialiseGraphicObject(*currentSpriteInfo, GO->getType());
 		}
 		// obtains the relative sfml screen position
 		auto screenPosition = GameObjectScreenPosition(*graphicCast);
@@ -111,7 +112,7 @@ Vector2f DisplayManager::GameObjectScreenPosition(const GraphicObject& graphicOb
 	return screenPosition;
 }
 // intialises the sprite and texture information if it has not been done previously
-void DisplayManager::InitialiseGraphicObject(SpriteInfo& initialSpriteInfo)
+void DisplayManager::InitialiseGraphicObject(SpriteInfo& initialSpriteInfo, GameObjectType goType)
 {
 	initialSpriteInfo.isdefined = true;
 	
@@ -127,16 +128,23 @@ void DisplayManager::InitialiseGraphicObject(SpriteInfo& initialSpriteInfo)
 	else
 	{
 		//Initialise the hash table instead of the gameobject
+		SpriteInfo newSpriteInfo;
 		
+		newSpriteInfo.texture.loadFromFile(texture_location);
+		newSpriteInfo.sprite.setTexture(newSpriteInfo.texture);
+		auto bounds = newSpriteInfo.sprite.getGlobalBounds();
+		auto newOrigin = Vector2f((bounds.width/2),(bounds.height/2));
+		sprite.setOrigin(newOrigin);
+		_spriteInfoTable.insert(static_cast<int>(goType), newSpriteInfo);
 		// sets the current texture to the sprite
 		sprite.setTexture(curr_texture);
 		
 		// Obtains the bounds of the sprite so that the position can be set to
 		// the sprites centre as this is more desirable for this project
-		auto bounds = sprite.getGlobalBounds();
+		bounds = sprite.getGlobalBounds();
 		
 		// Defines the new origin, at the centre of the sprite
-		auto newOrigin = Vector2f((bounds.width/2),(bounds.height/2));
+		newOrigin = Vector2f((bounds.width/2),(bounds.height/2));
 		sprite.setOrigin(newOrigin);
 	}
 }

@@ -29,7 +29,7 @@ private:
 	// pointer to the active render window, uses a standard pointer because a shared pointer causes the application to crash when closed 
 	RenderWindow* _dispwindow_ptr;
 	// Hashtable used to store the different sprite and texture elements
-	std::unordered_map<string, SpriteInfo> spriteInfoTable;
+	std::unordered_map<int, SpriteInfo> _spriteInfoTable;
 	// Intialises the display thread from the DisplayManager constructor
 	void InitialiseThread();
 	// runs the display loop and is created in a seperate thread
@@ -44,7 +44,7 @@ private:
 	// On the first draw call of the game object this is called to set up the sfml texture and sprite information
 	/// needs to set infomation up seperately to the gameobject
 	/// gameobject does not need to know about sfml
-	void InitialiseGraphicObject(SpriteInfo& initialSpriteInfo);
+	void InitialiseGraphicObject(SpriteInfo& initialSpriteInfo, GameObjectType gotype);
 };
 
 
