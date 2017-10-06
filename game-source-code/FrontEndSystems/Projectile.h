@@ -19,7 +19,7 @@ public:
 	}
 	// constructor used to identify whether the gameobject type is an enemy projectile or a player projectile 
 	// with the corresponding graphical information
-	Projectile(std::shared_ptr<SpriteInfo> spriteInfo, GameObjectType projectileType);
+	Projectile(std::shared_ptr<SpriteInfo> spriteInfo, GameObjectType projectileType, std::string graphicName);
 	// copy constructor used by the shoot coponent to create copys of a standard projectile
 	Projectile(const Projectile& copyProjectile);
 	// Overrides Update function for specific responsibilities 

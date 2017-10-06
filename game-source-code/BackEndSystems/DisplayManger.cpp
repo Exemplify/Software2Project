@@ -35,8 +35,6 @@ void DisplayManager::renderThread()
 		// displays all sprites that have been drawn to the scene
 		_dispwindow_ptr->display();
 	}
-	// ensures that the _dispwindow_ptr is Null when the loop closes
-	_dispwindow_ptr = NULL;
 }
 
 // Initialises the display thread 
@@ -49,7 +47,7 @@ void DisplayManager::InitialiseThread()
 void DisplayManager::Draw()
 {
 	shared_ptr<Scene> activeScene = GameManager::activeScene;
-	//Guard Clauses to make sure there is a scene available before trying to access it
+	// Guard Clause to make sure there is a scene available before trying to access it
 	if(activeScene == NULL )
 		return;
 	else
@@ -66,32 +64,36 @@ void DisplayManager::Draw()
 	}
 }
 // Draws each sprite that is stored inside the gameobject
-/// needs to be changed to use a hashtable
 void DisplayManager::DrawSpriteFromGameObject(shared_ptr<GameObject> GO)
 {
 	//Checks if the current game object is active
 	if(!GO->isActive())
 		return;
-		
+	
 	//Checks if the Gameobject forms part of the graphics child class
 	auto graphicCast = std::dynamic_pointer_cast<GraphicObject>(GO);
 	if(graphicCast)
 	{
+		auto currentObjectKey = graphicCast->getGraphicName();
 		// Access the sprite information from the current gameObject 
 		auto currentSpriteInfo = graphicCast->getSpriteInfo();
+		auto currentSpriteInfoHash = _spriteInfoTable.find(currentObjectKey);
 		// Checks if the objects sprite information has already been defined
-		if(!currentSpriteInfo->isdefined)
+		if(!currentSpriteInfo->isdefined || currentSpriteInfoHash == _spriteInfoTable.end())
 		{
 			// defines the texture and sprite information for the newly created object
-			InitialiseGraphicObject(*currentSpriteInfo, GO->getType());
+			InitialiseGraphicObject(*currentSpriteInfo, currentObjectKey);
 		}
 		// obtains the relative sfml screen position
+		currentSpriteInfoHash = _spriteInfoTable.find(currentObjectKey);
 		auto screenPosition = GameObjectScreenPosition(*graphicCast);
+
 		// sets the position and scale of the sprite accordingly
-		currentSpriteInfo->sprite.setPosition(screenPosition);
-		currentSpriteInfo->sprite.setScale(currentSpriteInfo->scale);
+		auto currentSpriteData = currentSpriteInfoHash->second;
+		currentSpriteData->sprite.setPosition(screenPosition);
+		currentSpriteData->sprite.setScale(currentSpriteInfo->scale);
 		// draws the sprite to the scene
-		_dispwindow_ptr->draw(currentSpriteInfo->sprite);
+		_dispwindow_ptr->draw(currentSpriteData->sprite);
 	}
 }
 
@@ -112,7 +114,7 @@ Vector2f DisplayManager::GameObjectScreenPosition(const GraphicObject& graphicOb
 	return screenPosition;
 }
 // intialises the sprite and texture information if it has not been done previously
-void DisplayManager::InitialiseGraphicObject(SpriteInfo& initialSpriteInfo, GameObjectType goType)
+void DisplayManager::InitialiseGraphicObject(SpriteInfo& initialSpriteInfo, std::string gameObjectKey)
 {
 	initialSpriteInfo.isdefined = true;
 	
@@ -127,24 +129,23 @@ void DisplayManager::InitialiseGraphicObject(SpriteInfo& initialSpriteInfo, Game
 	}
 	else
 	{
-		//Initialise the hash table instead of the gameobject
-		SpriteInfo newSpriteInfo;
+		//Initialise sprite info object for the hashtable
+		auto newSpriteInfo = std::make_shared<SpriteInfo>();
 		
-		newSpriteInfo.texture.loadFromFile(texture_location);
-		newSpriteInfo.sprite.setTexture(newSpriteInfo.texture);
-		auto bounds = newSpriteInfo.sprite.getGlobalBounds();
-		auto newOrigin = Vector2f((bounds.width/2),(bounds.height/2));
-		sprite.setOrigin(newOrigin);
-		_spriteInfoTable.insert(static_cast<int>(goType), newSpriteInfo);
 		// sets the current texture to the sprite
-		sprite.setTexture(curr_texture);
+		newSpriteInfo->texture.loadFromFile(texture_location);
+		newSpriteInfo->sprite.setTexture(newSpriteInfo->texture);
 		
 		// Obtains the bounds of the sprite so that the position can be set to
 		// the sprites centre as this is more desirable for this project
-		bounds = sprite.getGlobalBounds();
+		auto bounds = newSpriteInfo->sprite.getGlobalBounds();
+		auto newOrigin = Vector2f((bounds.width/2),(bounds.height/2));
 		
 		// Defines the new origin, at the centre of the sprite
-		newOrigin = Vector2f((bounds.width/2),(bounds.height/2));
+		newSpriteInfo->sprite.setOrigin(newOrigin);
 		sprite.setOrigin(newOrigin);
+		// Adds the Created spriteInfo to the unordered map
+		_spriteInfoTable.insert({gameObjectKey, newSpriteInfo});
+
 	}
 }

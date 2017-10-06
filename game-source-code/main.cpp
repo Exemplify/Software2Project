@@ -35,7 +35,7 @@ int main()
 shared_ptr<Scene> SplashScreenFunc()
 {
 	shared_ptr<Scene> splashScene = std::make_shared<Scene>();
-	shared_ptr<SplashScreen> background = std::make_shared<SplashScreen>();
+	shared_ptr<SplashScreen> background = std::make_shared<SplashScreen>("splashScreen");
 	shared_ptr<SpriteInfo> backgroundInfo =  background->getSpriteInfo();
 	backgroundInfo->textureLocation = "resources/MceboDlamini.png";
 	splashScene->Instantiate(background);
@@ -45,7 +45,7 @@ shared_ptr<Scene> SplashScreenFunc()
 shared_ptr<Scene> GameSceneFunc()
 {
 	shared_ptr<Scene> gameScene{new Scene()};
-	shared_ptr<GraphicObject> background{new SplashScreen()};
+	shared_ptr<GraphicObject> background{new SplashScreen("gameBackground")};
 	Vector2D<double> playerStart(0,-400,0);
 	Character playerStats{3,5};
 
@@ -68,7 +68,7 @@ shared_ptr<Scene> GameSceneFunc()
 shared_ptr<Scene> WinScreenFunc()
 {
 	shared_ptr<Scene> splashScene = std::make_shared<Scene>();
-	shared_ptr<SplashScreen> background = std::make_shared<SplashScreen>();
+	shared_ptr<SplashScreen> background = std::make_shared<SplashScreen>("WinScreen");
 	shared_ptr<SpriteInfo> backgroundInfo =  background->getSpriteInfo();
 	backgroundInfo->textureLocation = "resources/WinScreen.png";
 	splashScene->Instantiate(background);
@@ -78,7 +78,7 @@ shared_ptr<Scene> WinScreenFunc()
 shared_ptr<Scene> LoseScreenFunc()
 {
 	shared_ptr<Scene> splashScene = std::make_shared<Scene>();
-	shared_ptr<SplashScreen> background = std::make_shared<SplashScreen>();
+	shared_ptr<SplashScreen> background = std::make_shared<SplashScreen>("LoseScreen");
 	shared_ptr<SpriteInfo> backgroundInfo =  background->getSpriteInfo();
 	backgroundInfo->textureLocation = "resources/LoseScreen.png";
 	splashScene->Instantiate(background);

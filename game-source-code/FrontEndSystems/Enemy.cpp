@@ -16,6 +16,7 @@ _shootDelay{ENEMY_SHOOT_DELAY, false}
 	InitialiseObject();
     _objectSize = 30;
 	_type = GameObjectType::enemy;
+	_graphicName = "enemy";
 }
 /// Needs to be moved to a Database
 void Enemy::ConstructSpriteInfo()

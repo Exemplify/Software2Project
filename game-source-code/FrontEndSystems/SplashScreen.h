@@ -10,7 +10,7 @@
 class SplashScreen:public GraphicObject
 {
 public:
-	SplashScreen(){}
+	SplashScreen(std::string);
 	void Update() override;
 	virtual SplashScreen* Clone() override 
 	{return new SplashScreen(*this);}

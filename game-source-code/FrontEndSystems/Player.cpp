@@ -18,6 +18,7 @@ _shootDelay{SHOOT_DELAY}
 	playerBulletSprite->scale = Vector2f(0.05f,0.05f);
     _objectSize = 25;
 	_type = GameObjectType::player;
+	_graphicName = "player";
 	_shootComp = ShootComponent(playerBulletSprite, GameObjectType::playerBullet);
 }
 

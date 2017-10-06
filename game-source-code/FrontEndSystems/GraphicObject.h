@@ -2,6 +2,7 @@
 #define GRAPHIC_OBJ_H
 #include "SpriteInfo.h"
 #include "GameObject.h"
+#include <string>
 
 /// Requires the copy constructor and an assignment opperator overload
 /// Requires decoupling from sfml 
@@ -14,9 +15,10 @@ class GraphicObject : public GameObject
 {
 public:
 	// Graphic object requires a SpriteInfo as an invariance
-	GraphicObject(std::shared_ptr<SpriteInfo> spriteInfo):
+	GraphicObject(std::shared_ptr<SpriteInfo> spriteInfo, string graphicName):
 	GameObject(),
-	_spriteInfo{spriteInfo}
+	_spriteInfo{spriteInfo},
+	_graphicName{graphicName}
 	{}
 	/// Default constructor should be removed, only purpose is for testing
 	GraphicObject():
@@ -28,6 +30,7 @@ public:
 	{
 		return _spriteInfo; 
 	}
+	std::string getGraphicName() const {return _graphicName;}
 	/// Clone Function still in development maybe needs to be removed 
 	virtual GraphicObject* Clone() override
 	{return new GraphicObject(*this);}
@@ -37,6 +40,7 @@ public:
 protected:
 	// sprite information required for the display manager
 	std::shared_ptr<SpriteInfo>  _spriteInfo;
+	std::string _graphicName;
 };
 
 
