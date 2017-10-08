@@ -13,12 +13,12 @@ _shootDelay{SHOOT_DELAY}
 {	
 	/// Needs to be stored in a database
 	_position = startPosition;
-	auto playerBulletSprite = std::make_shared<SpriteInfo>();
-	playerBulletSprite->textureLocation = "resources/Rock.png";
-	playerBulletSprite->scale = Vector2f(0.05f,0.05f);
-    _objectSize = 25;
+	_scale = xyVector(0.25f,0.25f);
 	_type = GameObjectType::player;
 	_graphicName = "player";
+	auto playerBulletSprite = std::make_shared<SpriteInfo>();
+	playerBulletSprite->textureLocation = "resources/Rock.png";
+    _objectSize = 25;
 	_shootComp = ShootComponent(playerBulletSprite, GameObjectType::playerBullet);
 }
 

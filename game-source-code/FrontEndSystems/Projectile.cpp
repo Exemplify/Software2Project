@@ -4,11 +4,12 @@
 #include <memory>
 
 /// Constructor Needs a Database Dependency
-Projectile::Projectile(std::shared_ptr<SpriteInfo> spriteInfo, GameObjectType projectileType, std::string graphicName):
+Projectile::Projectile(std::shared_ptr<SpriteInfo> spriteInfo, GameObjectType projectileType, std::string graphicName, xyVector scale):
 PhysicsObject(),
 _enemyDestroyBounds{},
 _playerDestroyBounds{PLAYER_PROJECTILE_DESTROY_REGION, PLAYER_PROJECTILE_DESTROY_REGION}
 {
+	_scale = scale;
 	_graphicName = graphicName;
 	_type = projectileType;
     _spriteInfo = spriteInfo;
@@ -22,6 +23,7 @@ PhysicsObject()
 	_playerDestroyBounds = copyProjectile._playerDestroyBounds;
 	_spriteInfo = copyProjectile._spriteInfo;
 	_type = copyProjectile._type;
+	_scale = copyProjectile._scale;
     _objectSize = copyProjectile._objectSize;
 	_graphicName = copyProjectile._graphicName;
 }

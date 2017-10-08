@@ -22,12 +22,11 @@ _shootDelay{ENEMY_SHOOT_DELAY, false}
 void Enemy::ConstructSpriteInfo()
 {
 	_spriteInfo->textureLocation = "resources/AdamHabib.png";
-	_spriteInfo->scale = sf::Vector2f{0.25f,0.25f};
+	_scale = xyVector{0.25f,0.25f};
 
 	
 	auto bulletSpriteInfo = std::make_shared<SpriteInfo>();
 	bulletSpriteInfo->textureLocation = "resources/SouthAfricanPS.png";
-	bulletSpriteInfo->scale = Vector2f(0.1f,0.1f);
 	_enemyShoot = ShootComponent(bulletSpriteInfo, GameObjectType::enemyBullet);
 }
 

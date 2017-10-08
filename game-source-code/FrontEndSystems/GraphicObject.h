@@ -15,8 +15,8 @@ class GraphicObject : public GameObject
 {
 public:
 	// Graphic object requires a SpriteInfo as an invariance
-	GraphicObject(std::shared_ptr<SpriteInfo> spriteInfo, string graphicName):
-	GameObject(),
+	GraphicObject(std::shared_ptr<SpriteInfo> spriteInfo, string graphicName, xyVector scale):
+	GameObject(Vector2D<double>(), scale),
 	_spriteInfo{spriteInfo},
 	_graphicName{graphicName}
 	{}

@@ -32,6 +32,7 @@ void GameManager::GameLoop()
 		if(activeScene != NULL)
 			activeScene->SceneUpdate();
 		// Checks if Input causes window to be closed
+		/// Put a guard mutex here to ensure no other threads are accessing the gameobject list when the window closes 
 		if(closeWindow)
 			window.close();
 	}

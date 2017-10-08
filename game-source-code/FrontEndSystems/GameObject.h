@@ -14,6 +14,11 @@ class DestroyedObjectOutsideScene{};
 // determine when a specific collision has occured
 struct xyVector
 {
+	xyVector(){}
+	xyVector(double X, double Y): 
+	x{X},
+	y{Y}
+	{}
 	double x;
 	double y;
 };
@@ -36,6 +41,7 @@ public:
 	GameObject();
 	GameObject(const GameObject& copyObj);
 	GameObject(Vector2D<double> startingPosition);
+	GameObject(Vector2D<double> startingPosition, xyVector scale);
 	
 		// virtual callbacks for the class //
 	// start is called when the GameObject is initiliased into the scene 

@@ -9,12 +9,13 @@ class ShootComponent
 public:
 	/// redundant Constructors that do not conform to the class invariance
 	ShootComponent(){}
-	/// will be removed once the polymorphic projectile is set up
+	/// will be removed once the Template projectile is set up
 	ShootComponent(std::shared_ptr<SpriteInfo> bulletInfo, GameObjectType bulletType);
 	/// correct constructor 
 	ShootComponent(std::shared_ptr<Projectile> bullet);
 	// Creates a projectile in the specified scene with the provided parameters to meet the components
-	void Shoot(	
+	/// Scene needs to be moved into the constructor should be the current scene (use of Application Class)
+	void Shoot(
 		Vector2D<double> target,
 		Vector2D<double> startPosition, 
 		double shootSpeed,
