@@ -79,7 +79,7 @@ void DisplayManager::DrawSpriteFromGameObject(shared_ptr<GameObject> GO)
 		auto currentSpriteInfo = graphicCast->getSpriteInfo();
 		auto currentSpriteInfoHash = _spriteInfoTable.find(currentObjectKey);
 		// Checks if the objects sprite information has already been defined
-		if(!currentSpriteInfo->isdefined || currentSpriteInfoHash == _spriteInfoTable.end())
+		if(currentSpriteInfoHash == _spriteInfoTable.end())
 		{
 			// defines the texture and sprite information for the newly created object
 			InitialiseGraphicObject(*currentSpriteInfo, currentObjectKey);
@@ -91,7 +91,10 @@ void DisplayManager::DrawSpriteFromGameObject(shared_ptr<GameObject> GO)
 		// sets the position and scale of the sprite accordingly
 		auto currentSpriteData = currentSpriteInfoHash->second;
 		currentSpriteData->sprite.setPosition(screenPosition);
-		currentSpriteData->sprite.setScale(currentSpriteInfo->scale);
+		
+		auto scale = graphicCast->getScale();
+
+		currentSpriteData->sprite.setScale(sf::Vector2f(scale.x, scale.y) );
 		// draws the sprite to the scene
 		_dispwindow_ptr->draw(currentSpriteData->sprite);
 	}

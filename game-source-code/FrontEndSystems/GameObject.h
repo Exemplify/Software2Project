@@ -12,6 +12,11 @@ class Scene;
 class DestroyedObjectOutsideScene{};
 // The different object types used to identify whic object to draw and to 
 // determine when a specific collision has occured
+struct xyVector
+{
+	double x;
+	double y;
+};
 enum class GameObjectType
 {
 	gameObject,
@@ -41,6 +46,9 @@ public:
 	virtual void Update() {}
 	
 		// class getters //
+	// The getters are used to ensure that there is a decoupling between sfml and the game logic of the system
+	// the gameObjects do not need to have information about the display manager and gameManger but they require the information 
+	// about the gameobjects. This means getter functions are essential
 		
 	// Returns the active state of the object
 	bool isActive() {return _active;}
@@ -50,7 +58,7 @@ public:
 	GameObjectType getType() const {return _type;}
 	// Returns the scene the object is stored in
 	std::shared_ptr<Scene> getScene() const {return _scene;}
-	
+	xyVector getScale() const { return _scale;}
 		// class setters //
 		
 	// sets the state of the current game object
@@ -70,6 +78,7 @@ public:
 	void Destroy();
 	virtual ~GameObject(){}
 protected:
+	xyVector _scale;
 	// smart pointer to the scene the game object exists in this should not be changed, is an invarient
 	std::shared_ptr<Scene> _scene;
 	// Invariance that _type should never be null
