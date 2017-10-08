@@ -1,45 +1,41 @@
 #ifndef GRAPHIC_OBJ_H
 #define GRAPHIC_OBJ_H
-#include "SpriteInfo.h"
-#include "GameObject.h"
 #include <string>
 
-/// Requires the copy constructor and an assignment opperator overload
-/// Requires decoupling from sfml 
-/* Graphic Object
- * This is the main interface with the display manager, the sprite information stored inside of this
- * class. Only graphic objects and derivatives of graphic objects are used by the displayManager class 
+
+using std::string;
+
+/* Graphic Object:
+ * This is the main interface with the display manager, It stores the name of the graphicName which is used as a key 
+ * for a hash table inside of the display manager. It also stores the texture location for the current object  
  */
- 
-class GraphicObject : public GameObject
+class GraphicObject
 {
 public:
-	// Graphic object requires a SpriteInfo as an invariance
-	GraphicObject(std::shared_ptr<SpriteInfo> spriteInfo, string graphicName, xyVector scale):
-	GameObject(Vector2D<double>(), scale),
-	_spriteInfo{spriteInfo},
-	_graphicName{graphicName}
-	{}
-	/// Default constructor should be removed, only purpose is for testing
 	GraphicObject():
-	GameObject(),
-	_spriteInfo{new SpriteInfo()}
+	_textureLocation{""},
+	_graphicName{""}
 	{}
-	// returns the sprite information 
-	std::shared_ptr<SpriteInfo> getSpriteInfo() const
+	GraphicObject& operator=(const GraphicObject& rhs)
 	{
-		return _spriteInfo; 
+		auto tempObject = new GraphicObject(rhs._textureLocation, rhs._graphicName);
+		return *tempObject;
 	}
-	std::string getGraphicName() const {return _graphicName;}
-	/// Clone Function still in development maybe needs to be removed 
-	virtual GraphicObject* Clone() override
-	{return new GraphicObject(*this);}
+
+	// Standard constructor used to assign a the texture location of the object and the name of it
+	GraphicObject(string textureLocation, string graphicName)
+	{
+		_textureLocation = textureLocation;
+		_graphicName = graphicName;
+	}
 	
-	// virtual destructor
-	virtual ~GraphicObject(){}
+	// returns the graphic Information 
+	const string& getGraphicName() const {return _graphicName;}
+	const string& getTextureLocation() const {return _textureLocation;}
+
 protected:
 	// sprite information required for the display manager
-	std::shared_ptr<SpriteInfo>  _spriteInfo;
+	std::string _textureLocation;
 	std::string _graphicName;
 };
 

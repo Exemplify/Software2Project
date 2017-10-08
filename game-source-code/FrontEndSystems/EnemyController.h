@@ -22,6 +22,7 @@ public:
 	// public function that is called by the enemy that has been killed
 	void EnemyKilled();
 	/// Clone function Needs completing 
+	const std::shared_ptr<GraphicObject> getGraphicObject() override {return nullptr;}
 	virtual EnemyController* Clone() override 
 	{return new EnemyController(*this);}
 private:

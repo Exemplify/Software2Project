@@ -5,6 +5,7 @@
 
 #include "../BackEndSystems/Input.h"
 #include "../Vector2D.hpp"
+#include "GraphicObject.h"
 
 class Scene;
 
@@ -43,10 +44,6 @@ public:
 	GameObject(Vector2D<double> startingPosition);
 	GameObject(Vector2D<double> startingPosition, xyVector scale);
 	
-		// virtual callbacks for the class //
-	// start is called when the GameObject is initiliased into the scene 
-	/// may not be necessary as it has not been used and the constructor is usually used to initialise information
-	virtual void Start() {}
 	// Update is called once each frame within the game
 	/// could aslo be used as a friendship with scene
 	virtual void Update() {}
@@ -64,9 +61,15 @@ public:
 	GameObjectType getType() const {return _type;}
 	// Returns the scene the object is stored in
 	std::shared_ptr<Scene> getScene() const {return _scene;}
+	// Returns the scale of the object
 	xyVector getScale() const { return _scale;}
+	// Returns the graphicObject pointer const ensures the private data memeber cant be changed
+	virtual const std::shared_ptr<GraphicObject> getGraphicObject() = 0;
+	
+	
+	
 		// class setters //
-		
+	
 	// sets the state of the current game object
 	void setActive(bool active_state) {_active = active_state;} 
 	/// needs to be reconsidered only Scene class needs access to this method
@@ -78,8 +81,7 @@ public:
 	// covarient return type so that the gameobject list can be copied successfully
 	// this is necessary for to create a copy of the original active scene so that the game can be reloaded
 	// smart pointers unfortunately cannot be used
-	virtual GameObject* Clone() 
-	{return new GameObject(*this);}
+	virtual GameObject* Clone() = 0;
 	// class invariance that a gameobject must be destroyed in a specific way 
 	void Destroy();
 	virtual ~GameObject(){}

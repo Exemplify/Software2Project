@@ -9,24 +9,24 @@ const double SHOOT_SPEED = 150;
 /// Player constructor needs to be reworked too much database implementation is used 
 Player::Player(Vector2D<double>& startPosition, Character playerStats):
 _playerStats{playerStats},
+_graphicObject{std::make_shared<GraphicObject>("resources/playerSprite.png", "player")},
 _shootDelay{SHOOT_DELAY}
 {	
 	/// Needs to be stored in a database
 	_position = startPosition;
 	_scale = xyVector(0.25f,0.25f);
 	_type = GameObjectType::player;
-	_graphicName = "player";
-	auto playerBulletSprite = std::make_shared<SpriteInfo>();
-	playerBulletSprite->textureLocation = "resources/Rock.png";
     _objectSize = 25;
-	_shootComp = ShootComponent(playerBulletSprite, GameObjectType::playerBullet);
+	auto bulletGraphic = std::make_shared<GraphicObject>("resources/Rock.png", "playerBullet");
+	_shootComp = ShootComponent(bulletGraphic, GameObjectType::playerBullet);
 }
 
-Player::Player(Vector2D<double>& startPosition, Character playerStats, std::shared_ptr<SpriteInfo> bulletSprite):
+Player::Player(Vector2D<double>& startPosition, Character playerStats, std::shared_ptr<GraphicObject> bulletGraphic):
 PhysicsObject(),
 _playerStats{playerStats},
+_graphicObject{bulletGraphic},
 _shootDelay{SHOOT_DELAY},
-_shootComp{bulletSprite, GameObjectType::playerBullet}
+_shootComp{bulletGraphic, GameObjectType::playerBullet}
 {
 	_type = GameObjectType::player;
     _position = startPosition;

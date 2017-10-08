@@ -1,11 +1,13 @@
 #ifndef PHYSICS_OBJ_H
 #define PHYSICS_OBJ_H
 
-#include "GraphicObject.h"
+#include "GameObject.h"
+
 #include "../Vector2D.hpp"
 #include "MovableObject.h"
 
-class PhysicsObject : public GraphicObject
+/// May not need to inherit from GameObject 
+class PhysicsObject : public GameObject
 {
 public:
     // Constructor
@@ -13,13 +15,14 @@ public:
     {
         _type = GameObjectType::physicsObject;
     }
-    PhysicsObject(double objectSpeed, std::shared_ptr<SpriteInfo> spriteInfo, Vector2D<double> position):
-    GraphicObject(),
+    PhysicsObject(double objectSpeed, Vector2D<double> position):
     _objectSpeed{objectSpeed}
-    { _type=GameObjectType::physicsObject; }
+    {
+		_type=GameObjectType::physicsObject; 
+	}
+	
 	// Clone function
-	virtual PhysicsObject* Clone() override 
-	{return new PhysicsObject(*this);}
+	virtual PhysicsObject* Clone() = 0;
     //Commands
     //set speed of the physics object
     void setSpeed(double newSpeed) {_objectSpeed = newSpeed;}
@@ -27,7 +30,7 @@ public:
     //Queries
     double getSize() {return _objectSize;}
     
-    virtual void collisionAction(GameObjectType objectType) {}
+    virtual void collisionAction(GameObjectType objectType) = 0;
     
     //Destructor
     virtual ~PhysicsObject() {}

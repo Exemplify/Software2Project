@@ -19,6 +19,7 @@ using std::shared_ptr;
 /// can be converted into a singleton
 class DisplayManager
 {
+	friend class DisplayManagerTester;
 public:
 	// constructs a DisplayManager Object that intitialises a seperate thread used for the presentation layer
 	DisplayManager(RenderWindow& renderWindow);
@@ -38,16 +39,19 @@ private:
 	void Draw();
 	
 	// Helper Functions //
-	// Draws the individual gameobject sprite, obtains the information from the gameobject itself 
+	// Draws the individual gameobject sprite
+	// 
 	/// sprite information needs to be removed from the gameobject
 	void DrawSpriteFromGameObject(shared_ptr<GameObject> GO);
 	// Converts the gameobjects defined position into the screen space available
-	Vector2f GameObjectScreenPosition(const GraphicObject& graphicObj);
+	Vector2f ConvertVector2DtoScreenPosition(Vector2D<double> position);
 	// On the first draw call of the game object this is called to set up the sfml texture and sprite information
-	/// needs to set infomation up seperately to the gameobject
 	/// gameobject does not need to know about sfml
-	void InitialiseGraphicObject(SpriteInfo& initialSpriteInfo, std::string gameObjectKey);
+	void InitialiseGraphicObject(const GraphicObject& graphicObject, std::string gameObjectKey);
 };
+
+
+
 
 
 #endif 

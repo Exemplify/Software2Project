@@ -5,6 +5,7 @@
 #include "DelayComponent.h"
 #include "ShootComponent.h"
 #include "Boundary.h"
+#include "GraphicObject.h"
 
 
 enum class EnemyMoveType
@@ -30,6 +31,7 @@ public:
 	virtual Enemy* Clone() override 
 	{return new Enemy(*this);}
     EnemyMoveType getMoveType() const {return _movementType;}
+	const std::shared_ptr<GraphicObject> getGraphicObject() override {return _graphicObject;}
 private:
 	// Move function that is called inside update to move the current enemy object
 	void Move();
@@ -48,6 +50,9 @@ private:
 	Boundary _screenBounds;
 	EnemyMoveType _movementType;
 	int _direction;
+	//  graphic component of the enemy
+	std::shared_ptr<GraphicObject> _graphicObject;
+	
 
 	// used to initialise the different enemy objects and vary the movement styles
 	// Run from within the constructor
@@ -72,6 +77,7 @@ private:
 	// On Collision Functions
 	// object response to colliding with a player bullet 
 	void PlayerProjectileCollision();
+	
 };
 
 
