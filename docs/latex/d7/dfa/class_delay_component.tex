@@ -22,10 +22,30 @@ bool {\bfseries Delay\+Finished} ()
 \mbox{\Hypertarget{class_delay_component_a539b563338fb30932c96f087dd7a0f5b}\label{class_delay_component_a539b563338fb30932c96f087dd7a0f5b}} 
 void \hyperlink{class_delay_component_a539b563338fb30932c96f087dd7a0f5b}{reset\+Delay} ()
 \begin{DoxyCompactList}\small\item\em should and a default argument that can be changed to change the delay rate \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_delay_component_a33d6e279ece1ab6197688c5916dad96d}\label{class_delay_component_a33d6e279ece1ab6197688c5916dad96d}} 
+double {\bfseries \+\_\+current\+Value}
+\item 
+\mbox{\Hypertarget{class_delay_component_a36f26c01438d1c0347d06888d3b841ac}\label{class_delay_component_a36f26c01438d1c0347d06888d3b841ac}} 
+double {\bfseries \+\_\+delay\+Value}
+\item 
+bool \hyperlink{class_delay_component_a821cd453973fced990ae204967e011ff}{\+\_\+delay\+Finished}
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 could require some rethinking because a lot of the responsibility is on the client to call the appropriate functions Functions should be incorporated into one so that the client only needs to check if the delay has finished 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_delay_component_a821cd453973fced990ae204967e011ff}\label{class_delay_component_a821cd453973fced990ae204967e011ff}} 
+\index{Delay\+Component@{Delay\+Component}!\+\_\+delay\+Finished@{\+\_\+delay\+Finished}}
+\index{\+\_\+delay\+Finished@{\+\_\+delay\+Finished}!Delay\+Component@{Delay\+Component}}
+\subsubsection{\texorpdfstring{\+\_\+delay\+Finished}{\_delayFinished}}
+{\footnotesize\ttfamily bool Delay\+Component\+::\+\_\+delay\+Finished\hspace{0.3cm}{\ttfamily [private]}}
+
+redundant can be replaced in the delay finished function call by the boolean check repeats code by using multiple if statements that check the same thing 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

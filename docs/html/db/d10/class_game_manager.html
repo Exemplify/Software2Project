@@ -65,6 +65,9 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="../../d2/d10/class_game_manager-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">GameManager Class Reference</div>  </div>
@@ -109,6 +112,44 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:a969dd909c6b70310843d34e2490736b4"><td class="memItemLeft" align="right" valign="top"><a id="a969dd909c6b70310843d34e2490736b4"></a>
 static scene_ptr&#160;</td><td class="memItemRight" valign="bottom"><b>activeScene</b> = NULL</td></tr>
 <tr class="separator:a969dd909c6b70310843d34e2490736b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a8344695f2ba7324b00c5da8b79d8b399"><td class="memItemLeft" align="right" valign="top"><a id="a8344695f2ba7324b00c5da8b79d8b399"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d10/class_game_manager.html#a8344695f2ba7324b00c5da8b79d8b399">initialiseWindow</a> (RenderWindow &amp;_gameWindow)</td></tr>
+<tr class="memdesc:a8344695f2ba7324b00c5da8b79d8b399"><td class="mdescLeft">&#160;</td><td class="mdescRight">some responsibilites can be moved into the display manager <br /></td></tr>
+<tr class="separator:a8344695f2ba7324b00c5da8b79d8b399"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a0c8d94cc2688f7774f380bc05614695b"><td class="memItemLeft" align="right" valign="top"><a id="a0c8d94cc2688f7774f380bc05614695b"></a>
+RenderWindow&#160;</td><td class="memItemRight" valign="bottom"><b>_window</b></td></tr>
+<tr class="separator:a0c8d94cc2688f7774f380bc05614695b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5f241117fe31fc2086aa7330b7bf41a"><td class="memItemLeft" align="right" valign="top"><a id="ad5f241117fe31fc2086aa7330b7bf41a"></a>
+<a class="el" href="../../d9/db6/class_game_time.html">GameTime</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d10/class_game_manager.html#ad5f241117fe31fc2086aa7330b7bf41a">_gameTime</a></td></tr>
+<tr class="memdesc:ad5f241117fe31fc2086aa7330b7bf41a"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert to unique pointer <br /></td></tr>
+<tr class="separator:ad5f241117fe31fc2086aa7330b7bf41a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06843f28cb1609e41da7eee19be9aa87"><td class="memItemLeft" align="right" valign="top"><a id="a06843f28cb1609e41da7eee19be9aa87"></a>
+<a class="el" href="../../d1/d57/struct_window_settings.html">WindowSettings</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_defaultSetup</b></td></tr>
+<tr class="separator:a06843f28cb1609e41da7eee19be9aa87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b6f0c427c2efd2ec775a03a75dc8be8"><td class="memItemLeft" align="right" valign="top"><a id="a4b6f0c427c2efd2ec775a03a75dc8be8"></a>
+<a class="el" href="../../d6/d94/class_event_manager.html">EventManager</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_eventManager</b></td></tr>
+<tr class="separator:a4b6f0c427c2efd2ec775a03a75dc8be8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:aedb575ca538853f3d7053b33bef238e0"><td class="memItemLeft" align="right" valign="top"><a id="aedb575ca538853f3d7053b33bef238e0"></a>
+static int&#160;</td><td class="memItemRight" valign="bottom"><b>_scene_index</b> = 0</td></tr>
+<tr class="separator:aedb575ca538853f3d7053b33bef238e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07c75a9507a0d82f88a0b62d808fcf3c"><td class="memItemLeft" align="right" valign="top"><a id="a07c75a9507a0d82f88a0b62d808fcf3c"></a>
+static bool&#160;</td><td class="memItemRight" valign="bottom"><b>closeWindow</b> = false</td></tr>
+<tr class="separator:a07c75a9507a0d82f88a0b62d808fcf3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad84fda242e092622be5228019305f507"><td class="memItemLeft" align="right" valign="top"><a id="ad84fda242e092622be5228019305f507"></a>
+static std::vector&lt; scene_ptr &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_game_scenes</b> {}</td></tr>
+<tr class="separator:ad84fda242e092622be5228019305f507"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8704a6222b652d2dc99d16102ec820bc"><td class="memItemLeft" align="right" valign="top"><a id="a8704a6222b652d2dc99d16102ec820bc"></a>
+static scene_ptr&#160;</td><td class="memItemRight" valign="bottom"><b>original_activeScene</b> = NULL</td></tr>
+<tr class="separator:a8704a6222b652d2dc99d16102ec820bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Needs to be converted into a singleton. </p>

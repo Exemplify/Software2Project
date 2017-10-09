@@ -63,6 +63,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d4/d71/class_enemy-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Enemy Class Reference</div>  </div>
@@ -147,6 +149,87 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setActive</b> (bool a
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Destroy</b> ()</td></tr>
 <tr class="separator:abf1959fad10ea04673a182029f1f81b9 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a30471ff0b5b7bf3b31d3b8ece0005e9a"><td class="memItemLeft" align="right" valign="top"><a id="a30471ff0b5b7bf3b31d3b8ece0005e9a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Move</b> ()</td></tr>
+<tr class="separator:a30471ff0b5b7bf3b31d3b8ece0005e9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab526cfaf13910e15ca1e5e84ef230dd1"><td class="memItemLeft" align="right" valign="top"><a id="ab526cfaf13910e15ca1e5e84ef230dd1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Shoot</b> ()</td></tr>
+<tr class="separator:ab526cfaf13910e15ca1e5e84ef230dd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06fafdc67bd76334adb9d47f73f15aff"><td class="memItemLeft" align="right" valign="top"><a id="a06fafdc67bd76334adb9d47f73f15aff"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>CheckOutsideScreen</b> ()</td></tr>
+<tr class="separator:a06fafdc67bd76334adb9d47f73f15aff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef1f4614b8bb29980071585b6f09139f"><td class="memItemLeft" align="right" valign="top"><a id="aef1f4614b8bb29980071585b6f09139f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d7a/class_enemy.html#aef1f4614b8bb29980071585b6f09139f">InitialiseObject</a> ()</td></tr>
+<tr class="memdesc:aef1f4614b8bb29980071585b6f09139f"><td class="mdescLeft">&#160;</td><td class="mdescRight">All movement functions need to be moved into a polymorphic class structure. <br /></td></tr>
+<tr class="separator:aef1f4614b8bb29980071585b6f09139f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa72305c74fd05140de6a8a986532b0c7"><td class="memItemLeft" align="right" valign="top"><a id="aa72305c74fd05140de6a8a986532b0c7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>EnemyDirection</b> ()</td></tr>
+<tr class="separator:aa72305c74fd05140de6a8a986532b0c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcd3f46bb06898b340f50c4a22bb3f68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d7a/class_enemy.html#adcd3f46bb06898b340f50c4a22bb3f68">InitialiseMovementType</a> (const int &amp;randomChanceValue)</td></tr>
+<tr class="separator:adcd3f46bb06898b340f50c4a22bb3f68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78f7ece0392dd209112e1ce3eccaece2"><td class="memItemLeft" align="right" valign="top"><a id="a78f7ece0392dd209112e1ce3eccaece2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d7a/class_enemy.html#a78f7ece0392dd209112e1ce3eccaece2">ConstructSpriteInfo</a> ()</td></tr>
+<tr class="memdesc:a78f7ece0392dd209112e1ce3eccaece2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Needs to be moved to a Database. <br /></td></tr>
+<tr class="separator:a78f7ece0392dd209112e1ce3eccaece2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19e20e71247a6e310753366a29ae9142"><td class="memItemLeft" align="right" valign="top"><a id="a19e20e71247a6e310753366a29ae9142"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>InitialiseStartingPosition</b> ()</td></tr>
+<tr class="separator:a19e20e71247a6e310753366a29ae9142"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abefc309bb54bedbd106e27ec816fa899"><td class="memItemLeft" align="right" valign="top"><a id="abefc309bb54bedbd106e27ec816fa899"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>InitialiseLinearMovement</b> (const double &amp;angle)</td></tr>
+<tr class="separator:abefc309bb54bedbd106e27ec816fa899"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09e8b7d2eefd3db68de4a32bb7f4e7e5"><td class="memItemLeft" align="right" valign="top"><a id="a09e8b7d2eefd3db68de4a32bb7f4e7e5"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>InitialiseParabolicMovement</b> ()</td></tr>
+<tr class="separator:a09e8b7d2eefd3db68de4a32bb7f4e7e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8af64f959b402b1d64d218e3be6412ce"><td class="memItemLeft" align="right" valign="top"><a id="a8af64f959b402b1d64d218e3be6412ce"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>InitialiseSpiralMovement</b> (const double &amp;angle)</td></tr>
+<tr class="separator:a8af64f959b402b1d64d218e3be6412ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcdf2fa6104b3805b0f20ee7ef258f5d"><td class="memItemLeft" align="right" valign="top"><a id="afcdf2fa6104b3805b0f20ee7ef258f5d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>DetermineDirection</b> ()</td></tr>
+<tr class="separator:afcdf2fa6104b3805b0f20ee7ef258f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad520b2e836c44954584fb2d29eed1c73"><td class="memItemLeft" align="right" valign="top"><a id="ad520b2e836c44954584fb2d29eed1c73"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>GenerateRandomAngle</b> ()</td></tr>
+<tr class="separator:ad520b2e836c44954584fb2d29eed1c73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29a0efd302ab7be5d40be3efb18dd4ff"><td class="memItemLeft" align="right" valign="top"><a id="a29a0efd302ab7be5d40be3efb18dd4ff"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SpiralMove</b> ()</td></tr>
+<tr class="separator:a29a0efd302ab7be5d40be3efb18dd4ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace66b1e7bd7822bdb5318586ed235332"><td class="memItemLeft" align="right" valign="top"><a id="ace66b1e7bd7822bdb5318586ed235332"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>LinearMove</b> ()</td></tr>
+<tr class="separator:ace66b1e7bd7822bdb5318586ed235332"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e804d11c9828650329be29063e53050"><td class="memItemLeft" align="right" valign="top"><a id="a6e804d11c9828650329be29063e53050"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ParabolicMove</b> ()</td></tr>
+<tr class="separator:a6e804d11c9828650329be29063e53050"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c4e7e1c9f79650d1f0dd3c72ae9c82d"><td class="memItemLeft" align="right" valign="top"><a id="a9c4e7e1c9f79650d1f0dd3c72ae9c82d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>PlayerProjectileCollision</b> ()</td></tr>
+<tr class="separator:a9c4e7e1c9f79650d1f0dd3c72ae9c82d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a3c5bc99471cfa718af8e11b3b735d15c"><td class="memItemLeft" align="right" valign="top"><a id="a3c5bc99471cfa718af8e11b3b735d15c"></a>
+<a class="el" href="../../d7/dfa/class_delay_component.html">DelayComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_shootDelay</b></td></tr>
+<tr class="separator:a3c5bc99471cfa718af8e11b3b735d15c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96c1fc789cc0fb766724ea1d75ad3179"><td class="memItemLeft" align="right" valign="top"><a id="a96c1fc789cc0fb766724ea1d75ad3179"></a>
+<a class="el" href="../../d7/da7/class_character.html">Character</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d7a/class_enemy.html#a96c1fc789cc0fb766724ea1d75ad3179">_enemyStats</a></td></tr>
+<tr class="memdesc:a96c1fc789cc0fb766724ea1d75ad3179"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d7/da7/class_character.html" title="entire class needs to change ">Character</a> needs to change. <br /></td></tr>
+<tr class="separator:a96c1fc789cc0fb766724ea1d75ad3179"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36226438bbccc3aff98a575530a07346"><td class="memItemLeft" align="right" valign="top"><a id="a36226438bbccc3aff98a575530a07346"></a>
+<a class="el" href="../../d2/d65/class_shoot_component.html">ShootComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d7a/class_enemy.html#a36226438bbccc3aff98a575530a07346">_enemyShoot</a></td></tr>
+<tr class="memdesc:a36226438bbccc3aff98a575530a07346"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../dd/d7a/class_enemy.html">Enemy</a> Shoot needs to be put into character. <br /></td></tr>
+<tr class="separator:a36226438bbccc3aff98a575530a07346"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb32f85ca2f3dce003e62a91572bdb70"><td class="memItemLeft" align="right" valign="top"><a id="afb32f85ca2f3dce003e62a91572bdb70"></a>
+<a class="el" href="../../d5/dda/class_boundary.html">Boundary</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_screenBounds</b></td></tr>
+<tr class="separator:afb32f85ca2f3dce003e62a91572bdb70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7acb60cccd8ec80dc99fad62f17adbcf"><td class="memItemLeft" align="right" valign="top"><a id="a7acb60cccd8ec80dc99fad62f17adbcf"></a>
+EnemyMoveType&#160;</td><td class="memItemRight" valign="bottom"><b>_movementType</b></td></tr>
+<tr class="separator:a7acb60cccd8ec80dc99fad62f17adbcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a671f316ff7ba3daf921dfe7f8e3075dc"><td class="memItemLeft" align="right" valign="top"><a id="a671f316ff7ba3daf921dfe7f8e3075dc"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>_direction</b></td></tr>
+<tr class="separator:a671f316ff7ba3daf921dfe7f8e3075dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad07c96cc438e9144d0d66fd53a93eec3"><td class="memItemLeft" align="right" valign="top"><a id="ad07c96cc438e9144d0d66fd53a93eec3"></a>
+std::shared_ptr&lt; <a class="el" href="../../d2/d83/class_graphic_object.html">GraphicObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_graphicObject</b></td></tr>
+<tr class="separator:ad07c96cc438e9144d0d66fd53a93eec3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_class_game_object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_game_object')"><img src="../../closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a></td></tr>
@@ -178,7 +261,35 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_active</b> = true</t
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Needs to be changed into a polymorphic interaction where different characters define different movement types requires a large amount of redesign for a better implementation Needs a copy constructor and assignment opperator </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="adcd3f46bb06898b340f50c4a22bb3f68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcd3f46bb06898b340f50c4a22bb3f68">&#9670;&nbsp;</a></span>InitialiseMovementType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Enemy::InitialiseMovementType </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>randomChanceValue</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Movement functions need to be moved into a seperate class sprite information needs to be moved to a database </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>D:/Users/Tim-PC/Documents/Software_II/Project/ProjectFiles/game-source-code/FrontEndSystems/<a class="el" href="../../d4/d1e/_enemy_8h_source.html">Enemy.h</a></li>
 <li>D:/Users/Tim-PC/Documents/Software_II/Project/ProjectFiles/game-source-code/FrontEndSystems/Enemy.cpp</li>
 </ul>

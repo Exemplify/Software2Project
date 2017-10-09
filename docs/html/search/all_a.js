@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['physicsobject',['PhysicsObject',['../d6/db5/class_physics_object.html',1,'']]],
-  ['player',['Player',['../d8/d53/class_player.html',1,'Player'],['../d8/d53/class_player.html#affe0cc3cb714f6deb4e62f0c0d3f1fd8',1,'Player::Player()'],['../d8/d53/class_player.html#afb985ed4c767e1ad824655b9f5f9d597',1,'Player::Player(Vector2D&lt; double &gt; &amp;startPosition, Character playerStats)']]],
-  ['projectile',['Projectile',['../db/dbe/class_projectile.html',1,'Projectile'],['../db/dbe/class_projectile.html#ac536ed2aad56af866a2078b9a85aa16d',1,'Projectile::Projectile()'],['../db/dbe/class_projectile.html#a6d13e20ed5be714a7efd4be89791ea94',1,'Projectile::Projectile(std::shared_ptr&lt; GraphicObject &gt; bulletGraphic, GameObjectType projectileType, xyVector scale)']]]
+  ['max_5fnumber_5fof_5fenemies',['MAX_NUMBER_OF_ENEMIES',['../dc/d01/class_enemy_controller.html#a6a1e1d9a6da84fe5ed2896e83767782f',1,'EnemyController']]],
+  ['movableobject',['MovableObject',['../d5/df8/class_movable_object.html',1,'']]],
+  ['move',['move',['../d8/d53/class_player.html#ae02ee46d8c20dd0697b975f935b09839',1,'Player::move()'],['../db/dbe/class_projectile.html#a52c04ac421a4add1a2920bd57eb56fe5',1,'Projectile::Move()']]],
+  ['mysingleton',['MySingleton',['../d7/dec/class_my_singleton.html',1,'']]]
 ];

@@ -32,6 +32,11 @@ std\+::vector$<$ game\+Obj\+\_\+ptr $>$ {\bfseries get\+Game\+Object\+List} () c
 \mbox{\Hypertarget{class_scene_a29183cf37f5227ea9a82d2a15c42336c}\label{class_scene_a29183cf37f5227ea9a82d2a15c42336c}} 
 std\+::mutex {\bfseries \+\_\+game\+Object\+\_\+list\+\_\+mutex}
 \end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ game\+Obj\+\_\+ptr $>$ \hyperlink{class_scene_af1956432917d14b0a0b26103dbcb5bcd}{\+\_\+game\+Object\+\_\+list}
+\end{DoxyCompactItemize}
 
 
 \subsection{Member Function Documentation}
@@ -42,6 +47,15 @@ std\+::mutex {\bfseries \+\_\+game\+Object\+\_\+list\+\_\+mutex}
 {\footnotesize\ttfamily void Scene\+::\+Instantiate (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$}]{game\+Obj }\end{DoxyParamCaption})}
 
 Seems redundant to do duplicate the game object pointer 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_scene_af1956432917d14b0a0b26103dbcb5bcd}\label{class_scene_af1956432917d14b0a0b26103dbcb5bcd}} 
+\index{Scene@{Scene}!\+\_\+game\+Object\+\_\+list@{\+\_\+game\+Object\+\_\+list}}
+\index{\+\_\+game\+Object\+\_\+list@{\+\_\+game\+Object\+\_\+list}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{\+\_\+game\+Object\+\_\+list}{\_gameObject\_list}}
+{\footnotesize\ttfamily std\+::vector$<$game\+Obj\+\_\+ptr$>$ Scene\+::\+\_\+game\+Object\+\_\+list\hspace{0.3cm}{\ttfamily [private]}}
+
+would be better to use a doubly linked list instead of a vector since it has a better time effeciency when it deals with insertion and deletion of elements 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

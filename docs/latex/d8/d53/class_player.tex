@@ -37,6 +37,29 @@ virtual void \hyperlink{class_player_a965e7e8baf9b270e1b22784b890bc74d}{collisio
 \mbox{\Hypertarget{class_player_a0bee9292374b568f74c2f9240fba0d36}\label{class_player_a0bee9292374b568f74c2f9240fba0d36}} 
 const std\+::shared\+\_\+ptr$<$ \hyperlink{class_graphic_object}{Graphic\+Object} $>$ {\bfseries get\+Graphic\+Object} () override
 \end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_player_ae02ee46d8c20dd0697b975f935b09839}\label{class_player_ae02ee46d8c20dd0697b975f935b09839}} 
+void \hyperlink{class_player_ae02ee46d8c20dd0697b975f935b09839}{move} ()
+\begin{DoxyCompactList}\small\item\em needs to be put into a movement interface \end{DoxyCompactList}\item 
+void \hyperlink{class_player_a54bee4abe93eea15c48fdbd85e4fdbd5}{Shoot\+Conditional\+Check} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_player_ada278ae5d697b54e4f06129235a15abe}\label{class_player_ada278ae5d697b54e4f06129235a15abe}} 
+\hyperlink{class_character}{Character} \hyperlink{class_player_ada278ae5d697b54e4f06129235a15abe}{\+\_\+player\+Stats}
+\begin{DoxyCompactList}\small\item\em character needs to be adjusted and the additional components pushed into it \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_player_a39dd8190de0f476b7e7f65e4e7b0c464}\label{class_player_a39dd8190de0f476b7e7f65e4e7b0c464}} 
+std\+::shared\+\_\+ptr$<$ \hyperlink{class_graphic_object}{Graphic\+Object} $>$ {\bfseries \+\_\+graphic\+Object}
+\item 
+\mbox{\Hypertarget{class_player_a6d672baf3630a81a32a8b9565129f559}\label{class_player_a6d672baf3630a81a32a8b9565129f559}} 
+\hyperlink{class_delay_component}{Delay\+Component} {\bfseries \+\_\+shoot\+Delay}
+\item 
+\mbox{\Hypertarget{class_player_a042205598416a7090d81d60b95f4ceec}\label{class_player_a042205598416a7090d81d60b95f4ceec}} 
+\hyperlink{class_shoot_component}{Shoot\+Component} {\bfseries \+\_\+shoot\+Comp}
+\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -67,7 +90,13 @@ Magic Number needs to be removed (can be replaced by an enumerator class or stat
 
 Implements \hyperlink{class_physics_object}{Physics\+Object}.
 
+\mbox{\Hypertarget{class_player_a54bee4abe93eea15c48fdbd85e4fdbd5}\label{class_player_a54bee4abe93eea15c48fdbd85e4fdbd5}} 
+\index{Player@{Player}!Shoot\+Conditional\+Check@{Shoot\+Conditional\+Check}}
+\index{Shoot\+Conditional\+Check@{Shoot\+Conditional\+Check}!Player@{Player}}
+\subsubsection{\texorpdfstring{Shoot\+Conditional\+Check()}{ShootConditionalCheck()}}
+{\footnotesize\ttfamily void Player\+::\+Shoot\+Conditional\+Check (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
+Shoot Delay reduce\+Time must be removed and incorportaed into Delay\+Finished 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

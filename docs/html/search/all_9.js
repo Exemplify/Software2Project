@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['movableobject',['MovableObject',['../d5/df8/class_movable_object.html',1,'']]],
-  ['mysingleton',['MySingleton',['../d7/dec/class_my_singleton.html',1,'']]]
+  ['loadscene',['LoadScene',['../db/d10/class_game_manager.html#a09b8801bcfdd8d5cbc52e27895b84e3b',1,'GameManager']]]
 ];

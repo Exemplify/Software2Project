@@ -63,6 +63,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d5/d5c/class_player-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Player Class Reference</div>  </div>
@@ -157,6 +159,31 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setActive</b> (bool a
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Destroy</b> ()</td></tr>
 <tr class="separator:abf1959fad10ea04673a182029f1f81b9 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ae02ee46d8c20dd0697b975f935b09839"><td class="memItemLeft" align="right" valign="top"><a id="ae02ee46d8c20dd0697b975f935b09839"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d53/class_player.html#ae02ee46d8c20dd0697b975f935b09839">move</a> ()</td></tr>
+<tr class="memdesc:ae02ee46d8c20dd0697b975f935b09839"><td class="mdescLeft">&#160;</td><td class="mdescRight">needs to be put into a movement interface <br /></td></tr>
+<tr class="separator:ae02ee46d8c20dd0697b975f935b09839"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54bee4abe93eea15c48fdbd85e4fdbd5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d53/class_player.html#a54bee4abe93eea15c48fdbd85e4fdbd5">ShootConditionalCheck</a> ()</td></tr>
+<tr class="separator:a54bee4abe93eea15c48fdbd85e4fdbd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ada278ae5d697b54e4f06129235a15abe"><td class="memItemLeft" align="right" valign="top"><a id="ada278ae5d697b54e4f06129235a15abe"></a>
+<a class="el" href="../../d7/da7/class_character.html">Character</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d53/class_player.html#ada278ae5d697b54e4f06129235a15abe">_playerStats</a></td></tr>
+<tr class="memdesc:ada278ae5d697b54e4f06129235a15abe"><td class="mdescLeft">&#160;</td><td class="mdescRight">character needs to be adjusted and the additional components pushed into it <br /></td></tr>
+<tr class="separator:ada278ae5d697b54e4f06129235a15abe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39dd8190de0f476b7e7f65e4e7b0c464"><td class="memItemLeft" align="right" valign="top"><a id="a39dd8190de0f476b7e7f65e4e7b0c464"></a>
+std::shared_ptr&lt; <a class="el" href="../../d2/d83/class_graphic_object.html">GraphicObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_graphicObject</b></td></tr>
+<tr class="separator:a39dd8190de0f476b7e7f65e4e7b0c464"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d672baf3630a81a32a8b9565129f559"><td class="memItemLeft" align="right" valign="top"><a id="a6d672baf3630a81a32a8b9565129f559"></a>
+<a class="el" href="../../d7/dfa/class_delay_component.html">DelayComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_shootDelay</b></td></tr>
+<tr class="separator:a6d672baf3630a81a32a8b9565129f559"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a042205598416a7090d81d60b95f4ceec"><td class="memItemLeft" align="right" valign="top"><a id="a042205598416a7090d81d60b95f4ceec"></a>
+<a class="el" href="../../d2/d65/class_shoot_component.html">ShootComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_shootComp</b></td></tr>
+<tr class="separator:a042205598416a7090d81d60b95f4ceec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_class_game_object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_game_object')"><img src="../../closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a></td></tr>
@@ -247,6 +274,32 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_active</b> = true</t
 <p>Magic Number needs to be removed (can be replaced by an enumerator class or static variable) </p>
 
 <p>Implements <a class="el" href="../../d6/db5/class_physics_object.html">PhysicsObject</a>.</p>
+
+</div>
+</div>
+<a id="a54bee4abe93eea15c48fdbd85e4fdbd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54bee4abe93eea15c48fdbd85e4fdbd5">&#9670;&nbsp;</a></span>ShootConditionalCheck()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Player::ShootConditionalCheck </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Shoot Delay reduceTime must be removed and incorportaed into DelayFinished </p>
 
 </div>
 </div>

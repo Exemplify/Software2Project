@@ -33,6 +33,31 @@ const std\+::shared\+\_\+ptr$<$ \hyperlink{class_graphic_object}{Graphic\+Object
 \mbox{\Hypertarget{class_enemy_controller_a3e48995e2828fb54d7df203985c0f855}\label{class_enemy_controller_a3e48995e2828fb54d7df203985c0f855}} 
 virtual \hyperlink{class_enemy_controller}{Enemy\+Controller} $\ast$ {\bfseries Clone} () override
 \end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_enemy_controller_a84eabc12a38617b5ff05c6e896e97531}{Spawn\+Enemy\+Count\+Down} ()
+\begin{DoxyCompactList}\small\item\em Delay code needs to be replaced with a delaycomponent. \end{DoxyCompactList}\item 
+void \hyperlink{class_enemy_controller_ab5298e79a0bf598ed8684efb8a6a3927}{Spawn\+Enemy} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_enemy_controller_a6d275f518464e59e77a1870c5032fb28}\label{class_enemy_controller_a6d275f518464e59e77a1870c5032fb28}} 
+int {\bfseries number\+Of\+Enemies\+Killed} = 0
+\item 
+\mbox{\Hypertarget{class_enemy_controller_a6a1e1d9a6da84fe5ed2896e83767782f}\label{class_enemy_controller_a6a1e1d9a6da84fe5ed2896e83767782f}} 
+const int \hyperlink{class_enemy_controller_a6a1e1d9a6da84fe5ed2896e83767782f}{M\+A\+X\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+E\+N\+E\+M\+I\+ES} = 10
+\begin{DoxyCompactList}\small\item\em delay code needs to moved to a database and a delaycomponent \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_enemy_controller_a99ae7c9259c27e9cd74e0b6c1b471ad9}\label{class_enemy_controller_a99ae7c9259c27e9cd74e0b6c1b471ad9}} 
+const double {\bfseries E\+N\+E\+M\+Y\+\_\+\+S\+P\+A\+W\+N\+\_\+\+D\+E\+L\+AY} = 3
+\item 
+\mbox{\Hypertarget{class_enemy_controller_a66c173677d7d1f157877f0d273050c40}\label{class_enemy_controller_a66c173677d7d1f157877f0d273050c40}} 
+double {\bfseries \+\_\+time\+Between\+Spawns}
+\item 
+\mbox{\Hypertarget{class_enemy_controller_a64e8ff5b6342971e836389ce80bfd247}\label{class_enemy_controller_a64e8ff5b6342971e836389ce80bfd247}} 
+int {\bfseries enemy\+Count} = 0
+\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -40,6 +65,25 @@ virtual \hyperlink{class_enemy_controller}{Enemy\+Controller} $\ast$ {\bfseries 
 needs copy constructor and assignment opperator 
 
 loading the next scene needs to be removed from this object and placed into a \char`\"{}\+Scene\+Controller\char`\"{} which is responsible for the scene state, including win/lose condition checks as well as information about the state of the game, score graphics display etc 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_enemy_controller_ab5298e79a0bf598ed8684efb8a6a3927}\label{class_enemy_controller_ab5298e79a0bf598ed8684efb8a6a3927}} 
+\index{Enemy\+Controller@{Enemy\+Controller}!Spawn\+Enemy@{Spawn\+Enemy}}
+\index{Spawn\+Enemy@{Spawn\+Enemy}!Enemy\+Controller@{Enemy\+Controller}}
+\subsubsection{\texorpdfstring{Spawn\+Enemy()}{SpawnEnemy()}}
+{\footnotesize\ttfamily void Enemy\+Controller\+::\+Spawn\+Enemy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+needs to be updated to use \+\_\+scene variable from \hyperlink{class_game_object}{Game\+Object} \mbox{\Hypertarget{class_enemy_controller_a84eabc12a38617b5ff05c6e896e97531}\label{class_enemy_controller_a84eabc12a38617b5ff05c6e896e97531}} 
+\index{Enemy\+Controller@{Enemy\+Controller}!Spawn\+Enemy\+Count\+Down@{Spawn\+Enemy\+Count\+Down}}
+\index{Spawn\+Enemy\+Count\+Down@{Spawn\+Enemy\+Count\+Down}!Enemy\+Controller@{Enemy\+Controller}}
+\subsubsection{\texorpdfstring{Spawn\+Enemy\+Count\+Down()}{SpawnEnemyCountDown()}}
+{\footnotesize\ttfamily void Enemy\+Controller\+::\+Spawn\+Enemy\+Count\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Delay code needs to be replaced with a delaycomponent. 
+
+needs to be replaced with delay functions 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

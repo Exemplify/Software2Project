@@ -15,6 +15,30 @@ Display manager is in charge of running and managing the presentation layer.
 \mbox{\Hypertarget{class_display_manager_a5cae0a0f81cbd2457eca8d35733a0516}\label{class_display_manager_a5cae0a0f81cbd2457eca8d35733a0516}} 
 {\bfseries Display\+Manager} (Render\+Window \&render\+Window)
 \end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_display_manager_ab1c3eaf2694410423b6b1eca6a58436f}\label{class_display_manager_ab1c3eaf2694410423b6b1eca6a58436f}} 
+void {\bfseries Initialise\+Thread} ()
+\item 
+\mbox{\Hypertarget{class_display_manager_a79b7a390f3a2a09e7209d271e589e705}\label{class_display_manager_a79b7a390f3a2a09e7209d271e589e705}} 
+void {\bfseries render\+Thread} ()
+\item 
+\mbox{\Hypertarget{class_display_manager_a59cef8980a225ca13757e362a92891d1}\label{class_display_manager_a59cef8980a225ca13757e362a92891d1}} 
+void {\bfseries Draw} ()
+\item 
+\mbox{\Hypertarget{class_display_manager_a6b30869e448609cffa5d3b04d853e1d2}\label{class_display_manager_a6b30869e448609cffa5d3b04d853e1d2}} 
+void {\bfseries Draw\+Sprite\+From\+Game\+Object} (shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$ GO)
+\item 
+\mbox{\Hypertarget{class_display_manager_a86e3d09636fef2169a593f9a7dc4d20e}\label{class_display_manager_a86e3d09636fef2169a593f9a7dc4d20e}} 
+void {\bfseries Initialise\+Graphic\+Object} (const \hyperlink{class_graphic_object}{Graphic\+Object} \&graphic\+Object, std\+::string game\+Object\+Key)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_display_manager_abe0369d0fa6b544c77d9d50d50f949cf}\label{class_display_manager_abe0369d0fa6b544c77d9d50d50f949cf}} 
+Render\+Window $\ast$ {\bfseries \+\_\+dispwindow\+\_\+ptr}
+\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -32,7 +56,7 @@ Timothy Mc\+Bride
 \begin{DoxyDate}{Date}
 09/10/2017
 \end{DoxyDate}
-It creates a seperate thread which is used to run the display loop. The draw\+Game\+Object class is used to draw each of the \hyperlink{class_game_object}{Game\+Object}\textquotesingle{}s currently being used to the window. 
+It creates a seperate thread which is used to run the display loop. The draw\+Game\+Object class is used to draw each of the \hyperlink{class_game_object}{Game\+Object}\textquotesingle{}s currently being used by the window. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

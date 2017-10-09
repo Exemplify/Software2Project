@@ -63,6 +63,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d6/d33/class_projectile-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Projectile Class Reference</div>  </div>
@@ -167,6 +169,41 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setActive</b> (bool a
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Destroy</b> ()</td></tr>
 <tr class="separator:abf1959fad10ea04673a182029f1f81b9 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ac128cf116d9fd114bce2a49af797da1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbe/class_projectile.html#ac128cf116d9fd114bce2a49af797da1f">DestroySelf</a> ()</td></tr>
+<tr class="memdesc:ac128cf116d9fd114bce2a49af797da1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">should be virtual  <a href="#ac128cf116d9fd114bce2a49af797da1f">More...</a><br /></td></tr>
+<tr class="separator:ac128cf116d9fd114bce2a49af797da1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52c04ac421a4add1a2920bd57eb56fe5"><td class="memItemLeft" align="right" valign="top"><a id="a52c04ac421a4add1a2920bd57eb56fe5"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbe/class_projectile.html#a52c04ac421a4add1a2920bd57eb56fe5">Move</a> ()</td></tr>
+<tr class="memdesc:a52c04ac421a4add1a2920bd57eb56fe5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Needs a moveable component. <br /></td></tr>
+<tr class="separator:a52c04ac421a4add1a2920bd57eb56fe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28ae398ce317354ed435019e6b50c4ff"><td class="memItemLeft" align="right" valign="top"><a id="a28ae398ce317354ed435019e6b50c4ff"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>DestroyPlayerProjectile</b> ()</td></tr>
+<tr class="separator:a28ae398ce317354ed435019e6b50c4ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ece9bc68fb806b8ac7eababcc3ac9f1"><td class="memItemLeft" align="right" valign="top"><a id="a2ece9bc68fb806b8ac7eababcc3ac9f1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>DestroyEnemyProjectile</b> ()</td></tr>
+<tr class="separator:a2ece9bc68fb806b8ac7eababcc3ac9f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a09ce3faf8a832bd07390d93cb97a4fcb"><td class="memItemLeft" align="right" valign="top"><a id="a09ce3faf8a832bd07390d93cb97a4fcb"></a>
+<a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_direction</b></td></tr>
+<tr class="separator:a09ce3faf8a832bd07390d93cb97a4fcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67ee06b3b2dcf15482c9866920a8e825"><td class="memItemLeft" align="right" valign="top"><a id="a67ee06b3b2dcf15482c9866920a8e825"></a>
+std::shared_ptr&lt; <a class="el" href="../../d2/d83/class_graphic_object.html">GraphicObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_bulletGraphic</b></td></tr>
+<tr class="separator:a67ee06b3b2dcf15482c9866920a8e825"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ec636b54686a4889b433566763b6646"><td class="memItemLeft" align="right" valign="top"><a id="a9ec636b54686a4889b433566763b6646"></a>
+<a class="el" href="../../d5/dda/class_boundary.html">Boundary</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbe/class_projectile.html#a9ec636b54686a4889b433566763b6646">_enemyDestroyBounds</a></td></tr>
+<tr class="memdesc:a9ec636b54686a4889b433566763b6646"><td class="mdescLeft">&#160;</td><td class="mdescRight">Need to remove both boundaries, should be passed through the constructor redundant information. <br /></td></tr>
+<tr class="separator:a9ec636b54686a4889b433566763b6646"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29ce4100add75a6e82860c28343a34cf"><td class="memItemLeft" align="right" valign="top"><a id="a29ce4100add75a6e82860c28343a34cf"></a>
+<a class="el" href="../../d5/dda/class_boundary.html">Boundary</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_playerDestroyBounds</b></td></tr>
+<tr class="separator:a29ce4100add75a6e82860c28343a34cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24c0fc8a55acd5fd13c4165404bb7817"><td class="memItemLeft" align="right" valign="top"><a id="a24c0fc8a55acd5fd13c4165404bb7817"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>_moveSpeed</b></td></tr>
+<tr class="separator:a24c0fc8a55acd5fd13c4165404bb7817"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_class_game_object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_game_object')"><img src="../../closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a></td></tr>
@@ -198,7 +235,36 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_active</b> = true</t
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Object needs to be converted into a polymorphic object, one for player and one for enemy with virtual destorys and boundaries corresponds to the type information in a better way </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac128cf116d9fd114bce2a49af797da1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac128cf116d9fd114bce2a49af797da1f">&#9670;&nbsp;</a></span>DestroySelf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Projectile::DestroySelf </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>should be virtual </p>
+<p>Destroy Self needs to become virtual and then cascade responsibilities for each type down the tree. </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>D:/Users/Tim-PC/Documents/Software_II/Project/ProjectFiles/game-source-code/FrontEndSystems/<a class="el" href="../../d4/d0c/_projectile_8h_source.html">Projectile.h</a></li>
 <li>D:/Users/Tim-PC/Documents/Software_II/Project/ProjectFiles/game-source-code/FrontEndSystems/Projectile.cpp</li>
 </ul>

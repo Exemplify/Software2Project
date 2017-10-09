@@ -43,11 +43,56 @@ virtual \hyperlink{class_projectile}{Projectile} $\ast$ \hyperlink{class_project
 \mbox{\Hypertarget{class_projectile_add4d983566a326200ea1d7c74737e108}\label{class_projectile_add4d983566a326200ea1d7c74737e108}} 
 \hyperlink{class_projectile_add4d983566a326200ea1d7c74737e108}{$\sim$\+Projectile} () override
 \begin{DoxyCompactList}\small\item\em Needs the virtual tag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_projectile_ac128cf116d9fd114bce2a49af797da1f}{Destroy\+Self} ()
+\begin{DoxyCompactList}\small\item\em should be virtual \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_projectile_a52c04ac421a4add1a2920bd57eb56fe5}\label{class_projectile_a52c04ac421a4add1a2920bd57eb56fe5}} 
+void \hyperlink{class_projectile_a52c04ac421a4add1a2920bd57eb56fe5}{Move} ()
+\begin{DoxyCompactList}\small\item\em Needs a moveable component. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_projectile_a28ae398ce317354ed435019e6b50c4ff}\label{class_projectile_a28ae398ce317354ed435019e6b50c4ff}} 
+void {\bfseries Destroy\+Player\+Projectile} ()
+\item 
+\mbox{\Hypertarget{class_projectile_a2ece9bc68fb806b8ac7eababcc3ac9f1}\label{class_projectile_a2ece9bc68fb806b8ac7eababcc3ac9f1}} 
+void {\bfseries Destroy\+Enemy\+Projectile} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_projectile_a09ce3faf8a832bd07390d93cb97a4fcb}\label{class_projectile_a09ce3faf8a832bd07390d93cb97a4fcb}} 
+\hyperlink{class_vector2_d}{Vector2D}$<$ double $>$ {\bfseries \+\_\+direction}
+\item 
+\mbox{\Hypertarget{class_projectile_a67ee06b3b2dcf15482c9866920a8e825}\label{class_projectile_a67ee06b3b2dcf15482c9866920a8e825}} 
+std\+::shared\+\_\+ptr$<$ \hyperlink{class_graphic_object}{Graphic\+Object} $>$ {\bfseries \+\_\+bullet\+Graphic}
+\item 
+\mbox{\Hypertarget{class_projectile_a9ec636b54686a4889b433566763b6646}\label{class_projectile_a9ec636b54686a4889b433566763b6646}} 
+\hyperlink{class_boundary}{Boundary} \hyperlink{class_projectile_a9ec636b54686a4889b433566763b6646}{\+\_\+enemy\+Destroy\+Bounds}
+\begin{DoxyCompactList}\small\item\em Need to remove both boundaries, should be passed through the constructor redundant information. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_projectile_a29ce4100add75a6e82860c28343a34cf}\label{class_projectile_a29ce4100add75a6e82860c28343a34cf}} 
+\hyperlink{class_boundary}{Boundary} {\bfseries \+\_\+player\+Destroy\+Bounds}
+\item 
+\mbox{\Hypertarget{class_projectile_a24c0fc8a55acd5fd13c4165404bb7817}\label{class_projectile_a24c0fc8a55acd5fd13c4165404bb7817}} 
+double {\bfseries \+\_\+move\+Speed}
+\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
 Object needs to be converted into a polymorphic object, one for player and one for enemy with virtual destorys and boundaries corresponds to the type information in a better way 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_projectile_ac128cf116d9fd114bce2a49af797da1f}\label{class_projectile_ac128cf116d9fd114bce2a49af797da1f}} 
+\index{Projectile@{Projectile}!Destroy\+Self@{Destroy\+Self}}
+\index{Destroy\+Self@{Destroy\+Self}!Projectile@{Projectile}}
+\subsubsection{\texorpdfstring{Destroy\+Self()}{DestroySelf()}}
+{\footnotesize\ttfamily void Projectile\+::\+Destroy\+Self (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+should be virtual 
+
+Destroy Self needs to become virtual and then cascade responsibilities for each type down the tree. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

@@ -40,6 +40,42 @@ static const bool {\bfseries game\+Closed} ()
 \mbox{\Hypertarget{class_game_manager_a969dd909c6b70310843d34e2490736b4}\label{class_game_manager_a969dd909c6b70310843d34e2490736b4}} 
 static scene\+\_\+ptr {\bfseries active\+Scene} = N\+U\+LL
 \end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_game_manager_a8344695f2ba7324b00c5da8b79d8b399}\label{class_game_manager_a8344695f2ba7324b00c5da8b79d8b399}} 
+void \hyperlink{class_game_manager_a8344695f2ba7324b00c5da8b79d8b399}{initialise\+Window} (Render\+Window \&\+\_\+game\+Window)
+\begin{DoxyCompactList}\small\item\em some responsibilites can be moved into the display manager \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_game_manager_a0c8d94cc2688f7774f380bc05614695b}\label{class_game_manager_a0c8d94cc2688f7774f380bc05614695b}} 
+Render\+Window {\bfseries \+\_\+window}
+\item 
+\mbox{\Hypertarget{class_game_manager_ad5f241117fe31fc2086aa7330b7bf41a}\label{class_game_manager_ad5f241117fe31fc2086aa7330b7bf41a}} 
+\hyperlink{class_game_time}{Game\+Time} $\ast$ \hyperlink{class_game_manager_ad5f241117fe31fc2086aa7330b7bf41a}{\+\_\+game\+Time}
+\begin{DoxyCompactList}\small\item\em convert to unique pointer \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_manager_a06843f28cb1609e41da7eee19be9aa87}\label{class_game_manager_a06843f28cb1609e41da7eee19be9aa87}} 
+\hyperlink{struct_window_settings}{Window\+Settings} {\bfseries \+\_\+default\+Setup}
+\item 
+\mbox{\Hypertarget{class_game_manager_a4b6f0c427c2efd2ec775a03a75dc8be8}\label{class_game_manager_a4b6f0c427c2efd2ec775a03a75dc8be8}} 
+\hyperlink{class_event_manager}{Event\+Manager} {\bfseries \+\_\+event\+Manager}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_game_manager_aedb575ca538853f3d7053b33bef238e0}\label{class_game_manager_aedb575ca538853f3d7053b33bef238e0}} 
+static int {\bfseries \+\_\+scene\+\_\+index} = 0
+\item 
+\mbox{\Hypertarget{class_game_manager_a07c75a9507a0d82f88a0b62d808fcf3c}\label{class_game_manager_a07c75a9507a0d82f88a0b62d808fcf3c}} 
+static bool {\bfseries close\+Window} = false
+\item 
+\mbox{\Hypertarget{class_game_manager_ad84fda242e092622be5228019305f507}\label{class_game_manager_ad84fda242e092622be5228019305f507}} 
+static std\+::vector$<$ scene\+\_\+ptr $>$ {\bfseries \+\_\+game\+\_\+scenes} \{\}
+\item 
+\mbox{\Hypertarget{class_game_manager_a8704a6222b652d2dc99d16102ec820bc}\label{class_game_manager_a8704a6222b652d2dc99d16102ec820bc}} 
+static scene\+\_\+ptr {\bfseries original\+\_\+active\+Scene} = N\+U\+LL
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}

@@ -64,6 +64,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d9/d89/class_scene-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Scene Class Reference</div>  </div>
@@ -104,6 +105,11 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a29183cf37f5227ea9a82d2a15c42336c"><td class="memItemLeft" align="right" valign="top"><a id="a29183cf37f5227ea9a82d2a15c42336c"></a>
 std::mutex&#160;</td><td class="memItemRight" valign="bottom"><b>_gameObject_list_mutex</b></td></tr>
 <tr class="separator:a29183cf37f5227ea9a82d2a15c42336c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:af1956432917d14b0a0b26103dbcb5bcd"><td class="memItemLeft" align="right" valign="top">std::vector&lt; gameObj_ptr &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/db5/class_scene.html#af1956432917d14b0a0b26103dbcb5bcd">_gameObject_list</a></td></tr>
+<tr class="separator:af1956432917d14b0a0b26103dbcb5bcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a3dd730cba4a22bf75e54c4b644c26976"></a>
@@ -122,6 +128,30 @@ std::mutex&#160;</td><td class="memItemRight" valign="bottom"><b>_gameObject_lis
       </table>
 </div><div class="memdoc">
 <p>Seems redundant to do duplicate the game object pointer </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="af1956432917d14b0a0b26103dbcb5bcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1956432917d14b0a0b26103dbcb5bcd">&#9670;&nbsp;</a></span>_gameObject_list</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;gameObj_ptr&gt; Scene::_gameObject_list</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>would be better to use a doubly linked list instead of a vector since it has a better time effeciency when it deals with insertion and deletion of elements </p>
 
 </div>
 </div>

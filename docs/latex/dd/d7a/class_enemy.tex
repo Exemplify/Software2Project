@@ -28,11 +28,97 @@ Enemy\+Move\+Type {\bfseries get\+Move\+Type} () const
 \mbox{\Hypertarget{class_enemy_ad0c2cbb001f0a3335f2ce06939e1d7ed}\label{class_enemy_ad0c2cbb001f0a3335f2ce06939e1d7ed}} 
 const std\+::shared\+\_\+ptr$<$ \hyperlink{class_graphic_object}{Graphic\+Object} $>$ {\bfseries get\+Graphic\+Object} () override
 \end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_enemy_a30471ff0b5b7bf3b31d3b8ece0005e9a}\label{class_enemy_a30471ff0b5b7bf3b31d3b8ece0005e9a}} 
+void {\bfseries Move} ()
+\item 
+\mbox{\Hypertarget{class_enemy_ab526cfaf13910e15ca1e5e84ef230dd1}\label{class_enemy_ab526cfaf13910e15ca1e5e84ef230dd1}} 
+void {\bfseries Shoot} ()
+\item 
+\mbox{\Hypertarget{class_enemy_a06fafdc67bd76334adb9d47f73f15aff}\label{class_enemy_a06fafdc67bd76334adb9d47f73f15aff}} 
+void {\bfseries Check\+Outside\+Screen} ()
+\item 
+\mbox{\Hypertarget{class_enemy_aef1f4614b8bb29980071585b6f09139f}\label{class_enemy_aef1f4614b8bb29980071585b6f09139f}} 
+void \hyperlink{class_enemy_aef1f4614b8bb29980071585b6f09139f}{Initialise\+Object} ()
+\begin{DoxyCompactList}\small\item\em All movement functions need to be moved into a polymorphic class structure. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_enemy_aa72305c74fd05140de6a8a986532b0c7}\label{class_enemy_aa72305c74fd05140de6a8a986532b0c7}} 
+void {\bfseries Enemy\+Direction} ()
+\item 
+void \hyperlink{class_enemy_adcd3f46bb06898b340f50c4a22bb3f68}{Initialise\+Movement\+Type} (const int \&random\+Chance\+Value)
+\item 
+\mbox{\Hypertarget{class_enemy_a78f7ece0392dd209112e1ce3eccaece2}\label{class_enemy_a78f7ece0392dd209112e1ce3eccaece2}} 
+void \hyperlink{class_enemy_a78f7ece0392dd209112e1ce3eccaece2}{Construct\+Sprite\+Info} ()
+\begin{DoxyCompactList}\small\item\em Needs to be moved to a Database. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_enemy_a19e20e71247a6e310753366a29ae9142}\label{class_enemy_a19e20e71247a6e310753366a29ae9142}} 
+void {\bfseries Initialise\+Starting\+Position} ()
+\item 
+\mbox{\Hypertarget{class_enemy_abefc309bb54bedbd106e27ec816fa899}\label{class_enemy_abefc309bb54bedbd106e27ec816fa899}} 
+void {\bfseries Initialise\+Linear\+Movement} (const double \&angle)
+\item 
+\mbox{\Hypertarget{class_enemy_a09e8b7d2eefd3db68de4a32bb7f4e7e5}\label{class_enemy_a09e8b7d2eefd3db68de4a32bb7f4e7e5}} 
+void {\bfseries Initialise\+Parabolic\+Movement} ()
+\item 
+\mbox{\Hypertarget{class_enemy_a8af64f959b402b1d64d218e3be6412ce}\label{class_enemy_a8af64f959b402b1d64d218e3be6412ce}} 
+void {\bfseries Initialise\+Spiral\+Movement} (const double \&angle)
+\item 
+\mbox{\Hypertarget{class_enemy_afcdf2fa6104b3805b0f20ee7ef258f5d}\label{class_enemy_afcdf2fa6104b3805b0f20ee7ef258f5d}} 
+void {\bfseries Determine\+Direction} ()
+\item 
+\mbox{\Hypertarget{class_enemy_ad520b2e836c44954584fb2d29eed1c73}\label{class_enemy_ad520b2e836c44954584fb2d29eed1c73}} 
+double {\bfseries Generate\+Random\+Angle} ()
+\item 
+\mbox{\Hypertarget{class_enemy_a29a0efd302ab7be5d40be3efb18dd4ff}\label{class_enemy_a29a0efd302ab7be5d40be3efb18dd4ff}} 
+void {\bfseries Spiral\+Move} ()
+\item 
+\mbox{\Hypertarget{class_enemy_ace66b1e7bd7822bdb5318586ed235332}\label{class_enemy_ace66b1e7bd7822bdb5318586ed235332}} 
+void {\bfseries Linear\+Move} ()
+\item 
+\mbox{\Hypertarget{class_enemy_a6e804d11c9828650329be29063e53050}\label{class_enemy_a6e804d11c9828650329be29063e53050}} 
+void {\bfseries Parabolic\+Move} ()
+\item 
+\mbox{\Hypertarget{class_enemy_a9c4e7e1c9f79650d1f0dd3c72ae9c82d}\label{class_enemy_a9c4e7e1c9f79650d1f0dd3c72ae9c82d}} 
+void {\bfseries Player\+Projectile\+Collision} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_enemy_a3c5bc99471cfa718af8e11b3b735d15c}\label{class_enemy_a3c5bc99471cfa718af8e11b3b735d15c}} 
+\hyperlink{class_delay_component}{Delay\+Component} {\bfseries \+\_\+shoot\+Delay}
+\item 
+\mbox{\Hypertarget{class_enemy_a96c1fc789cc0fb766724ea1d75ad3179}\label{class_enemy_a96c1fc789cc0fb766724ea1d75ad3179}} 
+\hyperlink{class_character}{Character} \hyperlink{class_enemy_a96c1fc789cc0fb766724ea1d75ad3179}{\+\_\+enemy\+Stats}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_character}{Character} needs to change. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_enemy_a36226438bbccc3aff98a575530a07346}\label{class_enemy_a36226438bbccc3aff98a575530a07346}} 
+\hyperlink{class_shoot_component}{Shoot\+Component} \hyperlink{class_enemy_a36226438bbccc3aff98a575530a07346}{\+\_\+enemy\+Shoot}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_enemy}{Enemy} Shoot needs to be put into character. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_enemy_afb32f85ca2f3dce003e62a91572bdb70}\label{class_enemy_afb32f85ca2f3dce003e62a91572bdb70}} 
+\hyperlink{class_boundary}{Boundary} {\bfseries \+\_\+screen\+Bounds}
+\item 
+\mbox{\Hypertarget{class_enemy_a7acb60cccd8ec80dc99fad62f17adbcf}\label{class_enemy_a7acb60cccd8ec80dc99fad62f17adbcf}} 
+Enemy\+Move\+Type {\bfseries \+\_\+movement\+Type}
+\item 
+\mbox{\Hypertarget{class_enemy_a671f316ff7ba3daf921dfe7f8e3075dc}\label{class_enemy_a671f316ff7ba3daf921dfe7f8e3075dc}} 
+int {\bfseries \+\_\+direction}
+\item 
+\mbox{\Hypertarget{class_enemy_ad07c96cc438e9144d0d66fd53a93eec3}\label{class_enemy_ad07c96cc438e9144d0d66fd53a93eec3}} 
+std\+::shared\+\_\+ptr$<$ \hyperlink{class_graphic_object}{Graphic\+Object} $>$ {\bfseries \+\_\+graphic\+Object}
+\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
 Needs to be changed into a polymorphic interaction where different characters define different movement types requires a large amount of redesign for a better implementation Needs a copy constructor and assignment opperator 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_enemy_adcd3f46bb06898b340f50c4a22bb3f68}\label{class_enemy_adcd3f46bb06898b340f50c4a22bb3f68}} 
+\index{Enemy@{Enemy}!Initialise\+Movement\+Type@{Initialise\+Movement\+Type}}
+\index{Initialise\+Movement\+Type@{Initialise\+Movement\+Type}!Enemy@{Enemy}}
+\subsubsection{\texorpdfstring{Initialise\+Movement\+Type()}{InitialiseMovementType()}}
+{\footnotesize\ttfamily void Enemy\+::\+Initialise\+Movement\+Type (\begin{DoxyParamCaption}\item[{const int \&}]{random\+Chance\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Movement functions need to be moved into a seperate class sprite information needs to be moved to a database 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

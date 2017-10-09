@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['xyvector',['xyVector',['../d5/dae/structxy_vector.html',1,'']]]
+  ['windowsettings',['WindowSettings',['../d1/d57/struct_window_settings.html',1,'']]]
 ];

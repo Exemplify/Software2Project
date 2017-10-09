@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['delaycomponent',['DelayComponent',['../d7/dfa/class_delay_component.html',1,'DelayComponent'],['../d7/dfa/class_delay_component.html#adcfaeb65d23778a3468156b34140c7f5',1,'DelayComponent::DelayComponent()'],['../d7/dfa/class_delay_component.html#aab69fe25b426b7ac1696840ad1f56c35',1,'DelayComponent::DelayComponent(double value, bool immediateUse=false)']]],
-  ['destroyedobjectoutsidescene',['DestroyedObjectOutsideScene',['../d2/df6/class_destroyed_object_outside_scene.html',1,'']]],
-  ['displaymanager',['DisplayManager',['../d8/db2/class_display_manager.html',1,'']]]
+  ['character',['Character',['../d7/da7/class_character.html',1,'']]],
+  ['clone',['Clone',['../d8/d53/class_player.html#ad5023c3701c11222e09906b41c604135',1,'Player::Clone()'],['../db/dbe/class_projectile.html#a39653a4aa80df0364e15854f0f5e389d',1,'Projectile::Clone()']]],
+  ['collisionaction',['collisionAction',['../d8/d53/class_player.html#a965e7e8baf9b270e1b22784b890bc74d',1,'Player::collisionAction()'],['../db/dbe/class_projectile.html#a8dae5b6cc0293fc6c85797fcf2019492',1,'Projectile::collisionAction()']]],
+  ['collisiondetection',['CollisionDetection',['../d0/dfb/class_collision_detection.html',1,'']]],
+  ['constructspriteinfo',['ConstructSpriteInfo',['../dd/d7a/class_enemy.html#a78f7ece0392dd209112e1ce3eccaece2',1,'Enemy']]],
+  ['convertvector2dtoscreenposition',['ConvertVector2DtoScreenPosition',['../d0/d8d/class_vector2_d_convert.html#aa4aff52a3a85d4b7da4123e7b73d2d24',1,'Vector2DConvert']]]
 ];

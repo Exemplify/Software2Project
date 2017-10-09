@@ -63,6 +63,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d6/d0f/class_enemy_controller-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">EnemyController Class Reference</div>  </div>
@@ -141,6 +143,33 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setActive</b> (bool a
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Destroy</b> ()</td></tr>
 <tr class="separator:abf1959fad10ea04673a182029f1f81b9 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a84eabc12a38617b5ff05c6e896e97531"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d01/class_enemy_controller.html#a84eabc12a38617b5ff05c6e896e97531">SpawnEnemyCountDown</a> ()</td></tr>
+<tr class="memdesc:a84eabc12a38617b5ff05c6e896e97531"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delay code needs to be replaced with a delaycomponent.  <a href="#a84eabc12a38617b5ff05c6e896e97531">More...</a><br /></td></tr>
+<tr class="separator:a84eabc12a38617b5ff05c6e896e97531"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5298e79a0bf598ed8684efb8a6a3927"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d01/class_enemy_controller.html#ab5298e79a0bf598ed8684efb8a6a3927">SpawnEnemy</a> ()</td></tr>
+<tr class="separator:ab5298e79a0bf598ed8684efb8a6a3927"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a6d275f518464e59e77a1870c5032fb28"><td class="memItemLeft" align="right" valign="top"><a id="a6d275f518464e59e77a1870c5032fb28"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>numberOfEnemiesKilled</b> = 0</td></tr>
+<tr class="separator:a6d275f518464e59e77a1870c5032fb28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a1e1d9a6da84fe5ed2896e83767782f"><td class="memItemLeft" align="right" valign="top"><a id="a6a1e1d9a6da84fe5ed2896e83767782f"></a>
+const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d01/class_enemy_controller.html#a6a1e1d9a6da84fe5ed2896e83767782f">MAX_NUMBER_OF_ENEMIES</a> = 10</td></tr>
+<tr class="memdesc:a6a1e1d9a6da84fe5ed2896e83767782f"><td class="mdescLeft">&#160;</td><td class="mdescRight">delay code needs to moved to a database and a delaycomponent <br /></td></tr>
+<tr class="separator:a6a1e1d9a6da84fe5ed2896e83767782f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99ae7c9259c27e9cd74e0b6c1b471ad9"><td class="memItemLeft" align="right" valign="top"><a id="a99ae7c9259c27e9cd74e0b6c1b471ad9"></a>
+const double&#160;</td><td class="memItemRight" valign="bottom"><b>ENEMY_SPAWN_DELAY</b> = 3</td></tr>
+<tr class="separator:a99ae7c9259c27e9cd74e0b6c1b471ad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66c173677d7d1f157877f0d273050c40"><td class="memItemLeft" align="right" valign="top"><a id="a66c173677d7d1f157877f0d273050c40"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>_timeBetweenSpawns</b></td></tr>
+<tr class="separator:a66c173677d7d1f157877f0d273050c40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64e8ff5b6342971e836389ce80bfd247"><td class="memItemLeft" align="right" valign="top"><a id="a64e8ff5b6342971e836389ce80bfd247"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>enemyCount</b> = 0</td></tr>
+<tr class="separator:a64e8ff5b6342971e836389ce80bfd247"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_class_game_object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_game_object')"><img src="../../closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a></td></tr>
@@ -166,7 +195,62 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_active</b> = true</t
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>needs copy constructor and assignment opperator </p>
 <p>loading the next scene needs to be removed from this object and placed into a "SceneController" which is responsible for the scene state, including win/lose condition checks as well as information about the state of the game, score graphics display etc </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab5298e79a0bf598ed8684efb8a6a3927"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5298e79a0bf598ed8684efb8a6a3927">&#9670;&nbsp;</a></span>SpawnEnemy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnemyController::SpawnEnemy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>needs to be updated to use _scene variable from <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a> </p>
+
+</div>
+</div>
+<a id="a84eabc12a38617b5ff05c6e896e97531"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84eabc12a38617b5ff05c6e896e97531">&#9670;&nbsp;</a></span>SpawnEnemyCountDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnemyController::SpawnEnemyCountDown </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Delay code needs to be replaced with a delaycomponent. </p>
+<p>needs to be replaced with delay functions </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>D:/Users/Tim-PC/Documents/Software_II/Project/ProjectFiles/game-source-code/FrontEndSystems/<a class="el" href="../../d2/da3/_enemy_controller_8h_source.html">EnemyController.h</a></li>
 <li>D:/Users/Tim-PC/Documents/Software_II/Project/ProjectFiles/game-source-code/FrontEndSystems/EnemyController.cpp</li>
 </ul>
