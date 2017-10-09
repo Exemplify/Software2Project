@@ -1,0 +1,55 @@
+\hypertarget{class_projectile}{}\section{Projectile Class Reference}
+\label{class_projectile}\index{Projectile@{Projectile}}
+
+
+{\ttfamily \#include $<$Projectile.\+h$>$}
+
+Inheritance diagram for Projectile\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{db/dbe/class_projectile}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_projectile_ac536ed2aad56af866a2078b9a85aa16d}\label{class_projectile_ac536ed2aad56af866a2078b9a85aa16d}} 
+\hyperlink{class_projectile_ac536ed2aad56af866a2078b9a85aa16d}{Projectile} ()
+\begin{DoxyCompactList}\small\item\em Constructors need to be redesigned. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_projectile_a45f5e2eb6db9f673670e9de0aa9b9bab}\label{class_projectile_a45f5e2eb6db9f673670e9de0aa9b9bab}} 
+{\bfseries Projectile} (Game\+Object\+Type projectile\+Type)
+\item 
+\mbox{\Hypertarget{class_projectile_a6d13e20ed5be714a7efd4be89791ea94}\label{class_projectile_a6d13e20ed5be714a7efd4be89791ea94}} 
+\hyperlink{class_projectile_a6d13e20ed5be714a7efd4be89791ea94}{Projectile} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_graphic_object}{Graphic\+Object} $>$ bullet\+Graphic, Game\+Object\+Type projectile\+Type, \hyperlink{structxy_vector}{xy\+Vector} scale)
+\begin{DoxyCompactList}\small\item\em Constructor Needs a Database Dependency. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_projectile_a60b9863678645f9605bf938ef6df7938}\label{class_projectile_a60b9863678645f9605bf938ef6df7938}} 
+{\bfseries Projectile} (const \hyperlink{class_projectile}{Projectile} \&copy\+Projectile)
+\item 
+\mbox{\Hypertarget{class_projectile_ad057a8aeadb0064aacd0f93b2d6de158}\label{class_projectile_ad057a8aeadb0064aacd0f93b2d6de158}} 
+virtual void \hyperlink{class_projectile_ad057a8aeadb0064aacd0f93b2d6de158}{Update} () override
+\begin{DoxyCompactList}\small\item\em could aslo be used as a friendship with scene \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_projectile_aedb2c1ee7933578088e4d2a60d9c0f5c}\label{class_projectile_aedb2c1ee7933578088e4d2a60d9c0f5c}} 
+void {\bfseries Initialise} (\hyperlink{class_vector2_d}{Vector2D}$<$ double $>$ starting\+Pos, \hyperlink{class_vector2_d}{Vector2D}$<$ double $>$ direction, double move\+Speed)
+\item 
+\mbox{\Hypertarget{class_projectile_a8dae5b6cc0293fc6c85797fcf2019492}\label{class_projectile_a8dae5b6cc0293fc6c85797fcf2019492}} 
+virtual void \hyperlink{class_projectile_a8dae5b6cc0293fc6c85797fcf2019492}{collision\+Action} (Game\+Object\+Type object\+Type) override
+\begin{DoxyCompactList}\small\item\em polymorphism will reduce this complexity \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_projectile_a639f52184c8b9720ca8c36371303332d}\label{class_projectile_a639f52184c8b9720ca8c36371303332d}} 
+virtual const std\+::shared\+\_\+ptr$<$ \hyperlink{class_graphic_object}{Graphic\+Object} $>$ {\bfseries get\+Graphic\+Object} () override
+\item 
+\mbox{\Hypertarget{class_projectile_a39653a4aa80df0364e15854f0f5e389d}\label{class_projectile_a39653a4aa80df0364e15854f0f5e389d}} 
+virtual \hyperlink{class_projectile}{Projectile} $\ast$ \hyperlink{class_projectile_a39653a4aa80df0364e15854f0f5e389d}{Clone} () override
+\begin{DoxyCompactList}\small\item\em Clone Function Still in development. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_projectile_add4d983566a326200ea1d7c74737e108}\label{class_projectile_add4d983566a326200ea1d7c74737e108}} 
+\hyperlink{class_projectile_add4d983566a326200ea1d7c74737e108}{$\sim$\+Projectile} () override
+\begin{DoxyCompactList}\small\item\em Needs the virtual tag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Object needs to be converted into a polymorphic object, one for player and one for enemy with virtual destorys and boundaries corresponds to the type information in a better way 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Projectile.\+h\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Projectile.\+cpp\end{DoxyCompactItemize}

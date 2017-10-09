@@ -1,0 +1,75 @@
+\hypertarget{class_player}{}\section{Player Class Reference}
+\label{class_player}\index{Player@{Player}}
+
+
+\hyperlink{class_character}{Character} rework required here as well.  
+
+
+
+
+{\ttfamily \#include $<$Player.\+h$>$}
+
+Inheritance diagram for Player\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{d8/d53/class_player}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}\label{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}} 
+\hyperlink{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}{Player} ()
+\begin{DoxyCompactList}\small\item\em Redundant constructors need to be reworked. \end{DoxyCompactList}\item 
+\hyperlink{class_player_afb985ed4c767e1ad824655b9f5f9d597}{Player} (\hyperlink{class_vector2_d}{Vector2D}$<$ double $>$ \&start\+Position, \hyperlink{class_character}{Character} player\+Stats)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_player}{Player} constructor needs to be reworked too much database implementation is used. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_player_a066cb6500937804121fd4ceb15595b3f}\label{class_player_a066cb6500937804121fd4ceb15595b3f}} 
+{\bfseries Player} (\hyperlink{class_vector2_d}{Vector2D}$<$ double $>$ \&start\+Position, \hyperlink{class_character}{Character} player\+Stats, std\+::shared\+\_\+ptr$<$ \hyperlink{class_graphic_object}{Graphic\+Object} $>$ bullet\+Graphic)
+\item 
+\mbox{\Hypertarget{class_player_ad5023c3701c11222e09906b41c604135}\label{class_player_ad5023c3701c11222e09906b41c604135}} 
+virtual \hyperlink{class_player}{Player} $\ast$ \hyperlink{class_player_ad5023c3701c11222e09906b41c604135}{Clone} () override
+\begin{DoxyCompactList}\small\item\em Clone still in development. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_player_a5e17be3418fa0ac0192c05efaf3dc8bd}\label{class_player_a5e17be3418fa0ac0192c05efaf3dc8bd}} 
+void \hyperlink{class_player_a5e17be3418fa0ac0192c05efaf3dc8bd}{Update} () override
+\begin{DoxyCompactList}\small\item\em could aslo be used as a friendship with scene \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_player_a965e7e8baf9b270e1b22784b890bc74d}{collision\+Action} (Game\+Object\+Type object\+Type) override
+\item 
+\mbox{\Hypertarget{class_player_a0bee9292374b568f74c2f9240fba0d36}\label{class_player_a0bee9292374b568f74c2f9240fba0d36}} 
+const std\+::shared\+\_\+ptr$<$ \hyperlink{class_graphic_object}{Graphic\+Object} $>$ {\bfseries get\+Graphic\+Object} () override
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_character}{Character} rework required here as well. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_player_afb985ed4c767e1ad824655b9f5f9d597}\label{class_player_afb985ed4c767e1ad824655b9f5f9d597}} 
+\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\subsubsection{\texorpdfstring{Player()}{Player()}}
+{\footnotesize\ttfamily Player\+::\+Player (\begin{DoxyParamCaption}\item[{\hyperlink{class_vector2_d}{Vector2D}$<$ double $>$ \&}]{start\+Position,  }\item[{\hyperlink{class_character}{Character}}]{player\+Stats }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{class_player}{Player} constructor needs to be reworked too much database implementation is used. 
+
+Needs to be stored in a database 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_player_a965e7e8baf9b270e1b22784b890bc74d}\label{class_player_a965e7e8baf9b270e1b22784b890bc74d}} 
+\index{Player@{Player}!collision\+Action@{collision\+Action}}
+\index{collision\+Action@{collision\+Action}!Player@{Player}}
+\subsubsection{\texorpdfstring{collision\+Action()}{collisionAction()}}
+{\footnotesize\ttfamily void Player\+::collision\+Action (\begin{DoxyParamCaption}\item[{Game\+Object\+Type}]{object\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Magic Number needs to be removed (can be replaced by an enumerator class or static variable) 
+
+Implements \hyperlink{class_physics_object}{Physics\+Object}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Player.\+h\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Player.\+cpp\end{DoxyCompactItemize}

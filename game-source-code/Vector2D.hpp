@@ -6,6 +6,20 @@
 
 using namespace std;
 
+struct xyVector
+{
+	xyVector():
+	x{0},
+	y{0}
+	{}
+	xyVector(double X, double Y): 
+	x{X},
+	y{Y}
+	{}
+	double x;
+	double y;
+};
+
 enum class VectorType
 {
     xyp = 1,

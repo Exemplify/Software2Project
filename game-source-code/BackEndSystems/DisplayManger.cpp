@@ -2,6 +2,7 @@
 #include "GameManager.h"
 #include "../FrontEndSystems/GraphicObject.h"
 #include "../FrontEndSystems/SpriteInfo.h"
+#include "Vector2DConvert.h"
 #include <mutex>
 #include <cmath>
 #include <string>
@@ -85,7 +86,7 @@ void DisplayManager::DrawSpriteFromGameObject(shared_ptr<GameObject> GO)
 		}
 		// obtains the relative sfml screen position
 		currentSpriteInfoHash = _spriteInfoTable.find(currentObjectKey);
-		auto screenPosition = ConvertVector2DtoScreenPosition(GO->getPosition());
+		auto screenPosition = Vector2DConvert::ConvertVector2DtoScreenPosition(GO->getPosition());
 
 		// sets the position and scale of the sprite accordingly
 		auto currentSpriteData = currentSpriteInfoHash->second;
@@ -98,21 +99,6 @@ void DisplayManager::DrawSpriteFromGameObject(shared_ptr<GameObject> GO)
 	}
 }
 
-// Converts Game Position to the sfml Screen Position
-Vector2f DisplayManager::ConvertVector2DtoScreenPosition(Vector2D<double> gameVector)
-{
-	// Obtains the current xy screen position from the gameobject
-	auto gamePosition = gameVector.xypVector();
-	
-	auto x_pos = gamePosition[0];
-	auto y_pos = gamePosition[1];
-	// Converts the xy game position into the sfml screen position
-	Vector2f screenPosition;
-	screenPosition.x = x_pos + HALF_SCREEN_WIDTH;
-	screenPosition.y = -y_pos + HALF_SCREEN_HEIGHT;
-	
-	return screenPosition;
-}
 // intialises the sprite and texture information if it has not been done previously
 void DisplayManager::InitialiseGraphicObject(const GraphicObject& graphicObject, std::string gameObjectKey)
 {

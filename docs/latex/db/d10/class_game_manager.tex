@@ -1,0 +1,66 @@
+\hypertarget{class_game_manager}{}\section{Game\+Manager Class Reference}
+\label{class_game_manager}\index{Game\+Manager@{Game\+Manager}}
+
+
+Needs to be converted into a singleton.  
+
+
+
+
+{\ttfamily \#include $<$Game\+Manager.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_game_manager_aa0e2424dc1a39d380e5b6605b179bf05}\label{class_game_manager_aa0e2424dc1a39d380e5b6605b179bf05}} 
+\hyperlink{class_game_manager_aa0e2424dc1a39d380e5b6605b179bf05}{Game\+Manager} ()
+\begin{DoxyCompactList}\small\item\em redundant default constructor \end{DoxyCompactList}\item 
+void \hyperlink{class_game_manager_a5baa570812ae717f809fe0dc48bde22e}{Game\+Loop} ()
+\item 
+void \hyperlink{class_game_manager_a65e593032333cee8723ad08ebfe897fc}{Add\+Scene} (scene\+\_\+ptr new\+Scene)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_game_manager_acbd9fb84f9e18c8cb585738d5c89a2b9}\label{class_game_manager_acbd9fb84f9e18c8cb585738d5c89a2b9}} 
+static void \hyperlink{class_game_manager_acbd9fb84f9e18c8cb585738d5c89a2b9}{Exit} ()
+\begin{DoxyCompactList}\small\item\em Exit function needs to be moved into \hyperlink{class_scene}{Scene} or a seperate Application class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_manager_a09b8801bcfdd8d5cbc52e27895b84e3b}\label{class_game_manager_a09b8801bcfdd8d5cbc52e27895b84e3b}} 
+static void \hyperlink{class_game_manager_a09b8801bcfdd8d5cbc52e27895b84e3b}{Load\+Scene} (unsigned int index)
+\begin{DoxyCompactList}\small\item\em Should be called from an application class but remains inside of game\+Manager. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_manager_ac8de938e05092ef365c77ba7a3c2c0d7}\label{class_game_manager_ac8de938e05092ef365c77ba7a3c2c0d7}} 
+static int {\bfseries get\+Scene} ()
+\item 
+\mbox{\Hypertarget{class_game_manager_a4eb94c6171bf3292eb57b291e2174289}\label{class_game_manager_a4eb94c6171bf3292eb57b291e2174289}} 
+static const bool {\bfseries game\+Closed} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_game_manager_a969dd909c6b70310843d34e2490736b4}\label{class_game_manager_a969dd909c6b70310843d34e2490736b4}} 
+static scene\+\_\+ptr {\bfseries active\+Scene} = N\+U\+LL
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Needs to be converted into a singleton. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game_manager_a65e593032333cee8723ad08ebfe897fc}\label{class_game_manager_a65e593032333cee8723ad08ebfe897fc}} 
+\index{Game\+Manager@{Game\+Manager}!Add\+Scene@{Add\+Scene}}
+\index{Add\+Scene@{Add\+Scene}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{Add\+Scene()}{AddScene()}}
+{\footnotesize\ttfamily void Game\+Manager\+::\+Add\+Scene (\begin{DoxyParamCaption}\item[{scene\+\_\+ptr}]{new\+Scene }\end{DoxyParamCaption})}
+
+still needs to be fixed so that the game scene and menu scenes can be reloaded \mbox{\Hypertarget{class_game_manager_a5baa570812ae717f809fe0dc48bde22e}\label{class_game_manager_a5baa570812ae717f809fe0dc48bde22e}} 
+\index{Game\+Manager@{Game\+Manager}!Game\+Loop@{Game\+Loop}}
+\index{Game\+Loop@{Game\+Loop}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{Game\+Loop()}{GameLoop()}}
+{\footnotesize\ttfamily void Game\+Manager\+::\+Game\+Loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Put a guard mutex here to ensure no other threads are accessing the gameobject list when the window closes 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Game\+Manager.\+h\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Game\+Manager.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,49 @@
+\hypertarget{class_scene}{}\section{Scene Class Reference}
+\label{class_scene}\index{Scene@{Scene}}
+Inheritance diagram for Scene\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d6/db5/class_scene}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_scene_a0caa1ccf717fe21059f20b0c4a57cde6}\label{class_scene_a0caa1ccf717fe21059f20b0c4a57cde6}} 
+\hyperlink{class_scene_a0caa1ccf717fe21059f20b0c4a57cde6}{Scene} (const \hyperlink{class_scene}{Scene} \&rhs)
+\begin{DoxyCompactList}\small\item\em Currently needs to be fixed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_scene_a1d902efeacc113ceb2dd79a976b04a77}\label{class_scene_a1d902efeacc113ceb2dd79a976b04a77}} 
+void {\bfseries Scene\+Update} ()
+\item 
+void \hyperlink{class_scene_a3dd730cba4a22bf75e54c4b644c26976}{Instantiate} (shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$ game\+Obj)
+\item 
+\mbox{\Hypertarget{class_scene_ae418f788bfbf2551d89e907d1d4cf2f6}\label{class_scene_ae418f788bfbf2551d89e907d1d4cf2f6}} 
+void {\bfseries Destroy\+Game\+Object} (game\+Obj\+\_\+ptr game\+Object)
+\item 
+\mbox{\Hypertarget{class_scene_a0696711d2b1452f3d6f42f7a92f4218d}\label{class_scene_a0696711d2b1452f3d6f42f7a92f4218d}} 
+std\+::vector$<$ game\+Obj\+\_\+ptr $>$ {\bfseries get\+Game\+Object\+List} () const
+\item 
+\mbox{\Hypertarget{class_scene_a64a47e6503f634ea2b76fa2078538716}\label{class_scene_a64a47e6503f634ea2b76fa2078538716}} 
+\hyperlink{class_scene}{Scene} \& {\bfseries operator=} (const \hyperlink{class_scene}{Scene} \&rhs)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_scene_a29183cf37f5227ea9a82d2a15c42336c}\label{class_scene_a29183cf37f5227ea9a82d2a15c42336c}} 
+std\+::mutex {\bfseries \+\_\+game\+Object\+\_\+list\+\_\+mutex}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_scene_a3dd730cba4a22bf75e54c4b644c26976}\label{class_scene_a3dd730cba4a22bf75e54c4b644c26976}} 
+\index{Scene@{Scene}!Instantiate@{Instantiate}}
+\index{Instantiate@{Instantiate}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{Instantiate()}{Instantiate()}}
+{\footnotesize\ttfamily void Scene\+::\+Instantiate (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$}]{game\+Obj }\end{DoxyParamCaption})}
+
+Seems redundant to do duplicate the game object pointer 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Scene.\+h\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Scene.\+cpp\end{DoxyCompactItemize}

@@ -13,16 +13,7 @@ class Scene;
 class DestroyedObjectOutsideScene{};
 // The different object types used to identify whic object to draw and to 
 // determine when a specific collision has occured
-struct xyVector
-{
-	xyVector(){}
-	xyVector(double X, double Y): 
-	x{X},
-	y{Y}
-	{}
-	double x;
-	double y;
-};
+
 enum class GameObjectType
 {
 	gameObject,
