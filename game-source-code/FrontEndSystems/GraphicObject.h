@@ -5,49 +5,44 @@
 
 using std::string;
 
-/* Graphic Object:
- * This is the main interface with the display manager, It stores the name of the graphicName which is used as a key 
- * for a hash table inside of the display manager. It also stores the texture location for the current object  
- */
+ /**
+  * @class GraphicObject
+  * @brief  This is the Utility class with the display manager, It stores the name of the object and location of the image file which are 
+  * both necessary for the DisplayManager to correctly display the specified image. 
+  * @details The Graphic Object has a tight coupling with the Presentation layer classes. The graphic name of the object is used as a key within a hashtable 
+  * to identify the specific sfml sprite and texture that needs to be drawn for the corresponding object. GraphicObject acts as a link between the Presentation Layer and the 
+  * Domain layer. It forms a composition relationship with the GameObject class. A NullObject is assigned by default for derived implimentations of GameObject that do not require a GraphicObject
+  * The NullObject consistis of a NullObject.png image which is a single transparent pixel and the graphicName Null. This is an Object name that is preserved by the constructor. 
+  * ie another GraphicObject may not have the name Null.
+  */
 class GraphicObject
 {
 public:
-	GraphicObject():
-	{
-		*this = NullGraphic;
-	}
+	GraphicObject();
 	
-	GraphicObject(const GraphicObject& copy)
-	{
-		_textureLocation = copy._textureLocation;
-		_graphicName = copy._graphicName;
-	}
-	GraphicObject& operator=(const GraphicObject& rhs)
-	{
-		_textureLocation = rhs._textureLocation;
-		_graphicName = rhs._graphicName;
-		return *this;
-	}
+	GraphicObject(const GraphicObject& copy);
+	GraphicObject& operator=(const GraphicObject& rhs);
 
-	// Standard constructor used to assign a the texture location of the object and the name of it
-	GraphicObject(string textureLocation, string graphicName)
-	{
-		_textureLocation = textureLocation;
-		_graphicName = graphicName;
-	}
+	GraphicObject(string textureLocation, string graphicName);
 	
-	// returns the graphic Information 
+	/**
+	 * @brief Getter is necessary to decouple the presentation layer from the game logic layer.
+	 * @return Returns a constant string that represents the graphic name of the object
+	 */
 	const string& getGraphicName() const {return _graphicName;}
+	/**
+	 * @brief Getter is necessary to decouple the presentation layer from the game logic layer.
+	 * @return Returns a constant string that represents the location of the image file that is being used
+	 */
 	const string& getTextureLocation() const {return _textureLocation;}
 	const static GraphicObject NullGraphic;
 
 protected:
-	// sprite information required for the display manager
-	std::string _textureLocation;
-	std::string _graphicName;
+	std::string _textureLocation; /**<The location of the Image that the object represents>*/ 
+	std::string _graphicName; /**<The name used to load objects specified by the texture location>*/ 
 
 };
 
-static const GraphicObject::NullGraphic{"Null", "NullGraphic.png"};
+
 
 #endif 
