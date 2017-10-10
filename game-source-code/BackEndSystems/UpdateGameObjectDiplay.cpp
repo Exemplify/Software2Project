@@ -14,11 +14,14 @@ const sf::Sprite& UpdateGameObjectDisplay::DetermineGameObjectChanges(std::share
 		InitialiseSpriteInfo(*graphicObject);
 	}
 	
-	return UpdateSpriteProperties(GO->getPosition(), GO->getScale());
+	return UpdateSpriteProperties(GO->getPosition(), GO->getScale(), graphicObject->getTextureLocation());
 
 }
-
-const sf::Sprite& UpdateGameObjectDisplay::UpdateSpriteProperties(const Vector2D<double>& position, const xyVector& scale, SpriteInfo)
+/**
+ * @details Updates the position of the sprite ,retrieved from the hash table, to the corresponding screen position by converting the
+ * GameOject's game position to the corresponding screen position and then assigns the scale of the object to sprite
+ */
+const sf::Sprite& UpdateGameObjectDisplay::UpdateSpriteProperties(const Vector2D<double>& position, const xyVector& scale, const string& currentObjectKey)
 {
 	// obtains the relative sfml screen position
 	auto currentSpriteInfoHash = _spriteInfoTable.find(currentObjectKey);
@@ -32,13 +35,16 @@ const sf::Sprite& UpdateGameObjectDisplay::UpdateSpriteProperties(const Vector2D
 	return currentSpriteData->sprite;
 }
 
-
+/**
+ * @details Determines whether the SpriteInfo object that corresponds to the key obtained from the graphic object exists.
+ * Uses std::find to check for the object and returns a true if the iterator returned is not equal to the end of the hash table
+ */
 bool UpdateGameObjectDisplay::CheckIfSpriteInfoExists(const GraphicObject& correspondingGraphic)
 {
 	auto currentObjectKey = correspondingGraphic.getGraphicName();
-	auto currentSpriteInfoHash = _spriteInfoTable.find(currentObjectKey);
+	auto spriteInfoIdx = _spriteInfoTable.find(currentObjectKey);
 	// Checks if the objects sprite information has already been defined
-	return (currentSpriteInfoHash == _spriteInfoTable.end())
+	return (currentSpriteInfoHash != _spriteInfoTable.end())
 }
 
 
