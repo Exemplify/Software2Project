@@ -33,7 +33,7 @@ public:
 private:
 	RenderWindow* _dispwindow_ptr;
 	// Hashtable used to store the different sprites and texture elements
-	std::unordered_map<std::string, std::shared_ptr<SpriteInfo>> _spriteInfoTable;
+
 	// Intialises the display thread from the DisplayManager constructor
 	
 	void InitialiseThread();
