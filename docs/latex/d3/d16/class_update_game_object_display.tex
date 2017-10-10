@@ -3,16 +3,17 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-const sf\+::\+Sprite \& \hyperlink{class_update_game_object_display_a8aa216f92b1b31dbb0d9e1746b2f4105}{Determine\+Game\+Object\+Changes} (shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$ GO)
+const sf\+::\+Sprite \& \hyperlink{class_update_game_object_display_ac17a26f7563060fb9d4a0eb8959b1d29}{Determine\+Game\+Object\+Changes} (shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$ GO)
 \begin{DoxyCompactList}\small\item\em Identifies and applies any changes made to a \hyperlink{class_game_object}{Game\+Object} and updates a sprite that corresponds to the changes in scale and position of that \hyperlink{class_game_object}{Game\+Object}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-std\+::shared\+\_\+ptr$<$ \hyperlink{struct_sprite_info}{Sprite\+Info} $>$ \& \hyperlink{class_update_game_object_display_ae91b04b801fbb1e8b8bee6d4ee31296a}{Initialise\+Sprite\+Info} (const \hyperlink{class_graphic_object}{Graphic\+Object} \&graphic\+Object)
+void \hyperlink{class_update_game_object_display_ab9405bbbabaa083cfdaefbbe84cb7cd4}{Initialise\+Sprite\+Info} (const \hyperlink{class_graphic_object}{Graphic\+Object} \&graphic\+Object)
 \begin{DoxyCompactList}\small\item\em Initialises the Sprite Info that corresponds with the graphic object that is being drawn. Is only called when a \hyperlink{struct_sprite_info}{Sprite\+Info} does not exist inside of the hash table. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_update_game_object_display_ad665d40d1ff70db62b23d8b34ea6287c}\label{class_update_game_object_display_ad665d40d1ff70db62b23d8b34ea6287c}} 
-void \hyperlink{class_update_game_object_display_ad665d40d1ff70db62b23d8b34ea6287c}{Update\+Sprite\+Properties} ()
-\begin{DoxyCompactList}\small\item\em Updates the sprite properties for the corresponding Game\+Obeject. \end{DoxyCompactList}\end{DoxyCompactItemize}
+const sf\+::\+Sprite \& \hyperlink{class_update_game_object_display_ae0419a504b647db44f909f75efdca9a3}{Update\+Sprite\+Properties} (const \hyperlink{class_vector2_d}{Vector2D}$<$ double $>$ \&position, const \hyperlink{structxy_vector}{xy\+Vector} \&scale, const string \&current\+Object\+Key)
+\begin{DoxyCompactList}\small\item\em Updates the sprite properties according to the information from the corresponding \hyperlink{class_game_object}{Game\+Object}. \end{DoxyCompactList}\item 
+bool \hyperlink{class_update_game_object_display_a10502ed4d422e5bab6b5f3591d392c55}{Check\+If\+Sprite\+Info\+Exists} (const \hyperlink{class_graphic_object}{Graphic\+Object} \&corresponding\+Graphic)
+\begin{DoxyCompactList}\small\item\em Checks if the \hyperlink{struct_sprite_info}{Sprite\+Info} that corresponds to a particular graphic object has already been generated and is being stored in the hash table. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -21,11 +22,29 @@ std\+::unordered\+\_\+map$<$ std\+::string, std\+::shared\+\_\+ptr$<$ \hyperlink
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_update_game_object_display_a8aa216f92b1b31dbb0d9e1746b2f4105}\label{class_update_game_object_display_a8aa216f92b1b31dbb0d9e1746b2f4105}} 
+\mbox{\Hypertarget{class_update_game_object_display_a10502ed4d422e5bab6b5f3591d392c55}\label{class_update_game_object_display_a10502ed4d422e5bab6b5f3591d392c55}} 
+\index{Update\+Game\+Object\+Display@{Update\+Game\+Object\+Display}!Check\+If\+Sprite\+Info\+Exists@{Check\+If\+Sprite\+Info\+Exists}}
+\index{Check\+If\+Sprite\+Info\+Exists@{Check\+If\+Sprite\+Info\+Exists}!Update\+Game\+Object\+Display@{Update\+Game\+Object\+Display}}
+\subsubsection{\texorpdfstring{Check\+If\+Sprite\+Info\+Exists()}{CheckIfSpriteInfoExists()}}
+{\footnotesize\ttfamily bool Update\+Game\+Object\+Display\+::\+Check\+If\+Sprite\+Info\+Exists (\begin{DoxyParamCaption}\item[{const \hyperlink{class_graphic_object}{Graphic\+Object} \&}]{corresponding\+Graphic }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Checks if the \hyperlink{struct_sprite_info}{Sprite\+Info} that corresponds to a particular graphic object has already been generated and is being stored in the hash table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em corresponding\+Graphic} & The Corresponding \hyperlink{class_graphic_object}{Graphic\+Object} to the \hyperlink{struct_sprite_info}{Sprite\+Info} in the table \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns true if the \hyperlink{struct_sprite_info}{Sprite\+Info} does Exist
+\end{DoxyReturn}
+Determines whether the \hyperlink{struct_sprite_info}{Sprite\+Info} object that corresponds to the key obtained from the graphic object exists. Uses std\+::find to check for the object and returns a true if the iterator returned is not equal to the end of the hash table \mbox{\Hypertarget{class_update_game_object_display_ac17a26f7563060fb9d4a0eb8959b1d29}\label{class_update_game_object_display_ac17a26f7563060fb9d4a0eb8959b1d29}} 
 \index{Update\+Game\+Object\+Display@{Update\+Game\+Object\+Display}!Determine\+Game\+Object\+Changes@{Determine\+Game\+Object\+Changes}}
 \index{Determine\+Game\+Object\+Changes@{Determine\+Game\+Object\+Changes}!Update\+Game\+Object\+Display@{Update\+Game\+Object\+Display}}
 \subsubsection{\texorpdfstring{Determine\+Game\+Object\+Changes()}{DetermineGameObjectChanges()}}
-{\footnotesize\ttfamily const sf\+::\+Sprite\& Update\+Game\+Object\+Display\+::\+Determine\+Game\+Object\+Changes (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$}]{GO }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily const sf\+::\+Sprite \& Update\+Game\+Object\+Display\+::\+Determine\+Game\+Object\+Changes (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$}]{GO }\end{DoxyParamCaption})}
 
 
 
@@ -33,14 +52,14 @@ Identifies and applies any changes made to a \hyperlink{class_game_object}{Game\
 
 
 \begin{DoxyParams}{Parameters}
-{\em GO} & an std\+::shared\+\_\+ptr to the \hyperlink{class_game_object}{Game\+Object} that is being checked for changes \\
+{\em GO} & an std\+::shared\+\_\+ptr to the \hyperlink{class_game_object}{Game\+Object} that is being checked for changes\\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_update_game_object_display_ae91b04b801fbb1e8b8bee6d4ee31296a}\label{class_update_game_object_display_ae91b04b801fbb1e8b8bee6d4ee31296a}} 
+Initially Identifies if the \hyperlink{class_game_object}{Game\+Object}\textquotesingle{}s corresponding sprite has been drawn before. If it does not exist a texture is created according to the information stored inside of the \hyperlink{class_graphic_object}{Graphic\+Object} Composition and the sprite is setup accordingly. After which the sprite is updated to the corresponding scale and position of the \hyperlink{class_game_object}{Game\+Object} \mbox{\Hypertarget{class_update_game_object_display_ab9405bbbabaa083cfdaefbbe84cb7cd4}\label{class_update_game_object_display_ab9405bbbabaa083cfdaefbbe84cb7cd4}} 
 \index{Update\+Game\+Object\+Display@{Update\+Game\+Object\+Display}!Initialise\+Sprite\+Info@{Initialise\+Sprite\+Info}}
 \index{Initialise\+Sprite\+Info@{Initialise\+Sprite\+Info}!Update\+Game\+Object\+Display@{Update\+Game\+Object\+Display}}
 \subsubsection{\texorpdfstring{Initialise\+Sprite\+Info()}{InitialiseSpriteInfo()}}
-{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\hyperlink{struct_sprite_info}{Sprite\+Info}$>$\& Update\+Game\+Object\+Display\+::\+Initialise\+Sprite\+Info (\begin{DoxyParamCaption}\item[{const \hyperlink{class_graphic_object}{Graphic\+Object} \&}]{graphic\+Object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily void Update\+Game\+Object\+Display\+::\+Initialise\+Sprite\+Info (\begin{DoxyParamCaption}\item[{const \hyperlink{class_graphic_object}{Graphic\+Object} \&}]{graphic\+Object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -51,10 +70,27 @@ Initialises the Sprite Info that corresponds with the graphic object that is bei
 {\em graphic\+Object} & The \hyperlink{class_graphic_object}{Graphic\+Object} which contains the texture location for the corresponding \hyperlink{class_game_object}{Game\+Object} \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-The initialised \hyperlink{struct_sprite_info}{Sprite\+Info} is returned after it is added to the hash table which stores all of the textures and sprites created during runtime 
-\end{DoxyReturn}
+\mbox{\Hypertarget{class_update_game_object_display_ae0419a504b647db44f909f75efdca9a3}\label{class_update_game_object_display_ae0419a504b647db44f909f75efdca9a3}} 
+\index{Update\+Game\+Object\+Display@{Update\+Game\+Object\+Display}!Update\+Sprite\+Properties@{Update\+Sprite\+Properties}}
+\index{Update\+Sprite\+Properties@{Update\+Sprite\+Properties}!Update\+Game\+Object\+Display@{Update\+Game\+Object\+Display}}
+\subsubsection{\texorpdfstring{Update\+Sprite\+Properties()}{UpdateSpriteProperties()}}
+{\footnotesize\ttfamily const sf\+::\+Sprite \& Update\+Game\+Object\+Display\+::\+Update\+Sprite\+Properties (\begin{DoxyParamCaption}\item[{const \hyperlink{class_vector2_d}{Vector2D}$<$ double $>$ \&}]{position,  }\item[{const \hyperlink{structxy_vector}{xy\+Vector} \&}]{scale,  }\item[{const string \&}]{current\+Object\+Key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Updates the sprite properties according to the information from the corresponding \hyperlink{class_game_object}{Game\+Object}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The updated game\+Position of the \hyperlink{class_game_object}{Game\+Object} \\
+\hline
+{\em scale} & The updated scale of the \hyperlink{class_game_object}{Game\+Object} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the sprite object that has been updated with a new position and scale
+\end{DoxyReturn}
+Updates the position of the sprite ,retrieved from the hash table, to the corresponding screen position by converting the Game\+Oject\textquotesingle{}s game position to the corresponding screen position and then assigns the scale of the object to sprite 
 
 \subsection{Member Data Documentation}
 \mbox{\Hypertarget{class_update_game_object_display_a51ae3f07958294b737885c9a0bd86153}\label{class_update_game_object_display_a51ae3f07958294b737885c9a0bd86153}} 
@@ -63,8 +99,9 @@ The initialised \hyperlink{struct_sprite_info}{Sprite\+Info} is returned after i
 \subsubsection{\texorpdfstring{\+\_\+sprite\+Info\+Table}{\_spriteInfoTable}}
 {\footnotesize\ttfamily std\+::unordered\+\_\+map$<$std\+::string, std\+::shared\+\_\+ptr$<$\hyperlink{struct_sprite_info}{Sprite\+Info}$>$ $>$ Update\+Game\+Object\+Display\+::\+\_\+sprite\+Info\+Table\hspace{0.3cm}{\ttfamily [private]}}
 
-The hashtable used to store the sprite infos for each game\+Object 
+The hashtable used to store the \hyperlink{struct_sprite_info}{Sprite\+Info}\textquotesingle{}s for each game\+Object 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Update\+Game\+Object\+Display.\+h\end{DoxyCompactItemize}
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Update\+Game\+Object\+Display.\+h\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Update\+Game\+Object\+Diplay.\+cpp\end{DoxyCompactItemize}

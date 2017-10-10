@@ -3,6 +3,7 @@
 #include "../FrontEndSystems/GraphicObject.h"
 #include "../FrontEndSystems/GameObject.h"
 #include "../FrontEndSystems/SpriteInfo.h"
+#include "Vector2DConvert.h"
 #include <SFML/Graphics.hpp>
 #include <unordered_map>
 #include <memory>
@@ -23,19 +24,21 @@ public:
 	 */
 	const sf::Sprite& DetermineGameObjectChanges(shared_ptr<GameObject> GO);
 private:
+
+	std::unordered_map<std::string, std::shared_ptr<SpriteInfo>> _spriteInfoTable; /**< The hashtable used to store the SpriteInfo's for each gameObject*/
 	/**
 	 * @brief Initialises the Sprite Info that corresponds with the graphic object that is being drawn. Is only called when a SpriteInfo does not exist inside of the hash table
 	 * @param graphicObject The GraphicObject which contains the texture location for the corresponding GameObject
 	 */
 	void InitialiseSpriteInfo(const GraphicObject& graphicObject);
-	std::unordered_map<std::string, std::shared_ptr<SpriteInfo>> _spriteInfoTable; /**< The hashtable used to store the SpriteInfo's for each gameObject*/
+
 	/**
 	 * @brief Updates the sprite properties according to the information from the corresponding GameObject
 	 * @param position The updated gamePosition of the GameObject
 	 * @param scale The updated scale of the GameObject
 	 * @return Returns the sprite object that has been updated with a new position and scale
 	 */
-	const sf::Sprite& UpdateSpriteProperties(const Vector2D<double>& position, const xyVector& scale);
+	const sf::Sprite& UpdateSpriteProperties(const Vector2D<double>& position, const xyVector& scale, const string& currentObjectKey);
 	/**
 	 * @brief Checks if the SpriteInfo that corresponds to a particular graphic object has already been generated and is being stored in the hash table
 	 * @param correspondingGraphic The Corresponding GraphicObject to the SpriteInfo in the table

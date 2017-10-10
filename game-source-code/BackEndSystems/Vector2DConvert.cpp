@@ -18,5 +18,5 @@ sf::Vector2f Vector2DConvert::ConvertVector2DtoScreenPosition(Vector2D<double> p
 	return sf::Vector2f(x_pos, y_pos);
 }
 
-xyVector Vector2DConvert::_screen_size{960,540};
+xyVector Vector2DConvert::_screen_size{1920,1080};
 

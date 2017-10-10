@@ -1,5 +1,12 @@
 #include "UpdateGameObjectDisplay.h"
 #include <string>
+
+/**
+ * @class FailedToLoadTexture
+ * @brief Exception used to indicate a texture that does not exist
+ */
+class FailedToLoadTexture{};
+
 /**
  * @details Initially Identifies if the GameObject's corresponding sprite has been drawn before.
  * If it does not exist a texture is created according to the information stored inside of the GraphicObject 
@@ -7,16 +14,18 @@
  */
 const sf::Sprite& UpdateGameObjectDisplay::DetermineGameObjectChanges(std::shared_ptr<GameObject> GO)
 {
+
+		
 	auto graphicObject = GO->getGraphicObject();
 
-	if(CheckIfSpriteInfoExists(*graphicObject))
+	if(!CheckIfSpriteInfoExists(*graphicObject))
 	{
 		InitialiseSpriteInfo(*graphicObject);
 	}
 	
-	return UpdateSpriteProperties(GO->getPosition(), GO->getScale(), graphicObject->getTextureLocation());
-
+	return UpdateSpriteProperties(GO->getPosition(), GO->getScale(), graphicObject->getGraphicName());
 }
+
 /**
  * @details Updates the position of the sprite ,retrieved from the hash table, to the corresponding screen position by converting the
  * GameOject's game position to the corresponding screen position and then assigns the scale of the object to sprite
@@ -25,7 +34,7 @@ const sf::Sprite& UpdateGameObjectDisplay::UpdateSpriteProperties(const Vector2D
 {
 	// obtains the relative sfml screen position
 	auto currentSpriteInfoHash = _spriteInfoTable.find(currentObjectKey);
-	auto screenPosition = Vector2DConvert::Vector2DtoScreenPosition(position);
+	auto screenPosition = Vector2DConvert::ConvertVector2DtoScreenPosition(position);
 
 	// sets the position and scale of the sprite accordingly
 	auto currentSpriteData = currentSpriteInfoHash->second;
@@ -44,7 +53,7 @@ bool UpdateGameObjectDisplay::CheckIfSpriteInfoExists(const GraphicObject& corre
 	auto currentObjectKey = correspondingGraphic.getGraphicName();
 	auto spriteInfoIdx = _spriteInfoTable.find(currentObjectKey);
 	// Checks if the objects sprite information has already been defined
-	return (currentSpriteInfoHash != _spriteInfoTable.end())
+	return (spriteInfoIdx != _spriteInfoTable.end());
 }
 
 
@@ -74,6 +83,7 @@ void UpdateGameObjectDisplay::InitialiseSpriteInfo(const GraphicObject& graphicO
 		newSpriteInfo->sprite.setOrigin(newOrigin);
 		
 		// Adds the Created spriteInfo to the unordered map
-		_spriteInfoTable.insert({gameObjectKey, newSpriteInfo});
+		auto key = graphicObject.getGraphicName();
+		_spriteInfoTable.insert({key, newSpriteInfo});
 	}
 }

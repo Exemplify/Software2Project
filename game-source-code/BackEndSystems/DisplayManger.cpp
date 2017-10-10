@@ -13,10 +13,12 @@ using graphicObj_ptr = shared_ptr<GraphicObject>;
 /// the current screen size and width for the game, needs to be moved into a database
 const int HALF_SCREEN_WIDTH = 960;
 const int HALF_SCREEN_HEIGHT = 540;
-// Exception thrown if a texture is not available
-class FailedToLoadTexture{};
 
-// Assigns dispWindow
+
+/**
+ * @brief Constructs the DisplayManager Object with the corresponding RenderWindow, initialises the display thread on construction
+ * @param renderWindow
+ */
 DisplayManager::DisplayManager(RenderWindow& renderWindow):
 _dispwindow_ptr{&renderWindow}
 {
@@ -57,10 +59,14 @@ void DisplayManager::Draw()
 	auto displayObjects = activeScene->getGameObjectList();
 	for(auto GO : displayObjects)
 	{
+		// Guard class checks for null ptr will be removed on implementation of a null object
+		if(GO->getGraphicObject() == nullptr)
+			continue;
 		// additional check to ensure that the gameobejct has not been deleted in a seperate thread
 		if(GO != NULL || !GO->isActive())
 		{
-			auto sprite 
+
+			auto sprite = _updateGameObjectDisplay.DetermineGameObjectChanges(GO);
 			_dispwindow_ptr->draw(sprite); 
 		}
 	}
