@@ -1,6 +1,14 @@
 var searchData=
 [
-  ['update',['Update',['../dd/d7a/class_enemy.html#a614ad271f07ecf63cb3e665155b7e258',1,'Enemy::Update()'],['../dc/d01/class_enemy_controller.html#af36ec67442d30c7519581b83ad6c00db',1,'EnemyController::Update()'],['../d0/dd1/class_game_object.html#ac7ecc123dacaba955077420caabf5e64',1,'GameObject::Update()'],['../d8/d53/class_player.html#a5e17be3418fa0ac0192c05efaf3dc8bd',1,'Player::Update()'],['../db/dbe/class_projectile.html#ad057a8aeadb0064aacd0f93b2d6de158',1,'Projectile::Update()'],['../da/d1c/class_splash_screen.html#af78b8eab226a89fec389e53cbf3ed9e8',1,'SplashScreen::Update()']]],
-  ['updategameobjectdisplay',['UpdateGameObjectDisplay',['../d3/d16/class_update_game_object_display.html',1,'']]],
-  ['updatespriteproperties',['UpdateSpriteProperties',['../d3/d16/class_update_game_object_display.html#ae0419a504b647db44f909f75efdca9a3',1,'UpdateGameObjectDisplay']]]
+  ['scene',['Scene',['../d6/db5/class_scene.html',1,'Scene'],['../d6/db5/class_scene.html#a0caa1ccf717fe21059f20b0c4a57cde6',1,'Scene::Scene()']]],
+  ['scenedoesntexist',['SceneDoesntExist',['../df/d15/class_scene_doesnt_exist.html',1,'']]],
+  ['setscene',['setScene',['../d0/dd1/class_game_object.html#a9e1420c027ce937f9958a41ad280080b',1,'GameObject']]],
+  ['shoot',['Shoot',['../d2/d65/class_shoot_component.html#a27a553ba952e96c77bc6e7d2e5ca9f0a',1,'ShootComponent']]],
+  ['shootcomponent',['ShootComponent',['../d2/d65/class_shoot_component.html',1,'ShootComponent'],['../d2/d65/class_shoot_component.html#acfbe65399cebcc06d04eeb18807642f5',1,'ShootComponent::ShootComponent()'],['../d2/d65/class_shoot_component.html#a3c0334d147d54522d58a379d6e473006',1,'ShootComponent::ShootComponent(const std::shared_ptr&lt; GraphicObject &gt; &amp;bulletGraphic, GameObjectType bulletType)'],['../d2/d65/class_shoot_component.html#a38ab688c7cf0775b4f15124a1c02bfc7',1,'ShootComponent::ShootComponent(std::shared_ptr&lt; Projectile &gt; bullet)']]],
+  ['shootconditionalcheck',['ShootConditionalCheck',['../d8/d53/class_player.html#a54bee4abe93eea15c48fdbd85e4fdbd5',1,'Player']]],
+  ['singletonexists',['SingletonExists',['../d2/dd5/class_singleton_exists.html',1,'']]],
+  ['spawnenemy',['SpawnEnemy',['../dc/d01/class_enemy_controller.html#ab5298e79a0bf598ed8684efb8a6a3927',1,'EnemyController']]],
+  ['spawnenemycountdown',['SpawnEnemyCountDown',['../dc/d01/class_enemy_controller.html#a84eabc12a38617b5ff05c6e896e97531',1,'EnemyController']]],
+  ['splashscreen',['SplashScreen',['../da/d1c/class_splash_screen.html',1,'']]],
+  ['spriteinfo',['SpriteInfo',['../d4/dc0/struct_sprite_info.html',1,'']]]
 ];

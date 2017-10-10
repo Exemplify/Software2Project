@@ -10,7 +10,7 @@
  */
  /// loading the next scene needs to be removed from this object and placed into a "SceneController" which is responsible for the
  /// scene state, including win/lose condition checks as well as information about the state of the game, score graphics display etc
- 
+ /// Enemy Tracker and Enemy Spawner break up into less responsibilites
  /// needs copy constructor and assignment opperator
 class EnemyController: public GameObject
 {
@@ -21,10 +21,6 @@ public:
 	virtual void Update() override;
 	// public function that is called by the enemy that has been killed
 	void EnemyKilled();
-	/// Clone function Needs completing 
-	const std::shared_ptr<GraphicObject> getGraphicObject() override {return nullptr;}
-	virtual EnemyController* Clone() override 
-	{return new EnemyController(*this);}
 private:
 	/// Delay code needs to be replaced with a delaycomponent
 	void SpawnEnemyCountDown();

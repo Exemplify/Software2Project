@@ -59,9 +59,6 @@ void DisplayManager::Draw()
 	auto displayObjects = activeScene->getGameObjectList();
 	for(auto GO : displayObjects)
 	{
-		// Guard class checks for null ptr will be removed on implementation of a null object
-		if(GO->getGraphicObject() == nullptr)
-			continue;
 		// additional check to ensure that the gameobejct has not been deleted in a seperate thread
 		if(GO != NULL || !GO->isActive())
 		{

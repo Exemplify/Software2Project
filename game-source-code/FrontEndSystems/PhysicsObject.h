@@ -20,9 +20,6 @@ public:
     {
 		_type=GameObjectType::physicsObject; 
 	}
-	
-	// Clone function
-	virtual PhysicsObject* Clone() = 0;
     //Commands
     //set speed of the physics object
     void setSpeed(double newSpeed) {_objectSpeed = newSpeed;}

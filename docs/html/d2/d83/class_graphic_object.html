@@ -63,39 +63,206 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="../../d8/d53/class_graphic_object-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">GraphicObject Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This is the Utility class with the display manager, It stores the name of the object and location of the image file which are both necessary for the <a class="el" href="../../d8/db2/class_display_manager.html" title="Display manager is in charge of running and managing the presentation layer. ">DisplayManager</a> to correctly display the specified image.  
+ <a href="../../d2/d83/class_graphic_object.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d6/d84/_graphic_object_8h_source.html">GraphicObject.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afa2caadef80ca5f40313c5f0ec445776"><td class="memItemLeft" align="right" valign="top"><a id="afa2caadef80ca5f40313c5f0ec445776"></a>
-<a class="el" href="../../d2/d83/class_graphic_object.html">GraphicObject</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="../../d2/d83/class_graphic_object.html">GraphicObject</a> &amp;rhs)</td></tr>
-<tr class="separator:afa2caadef80ca5f40313c5f0ec445776"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9819ca0b4c1bb72ede070d8485bfc8a9"><td class="memItemLeft" align="right" valign="top"><a id="a9819ca0b4c1bb72ede070d8485bfc8a9"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>GraphicObject</b> (string textureLocation, string graphicName)</td></tr>
+<tr class="memitem:ae1b56ae4484ad120f5ba77c0b683a045"><td class="memItemLeft" align="right" valign="top"><a id="ae1b56ae4484ad120f5ba77c0b683a045"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d83/class_graphic_object.html#ae1b56ae4484ad120f5ba77c0b683a045">GraphicObject</a> ()</td></tr>
+<tr class="memdesc:ae1b56ae4484ad120f5ba77c0b683a045"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Constructor, creates a NullGraphic by default. <br /></td></tr>
+<tr class="separator:ae1b56ae4484ad120f5ba77c0b683a045"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a14ca7f3b9e9736b0b4231ee08dc0ab"><td class="memItemLeft" align="right" valign="top"><a id="a4a14ca7f3b9e9736b0b4231ee08dc0ab"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d83/class_graphic_object.html#a4a14ca7f3b9e9736b0b4231ee08dc0ab">GraphicObject</a> (const <a class="el" href="../../d2/d83/class_graphic_object.html">GraphicObject</a> &amp;copy)</td></tr>
+<tr class="memdesc:a4a14ca7f3b9e9736b0b4231ee08dc0ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy Constructor of <a class="el" href="../../d2/d83/class_graphic_object.html" title="This is the Utility class with the display manager, It stores the name of the object and location of ...">GraphicObject</a>. <br /></td></tr>
+<tr class="separator:a4a14ca7f3b9e9736b0b4231ee08dc0ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4026dc4e922a5053b6c0e3d1a9b28b63"><td class="memItemLeft" align="right" valign="top"><a id="a4026dc4e922a5053b6c0e3d1a9b28b63"></a>
+<a class="el" href="../../d2/d83/class_graphic_object.html">GraphicObject</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d83/class_graphic_object.html#a4026dc4e922a5053b6c0e3d1a9b28b63">operator=</a> (const <a class="el" href="../../d2/d83/class_graphic_object.html">GraphicObject</a> &amp;rhs)</td></tr>
+<tr class="memdesc:a4026dc4e922a5053b6c0e3d1a9b28b63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator overload. <br /></td></tr>
+<tr class="separator:a4026dc4e922a5053b6c0e3d1a9b28b63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9819ca0b4c1bb72ede070d8485bfc8a9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d83/class_graphic_object.html#a9819ca0b4c1bb72ede070d8485bfc8a9">GraphicObject</a> (string textureLocation, string graphicName)</td></tr>
+<tr class="memdesc:a9819ca0b4c1bb72ede070d8485bfc8a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standard Constructor, creates a Graphic Object with the client specified parameters.  <a href="#a9819ca0b4c1bb72ede070d8485bfc8a9">More...</a><br /></td></tr>
 <tr class="separator:a9819ca0b4c1bb72ede070d8485bfc8a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8772813296b837e997ee21836e92b028"><td class="memItemLeft" align="right" valign="top"><a id="a8772813296b837e997ee21836e92b028"></a>
-const string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getGraphicName</b> () const</td></tr>
+<tr class="memitem:a8772813296b837e997ee21836e92b028"><td class="memItemLeft" align="right" valign="top">const string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d83/class_graphic_object.html#a8772813296b837e997ee21836e92b028">getGraphicName</a> () const</td></tr>
+<tr class="memdesc:a8772813296b837e997ee21836e92b028"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter is necessary to decouple the presentation layer from the game logic layer.  <a href="#a8772813296b837e997ee21836e92b028">More...</a><br /></td></tr>
 <tr class="separator:a8772813296b837e997ee21836e92b028"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1041a2dd82f82fc724675c5a2ea67d32"><td class="memItemLeft" align="right" valign="top"><a id="a1041a2dd82f82fc724675c5a2ea67d32"></a>
-const string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getTextureLocation</b> () const</td></tr>
+<tr class="memitem:a1041a2dd82f82fc724675c5a2ea67d32"><td class="memItemLeft" align="right" valign="top">const string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d83/class_graphic_object.html#a1041a2dd82f82fc724675c5a2ea67d32">getTextureLocation</a> () const</td></tr>
+<tr class="memdesc:a1041a2dd82f82fc724675c5a2ea67d32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter is necessary to decouple the presentation layer from the game logic layer.  <a href="#a1041a2dd82f82fc724675c5a2ea67d32">More...</a><br /></td></tr>
 <tr class="separator:a1041a2dd82f82fc724675c5a2ea67d32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a3a6832e8f4af96da2935d3c69757107c"><td class="memItemLeft" align="right" valign="top"><a id="a3a6832e8f4af96da2935d3c69757107c"></a>
+static const <a class="el" href="../../d2/d83/class_graphic_object.html">GraphicObject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d83/class_graphic_object.html#a3a6832e8f4af96da2935d3c69757107c">NullGraphic</a> {&quot;Null&quot;, &quot;NullGraphic.png&quot;}</td></tr>
+<tr class="memdesc:a3a6832e8f4af96da2935d3c69757107c"><td class="mdescLeft">&#160;</td><td class="mdescRight">NullGraphic Declaration, requires the "NullGraphic.png" image to be available. <br /></td></tr>
+<tr class="separator:a3a6832e8f4af96da2935d3c69757107c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a3fc571887a6e46dda4a4ef10d44720b5"><td class="memItemLeft" align="right" valign="top"><a id="a3fc571887a6e46dda4a4ef10d44720b5"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>_textureLocation</b></td></tr>
+<tr class="memitem:a3fc571887a6e46dda4a4ef10d44720b5"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d83/class_graphic_object.html#a3fc571887a6e46dda4a4ef10d44720b5">_textureLocation</a></td></tr>
 <tr class="separator:a3fc571887a6e46dda4a4ef10d44720b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74c9292d37d9be9e099c868be084b33f"><td class="memItemLeft" align="right" valign="top"><a id="a74c9292d37d9be9e099c868be084b33f"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>_graphicName</b></td></tr>
+<tr class="memitem:a74c9292d37d9be9e099c868be084b33f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d83/class_graphic_object.html#a74c9292d37d9be9e099c868be084b33f">_graphicName</a></td></tr>
 <tr class="separator:a74c9292d37d9be9e099c868be084b33f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This is the Utility class with the display manager, It stores the name of the object and location of the image file which are both necessary for the <a class="el" href="../../d8/db2/class_display_manager.html" title="Display manager is in charge of running and managing the presentation layer. ">DisplayManager</a> to correctly display the specified image. </p>
+<p>The Graphic Object has a tight coupling with the Presentation layer classes. The graphic name of the object is used as a key within a hashtable to identify the specific sfml sprite and texture that needs to be drawn for the corresponding object. <a class="el" href="../../d2/d83/class_graphic_object.html" title="This is the Utility class with the display manager, It stores the name of the object and location of ...">GraphicObject</a> acts as a link between the Presentation Layer and the Domain layer. It forms a composition relationship with the <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a> class. A NullObject is assigned by default for derived implimentations of <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a> that do not require a <a class="el" href="../../d2/d83/class_graphic_object.html" title="This is the Utility class with the display manager, It stores the name of the object and location of ...">GraphicObject</a> The NullObject consistis of a NullObject.png image which is a single transparent pixel and the graphicName Null. This is an Object name that is preserved by the constructor. ie another <a class="el" href="../../d2/d83/class_graphic_object.html" title="This is the Utility class with the display manager, It stores the name of the object and location of ...">GraphicObject</a> may not have the name Null. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a9819ca0b4c1bb72ede070d8485bfc8a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9819ca0b4c1bb72ede070d8485bfc8a9">&#9670;&nbsp;</a></span>GraphicObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GraphicObject::GraphicObject </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>textureLocation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>graphicName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Standard Constructor, creates a Graphic Object with the client specified parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">textureLocation</td><td>The texture location for the image that the object uses </td></tr>
+    <tr><td class="paramname">graphicName</td><td>The name of that corresponds to objects that use the same image</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Checks if the reserved graphicName "Null" is used, throws <a class="el" href="../../dc/dc4/class_graphic_name_reservedfor_null_graphic.html">GraphicNameReservedforNullGraphic</a> if Null is used </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a8772813296b837e997ee21836e92b028"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8772813296b837e997ee21836e92b028">&#9670;&nbsp;</a></span>getGraphicName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string&amp; GraphicObject::getGraphicName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter is necessary to decouple the presentation layer from the game logic layer. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns a constant string that represents the graphic name of the object </dd></dl>
+
+</div>
+</div>
+<a id="a1041a2dd82f82fc724675c5a2ea67d32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1041a2dd82f82fc724675c5a2ea67d32">&#9670;&nbsp;</a></span>getTextureLocation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string&amp; GraphicObject::getTextureLocation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter is necessary to decouple the presentation layer from the game logic layer. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns a constant string that represents the location of the image file that is being used </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a74c9292d37d9be9e099c868be084b33f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74c9292d37d9be9e099c868be084b33f">&#9670;&nbsp;</a></span>_graphicName</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string GraphicObject::_graphicName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The name used to load objects specified by the texture location&gt; </p>
+
+</div>
+</div>
+<a id="a3fc571887a6e46dda4a4ef10d44720b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fc571887a6e46dda4a4ef10d44720b5">&#9670;&nbsp;</a></span>_textureLocation</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string GraphicObject::_textureLocation</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The location of the Image that the object represents&gt; </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>D:/Users/Tim-PC/Documents/Software_II/Project/ProjectFiles/game-source-code/FrontEndSystems/<a class="el" href="../../d6/d84/_graphic_object_8h_source.html">GraphicObject.h</a></li>
+<li>D:/Users/Tim-PC/Documents/Software_II/Project/ProjectFiles/game-source-code/FrontEndSystems/GraphicObject.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

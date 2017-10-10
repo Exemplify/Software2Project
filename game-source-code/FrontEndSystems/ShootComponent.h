@@ -10,7 +10,7 @@ public:
 	/// redundant Constructors that do not conform to the class invariance
 	ShootComponent(){}
 	/// will be removed once the Template projectile is set up
-	ShootComponent(const std::shared_ptr<GraphicObject>& bulletGraphic, GameObjectType bulletType);
+	ShootComponent(GraphicObject bulletGraphic, GameObjectType bulletType);
 	/// correct constructor 
 	ShootComponent(std::shared_ptr<Projectile> bullet);
 	// Creates a projectile in the specified scene with the provided parameters to meet the components

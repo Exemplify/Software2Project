@@ -18,12 +18,12 @@ const sf::Sprite& UpdateGameObjectDisplay::DetermineGameObjectChanges(std::share
 		
 	auto graphicObject = GO->getGraphicObject();
 
-	if(!CheckIfSpriteInfoExists(*graphicObject))
+	if(!CheckIfSpriteInfoExists(graphicObject))
 	{
-		InitialiseSpriteInfo(*graphicObject);
+		InitialiseSpriteInfo(graphicObject);
 	}
 	
-	return UpdateSpriteProperties(GO->getPosition(), GO->getScale(), graphicObject->getGraphicName());
+	return UpdateSpriteProperties(GO->getPosition(), GO->getScale(), graphicObject.getGraphicName());
 }
 
 /**

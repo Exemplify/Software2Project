@@ -36,7 +36,7 @@ shared_ptr<Scene> SplashScreenFunc()
 {
 	
 	auto splashScene = std::make_shared<Scene>();
-	auto splashScreenGraphic = std::make_shared<GraphicObject>("resources/MceboDlamini.png" ,"splashScreen");
+	auto splashScreenGraphic = GraphicObject("resources/MceboDlamini.png" ,"splashScreen");
 	shared_ptr<SplashScreen> background = std::make_shared<SplashScreen>(splashScreenGraphic, xyVector(1,1));
 	splashScene->Instantiate(background);
 	return splashScene;
@@ -46,7 +46,7 @@ shared_ptr<Scene> GameSceneFunc()
 {
 
 	shared_ptr<Scene> gameScene{new Scene()};
-	auto gameSceneGraphic = std::make_shared<GraphicObject>("resources/greathall0_hr.png" ,"gameBackground");
+	auto gameSceneGraphic = GraphicObject("resources/greathall0_hr.png" ,"gameBackground");
 	auto background = std::make_shared<SplashScreen>(gameSceneGraphic, xyVector(1920.0/914.0,1080.0/569.0));
 	Vector2D<double> playerStart(0,-400,0);
 	Character playerStats{3,5};
@@ -63,7 +63,7 @@ shared_ptr<Scene> GameSceneFunc()
 shared_ptr<Scene> WinScreenFunc()
 {
 	shared_ptr<Scene> splashScene = std::make_shared<Scene>();
-	auto winSceneGraphic = std::make_shared<GraphicObject>("resources/WinScreen.png" ,"WinScreen");
+	auto winSceneGraphic = GraphicObject("resources/WinScreen.png" ,"WinScreen");
 	shared_ptr<SplashScreen> background = std::make_shared<SplashScreen>(winSceneGraphic, xyVector(1,1));
 	splashScene->Instantiate(background);
 	return splashScene;
@@ -72,7 +72,7 @@ shared_ptr<Scene> WinScreenFunc()
 shared_ptr<Scene> LoseScreenFunc()
 {
 	shared_ptr<Scene> splashScene = std::make_shared<Scene>();
-	auto loseSceneGraphic = std::make_shared<GraphicObject>("resources/LoseScreen.png" ,"LoseScreen");
+	auto loseSceneGraphic = GraphicObject("resources/LoseScreen.png" ,"LoseScreen");
 	shared_ptr<SplashScreen> background = std::make_shared<SplashScreen>(loseSceneGraphic, xyVector(1,1));
 	splashScene->Instantiate(background);
 	return splashScene;

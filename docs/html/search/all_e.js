@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['timeframe',['TimeFrame',['../d9/db6/class_game_time.html#a424d4e2f4745a85897620751ff5153b9',1,'GameTime']]]
+  ['renderthread',['renderThread',['../d8/db2/class_display_manager.html#a79b7a390f3a2a09e7209d271e589e705',1,'DisplayManager']]],
+  ['resetdelay',['resetDelay',['../d7/dfa/class_delay_component.html#a539b563338fb30932c96f087dd7a0f5b',1,'DelayComponent']]]
 ];

@@ -31,7 +31,10 @@ void GameObject::Destroy()
 		throw(DestroyedObjectOutsideScene());
 	}
 }
-
+const GraphicObject& GameObject::getGraphicObject() const
+{
+	return _graphicObject;
+} 
 // checks the list of gameObjects inside the current scene and returns the first gameobject that matches the GameObjectType
 std::shared_ptr<GameObject> GameObject::FindGameObjectByType(GameObjectType searchType)
 {

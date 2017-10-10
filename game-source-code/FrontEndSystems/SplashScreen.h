@@ -10,14 +10,9 @@
 class SplashScreen:public GameObject
 {
 public:
-	SplashScreen(std::shared_ptr<GraphicObject> graphicObject, xyVector scale);
+	SplashScreen(GraphicObject graphicObject, xyVector scale);
 	void Update() override;
-	virtual SplashScreen* Clone() override 
-	{return new SplashScreen(*this);}
-	const std::shared_ptr<GraphicObject> getGraphicObject() override
-	{return _graphicObject;}
 private:
-	std::shared_ptr<GraphicObject> _graphicObject;
 	// Quits the Game 
 	void QuitGame();
 	// Loads the main Game Scene

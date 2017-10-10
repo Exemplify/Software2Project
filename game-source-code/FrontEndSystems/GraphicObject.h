@@ -22,7 +22,6 @@ public:
 	
 	GraphicObject(const GraphicObject& copy);
 	GraphicObject& operator=(const GraphicObject& rhs);
-
 	GraphicObject(string textureLocation, string graphicName);
 	
 	/**
@@ -38,8 +37,8 @@ public:
 	const static GraphicObject NullGraphic;
 
 protected:
-	std::string _textureLocation; /**<The location of the Image that the object represents>*/ 
-	std::string _graphicName; /**<The name used to load objects specified by the texture location>*/ 
+	std::string _textureLocation; /**<The location of the Image that the object represents*/ 
+	std::string _graphicName; /**<The name used to load objects specified by the texture location*/ 
 
 };
 

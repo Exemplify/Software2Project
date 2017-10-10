@@ -10,20 +10,20 @@ const auto DEG_2_RAD = 3.141592653589793/180.0;
 
 Enemy::Enemy():
 PhysicsObject(),
-_shootDelay{ENEMY_SHOOT_DELAY, false},
-_graphicObject{std::make_shared<GraphicObject>("resources/AdamHabib.png", "enemy")}
+_shootDelay{ENEMY_SHOOT_DELAY, false}
 {
-	
+	_graphicObject = GraphicObject("resources/AdamHabib.png", "enemy");
 	ConstructSpriteInfo();
 	InitialiseObject();
     _objectSize = 30;
 	_type = GameObjectType::enemy;
+	
 }
 /// Needs to be moved to a Database
 void Enemy::ConstructSpriteInfo()
 {
 	_scale = xyVector{0.25f,0.25f};
-	auto bulletGraphic = std::make_shared<GraphicObject>("resources/SouthAfricanPS.png","enemyBullet");
+	GraphicObject bulletGraphic {"resources/SouthAfricanPS.png","enemyBullet"};
 	_enemyShoot = ShootComponent(bulletGraphic, GameObjectType::enemyBullet);
 }
 

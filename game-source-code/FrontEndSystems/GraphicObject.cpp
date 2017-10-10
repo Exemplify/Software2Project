@@ -10,7 +10,7 @@ class GraphicNameReservedforNullGraphic{};
 /**
  * @brief NullGraphic Declaration, requires the "NullGraphic.png" image to be available
  */
-const GraphicObject GraphicObject::NullGraphic{"Null", "NullGraphic.png"};
+const GraphicObject GraphicObject::NullGraphic{"resources/NullGraphic.png", "Null"};
 
 /**
  * @brief Default Constructor, creates a NullGraphic by default
@@ -38,7 +38,7 @@ GraphicObject::GraphicObject(string textureLocation, string graphicName):
 _textureLocation{textureLocation},
 _graphicName{graphicName}
 {
-	if(_graphicName == "Null")
+	if(_graphicName == "Null" && _textureLocation != "resources/NullGraphic.png")
 		throw(GraphicNameReservedforNullGraphic());
 }
 /**
