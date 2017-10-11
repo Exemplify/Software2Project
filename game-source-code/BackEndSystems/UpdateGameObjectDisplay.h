@@ -23,6 +23,11 @@ public:
 	 * @param GO an std::shared_ptr to the GameObject that is being checked for changes 
 	 */
 	const sf::Sprite& DetermineGameObjectChanges(shared_ptr<GameObject> GO);
+	/**
+	 * @brief determines the current size of the hashtable made up of SpriteInfo
+	 * @return Returns the size of the hashtable used to store the various SpriteInfo Objects
+	 */
+	const unsigned int getHashTableSize() const return {return _spriteInfoTable.size();}
 private:
 
 	std::unordered_map<std::string, std::shared_ptr<SpriteInfo>> _spriteInfoTable; /**< The hashtable used to store the SpriteInfo's for each gameObject*/
