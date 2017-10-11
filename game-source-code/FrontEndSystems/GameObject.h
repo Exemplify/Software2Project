@@ -40,7 +40,8 @@ public:
 	GameObject();
 	GameObject(const GameObject& copyObj);
 	GameObject(Vector2D<double> startingPosition);
-	GameObject(Vector2D<double> startingPosition, xyVector scale);
+	GameObject(Vector2D<double> startingPosition, xyVector scale, GraphicObject graphicObject);
+	
 
 	/**
 	 * @brief Update is a virtual method that is used to interface with the Back End System of the Game operations. 
