@@ -8,6 +8,12 @@
 #include <unordered_map>
 #include <memory>
 
+
+/**
+ * @class FailedToLoadTexture
+ * @brief Exception used to indicate a texture that does not exist
+ */
+class FailedToLoadTexture{};
 /**
  * @class DrawGameObject
  * @brief Updates the Sprite position and scale for each GameOject
@@ -27,7 +33,8 @@ public:
 	 * @brief determines the current size of the hashtable made up of SpriteInfo
 	 * @return Returns the size of the hashtable used to store the various SpriteInfo Objects
 	 */
-	const unsigned int getHashTableSize() const return {return _spriteInfoTable.size();}
+	const unsigned int getHashTableSize() const {return _spriteInfoTable.size();}
+
 private:
 
 	std::unordered_map<std::string, std::shared_ptr<SpriteInfo>> _spriteInfoTable; /**< The hashtable used to store the SpriteInfo's for each gameObject*/

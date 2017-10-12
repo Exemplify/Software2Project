@@ -1,11 +1,8 @@
 #include "UpdateGameObjectDisplay.h"
 #include <string>
 
-/**
- * @class FailedToLoadTexture
- * @brief Exception used to indicate a texture that does not exist
- */
-class FailedToLoadTexture{};
+
+
 
 /**
  * @details Initially Identifies if the GameObject's corresponding sprite has been drawn before.

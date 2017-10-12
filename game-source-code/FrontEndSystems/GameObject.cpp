@@ -18,11 +18,16 @@ GameObject::GameObject(Vector2D<double> startingPosition):
 _type{GameObjectType::gameObject},
 _position{startingPosition}
 {}
-
-GameObject(Vector2D<double> startingPosition, xyVector scale, GraphicObject graphicObject):
+GameObject::GameObject(GraphicObject graphic):
+_graphicObject{graphic}
+{}
+GameObject::GameObject(xyVector scale):
+_scale{scale}
+{}
+GameObject::GameObject(Vector2D<double> startingPosition, xyVector scale, GraphicObject graphicObject):
+_scale{scale},
 _type{GameObjectType::gameObject},
 _position{startingPosition},
-_scale{scale},
 _graphicObject{graphicObject}
 {}
 // Removes the gameobject from the scene that it exists in

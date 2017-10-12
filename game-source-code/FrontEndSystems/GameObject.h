@@ -38,11 +38,12 @@ class GameObject: public std::enable_shared_from_this<GameObject>
 public:
 		// Constructors //
 	GameObject();
+	GameObject(GraphicObject graphic);
+	GameObject(xyVector scale);
 	GameObject(const GameObject& copyObj);
 	GameObject(Vector2D<double> startingPosition);
 	GameObject(Vector2D<double> startingPosition, xyVector scale, GraphicObject graphicObject);
 	
-
 	/**
 	 * @brief Update is a virtual method that is used to interface with the Back End System of the Game operations. 
 	 * @details Update is managed by the scene object which iterates through the list of GameObjects composed within it. For each GameObject the Update function is called once per frame. 
