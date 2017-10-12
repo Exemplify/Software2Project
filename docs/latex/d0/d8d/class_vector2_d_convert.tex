@@ -1,0 +1,60 @@
+\hypertarget{class_vector2_d_convert}{}\section{Vector2\+D\+Convert Class Reference}
+\label{class_vector2_d_convert}\index{Vector2\+D\+Convert@{Vector2\+D\+Convert}}
+
+
+Converts a \hyperlink{class_vector2_d}{Vector2D} object into an sfml Vector so that it can be used in the presentation layer.  
+
+
+
+
+{\ttfamily \#include $<$Vector2\+D\+Convert.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static sf\+::\+Vector2f \hyperlink{class_vector2_d_convert_aa4aff52a3a85d4b7da4123e7b73d2d24}{Convert\+Vector2\+Dto\+Screen\+Position} (\hyperlink{class_vector2_d}{Vector2D}$<$ double $>$ position)
+\begin{DoxyCompactList}\small\item\em Converts a \hyperlink{class_vector2_d}{Vector2D} (that represents a position in the game space) into a corresponding screen position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{structxy_vector}{xy\+Vector} \hyperlink{class_vector2_d_convert_a6eef0a8081bf94301b98332ef362be2c}{\+\_\+screen\+\_\+size} \{1920,1080\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Converts a \hyperlink{class_vector2_d}{Vector2D} object into an sfml Vector so that it can be used in the presentation layer. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_vector2_d_convert_aa4aff52a3a85d4b7da4123e7b73d2d24}\label{class_vector2_d_convert_aa4aff52a3a85d4b7da4123e7b73d2d24}} 
+\index{Vector2\+D\+Convert@{Vector2\+D\+Convert}!Convert\+Vector2\+Dto\+Screen\+Position@{Convert\+Vector2\+Dto\+Screen\+Position}}
+\index{Convert\+Vector2\+Dto\+Screen\+Position@{Convert\+Vector2\+Dto\+Screen\+Position}!Vector2\+D\+Convert@{Vector2\+D\+Convert}}
+\subsubsection{\texorpdfstring{Convert\+Vector2\+Dto\+Screen\+Position()}{ConvertVector2DtoScreenPosition()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Vector2\+D\+Convert\+::\+Convert\+Vector2\+Dto\+Screen\+Position (\begin{DoxyParamCaption}\item[{\hyperlink{class_vector2_d}{Vector2D}$<$ double $>$}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Converts a \hyperlink{class_vector2_d}{Vector2D} (that represents a position in the game space) into a corresponding screen position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The position that needs to be converted into a position on the screen \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The corresponding screen position
+\end{DoxyReturn}
+Converts the game position which has a the origin at the centre of the screen into the screen position which has the origin centred at the top left corner of the screen. This is done due to the nature of the game gyrus and how objects are centered around the middle of the screen frequently. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_vector2_d_convert_a6eef0a8081bf94301b98332ef362be2c}\label{class_vector2_d_convert_a6eef0a8081bf94301b98332ef362be2c}} 
+\index{Vector2\+D\+Convert@{Vector2\+D\+Convert}!\+\_\+screen\+\_\+size@{\+\_\+screen\+\_\+size}}
+\index{\+\_\+screen\+\_\+size@{\+\_\+screen\+\_\+size}!Vector2\+D\+Convert@{Vector2\+D\+Convert}}
+\subsubsection{\texorpdfstring{\+\_\+screen\+\_\+size}{\_screen\_size}}
+{\footnotesize\ttfamily \hyperlink{structxy_vector}{xy\+Vector} Vector2\+D\+Convert\+::\+\_\+screen\+\_\+size \{1920,1080\}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+The corresponding screen size for the window 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Vector2\+D\+Convert.\+h\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Vector2\+D\+Convert.\+cpp\end{DoxyCompactItemize}

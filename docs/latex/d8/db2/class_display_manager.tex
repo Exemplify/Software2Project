@@ -1,0 +1,85 @@
+\hypertarget{class_display_manager}{}\section{Display\+Manager Class Reference}
+\label{class_display_manager}\index{Display\+Manager@{Display\+Manager}}
+
+
+Display manager is in charge of running and managing the presentation layer.  
+
+
+
+
+{\ttfamily \#include $<$Display\+Manager.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_display_manager_a5cae0a0f81cbd2457eca8d35733a0516}{Display\+Manager} (Render\+Window \&render\+Window)
+\begin{DoxyCompactList}\small\item\em Constructs the \hyperlink{class_display_manager}{Display\+Manager} Object with the corresponding Render\+Window, initialises the display thread on construction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_display_manager_ab1c3eaf2694410423b6b1eca6a58436f}\label{class_display_manager_ab1c3eaf2694410423b6b1eca6a58436f}} 
+void \hyperlink{class_display_manager_ab1c3eaf2694410423b6b1eca6a58436f}{Initialise\+Thread} ()
+\begin{DoxyCompactList}\small\item\em Intialises the display loop. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_display_manager_a79b7a390f3a2a09e7209d271e589e705}\label{class_display_manager_a79b7a390f3a2a09e7209d271e589e705}} 
+void \hyperlink{class_display_manager_a79b7a390f3a2a09e7209d271e589e705}{render\+Thread} ()
+\begin{DoxyCompactList}\small\item\em Runs the display loop and is created in a seperate thread. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_display_manager_a59cef8980a225ca13757e362a92891d1}\label{class_display_manager_a59cef8980a225ca13757e362a92891d1}} 
+void \hyperlink{class_display_manager_a59cef8980a225ca13757e362a92891d1}{Draw} ()
+\begin{DoxyCompactList}\small\item\em Draws each sfml sprite object to the game window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Render\+Window $\ast$ \hyperlink{class_display_manager_abe0369d0fa6b544c77d9d50d50f949cf}{\+\_\+dispwindow\+\_\+ptr}
+\item 
+\hyperlink{class_update_game_object_display}{Update\+Game\+Object\+Display} \hyperlink{class_display_manager_aee260bf088ffc55e21bd1ef282a139db}{\+\_\+update\+Game\+Object\+Display}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Display manager is in charge of running and managing the presentation layer. 
+
+\begin{DoxyAuthor}{Author}
+Timothy Mc\+Bride 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+09/10/2017
+\end{DoxyDate}
+It creates a seperate thread which is used to run the display loop. The draw\+Game\+Object class is used to draw each of the \hyperlink{class_game_object}{Game\+Object}\textquotesingle{}s currently being used by the window. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_display_manager_a5cae0a0f81cbd2457eca8d35733a0516}\label{class_display_manager_a5cae0a0f81cbd2457eca8d35733a0516}} 
+\index{Display\+Manager@{Display\+Manager}!Display\+Manager@{Display\+Manager}}
+\index{Display\+Manager@{Display\+Manager}!Display\+Manager@{Display\+Manager}}
+\subsubsection{\texorpdfstring{Display\+Manager()}{DisplayManager()}}
+{\footnotesize\ttfamily Display\+Manager\+::\+Display\+Manager (\begin{DoxyParamCaption}\item[{Render\+Window \&}]{render\+Window }\end{DoxyParamCaption})}
+
+
+
+Constructs the \hyperlink{class_display_manager}{Display\+Manager} Object with the corresponding Render\+Window, initialises the display thread on construction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em render\+Window} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_display_manager_abe0369d0fa6b544c77d9d50d50f949cf}\label{class_display_manager_abe0369d0fa6b544c77d9d50d50f949cf}} 
+\index{Display\+Manager@{Display\+Manager}!\+\_\+dispwindow\+\_\+ptr@{\+\_\+dispwindow\+\_\+ptr}}
+\index{\+\_\+dispwindow\+\_\+ptr@{\+\_\+dispwindow\+\_\+ptr}!Display\+Manager@{Display\+Manager}}
+\subsubsection{\texorpdfstring{\+\_\+dispwindow\+\_\+ptr}{\_dispwindow\_ptr}}
+{\footnotesize\ttfamily Render\+Window$\ast$ Display\+Manager\+::\+\_\+dispwindow\+\_\+ptr\hspace{0.3cm}{\ttfamily [private]}}
+
+A pointer to the corresponding Render\+Window that needs images displayed to it$>$ \mbox{\Hypertarget{class_display_manager_aee260bf088ffc55e21bd1ef282a139db}\label{class_display_manager_aee260bf088ffc55e21bd1ef282a139db}} 
+\index{Display\+Manager@{Display\+Manager}!\+\_\+update\+Game\+Object\+Display@{\+\_\+update\+Game\+Object\+Display}}
+\index{\+\_\+update\+Game\+Object\+Display@{\+\_\+update\+Game\+Object\+Display}!Display\+Manager@{Display\+Manager}}
+\subsubsection{\texorpdfstring{\+\_\+update\+Game\+Object\+Display}{\_updateGameObjectDisplay}}
+{\footnotesize\ttfamily \hyperlink{class_update_game_object_display}{Update\+Game\+Object\+Display} Display\+Manager\+::\+\_\+update\+Game\+Object\+Display\hspace{0.3cm}{\ttfamily [private]}}
+
+Composition object responsible for for displaying each \hyperlink{class_game_object}{Game\+Object} and the its corresponding Sprite$>$ 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Display\+Manager.\+h\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Display\+Manger.\+cpp\end{DoxyCompactItemize}

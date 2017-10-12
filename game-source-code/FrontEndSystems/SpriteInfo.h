@@ -9,9 +9,6 @@ using namespace sf;
 /// SpriteInfo should be form part of the DisplayManager and SpriteData should be part of the Gameobject
 struct SpriteInfo
 {
-	bool isdefined = false;
-	std::string textureLocation;
-	Vector2f scale{1.0f,1.0f};
 	Sprite sprite;
 	Texture texture;
 };

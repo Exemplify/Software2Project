@@ -18,6 +18,18 @@ GameObject::GameObject(Vector2D<double> startingPosition):
 _type{GameObjectType::gameObject},
 _position{startingPosition}
 {}
+GameObject::GameObject(GraphicObject graphic):
+_graphicObject{graphic}
+{}
+GameObject::GameObject(xyVector scale):
+_scale{scale}
+{}
+GameObject::GameObject(Vector2D<double> startingPosition, xyVector scale, GraphicObject graphicObject):
+_scale{scale},
+_type{GameObjectType::gameObject},
+_position{startingPosition},
+_graphicObject{graphicObject}
+{}
 // Removes the gameobject from the scene that it exists in
 void GameObject::Destroy()
 {
@@ -31,7 +43,10 @@ void GameObject::Destroy()
 		throw(DestroyedObjectOutsideScene());
 	}
 }
-
+const GraphicObject& GameObject::getGraphicObject() const
+{
+	return _graphicObject;
+} 
 // checks the list of gameObjects inside the current scene and returns the first gameobject that matches the GameObjectType
 std::shared_ptr<GameObject> GameObject::FindGameObjectByType(GameObjectType searchType)
 {

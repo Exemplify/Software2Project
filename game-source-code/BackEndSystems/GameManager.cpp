@@ -1,6 +1,7 @@
 #include "GameManager.h"
 #include "GameTime.h"
 #include "../FrontEndSystems/CollisionDetection.h"
+#include <mutex>
 
 std::shared_ptr<Scene> GameManager::activeScene = NULL;
 std::vector<std::shared_ptr<Scene>> GameManager::_game_scenes{};
@@ -12,28 +13,28 @@ class SceneDoesntExist{};
 
 void GameManager::GameLoop()
 {
-	// Initial Declarations	
-	RenderWindow window;
 	// Set-up window to current specifications
-	initialiseWindow(window);
+	initialiseWindow(_window);
 
 	// initialises the display thread
-	_dispManager.InitialiseThread(window);
-    CollisionDetection collisionDetection(&window);
+	DisplayManager _displayThread(_window);
+    CollisionDetection collisionDetection(&_window);
 
     // The main game loop
-    while (window.isOpen())
+    while (_window.isOpen())
     {
 		// Determines the Time Between each frame
 		_gameTime->TimeFrame();
         // check all the window's events that were triggered since the last iteration of the loop
-		_eventManager.EventLoop(window);
+		_eventManager.EventLoop(_window);
 		// Calls the SceneUpdate function to run the game functionality
 		if(activeScene != NULL)
 			activeScene->SceneUpdate();
 		// Checks if Input causes window to be closed
+		/// Put a guard mutex here to ensure no other threads are accessing the gameobject list when the window closes 
+		std::lock_guard<std::mutex> lock(activeScene->_gameObject_list_mutex);
 		if(closeWindow)
-			window.close();
+			_window.close();
 	}
 }
 

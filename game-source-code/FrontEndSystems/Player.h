@@ -7,6 +7,7 @@
 #include "Character.h"
 #include "DelayComponent.h"
 #include "ShootComponent.h"
+#include "GraphicObject.h"
 
 using namespace std;
 /// Character rework required here as well 
@@ -19,19 +20,17 @@ using namespace std;
 class Player : public PhysicsObject
 {
 public:
-	/// Redundant constructors need to be reworked 
+	
 	Player()
 	{
 		_type = GameObjectType::player;
 	}
 	Player(Vector2D<double>& startPosition, Character playerStats);
-    Player(Vector2D<double>& startPosition, Character playerStats, std::shared_ptr<SpriteInfo> bulletSprite);
-	/// Clone still in development
-	virtual Player* Clone() override 
-	{return new Player(*this);}
+    Player(Vector2D<double>& startPosition, Character playerStats, GraphicObject bulletGraphic);
 	// override functions called by external objects
     void Update() override;
     virtual void collisionAction(GameObjectType objectType) override;
+	
 private:
 	// moves the player in the specified direction
 	void move();
@@ -43,6 +42,7 @@ private:
 	ShootComponent _shootComp;
 	// Checks if the conditions for shooting have been met, delay is over and shoot input is pressed
 	void ShootConditionalCheck();
+	
 	
 };
 

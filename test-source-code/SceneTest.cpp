@@ -13,17 +13,8 @@ TEST_CASE("Scene Successfully Instantiates Objects")
 	auto testScene = std::make_shared<Scene>();
 	auto testgameObj = std::make_shared<GameObject>();
 	testScene->Instantiate(testgameObj);
-	SUBCASE("Scene adds GameObjects to the vector correctly")
-	{
-		CHECK_EQ(testScene->getGameObjectList().size(), 1);
-		CHECK_EQ(testScene->getGameObjectList().at(0), testgameObj);
-	}
-	SUBCASE("Scene correctly sets itself in each GameObject")
-	{
-		auto retrievedGameObject = testScene->getGameObjectList().at(0);
-		CHECK_EQ(retrievedGameObject->getScene(), testScene);
-		CHECK_EQ(testgameObj->getScene(), testScene );
-	}
+	auto retrievedGameObjectlist = testScene->getGameObjectList();
+	CHECK_EQ(retrievedGameObjectlist.size(), 1);
 }
 
 TEST_CASE("Scene Destroys Objects correctly")
@@ -34,13 +25,6 @@ TEST_CASE("Scene Destroys Objects correctly")
 		auto testgameObj = std::make_shared<GameObject>();
 		testScene->Instantiate(testgameObj);
 		testScene->DestroyGameObject(testgameObj);
-		CHECK_EQ(testScene->getGameObjectList().size(), 0);
-	}
-	SUBCASE("Scene Destroys a GraphicsObject")
-	{
-		std::shared_ptr<GameObject> testgraphObj = std::make_shared<GraphicObject>();
-		testScene->Instantiate(testgraphObj);
-		testScene->DestroyGameObject(testgraphObj);
 		CHECK_EQ(testScene->getGameObjectList().size(), 0);
 	}
 	SUBCASE("Scene Destroys a Player Object")

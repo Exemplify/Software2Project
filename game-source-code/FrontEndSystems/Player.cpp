@@ -12,21 +12,22 @@ _playerStats{playerStats},
 _shootDelay{SHOOT_DELAY}
 {	
 	/// Needs to be stored in a database
+	_graphicObject = GraphicObject("resources/playerSprite.png", "player");
 	_position = startPosition;
-	auto playerBulletSprite = std::make_shared<SpriteInfo>();
-	playerBulletSprite->textureLocation = "resources/Rock.png";
-	playerBulletSprite->scale = Vector2f(0.05f,0.05f);
-    _objectSize = 25;
+	_scale = xyVector(0.25f,0.25f);
 	_type = GameObjectType::player;
-	_shootComp = ShootComponent(playerBulletSprite, GameObjectType::playerBullet);
+    _objectSize = 25;
+	GraphicObject bulletGraphic{"resources/Rock.png", "playerBullet"};
+	_shootComp = ShootComponent(bulletGraphic, GameObjectType::playerBullet);
 }
 
-Player::Player(Vector2D<double>& startPosition, Character playerStats, std::shared_ptr<SpriteInfo> bulletSprite):
+Player::Player(Vector2D<double>& startPosition, Character playerStats, GraphicObject bulletGraphic):
 PhysicsObject(),
 _playerStats{playerStats},
 _shootDelay{SHOOT_DELAY},
-_shootComp{bulletSprite, GameObjectType::playerBullet}
+_shootComp{bulletGraphic, GameObjectType::playerBullet}
 {
+	_graphicObject = GraphicObject(bulletGraphic);
 	_type = GameObjectType::player;
     _position = startPosition;
     _objectSize = 25;

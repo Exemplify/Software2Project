@@ -4,13 +4,14 @@
 #include <memory>
 
 /// Constructor Needs a Database Dependency
-Projectile::Projectile(std::shared_ptr<SpriteInfo> spriteInfo, GameObjectType projectileType):
+Projectile::Projectile(GraphicObject bulletGraphic, GameObjectType projectileType, xyVector scale):
 PhysicsObject(),
 _enemyDestroyBounds{},
 _playerDestroyBounds{PLAYER_PROJECTILE_DESTROY_REGION, PLAYER_PROJECTILE_DESTROY_REGION}
 {
+	_scale = scale;
 	_type = projectileType;
-    _spriteInfo = spriteInfo;
+    _graphicObject = bulletGraphic;
     _objectSize = 5;
 }
 // copy constructor used to duplicate the basic player and enemy projectile stored in the shoot components
@@ -19,8 +20,9 @@ PhysicsObject()
 {
 	_enemyDestroyBounds = copyProjectile._enemyDestroyBounds;
 	_playerDestroyBounds = copyProjectile._playerDestroyBounds;
-	_spriteInfo = copyProjectile._spriteInfo;
+	_graphicObject = copyProjectile._graphicObject;
 	_type = copyProjectile._type;
+	_scale = copyProjectile._scale;
     _objectSize = copyProjectile._objectSize;
 }
 

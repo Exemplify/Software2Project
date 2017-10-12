@@ -19,7 +19,7 @@ public:
 	}
 	// constructor used to identify whether the gameobject type is an enemy projectile or a player projectile 
 	// with the corresponding graphical information
-	Projectile(std::shared_ptr<SpriteInfo> spriteInfo, GameObjectType projectileType);
+	Projectile(GraphicObject bulletGraphic, GameObjectType projectileType, xyVector scale);
 	// copy constructor used by the shoot coponent to create copys of a standard projectile
 	Projectile(const Projectile& copyProjectile);
 	// Overrides Update function for specific responsibilities 
@@ -29,12 +29,8 @@ public:
 	void Initialise(Vector2D<double> startingPos, Vector2D<double> direction, double moveSpeed);
 	// Override function used to determine when a collision has occured with the specific object types
     virtual void collisionAction(GameObjectType objectType) override;
-	/// Clone Function Still in development
-	virtual Projectile* Clone() override 
-	{return new Projectile(*this);}
 	// virtual Destructor
-	/// Needs the virtual tag
-	~Projectile() override{}
+	virtual ~Projectile() override{}
 private:
 	// Projectile direction
 	Vector2D<double> _direction;

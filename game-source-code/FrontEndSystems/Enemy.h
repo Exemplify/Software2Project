@@ -5,6 +5,7 @@
 #include "DelayComponent.h"
 #include "ShootComponent.h"
 #include "Boundary.h"
+#include "GraphicObject.h"
 
 
 enum class EnemyMoveType
@@ -26,10 +27,9 @@ public:
 	virtual void Update() override;
 	// Override function from PhysicsObject
     virtual void collisionAction(GameObjectType objectType) override;
-	// Clone function necessary to duplicate the class using a covarient return type
-	virtual Enemy* Clone() override 
-	{return new Enemy(*this);}
+	
     EnemyMoveType getMoveType() const {return _movementType;}
+	
 private:
 	// Move function that is called inside update to move the current enemy object
 	void Move();
@@ -48,6 +48,7 @@ private:
 	Boundary _screenBounds;
 	EnemyMoveType _movementType;
 	int _direction;
+	
 
 	// used to initialise the different enemy objects and vary the movement styles
 	// Run from within the constructor
@@ -72,6 +73,7 @@ private:
 	// On Collision Functions
 	// object response to colliding with a player bullet 
 	void PlayerProjectileCollision();
+	
 };
 
 

@@ -1,19 +1,17 @@
 #ifndef SPLASH_H
 #define SPLAH_H
 
-#include "GraphicObject.h"
+#include "GameObject.h"
 
 // Splash Screen object that closes the application on an input and loads the game on an input
 // Also displays the background object 
 
 /// requires Seperation of Concerns 
-class SplashScreen:public GraphicObject
+class SplashScreen:public GameObject
 {
 public:
-	SplashScreen(){}
+	SplashScreen(GraphicObject graphicObject, xyVector scale);
 	void Update() override;
-	virtual SplashScreen* Clone() override 
-	{return new SplashScreen(*this);}
 private:
 	// Quits the Game 
 	void QuitGame();

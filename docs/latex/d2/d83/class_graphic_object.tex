@@ -1,0 +1,117 @@
+\hypertarget{class_graphic_object}{}\section{Graphic\+Object Class Reference}
+\label{class_graphic_object}\index{Graphic\+Object@{Graphic\+Object}}
+
+
+This is the Utility class with the display manager, It stores the name of the object and location of the image file which are both necessary for the \hyperlink{class_display_manager}{Display\+Manager} to correctly display the specified image.  
+
+
+
+
+{\ttfamily \#include $<$Graphic\+Object.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_graphic_object_ae1b56ae4484ad120f5ba77c0b683a045}\label{class_graphic_object_ae1b56ae4484ad120f5ba77c0b683a045}} 
+\hyperlink{class_graphic_object_ae1b56ae4484ad120f5ba77c0b683a045}{Graphic\+Object} ()
+\begin{DoxyCompactList}\small\item\em Default Constructor, creates a Null\+Graphic by default. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_graphic_object_a4a14ca7f3b9e9736b0b4231ee08dc0ab}\label{class_graphic_object_a4a14ca7f3b9e9736b0b4231ee08dc0ab}} 
+\hyperlink{class_graphic_object_a4a14ca7f3b9e9736b0b4231ee08dc0ab}{Graphic\+Object} (const \hyperlink{class_graphic_object}{Graphic\+Object} \&copy)
+\begin{DoxyCompactList}\small\item\em Copy Constructor of \hyperlink{class_graphic_object}{Graphic\+Object}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_graphic_object_a4026dc4e922a5053b6c0e3d1a9b28b63}\label{class_graphic_object_a4026dc4e922a5053b6c0e3d1a9b28b63}} 
+\hyperlink{class_graphic_object}{Graphic\+Object} \& \hyperlink{class_graphic_object_a4026dc4e922a5053b6c0e3d1a9b28b63}{operator=} (const \hyperlink{class_graphic_object}{Graphic\+Object} \&rhs)
+\begin{DoxyCompactList}\small\item\em Assignment operator overload. \end{DoxyCompactList}\item 
+\hyperlink{class_graphic_object_a9819ca0b4c1bb72ede070d8485bfc8a9}{Graphic\+Object} (string texture\+Location, string graphic\+Name)
+\begin{DoxyCompactList}\small\item\em Standard Constructor, creates a Graphic Object with the client specified parameters. \end{DoxyCompactList}\item 
+const string \& \hyperlink{class_graphic_object_a8772813296b837e997ee21836e92b028}{get\+Graphic\+Name} () const
+\begin{DoxyCompactList}\small\item\em Getter is necessary to decouple the presentation layer from the game logic layer. \end{DoxyCompactList}\item 
+const string \& \hyperlink{class_graphic_object_a1041a2dd82f82fc724675c5a2ea67d32}{get\+Texture\+Location} () const
+\begin{DoxyCompactList}\small\item\em Getter is necessary to decouple the presentation layer from the game logic layer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_graphic_object_a3a6832e8f4af96da2935d3c69757107c}\label{class_graphic_object_a3a6832e8f4af96da2935d3c69757107c}} 
+static const \hyperlink{class_graphic_object}{Graphic\+Object} \hyperlink{class_graphic_object_a3a6832e8f4af96da2935d3c69757107c}{Null\+Graphic} \{\char`\"{}Null\char`\"{}, \char`\"{}Null\+Graphic.\+png\char`\"{}\}
+\begin{DoxyCompactList}\small\item\em Null\+Graphic Declaration, requires the \char`\"{}\+Null\+Graphic.\+png\char`\"{} image to be available. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{class_graphic_object_a3fc571887a6e46dda4a4ef10d44720b5}{\+\_\+texture\+Location}
+\item 
+std\+::string \hyperlink{class_graphic_object_a74c9292d37d9be9e099c868be084b33f}{\+\_\+graphic\+Name}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is the Utility class with the display manager, It stores the name of the object and location of the image file which are both necessary for the \hyperlink{class_display_manager}{Display\+Manager} to correctly display the specified image. 
+
+The Graphic Object has a tight coupling with the Presentation layer classes. The graphic name of the object is used as a key within a hashtable to identify the specific sfml sprite and texture that needs to be drawn for the corresponding object. \hyperlink{class_graphic_object}{Graphic\+Object} acts as a link between the Presentation Layer and the Domain layer. It forms a composition relationship with the \hyperlink{class_game_object}{Game\+Object} class. A Null\+Object is assigned by default for derived implimentations of \hyperlink{class_game_object}{Game\+Object} that do not require a \hyperlink{class_graphic_object}{Graphic\+Object} The Null\+Object consistis of a Null\+Object.\+png image which is a single transparent pixel and the graphic\+Name Null. This is an Object name that is preserved by the constructor. ie another \hyperlink{class_graphic_object}{Graphic\+Object} may not have the name Null. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_graphic_object_a9819ca0b4c1bb72ede070d8485bfc8a9}\label{class_graphic_object_a9819ca0b4c1bb72ede070d8485bfc8a9}} 
+\index{Graphic\+Object@{Graphic\+Object}!Graphic\+Object@{Graphic\+Object}}
+\index{Graphic\+Object@{Graphic\+Object}!Graphic\+Object@{Graphic\+Object}}
+\subsubsection{\texorpdfstring{Graphic\+Object()}{GraphicObject()}}
+{\footnotesize\ttfamily Graphic\+Object\+::\+Graphic\+Object (\begin{DoxyParamCaption}\item[{string}]{texture\+Location,  }\item[{string}]{graphic\+Name }\end{DoxyParamCaption})}
+
+
+
+Standard Constructor, creates a Graphic Object with the client specified parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture\+Location} & The texture location for the image that the object uses \\
+\hline
+{\em graphic\+Name} & The name of that corresponds to objects that use the same image\\
+\hline
+\end{DoxyParams}
+Checks if the reserved graphic\+Name \char`\"{}\+Null\char`\"{} is used, throws \hyperlink{class_graphic_name_reservedfor_null_graphic}{Graphic\+Name\+Reservedfor\+Null\+Graphic} if Null is used 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_graphic_object_a8772813296b837e997ee21836e92b028}\label{class_graphic_object_a8772813296b837e997ee21836e92b028}} 
+\index{Graphic\+Object@{Graphic\+Object}!get\+Graphic\+Name@{get\+Graphic\+Name}}
+\index{get\+Graphic\+Name@{get\+Graphic\+Name}!Graphic\+Object@{Graphic\+Object}}
+\subsubsection{\texorpdfstring{get\+Graphic\+Name()}{getGraphicName()}}
+{\footnotesize\ttfamily const string\& Graphic\+Object\+::get\+Graphic\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter is necessary to decouple the presentation layer from the game logic layer. 
+
+\begin{DoxyReturn}{Returns}
+Returns a constant string that represents the graphic name of the object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graphic_object_a1041a2dd82f82fc724675c5a2ea67d32}\label{class_graphic_object_a1041a2dd82f82fc724675c5a2ea67d32}} 
+\index{Graphic\+Object@{Graphic\+Object}!get\+Texture\+Location@{get\+Texture\+Location}}
+\index{get\+Texture\+Location@{get\+Texture\+Location}!Graphic\+Object@{Graphic\+Object}}
+\subsubsection{\texorpdfstring{get\+Texture\+Location()}{getTextureLocation()}}
+{\footnotesize\ttfamily const string\& Graphic\+Object\+::get\+Texture\+Location (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getter is necessary to decouple the presentation layer from the game logic layer. 
+
+\begin{DoxyReturn}{Returns}
+Returns a constant string that represents the location of the image file that is being used 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_graphic_object_a74c9292d37d9be9e099c868be084b33f}\label{class_graphic_object_a74c9292d37d9be9e099c868be084b33f}} 
+\index{Graphic\+Object@{Graphic\+Object}!\+\_\+graphic\+Name@{\+\_\+graphic\+Name}}
+\index{\+\_\+graphic\+Name@{\+\_\+graphic\+Name}!Graphic\+Object@{Graphic\+Object}}
+\subsubsection{\texorpdfstring{\+\_\+graphic\+Name}{\_graphicName}}
+{\footnotesize\ttfamily std\+::string Graphic\+Object\+::\+\_\+graphic\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+The name used to load objects specified by the texture location$>$ \mbox{\Hypertarget{class_graphic_object_a3fc571887a6e46dda4a4ef10d44720b5}\label{class_graphic_object_a3fc571887a6e46dda4a4ef10d44720b5}} 
+\index{Graphic\+Object@{Graphic\+Object}!\+\_\+texture\+Location@{\+\_\+texture\+Location}}
+\index{\+\_\+texture\+Location@{\+\_\+texture\+Location}!Graphic\+Object@{Graphic\+Object}}
+\subsubsection{\texorpdfstring{\+\_\+texture\+Location}{\_textureLocation}}
+{\footnotesize\ttfamily std\+::string Graphic\+Object\+::\+\_\+texture\+Location\hspace{0.3cm}{\ttfamily [protected]}}
+
+The location of the Image that the object represents$>$ 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Graphic\+Object.\+h\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Graphic\+Object.\+cpp\end{DoxyCompactItemize}

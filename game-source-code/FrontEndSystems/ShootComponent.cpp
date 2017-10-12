@@ -1,9 +1,12 @@
 #include "ShootComponent.h"
 
 /// Constructor will need to be deleted 
-ShootComponent::ShootComponent(std::shared_ptr<SpriteInfo> bulletInfo, GameObjectType bulletType)
+ShootComponent::ShootComponent(GraphicObject bulletGraphic, GameObjectType bulletType)
 {
-	_bullet = std::make_shared<Projectile>(bulletInfo, bulletType);
+	if(bulletType == GameObjectType::enemyBullet)
+		_bullet = std::make_shared<Projectile>(bulletGraphic, bulletType, xyVector{0.1, 0.1});
+	else
+		_bullet = std::make_shared<Projectile>(bulletGraphic,  bulletType, xyVector{0.035, 0.035});
 }
 /// correct type of constructor 
 ShootComponent::ShootComponent(std::shared_ptr<Projectile> bullet):

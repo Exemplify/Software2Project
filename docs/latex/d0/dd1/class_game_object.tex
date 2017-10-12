@@ -1,0 +1,99 @@
+\hypertarget{class_game_object}{}\section{Game\+Object Class Reference}
+\label{class_game_object}\index{Game\+Object@{Game\+Object}}
+Inheritance diagram for Game\+Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.695548cm]{d0/dd1/class_game_object}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_game_object_a0348e3ee2e83d56eafca7a3547f432c4}\label{class_game_object_a0348e3ee2e83d56eafca7a3547f432c4}} 
+\hyperlink{class_game_object_a0348e3ee2e83d56eafca7a3547f432c4}{Game\+Object} ()
+\begin{DoxyCompactList}\small\item\em default constructor should be removed however is useful for testing \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_object_a4abdb4988a1aa49541cee2dc996834fc}\label{class_game_object_a4abdb4988a1aa49541cee2dc996834fc}} 
+{\bfseries Game\+Object} (const \hyperlink{class_game_object}{Game\+Object} \&copy\+Obj)
+\item 
+\mbox{\Hypertarget{class_game_object_aae2936e26f070d83d9b1c69dad5bfceb}\label{class_game_object_aae2936e26f070d83d9b1c69dad5bfceb}} 
+{\bfseries Game\+Object} (\hyperlink{class_vector2_d}{Vector2D}$<$ double $>$ starting\+Position)
+\item 
+\mbox{\Hypertarget{class_game_object_a8d8c6203c094bc5d9e4c917e66b7b1e9}\label{class_game_object_a8d8c6203c094bc5d9e4c917e66b7b1e9}} 
+{\bfseries Game\+Object} (\hyperlink{class_vector2_d}{Vector2D}$<$ double $>$ starting\+Position, \hyperlink{structxy_vector}{xy\+Vector} scale)
+\item 
+\mbox{\Hypertarget{class_game_object_ac7ecc123dacaba955077420caabf5e64}\label{class_game_object_ac7ecc123dacaba955077420caabf5e64}} 
+virtual void \hyperlink{class_game_object_ac7ecc123dacaba955077420caabf5e64}{Update} ()
+\begin{DoxyCompactList}\small\item\em could aslo be used as a friendship with scene \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_object_a7cc83eeefc6e3d112e2a7fc1fb037a9c}\label{class_game_object_a7cc83eeefc6e3d112e2a7fc1fb037a9c}} 
+bool {\bfseries is\+Active} ()
+\item 
+\mbox{\Hypertarget{class_game_object_a6ddc58c7cc733a538228d4948da14b8f}\label{class_game_object_a6ddc58c7cc733a538228d4948da14b8f}} 
+\hyperlink{class_vector2_d}{Vector2D}$<$ double $>$ {\bfseries get\+Position} () const
+\item 
+\mbox{\Hypertarget{class_game_object_af12345846c74b72bc50c779c00b55851}\label{class_game_object_af12345846c74b72bc50c779c00b55851}} 
+Game\+Object\+Type {\bfseries get\+Type} () const
+\item 
+\mbox{\Hypertarget{class_game_object_a9f4aec664bbb4fa5ecfa3d1a7d630d2a}\label{class_game_object_a9f4aec664bbb4fa5ecfa3d1a7d630d2a}} 
+std\+::shared\+\_\+ptr$<$ \hyperlink{class_scene}{Scene} $>$ {\bfseries get\+Scene} () const
+\item 
+\mbox{\Hypertarget{class_game_object_ab7854c363f11c202ea2177b33ce293e0}\label{class_game_object_ab7854c363f11c202ea2177b33ce293e0}} 
+\hyperlink{structxy_vector}{xy\+Vector} {\bfseries get\+Scale} () const
+\item 
+\mbox{\Hypertarget{class_game_object_a32bd3769c0a9d09f0624dfdc22a032f3}\label{class_game_object_a32bd3769c0a9d09f0624dfdc22a032f3}} 
+virtual const std\+::shared\+\_\+ptr$<$ \hyperlink{class_graphic_object}{Graphic\+Object} $>$ {\bfseries get\+Graphic\+Object} ()=0
+\item 
+\mbox{\Hypertarget{class_game_object_a200218792aa0076011d69be696e3d3d4}\label{class_game_object_a200218792aa0076011d69be696e3d3d4}} 
+void {\bfseries set\+Active} (bool active\+\_\+state)
+\item 
+void \hyperlink{class_game_object_a9e1420c027ce937f9958a41ad280080b}{set\+Scene} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_scene}{Scene} $>$ scene)
+\item 
+\mbox{\Hypertarget{class_game_object_aba6be15984fdea37907c296619856e99}\label{class_game_object_aba6be15984fdea37907c296619856e99}} 
+virtual \hyperlink{class_game_object}{Game\+Object} $\ast$ {\bfseries Clone} ()=0
+\item 
+\mbox{\Hypertarget{class_game_object_abf1959fad10ea04673a182029f1f81b9}\label{class_game_object_abf1959fad10ea04673a182029f1f81b9}} 
+void {\bfseries Destroy} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$ \hyperlink{class_game_object_ac52291835ad2f3f36363589af0d3ae84}{Find\+Game\+Object\+By\+Type} (Game\+Object\+Type search\+Type)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_game_object_a9b76f90eef67b329538d15b4eeed67a1}\label{class_game_object_a9b76f90eef67b329538d15b4eeed67a1}} 
+\hyperlink{structxy_vector}{xy\+Vector} {\bfseries \+\_\+scale}
+\item 
+\mbox{\Hypertarget{class_game_object_ab8cae1a41ad1443d085c397b5e6d5609}\label{class_game_object_ab8cae1a41ad1443d085c397b5e6d5609}} 
+std\+::shared\+\_\+ptr$<$ \hyperlink{class_scene}{Scene} $>$ {\bfseries \+\_\+scene}
+\item 
+\mbox{\Hypertarget{class_game_object_aebfec45400aff20c8eab3fbf00be0aea}\label{class_game_object_aebfec45400aff20c8eab3fbf00be0aea}} 
+Game\+Object\+Type {\bfseries \+\_\+type}
+\item 
+\mbox{\Hypertarget{class_game_object_afcd024cb6bf627118f952122861744b3}\label{class_game_object_afcd024cb6bf627118f952122861744b3}} 
+\hyperlink{class_vector2_d}{Vector2D}$<$ double $>$ {\bfseries \+\_\+position}
+\item 
+\mbox{\Hypertarget{class_game_object_aef11019578aad93f96240b79a1141a07}\label{class_game_object_aef11019578aad93f96240b79a1141a07}} 
+bool {\bfseries \+\_\+active} = true
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game_object_ac52291835ad2f3f36363589af0d3ae84}\label{class_game_object_ac52291835ad2f3f36363589af0d3ae84}} 
+\index{Game\+Object@{Game\+Object}!Find\+Game\+Object\+By\+Type@{Find\+Game\+Object\+By\+Type}}
+\index{Find\+Game\+Object\+By\+Type@{Find\+Game\+Object\+By\+Type}!Game\+Object@{Game\+Object}}
+\subsubsection{\texorpdfstring{Find\+Game\+Object\+By\+Type()}{FindGameObjectByType()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$ Game\+Object\+::\+Find\+Game\+Object\+By\+Type (\begin{DoxyParamCaption}\item[{Game\+Object\+Type}]{search\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+could be replaced with a std find \mbox{\Hypertarget{class_game_object_a9e1420c027ce937f9958a41ad280080b}\label{class_game_object_a9e1420c027ce937f9958a41ad280080b}} 
+\index{Game\+Object@{Game\+Object}!set\+Scene@{set\+Scene}}
+\index{set\+Scene@{set\+Scene}!Game\+Object@{Game\+Object}}
+\subsubsection{\texorpdfstring{set\+Scene()}{setScene()}}
+{\footnotesize\ttfamily void Game\+Object\+::set\+Scene (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_scene}{Scene} $>$}]{scene }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+needs to be reconsidered only \hyperlink{class_scene}{Scene} class needs access to this method may be worthwhile making a frienship class here to ensure a tightly coupled relationship between scene and gameobject Need to ask about this Edit\+: Game Obejct should never exist outside of a scene so should require a scene object in the constructor 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Game\+Object.\+h\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Game\+Object.\+cpp\end{DoxyCompactItemize}

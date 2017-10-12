@@ -5,29 +5,26 @@
 #include "EnemyController.h"
 
 
-const double ENEMY_SHOOT_DELAY = 3; 
+const double ENEMY_SHOOT_DELAY = 3;
 const auto DEG_2_RAD = 3.141592653589793/180.0;
 
 Enemy::Enemy():
 PhysicsObject(),
 _shootDelay{ENEMY_SHOOT_DELAY, false}
 {
+	_graphicObject = GraphicObject("resources/AdamHabib.png", "enemy");
 	ConstructSpriteInfo();
 	InitialiseObject();
     _objectSize = 30;
 	_type = GameObjectType::enemy;
+	
 }
 /// Needs to be moved to a Database
 void Enemy::ConstructSpriteInfo()
 {
-	_spriteInfo->textureLocation = "resources/AdamHabib.png";
-	_spriteInfo->scale = sf::Vector2f{0.25f,0.25f};
-
-	
-	auto bulletSpriteInfo = std::make_shared<SpriteInfo>();
-	bulletSpriteInfo->textureLocation = "resources/SouthAfricanPS.png";
-	bulletSpriteInfo->scale = Vector2f(0.1f,0.1f);
-	_enemyShoot = ShootComponent(bulletSpriteInfo, GameObjectType::enemyBullet);
+	_scale = xyVector{0.25f,0.25f};
+	GraphicObject bulletGraphic {"resources/SouthAfricanPS.png","enemyBullet"};
+	_enemyShoot = ShootComponent(bulletGraphic, GameObjectType::enemyBullet);
 }
 
 void Enemy::Update()

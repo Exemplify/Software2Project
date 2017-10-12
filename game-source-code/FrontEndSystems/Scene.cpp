@@ -9,11 +9,6 @@ using gameObj_ptr = std::shared_ptr<GameObject>;
 /// Currently needs to be fixed 
 Scene::Scene(const Scene& rhs)
 {
-	for(auto GO : rhs._gameObject_list)
-	{
-		auto temp_ptr = std::make_shared<GameObject>(*(GO->Clone()));
-		_gameObject_list.push_back(temp_ptr);
-	}
 }
 
 // Scene Update is run from a gamemanager object within the gameloop 
@@ -42,8 +37,6 @@ std::vector<gameObj_ptr> Scene::getGameObjectList() const
 // Adds a GameObject pointer to the current list of gameobjects in the scene
 void Scene::Instantiate(gameObj_ptr gameObj)
 {
-	/// May need to be removed as it is currently not being used 
-	gameObj->Start();
 	// sets the scene of the gameobject to the scene that it was added to
 	gameObj->setScene(shared_from_this());
 	/// Seems redundant to do duplicate the game object pointer
