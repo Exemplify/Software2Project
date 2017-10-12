@@ -61,7 +61,7 @@ void Projectile::DestroyEnemyProjectile()
 }
 // Used to initialise the object after the copy constructor is run
 // necessary because the starting position and direction vary frequently
-void Projectile::Initialise(Vector2D<double> startingPos, Vector2D<double> direction, double moveSpeed)
+void Projectile::Initialise(Vector2D startingPos, Vector2D direction, double moveSpeed)
 {
 	_position = startingPos;
 	_direction = direction;

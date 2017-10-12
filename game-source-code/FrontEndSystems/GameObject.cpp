@@ -14,7 +14,7 @@ GameObject::GameObject(const GameObject& copyObj)
 	_scene = copyObj._scene;
 }
 // takes in the starting position for the gameobject 
-GameObject::GameObject(Vector2D<double> startingPosition): 
+GameObject::GameObject(Vector2D startingPosition): 
 _type{GameObjectType::gameObject},
 _position{startingPosition}
 {}
@@ -24,7 +24,7 @@ _graphicObject{graphic}
 GameObject::GameObject(xyVector scale):
 _scale{scale}
 {}
-GameObject::GameObject(Vector2D<double> startingPosition, xyVector scale, GraphicObject graphicObject):
+GameObject::GameObject(Vector2D startingPosition, xyVector scale, GraphicObject graphicObject):
 _scale{scale},
 _type{GameObjectType::gameObject},
 _position{startingPosition},

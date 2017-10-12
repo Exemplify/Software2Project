@@ -2,7 +2,7 @@
 #include "../game-source-code/BackEndSystems/EnemyFactory.h"
 #include "../game-source-code/FrontEndSystems/Enemy.h"
 #include "../game-source-code/FrontEndSystems/Scene.h"
-#include "../game-source-code/Vector2D.hpp"
+#include "../game-source-code/Vector2D.h"
 
 TEST_CASE("Enemy Random Movement Test"){
     auto count =  0;
@@ -20,9 +20,8 @@ TEST_CASE("Enemy Random Movement Test"){
             
             SUBCASE("Linear Movement Test")
             {
-                CHECK(doctest::Approx(enemPosition2.rtpVector().at(0)) == enemPosition1.rtpVector().at(0)+100);
-                CHECK(doctest::Approx(enemPosition2.rtpVector().at(1)) == enemPosition1.rtpVector().at(1));
-                CHECK(doctest::Approx(enemPosition2.rtpVector().at(2)) == enemPosition1.rtpVector().at(2));
+                CHECK(doctest::Approx(enemPosition2.getRTVector().r) == enemPosition1.getRTVector().r+100);
+                CHECK(doctest::Approx(enemPosition2.getRTVector().t) == enemPosition1.getRTVector().t);
             }
             count++;
         }
@@ -35,9 +34,8 @@ TEST_CASE("Enemy Random Movement Test"){
             
             SUBCASE("Spiral Movement Test")
             {
-                CHECK(doctest::Approx(enemPosition2.rtpVector().at(0)) == enemPosition1.rtpVector().at(0)+10);
-                CHECK(doctest::Approx(enemPosition2.rtpVector().at(1)) == enemPosition1.rtpVector().at(1)+M_PI);
-                CHECK(doctest::Approx(enemPosition2.rtpVector().at(2)) == enemPosition1.rtpVector().at(2));
+                CHECK(doctest::Approx(enemPosition2.getRTVector().r) == enemPosition1.getRTVector().r+10);
+                CHECK(doctest::Approx(enemPosition2.getRTVector().t) == enemPosition1.getRTVector().t+M_PI);
             }
             count++;
         }
@@ -49,13 +47,13 @@ TEST_CASE("Enemy Random Movement Test"){
             auto enemPosition2 = enem.getPosition();
             
             auto parabolic_a = -0.002824019;
-            double deltaY = parabolic_a * pow((enemPosition1.xypVector().at(0)+ 100),2);
+            double deltaY = parabolic_a * pow((enemPosition1.getXYVector().x+ 100),2);
             SUBCASE("Parabolic Movement Test")
             {
 
-                CHECK(doctest::Approx(enemPosition2.xypVector().at(0)) == enemPosition1.xypVector().at(0)+100);
-                CHECK(doctest::Approx(enemPosition2.xypVector().at(1)) == deltaY);
-                CHECK(doctest::Approx(enemPosition2.rtpVector().at(2)) == enemPosition1.rtpVector().at(2));
+                CHECK(doctest::Approx(enemPosition2.getXYVector().x) == enemPosition1.getXYVector().x+100);
+                CHECK(doctest::Approx(enemPosition2.getXYVector().y) == deltaY);
+
             }
             count++;
         }

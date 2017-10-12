@@ -7,7 +7,7 @@
 const double SHOOT_DELAY = 0.35; 
 const double SHOOT_SPEED = 150;
 /// Player constructor needs to be reworked too much database implementation is used 
-Player::Player(Vector2D<double>& startPosition, Character playerStats):
+Player::Player(Vector2D& startPosition, Character playerStats):
 _playerStats{playerStats},
 _shootDelay{SHOOT_DELAY}
 {	
@@ -21,7 +21,7 @@ _shootDelay{SHOOT_DELAY}
 	_shootComp = ShootComponent(bulletGraphic, GameObjectType::playerBullet);
 }
 
-Player::Player(Vector2D<double>& startPosition, Character playerStats, GraphicObject playerGraphic, GraphicObject bulletGraphic, xyVector scale):
+Player::Player(Vector2D& startPosition, Character playerStats, GraphicObject playerGraphic, GraphicObject bulletGraphic, xyVector scale):
 PhysicsObject(),
 _playerStats{playerStats},
 _shootDelay{SHOOT_DELAY},
@@ -43,9 +43,9 @@ void Player::Update()
 void Player::move()
 {
 	auto direc = Input::getAxis(Axis::horizontal);
-	auto curPos = _position.rtpVector();
-	curPos[1] += GameTime::getDeltaTime() * _playerStats.getMoveSpeed() * direc;
-	Vector2D<double> newPos{curPos[0], curPos[1], curPos[2], VectorType::rtp};
+	auto curPos = _position.getRTVector();
+	curPos.t += GameTime::getDeltaTime() * _playerStats.getMoveSpeed() * direc;
+	Vector2D newPos{curPos};
     _position = newPos;
 }
 // Checks if the player must shoot
@@ -57,7 +57,7 @@ void Player::ShootConditionalCheck()
 	// a player bullet in the current scene at the specified shootspeed and position
 	if(Input::IsButtonPressed(Keys::space) && _shootDelay.DelayFinished())
 	{
-		Vector2D<double> origin;
+		Vector2D origin;
 		_shootComp.Shoot(origin, _position, SHOOT_SPEED, *_scene);
 		_shootDelay.resetDelay();
 	}

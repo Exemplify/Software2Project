@@ -50,7 +50,7 @@ private:
 	 * @param scale The updated scale of the GameObject
 	 * @return Returns the sprite object that has been updated with a new position and scale
 	 */
-	const sf::Sprite& UpdateSpriteProperties(const Vector2D<double>& position, const xyVector& scale, const string& currentObjectKey);
+	const sf::Sprite& UpdateSpriteProperties(const Vector2D& position, const xyVector& scale, const string& currentObjectKey);
 	/**
 	 * @brief Checks if the SpriteInfo that corresponds to a particular graphic object has already been generated and is being stored in the hash table
 	 * @param correspondingGraphic The Corresponding GraphicObject to the SpriteInfo in the table

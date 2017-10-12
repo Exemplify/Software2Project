@@ -13,19 +13,19 @@ ShootComponent::ShootComponent(std::shared_ptr<Projectile> bullet):
 _bullet{bullet}
 {}
 
-void ShootComponent::Shoot(	Vector2D<double> target,
-	Vector2D<double> startPosition, double shootSpeed, Scene& scene)
+void ShootComponent::Shoot(	Vector2D target,
+	Vector2D startPosition, double shootSpeed, Scene& scene)
 {	
 	// Calculates the shoot direction based off of the target
 	/// can be implemented in a better way with the vector functions
 	auto shotDirec = target - startPosition;
-	auto shotDirecVec = shotDirec.rtpVector();
-	shotDirecVec[0] = 1;
-	auto shotDirecTwo = Vector2D<double>(shotDirecVec, VectorType::rtp);
+	auto shotDirecVec = shotDirec.getRTVector();
+	shotDirecVec.r = 1;
+	shotDirec = Vector2D(shotDirecVec);
 	// Copies the _bullet variable to be instantiated
 	auto bullet = std::make_shared<Projectile>(*_bullet);
 	// Initialises the current bullet with the specific direction and speed
-	bullet->Initialise(startPosition, shotDirecTwo, shootSpeed);
+	bullet->Initialise(startPosition, shotDirec, shootSpeed);
 	// Instantiates the copied bullet
 	scene.Instantiate(bullet);
 }

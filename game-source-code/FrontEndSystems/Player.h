@@ -2,7 +2,7 @@
 #define PLAYER_H
 
 #include "PhysicsObject.h"
-#include "../Vector2D.hpp"
+#include "../Vector2D.h"
 #include <memory>
 #include "Character.h"
 #include "DelayComponent.h"
@@ -25,8 +25,8 @@ public:
 	{
 		_type = GameObjectType::player;
 	}
-	Player(Vector2D<double>& startPosition, Character playerStats);
-    Player(Vector2D<double>& startPosition, Character playerStats, GraphicObject playerGraphic, GraphicObject bulletGraphic, xyVector scale);
+	Player(Vector2D& startPosition, Character playerStats);
+    Player(Vector2D& startPosition, Character playerStats, GraphicObject playerGraphic, GraphicObject bulletGraphic, xyVector scale);
 	// override functions called by external objects
     void Update() override;
     virtual void collisionAction(GameObjectType objectType) override;

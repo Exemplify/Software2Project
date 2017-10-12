@@ -1,20 +1,19 @@
 #include "Boundary.h"
 
-bool Boundary::OutOfBounds(const Vector2D<double>& objectPosition) const
+bool Boundary::OutOfBounds(const Vector2D& objectPosition) const
 {
 	// obtains the x and y components for the positions
-	auto positonVect = objectPosition.xypVector();
+	auto positonVect = objectPosition.getXYVector();
 	// Checks if either of the positions are out of bounds
-	if(CheckxOutofBounds(positonVect.at(0)) || CheckyOutofBounds(positonVect.at(1)))
+	if(CheckxOutofBounds(positonVect.x) || CheckyOutofBounds(positonVect.y))
 		return true;
 	else
 		return false;
 }
-bool Boundary::insideOfBounds(const Vector2D<double>& objectPosition) const
+bool Boundary::insideOfBounds(const Vector2D& objectPosition) const
 {
-	/// Replace with return !OutofBoounds (de morgans theorem)
-	auto positonVect = objectPosition.xypVector();
-	if(!CheckxOutofBounds(positonVect.at(0)) && !CheckyOutofBounds(positonVect.at(1)))
+	auto positonVect = objectPosition.getXYVector();
+	if(!CheckxOutofBounds(positonVect.x) && !CheckyOutofBounds(positonVect.y))
 		return true;
 	else
 		return false;

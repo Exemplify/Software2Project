@@ -4,7 +4,7 @@
 #include <string>
 
 #include "../BackEndSystems/Input.h"
-#include "../Vector2D.hpp"
+#include "../Vector2D.h"
 #include "GraphicObject.h"
 
 class Scene;
@@ -41,8 +41,8 @@ public:
 	GameObject(GraphicObject graphic);
 	GameObject(xyVector scale);
 	GameObject(const GameObject& copyObj);
-	GameObject(Vector2D<double> startingPosition);
-	GameObject(Vector2D<double> startingPosition, xyVector scale, GraphicObject graphicObject);
+	GameObject(Vector2D startingPosition);
+	GameObject(Vector2D startingPosition, xyVector scale, GraphicObject graphicObject);
 	
 	/**
 	 * @brief Update is a virtual method that is used to interface with the Back End System of the Game operations. 
@@ -65,7 +65,7 @@ public:
 	 * @brief get function used to return the Position of the object, used in the collisionDetection calculations and the presentation layer
 	 * @return Returns the Vector2D composition object 
 	 */
-	Vector2D<double> getPosition() const {return _position;}
+	Vector2D getPosition() const {return _position;}
 	/**
 	 * @brief get function used to return the GameObjectType of the object, used in the collisionDetection calculations
 	 * @return Returns the xyVector composition object 
@@ -111,7 +111,7 @@ protected:
 	// Invariance that _type should never be null
 	GameObjectType _type; /**<The GameObjectType representation of the object*/
 	// the Vector space position of the object
-	Vector2D<double> _position; /**<The Vector2D composition used to represent the objects position in the game's Vector space*/
+	Vector2D _position; /**<The Vector2D composition used to represent the objects position in the game's Vector space*/
 	GraphicObject _graphicObject; /**<The GraphicObject composition used to identify the specific Sprite the GameObject*/
 	bool _active = true; /**<Returns the active state of the object, does not get displayed or updated when not active*/
 	

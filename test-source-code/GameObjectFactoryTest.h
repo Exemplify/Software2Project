@@ -3,6 +3,7 @@
 #include "../game-source-code/FrontEndSystems/GraphicObject.h"
 #include "../game-source-code/FrontEndSystems/Player.h"
 #include "../game-source-code/FrontEndSystems/Enemy.h"
+#include "../game-source-code/Vector2D.h"
 
 
 #include "doctest.h"
@@ -25,7 +26,7 @@ TEST_CASE("1.0 Test that the player is constructed correctly by the player facto
 	}
 	SUBCASE("1.3 The player Obejct has the correct starting position")
 	{
-		Vector2D<double> correctStartPos{0,-400, 0};
+		Vector2D correctStartPos{0,-400, 0};
 		CHECK_EQ(playerTest->getPosition(), correctStartPos);
 	}
 	SUBCASE("1.4 The player Object has the correct scale")

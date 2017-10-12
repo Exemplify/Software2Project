@@ -10,10 +10,6 @@
 
 using std::string;
 using graphicObj_ptr = shared_ptr<GraphicObject>;
-/// the current screen size and width for the game, needs to be moved into a database
-const int HALF_SCREEN_WIDTH = 960;
-const int HALF_SCREEN_HEIGHT = 540;
-
 
 /**
  * @brief Constructs the DisplayManager Object with the corresponding RenderWindow, initialises the display thread on construction

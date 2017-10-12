@@ -25,11 +25,14 @@ class DisplayManager
 public:
 	DisplayManager(RenderWindow& renderWindow);
 	/**
-	 * @brief used to intialises the display loop for the game
+	 * @brief used to intialises the display loop for the game inside of a seperate thread
 	 */
 	void InitialiseThread();
-	// destructor required for the standard pointer
-	~DisplayManager() {_dispwindow_ptr = NULL;}
+	/**
+	 * @brief Destructor sets the _displaywindow_ptr to null_ptr
+	 * Doesnt delete the window as other objects may still be using it
+	 */
+	~DisplayManager() {_dispwindow_ptr = nullptr;}
 	
 private:
 	

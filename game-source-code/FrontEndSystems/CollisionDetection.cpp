@@ -53,7 +53,7 @@ void CollisionDetection::checkObjects(shared_ptr<GameObject> gameObj1, shared_pt
     auto PhysicsObject2 = std::dynamic_pointer_cast<PhysicsObject>(gameObj2);
     if (PhysicsObject1 && PhysicsObject2)
     {
-        auto magnitudeBetweenObjectPositions = Vector2D<double>::magnitude(PhysicsObject1->getPosition(),PhysicsObject2->getPosition());
+        auto magnitudeBetweenObjectPositions = Vector2D::magnitude(PhysicsObject1->getPosition(),PhysicsObject2->getPosition());
         auto collisionBoundary = PhysicsObject1->getSize()+PhysicsObject2->getSize();
         
         if(magnitudeBetweenObjectPositions <= collisionBoundary)

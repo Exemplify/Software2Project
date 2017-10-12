@@ -3,7 +3,7 @@
 
 #include "GameObject.h"
 
-#include "../Vector2D.hpp"
+#include "../Vector2D.h"
 #include "MovableObject.h"
 
 /// May not need to inherit from GameObject 
@@ -15,7 +15,7 @@ public:
     {
         _type = GameObjectType::physicsObject;
     }
-    PhysicsObject(double objectSpeed, Vector2D<double> position):
+    PhysicsObject(double objectSpeed, Vector2D position):
     _objectSpeed{objectSpeed}
     {
 		_type = GameObjectType::physicsObject; 

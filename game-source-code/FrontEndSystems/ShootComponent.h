@@ -1,6 +1,6 @@
 #ifndef SHOOT_H
 #define SHOOT_H
-#include "../Vector2D.hpp"
+#include "../Vector2D.h"
 #include "Scene.h"
 #include "Projectile.h"
 
@@ -16,8 +16,8 @@ public:
 	// Creates a projectile in the specified scene with the provided parameters to meet the components
 	/// Scene needs to be moved into the constructor should be the current scene (use of Application Class)
 	void Shoot(
-		Vector2D<double> target,
-		Vector2D<double> startPosition, 
+		Vector2D target,
+		Vector2D startPosition, 
 		double shootSpeed,
 		Scene& scene
 		);

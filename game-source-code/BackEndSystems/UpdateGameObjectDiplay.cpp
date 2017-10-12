@@ -27,7 +27,7 @@ const sf::Sprite& UpdateGameObjectDisplay::DetermineGameObjectChanges(std::share
  * @details Updates the position of the sprite ,retrieved from the hash table, to the corresponding screen position by converting the
  * GameOject's game position to the corresponding screen position and then assigns the scale of the object to sprite
  */
-const sf::Sprite& UpdateGameObjectDisplay::UpdateSpriteProperties(const Vector2D<double>& position, const xyVector& scale, const string& currentObjectKey)
+const sf::Sprite& UpdateGameObjectDisplay::UpdateSpriteProperties(const Vector2D& position, const xyVector& scale, const string& currentObjectKey)
 {
 	// obtains the relative sfml screen position
 	auto currentSpriteInfoHash = _spriteInfoTable.find(currentObjectKey);
@@ -74,7 +74,7 @@ void UpdateGameObjectDisplay::InitialiseSpriteInfo(const GraphicObject& graphicO
 		// Obtains the bounds of the sprite so that the position can be set to
 		// the sprites centre as this is more desirable for this project
 		auto bounds = newSpriteInfo->sprite.getGlobalBounds();
-		auto newOrigin = Vector2f((bounds.width/2),(bounds.height/2));
+		auto newOrigin = sf::Vector2f((bounds.width/2),(bounds.height/2));
 		
 		// Defines the new origin, at the centre of the sprite
 		newSpriteInfo->sprite.setOrigin(newOrigin);

@@ -1,6 +1,6 @@
 #ifndef SCREEN_BOUND_H
 #define SCREEN_BOUND_H
-#include "../Vector2D.hpp"
+#include "../Vector2D.h"
 
 // Default for bounds is the Screen boundary
 /// should be pulled from a database
@@ -26,9 +26,9 @@ public:
 	{}
 
 	// returns true when a position is outside of boundary
-	bool OutOfBounds(const Vector2D<double>& objectPosition) const;
+	bool OutOfBounds(const Vector2D& objectPosition) const;
 	// returns true when a position is inside of the boundary
-	bool insideOfBounds(const Vector2D<double>& objectPosition) const;
+	bool insideOfBounds(const Vector2D& objectPosition) const;
 	
 private:
 	// Checks if y position is out of bounds

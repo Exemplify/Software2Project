@@ -79,20 +79,20 @@ void Enemy::InitialiseStartingPosition()
 void Enemy::InitialiseLinearMovement(const double& angle)
 {
 	const auto PLAYER_LINEAR_MOVE_SPEED = 100;
-	Vector2D<double> startPos{1, angle, 0, VectorType::rtp};
+	Vector2D startPos{1, angle, VectorType::rt};
 	_position = startPos;
 	_enemyStats.setMoveSpeed(PLAYER_LINEAR_MOVE_SPEED);
 }
 
 void Enemy::InitialiseSpiralMovement(const double& angle)
 {
-	Vector2D<double> startPos{1, angle, 0, VectorType::rtp};
+	Vector2D startPos{1, angle, VectorType::rt};
 	_position = startPos;
 	
 }
 void Enemy::InitialiseParabolicMovement()
 {
-	Vector2D<double> startPos{-400, -400, 0, VectorType::xyp};
+	Vector2D startPos{-400, -400, VectorType::xy};
 	_position = startPos;
 }
 
@@ -138,28 +138,28 @@ void Enemy::Shoot()
 	if(_shootDelay.DelayFinished())
 	{
 		_shootDelay.resetDelay();
-		auto target = _position.rtpVector();
-		target[0] += 1;
-		Vector2D<double> targetVec{target, VectorType::rtp};
+		auto target = _position.getRTVector();
+		target.r += 1;
+		Vector2D targetVec{target};
 		_enemyShoot.Shoot(targetVec, _position, SHOOTSPEED, *_scene);
 	}
 }
 
 void Enemy::LinearMove()
 {
-	auto curPos = getPosition().rtpVector();
-	curPos[0] += _enemyStats.getMoveSpeed() * GameTime::getDeltaTime();
-	Vector2D<double> newPos{curPos, VectorType::rtp};
+	auto curPos = getPosition().getRTVector();
+	curPos.r += _enemyStats.getMoveSpeed() * GameTime::getDeltaTime();
+	Vector2D newPos{curPos};
 	_position = newPos;
 }
 void Enemy::SpiralMove()
 {
 	auto PLAYER_ANGULAR_MOVEMENT_SPEED = 180*DEG_2_RAD;
 	auto PLAYER_RADIAL_MOVEMENT_SPEED = 10;
-	auto curPos = getPosition().rtpVector();
-	curPos[0] += PLAYER_RADIAL_MOVEMENT_SPEED * GameTime::getDeltaTime();
-	curPos[1] += PLAYER_ANGULAR_MOVEMENT_SPEED* GameTime::getDeltaTime();
-	Vector2D<double> newPos{curPos, VectorType::rtp};
+	auto curPos = getPosition().getRTVector();
+	curPos.r += PLAYER_RADIAL_MOVEMENT_SPEED * GameTime::getDeltaTime();
+	curPos.t += PLAYER_ANGULAR_MOVEMENT_SPEED* GameTime::getDeltaTime();
+	Vector2D newPos{curPos};
 	
 	_position = newPos;
 }
@@ -167,10 +167,10 @@ void Enemy::ParabolicMove()
 {
 	const auto parabolic_a = -0.002824019;
 	double moveSpeed = 100;
-	auto curPos = getPosition().xypVector();
-	curPos[0] += moveSpeed * GameTime::getDeltaTime();
-	curPos[1] = parabolic_a * pow(curPos[0],2);
-	_position = Vector2D<double>(curPos);
+	auto curPos = getPosition().getXYVector();
+	curPos.x += moveSpeed * GameTime::getDeltaTime();
+	curPos.y = parabolic_a * pow(curPos.x,2);
+	_position = Vector2D(curPos);
 }
 // Function override from PhysicsObject, called by CollisionDetection
 void Enemy::collisionAction(GameObjectType objectType)

@@ -26,14 +26,14 @@ public:
 	virtual void Update() override;
 	// used to define the characteristics of the projectile once is has been created by the copy constructor
 	// this is necessary because the start position of each projectile is always changing
-	void Initialise(Vector2D<double> startingPos, Vector2D<double> direction, double moveSpeed);
+	void Initialise(Vector2D startingPos, Vector2D direction, double moveSpeed);
 	// Override function used to determine when a collision has occured with the specific object types
     virtual void collisionAction(GameObjectType objectType) override;
 	// virtual Destructor
 	virtual ~Projectile() override{}
 private:
 	// Projectile direction
-	Vector2D<double> _direction;
+	Vector2D _direction;
 	/// Need to remove both boundaries, should be passed through the constructor redundant information
 	Boundary _enemyDestroyBounds;
 	Boundary _playerDestroyBounds;

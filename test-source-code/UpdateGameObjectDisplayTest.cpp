@@ -17,7 +17,7 @@ TEST_CASE("1.0 The Sprite graphic is updated correctly according to the GameObje
 	
 	SUBCASE("1.2 The position of the sprite is updated correctly")
 	{
-		Vector2D<double> gamePosition;
+		Vector2D gamePosition;
 		auto testGameObject = std::make_shared<GameObject>(gamePosition);
 		auto testSprite = updateObject.DetermineGameObjectChanges(testGameObject);
 		sf::Vector2f expectedPosition{960, 540};
