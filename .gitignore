@@ -28,8 +28,3 @@
 # Executables
 *.out
 *.app
-
-# Doxygen
-.metadata/
-+html/
-+latex/
