@@ -18,7 +18,7 @@ public:
     PhysicsObject(double objectSpeed, Vector2D<double> position):
     _objectSpeed{objectSpeed}
     {
-		_type=GameObjectType::physicsObject; 
+		_type = GameObjectType::physicsObject; 
 	}
     //Commands
     //set speed of the physics object

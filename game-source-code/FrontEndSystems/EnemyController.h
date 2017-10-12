@@ -1,6 +1,7 @@
 #ifndef ENEMY_CON_H
 #define ENEMY_CON_H
 #include "GameObject.h"
+#include "../BackEndSystems/EnemyFactory.h"
 #include "Enemy.h"
 
 /*
@@ -31,6 +32,7 @@ private:
 	const int MAX_NUMBER_OF_ENEMIES = 10;
 	const double ENEMY_SPAWN_DELAY = 3;
 	double _timeBetweenSpawns;
+	EnemyFactory _enemyFactory;
 	// enemy count tracks the number of enemies spawned into the scene
 	int enemyCount = 0;
 };

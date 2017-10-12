@@ -18,6 +18,7 @@ void GameManager::GameLoop()
 
 	// initialises the display thread
 	DisplayManager _displayThread(_window);
+	_displayThread.InitialiseThread();
     CollisionDetection collisionDetection(&_window);
 
     // The main game loop
@@ -31,8 +32,6 @@ void GameManager::GameLoop()
 		if(activeScene != NULL)
 			activeScene->SceneUpdate();
 		// Checks if Input causes window to be closed
-		/// Put a guard mutex here to ensure no other threads are accessing the gameobject list when the window closes 
-		std::lock_guard<std::mutex> lock(activeScene->_gameObject_list_mutex);
 		if(closeWindow)
 			_window.close();
 	}

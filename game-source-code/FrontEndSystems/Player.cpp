@@ -21,12 +21,13 @@ _shootDelay{SHOOT_DELAY}
 	_shootComp = ShootComponent(bulletGraphic, GameObjectType::playerBullet);
 }
 
-Player::Player(Vector2D<double>& startPosition, Character playerStats, GraphicObject playerGraphic, GraphicObject bulletGraphic):
+Player::Player(Vector2D<double>& startPosition, Character playerStats, GraphicObject playerGraphic, GraphicObject bulletGraphic, xyVector scale):
 PhysicsObject(),
 _playerStats{playerStats},
 _shootDelay{SHOOT_DELAY},
 _shootComp{bulletGraphic, GameObjectType::playerBullet}
 {
+	_scale = scale;
 	_graphicObject = playerGraphic;
 	_type = GameObjectType::player;
     _position = startPosition;

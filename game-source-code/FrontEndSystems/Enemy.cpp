@@ -4,28 +4,19 @@
 #include "../BackEndSystems/GameTime.h"
 #include "EnemyController.h"
 
-
-const double ENEMY_SHOOT_DELAY = 3;
 const auto DEG_2_RAD = 3.141592653589793/180.0;
 
-Enemy::Enemy():
-PhysicsObject(),
-_shootDelay{ENEMY_SHOOT_DELAY, false}
+Enemy::Enemy(xyVector scale, GraphicObject enemyGraphic, GraphicObject bulletGraphic, double colliderSize, double shootDelay):
+_shootDelay{shootDelay, false}
 {
-	_graphicObject = GraphicObject("resources/AdamHabib.png", "enemy");
-	ConstructSpriteInfo();
-	InitialiseObject();
-    _objectSize = 30;
+	_scale = scale;
+	_graphicObject = enemyGraphic;
+	_objectSize = colliderSize;
 	_type = GameObjectType::enemy;
-	
-}
-/// Needs to be moved to a Database
-void Enemy::ConstructSpriteInfo()
-{
-	_scale = xyVector{0.25f,0.25f};
-	GraphicObject bulletGraphic {"resources/SouthAfricanPS.png","enemyBullet"};
 	_enemyShoot = ShootComponent(bulletGraphic, GameObjectType::enemyBullet);
+	InitialiseObject();
 }
+
 
 void Enemy::Update()
 {

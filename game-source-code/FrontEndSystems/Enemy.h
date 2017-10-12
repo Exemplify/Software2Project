@@ -21,8 +21,8 @@ enum class EnemyMoveType
 class Enemy: public PhysicsObject
 {
 public:
-	// Enemy Default constructor initialises class does not need external information
-	Enemy();
+	Enemy(){}
+	Enemy(xyVector scale, GraphicObject enemyGraphic, GraphicObject bulletGraphic, double colliderSize, double shootDelay);
 	// Override Function from GameObject 
 	virtual void Update() override;
 	// Override function from PhysicsObject
@@ -57,7 +57,6 @@ private:
 	/// Movement functions need to be moved into a seperate class 
 	/// sprite information needs to be moved to a database
 	void InitialiseMovementType(const int& randomChanceValue);
-	void ConstructSpriteInfo();
 	void InitialiseStartingPosition();
 	void InitialiseLinearMovement(const double& angle);
 	void InitialiseParabolicMovement();

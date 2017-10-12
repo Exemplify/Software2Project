@@ -8,6 +8,7 @@ std::shared_ptr<GameObject> PlayerFactory::getGameObject()
 	Character playerStats{3,5};
 	GraphicObject playerGraphic{"resources/playerSprite.png", "player"};
 	GraphicObject bulletGraphic{"resources/Rock.png", "playerBullet"};
-	auto player = std::make_shared<Player>(startPosition, playerStats, playerGraphic, bulletGraphic);
+	xyVector scale{0.25f,0.25f};
+	auto player = std::make_shared<Player>(startPosition, playerStats, playerGraphic, bulletGraphic, scale);
 	return player;
 }

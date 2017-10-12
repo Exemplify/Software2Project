@@ -12,7 +12,12 @@
 class GameObjectFactory
 {
 public:
+	/**
+	 * @brief Abstract function used to create the desired class specified by the derived class
+	 * @return Returns the constructed object
+	 */
 	virtual std::shared_ptr<GameObject> getGameObject() = 0;
+
 };
 
 #endif

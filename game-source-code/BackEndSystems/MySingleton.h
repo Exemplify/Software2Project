@@ -6,43 +6,42 @@
 
 using std::shared_ptr;
 
-class SingletonExists{};
 // Singleton class used to ensure only one instance of specific 
 // classes exist at any given time
-class MySingleton
+template<class T>
+class Singleton
 {
 public:
-	static const shared_ptr<MySingleton> getInstance() 
+	
+	virtual static std::shared_ptr<T> getInstance();
 	{
-		shared_ptr<MySingleton> thisInstance(Instance);
-		return thisInstance;
+		if(!_instanceExists)
+		{
+			instanceExists = true;
+			_Instance = std::make_shared<>();
+		}
+		
+		return _Instance;
 	}
-	MySingleton()
+	virtual ~MySingleton()
+private:
+
+	bool checkForInstance()
 	{
-		/* 
-		 * Throws an exception if another singleton class is created 
-		 * the intention behind this is so that it is obvious when a
-		 * second instance is created and can be addressed accordingly 
-		*/
 		if(instanceExists)
 		{
-			throw(SingletonExists());
-			return;
+			return true;
 		}
 		else 
 		{
 			instanceExists = true;
 			Instance = this;
+			return false;
 		}
 	}
-	~MySingleton()
-	{
-		instanceExists = false;
-	}
 	
-protected:
 	static bool instanceExists;
-	static MySingleton* Instance;
+	static std::shared_ptr<T> Instance;
 };
 
 #endif

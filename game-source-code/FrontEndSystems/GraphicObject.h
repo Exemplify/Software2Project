@@ -19,7 +19,6 @@ class GraphicObject
 {
 public:
 	GraphicObject();
-	
 	GraphicObject(const GraphicObject& copy);
 	GraphicObject& operator=(const GraphicObject& rhs);
 	GraphicObject(string textureLocation, string graphicName);

@@ -39,7 +39,7 @@ void EnemyController::SpawnEnemy()
 	/// needs to be updated to use _scene variable from GameObject 
 	auto scene = GameManager::activeScene;
 	// Constructs the enemy object and adds it to the scene
-	std::shared_ptr<GameObject> enemy = std::make_shared<Enemy>();
+	auto enemy = _enemyFactory.getGameObject();
 	scene->Instantiate(enemy);
 	// increases the number of enemies that have been spawned
 	enemyCount++;

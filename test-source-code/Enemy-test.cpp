@@ -1,4 +1,5 @@
 #include "doctest.h"
+#include "../game-source-code/BackEndSystems/EnemyFactory.h"
 #include "../game-source-code/FrontEndSystems/Enemy.h"
 #include "../game-source-code/FrontEndSystems/Scene.h"
 #include "../game-source-code/Vector2D.hpp"
@@ -8,7 +9,9 @@ TEST_CASE("Enemy Random Movement Test"){
     while(count<3)
     {
         count = 2;
-        Enemy enem;
+		EnemyFactory enemyFactory;
+        auto enem_ptr = enemyFactory.getGameObject();
+		auto enem = *std::dynamic_pointer_cast<Enemy>(enem_ptr);
         if (enem.getMoveType() == EnemyMoveType::linear && count == 0)
         {
             auto enemPosition1 = enem.getPosition();

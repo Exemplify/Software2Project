@@ -21,9 +21,7 @@ const int HALF_SCREEN_HEIGHT = 540;
  */
 DisplayManager::DisplayManager(RenderWindow& renderWindow):
 _dispwindow_ptr{&renderWindow}
-{
-	InitialiseThread();
-}
+{}
 
 // Method used within the display thread
 void DisplayManager::renderThread()

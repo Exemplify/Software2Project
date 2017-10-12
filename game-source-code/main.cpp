@@ -5,6 +5,7 @@
 #include "FrontEndSystems/SplashScreen.h"
 #include "FrontEndSystems/SpriteInfo.h"
 #include "BackEndSystems/Input.h"
+#include "BackEndSystems/PlayerFactory.h"
 #include "FrontEndSystems/Player.h"
 #include "Vector2D.hpp"
 #include "FrontEndSystems/Character.h"
@@ -44,14 +45,13 @@ shared_ptr<Scene> SplashScreenFunc()
 
 shared_ptr<Scene> GameSceneFunc()
 {
-
 	shared_ptr<Scene> gameScene{new Scene()};
 	auto gameSceneGraphic = GraphicObject("resources/greathall0_hr.png" ,"gameBackground");
 	auto background = std::make_shared<SplashScreen>(gameSceneGraphic, xyVector(1920.0/914.0,1080.0/569.0));
 	Vector2D<double> playerStart(0,-400,0);
 	Character playerStats{3,5};
-
-	shared_ptr<GameObject> player = std::make_shared<Player>(playerStart, playerStats);
+	PlayerFactory playerFactory;
+	shared_ptr<GameObject> player = playerFactory.getGameObject();
 	shared_ptr<GameObject> EnemyCon = std::make_shared<EnemyController>();
 	
 	gameScene->Instantiate(background);
