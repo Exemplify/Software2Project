@@ -4,16 +4,18 @@
 #include "../BackEndSystems/GameTime.h"
 #include "EnemyController.h"
 
+
 const auto DEG_2_RAD = 3.141592653589793/180.0;
 
-Enemy::Enemy(xyVector scale, GraphicObject enemyGraphic, GraphicObject bulletGraphic, double colliderSize, double shootDelay):
+Enemy::Enemy(xyVector scale, GraphicObject enemyGraphic, double colliderSize, double shootDelay):
 _shootDelay{shootDelay, false}
 {
 	_scale = scale;
 	_graphicObject = enemyGraphic;
 	_objectSize = colliderSize;
 	_type = GameObjectType::enemy;
-	_enemyShoot = ShootComponent(bulletGraphic, GameObjectType::enemyBullet);
+	auto projectileFactory = std::make_shared<EnemyProjectileFactory>();
+	_enemyShoot = ShootComponent(projectileFactory);
 	InitialiseObject();
 }
 

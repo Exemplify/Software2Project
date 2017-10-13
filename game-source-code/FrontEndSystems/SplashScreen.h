@@ -1,5 +1,5 @@
 #ifndef SPLASH_H
-#define SPLAH_H
+#define SPLASH_H
 
 #include "GameObject.h"
 

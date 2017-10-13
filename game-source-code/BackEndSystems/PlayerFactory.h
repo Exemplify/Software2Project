@@ -18,6 +18,7 @@ public:
  * @return Returns the construted player object
  */
 	virtual std::shared_ptr<GameObject> getGameObject() override;
+	virtual ~PlayerFactory() {}
 
 };
 

@@ -2,14 +2,21 @@
 #include <memory>
 #include <iostream>
 #include "FrontEndSystems/Scene.h"
+#include "BackEndSystems/SplashScreenBackgroundFactory.h"
+#include "BackEndSystems/GameScreenBackgroundFactory.h"
+#include "BackEndSystems/LoseScreenBackgroundFactory.h"
+#include "BackEndSystems/WinScreenBackgroundFactory.h"
 #include "FrontEndSystems/SplashScreen.h"
 #include "FrontEndSystems/SpriteInfo.h"
 #include "BackEndSystems/Input.h"
 #include "BackEndSystems/PlayerFactory.h"
+#include "BackEndSystems/EnemyControllerFactory.h"
+
 #include "FrontEndSystems/Player.h"
 #include "Vector2D.h"
 #include "FrontEndSystems/Character.h"
 #include "FrontEndSystems/EnemyController.h"
+
 #include <string>
 using std::shared_ptr;
 
@@ -35,23 +42,23 @@ int main()
 
 shared_ptr<Scene> SplashScreenFunc()
 {
-	
+	SplashScreenBackgroundFactory splashScreenBackgroundFactory;
 	auto splashScene = std::make_shared<Scene>();
-	auto splashScreenGraphic = GraphicObject("resources/MceboDlamini.png" ,"splashScreen");
-	shared_ptr<SplashScreen> background = std::make_shared<SplashScreen>(splashScreenGraphic, xyVector(1,1));
+	auto background = splashScreenBackgroundFactory.getGameObject();
 	splashScene->Instantiate(background);
 	return splashScene;
 }
 
 shared_ptr<Scene> GameSceneFunc()
 {
-	shared_ptr<Scene> gameScene{new Scene()};
-	auto gameSceneGraphic = GraphicObject("resources/greathall0_hr.png" ,"gameBackground");
-	auto background = std::make_shared<SplashScreen>(gameSceneGraphic, xyVector(1920.0/914.0,1080.0/569.0));
+	GameScreenBackgroundFactory gameSceneBackgroundFactory;
 	PlayerFactory playerFactory;
-	shared_ptr<GameObject> player = playerFactory.getGameObject();
-	shared_ptr<GameObject> EnemyCon = std::make_shared<EnemyController>();
-	
+	EnemyControllerFactory enemyControllerFactory;
+	shared_ptr<Scene> gameScene{new Scene()};
+
+	auto player = playerFactory.getGameObject();
+	auto EnemyCon = enemyControllerFactory.getGameObject();
+	auto background = gameSceneBackgroundFactory.getGameObject();
 	gameScene->Instantiate(background);
 	gameScene->Instantiate(player);
 	gameScene->Instantiate(EnemyCon);
@@ -61,8 +68,8 @@ shared_ptr<Scene> GameSceneFunc()
 shared_ptr<Scene> WinScreenFunc()
 {
 	shared_ptr<Scene> splashScene = std::make_shared<Scene>();
-	auto winSceneGraphic = GraphicObject("resources/WinScreen.png" ,"WinScreen");
-	shared_ptr<SplashScreen> background = std::make_shared<SplashScreen>(winSceneGraphic, xyVector(1,1));
+	WinScreenBackgroundFactory winScreenBackgroundFactory;
+	auto background = winScreenBackgroundFactory.getGameObject();
 	splashScene->Instantiate(background);
 	return splashScene;
 }
@@ -70,8 +77,8 @@ shared_ptr<Scene> WinScreenFunc()
 shared_ptr<Scene> LoseScreenFunc()
 {
 	shared_ptr<Scene> splashScene = std::make_shared<Scene>();
-	auto loseSceneGraphic = GraphicObject("resources/LoseScreen.png" ,"LoseScreen");
-	shared_ptr<SplashScreen> background = std::make_shared<SplashScreen>(loseSceneGraphic, xyVector(1,1));
+	LoseScreenBackgroundFactory loseScreenBackgroundFactory;
+	auto background = loseScreenBackgroundFactory.getGameObject();
 	splashScene->Instantiate(background);
 	return splashScene;
 }

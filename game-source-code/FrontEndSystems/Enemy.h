@@ -6,6 +6,7 @@
 #include "ShootComponent.h"
 #include "Boundary.h"
 #include "GraphicObject.h"
+#include "../BackEndSystems/EnemyProjectileFactory.h"
 
 
 enum class EnemyMoveType
@@ -22,7 +23,7 @@ class Enemy: public PhysicsObject
 {
 public:
 	Enemy(){}
-	Enemy(xyVector scale, GraphicObject enemyGraphic, GraphicObject bulletGraphic, double colliderSize, double shootDelay);
+	Enemy(xyVector scale, GraphicObject enemyGraphic, double colliderSize, double shootDelay);
 	// Override Function from GameObject 
 	virtual void Update() override;
 	// Override function from PhysicsObject

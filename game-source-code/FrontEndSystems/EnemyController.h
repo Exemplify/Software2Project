@@ -17,7 +17,7 @@ class EnemyController: public GameObject
 {
 public:
 	// Default construtor
-	EnemyController();
+	EnemyController(unsigned int max_enemies, double enemySpawnDelay);
 	// Update override function
 	virtual void Update() override;
 	// public function that is called by the enemy that has been killed
@@ -29,8 +29,8 @@ private:
 	// Integer that stores the number of enemies killed 
 	int numberOfEnemiesKilled = 0;
 	///delay code needs to moved to a database and a delaycomponent
-	const int MAX_NUMBER_OF_ENEMIES = 10;
-	const double ENEMY_SPAWN_DELAY = 3;
+	const int MAX_NUMBER_OF_ENEMIES;
+	const double ENEMY_SPAWN_DELAY;
 	double _timeBetweenSpawns;
 	EnemyFactory _enemyFactory;
 	// enemy count tracks the number of enemies spawned into the scene

@@ -3,16 +3,14 @@
 #include "../Vector2D.h"
 #include "Scene.h"
 #include "Projectile.h"
+#include "../BackEndSystems/PlayerProjectileFactory.h"
+
 
 class ShootComponent
 {
 public:
-	/// redundant Constructors that do not conform to the class invariance
 	ShootComponent(){}
-	/// will be removed once the Template projectile is set up
-	ShootComponent(GraphicObject bulletGraphic, GameObjectType bulletType);
-	/// correct constructor 
-	ShootComponent(std::shared_ptr<Projectile> bullet);
+	ShootComponent(std::shared_ptr<GameObjectFactory> projectileFactory);
 	// Creates a projectile in the specified scene with the provided parameters to meet the components
 	/// Scene needs to be moved into the constructor should be the current scene (use of Application Class)
 	void Shoot(
@@ -23,7 +21,7 @@ public:
 		);
 private:
 	// the projectile that is copied
-	std::shared_ptr<Projectile> _bullet;
+	std::shared_ptr<GameObjectFactory> _projectileFactory;
 	/// Shot speed needs to be part of the shoot component
 };
 

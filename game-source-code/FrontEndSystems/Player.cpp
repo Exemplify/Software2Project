@@ -1,7 +1,9 @@
 #include "Player.h"
 #include "SpriteInfo.h"
 #include "../BackEndSystems/GameTime.h"
+#include "../BackEndSystems/PlayerProjectileFactory.h"
 #include "Projectile.h"
+
 
 /// Information needs to be stored in a database
 const double SHOOT_DELAY = 0.35; 
@@ -18,20 +20,22 @@ _shootDelay{SHOOT_DELAY}
 	_type = GameObjectType::player;
     _objectSize = 25;
 	GraphicObject bulletGraphic{"resources/Rock.png", "playerBullet"};
-	_shootComp = ShootComponent(bulletGraphic, GameObjectType::playerBullet);
+	auto projectileFactory = std::make_shared<PlayerProjectileFactory>();
+	_shootComp = ShootComponent(projectileFactory);
 }
 
-Player::Player(Vector2D& startPosition, Character playerStats, GraphicObject playerGraphic, GraphicObject bulletGraphic, xyVector scale):
+Player::Player(Vector2D& startPosition, Character playerStats, GraphicObject playerGraphic, xyVector scale):
 PhysicsObject(),
 _playerStats{playerStats},
-_shootDelay{SHOOT_DELAY},
-_shootComp{bulletGraphic, GameObjectType::playerBullet}
+_shootDelay{SHOOT_DELAY}
 {
 	_scale = scale;
 	_graphicObject = playerGraphic;
 	_type = GameObjectType::player;
     _position = startPosition;
     _objectSize = 25;
+	auto projectileFactory = std::make_shared<PlayerProjectileFactory>();
+	_shootComp = ShootComponent(projectileFactory);
 }
 // Each update a check to move and shoot is done
 void Player::Update()

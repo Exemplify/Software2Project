@@ -7,8 +7,7 @@
 #include <SFML/Graphics.hpp>
 #include <unordered_map>
 #include <memory>
-
-
+	
 /**
  * @class FailedToLoadTexture
  * @brief Exception used to indicate a texture that does not exist

@@ -7,8 +7,10 @@
 
 /// will need to be modified to incorporate the delay component
 // Default constructor used to initialise enumerator type
-EnemyController::EnemyController():
-GameObject()
+EnemyController::EnemyController(unsigned int max_enemies, double enemySpawnDelay):
+GameObject(),
+ MAX_NUMBER_OF_ENEMIES{max_enemies},
+ENEMY_SPAWN_DELAY{enemySpawnDelay}
 {
 	_timeBetweenSpawns = ENEMY_SPAWN_DELAY;
 	_type = GameObjectType::enemyController;

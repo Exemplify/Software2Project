@@ -17,6 +17,7 @@ public:
 	 * @return Returns the constructed object
 	 */
 	virtual std::shared_ptr<GameObject> getGameObject() = 0;
+	virtual ~GameObjectFactory() {};
 
 };
 

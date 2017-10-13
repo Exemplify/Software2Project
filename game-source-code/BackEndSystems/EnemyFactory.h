@@ -14,6 +14,7 @@ public:
 	 * @return Returns an Enemy Object with the specific characteristics for this game
 	 */
 	virtual std::shared_ptr<GameObject> getGameObject() override; 
+	virtual ~EnemyFactory() {}
 };
 
 #endif

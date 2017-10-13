@@ -26,7 +26,7 @@ public:
 		_type = GameObjectType::player;
 	}
 	Player(Vector2D& startPosition, Character playerStats);
-    Player(Vector2D& startPosition, Character playerStats, GraphicObject playerGraphic, GraphicObject bulletGraphic, xyVector scale);
+    Player(Vector2D& startPosition, Character playerStats, GraphicObject playerGraphic, xyVector scale);
 	// override functions called by external objects
     void Update() override;
     virtual void collisionAction(GameObjectType objectType) override;
