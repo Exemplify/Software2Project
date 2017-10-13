@@ -6,10 +6,6 @@
 using gameObj_ptr = std::shared_ptr<GameObject>;
 
 
-Scene::Scene(std::vector<gameObj_ptr> gameObjectList):
-_gameObject_list{gameObjectList}
-{}
-
 // Scene Update is run from a gamemanager object within the gameloop 
 // it is called once per frame
 void Scene::SceneUpdate()
@@ -29,7 +25,7 @@ void Scene::SceneUpdate()
 	}
 }
 // returns the game object list
-std::vector<gameObj_ptr> Scene::getGameObjectList() const
+std::list<gameObj_ptr> Scene::getGameObjectList() const
 {
 	return _gameObject_list;
 }
@@ -38,9 +34,7 @@ void Scene::Instantiate(gameObj_ptr gameObj)
 {
 	// sets the scene of the gameobject to the scene that it was added to
 	gameObj->setScene(shared_from_this());
-	/// Seems redundant to do duplicate the game object pointer
-	gameObj_ptr thisGameObj_ptr{gameObj};
-	_gameObject_list.push_back(thisGameObj_ptr);
+	_gameObject_list.push_back(gameObj);
 }
 // Removes the specific gameObject from the current list of gameobjects
 void Scene::DestroyGameObject(gameObj_ptr gameObj)

@@ -1,5 +1,5 @@
 #ifndef WIN_SCREEN_BACK_FAC
-#define WIN c_SCREEN_BACK_FAC
+#define WIN_SCREEN_BACK_FAC
 #include "BackgroundObjectFactory.h"
 
 /**

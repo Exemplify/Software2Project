@@ -1,19 +1,19 @@
-#ifndef SPLASH_SCENE_FAC_H
-#define SPLASH_SCENE_FAC_H
+#ifndef WIN_SCENE_FAC_H
+#define WIN_SCENE_FAC_H
 #include "MenuSceneFactory.h"
 #include "GameObjectFactory.h"
 #include "../FrontEndSystems/GameObject.h"
-#include "SplashScreenBackgroundFactory.h"
+#include "WinScreenBackgroundFactory.h"
 #include <list>
 #include <memory>
 
 
-class SplashSceneFactory: public MenuSceneFactory
+class WinSceneFactory: public MenuSceneFactory
 {
 protected:
 	virtual std::shared_ptr<BackgroundFactory> getFactory() const override
 	{
-		return std::make_shared<SplashScreenBackgroundFactory>();
+		return std::make_shared<WinScreenBackgroundFactory>();
 	}
 };
 
