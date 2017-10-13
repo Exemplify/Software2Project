@@ -12,9 +12,13 @@ TEST_CASE("Scene Successfully Instantiates Objects")
 {
 	auto testScene = std::make_shared<Scene>();
 	auto testgameObj = std::make_shared<GameObject>();
-	testScene->Instantiate(testgameObj);
 	auto retrievedGameObjectlist = testScene->getGameObjectList();
+	CHECK_EQ(retrievedGameObjectlist.size(), 0);
+	testScene->Instantiate(testgameObj);
+	retrievedGameObjectlist = testScene->getGameObjectList();
 	CHECK_EQ(retrievedGameObjectlist.size(), 1);
+	//CHECK_EQ(retrievedGameObjectlist[0], testgameObj);
+	
 }
 
 TEST_CASE("Scene Destroys Objects correctly")

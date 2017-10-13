@@ -20,6 +20,13 @@ struct xyVector
 	x{X},
 	y{Y}
 	{}
+	bool operator==(const xyVector& rhs ) const
+	{
+		if (x == rhs.x && y == rhs.y)
+			return true;
+		else
+			return false;
+	}
     double x;
     double y;
 };

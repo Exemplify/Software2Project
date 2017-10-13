@@ -44,6 +44,8 @@ public:
 	GameObject(Vector2D startingPosition);
 	GameObject(Vector2D startingPosition, xyVector scale, GraphicObject graphicObject);
 	
+//	bool operator==(const GameObject& rhs) const;
+	
 	/**
 	 * @brief Update is a virtual method that is used to interface with the Back End System of the Game operations. 
 	 * @details Update is managed by the scene object which iterates through the list of GameObjects composed within it. For each GameObject the Update function is called once per frame. 

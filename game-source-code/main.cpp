@@ -2,9 +2,9 @@
 #include <memory>
 #include <iostream>
 #include "FrontEndSystems/Scene.h"
-#include "BackEndSystems/SplashScreenBackgroundFactory.h"
-#include "BackEndSystems/GameScreenBackgroundFactory.h"
+#include "BackEndSystems/SplashSceneFactory.h"
 #include "BackEndSystems/LoseScreenBackgroundFactory.h"
+#include "BackEndSystems/GameScreenBackgroundFactory.h"
 #include "BackEndSystems/WinScreenBackgroundFactory.h"
 #include "FrontEndSystems/SplashScreen.h"
 #include "FrontEndSystems/SpriteInfo.h"
@@ -20,14 +20,14 @@
 #include <string>
 using std::shared_ptr;
 
-shared_ptr<Scene> SplashScreenFunc();
 shared_ptr<Scene> GameSceneFunc();
 shared_ptr<Scene> WinScreenFunc();
 shared_ptr<Scene> LoseScreenFunc();
 
 int main()
 {
-	auto splashScene =  SplashScreenFunc();
+	SplashSceneFactory splashSceneFactory;
+	auto splashScene =  splashSceneFactory.getScene();
 	auto gameScene = GameSceneFunc();
 	auto winScene = WinScreenFunc();
 	auto loseScene = LoseScreenFunc();
@@ -38,15 +38,6 @@ int main()
 	gm.AddScene(loseScene);
 	gm.GameLoop();
 	return EXIT_SUCCESS;
-}
-
-shared_ptr<Scene> SplashScreenFunc()
-{
-	SplashScreenBackgroundFactory splashScreenBackgroundFactory;
-	auto splashScene = std::make_shared<Scene>();
-	auto background = splashScreenBackgroundFactory.getGameObject();
-	splashScene->Instantiate(background);
-	return splashScene;
 }
 
 shared_ptr<Scene> GameSceneFunc()

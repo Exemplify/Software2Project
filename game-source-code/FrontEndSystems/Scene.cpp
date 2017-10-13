@@ -5,11 +5,10 @@
 
 using gameObj_ptr = std::shared_ptr<GameObject>;
 
-// Copy constructor used to duplicate each object within the scene
-/// Currently needs to be fixed 
-Scene::Scene(const Scene& rhs)
-{
-}
+
+Scene::Scene(std::vector<gameObj_ptr> gameObjectList):
+_gameObject_list{gameObjectList}
+{}
 
 // Scene Update is run from a gamemanager object within the gameloop 
 // it is called once per frame

@@ -21,8 +21,7 @@ class Scene: public std::enable_shared_from_this<Scene>
 {
 public:
 	Scene(){}
-	// Scene Copy constructor used to duplicate the scene information
-	Scene(const Scene& rhs);
+	Scene(std::vector<gameObj_ptr> gameObjectList);
 	// Runs the Update function within each gameobject
 	void SceneUpdate();
 	// Adds a gameobject to the list objects in the scene

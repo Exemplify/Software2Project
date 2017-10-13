@@ -57,9 +57,7 @@ void GameManager::AddScene(std::shared_ptr<Scene> newScene)
 	{
 		// assigns active scene to the first scene created 
 		activeScene = newScene;
-		// attempts to duplicate the current scene
-		///still needs to be fixed so that the game scene and menu scenes can be reloaded
-		original_activeScene = std::make_shared<Scene>(*newScene);
+
 	}
 	// adds the scene to the list of scenes in the game
 	_game_scenes.push_back(newScene);
@@ -77,8 +75,6 @@ void GameManager::LoadScene(unsigned int index)
 		throw SceneDoesntExist();
 	else
 	{
-		*_game_scenes.at(_scene_index) = *original_activeScene;
-		original_activeScene = std::make_shared<Scene>(*_game_scenes.at(index));
 		activeScene = _game_scenes.at(index);
 		_scene_index = index;
 	}
