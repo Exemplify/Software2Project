@@ -1,0 +1,16 @@
+#ifndef DATA_MAPPER_INTER_H
+#define DATA_MAPPER_INTER_H
+#include <string>
+#include <sstream>
+#include <memory>
+#include "GameData.h"
+#include "DatabaseInterface.h"
+
+class DataMapperInterface
+{
+public:
+	virtual void UpdateGameTimeDatabase(std::shared_ptr<DatabaseInterface> database) = 0;
+	
+	virtual ~DataMapperInterface() = default;
+};
+#endif

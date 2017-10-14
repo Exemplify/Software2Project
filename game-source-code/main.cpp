@@ -1,45 +1,21 @@
 #include "BackEndSystems/GameManager.h"
 #include <memory>
 #include <iostream>
-#include "FrontEndSystems/Scene.h"
-#include "BackEndSystems/SplashSceneFactory.h"
-#include "BackEndSystems/WinSceneFactory.h"
-#include "BackEndSystems/LoseSceneFactory.h"
-#include "BackEndSystems/GameSceneFactory.h"
-#include "BackEndSystems/LoseScreenBackgroundFactory.h"
-#include "BackEndSystems/GameScreenBackgroundFactory.h"
-#include "BackEndSystems/WinScreenBackgroundFactory.h"
-#include "BackEndSystems/SplashScreenBackgroundFactory.h"
-#include "FrontEndSystems/SplashScreen.h"
-#include "FrontEndSystems/SpriteInfo.h"
-#include "BackEndSystems/Input.h"
-#include "BackEndSystems/PlayerFactory.h"
-#include "BackEndSystems/EnemyControllerFactory.h"
-
-#include "FrontEndSystems/Player.h"
-#include "Vector2D.h"
-#include "FrontEndSystems/Character.h"
-#include "FrontEndSystems/EnemyController.h"
-
-#include <string>
-using std::shared_ptr;
+#include "BackEndSystems/Repository.h"
+#include "BackEndSystems/DataMapper.h"
+#include "BackEndSystems/RunTimeDatabase.h"
 
 int main()
 {
-	SplashSceneFactory splashSceneFactory;
-	WinSceneFactory winSceneFactory;
-	LoseSceneFactory loseSceneFactory;
-	GameSceneFactory gameSceneFactory;
-	
-	auto splashScene =  splashSceneFactory.getScene();
-	auto gameScene = gameSceneFactory.getScene();
-	auto winScene = winSceneFactory.getScene();
-	auto loseScene = loseSceneFactory.getScene();
+	auto database = std::make_shared<RunTimeDatabase>();
+	auto dataMapper =  std::make_shared<DataMapper>("game_data/gameobjectdata.txt", "game_data/gamestatedata.txt");
+	auto repository = std::make_shared<Repository>(dataMapper, database);
+	auto gameScenes = repository->getGameScenes();
 	GameManager gm;
-	gm.AddScene(splashScene);
-	gm.AddScene(gameScene);
-	gm.AddScene(winScene);
-	gm.AddScene(loseScene);
+	gm.AddScene(gameScenes[0]);
+	gm.AddScene(gameScenes[1]);
+	gm.AddScene(gameScenes[2]);
+	gm.AddScene(gameScenes[3]);
 	gm.GameLoop();
 	return EXIT_SUCCESS;
 }
