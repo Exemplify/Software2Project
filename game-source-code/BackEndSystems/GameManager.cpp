@@ -4,15 +4,18 @@
 #include <mutex>
 
 std::shared_ptr<Scene> GameManager::activeScene = NULL;
-std::vector<std::shared_ptr<Scene>> GameManager::_game_scenes{};
-std::shared_ptr<Scene> GameManager::original_activeScene = NULL;
+
 
 bool GameManager::closeWindow = false;
-int GameManager::_scene_index = 0;
 class SceneDoesntExist{};
+
+
+
 
 void GameManager::GameLoop()
 {
+	//active_scene
+	activeScene = _game_scenes[_scene_index];
 	// Set-up window to current specifications
 	initialiseWindow(_window);
 
@@ -42,26 +45,13 @@ void GameManager::initialiseWindow(RenderWindow& gameWindow)
 	// Creates the initial sfml window  with settings defined in default Setup
 	gameWindow.create(
 	VideoMode(_defaultSetup.screenWidth,_defaultSetup.screenHeight),
-	_defaultSetup.game_name,
+	_defaultSetup.gameName,
 	_defaultSetup.winStyle);
 	// Sets the game window to be inactive so that the display
 	// can be done in a seperate thread
     gameWindow.setActive(false);
 }
 
-// used to add a scene to the gameManager scene list
-void GameManager::AddScene(std::shared_ptr<Scene> newScene)
-{
-	// checks if any scenes currently exist
-	if (_game_scenes.size() == 0)
-	{
-		// assigns active scene to the first scene created 
-		activeScene = newScene;
-
-	}
-	// adds the scene to the list of scenes in the game
-	_game_scenes.push_back(newScene);
-}
 /// Exit function needs to be moved into Scene or a seperate Application class
 void GameManager::Exit()
 {
@@ -75,10 +65,19 @@ void GameManager::LoadScene(unsigned int index)
 		throw SceneDoesntExist();
 	else
 	{
+		auto originalScenes = _repository->getGameScenes();
+		_game_scenes.at(_scene_index) = originalScenes.at(_scene_index);
 		activeScene = _game_scenes.at(index);
 		_scene_index = index;
 	}
 }
 
 
-
+GameManager::GameManager(std::shared_ptr<RepositioryInterface> repository, int startingSceneindex):
+_repository{repository},
+_defaultSetup{repository->getGameScreenSize().at(0),repository->getGameScreenSize().at(1), repository->getGameName()},
+_game_scenes{repository->getGameScenes()} 
+{
+	_scene_index = startingSceneindex;
+}
+int GameManager::_scene_index = 0;

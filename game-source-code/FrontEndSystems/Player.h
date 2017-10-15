@@ -6,7 +6,7 @@
 #include <memory>
 #include "Character.h"
 #include "DelayComponent.h"
-#include "ShootComponent.h"
+#include "ShootInterface.h"
 #include "GraphicObject.h"
 
 using namespace std;
@@ -39,7 +39,7 @@ private:
 	/// character needs to be adjusted and the additional components pushed into it
 	Character _playerStats;
 	DelayComponent _shootDelay;
-	ShootComponent _shootComp;
+	std::unique_ptr<ShootInterface> _shootComp;
 	// Checks if the conditions for shooting have been met, delay is over and shoot input is pressed
 	void ShootConditionalCheck();
 	

@@ -3,9 +3,10 @@
 #include <time.h>
 #include "../BackEndSystems/GameTime.h"
 #include "EnemyController.h"
+#include "EnemyShoot.h"
 
 
-const auto DEG_2_RAD = 3.141592653589793/180.0;
+const double DEG_2_RAD = 3.141592653589793f/180.0f;
 
 Enemy::Enemy(xyVector scale, GraphicObject enemyGraphic, double colliderSize, double shootDelay):
 _shootDelay{shootDelay, false}
@@ -15,7 +16,7 @@ _shootDelay{shootDelay, false}
 	_objectSize = colliderSize;
 	_type = GameObjectType::enemy;
 	auto projectileFactory = std::make_shared<EnemyProjectileFactory>();
-	_enemyShoot = ShootComponent(projectileFactory);
+	_enemyShoot = std::make_unique<EnemyShoot>();
 	InitialiseObject();
 }
 
@@ -135,7 +136,6 @@ void Enemy::CheckOutsideScreen()
 
 void Enemy::Shoot()
 {
-	const double SHOOTSPEED = 200;
 	_shootDelay.reduceTime();
 	if(_shootDelay.DelayFinished())
 	{
@@ -143,7 +143,7 @@ void Enemy::Shoot()
 		auto target = _position.getRTVector();
 		target.r += 1;
 		Vector2D targetVec{target};
-		_enemyShoot.Shoot(targetVec, _position, SHOOTSPEED, *_scene);
+		_enemyShoot->Shoot(_position , targetVec, _scene);
 	}
 }
 

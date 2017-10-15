@@ -56,6 +56,6 @@ void EnemyController::EnemyKilled()
 	{
 		// Loads the win Screen when all the enemies have been killed
 		const auto WINNING_SCENE = 2;
-		GameManager::LoadScene(WINNING_SCENE);
+		Application::LoadScene(WINNING_SCENE);
 	}
 }

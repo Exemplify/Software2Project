@@ -4,15 +4,16 @@
 #include <memory>
 
 /// Constructor Needs a Database Dependency
-Projectile::Projectile(GraphicObject bulletGraphic, GameObjectType projectileType, xyVector scale):
+Projectile::Projectile(GraphicObject bulletGraphic, GameObjectType projectileType, xyVector scale, double moveSpeed, double colliderSize):
 PhysicsObject(),
 _enemyDestroyBounds{},
 _playerDestroyBounds{PLAYER_PROJECTILE_DESTROY_REGION, PLAYER_PROJECTILE_DESTROY_REGION}
 {
 	_scale = scale;
+	_moveSpeed = moveSpeed;
 	_type = projectileType;
     _graphicObject = bulletGraphic;
-    _objectSize = 5;
+    _objectSize = colliderSize;
 }
 // copy constructor used to duplicate the basic player and enemy projectile stored in the shoot components
 Projectile::Projectile(const Projectile& copyProjectile):
@@ -61,11 +62,10 @@ void Projectile::DestroyEnemyProjectile()
 }
 // Used to initialise the object after the copy constructor is run
 // necessary because the starting position and direction vary frequently
-void Projectile::Initialise(Vector2D startingPos, Vector2D direction, double moveSpeed)
+void Projectile::Initialise(Vector2D startingPos, Vector2D direction)
 {
 	_position = startingPos;
 	_direction = direction;
-	_moveSpeed = moveSpeed;
 }
 // The different responses when colliding with a different object
 /// polymorphism will reduce this complexity

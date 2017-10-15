@@ -33,6 +33,7 @@ std::vector<std::shared_ptr<Scene>> Repository::getGameScenes() const
 
 std::shared_ptr<GameObject> Repository::getGameObjectbyType(GameObjectType objtype) const
 {
+
 	switch(objtype)
 	{
 		case GameObjectType::playerBullet:
@@ -40,6 +41,12 @@ std::shared_ptr<GameObject> Repository::getGameObjectbyType(GameObjectType objty
 			PlayerProjectileFactory objectFactory;
 			return objectFactory.getGameObject(_runtime_database);
 			break;
+		}
+		case GameObjectType::enemyBullet:
+		{
+			EnemyProjectileFactory objectFactory;
+			return objectFactory.getGameObject(_runtime_database);
+			
 		}
 		case GameObjectType::enemy:
 		{
@@ -52,4 +59,15 @@ std::shared_ptr<GameObject> Repository::getGameObjectbyType(GameObjectType objty
 			break;
 		}
 	}
+}
+
+std::vector<unsigned int> Repository::getGameScreenSize() const
+{
+	auto gamestateData = _runtime_database->getGameStateData();
+	return std::vector<unsigned int>{gamestateData.screen_size_x, gamestateData.screen_size_y };
+}
+std::string Repository::getGameName() const
+{
+	auto gamestateData = _runtime_database->getGameStateData();
+	return gamestateData.gameName;
 }

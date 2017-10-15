@@ -3,7 +3,7 @@
 #include "PhysicsObject.h"
 #include "Character.h"
 #include "DelayComponent.h"
-#include "ShootComponent.h"
+#include "ShootInterface.h"
 #include "Boundary.h"
 #include "GraphicObject.h"
 #include "../BackEndSystems/EnemyProjectileFactory.h"
@@ -44,7 +44,7 @@ private:
 	/// Character needs to change
 	Character _enemyStats;
 	/// Enemy Shoot needs to be put into character
-	ShootComponent _enemyShoot;
+	std::unique_ptr<ShootInterface> _enemyShoot;
 	// Boundary object used to detect when the object is outside the screen
 	Boundary _screenBounds;
 	EnemyMoveType _movementType;

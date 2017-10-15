@@ -9,5 +9,5 @@ std::shared_ptr<GameObject> PlayerProjectileFactory::getGameObject(std::shared_p
 	auto objectData = database->getGameObjectData("playerProjectile");
 	auto bulletGraphic = GameObjectDataAdaptor::graphicObjectAdaptor(objectData);
 	auto scale = GameObjectDataAdaptor::ScaleAdaptor(objectData);
-	return std::make_shared<Projectile>(bulletGraphic, bulletType, scale);
+	return std::make_shared<Projectile>(bulletGraphic, bulletType, scale, objectData.move_speed, objectData.collider_size);
 }

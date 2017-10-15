@@ -1,6 +1,7 @@
 #include "SplashScreen.h"
-#include "../BackEndSystems/GameManager.h"
+#include "../BackEndSystems/Application.h"
 #include "../BackEndSystems/Input.h"
+#include "../BackEndSystems/GameManager.h"
 
 /// This needs to be rethought for the use of playing game based on the current Scene
 /// Cound rather be a composition or seperate the control of loading a new scene into a new object
@@ -24,7 +25,7 @@ void SplashScreen::QuitGame()
 // loads the game scene when the current scene is the splashScreen
 void SplashScreen::PlayGame()
 {
-	if(Input::IsButtonPressed(Keys::space)&&GameManager::getScene() == 0 )
-		GameManager::LoadScene(GameSceneIndex);
+	if(Input::IsButtonPressed(Keys::space)&& GameManager::getSceneIndex() != 1)
+		Application::LoadScene(1);
 }
 

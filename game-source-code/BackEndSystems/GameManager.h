@@ -9,48 +9,57 @@
 
 #include "DisplayManager.h"
 #include "EventManager.h"
+#include "RepositoryInterface.h"
 #include "../FrontEndSystems/Scene.h"
+#include "GameTime.h"
 
-using namespace sf;
-using std::string;
-using scene_ptr = std::shared_ptr<Scene>;
 
 // Struct that contains the default settings for the window 
 /// must be moved into a database class
 struct WindowSettings
 {
-    unsigned int screenWidth = 1920;
-	unsigned int screenHeight = 1080;
-	Uint32 winStyle = Style::Default;
-	string game_name = "#FMF";
+	WindowSettings(unsigned int screen_width, unsigned int screen_height, std::string game_name):
+	screenWidth{screen_width},
+	screenHeight{screen_height},
+	gameName{game_name}
+	{}
+    unsigned int screenWidth;
+	unsigned int screenHeight;
+	std::string gameName;
+	Uint32 winStyle = sf::Style::Default;
 };
 // forwared declaration for game time
-class GameTime; 
-/// Needs to be converted into a singleton
+/**
+ * @class GameManager
+ * @brief GameManager is responsible for intialising and maintaining the game state,  and updating the game loop through the composition of different Scene objects that exist within the game, 
+ * it communicates with the EventManager, DisplayManager and CollisionDetection classes regarding the state of the game
+ */
 class GameManager
 {
 public:
 	/// redundant default constructor
-	GameManager() {};
+	GameManager(std::shared_ptr<RepositioryInterface> repository, int startingSceneindex = 0);
 	// The main game loop game only starts when this is called
 	void GameLoop();
 	// the current scene that is being used by the game and the collection of objects insied of it
-	static scene_ptr activeScene;
+	static std::shared_ptr<Scene> activeScene;
 	// Exit is used to close the game
 	static void Exit();
 	// Load Scene is used to change game scenes 
-	static void LoadScene(unsigned int index);
-	// Adds a new scene to the list of scenes available
-	void AddScene(scene_ptr newScene);
+	void LoadScene(unsigned int index);
+	static int getSceneIndex()
+	{
+		return _scene_index;
+	}
+
 	// returns the current scenes index within the vector of scenes 
-	static int getScene() {return _scene_index;}
 	static const bool gameClosed()
 	{return closeWindow;} 
 private:
-	RenderWindow _window;
-	/// convert to unique pointer
-	GameTime* _gameTime;
-	// represents the current scene that the player is in
+	std::shared_ptr<RepositioryInterface> _repository;
+	sf::RenderWindow _window;
+	std::unique_ptr<GameTime> _gameTime;
+	// represents the current scene that the game is in
 	static int _scene_index;
     // Variables
 	WindowSettings _defaultSetup;
@@ -58,12 +67,10 @@ private:
 	static bool closeWindow;
 	EventManager _eventManager;
 	// Scene Objects
-	static std::vector<scene_ptr> _game_scenes;
-	static scene_ptr original_activeScene;
+	std::vector<std::shared_ptr<Scene>> _game_scenes;
 		
-	// Initialises the sfml RenderWindow, specifies the required size and information
-	/// some responsibilites can be moved into the display manager
-    void initialiseWindow(RenderWindow&_gameWindow);
+	// Initialises the sfml RenderWindow, specifies the required size and informatio
+    void initialiseWindow(sf::RenderWindow&_gameWindow);
 };
 
 #endif

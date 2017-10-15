@@ -8,6 +8,7 @@
 #include "LoseSceneFactory.h"
 #include "GameSceneFactory.h"
 #include "PlayerProjectileFactory.h"
+#include "EnemyProjectileFactory.h"
 #include "EnemyFactory.h"
 
 class GameObjectTypeConstructionNotDefined{};
@@ -19,6 +20,8 @@ public:
 	Repository(std::shared_ptr<DataMapperInterface> dataMapper, std::shared_ptr<DatabaseInterface> runtime_database);
 	virtual std::shared_ptr<GameObject> getGameObjectbyType(GameObjectType objtype) const;
 	virtual std::vector<std::shared_ptr<Scene>> getGameScenes() const override;
+	virtual std::vector<unsigned int> getGameScreenSize() const;
+	virtual std::string getGameName() const;
 	
 	virtual ~Repository() = default;
 private:

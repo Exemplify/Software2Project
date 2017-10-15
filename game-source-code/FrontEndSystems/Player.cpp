@@ -3,6 +3,8 @@
 #include "../BackEndSystems/GameTime.h"
 #include "../BackEndSystems/PlayerProjectileFactory.h"
 #include "Projectile.h"
+#include "PlayerShoot.h"
+#include "../BackEndSystems/Application.h"
 
 
 /// Information needs to be stored in a database
@@ -21,7 +23,7 @@ _shootDelay{SHOOT_DELAY}
     _objectSize = 25;
 	GraphicObject bulletGraphic{"resources/Rock.png", "playerBullet"};
 	auto projectileFactory = std::make_shared<PlayerProjectileFactory>();
-	_shootComp = ShootComponent(projectileFactory);
+	_shootComp = nullptr;
 }
 
 Player::Player(Vector2D& startPosition, Character playerStats, GraphicObject playerGraphic, xyVector scale):
@@ -35,7 +37,7 @@ _shootDelay{SHOOT_DELAY}
     _position = startPosition;
     _objectSize = 25;
 	auto projectileFactory = std::make_shared<PlayerProjectileFactory>();
-	_shootComp = ShootComponent(projectileFactory);
+	_shootComp = std::make_unique<PlayerShoot>();
 }
 // Each update a check to move and shoot is done
 void Player::Update()
@@ -62,7 +64,7 @@ void Player::ShootConditionalCheck()
 	if(Input::IsButtonPressed(Keys::space) && _shootDelay.DelayFinished())
 	{
 		Vector2D origin;
-		_shootComp.Shoot(origin, _position, SHOOT_SPEED, *_scene);
+		_shootComp->Shoot( _position, origin, _scene);
 		_shootDelay.resetDelay();
 	}
 }
@@ -73,5 +75,7 @@ void Player::collisionAction(GameObjectType objectType)
 	// if the player collides with the enemy or enemy bullet the player loses and the lose screen is loaded
 	/// Magic Number needs to be removed (can be replaced by an enumerator class or static variable)
     if (objectType == GameObjectType::enemyBullet || objectType == GameObjectType::enemy)
-        GameManager::LoadScene(3);
+	{
+        Application::LoadScene(3);
+	}
 }

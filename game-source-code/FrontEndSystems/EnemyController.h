@@ -27,13 +27,13 @@ private:
 	void SpawnEnemyCountDown();
 	void SpawnEnemy();
 	// Integer that stores the number of enemies killed 
-	int numberOfEnemiesKilled = 0;
+	unsigned int numberOfEnemiesKilled = 0;
 	///delay code needs to moved to a database and a delaycomponent
-	const int MAX_NUMBER_OF_ENEMIES;
+	const unsigned int MAX_NUMBER_OF_ENEMIES;
 	const double ENEMY_SPAWN_DELAY;
 	double _timeBetweenSpawns;
 	EnemyFactory _enemyFactory;
 	// enemy count tracks the number of enemies spawned into the scene
-	int enemyCount = 0;
+	unsigned int enemyCount = 0;
 };
 #endif 
