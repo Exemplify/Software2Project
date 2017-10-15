@@ -3,7 +3,7 @@
 #include "MenuSceneFactory.h"
 #include "GameObjectFactory.h"
 #include "../FrontEndSystems/GameObject.h"
-#include "LoseScreenBackgroundFactory.h"
+#include "BackgroundFactory.h"
 #include <list>
 #include <memory>
 
@@ -13,7 +13,7 @@ class LoseSceneFactory: public MenuSceneFactory
 protected:
 	virtual std::shared_ptr<BackgroundFactory> getFactory() const override
 	{
-		return std::make_shared<LoseScreenBackgroundFactory>();
+		return std::make_shared<BackgroundFactory>("loseScreen");
 	}
 };
 

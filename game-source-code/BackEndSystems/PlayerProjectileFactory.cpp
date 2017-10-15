@@ -1,12 +1,13 @@
 #include "PlayerProjectileFactory.h"
 #include "../FrontEndSystems/Projectile.h"
 #include "../Vector2D.h"
+#include "GameObjectDataAdaptor.h"
 
-std::shared_ptr<GameObject> PlayerProjectileFactory::getGameObject()
+std::shared_ptr<GameObject> PlayerProjectileFactory::getGameObject(std::shared_ptr<DatabaseInterface> database)
 {
 	auto bulletType = GameObjectType::playerBullet;
-	GraphicObject bulletGraphic{"resources/Rock.png", "playerBullet"};
-	xyVector scale{0.035, 0.035};
-	auto projectile = std::make_shared<Projectile>(bulletGraphic, bulletType, scale);
-	return projectile;
+	auto objectData = database->getGameObjectData("playerProjectile");
+	auto bulletGraphic = GameObjectDataAdaptor::graphicObjectAdaptor(objectData);
+	auto scale = GameObjectDataAdaptor::ScaleAdaptor(objectData);
+	return std::make_shared<Projectile>(bulletGraphic, bulletType, scale);
 }

@@ -3,6 +3,7 @@
 
 #include "../FrontEndSystems/GameObject.h"
 #include "../FrontEndSystems/GraphicObject.h"
+#include "DatabaseInterface.h"
 #include <memory>
 
 /**
@@ -16,7 +17,7 @@ public:
 	 * @brief Abstract function used to create the desired class specified by the derived class
 	 * @return Returns the constructed object
 	 */
-	virtual std::shared_ptr<GameObject> getGameObject() = 0;
+	virtual std::shared_ptr<GameObject> getGameObject(std::shared_ptr<DatabaseInterface> database) = 0;
 	virtual ~GameObjectFactory() {};
 
 };

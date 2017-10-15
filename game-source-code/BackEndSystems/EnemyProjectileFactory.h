@@ -13,7 +13,7 @@ public:
 	 * @brief Function call used to create an EnemyProjectile Object 
 	 * @return Returns an An EnemyProjectile Object with the specific characteristics for this game
 	 */
-	virtual std::shared_ptr<GameObject> getGameObject() override;
+	virtual std::shared_ptr<GameObject> getGameObject(std::shared_ptr<DatabaseInterface> database) override;
 };
 
 #endif

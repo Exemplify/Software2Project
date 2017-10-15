@@ -1,17 +1,17 @@
 #include "GameSceneFactory.h"
-#include "GameScreenBackgroundFactory.h"
+#include "BackgroundFactory.h"
 #include "PlayerFactory.h"
 #include "EnemyControllerFactory.h"
 
-std::list<std::shared_ptr<GameObject>> GameSceneFactory::getGameObectList() const
+std::list<std::shared_ptr<GameObject>> GameSceneFactory::getGameObectList(std::shared_ptr<DatabaseInterface> database) const
 {
 	std::list<std::shared_ptr<GameObject>> gameObjectlist;
-	GameScreenBackgroundFactory backgroundFactory;
+	BackgroundFactory backgroundFactory{"gameScreen"};
 	PlayerFactory playerFactory;
 	EnemyControllerFactory enemyControllerFactory;
-	auto backgroundObject = backgroundFactory.getGameObject();
-	auto playerObject = playerFactory.getGameObject();
-	auto enemyControllerObject = enemyControllerFactory.getGameObject();
+	auto backgroundObject = backgroundFactory.getGameObject(database);
+	auto playerObject = playerFactory.getGameObject(database);
+	auto enemyControllerObject = enemyControllerFactory.getGameObject(database);
 	gameObjectlist.push_back(backgroundObject);
 	gameObjectlist.push_back(enemyControllerObject);
 	gameObjectlist.push_back(playerObject);

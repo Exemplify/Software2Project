@@ -3,8 +3,8 @@
 #include "../Vector2D.h"
 #include "Scene.h"
 #include "Projectile.h"
-#include "../BackEndSystems/PlayerProjectileFactory.h"
-
+#include "../BackEndSystems/GameObjectFactory.h"
+#include "../BackEndSystems/Application.h"
 
 class ShootComponent
 {

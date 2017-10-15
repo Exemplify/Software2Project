@@ -1,6 +1,6 @@
 #ifndef SPLASH_SCREEN_BACK_FAC
 #define SPLASH_SCREEN_BACK_FAC
-#include "BackgroundObjectFactory.h"
+#include "BackgroundFactory.h"
 
 /**
  * @class SplashScreenBackgroundFactory

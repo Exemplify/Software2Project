@@ -7,13 +7,15 @@
 //	shared_ptr<DataMapperInterface> _dataMapper;
 //	shared_ptr<DatabaseInterface> _runtime_database;
 
-Repository::Repository(shared_ptr<DataMapperInterface> dataMapper, 
-						shared_ptr<DatabaseInterface> runtime_database):
+Repository::Repository(std::shared_ptr<DataMapperInterface> dataMapper, 
+						std::shared_ptr<DatabaseInterface> runtime_database):
 _dataMapper{dataMapper},
 _runtime_database{runtime_database}
-{}
+{
+	_dataMapper->UpdateGameTimeDatabase(_runtime_database);
+}
 
-std::vector<shared_ptr<Scene>> Repository::getGameScenes()
+std::vector<std::shared_ptr<Scene>> Repository::getGameScenes() const
 {
 	vector<shared_ptr<Scene>> gameScenes_vector;
 	SplashSceneFactory splashSceneFactory;
@@ -21,10 +23,33 @@ std::vector<shared_ptr<Scene>> Repository::getGameScenes()
 	LoseSceneFactory loseSceneFactory;
 	GameSceneFactory gameSceneFactory;
 	
-	gameScenes_vector.push_back(splashSceneFactory.getScene());
-	gameScenes_vector.push_back(gameSceneFactory.getScene());
-	gameScenes_vector.push_back(winSceneFactory.getScene());
-	gameScenes_vector.push_back(loseSceneFactory.getScene());
+	gameScenes_vector.push_back(splashSceneFactory.getScene(_runtime_database));
+	gameScenes_vector.push_back(gameSceneFactory.getScene(_runtime_database));
+	gameScenes_vector.push_back(winSceneFactory.getScene(_runtime_database));
+	gameScenes_vector.push_back(loseSceneFactory.getScene(_runtime_database));
 	
 	return gameScenes_vector;
+}
+
+std::shared_ptr<GameObject> Repository::getGameObjectbyType(GameObjectType objtype) const
+{
+	switch(objtype)
+	{
+		case GameObjectType::playerBullet:
+		{
+			PlayerProjectileFactory objectFactory;
+			return objectFactory.getGameObject(_runtime_database);
+			break;
+		}
+		case GameObjectType::enemy:
+		{
+			EnemyFactory objectFactory;
+			return objectFactory.getGameObject(_runtime_database);
+		}
+		default:
+		{
+			throw GameObjectTypeConstructionNotDefined();
+			break;
+		}
+	}
 }

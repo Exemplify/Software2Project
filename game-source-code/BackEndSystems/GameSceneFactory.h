@@ -7,7 +7,7 @@
 class GameSceneFactory: public SceneFactory
 {
 protected:
-	virtual std::list<std::shared_ptr<GameObject>> getGameObectList() const override;
+	virtual std::list<std::shared_ptr<GameObject>> getGameObectList(std::shared_ptr<DatabaseInterface> database) const override;
 };
 
 #endif 

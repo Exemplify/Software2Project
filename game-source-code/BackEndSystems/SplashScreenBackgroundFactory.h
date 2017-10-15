@@ -1,6 +1,6 @@
 #ifndef LOSE_SCREEN_BACK_FAC
 #define LOSE_SCREEN_BACK_FAC
-#include "BackgroundObjectFactory.h"
+#include "BackgroundFactory.h"
 
 /**
  * @class SplashScreenBackgroundFactory

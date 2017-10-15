@@ -7,18 +7,23 @@
 #include "WinSceneFactory.h"
 #include "LoseSceneFactory.h"
 #include "GameSceneFactory.h"
+#include "PlayerProjectileFactory.h"
+#include "EnemyFactory.h"
 
-using std::shared_ptr;
-using std::vector;
+class GameObjectTypeConstructionNotDefined{};
+
 
 class Repository : public RepositioryInterface
 {
 public:
-	Repository(shared_ptr<DataMapperInterface> dataMapper, shared_ptr<DatabaseInterface> runtime_database);
-	virtual vector<shared_ptr<Scene>> getGameScenes() override;
+	Repository(std::shared_ptr<DataMapperInterface> dataMapper, std::shared_ptr<DatabaseInterface> runtime_database);
+	virtual std::shared_ptr<GameObject> getGameObjectbyType(GameObjectType objtype) const;
+	virtual std::vector<std::shared_ptr<Scene>> getGameScenes() const override;
+	
+	virtual ~Repository() = default;
 private:
-	shared_ptr<DataMapperInterface> _dataMapper;
-	shared_ptr<DatabaseInterface> _runtime_database;
+	std::shared_ptr<DataMapperInterface> _dataMapper;
+	std::shared_ptr<DatabaseInterface> _runtime_database;
 };
 
 

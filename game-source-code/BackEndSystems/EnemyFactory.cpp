@@ -1,18 +1,15 @@
 #include "EnemyFactory.h"
 #include "../FrontEndSystems/Enemy.h"
+#include "GameObjectDataAdaptor.h"
 
 /**
  * @details Creates the required parameters for each object and passes them by value to ensure that the information is copied to the object
  * This is done so that the default object information is not changed.
  */
-std::shared_ptr<GameObject> EnemyFactory::getGameObject()
+std::shared_ptr<GameObject> EnemyFactory::getGameObject(std::shared_ptr<DatabaseInterface> database)
 {
-	xyVector scale{0.25f,0.25f};
-	GraphicObject enemyGraphic("resources/AdamHabib.png", "enemy");
-	double colliderSize = 30;
-	auto enemyShootDelay = 3.0;
-	auto enemy = std::make_shared<Enemy>(scale, enemyGraphic, colliderSize, enemyShootDelay);
-	return enemy;
-
-	
+	auto enemyData = database->getGameObjectData("enemy");
+	auto scale = GameObjectDataAdaptor::ScaleAdaptor(enemyData);
+	auto enemyGraphic = GameObjectDataAdaptor::graphicObjectAdaptor(enemyData);
+	return std::make_shared<Enemy>(scale, enemyGraphic, enemyData.collider_size, enemyData.enemy_shoot_delay);
 }

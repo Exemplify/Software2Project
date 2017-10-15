@@ -13,5 +13,6 @@ public:
 	virtual void setGameStateData(GameStateData gameStateData) = 0;
 	
 	virtual ~DatabaseInterface() = default;
+	
 };
 #endif

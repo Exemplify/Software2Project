@@ -17,7 +17,7 @@ public:
  * @brief Constructs the player object
  * @return Returns the construted player object
  */
-	virtual std::shared_ptr<GameObject> getGameObject() override;
+	virtual std::shared_ptr<GameObject> getGameObject(std::shared_ptr<DatabaseInterface> database) override;
 	virtual ~PlayerFactory() {}
 
 };
