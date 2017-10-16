@@ -3,41 +3,29 @@
 #include "../BackEndSystems/GameManager.h"
 #include <memory>
 
+const double max_distance = 450;
 /// Constructor Needs a Database Dependency
-Projectile::Projectile(GraphicObject bulletGraphic, GameObjectType projectileType, xyVector scale, double moveSpeed, double colliderSize):
+Projectile::Projectile(GraphicObject bulletGraphic, GameObjectType projectileType, xyVector scale, ProjectileMove move, double colliderSize):
 PhysicsObject(),
 _enemyDestroyBounds{},
-_playerDestroyBounds{PLAYER_PROJECTILE_DESTROY_REGION, PLAYER_PROJECTILE_DESTROY_REGION}
+_playerDestroyBounds{PLAYER_PROJECTILE_DESTROY_REGION, PLAYER_PROJECTILE_DESTROY_REGION},
+_moveComp{move},
+_sizeReduction{max_distance, scale, colliderSize}
 {
 	_scale = scale;
-	_moveSpeed = moveSpeed;
 	_type = projectileType;
     _graphicObject = bulletGraphic;
     _objectSize = colliderSize;
 }
-// copy constructor used to duplicate the basic player and enemy projectile stored in the shoot components
-Projectile::Projectile(const Projectile& copyProjectile):
-PhysicsObject()
-{
-	_enemyDestroyBounds = copyProjectile._enemyDestroyBounds;
-	_playerDestroyBounds = copyProjectile._playerDestroyBounds;
-	_graphicObject = copyProjectile._graphicObject;
-	_type = copyProjectile._type;
-	_scale = copyProjectile._scale;
-    _objectSize = copyProjectile._objectSize;
-}
-
 void Projectile::Update()
 {
-	Move();
+	_moveComp.Move(_position);
+	_sizeReduction.ReduceSize(_position, _scale, _objectSize);
 	DestroySelf();
+	
 }
 // Moves the projectile in a specific direction
 /// Needs a moveable component
-void Projectile::Move()
-{
-	_position += _direction * _moveSpeed * GameTime::getDeltaTime();
-}
 /// Destroy Self needs to become virtual and then cascade responsibilities for each type down the tree
 void Projectile::DestroySelf()
 {
@@ -62,10 +50,10 @@ void Projectile::DestroyEnemyProjectile()
 }
 // Used to initialise the object after the copy constructor is run
 // necessary because the starting position and direction vary frequently
-void Projectile::Initialise(Vector2D startingPos, Vector2D direction)
+void Projectile::Initialise(const Vector2D& startingPos, const Vector2D& direction)
 {
 	_position = startingPos;
-	_direction = direction;
+	_moveComp.setDirection(direction);
 }
 // The different responses when colliding with a different object
 /// polymorphism will reduce this complexity

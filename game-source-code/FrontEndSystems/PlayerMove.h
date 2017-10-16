@@ -6,8 +6,8 @@ class PlayerMove : public MovableInterface
 {
 public:
 	PlayerMove(double moveSpeed);
-
 	virtual void Move(Vector2D& currentPosition) override;
+
 private:
 	int determineMoveDirection();
 };

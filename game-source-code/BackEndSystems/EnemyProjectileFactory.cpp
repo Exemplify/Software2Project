@@ -8,5 +8,6 @@ std::shared_ptr<GameObject> EnemyProjectileFactory::getGameObject(std::shared_pt
 	auto bulletType = GameObjectType::enemyBullet;
 	auto bulletGraphic = GameObjectDataAdaptor::graphicObjectAdaptor(objectData);
 	auto scale = GameObjectDataAdaptor::ScaleAdaptor(objectData);
-	return std::make_shared<Projectile>(bulletGraphic, bulletType, scale, objectData.move_speed, objectData.collider_size);
+	auto move = ProjectileMove(objectData.move_speed);
+	return std::make_shared<Projectile>(bulletGraphic, bulletType, scale, move, objectData.collider_size);
 }

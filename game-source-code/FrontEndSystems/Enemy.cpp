@@ -7,9 +7,11 @@
 
 
 const double DEG_2_RAD = 3.141592653589793f/180.0f;
+const double MAX_DISTANCE = 450;
 
 Enemy::Enemy(xyVector scale, GraphicObject enemyGraphic, double colliderSize, double shootDelay):
-_shootDelay{shootDelay, false}
+_shootDelay{shootDelay, false},
+_sizeReduction{MAX_DISTANCE, scale, colliderSize}
 {
 	_scale = scale;
 	_graphicObject = enemyGraphic;
@@ -26,6 +28,7 @@ void Enemy::Update()
 	Move();
 	Shoot();
 	CheckOutsideScreen();
+	_sizeReduction.ReduceSize(_position, _scale, _objectSize);
 }
 /// All movement functions need to be moved into a polymorphic class structure
 void Enemy::InitialiseObject()

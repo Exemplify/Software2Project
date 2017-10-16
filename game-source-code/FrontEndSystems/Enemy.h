@@ -7,6 +7,7 @@
 #include "Boundary.h"
 #include "GraphicObject.h"
 #include "../BackEndSystems/EnemyProjectileFactory.h"
+#include "SizeReduction.h"
 
 
 enum class EnemyMoveType
@@ -49,6 +50,7 @@ private:
 	Boundary _screenBounds;
 	EnemyMoveType _movementType;
 	int _direction;
+	SizeReduction _sizeReduction;
 	
 
 	// used to initialise the different enemy objects and vary the movement styles

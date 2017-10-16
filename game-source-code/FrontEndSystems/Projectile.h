@@ -1,6 +1,8 @@
 #ifndef PROJ_H
 #define PROJ_H
 #include "PhysicsObject.h"
+#include "ProjectileMove.h"
+#include "SizeReduction.h"
 #include "Boundary.h"
 
 /// needs to be moved into a database
@@ -10,23 +12,15 @@ const double PLAYER_PROJECTILE_DESTROY_REGION = 10;
 class Projectile: public PhysicsObject
 {
 public:
-	/// Constructors need to be redesigned 
-	Projectile(){}
 
-	Projectile(GameObjectType projectileType) 
-	{
-		_type = projectileType;
-	}
 	// constructor used to identify whether the gameobject type is an enemy projectile or a player projectile 
 	// with the corresponding graphical information
-	Projectile(GraphicObject bulletGraphic, GameObjectType projectileType, xyVector scale, double moveSpeed, double colliderSize);
-	// copy constructor used by the shoot coponent to create copys of a standard projectile
-	Projectile(const Projectile& copyProjectile);
+	Projectile(GraphicObject bulletGraphic, GameObjectType projectileType, xyVector scale,  ProjectileMove move, double colliderSize);
 	// Overrides Update function for specific responsibilities 
 	virtual void Update() override;
 	// used to define the characteristics of the projectile once is has been created by the copy constructor
 	// this is necessary because the start position of each projectile is always changing
-	void Initialise(Vector2D startingPos, Vector2D direction);
+	void Initialise(const Vector2D& startingPos, const Vector2D& direction);
 	// Override function used to determine when a collision has occured with the specific object types
     virtual void collisionAction(GameObjectType objectType) override;
 	// virtual Destructor
@@ -38,7 +32,8 @@ private:
 	Boundary _enemyDestroyBounds;
 	Boundary _playerDestroyBounds;
 	// projectile movement speed
-	double _moveSpeed;
+	ProjectileMove _moveComp;
+	SizeReduction _sizeReduction;
 	/// should be virtual 
 	void DestroySelf();
 	void Move();
