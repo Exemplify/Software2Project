@@ -1,6 +1,7 @@
 #include "PlayerFactory.h"
 #include "../Vector2D.h"
-#include "../FrontEndSystems/Character.h"
+#include "../FrontEndSystems/PlayerMove.h"
+#include "../FrontEndSystems/PlayerShoot.h"
 #include "GameObjectDataAdaptor.h"
 
 std::shared_ptr<GameObject> PlayerFactory::getGameObject(std::shared_ptr<DatabaseInterface> database)
@@ -9,6 +10,7 @@ std::shared_ptr<GameObject> PlayerFactory::getGameObject(std::shared_ptr<Databas
 	auto startPosition = GameObjectDataAdaptor::PositionAdaptor(playerData);
 	auto scale = GameObjectDataAdaptor::ScaleAdaptor(playerData);
 	auto playerGraphic = GameObjectDataAdaptor::graphicObjectAdaptor(playerData);
-	Character playerStats{3, playerData.move_speed};
-	return std::make_shared<Player>(startPosition, playerStats, playerGraphic, scale);
+	auto playerMove = std::make_shared<PlayerMove>(playerData.move_speed);
+	auto playerShoot = std::make_shared<PlayerShoot>();
+	return std::make_shared<Player>(startPosition, playerGraphic, scale, playerMove, playerShoot);
 }

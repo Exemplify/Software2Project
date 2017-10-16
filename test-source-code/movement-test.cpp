@@ -1,6 +1,6 @@
 #include "doctest.h"
 #include "../game-source-code/Vector2D.h"
-#include "../game-source-code/FrontEndSystems/MovableObject.h"
+#include "../game-source-code/FrontEndSystems/MovableObjectInterface.h"
 #include <iostream>
 
 TEST_CASE("1.1: Move left"){

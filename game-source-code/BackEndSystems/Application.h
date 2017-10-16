@@ -16,6 +16,7 @@ public:
 	static void LoadScene(int index);
 	static void CloseApplication();
 	void RunApplication();
+	static const unsigned int currentSceneIndex();
 private:
 	static std::shared_ptr<RepositioryInterface> _repository;
 	static std::shared_ptr<GameManager> _gameManager;

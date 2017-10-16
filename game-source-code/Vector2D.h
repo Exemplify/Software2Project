@@ -92,14 +92,15 @@ public:
     
     // normalize function
     Vector2D normalize() const;
+	static Vector2D origin;
     
 private:
     //private variables
     xyVector _xyvec;
     rtVector _rtvec;
     
-    //static variable Vector2D _origin
-    static Vector2D _origin;
+    //static variable Vector2D origin
+
     static double magnitude_tolerance;
     
     //private class functions

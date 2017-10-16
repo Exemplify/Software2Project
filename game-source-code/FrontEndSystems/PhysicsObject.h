@@ -4,7 +4,7 @@
 #include "GameObject.h"
 
 #include "../Vector2D.h"
-#include "MovableObject.h"
+#include "MovableInterface.h"
 
 /// May not need to inherit from GameObject 
 class PhysicsObject : public GameObject

@@ -11,8 +11,7 @@
 const double SHOOT_DELAY = 0.35; 
 const double SHOOT_SPEED = 150;
 /// Player constructor needs to be reworked too much database implementation is used 
-Player::Player(Vector2D& startPosition, Character playerStats):
-_playerStats{playerStats},
+Player::Player(Vector2D& startPosition):
 _shootDelay{SHOOT_DELAY}
 {	
 	/// Needs to be stored in a database
@@ -26,10 +25,12 @@ _shootDelay{SHOOT_DELAY}
 	_shootComp = nullptr;
 }
 
-Player::Player(Vector2D& startPosition, Character playerStats, GraphicObject playerGraphic, xyVector scale):
+Player::Player(Vector2D& startPosition, GraphicObject playerGraphic, xyVector scale, 
+				std::shared_ptr<MovableInterface> move, std::shared_ptr<ShootInterface> shoot):
 PhysicsObject(),
-_playerStats{playerStats},
-_shootDelay{SHOOT_DELAY}
+_shootDelay{SHOOT_DELAY},
+_shootComp{shoot},
+_moveComp{move}
 {
 	_scale = scale;
 	_graphicObject = playerGraphic;
@@ -42,17 +43,8 @@ _shootDelay{SHOOT_DELAY}
 // Each update a check to move and shoot is done
 void Player::Update()
 {
-	move();
+	_moveComp->Move(_position);
 	ShootConditionalCheck();
-}
-/// needs to be put into a movement interface
-void Player::move()
-{
-	auto direc = Input::getAxis(Axis::horizontal);
-	auto curPos = _position.getRTVector();
-	curPos.t += GameTime::getDeltaTime() * _playerStats.getMoveSpeed() * direc;
-	Vector2D newPos{curPos};
-    _position = newPos;
 }
 // Checks if the player must shoot
 void Player::ShootConditionalCheck()

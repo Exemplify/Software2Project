@@ -3,7 +3,7 @@
 // Default Constructor
 Vector2D::Vector2D()
 {
-    *this = _origin;
+    *this = origin;
 }
 
 // Scalar Constructor
@@ -198,7 +198,7 @@ Vector2D& Vector2D::operator /= (const double scale)
 // default single input magnitude function
 double Vector2D::magnitude(const Vector2D& lhs)
 {
-    return magnitude(lhs, _origin); // also could return _raduis
+    return magnitude(lhs, origin); // also could return _raduis
 }
 
 
@@ -211,7 +211,7 @@ double Vector2D::magnitude(const Vector2D& lhs, const Vector2D& rhs)
     return temp;
 }
 
-Vector2D Vector2D::_origin{0,0};
+Vector2D Vector2D::origin{0,0};
 double Vector2D::magnitude_tolerance = 0.000000001;
 
 Vector2D Vector2D::normalize() const

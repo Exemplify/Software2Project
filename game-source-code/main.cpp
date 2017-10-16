@@ -13,7 +13,6 @@ int main()
 	const auto repository = std::make_shared<Repository>(dataMapper, database);
 	auto application = std::make_shared<Application>(repository);
 	application->RunApplication(); 
-	
 	return EXIT_SUCCESS;
 }
 

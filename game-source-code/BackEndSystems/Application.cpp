@@ -33,3 +33,7 @@ void Application::RunApplication()
 {
 	_gameManager->GameLoop();
 }
+const unsigned int Application::currentSceneIndex()
+{
+	return _gameManager->getSceneIndex();
+}

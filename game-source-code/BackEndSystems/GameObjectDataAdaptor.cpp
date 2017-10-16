@@ -1,9 +1,5 @@
 #include "GameObjectDataAdaptor.h"
 
-//	static xyVector ScaleAdaptor(const GameObjectData& data);
-//	static Vector2D PositionAdaptor(const GameObjectData& data);
-//	static GraphicObject graphicObjectAdaptor(const GameObjectData& data);
-
 xyVector GameObjectDataAdaptor::ScaleAdaptor(const GameObjectData& data)
 {
 	return xyVector(data.scaleX, data.scaleY);
