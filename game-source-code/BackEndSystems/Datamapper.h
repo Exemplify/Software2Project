@@ -19,6 +19,10 @@ class DataMapper: public DataMapperInterface
 {
 public:
 	DataMapper(std::string gameobject_datafile, std::string gamestate_datafile);
+	/**
+	 * @brief Updates the database provided with information stored by the 
+	 * @param database 
+	 */
 	virtual void UpdateGameTimeDatabase(std::shared_ptr<DatabaseInterface> database) override;
 private:
 	std::string GetIDFromString(const std::string& ID_Line);

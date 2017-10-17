@@ -9,6 +9,10 @@
 class DataMapperInterface
 {
 public:
+	/**
+	 * @brief Updates the runtime database with information obtained from an external source or file
+	 * @param database The database that needs to be updated
+	 */
 	virtual void UpdateGameTimeDatabase(std::shared_ptr<DatabaseInterface> database) = 0;
 	
 	virtual ~DataMapperInterface() = default;
