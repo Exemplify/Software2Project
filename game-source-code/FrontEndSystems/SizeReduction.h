@@ -15,13 +15,9 @@ public:
 	void ReduceSize(const Vector2D& position, xyVector& scale, double& colliderSize)
 	{
 		auto radius = position.getRTVector().r;
-		auto distance_ratio = radius/max_distance;
-		if(distance_ratio < minimumRatio)
-		{
-			distance_ratio = minimumRatio;
-		}
-		if(distance_ratio > 100)
-			distance_ratio = 100;
+		auto distance_ratio = radius/max_distance + minimumRatio;
+		if(distance_ratio > 1)
+			distance_ratio = 1;
 
 		scale.x = max_scale.x * distance_ratio;
 		scale.y = max_scale.y * distance_ratio;
@@ -31,7 +27,7 @@ private:
 	double max_distance;
 	xyVector max_scale;
 	double max_collider_size;
-	const double minimumRatio = 0.15;
+	const double minimumRatio = 0.25;
 };
 
 #endif

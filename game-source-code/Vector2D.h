@@ -93,6 +93,10 @@ public:
     // normalize function
     Vector2D normalize() const;
 	static Vector2D origin;
+	static Vector2D right;
+	static Vector2D left;
+	static Vector2D up;
+	static Vector2D down;
     
 private:
     //private variables

@@ -5,7 +5,7 @@
 
 const double max_distance = 450;
 /// Constructor Needs a Database Dependency
-Projectile::Projectile(GraphicObject bulletGraphic, GameObjectType projectileType, xyVector scale, ProjectileMove move, double colliderSize):
+Projectile::Projectile(GraphicObject bulletGraphic, GameObjectType projectileType, xyVector scale, std::shared_ptr<MovableInterface> move, double colliderSize):
 PhysicsObject(),
 _enemyDestroyBounds{},
 _playerDestroyBounds{PLAYER_PROJECTILE_DESTROY_REGION, PLAYER_PROJECTILE_DESTROY_REGION},
@@ -17,13 +17,14 @@ _sizeReduction{max_distance, scale, colliderSize}
     _graphicObject = bulletGraphic;
     _objectSize = colliderSize;
 }
+
 void Projectile::Update()
 {
-	_moveComp.Move(_position);
+	_moveComp->Move(_position);
 	_sizeReduction.ReduceSize(_position, _scale, _objectSize);
 	DestroySelf();
-	
 }
+
 // Moves the projectile in a specific direction
 /// Needs a moveable component
 /// Destroy Self needs to become virtual and then cascade responsibilities for each type down the tree
@@ -34,6 +35,7 @@ void Projectile::DestroySelf()
 	else
 		DestroyEnemyProjectile();
 }
+
 void Projectile::DestroyPlayerProjectile()
 {
 	if(_playerDestroyBounds.insideOfBounds(_position))
@@ -41,6 +43,7 @@ void Projectile::DestroyPlayerProjectile()
 		Destroy();
 	}
 }
+
 void Projectile::DestroyEnemyProjectile()
 {
 	if(_enemyDestroyBounds.OutOfBounds(_position))
@@ -53,8 +56,9 @@ void Projectile::DestroyEnemyProjectile()
 void Projectile::Initialise(const Vector2D& startingPos, const Vector2D& direction)
 {
 	_position = startingPos;
-	_moveComp.setDirection(direction);
+	_moveComp->setDirection(direction);
 }
+
 // The different responses when colliding with a different object
 /// polymorphism will reduce this complexity
 void Projectile::collisionAction(GameObjectType objectType)

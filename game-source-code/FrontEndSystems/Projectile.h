@@ -1,7 +1,7 @@
 #ifndef PROJ_H
 #define PROJ_H
 #include "PhysicsObject.h"
-#include "ProjectileMove.h"
+#include "MovableInterface.h"
 #include "SizeReduction.h"
 #include "Boundary.h"
 
@@ -15,7 +15,7 @@ public:
 
 	// constructor used to identify whether the gameobject type is an enemy projectile or a player projectile 
 	// with the corresponding graphical information
-	Projectile(GraphicObject bulletGraphic, GameObjectType projectileType, xyVector scale,  ProjectileMove move, double colliderSize);
+	Projectile(GraphicObject bulletGraphic, GameObjectType projectileType, xyVector scale,  std::shared_ptr<MovableInterface> move, double colliderSize);
 	// Overrides Update function for specific responsibilities 
 	virtual void Update() override;
 	// used to define the characteristics of the projectile once is has been created by the copy constructor
@@ -32,7 +32,7 @@ private:
 	Boundary _enemyDestroyBounds;
 	Boundary _playerDestroyBounds;
 	// projectile movement speed
-	ProjectileMove _moveComp;
+	std::shared_ptr<MovableInterface> _moveComp;
 	SizeReduction _sizeReduction;
 	/// should be virtual 
 	void DestroySelf();

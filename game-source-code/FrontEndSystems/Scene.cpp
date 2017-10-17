@@ -32,6 +32,7 @@ std::list<gameObj_ptr> Scene::getGameObjectList() const
 // Adds a GameObject pointer to the current list of gameobjects in the scene
 void Scene::Instantiate(gameObj_ptr gameObj)
 {
+	gameObj->Start();
 	// sets the scene of the gameobject to the scene that it was added to
 	gameObj->setScene(shared_from_this());
 	_gameObject_list.push_back(gameObj);

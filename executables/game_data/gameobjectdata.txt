@@ -1,0 +1,18 @@
+ID player
+0 -400 0.25 0.25 player resources/playerSprite.png 5 25 0.35 0 0 0 0 0 0
+ID enemy
+0 0 0.25 0.25 enemy resources/AdamHabib.png 8 30 0 0 0 0 1.2 200 0
+ID playerProjectile
+0 0 0.035 0.035 playerProjectile resources/Rock.png 230 5 0 0 10 0 0 0 0
+ID enemyProjectile
+0 0 0.1 0.1 enemyProjectile resources/SouthAfricanPS.png 270 5 0 0 0 0 0 0 0
+ID enemyController
+0 0 0 0 Null resources/NullGraphic.png 0 0 0 0 0 1.5 0 0 15
+ID splashScreen
+0 0 1 1 splashScreen resources/MceboDlamini.png 0 0 0 0 0 0 0 0 0
+ID gameScreen
+0 0 2.1 1.898 gameBackground resources/greathall0_hr.png 0 0 0 0 0 0 0 0 0
+ID winScreen
+0 0 1 1 winScreen resources/WinScreen.png 0 0 0 0 0 0 0 0 0
+ID loseScreen
+0 0 1 1 loseScreen resources/LoseScreen.png 0 0 0 0 0 0 0 0 0

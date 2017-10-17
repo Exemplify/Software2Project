@@ -212,6 +212,10 @@ double Vector2D::magnitude(const Vector2D& lhs, const Vector2D& rhs)
 }
 
 Vector2D Vector2D::origin{0,0};
+Vector2D Vector2D::right{1, 0};
+Vector2D Vector2D::left{-1, 0};
+Vector2D Vector2D::up{0, 1};
+Vector2D Vector2D::down{0, -1};
 double Vector2D::magnitude_tolerance = 0.000000001;
 
 Vector2D Vector2D::normalize() const

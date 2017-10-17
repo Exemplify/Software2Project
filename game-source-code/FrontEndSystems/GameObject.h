@@ -45,7 +45,12 @@ public:
 	GameObject(Vector2D startingPosition, xyVector scale, GraphicObject graphicObject);
 	
 //	bool operator==(const GameObject& rhs) const;
-	
+	/**
+	 * @brief Used for initialisation of the objects parameters when it is instantiated.
+	 * @details Start is used to define the various intitialisation parameters that an object may require to be set before it exists inside of the game scene. The Scene Object calls this 
+	 * function when it is instantiated
+	 */
+	virtual void Start() {}
 	/**
 	 * @brief Update is a virtual method that is used to interface with the Back End System of the Game operations. 
 	 * @details Update is managed by the scene object which iterates through the list of GameObjects composed within it. For each GameObject the Update function is called once per frame. 

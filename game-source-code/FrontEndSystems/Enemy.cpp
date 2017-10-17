@@ -98,7 +98,7 @@ void Enemy::InitialiseSpiralMovement(const double& angle)
 }
 void Enemy::InitialiseParabolicMovement()
 {
-	Vector2D startPos{-400, -400, VectorType::xy};
+	Vector2D startPos{-900, -500, VectorType::xy};
 	_position = startPos;
 }
 
@@ -170,7 +170,7 @@ void Enemy::SpiralMove()
 }
 void Enemy::ParabolicMove()
 {
-	const auto parabolic_a = -0.002824019;
+	const auto parabolic_a = -540.0/921600;
 	double moveSpeed = 100;
 	auto curPos = getPosition().getXYVector();
 	curPos.x += moveSpeed * GameTime::getDeltaTime();
