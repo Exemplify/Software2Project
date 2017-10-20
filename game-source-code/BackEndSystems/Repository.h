@@ -18,10 +18,10 @@ class Repository : public RepositioryInterface
 {
 public:
 	Repository(std::shared_ptr<DataMapperInterface> dataMapper, std::shared_ptr<DatabaseInterface> runtime_database);
-	virtual std::shared_ptr<GameObject> getGameObjectbyType(GameObjectType objtype) const;
+	virtual std::shared_ptr<GameObject> getGameObjectbyType(GameObjectType objtype) const override;
 	virtual std::vector<std::shared_ptr<Scene>> getGameScenes() const override;
-	virtual std::vector<unsigned int> getGameScreenSize() const;
-	virtual std::string getGameName() const;
+	virtual std::vector<unsigned int> getGameScreenSize() const override;
+	virtual std::string getGameName() const override;
 	
 	virtual ~Repository() = default;
 private:

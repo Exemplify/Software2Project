@@ -9,9 +9,10 @@
 const double DEG_2_RAD = 3.141592653589793f/180.0f;
 const double MAX_DISTANCE = 450;
 
-Enemy::Enemy(xyVector scale, GraphicObject enemyGraphic, double colliderSize, double shootDelay):
+Enemy::Enemy(xyVector scale, GraphicObject enemyGraphic, double colliderSize, double shootDelay, std::shared_ptr<MovableInterface> moveComp):
 _shootDelay{shootDelay, false},
-_sizeReduction{MAX_DISTANCE, scale, colliderSize}
+_sizeReduction{MAX_DISTANCE, scale, colliderSize},
+_moveComp{moveComp}
 {
 	_scale = scale;
 	_graphicObject = enemyGraphic;
@@ -69,7 +70,7 @@ void Enemy::InitialiseStartingPosition()
 	switch(_movementType)
 	{
 		case EnemyMoveType::linear:
-			InitialiseLinearMovement(randomAngle);
+			_moveComp->setDirection(Vector2D(1,randomAngle, VectorType::rt));
 		break;
 		case EnemyMoveType::spiral:
 			InitialiseSpiralMovement(randomAngle);
@@ -116,7 +117,7 @@ void Enemy::Move()
 	switch(_movementType)
 	{
 		case EnemyMoveType::linear:
-			LinearMove();
+			_moveComp->Move(_position);
 		break;
 		case EnemyMoveType::spiral:
 			SpiralMove();

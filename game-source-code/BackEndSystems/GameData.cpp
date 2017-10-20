@@ -14,7 +14,7 @@ GameObjectData::GameObjectData(
 			double p_pro_dest_reg,
 			double enm_spa_del,
 			double enm_sh_del,
-			double enm_sh_sp,
+			double en_an_sp,
 			unsigned int m_enm):
 PosX{p_x},
 PosY{p_y},
@@ -29,14 +29,14 @@ player_shoot_speed{p_sh_sp},
 player_projectile_destry_region{p_pro_dest_reg},
 enemy_spawn_delay{enm_spa_del},
 enemy_shoot_delay{enm_sh_del},
-enemy_shoot_speed{enm_sh_sp},
+enemy_angular_speed{en_an_sp},
 max_enemies{m_enm}
 {}
 bool GameObjectData::operator==(const GameObjectData& rhs) const
 {
 	return 	collider_size == rhs.collider_size 			&&
 			enemy_shoot_delay == rhs.enemy_shoot_delay 	&&
-			enemy_shoot_speed == rhs.enemy_shoot_speed	&&
+			enemy_angular_speed == rhs.enemy_angular_speed	&&
 			enemy_spawn_delay == rhs.enemy_spawn_delay	&&
 			graphic_location == rhs.graphic_location	&&
 			graphic_name == rhs.graphic_name			&&

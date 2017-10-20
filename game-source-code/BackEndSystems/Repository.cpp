@@ -46,12 +46,6 @@ std::shared_ptr<GameObject> Repository::getGameObjectbyType(GameObjectType objty
 		{
 			EnemyProjectileFactory objectFactory;
 			return objectFactory.getGameObject(_runtime_database);
-			
-		}
-		case GameObjectType::enemy:
-		{
-			EnemyFactory objectFactory;
-			return objectFactory.getGameObject(_runtime_database);
 		}
 		default:
 		{

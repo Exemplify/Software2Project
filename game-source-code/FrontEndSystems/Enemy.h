@@ -8,6 +8,7 @@
 #include "GraphicObject.h"
 #include "../BackEndSystems/EnemyProjectileFactory.h"
 #include "SizeReduction.h"
+#include "MovableInterface.h"
 
 
 enum class EnemyMoveType
@@ -24,7 +25,7 @@ class Enemy: public PhysicsObject
 {
 public:
 	Enemy(){}
-	Enemy(xyVector scale, GraphicObject enemyGraphic, double colliderSize, double shootDelay);
+	Enemy(xyVector scale, GraphicObject enemyGraphic, double colliderSize, double shootDelay, std::shared_ptr<MovableInterface> moveComp);
 	// Override Function from GameObject 
 	virtual void Update() override;
 	// Override function from PhysicsObject
@@ -51,6 +52,7 @@ private:
 	EnemyMoveType _movementType;
 	int _direction;
 	SizeReduction _sizeReduction;
+	std::shared_ptr<MovableInterface> _moveComp;
 	
 
 	// used to initialise the different enemy objects and vary the movement styles

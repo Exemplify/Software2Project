@@ -8,8 +8,9 @@
  */
 std::shared_ptr<GameObject> EnemyFactory::getGameObject(std::shared_ptr<DatabaseInterface> database)
 {
-	auto enemyData = database->getGameObjectData("enemy");
+	auto enemyData = getEnemyData(database);
 	auto scale = GameObjectDataAdaptor::ScaleAdaptor(enemyData);
 	auto enemyGraphic = GameObjectDataAdaptor::graphicObjectAdaptor(enemyData);
-	return std::make_shared<Enemy>(scale, enemyGraphic, enemyData.collider_size, enemyData.enemy_shoot_delay);
+	auto enemyMove = getMovableType(enemyData);
+	return std::make_shared<Enemy>(scale, enemyGraphic, enemyData.collider_size, enemyData.enemy_shoot_delay, enemyMove);
 }

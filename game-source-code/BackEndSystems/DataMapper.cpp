@@ -64,7 +64,7 @@ GameObjectData DataMapper::getObjectDataFromString(const std::string& DataLine)
 	gameObjectData.player_projectile_destry_region = StringConversions::string2double(gameObject_stringData[10]);
 	gameObjectData.enemy_spawn_delay = StringConversions::string2double(gameObject_stringData[11]);
 	gameObjectData.enemy_shoot_delay = StringConversions::string2double(gameObject_stringData[12]);
-	gameObjectData.enemy_shoot_speed = StringConversions::string2double(gameObject_stringData[13]);
+	gameObjectData.enemy_angular_speed = StringConversions::string2double(gameObject_stringData[13]);
 	gameObjectData.max_enemies = StringConversions::string2uint(gameObject_stringData[14]);
 	return gameObjectData;
 	

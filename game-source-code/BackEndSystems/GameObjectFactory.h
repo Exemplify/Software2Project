@@ -19,7 +19,6 @@ public:
 	 */
 	virtual std::shared_ptr<GameObject> getGameObject(std::shared_ptr<DatabaseInterface> database) = 0;
 	virtual ~GameObjectFactory() {};
-
 };
 
 #endif

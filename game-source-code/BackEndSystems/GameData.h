@@ -24,7 +24,7 @@ struct GameObjectData
 	double p_pro_dest_reg,
 	double enm_spa_del,
 	double enm_sh_del,
-	double enm_sh_sp,
+	double enm_an_sp,
 	unsigned int m_enm
 	);
 	bool operator==( const GameObjectData& rhs) const;
@@ -54,7 +54,7 @@ struct GameObjectData
 	// Enemy Informtation 
 	double enemy_spawn_delay;
 	double enemy_shoot_delay;
-	double enemy_shoot_speed;
+	double enemy_angular_speed;
 	unsigned int max_enemies;
 };
 
