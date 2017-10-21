@@ -6,7 +6,6 @@
 #include "Enemy.h"
 
 
-/// will need to be modified to incorporate the delay component
 // Default constructor used to initialise enumerator type
 EnemyController::EnemyController(unsigned int max_enemies, double enemySpawnDelay):
 GameObject(),
@@ -23,34 +22,32 @@ void EnemyController::Update()
 // instantiates an enemy into the current scene after a certain time has passed
 void EnemyController::SpawnEnemyCountDown()
 {
-	_enemySpawnDelay.reduceTime();
 	// ensures that only the maximum number of enemies is spawned
-	if(_timeBetweenSpawns <= 0 && enemyCount < MAX_NUMBER_OF_ENEMIES)
+	if(_enemySpawnDelay.DelayFinished() && enemyCount < MAX_NUMBER_OF_ENEMIES)
 	{
 		// spawns an enemy and resets the delay
 		SpawnEnemy();
-		_timeBetweenSpawns = ENEMY_SPAWN_DELAY;
+		_enemySpawnDelay.resetDelay();
 	}
 }
 
 // adds an enemy object to the current list of gameobjects in the specific scne
 void EnemyController::SpawnEnemy()
 {
-	/// needs to be updated to use _scene variable from GameObject 
-	auto scene = GameManager::activeScene;
 	// Constructs the enemy object and adds it to the scene
 	auto enemy = Application::getGameRepository()->getGameObjectbyTypeDuringRuntime(GameObjectType::enemy);
 	auto enemyCast = std::dynamic_pointer_cast<Enemy>(enemy);
+	// Code should fail if a non enemy is returned
 	assert(enemyCast != nullptr);
 	enemyCast->AssignEnemyController(shared_from_this());
-
-	scene->Instantiate(enemy);
+	_scene->Instantiate(enemy);
 	// increases the number of enemies that have been spawned
 	enemyCount++;
 }
+// Spawns a new enemy as the one that goes out of bounds is destroyed
 void EnemyController::EnemyOutofBounds()
 {
-	enemyCount--;
+	SpawnEnemy();
 }
 // is called by the enemy when it is killed
 void EnemyController::EnemyKilled()

@@ -6,14 +6,17 @@
 
 
 /*
- * Enemy controller is responsible or spawning new enemy objects and monitoring how many 
+ * Enemy controller is responsible for spawning new enemy objects and monitoring how many 
  * enemies have been destroyed, when an enemy is destroyed the enemy controller is notified, 
  * the total number of enemies spawned and destroyed is tracked
  */
- /// loading the next scene needs to be removed from this object and placed into a "SceneController" which is responsible for the
- /// scene state, including win/lose condition checks as well as information about the state of the game, score graphics display etc
- /// Enemy Tracker and Enemy Spawner break up into less responsibilites
- /// needs copy constructor and assignment opperator
+/**
+ * @class EnemyController
+ * @brief Enemy controller is responsible for spawning and monitoring new enemy objects
+ * @details The number of enemies spawned and destroyed is moitored. When an enemy goes out of bounds it is destroyed and created a new.
+ * The enemy objects have access to the EnemyController to communicate with it when they are destroyed by the player and when they leave the bounds of the screen.
+ * If all the enemies have been destroyed the EnemyController changes scenes to the WinScreen 
+ */
 class EnemyController: public GameObject
 {
 public:
@@ -25,12 +28,10 @@ public:
 	void EnemyKilled();
 	void EnemyOutofBounds();
 private:
-	/// Delay code needs to be replaced with a delaycomponent
 	void SpawnEnemyCountDown();
 	void SpawnEnemy();
 	// Integer that stores the number of enemies killed 
 	unsigned int numberOfEnemiesKilled = 0;
-	///delay code needs to moved to a database and a delaycomponent
 	const unsigned int MAX_NUMBER_OF_ENEMIES;
 	DelayComponent _enemySpawnDelay;
 	double _timeBetweenSpawns;

@@ -41,12 +41,13 @@ public:
 		// Constructors //
 	GameObject();
 	GameObject(GraphicObject graphic);
-	GameObject(xyVector scale);
-	GameObject(const GameObject& copyObj);
-	GameObject(Vector2D startingPosition);
-	GameObject(Vector2D startingPosition, xyVector scale, GraphicObject graphicObject);
+	GameObject(const xyVector& scale);
+	GameObject(const Vector2D& startingPosition);
+	GameObject(const Vector2D& startingPosition, const xyVector& scale, const GraphicObject& graphicObject);
 	
-//	bool operator==(const GameObject& rhs) const;
+	// default copy constructor is used the specific instance of scene needs to be shared when copying the game object, it should not create a new one
+	
+	bool operator==(const GameObject& rhs) const;
 	/**
 	 * @brief Used for initialisation of the objects parameters when it is instantiated.
 	 * @details Start is used to define the various intitialisation parameters that an object may require to be set before it exists inside of the game scene. The Scene Object calls this 
@@ -62,8 +63,8 @@ public:
 	
 		// class getters //
 	// The getters are used to ensure that there is a decoupling between sfml and the game logic of the system
-	// the gameObjects do not need to have information about the display manager and gameManger but they require the information 
-	// about the gameobjects. This means getter functions are essential
+	// the gameObjects do not need to have information about the display manager and gameManger but these classes require the information 
+	// about the gameobjects.
 		
 	/**
 	 * @brief get function that allows a client to determine if the GameObject is active
@@ -99,7 +100,6 @@ public:
 	
 		// class setters //
 	
-	// sets the state of the current game object
 	void setActive(bool active_state) {_active = active_state;} 
 	/// needs to be reconsidered only Scene class needs access to this method
 	/// may be worthwhile making a frienship class here to ensure a tightly coupled relationship between scene and gameobject
@@ -110,11 +110,8 @@ public:
 	virtual ~GameObject() = default;
 protected:
 	xyVector _scale; /**<xyVector representing the scale of the object*/
-	// smart pointer to the scene the game object exists in this should not be changed, is an invarient
 	std::shared_ptr<Scene> _scene; /**<The Scene that the object exists in*/
-	// Invariance that _type should never be null
 	GameObjectType _type; /**<The GameObjectType representation of the object*/
-	// the Vector space position of the object
 	Vector2D _position; /**<The Vector2D composition used to represent the objects position in the game's Vector space*/
 	GraphicObject _graphicObject; /**<The GraphicObject composition used to identify the specific Sprite the GameObject*/
 	bool _active = true; /**<Returns the active state of the object, does not get displayed or updated when not active*/
