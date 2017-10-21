@@ -21,14 +21,6 @@ GraphicObject::GraphicObject()
 }
 
 /**
- * @brief Copy Constructor of GraphicObject
- */
-GraphicObject::GraphicObject(const GraphicObject& copy)
-{
-	_textureLocation = copy._textureLocation;
-	_graphicName = copy._graphicName;
-}
-/**
  * @brief Standard Constructor, creates a Graphic Object with the client specified parameters
  * @param textureLocation The texture location for the image that the object uses
  * @param graphicName The name of that corresponds to objects that use the same image

@@ -6,35 +6,21 @@
 #include "../Vector2D.h"
 #include "MovableInterface.h"
 
-/// May not need to inherit from GameObject 
 class PhysicsObject : public GameObject
 {
 public:
-    // Constructor
-    PhysicsObject()
-    {
-        _type = GameObjectType::physicsObject;
-    }
-    PhysicsObject(double objectSpeed, Vector2D position):
-    _objectSpeed{objectSpeed}
-    {
-		_type = GameObjectType::physicsObject; 
-	}
-    //Commands
-    //set speed of the physics object
-    void setSpeed(double newSpeed) {_objectSpeed = newSpeed;}
+
+	PhysicsObject();
+	PhysicsObject(const GameObject& gameObject const double& objectSpeed, const double& objectSize);
+	
+    double getSize();
     
-    //Queries
-    double getSize() {return _objectSize;}
-    
-    virtual void collisionAction(GameObjectType objectType) = 0;
-    
-    //Destructor
-    virtual ~PhysicsObject() {}
+	virtual void collisionAction(GameObjectType objectType) {}
+
+	virtual ~PhysicsObject() = default;
     
 protected:
-    double _objectSpeed;
-    double _objectSize;
+	double _objectSize;
 };
 
 #endif

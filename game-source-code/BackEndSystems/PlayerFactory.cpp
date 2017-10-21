@@ -12,5 +12,5 @@ std::shared_ptr<GameObject> PlayerFactory::getGameObject(std::shared_ptr<Databas
 	auto playerGraphic = GameObjectDataAdaptor::graphicObjectAdaptor(playerData);
 	auto playerMove = std::make_shared<PlayerMove>(playerData.move_speed);
 	auto playerShoot = std::make_shared<BasicShoot>(GameObjectType::playerBullet);
-	return std::make_shared<Player>(startPosition, playerGraphic, scale, playerMove, playerShoot, playerData.collider_size);
+	return std::make_shared<Player>(startPosition, playerGraphic, scale, playerMove, playerShoot, playerData.collider_size, playerData.player_shoot_delay);
 }

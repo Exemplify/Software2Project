@@ -62,7 +62,6 @@ void Enemy::CheckOutsideScreen()
 
 void Enemy::Shoot()
 {
-	_shootDelay.reduceTime();
 	if(_shootDelay.DelayFinished())
 	{
 		_shootDelay.resetDelay();

@@ -16,7 +16,6 @@
 class Enemy: public PhysicsObject
 {
 public:
-	Enemy(){}
 	Enemy(const Vector2D& position, xyVector scale, GraphicObject enemyGraphic, double colliderSize, double shootDelay,
 									const std::shared_ptr<MovableInterface>& moveComp, const std::shared_ptr<ShootInterface>& shootComp);
 	virtual void Start() override; 

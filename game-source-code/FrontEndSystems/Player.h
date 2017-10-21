@@ -20,14 +20,10 @@ using namespace std;
 class Player : public PhysicsObject
 {
 public:
-	
-	Player()
-	{
-		_type = GameObjectType::player;
-	}
-	Player(Vector2D& startPosition);
-    Player(Vector2D& startPosition, GraphicObject playerGraphic, 
-					xyVector scale, std::shared_ptr<MovableInterface> move, std::shared_ptr<ShootInterface> shoot, double objectSize);
+
+    Player(const Vector2D& startPosition, const GraphicObject& playerGraphic, 
+					const xyVector& scale, const std::shared_ptr<MovableInterface>& move, 
+					const std::shared_ptr<ShootInterface>& shoot, const double& objectSize, const double& shootDelay);
 	// override functions called by external objects
     void Update() override;
     virtual void collisionAction(GameObjectType objectType) override;

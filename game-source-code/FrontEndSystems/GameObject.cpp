@@ -6,31 +6,23 @@ GameObject::GameObject():
 _type{GameObjectType::gameObject}
 {}
 
-GameObject::GameObject(Vector2D startingPosition): 
+GameObject::GameObject(const Vector2D& startingPosition): 
 _type{GameObjectType::gameObject},
 _position{startingPosition}
 {}
-GameObject::GameObject(GraphicObject graphic):
+GameObject::GameObject(const GraphicObject& graphic):
 _graphicObject{graphic}
 {}
-GameObject::GameObject(xyVector scale):
+GameObject::GameObject(const xyVector& scale):
 _scale{scale}
 {}
-GameObject::GameObject(Vector2D startingPosition, xyVector scale, GraphicObject graphicObject):
+GameObject::GameObject(const Vector2D& startingPosition, const xyVector& scale, const GraphicObject& graphicObject):
 _scale{scale},
 _type{GameObjectType::gameObject},
 _position{startingPosition},
 _graphicObject{graphicObject}
 {}
 
-bool GameObject::operator==(const GameObject& rhs) const
-{
-	_scale == rhs._scale;
-	_position == rhs.position;
-	_graphicObject == rhs._graphicObject;
-	_scene == rhs._scenes;
-	_active == rhs._active;
-}
 // Removes the gameobject from the scene that it exists in
 void GameObject::Destroy()
 {

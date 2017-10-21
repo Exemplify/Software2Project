@@ -15,7 +15,6 @@ class DestroyedObjectOutsideScene{};
 // determine when a specific collision has occured
 
 
-
 enum class GameObjectType
 {
 	gameObject,
@@ -38,16 +37,15 @@ enum class GameObjectType
 class GameObject: public std::enable_shared_from_this<GameObject>
 {
 public:
-		// Constructors //
+	// Constructors //
 	GameObject();
-	GameObject(GraphicObject graphic);
+	GameObject(const GraphicObject& graphic);
 	GameObject(const xyVector& scale);
 	GameObject(const Vector2D& startingPosition);
 	GameObject(const Vector2D& startingPosition, const xyVector& scale, const GraphicObject& graphicObject);
 	
 	// default copy constructor is used the specific instance of scene needs to be shared when copying the game object, it should not create a new one
 	
-	bool operator==(const GameObject& rhs) const;
 	/**
 	 * @brief Used for initialisation of the objects parameters when it is instantiated.
 	 * @details Start is used to define the various intitialisation parameters that an object may require to be set before it exists inside of the game scene. The Scene Object calls this 
@@ -81,9 +79,6 @@ public:
 	 * @return Returns the xyVector composition object 
 	 */
 	GameObjectType getType() const {return _type;}
-	/// Possibly Redundant
-	std::shared_ptr<Scene> getScene() const {return _scene;}
-	
 	/**
 	 * @brief get function used to return the scale of the object, used in the presentation layer
 	 * @return Returns the xyVector composition object 
