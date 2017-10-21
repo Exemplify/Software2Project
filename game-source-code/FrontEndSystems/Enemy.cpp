@@ -50,10 +50,6 @@ Vector2D Enemy::GenerateRandomMoveDirection()
 	return Vector2D(1, angle, VectorType::rt);
 }
 
-void Enemy::Move()
-{
-
-}
 
 void Enemy::CheckOutsideScreen()
 {

@@ -1,16 +1,14 @@
 #include "CollisionDetection.h"
-#include "../BackEndSystems/GameManager.h"
-#include "PhysicsObject.h"
+#include "GameManager.h"
+#include "../FrontEndSystems/PhysicsObject.h"
 #include <mutex>
 #include <thread>
 
 CollisionDetection::CollisionDetection(RenderWindow* dispWindow):
 _dispwindow_ptr(dispWindow)
-{
-	initializeCollisionThread();
-}
+{}
 
-void CollisionDetection::initializeCollisionThread()
+void CollisionDetection::InitializeCollisionThread()
 {
     std::thread collisionThread(&CollisionDetection::runCollisionThread, this);
     collisionThread.detach();
@@ -23,22 +21,23 @@ void CollisionDetection::runCollisionThread()
         checkCollisions();
     }
 }
-
+/**
+ * @details It is necesary to iterate through each element and compare it with every other element, each coparison only needs to be done once. This is achieved by 
+ * starting from the first element (assuming it is the most left element) it compares itself to all elements to the right of it not including itself. This process is repeated
+ * and ensures that no elements are compared with each other more than once, this is done till the element reaches the second last element of the container. It is safe to assume that 
+ * each element has already been compared to the last one.
+ */
 void CollisionDetection::checkCollisions()
 {
     auto _activeScene = GameManager::activeScene;
     std::lock_guard<std::mutex> lock(_activeScene->_gameObject_list_mutex);
     auto tempGameObjList = _activeScene->getGameObjectList();
-//    vector<std::shared_ptr<PhysicsObject>> physObj_prtVec;
-//    transform(tempGameObjList.begin(), tempGameObjList.end(), physObj_ptrVec.begin(), std::dynamic_pointer_cast<PhysicsObject>);
-    for(auto gameObj1 : tempGameObjList)
+
+    for(auto idx1 = tempGameObjList.begin(); idx1 != std::prev(tempGameObjList.end()); idx1++)
     {
-        for(auto gameObj2 : tempGameObjList)
+        for(auto idx2 = ++idx1; idx2 != tempGameObjList.end(); idx2++)
         {
-            if(gameObj1 == gameObj2)
-                continue;
-            else
-                checkObjects(gameObj1, gameObj2);
+			checkObjects(*idx1, *idx2);
         }
     }
     
@@ -46,9 +45,9 @@ void CollisionDetection::checkCollisions()
 
 void CollisionDetection::checkObjects(shared_ptr<GameObject> gameObj1, shared_ptr<GameObject> gameObj2)
 {
-    if(!gameObj1->isActive() || !gameObj2->isActive())
+    if(!gameObj1->isActive() || !gameObj2->isActive() || GameManager::gameClosed())
         return;
-        
+	
     auto PhysicsObject1 = std::dynamic_pointer_cast<PhysicsObject>(gameObj1);
     auto PhysicsObject2 = std::dynamic_pointer_cast<PhysicsObject>(gameObj2);
     if (PhysicsObject1 && PhysicsObject2)
@@ -59,6 +58,7 @@ void CollisionDetection::checkObjects(shared_ptr<GameObject> gameObj1, shared_pt
         if(magnitudeBetweenObjectPositions <= collisionBoundary)
 		{
 			PhysicsObject1->collisionAction(PhysicsObject2->getType());
+			PhysicsObject2->collisionAction(PhysicsObject1->getType());
 		}
     }
 }

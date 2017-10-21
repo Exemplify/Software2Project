@@ -1,7 +1,6 @@
 #ifndef ENEM_H
 #define ENEM_H
 #include "PhysicsObject.h"
-#include "Character.h"
 #include "DelayComponent.h"
 #include "ShootInterface.h"
 #include "Boundary.h"

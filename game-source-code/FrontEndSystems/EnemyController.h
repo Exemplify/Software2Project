@@ -1,6 +1,7 @@
 #ifndef ENEMY_CON_H
 #define ENEMY_CON_H
 #include "GameObject.h"
+#include "DelayComponent.h"
 #include <memory>
 
 
@@ -31,7 +32,7 @@ private:
 	unsigned int numberOfEnemiesKilled = 0;
 	///delay code needs to moved to a database and a delaycomponent
 	const unsigned int MAX_NUMBER_OF_ENEMIES;
-	const double ENEMY_SPAWN_DELAY;
+	DelayComponent _enemySpawnDelay;
 	double _timeBetweenSpawns;
 	// enemy count tracks the number of enemies spawned into the scene
 	unsigned int enemyCount = 0;

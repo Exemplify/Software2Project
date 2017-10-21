@@ -10,14 +10,9 @@
 class DelayComponent
 {
 public:
-	/// default constructor should be removed
-	DelayComponent(){}
 	// takes in a value for the delay time and immediate use which identifies whether 
 	// the delayFinished check can be used immediately on initialisation or if the delay needs to complete first
-	/// immediateUse should be renamed to delayFinished
-	DelayComponent(double value, bool immediateUse = false);
-	// Reduces the delay time by deltaTime each time it is called
-	void reduceTime();
+	DelayComponent(double value, bool InitialUseBeforeDelay = false);
 	// Returns true if the delay has finished
 	bool DelayFinished();
 	// resets the delay so to the original value
@@ -28,10 +23,10 @@ private:
 	double _currentValue;
 	// The original value of the delay
 	double _delayValue;
-	// the boolean stored for whether the delay has finished
-	/// redundant can be replaced in the delay finished function call by the boolean check
-	/// repeats code by using multiple if statements that check the same thing 
+	// the boolean stored for whether the delay has finished, used to allow immediateUse
 	bool _delayFinished;
+	// Reduces the delay time by deltaTime each time it is called
+	void reduceTime();
 };
 
 #endif

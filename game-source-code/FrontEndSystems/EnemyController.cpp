@@ -1,5 +1,4 @@
 #include "EnemyController.h"
-#include "Character.h"
 #include "../BackEndSystems/GameManager.h"
 #include "../BackEndSystems/GameTime.h"
 #include <memory>
@@ -12,9 +11,8 @@
 EnemyController::EnemyController(unsigned int max_enemies, double enemySpawnDelay):
 GameObject(),
  MAX_NUMBER_OF_ENEMIES{max_enemies},
-ENEMY_SPAWN_DELAY{enemySpawnDelay}
+_enemySpawnDelay{enemySpawnDelay}
 {
-	_timeBetweenSpawns = ENEMY_SPAWN_DELAY;
 	_type = GameObjectType::enemyController;
 }
 void EnemyController::Update()
@@ -25,9 +23,7 @@ void EnemyController::Update()
 // instantiates an enemy into the current scene after a certain time has passed
 void EnemyController::SpawnEnemyCountDown()
 {
-	/// needs to be replaced with delay functions
-	auto deltaTime = GameTime::getDeltaTime();
-	_timeBetweenSpawns -= deltaTime;
+	_enemySpawnDelay.reduceTime();
 	// ensures that only the maximum number of enemies is spawned
 	if(_timeBetweenSpawns <= 0 && enemyCount < MAX_NUMBER_OF_ENEMIES)
 	{

@@ -11,6 +11,7 @@ _delayFinished{immediateUse}
 // Checks if the delay is complete
 bool DelayComponent::DelayFinished()
 {
+	reduceTime();
 	return _delayFinished;
 }
 // Reduces the time until the delay is finished
@@ -21,7 +22,6 @@ void DelayComponent::reduceTime()
 		_delayFinished = true;
 }
 // Resets the delay to its original value
-/// should and a default argument that can be changed to change the delay rate
 void DelayComponent::resetDelay()
 {
 	_currentValue = _delayValue;

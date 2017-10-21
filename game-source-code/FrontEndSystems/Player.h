@@ -4,7 +4,6 @@
 #include "PhysicsObject.h"
 #include "../Vector2D.h"
 #include <memory>
-#include "Character.h"
 #include "DelayComponent.h"
 #include "ShootInterface.h"
 #include "GraphicObject.h"

@@ -1,5 +1,19 @@
 #include "Boundary.h"
 
+// default boundary is set to the screen bounds 
+Boundary::Boundary()
+{
+	auto gameRepo = Application::getGameRepository();
+	auto gameData = gameRepo->getGameScreenSize();
+	_xBound = gameData[0]/2;
+	_yBound = gameData[1]/2;
+}
+// constructor that uses the defined bounds for the boundary
+Boundary::Boundary(double xbound, double ybound):
+_xBound{xbound},
+_yBound{ybound}
+{}
+
 bool Boundary::OutOfBounds(const Vector2D& objectPosition) const
 {
 	// obtains the x and y components for the positions
@@ -12,11 +26,7 @@ bool Boundary::OutOfBounds(const Vector2D& objectPosition) const
 }
 bool Boundary::insideOfBounds(const Vector2D& objectPosition) const
 {
-	auto positonVect = objectPosition.getXYVector();
-	if(!CheckxOutofBounds(positonVect.x) && !CheckyOutofBounds(positonVect.y))
-		return true;
-	else
-		return false;
+	return !OutOfBounds(objectPosition);
 }
 
 bool Boundary::CheckxOutofBounds(double xPos) const
