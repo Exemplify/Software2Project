@@ -65,7 +65,8 @@ GameObjectData DataMapper::getObjectDataFromString(const std::string& DataLine)
 	gameObjectData.enemy_spawn_delay = StringConversions::string2double(gameObject_stringData[11]);
 	gameObjectData.enemy_shoot_delay = StringConversions::string2double(gameObject_stringData[12]);
 	gameObjectData.enemy_angular_speed = StringConversions::string2double(gameObject_stringData[13]);
-	gameObjectData.max_enemies = StringConversions::string2uint(gameObject_stringData[14]);
+	gameObjectData.parabolic_coeff = StringConversions::string2double(gameObject_stringData[14]);
+	gameObjectData.max_enemies = StringConversions::string2uint(gameObject_stringData[15]);
 	return gameObjectData;
 	
 

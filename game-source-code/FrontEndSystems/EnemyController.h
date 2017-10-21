@@ -1,7 +1,8 @@
 #ifndef ENEMY_CON_H
 #define ENEMY_CON_H
 #include "GameObject.h"
-#include "Enemy.h"
+#include <memory>
+
 
 /*
  * Enemy controller is responsible or spawning new enemy objects and monitoring how many 
@@ -21,6 +22,7 @@ public:
 	virtual void Update() override;
 	// public function that is called by the enemy that has been killed
 	void EnemyKilled();
+	void EnemyOutofBounds();
 private:
 	/// Delay code needs to be replaced with a delaycomponent
 	void SpawnEnemyCountDown();

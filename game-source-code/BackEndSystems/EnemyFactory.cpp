@@ -1,5 +1,6 @@
 #include "EnemyFactory.h"
 #include "../FrontEndSystems/Enemy.h"
+#include "../FrontEndSystems/BasicShoot.h"
 #include "GameObjectDataAdaptor.h"
 
 /**
@@ -9,8 +10,14 @@
 std::shared_ptr<GameObject> EnemyFactory::getGameObject(std::shared_ptr<DatabaseInterface> database)
 {
 	auto enemyData = getEnemyData(database);
+	auto startingPosition = getStartingPosition(enemyData);
 	auto scale = GameObjectDataAdaptor::ScaleAdaptor(enemyData);
 	auto enemyGraphic = GameObjectDataAdaptor::graphicObjectAdaptor(enemyData);
 	auto enemyMove = getMovableType(enemyData);
-	return std::make_shared<Enemy>(scale, enemyGraphic, enemyData.collider_size, enemyData.enemy_shoot_delay, enemyMove);
+	auto enemyShoot = std::make_shared<BasicShoot>(GameObjectType::enemyBullet);
+	return std::make_shared<Enemy>(startingPosition,scale, enemyGraphic, enemyData.collider_size, enemyData.enemy_shoot_delay, enemyMove, enemyShoot);
+}
+Vector2D EnemyFactory::getStartingPosition(const GameObjectData& data)
+{
+	return Vector2D::origin;
 }

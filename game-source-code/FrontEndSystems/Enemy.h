@@ -9,14 +9,7 @@
 #include "../BackEndSystems/EnemyProjectileFactory.h"
 #include "SizeReduction.h"
 #include "MovableInterface.h"
-
-
-enum class EnemyMoveType
-{
-	linear,
-	parabolic,
-	spiral
-};
+#include "EnemyController.h"
 
 /// Needs to be changed into a polymorphic interaction where different characters define different movement types
 /// requires a large amount of redesign for a better implementation
@@ -25,14 +18,14 @@ class Enemy: public PhysicsObject
 {
 public:
 	Enemy(){}
-	Enemy(xyVector scale, GraphicObject enemyGraphic, double colliderSize, double shootDelay, std::shared_ptr<MovableInterface> moveComp);
+	Enemy(const Vector2D& position, xyVector scale, GraphicObject enemyGraphic, double colliderSize, double shootDelay,
+									const std::shared_ptr<MovableInterface>& moveComp, const std::shared_ptr<ShootInterface>& shootComp);
+	virtual void Start() override; 
 	// Override Function from GameObject 
 	virtual void Update() override;
 	// Override function from PhysicsObject
     virtual void collisionAction(GameObjectType objectType) override;
-	
-    EnemyMoveType getMoveType() const {return _movementType;}
-	
+	void AssignEnemyController(const std::shared_ptr<GameObject>& enemyController);
 private:
 	// Move function that is called inside update to move the current enemy object
 	void Move();
@@ -40,44 +33,18 @@ private:
 	void Shoot();
 	// Checks if the enemy is outside of the screen bounds
 	void CheckOutsideScreen();
-	
 	// delay used between each shot per object
 	DelayComponent _shootDelay;
-	/// Character needs to change
-	Character _enemyStats;
-	/// Enemy Shoot needs to be put into character
-	std::unique_ptr<ShootInterface> _enemyShoot;
+	std::shared_ptr<ShootInterface> _enemyShoot;
 	// Boundary object used to detect when the object is outside the screen
 	Boundary _screenBounds;
-	EnemyMoveType _movementType;
-	int _direction;
 	SizeReduction _sizeReduction;
 	std::shared_ptr<MovableInterface> _moveComp;
-	
-
-	// used to initialise the different enemy objects and vary the movement styles
-	// Run from within the constructor
 	void InitialiseObject();
-	void EnemyDirection();
-	/// Movement functions need to be moved into a seperate class 
-	/// sprite information needs to be moved to a database
-	void InitialiseMovementType(const int& randomChanceValue);
-	void InitialiseStartingPosition();
-	void InitialiseLinearMovement(const double& angle);
-	void InitialiseParabolicMovement();
-	void InitialiseSpiralMovement(const double& angle);
-	void DetermineDirection();
-	double GenerateRandomAngle();
-	
-	// Different movement functions
-	void SpiralMove();
-	void LinearMove();
-	void ParabolicMove();
-	
-	// On Collision Functions
+	Vector2D GenerateRandomMoveDirection();
+	std::shared_ptr<EnemyController> _enemyController;
 	// object response to colliding with a player bullet 
 	void PlayerProjectileCollision();
-	
 };
 
 

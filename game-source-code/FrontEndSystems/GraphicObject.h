@@ -34,6 +34,7 @@ public:
 	 */
 	const string& getTextureLocation() const {return _textureLocation;}
 	const static GraphicObject NullGraphic;
+	virtual ~GraphicObject() = default;
 
 protected:
 	std::string _textureLocation; /**<The location of the Image that the object represents*/ 

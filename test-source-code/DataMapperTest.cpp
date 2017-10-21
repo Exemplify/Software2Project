@@ -20,7 +20,7 @@ TEST_CASE("1.0 Test that DataMapper is succesfully assigning the data from the t
 	auto MockDatabase_ptr = std::make_shared<MockDatabaseInterface>();
 	DataMapper testMapper{"game_data/testobjectdata.txt", "game_data/teststatedata.txt"};
 	GameStateData statetestData{1920, 1080, "#TestName"};
-	GameObjectData objecttestData{1, 2, 3, 4, "5", "6", 7, 8, 9, 10, 11, 12, 13, 14, 15};
+	GameObjectData objecttestData{1, 2, 3, 4, "5", "6", 7, 8, 9, 10, 11, 12, 13, 14, 15, 16};
 	std::string testID = "Test";
 	REQUIRE_CALL(*MockDatabase_ptr, setGameObjectData(testID, objecttestData));
 	REQUIRE_CALL(*MockDatabase_ptr, setGameStateData(statetestData));

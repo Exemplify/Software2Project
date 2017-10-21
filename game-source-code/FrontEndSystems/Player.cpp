@@ -3,7 +3,6 @@
 #include "../BackEndSystems/GameTime.h"
 #include "../BackEndSystems/PlayerProjectileFactory.h"
 #include "Projectile.h"
-#include "PlayerShoot.h"
 #include "../BackEndSystems/Application.h"
 
 
@@ -19,14 +18,13 @@ _shootDelay{SHOOT_DELAY}
 	_position = startPosition;
 	_scale = xyVector(0.25f,0.25f);
 	_type = GameObjectType::player;
-    _objectSize = 25;
 	GraphicObject bulletGraphic{"resources/Rock.png", "playerBullet"};
 	auto projectileFactory = std::make_shared<PlayerProjectileFactory>();
 	_shootComp = nullptr;
 }
 
 Player::Player(Vector2D& startPosition, GraphicObject playerGraphic, xyVector scale, 
-				std::shared_ptr<MovableInterface> move, std::shared_ptr<ShootInterface> shoot):
+				std::shared_ptr<MovableInterface> move, std::shared_ptr<ShootInterface> shoot, double objectSize):
 PhysicsObject(),
 _shootDelay{SHOOT_DELAY},
 _shootComp{shoot},
@@ -36,9 +34,7 @@ _moveComp{move}
 	_graphicObject = playerGraphic;
 	_type = GameObjectType::player;
     _position = startPosition;
-    _objectSize = 25;
-	auto projectileFactory = std::make_shared<PlayerProjectileFactory>();
-	_shootComp = std::make_unique<PlayerShoot>();
+	_objectSize = objectSize;
 }
 // Each update a check to move and shoot is done
 void Player::Update()
@@ -68,6 +64,6 @@ void Player::collisionAction(GameObjectType objectType)
 	/// Magic Number needs to be removed (can be replaced by an enumerator class or static variable)
     if (objectType == GameObjectType::enemyBullet || objectType == GameObjectType::enemy)
 	{
-        Application::LoadScene(3);
+		Application::LoadScene(3);
 	}
 }

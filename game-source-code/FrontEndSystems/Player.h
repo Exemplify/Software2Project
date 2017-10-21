@@ -28,7 +28,7 @@ public:
 	}
 	Player(Vector2D& startPosition);
     Player(Vector2D& startPosition, GraphicObject playerGraphic, 
-					xyVector scale, std::shared_ptr<MovableInterface> move, std::shared_ptr<ShootInterface> shoot);
+					xyVector scale, std::shared_ptr<MovableInterface> move, std::shared_ptr<ShootInterface> shoot, double objectSize);
 	// override functions called by external objects
     void Update() override;
     virtual void collisionAction(GameObjectType objectType) override;

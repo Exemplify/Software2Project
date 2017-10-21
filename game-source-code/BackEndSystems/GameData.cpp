@@ -15,6 +15,7 @@ GameObjectData::GameObjectData(
 			double enm_spa_del,
 			double enm_sh_del,
 			double en_an_sp,
+			double para_coef,
 			unsigned int m_enm):
 PosX{p_x},
 PosY{p_y},
@@ -30,14 +31,17 @@ player_projectile_destry_region{p_pro_dest_reg},
 enemy_spawn_delay{enm_spa_del},
 enemy_shoot_delay{enm_sh_del},
 enemy_angular_speed{en_an_sp},
+parabolic_coeff{para_coef},
 max_enemies{m_enm}
 {}
+
 bool GameObjectData::operator==(const GameObjectData& rhs) const
 {
 	return 	collider_size == rhs.collider_size 			&&
 			enemy_shoot_delay == rhs.enemy_shoot_delay 	&&
 			enemy_angular_speed == rhs.enemy_angular_speed	&&
 			enemy_spawn_delay == rhs.enemy_spawn_delay	&&
+			parabolic_coeff == rhs.parabolic_coeff		&&
 			graphic_location == rhs.graphic_location	&&
 			graphic_name == rhs.graphic_name			&&
 			max_enemies == rhs.max_enemies				&&

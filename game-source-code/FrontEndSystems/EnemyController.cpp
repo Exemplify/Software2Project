@@ -3,6 +3,8 @@
 #include "../BackEndSystems/GameManager.h"
 #include "../BackEndSystems/GameTime.h"
 #include <memory>
+#include <assert.h> 
+#include "Enemy.h"
 
 
 /// will need to be modified to incorporate the delay component
@@ -41,10 +43,18 @@ void EnemyController::SpawnEnemy()
 	/// needs to be updated to use _scene variable from GameObject 
 	auto scene = GameManager::activeScene;
 	// Constructs the enemy object and adds it to the scene
-	auto enemy = Application::getGameRepository()->getGameObjectbyType(GameObjectType::enemy);
+	auto enemy = Application::getGameRepository()->getGameObjectbyTypeDuringRuntime(GameObjectType::enemy);
+	auto enemyCast = std::dynamic_pointer_cast<Enemy>(enemy);
+	assert(enemyCast != nullptr);
+	enemyCast->AssignEnemyController(shared_from_this());
+
 	scene->Instantiate(enemy);
 	// increases the number of enemies that have been spawned
 	enemyCount++;
+}
+void EnemyController::EnemyOutofBounds()
+{
+	enemyCount--;
 }
 // is called by the enemy when it is killed
 void EnemyController::EnemyKilled()

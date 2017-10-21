@@ -14,6 +14,8 @@ class DestroyedObjectOutsideScene{};
 // The different object types used to identify whic object to draw and to 
 // determine when a specific collision has occured
 
+
+
 enum class GameObjectType
 {
 	gameObject,
@@ -105,12 +107,7 @@ public:
 	/// Edit: Game Object should never exist outside of a scene so should require a scene object in the constructor
 	void setScene(std::shared_ptr<Scene> scene) {_scene = scene;}
 	
-	/**
-	 * @brief Removes the current GameObject from the GameObject list stored within the current scene. Ensures that the object does not get updated 
-	 * or displayed by the Presentation layer.
-	 */
-	void Destroy();
-	virtual ~GameObject(){}
+	virtual ~GameObject() = default;
 protected:
 	xyVector _scale; /**<xyVector representing the scale of the object*/
 	// smart pointer to the scene the game object exists in this should not be changed, is an invarient
@@ -128,6 +125,11 @@ protected:
 	 * @return Returns a pointer to the object of the desired type.
 	 */
 	std::shared_ptr<GameObject> FindGameObjectByType(GameObjectType searchType); 
+	/**
+	 * @brief Removes the current GameObject from the GameObject list stored within the current scene. Ensures that the object does not get updated 
+	 * or displayed by the Presentation layer, will be removed from memory once the remaining pointers go out of scope.
+	 */
+	void Destroy();
 };
 
 #endif
