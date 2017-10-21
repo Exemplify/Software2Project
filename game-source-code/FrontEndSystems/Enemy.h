@@ -27,8 +27,6 @@ public:
     virtual void collisionAction(GameObjectType objectType) override;
 	void AssignEnemyController(const std::shared_ptr<GameObject>& enemyController);
 private:
-	// Move function that is called inside update to move the current enemy object
-	void Move();
 	// Shoot function used to instantiate enemy bullets
 	void Shoot();
 	// Checks if the enemy is outside of the screen bounds

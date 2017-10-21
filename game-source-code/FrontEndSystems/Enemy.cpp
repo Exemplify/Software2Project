@@ -31,7 +31,7 @@ void Enemy::Start()
 }
 void Enemy::Update()
 {
-	Move();
+	_moveComp->Move(_position);
 	Shoot();
 	CheckOutsideScreen();
 	_sizeReduction.ReduceSize(_position, _scale, _objectSize);
@@ -52,7 +52,7 @@ Vector2D Enemy::GenerateRandomMoveDirection()
 
 void Enemy::Move()
 {
-	_moveComp->Move(_position);
+
 }
 
 void Enemy::CheckOutsideScreen()

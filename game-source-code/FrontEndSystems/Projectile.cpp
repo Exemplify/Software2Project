@@ -26,7 +26,6 @@ void Projectile::Update()
 }
 
 // Moves the projectile in a specific direction
-/// Needs a moveable component
 /// Destroy Self needs to become virtual and then cascade responsibilities for each type down the tree
 void Projectile::DestroySelf()
 {
