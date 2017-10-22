@@ -14,7 +14,8 @@ public:
 	 * @brief Function call used to create an EnemyController Object 
 	 * @return Returns an EnemyController Object with the specific characteristics for this game
 	 */
-	virtual std::shared_ptr<GameObject> getGameObject(std::shared_ptr<DatabaseInterface> database) override; 
+	virtual std::shared_ptr<GameObject> getGameObject(const std::shared_ptr<DatabaseInterface>& database) override; 
+	virtual GameObjectData getObjectData(const std::shared_ptr<DatabaseInterface>& database) override;
 	virtual ~EnemyControllerFactory() {}
 };
 

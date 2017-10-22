@@ -5,11 +5,9 @@
 /// This needs to be rethought for the use of playing game based on the current Scene
 /// Cound rather be a composition or seperate the control of loading a new scene into a new object
 const int GameSceneIndex = 1;
-SplashScreen::SplashScreen(GraphicObject graphicObject, xyVector scale)
-{
-	_scale = scale;
-	_graphicObject = graphicObject;
-}
+SplashScreen::SplashScreen(const GameObject& gameObject):
+GameObject(gameObject)
+{}
 void SplashScreen::Update()
 {
 	PlayGame();

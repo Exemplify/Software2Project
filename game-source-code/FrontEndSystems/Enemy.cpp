@@ -9,19 +9,15 @@
 const double DEG_2_RAD = 3.141592653589793f/180.0f;
 const double MAX_DISTANCE = 450; 
 
-Enemy::Enemy(const Vector2D& position, xyVector scale, GraphicObject enemyGraphic, double colliderSize, double shootDelay,
-									const std::shared_ptr<MovableInterface>& moveComp, const std::shared_ptr<ShootInterface>& shootComp):
-_shootDelay{shootDelay, false},
+Enemy::Enemy(const PhysicsObject& physicsObject, const double& shootDelay,
+			const std::shared_ptr<MovableInterface>& moveComp, const std::shared_ptr<ShootInterface>& shootComp):
+PhysicsObject{physicsObject},
+_shootDelay{shootDelay},
 _enemyShoot{shootComp},
-_sizeReduction{MAX_DISTANCE, scale, colliderSize},
+_sizeReduction{MAX_DISTANCE, _scale, _objectSize},
 _moveComp{moveComp}
 {
-	_position = position;
-	_scale = scale;
-	_graphicObject = enemyGraphic;
-	_objectSize = colliderSize;
 	_type = GameObjectType::enemy;
-	auto projectileFactory = std::make_shared<EnemyProjectileFactory>();
 }
 
 void Enemy::Start()
@@ -73,7 +69,7 @@ void Enemy::Shoot()
 }
 
 // Function override from PhysicsObject, called by CollisionDetection
-void Enemy::collisionAction(GameObjectType objectType)
+void Enemy::collisionAction(const GameObjectType& objectType)
 {
 	// Checks if object is either the player or the players projectile
     if(objectType == GameObjectType::playerBullet || objectType == GameObjectType::player)

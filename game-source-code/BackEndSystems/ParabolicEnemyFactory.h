@@ -6,8 +6,7 @@ class ParabolicEnemyFactory : public EnemyFactory
 {
 public:
 	virtual std::shared_ptr<MovableInterface> getMovableType(const GameObjectData& data) override;
-	virtual GameObjectData getEnemyData(std::shared_ptr<DatabaseInterface> database) override;
-	virtual Vector2D getStartingPosition(const GameObjectData& data) override;
+	virtual GameObjectData getObjectData(const std::shared_ptr<DatabaseInterface>& database) override;
 private:
 	double determineParabolicCoefficient();
 };

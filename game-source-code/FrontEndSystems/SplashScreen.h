@@ -10,7 +10,7 @@
 class SplashScreen:public GameObject
 {
 public:
-	SplashScreen(GraphicObject graphicObject, xyVector scale);
+	SplashScreen(const GameObject& gameObject);
 	void Update() override;
 private:
 	// Quits the Game 

@@ -9,13 +9,12 @@
 class PhysicsObject : public GameObject
 {
 public:
-
 	PhysicsObject();
-	PhysicsObject(const GameObject& gameObject const double& objectSpeed, const double& objectSize);
+	PhysicsObject(const GameObject& gameObject, const double& objectSize);
 	
-    double getSize();
+    double getSize() const;
     
-	virtual void collisionAction(GameObjectType objectType) {}
+	virtual void collisionAction(const GameObjectType& objectType);
 
 	virtual ~PhysicsObject() = default;
     

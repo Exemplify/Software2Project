@@ -1,15 +1,19 @@
 #include "PlayerProjectileFactory.h"
-#include "../FrontEndSystems/Projectile.h"
+#include "../FrontEndSystems/PlayerProjectile.h"
 #include "../FrontEndSystems/LinearMove.h"
 #include "../Vector2D.h"
 #include "GameObjectDataAdaptor.h"
 
-std::shared_ptr<GameObject> PlayerProjectileFactory::getGameObject(std::shared_ptr<DatabaseInterface> database)
+std::shared_ptr<GameObject> PlayerProjectileFactory::getGameObject(const std::shared_ptr<DatabaseInterface>& database)
 {
-	auto bulletType = GameObjectType::playerBullet;
 	auto objectData = database->getGameObjectData("playerProjectile");
-	auto bulletGraphic = GameObjectDataAdaptor::graphicObjectAdaptor(objectData);
-	auto scale = GameObjectDataAdaptor::ScaleAdaptor(objectData);
+	auto physicsObject = std::dynamic_pointer_cast<PhysicsObject>(PhysicsObjectFactory::getGameObject(database));
 	auto move = std::make_shared<LinearMove>(objectData.move_speed);
-	return std::make_shared<Projectile>(bulletGraphic, bulletType, scale, move, objectData.collider_size);
+	auto boundary = Boundary(objectData.player_projectile_destry_region, objectData.player_projectile_destry_region);
+	return std::make_shared<PlayerProjectile>(*physicsObject, move, boundary);
+}
+
+GameObjectData PlayerProjectileFactory::getObjectData(const std::shared_ptr<DatabaseInterface>& database)
+{
+	return database->getGameObjectData("playerProjectile");
 }

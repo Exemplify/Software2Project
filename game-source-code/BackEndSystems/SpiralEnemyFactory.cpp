@@ -7,7 +7,7 @@ std::shared_ptr<MovableInterface> SpiralEnemyFactory::getMovableType(const GameO
 	return move;
 }
 
-GameObjectData SpiralEnemyFactory::getEnemyData(std::shared_ptr<DatabaseInterface> database)
+GameObjectData SpiralEnemyFactory::getObjectData(const std::shared_ptr<DatabaseInterface>& database)
 {
 	auto data = database->getGameObjectData("enemy_spiral");
 	return data;

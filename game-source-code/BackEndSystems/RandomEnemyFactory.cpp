@@ -6,9 +6,8 @@
 #include <climits>
 #include <ctime>
 
-std::shared_ptr<GameObject> RandomEnemyFactory::getGameObject(std::shared_ptr<DatabaseInterface> database)
+std::shared_ptr<GameObject> RandomEnemyFactory::getGameObject(const std::shared_ptr<DatabaseInterface>& database)
 {
-
 	auto randomFactory = getRandomFactory();
 	auto enemyObject = randomFactory->getGameObject(database);
 	return enemyObject;
@@ -32,4 +31,9 @@ std::shared_ptr<GameObjectFactory> RandomEnemyFactory::getRandomFactory()
 		factory_ptr = std::make_shared<ParabolicEnemyFactory>();
 	}
 	return factory_ptr;
+}
+
+GameObjectData RandomEnemyFactory::getObjectData(const std::shared_ptr<DatabaseInterface>& database)
+{
+	return GameObjectData();
 }

@@ -5,19 +5,14 @@
 #include "Projectile.h"
 #include "../BackEndSystems/Application.h"
 
-Player::Player(const Vector2D& startPosition, const GraphicObject& playerGraphic, 
-					const xyVector& scale, const std::shared_ptr<MovableInterface>& move, 
-					const std::shared_ptr<ShootInterface>& shoot, const double& objectSize, const double& shootDelay):
-PhysicsObject(),
+Player::Player(const PhysicsObject& physicsObject, const std::shared_ptr<MovableInterface>& move, 
+					const std::shared_ptr<ShootInterface>& shoot, const double& shootDelay):
+PhysicsObject(physicsObject),
 _shootDelay{shootDelay},
 _shootComp{shoot},
 _moveComp{move}
 {
-	_scale = scale;
-	_graphicObject = playerGraphic;
 	_type = GameObjectType::player;
-    _position = startPosition;
-	_objectSize = objectSize;
 }
 // Each update a check to move and shoot is done
 void Player::Update()
@@ -39,12 +34,12 @@ void Player::ShootConditionalCheck()
 }
 
 
-void Player::collisionAction(GameObjectType objectType)
+void Player::collisionAction(const GameObjectType& objectType)
 {
 	// if the player collides with the enemy or enemy bullet the player loses and the lose screen is loaded
     if (objectType == GameObjectType::enemyBullet || objectType == GameObjectType::enemy)
 	{
 		const int LOSING_SCENE = 3;
-		Application::LoadScene(LOSING_SCENE);
+		//Application::LoadScene(LOSING_SCENE);
 	}
 }

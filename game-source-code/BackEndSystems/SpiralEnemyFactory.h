@@ -6,7 +6,7 @@ class SpiralEnemyFactory: public EnemyFactory
 {
 public:
 	virtual std::shared_ptr<MovableInterface> getMovableType(const GameObjectData& data) override;
-	virtual GameObjectData getEnemyData(std::shared_ptr<DatabaseInterface> database) override;
+	virtual GameObjectData getObjectData(const std::shared_ptr<DatabaseInterface>& database) override;
 };
 
 #endif

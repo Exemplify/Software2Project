@@ -5,7 +5,6 @@
 #include "ShootInterface.h"
 #include "Boundary.h"
 #include "GraphicObject.h"
-#include "../BackEndSystems/EnemyProjectileFactory.h"
 #include "SizeReduction.h"
 #include "MovableInterface.h"
 #include "EnemyController.h"
@@ -16,14 +15,16 @@
 class Enemy: public PhysicsObject
 {
 public:
-	Enemy(const Vector2D& position, xyVector scale, GraphicObject enemyGraphic, double colliderSize, double shootDelay,
+	Enemy(const PhysicsObject& physicsObject, const double& shootDelay,
 									const std::shared_ptr<MovableInterface>& moveComp, const std::shared_ptr<ShootInterface>& shootComp);
 	virtual void Start() override; 
 	// Override Function from GameObject 
 	virtual void Update() override;
 	// Override function from PhysicsObject
-    virtual void collisionAction(GameObjectType objectType) override;
+    virtual void collisionAction(const GameObjectType& objectType) override;
 	void AssignEnemyController(const std::shared_ptr<GameObject>& enemyController);
+	
+	virtual ~Enemy() = default;
 private:
 	// Shoot function used to instantiate enemy bullets
 	void Shoot();

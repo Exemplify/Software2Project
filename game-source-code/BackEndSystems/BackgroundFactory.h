@@ -18,7 +18,8 @@ public:
 	 * @brief Function call used to create a GameObject used as a background 
 	 * @return Returns a GameObject with the specific graphic object for a specific background
 	 */
-	std::shared_ptr<GameObject> getGameObject(std::shared_ptr<DatabaseInterface> database);
+	virtual std::shared_ptr<GameObject> getGameObject(const std::shared_ptr<DatabaseInterface>& database) final;
+	virtual GameObjectData getObjectData(const std::shared_ptr<DatabaseInterface>& database) final;
 	virtual ~BackgroundFactory() = default;
 private:
 	std::string _backgroundID;

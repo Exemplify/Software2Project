@@ -14,10 +14,11 @@ class GameObjectFactory
 {
 public:
 	/**
-	 * @brief Abstract function used to create the desired class specified by the derived class
-	 * @return Returns the constructed object
+	 * @brief virtual function used to create the desired class specified by the derived class
+	 * @return Returns the constructed GameObject object
 	 */
-	virtual std::shared_ptr<GameObject> getGameObject(std::shared_ptr<DatabaseInterface> database) = 0;
+	virtual std::shared_ptr<GameObject> getGameObject(const std::shared_ptr<DatabaseInterface>& database);
+	virtual GameObjectData getObjectData(const std::shared_ptr<DatabaseInterface>& database) = 0;
 	virtual ~GameObjectFactory() {};
 };
 

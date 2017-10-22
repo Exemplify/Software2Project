@@ -6,8 +6,9 @@ class RandomEnemyFactory : public GameObjectFactory
 {
 public: 
 	virtual std::shared_ptr<GameObject> 
-						getGameObject(std::shared_ptr<DatabaseInterface> database) override;
-						
+						getGameObject(const std::shared_ptr<DatabaseInterface>& database) override;
+GameObjectData getObjectData(const std::shared_ptr<DatabaseInterface>& database);
+
 private:
 	const unsigned int SPIRAL_PERCENTAGE_VALUE = 80;
 	const unsigned int LINEAR_PERCENTAGE_VALUE = 30;

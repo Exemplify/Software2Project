@@ -3,12 +3,15 @@
 #include "GameObjectDataAdaptor.h"
 #include "../FrontEndSystems/LinearMove.h"
 
-std::shared_ptr<GameObject> EnemyProjectileFactory::getGameObject(std::shared_ptr<DatabaseInterface> database)
+std::shared_ptr<GameObject> EnemyProjectileFactory::getGameObject(const std::shared_ptr<DatabaseInterface>& database)
 {
-	auto objectData = database->getGameObjectData("enemyProjectile");
-	auto bulletType = GameObjectType::enemyBullet;
-	auto bulletGraphic = GameObjectDataAdaptor::graphicObjectAdaptor(objectData);
-	auto scale = GameObjectDataAdaptor::ScaleAdaptor(objectData);
+	auto objectData = getObjectData(database);
+	auto physicsObject = std::dynamic_pointer_cast<PhysicsObject>(PhysicsObjectFactory::getGameObject(database));
 	auto move = std::make_shared<LinearMove>(objectData.move_speed);
-	return std::make_shared<Projectile>(bulletGraphic, bulletType, scale, move, objectData.collider_size);
+	return std::make_shared<EnemyProjectile>(*physicsObject, move, Boundary());
+}
+
+GameObjectData EnemyProjectileFactory::getObjectData(const std::shared_ptr<DatabaseInterface>& database)
+{
+	return database->getGameObjectData("enemyProjectile");
 }
