@@ -10,16 +10,13 @@ PhysicsObject(physicsObject),
 _destroyBounds{destroyBounds},
 _moveComp{move},
 _sizeReduction{max_distance, _scale, _objectSize}
-{
-	assert(_objectSize > 3);
-}
+{}
 
 void Projectile::Update()
 {
 	_moveComp->Move(_position);
+	//_sizeReduction.ReduceSize(_position, _scale, _objectSize);
 	DestroySelf();
-
-	_sizeReduction.ReduceSize(_position, _scale, _objectSize);
 }
 
 // Used to initialise the object after the copy constructor is run

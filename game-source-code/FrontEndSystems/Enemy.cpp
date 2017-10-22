@@ -14,6 +14,7 @@ Enemy::Enemy(const PhysicsObject& physicsObject, const double& shootDelay,
 PhysicsObject{physicsObject},
 _shootDelay{shootDelay},
 _enemyShoot{shootComp},
+_screenBounds{},
 _sizeReduction{MAX_DISTANCE, _scale, _objectSize},
 _moveComp{moveComp}
 {
