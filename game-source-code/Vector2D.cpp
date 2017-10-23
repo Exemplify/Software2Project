@@ -1,12 +1,24 @@
 #include "Vector2D.h"
 
 // Default Constructor
+/**
+ * @brief Default constructor for the Vector2D class. Assigns the static origin of the Vector2D class to this Vector2D object
+ * @return Vector2D by value.
+ */
 Vector2D::Vector2D()
 {
     *this = origin;
 }
 
 // Scalar Constructor
+/**
+ * @brief Constructor for the Vector2D class by two double scalar parameters, and the vector input type.
+ * Constructs the Vector2D object appropriately based from the vectype parameter.
+ * @param val1 either as x value of cartesian input or radius value of polar input.
+ * @param val2 either as y value of cartesian input or theta value of polar input.
+ * @param vectype of the parameters val1 and val2. Default is VectorType::xy.
+ * @return Vector2D by value.
+ */
 Vector2D::Vector2D(double val1, double val2, const VectorType& vectype)
 {
     if (vectype == VectorType::xy)
@@ -27,6 +39,11 @@ Vector2D::Vector2D(double val1, double val2, const VectorType& vectype)
 }
 
 // Vector Constructor for xyVector
+/**
+ * @brief Constructor for the Vector2D class directly from a xyVector struct.
+ * @param vec The xyVector struct used for the Vector2D object construction. Used by constant value.
+ * @return Vector2D by value.
+ */
 Vector2D::Vector2D(const xyVector vec)
 {
     _xyvec = vec;
@@ -35,6 +52,11 @@ Vector2D::Vector2D(const xyVector vec)
 }
 
 // Vector Constructor for rtVector
+/**
+ * @brief Constructor for the Vector2D class directly from a rtVector struct.
+ * @param vec The rtVector struct used for the Vector2D object construction. Used by constant value.
+ * @return Vector2D by value.
+ */
 Vector2D::Vector2D(const rtVector vec)
 {
     _rtvec = vec;
@@ -43,6 +65,11 @@ Vector2D::Vector2D(const rtVector vec)
 }
 
 // Copy Constructor
+/**
+ * @brief Copy constructor for the Vector2D class.
+ * @param rhs Vector2D value that is used to assign to this. Used by constant reference.
+ * @return Vector2D by value.
+ */
 Vector2D::Vector2D(const Vector2D& rhs)
 {
     *this = rhs;
