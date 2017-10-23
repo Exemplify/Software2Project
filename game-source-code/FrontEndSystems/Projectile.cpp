@@ -11,11 +11,14 @@ _destroyBounds{destroyBounds},
 _moveComp{move},
 _sizeReduction{max_distance, _scale, _objectSize}
 {}
-
+void Projectile::Start()
+{
+	_sizeReduction.ReduceSize(_position, _scale, _objectSize);
+}
 void Projectile::Update()
 {
 	_moveComp->Move(_position);
-	//_sizeReduction.ReduceSize(_position, _scale, _objectSize);
+	_sizeReduction.ReduceSize(_position, _scale, _objectSize);
 	DestroySelf();
 }
 

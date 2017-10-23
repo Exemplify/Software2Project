@@ -25,6 +25,11 @@ public:
 	 */
 	virtual void UpdateGameTimeDatabase(std::shared_ptr<DatabaseInterface> database) override;
 private:
+	/**
+	 * @brief 
+	 * @param ID_Line
+	 * @return 
+	 */
 	std::string GetIDFromString(const std::string& ID_Line);
 	GameObjectData getObjectDataFromString(const std::string& DataLine);
 	std::vector<std::string> SplitGameObjectDataString(const std::string& DataLine);

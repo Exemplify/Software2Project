@@ -5,28 +5,40 @@
 // required, this includes firing rates and enemy spawning. this delay should only be attached to GameObjects or the derivatives of the GameObjects
 // reduceTime should only be called from inside an Update function call.
 
-/// could require some rethinking because a lot of the responsibility is on the client to call the appropriate functions
-/// Functions should be incorporated into one so that the client only needs to check if the delay has finished
+/**
+ * @class DelayComponent
+ * @file DelayComponent.h
+ * @brief DelayComponent is used to create and manage all delays for the game logic, it uses the delta time value stored within the GameTime class.
+ */
 class DelayComponent
 {
 public:
-	// takes in a value for the delay time and immediate use which identifies whether 
-	// the delayFinished check can be used immediately on initialisation or if the delay needs to complete first
+	/**
+	 * @brief Constructor: Creates a delay component that uses the specific time value provided
+	 * @param value The specific time value that represent the length of the delay until it is finished
+	 * @param InitialUseBeforeDelay Allows the client to set whether the delay is initially true until use
+	 * @return 
+	 */
 	DelayComponent(double value, bool InitialUseBeforeDelay = false);
-	// Returns true if the delay has finished
+	/**
+	 * @brief reduces the delay value and then checks if it is finished
+	 * @return Returns true if the delay is finished
+	 */
 	bool DelayFinished();
-	// resets the delay so to the original value
+	/**
+	 * @brief Resets the delay to original value
+	 */
 	void resetDelay();
 	
 private:
-	// The current value of time until the delay is finished
-	double _currentValue;
-	// The original value of the delay
-	double _delayValue;
-	// the boolean stored for whether the delay has finished, used to allow immediateUse
-	bool _delayFinished;
-	// Reduces the delay time by deltaTime each time it is called
-	void reduceTime();
+	 
+	double _currentValue; /**<The current value of time until the delay is finished*/
+	
+	double _delayValue; /**<The original value of the delay*/
+	
+	bool _delayFinished; /**<The boolean stored for whether the delay has finished*/
+	
+	void reduceTime(); /**<Reduces the delay time by GameTime deltaTime, is called by DelayFinished*/
 };
 
 #endif

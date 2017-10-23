@@ -11,6 +11,7 @@ public:
 	// constructor used to identify whether the gameobject type is an enemy projectile or a player projectile 
 	// with the corresponding graphical information
 	Projectile(const PhysicsObject& physicsObject, const std::shared_ptr<MovableInterface>& move, const Boundary& destroyBounds);
+	virtual void Start() final;
 	// Overrides Update function for specific responsibilities 
 	virtual void Update() final;
 	// used to define the characteristics of the projectile once is has been created by the copy constructor

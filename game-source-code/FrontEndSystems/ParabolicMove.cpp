@@ -17,8 +17,5 @@ void ParabolicMove::Move(Vector2D& currentPosition)
 
 double ParabolicMove::MoveSpeed(const Vector2D& position)
 {
-	if(Vector2D::magnitude(position) > 100)
-		return _movespeed/2;
-	else
-		return _movespeed;
+	return Vector2D::magnitude(position) < 15? _movespeed/10 : _movespeed;
 }

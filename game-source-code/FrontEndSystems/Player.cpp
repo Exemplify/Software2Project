@@ -40,6 +40,6 @@ void Player::collisionAction(const GameObjectType& objectType)
     if (objectType == GameObjectType::enemyBullet || objectType == GameObjectType::enemy)
 	{
 		const int LOSING_SCENE = 3;
-		//Application::LoadScene(LOSING_SCENE);
+		Application::LoadScene(LOSING_SCENE);
 	}
 }

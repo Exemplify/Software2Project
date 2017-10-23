@@ -3,7 +3,10 @@
 
 // default constructor ensures that every gameobject has a type
 GameObject::GameObject(): 
-_type{GameObjectType::gameObject}
+_scale{1,1}, 
+_type{GameObjectType::gameObject},
+_position{0,0},
+_graphicObject{}
 {}
 
 GameObject::GameObject(const Vector2D& startingPosition): 

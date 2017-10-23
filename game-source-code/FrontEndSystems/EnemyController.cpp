@@ -9,8 +9,10 @@
 // Default constructor used to initialise enumerator type
 EnemyController::EnemyController(unsigned int max_enemies, double enemySpawnDelay):
 GameObject(),
+numberOfEnemiesKilled{0},
  MAX_NUMBER_OF_ENEMIES{max_enemies},
-_enemySpawnDelay{enemySpawnDelay}
+_enemySpawnDelay{enemySpawnDelay},
+enemyCount{0}
 {
 	_type = GameObjectType::enemyController;
 }

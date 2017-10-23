@@ -9,6 +9,13 @@
 const double DEG_2_RAD = 3.141592653589793f/180.0f;
 const double MAX_DISTANCE = 450; 
 
+/**
+ * @brief 
+ * @param physicsObject
+ * @param shootDelay
+ * @param moveComp
+ * @param shootComp
+ */
 Enemy::Enemy(const PhysicsObject& physicsObject, const double& shootDelay,
 			const std::shared_ptr<MovableInterface>& moveComp, const std::shared_ptr<ShootInterface>& shootComp):
 PhysicsObject{physicsObject},
@@ -23,6 +30,7 @@ _moveComp{moveComp}
 
 void Enemy::Start()
 {
+	_sizeReduction.ReduceSize(_position, _scale, _objectSize);
 	auto randomDirec = GenerateRandomMoveDirection();
 	_moveComp->setDirection(randomDirec);
 }

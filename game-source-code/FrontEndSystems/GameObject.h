@@ -38,10 +38,29 @@ class GameObject: public std::enable_shared_from_this<GameObject>
 {
 public:
 	// Constructors //
+	/**
+	* @brief Default Constructor - Creates the object using default values
+	* 
+	*/
 	GameObject();
+	/**
+	* @brief Constructs an object with a specific GraphicObject 
+	* @param graphic defines the GameObjects GraphicObject composition
+	*/
 	GameObject(const GraphicObject& graphic);
+	/**
+	* @brief Constructs an object with a specific scale
+	* @param scale The desired scale for the GameObject
+	*/
 	GameObject(const xyVector& scale);
+	/**
+	* @brief Constructs an object with a specific starting position
+	* @param startingPosition The desired starting position for the GameObject
+	*/
 	GameObject(const Vector2D& startingPosition);
+	/**
+	 * @brief Constructor used to specify the main members of the gameobject
+	 */
 	GameObject(const Vector2D& startingPosition, const xyVector& scale, const GraphicObject& graphicObject);
 	
 	// default copy constructor is used the specific instance of scene needs to be shared when copying the game object, it should not create a new one
@@ -94,12 +113,15 @@ public:
 	
 	
 		// class setters //
-	
-	void setActive(bool active_state) {_active = active_state;} 
-	/// needs to be reconsidered only Scene class needs access to this method
-	/// may be worthwhile making a frienship class here to ensure a tightly coupled relationship between scene and gameobject
-	/// Need to ask about this
-	/// Edit: Game Object should never exist outside of a scene so should require a scene object in the constructor
+	/**
+	 * @brief Sets the active state of the GameObject, if it is unactive it does not update, get displayed by the game or cause collisions 
+	 * @param active_state the desired state of the Gameobject
+	 */
+	void setActive(bool active_state) {_active = active_state;}
+	/**
+	 * @brief sets the Scene pointer of the Gameobject, used to know which Scene the GameObject exists in  
+	 * @param scene The Scene pointer that is copied
+	 */
 	void setScene(std::shared_ptr<Scene> scene) {_scene = scene;}
 	
 	virtual ~GameObject() = default;

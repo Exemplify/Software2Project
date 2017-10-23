@@ -20,22 +20,38 @@
 class EnemyController: public GameObject
 {
 public:
-	// Default construtor
+	/**
+	 * @brief Constructs an EnemyController Object
+	 * @param max_enemies The maximum number of enemies that the EnemyController will create
+	 * @param enemySpawnDelay The time delay between spawning an enemy object
+	 */
 	EnemyController(unsigned int max_enemies, double enemySpawnDelay);
-	// Update override function
+	/**
+	 * @brief Creates enemies based on the spawn delay
+	 */
 	virtual void Update() override;
-	// public function that is called by the enemy that has been killed
+	/**
+	 * @brief Called by the EnemyObject to inform the EnemyController that it has been destroyed by the Player object
+	 */
 	void EnemyKilled();
+	/**
+	 * @brief Called by the EnemyObject to inform the EnemyController that it has been destroyed by the moving out of bounds
+	 * @details spawns a new enemy without checking the delay as the enemy has already been spawned
+	 */
 	void EnemyOutofBounds();
 private:
+	/**
+	 * @brief Checks if an Enemy can be spawned due to the spawn delay, calls SpawnEnemy if it can be
+	 */
 	void SpawnEnemyCountDown();
+	/**
+	 * @brief Creates an enemy and adds it to the same Scene as the EnemyController
+	 */
 	void SpawnEnemy();
-	// Integer that stores the number of enemies killed 
-	unsigned int numberOfEnemiesKilled = 0;
-	const unsigned int MAX_NUMBER_OF_ENEMIES;
-	DelayComponent _enemySpawnDelay;
-	double _timeBetweenSpawns;
-	// enemy count tracks the number of enemies spawned into the scene
-	unsigned int enemyCount = 0;
+	
+	unsigned int numberOfEnemiesKilled; /**<Tracks the number of enemies that the player has destroyed*/
+	const unsigned int MAX_NUMBER_OF_ENEMIES; /**<The maximum number of enemies that the EnemyController can create*/
+	DelayComponent _enemySpawnDelay; /**<The delay component used to track the delay between enemy spawns*/
+	unsigned int enemyCount; /**<The current number of enemies that have been spawned*/
 };
 #endif 
