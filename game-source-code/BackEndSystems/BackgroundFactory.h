@@ -15,7 +15,7 @@ public:
 	 * @brief Costructs a BackgroundFactory which creates the specific SplashScreen defined by the backgroundID provided
 	 * @param backgroundID
 	 */
-	BackgroundFactory(std::string backgroundID):
+	BackgroundFactory(std::string backgroundID = "splashScreen"):
 	_backgroundID{backgroundID}
 	{}
 	/**

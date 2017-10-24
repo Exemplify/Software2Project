@@ -14,7 +14,7 @@
  */
 class FailedToLoadTexture{};
 /**
- * @class DrawGameObject
+ * @class UpdateGameObjectDisplay
  * @brief Updates the Sprite position and scale for each GameOject
  * @details contains a hash table that stores the individual sprites and corresponding textures for the specific 
  * key provided within the GraphicObject composition of the GameObject. Updates the screen position and scale of the sprite 

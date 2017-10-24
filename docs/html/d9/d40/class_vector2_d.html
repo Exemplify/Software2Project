@@ -73,74 +73,82 @@ $(function() {
 <div class="title">Vector2D Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Defines the base mathematical element used, the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> element. Contains structs of two self-contained vector types, the <a class="el" href="../../d5/dae/structxy_vector.html" title="Container structure for standardized association of the x-y-cartesian vector form. ">xyVector</a> and the <a class="el" href="../../d1/d9f/structrt_vector.html" title="Container structure for standardized association of the radius-theta-polar vector form...">rtVector</a>. Defines the associated creation of the objects, and the logical operator overload associated with vector mathematics. The tigonometric mathematical vector relationships are based on radians.  
+ <a href="../../d9/d40/class_vector2_d.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d1/dae/_vector2_d_8h_source.html">Vector2D.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0c1db105a3d49bde5056cc19b04f18c2"><td class="memItemLeft" align="right" valign="top"><a id="a0c1db105a3d49bde5056cc19b04f18c2"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Vector2D</b> (double val1, double val2, const VectorType &amp;vectype=VectorType::xy)</td></tr>
+<tr class="memitem:a98e9997ebb7a629f4db52397d4e0d653"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d40/class_vector2_d.html#a98e9997ebb7a629f4db52397d4e0d653">Vector2D</a> ()</td></tr>
+<tr class="memdesc:a98e9997ebb7a629f4db52397d4e0d653"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class. Assigns the static origin of the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class to this <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> object.  <a href="#a98e9997ebb7a629f4db52397d4e0d653">More...</a><br /></td></tr>
+<tr class="separator:a98e9997ebb7a629f4db52397d4e0d653"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c1db105a3d49bde5056cc19b04f18c2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d40/class_vector2_d.html#a0c1db105a3d49bde5056cc19b04f18c2">Vector2D</a> (double val1, double val2, const VectorType &amp;vectype=VectorType::xy)</td></tr>
+<tr class="memdesc:a0c1db105a3d49bde5056cc19b04f18c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class by two double scalar parameters, and the vector input type. Constructs the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> object appropriately based from the vectype parameter.  <a href="#a0c1db105a3d49bde5056cc19b04f18c2">More...</a><br /></td></tr>
 <tr class="separator:a0c1db105a3d49bde5056cc19b04f18c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3aae16cfdb6eab642f832d82de2ac5c"><td class="memItemLeft" align="right" valign="top"><a id="ab3aae16cfdb6eab642f832d82de2ac5c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Vector2D</b> (const <a class="el" href="../../d5/dae/structxy_vector.html">xyVector</a> vec)</td></tr>
+<tr class="memitem:ab3aae16cfdb6eab642f832d82de2ac5c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d40/class_vector2_d.html#ab3aae16cfdb6eab642f832d82de2ac5c">Vector2D</a> (const <a class="el" href="../../d5/dae/structxy_vector.html">xyVector</a> vec)</td></tr>
+<tr class="memdesc:ab3aae16cfdb6eab642f832d82de2ac5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class directly from a <a class="el" href="../../d5/dae/structxy_vector.html" title="Container structure for standardized association of the x-y-cartesian vector form. ">xyVector</a> struct.  <a href="#ab3aae16cfdb6eab642f832d82de2ac5c">More...</a><br /></td></tr>
 <tr class="separator:ab3aae16cfdb6eab642f832d82de2ac5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3253f7c676f03f9d460d6b473934a1ff"><td class="memItemLeft" align="right" valign="top"><a id="a3253f7c676f03f9d460d6b473934a1ff"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Vector2D</b> (const <a class="el" href="../../d1/d9f/structrt_vector.html">rtVector</a> vec)</td></tr>
+<tr class="memitem:a3253f7c676f03f9d460d6b473934a1ff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d40/class_vector2_d.html#a3253f7c676f03f9d460d6b473934a1ff">Vector2D</a> (const <a class="el" href="../../d1/d9f/structrt_vector.html">rtVector</a> vec)</td></tr>
+<tr class="memdesc:a3253f7c676f03f9d460d6b473934a1ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class directly from a <a class="el" href="../../d1/d9f/structrt_vector.html" title="Container structure for standardized association of the radius-theta-polar vector form...">rtVector</a> struct.  <a href="#a3253f7c676f03f9d460d6b473934a1ff">More...</a><br /></td></tr>
 <tr class="separator:a3253f7c676f03f9d460d6b473934a1ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a658f4dd52408392ab5ad5fb36112a5c8"><td class="memItemLeft" align="right" valign="top"><a id="a658f4dd52408392ab5ad5fb36112a5c8"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Vector2D</b> (const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;rhs)</td></tr>
+<tr class="memitem:a658f4dd52408392ab5ad5fb36112a5c8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d40/class_vector2_d.html#a658f4dd52408392ab5ad5fb36112a5c8">Vector2D</a> (const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;rhs)</td></tr>
+<tr class="memdesc:a658f4dd52408392ab5ad5fb36112a5c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class.  <a href="#a658f4dd52408392ab5ad5fb36112a5c8">More...</a><br /></td></tr>
 <tr class="separator:a658f4dd52408392ab5ad5fb36112a5c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4bc415751c246ae44727ef4f6b80d80c"><td class="memItemLeft" align="right" valign="top"><a id="a4bc415751c246ae44727ef4f6b80d80c"></a>
-<a class="el" href="../../d5/dae/structxy_vector.html">xyVector</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getXYVector</b> () const</td></tr>
+<tr class="memitem:a4bc415751c246ae44727ef4f6b80d80c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/dae/structxy_vector.html">xyVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d40/class_vector2_d.html#a4bc415751c246ae44727ef4f6b80d80c">getXYVector</a> () const</td></tr>
+<tr class="memdesc:a4bc415751c246ae44727ef4f6b80d80c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows the <a class="el" href="../../d5/dae/structxy_vector.html" title="Container structure for standardized association of the x-y-cartesian vector form. ">xyVector</a> struct value of the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> object to be querried. Fundamentally the cartesian representation of the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> position.  <a href="#a4bc415751c246ae44727ef4f6b80d80c">More...</a><br /></td></tr>
 <tr class="separator:a4bc415751c246ae44727ef4f6b80d80c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2760dd54ac65996966d1b9077cbecb06"><td class="memItemLeft" align="right" valign="top"><a id="a2760dd54ac65996966d1b9077cbecb06"></a>
-<a class="el" href="../../d1/d9f/structrt_vector.html">rtVector</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getRTVector</b> () const</td></tr>
+<tr class="memitem:a2760dd54ac65996966d1b9077cbecb06"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/d9f/structrt_vector.html">rtVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d40/class_vector2_d.html#a2760dd54ac65996966d1b9077cbecb06">getRTVector</a> () const</td></tr>
+<tr class="memdesc:a2760dd54ac65996966d1b9077cbecb06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows the <a class="el" href="../../d1/d9f/structrt_vector.html" title="Container structure for standardized association of the radius-theta-polar vector form...">rtVector</a> struct value of the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> object to be querried. Fundamentally the polar representation of the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> position.  <a href="#a2760dd54ac65996966d1b9077cbecb06">More...</a><br /></td></tr>
 <tr class="separator:a2760dd54ac65996966d1b9077cbecb06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfa56cdcf167527e7c5efd54c4c1bffe"><td class="memItemLeft" align="right" valign="top"><a id="abfa56cdcf167527e7c5efd54c4c1bffe"></a>
-<a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;rhs)</td></tr>
+<tr class="memitem:abfa56cdcf167527e7c5efd54c4c1bffe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d40/class_vector2_d.html#abfa56cdcf167527e7c5efd54c4c1bffe">operator=</a> (const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;rhs)</td></tr>
+<tr class="memdesc:abfa56cdcf167527e7c5efd54c4c1bffe"><td class="mdescLeft">&#160;</td><td class="mdescRight">thisVector2D = rhsVector2D: The assignment operator overload defined for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class.  <a href="#abfa56cdcf167527e7c5efd54c4c1bffe">More...</a><br /></td></tr>
 <tr class="separator:abfa56cdcf167527e7c5efd54c4c1bffe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41f425fcd08fb82c7e72e132fb51136f"><td class="memItemLeft" align="right" valign="top"><a id="a41f425fcd08fb82c7e72e132fb51136f"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;rhs) const</td></tr>
+<tr class="memitem:a41f425fcd08fb82c7e72e132fb51136f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d40/class_vector2_d.html#a41f425fcd08fb82c7e72e132fb51136f">operator==</a> (const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;rhs) const</td></tr>
+<tr class="memdesc:a41f425fcd08fb82c7e72e132fb51136f"><td class="mdescLeft">&#160;</td><td class="mdescRight">thisVector2D == rhsVector2D: The equivalancy operator overload defined for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class.  <a href="#a41f425fcd08fb82c7e72e132fb51136f">More...</a><br /></td></tr>
 <tr class="separator:a41f425fcd08fb82c7e72e132fb51136f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a142a352f6cb2406fee15d153a275439c"><td class="memItemLeft" align="right" valign="top"><a id="a142a352f6cb2406fee15d153a275439c"></a>
-<a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator+</b> (const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;rhs) const</td></tr>
+<tr class="memitem:a142a352f6cb2406fee15d153a275439c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d40/class_vector2_d.html#a142a352f6cb2406fee15d153a275439c">operator+</a> (const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;rhs) const</td></tr>
+<tr class="memdesc:a142a352f6cb2406fee15d153a275439c"><td class="mdescLeft">&#160;</td><td class="mdescRight">newVector2D = thisVector2D + rhsVector2D: The vector addition and create operator overload defined for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class.  <a href="#a142a352f6cb2406fee15d153a275439c">More...</a><br /></td></tr>
 <tr class="separator:a142a352f6cb2406fee15d153a275439c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a803ee7e8cc2bfac23eb9e3aeebd5be3f"><td class="memItemLeft" align="right" valign="top"><a id="a803ee7e8cc2bfac23eb9e3aeebd5be3f"></a>
-<a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator-</b> (const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;rhs) const</td></tr>
+<tr class="memitem:a803ee7e8cc2bfac23eb9e3aeebd5be3f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d40/class_vector2_d.html#a803ee7e8cc2bfac23eb9e3aeebd5be3f">operator-</a> (const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;rhs) const</td></tr>
+<tr class="memdesc:a803ee7e8cc2bfac23eb9e3aeebd5be3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">newVector2D = thisVector2D - rhsVector2D: The vector subtraction and create operator overload defined for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class.  <a href="#a803ee7e8cc2bfac23eb9e3aeebd5be3f">More...</a><br /></td></tr>
 <tr class="separator:a803ee7e8cc2bfac23eb9e3aeebd5be3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a257aa1ca3260a4cacaa1171f67bf7910"><td class="memItemLeft" align="right" valign="top"><a id="a257aa1ca3260a4cacaa1171f67bf7910"></a>
-<a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator*</b> (const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;rhs) const</td></tr>
+<tr class="memitem:a257aa1ca3260a4cacaa1171f67bf7910"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d40/class_vector2_d.html#a257aa1ca3260a4cacaa1171f67bf7910">operator*</a> (const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;rhs) const</td></tr>
+<tr class="memdesc:a257aa1ca3260a4cacaa1171f67bf7910"><td class="mdescLeft">&#160;</td><td class="mdescRight">newVector2D = thisVector2D * rhsVector2D: The vector multiplication and create operator overload defined for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class.  <a href="#a257aa1ca3260a4cacaa1171f67bf7910">More...</a><br /></td></tr>
 <tr class="separator:a257aa1ca3260a4cacaa1171f67bf7910"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ade542889c8e483b5cc536b2bf4f053"><td class="memItemLeft" align="right" valign="top"><a id="a7ade542889c8e483b5cc536b2bf4f053"></a>
-<a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator*</b> (const double &amp;scalar) const</td></tr>
+<tr class="memitem:a7ade542889c8e483b5cc536b2bf4f053"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d40/class_vector2_d.html#a7ade542889c8e483b5cc536b2bf4f053">operator*</a> (const double &amp;scalar) const</td></tr>
+<tr class="memdesc:a7ade542889c8e483b5cc536b2bf4f053"><td class="mdescLeft">&#160;</td><td class="mdescRight">newVector2D = thisVector2D * scalar: The scalar multiplication and create operator overload defined for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class.  <a href="#a7ade542889c8e483b5cc536b2bf4f053">More...</a><br /></td></tr>
 <tr class="separator:a7ade542889c8e483b5cc536b2bf4f053"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc10dc721432ed17e94602640bb24346"><td class="memItemLeft" align="right" valign="top"><a id="adc10dc721432ed17e94602640bb24346"></a>
-<a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator/</b> (const double &amp;scalar) const</td></tr>
+<tr class="memitem:adc10dc721432ed17e94602640bb24346"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d40/class_vector2_d.html#adc10dc721432ed17e94602640bb24346">operator/</a> (const double &amp;scalar) const</td></tr>
+<tr class="memdesc:adc10dc721432ed17e94602640bb24346"><td class="mdescLeft">&#160;</td><td class="mdescRight">newVector2D = thisVector2D / scalar: The scalar division and create operator overload defined for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class.  <a href="#adc10dc721432ed17e94602640bb24346">More...</a><br /></td></tr>
 <tr class="separator:adc10dc721432ed17e94602640bb24346"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affc6e2a6034a4c4249a3e8b17f633069"><td class="memItemLeft" align="right" valign="top"><a id="affc6e2a6034a4c4249a3e8b17f633069"></a>
-<a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator+=</b> (const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;rhs)</td></tr>
+<tr class="memitem:affc6e2a6034a4c4249a3e8b17f633069"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d40/class_vector2_d.html#affc6e2a6034a4c4249a3e8b17f633069">operator+=</a> (const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;rhs)</td></tr>
+<tr class="memdesc:affc6e2a6034a4c4249a3e8b17f633069"><td class="mdescLeft">&#160;</td><td class="mdescRight">thisVector2d = thisVector2D + rhsVector2D: The vector addition and assignment operator overload defined for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class.  <a href="#affc6e2a6034a4c4249a3e8b17f633069">More...</a><br /></td></tr>
 <tr class="separator:affc6e2a6034a4c4249a3e8b17f633069"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16532303ee3e0a340f0515c1f0675fbd"><td class="memItemLeft" align="right" valign="top"><a id="a16532303ee3e0a340f0515c1f0675fbd"></a>
-<a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator-=</b> (const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;rhs)</td></tr>
+<tr class="memitem:a16532303ee3e0a340f0515c1f0675fbd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d40/class_vector2_d.html#a16532303ee3e0a340f0515c1f0675fbd">operator-=</a> (const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;rhs)</td></tr>
+<tr class="memdesc:a16532303ee3e0a340f0515c1f0675fbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">thisVector2D = thisVector2D - rhsVector2D: The vector subtraction and assignment operator overload defined for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class.  <a href="#a16532303ee3e0a340f0515c1f0675fbd">More...</a><br /></td></tr>
 <tr class="separator:a16532303ee3e0a340f0515c1f0675fbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7fe58ba3258641c02c7ea4499d42a089"><td class="memItemLeft" align="right" valign="top"><a id="a7fe58ba3258641c02c7ea4499d42a089"></a>
-<a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator*=</b> (const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;rhs)</td></tr>
+<tr class="memitem:a7fe58ba3258641c02c7ea4499d42a089"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d40/class_vector2_d.html#a7fe58ba3258641c02c7ea4499d42a089">operator*=</a> (const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;rhs)</td></tr>
+<tr class="memdesc:a7fe58ba3258641c02c7ea4499d42a089"><td class="mdescLeft">&#160;</td><td class="mdescRight">thisVector2D = thisVector2D * rhsVector2D: The vector multiplication and assignment operator overload defined for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class.  <a href="#a7fe58ba3258641c02c7ea4499d42a089">More...</a><br /></td></tr>
 <tr class="separator:a7fe58ba3258641c02c7ea4499d42a089"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd5d60f6e25137acab01b1d82da6819a"><td class="memItemLeft" align="right" valign="top"><a id="abd5d60f6e25137acab01b1d82da6819a"></a>
-<a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator*=</b> (const double scale)</td></tr>
+<tr class="memitem:abd5d60f6e25137acab01b1d82da6819a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d40/class_vector2_d.html#abd5d60f6e25137acab01b1d82da6819a">operator*=</a> (const double scale)</td></tr>
+<tr class="memdesc:abd5d60f6e25137acab01b1d82da6819a"><td class="mdescLeft">&#160;</td><td class="mdescRight">thisVector2D = thisVector2D * scalar: The scalar multiplication and assignment operator overload defined for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class.  <a href="#abd5d60f6e25137acab01b1d82da6819a">More...</a><br /></td></tr>
 <tr class="separator:abd5d60f6e25137acab01b1d82da6819a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72a388dec12b808190830a35be86a1f7"><td class="memItemLeft" align="right" valign="top"><a id="a72a388dec12b808190830a35be86a1f7"></a>
-<a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator/=</b> (const double scale)</td></tr>
+<tr class="memitem:a72a388dec12b808190830a35be86a1f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d40/class_vector2_d.html#a72a388dec12b808190830a35be86a1f7">operator/=</a> (const double scale)</td></tr>
+<tr class="memdesc:a72a388dec12b808190830a35be86a1f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">thisVector2D = thisVector2D / scalar: The scalar division and assignment operator overload defined for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class.  <a href="#a72a388dec12b808190830a35be86a1f7">More...</a><br /></td></tr>
 <tr class="separator:a72a388dec12b808190830a35be86a1f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79cfa577c38cb866d088166d6729a47d"><td class="memItemLeft" align="right" valign="top"><a id="a79cfa577c38cb866d088166d6729a47d"></a>
-<a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><b>normalize</b> () const</td></tr>
+<tr class="memitem:a79cfa577c38cb866d088166d6729a47d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d40/class_vector2_d.html#a79cfa577c38cb866d088166d6729a47d">normalize</a> () const</td></tr>
+<tr class="memdesc:a79cfa577c38cb866d088166d6729a47d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize function of a <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> object. Normalises the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> object, to a unirary magnitude/radius, creates a new <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> objectfor the returned result. This <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> object remains costant under query.  <a href="#a79cfa577c38cb866d088166d6729a47d">More...</a><br /></td></tr>
 <tr class="separator:a79cfa577c38cb866d088166d6729a47d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a73d35a880a2f3d262b14ac8aaf5914db"><td class="memItemLeft" align="right" valign="top"><a id="a73d35a880a2f3d262b14ac8aaf5914db"></a>
-static double&#160;</td><td class="memItemRight" valign="bottom"><b>magnitude</b> (const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;lhs)</td></tr>
+<tr class="memitem:a73d35a880a2f3d262b14ac8aaf5914db"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d40/class_vector2_d.html#a73d35a880a2f3d262b14ac8aaf5914db">magnitude</a> (const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;lhs)</td></tr>
+<tr class="memdesc:a73d35a880a2f3d262b14ac8aaf5914db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static function that calculates the vector magnitude of a <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> object. Uses the origin as a comparative mathematical reference.  <a href="#a73d35a880a2f3d262b14ac8aaf5914db">More...</a><br /></td></tr>
 <tr class="separator:a73d35a880a2f3d262b14ac8aaf5914db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7b3cebbfa7c84c9750c30a6c030ffa8"><td class="memItemLeft" align="right" valign="top"><a id="ac7b3cebbfa7c84c9750c30a6c030ffa8"></a>
-static double&#160;</td><td class="memItemRight" valign="bottom"><b>magnitude</b> (const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;lhs, const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;rhs)</td></tr>
+<tr class="memitem:ac7b3cebbfa7c84c9750c30a6c030ffa8"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d40/class_vector2_d.html#ac7b3cebbfa7c84c9750c30a6c030ffa8">magnitude</a> (const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;lhs, const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;rhs)</td></tr>
+<tr class="memdesc:ac7b3cebbfa7c84c9750c30a6c030ffa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static function that calculates the relative vector magnitude between two <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> objects.  <a href="#ac7b3cebbfa7c84c9750c30a6c030ffa8">More...</a><br /></td></tr>
 <tr class="separator:ac7b3cebbfa7c84c9750c30a6c030ffa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
@@ -164,16 +172,20 @@ static <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&#160;
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a86eb002af3d4ce9ee892691165577bd9"><td class="memItemLeft" align="right" valign="top"><a id="a86eb002af3d4ce9ee892691165577bd9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>radius</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d40/class_vector2_d.html#a86eb002af3d4ce9ee892691165577bd9">radius</a> ()</td></tr>
+<tr class="memdesc:a86eb002af3d4ce9ee892691165577bd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Private function to calculate the radius from the <a class="el" href="../../d5/dae/structxy_vector.html" title="Container structure for standardized association of the x-y-cartesian vector form. ">xyVector</a> struct, to be privately stored in the <a class="el" href="../../d1/d9f/structrt_vector.html" title="Container structure for standardized association of the radius-theta-polar vector form...">rtVector</a> struct. <br /></td></tr>
 <tr class="separator:a86eb002af3d4ce9ee892691165577bd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77801c0448846bc99cea64b232e262ed"><td class="memItemLeft" align="right" valign="top"><a id="a77801c0448846bc99cea64b232e262ed"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>theta</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d40/class_vector2_d.html#a77801c0448846bc99cea64b232e262ed">theta</a> ()</td></tr>
+<tr class="memdesc:a77801c0448846bc99cea64b232e262ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Private function to calculate the theta/angle from the <a class="el" href="../../d5/dae/structxy_vector.html" title="Container structure for standardized association of the x-y-cartesian vector form. ">xyVector</a> struct, to be privately stored in the <a class="el" href="../../d1/d9f/structrt_vector.html" title="Container structure for standardized association of the radius-theta-polar vector form...">rtVector</a> struct. <br /></td></tr>
 <tr class="separator:a77801c0448846bc99cea64b232e262ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2aa1adc699bfc5a490875d26c1e6da04"><td class="memItemLeft" align="right" valign="top"><a id="a2aa1adc699bfc5a490875d26c1e6da04"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>xVal</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d40/class_vector2_d.html#a2aa1adc699bfc5a490875d26c1e6da04">xVal</a> ()</td></tr>
+<tr class="memdesc:a2aa1adc699bfc5a490875d26c1e6da04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Private function to calculate the x-cartesian value from the <a class="el" href="../../d1/d9f/structrt_vector.html" title="Container structure for standardized association of the radius-theta-polar vector form...">rtVector</a> struct, to be privately stored in the <a class="el" href="../../d5/dae/structxy_vector.html" title="Container structure for standardized association of the x-y-cartesian vector form. ">xyVector</a> struct. <br /></td></tr>
 <tr class="separator:a2aa1adc699bfc5a490875d26c1e6da04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab202ce3f9065cdbf5d981b0f34c66feb"><td class="memItemLeft" align="right" valign="top"><a id="ab202ce3f9065cdbf5d981b0f34c66feb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>yVal</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d40/class_vector2_d.html#ab202ce3f9065cdbf5d981b0f34c66feb">yVal</a> ()</td></tr>
+<tr class="memdesc:ab202ce3f9065cdbf5d981b0f34c66feb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Private function to calculate the y-cartesian value from the <a class="el" href="../../d1/d9f/structrt_vector.html" title="Container structure for standardized association of the radius-theta-polar vector form...">rtVector</a> struct, to be privately stored in the <a class="el" href="../../d5/dae/structxy_vector.html" title="Container structure for standardized association of the x-y-cartesian vector form. ">xyVector</a> struct. <br /></td></tr>
 <tr class="separator:ab202ce3f9065cdbf5d981b0f34c66feb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -191,6 +203,621 @@ Static Private Attributes</h2></td></tr>
 static double&#160;</td><td class="memItemRight" valign="bottom"><b>magnitude_tolerance</b> = 0.000000001</td></tr>
 <tr class="separator:a50a94297b6c05c07ee29900a438492a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Defines the base mathematical element used, the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> element. Contains structs of two self-contained vector types, the <a class="el" href="../../d5/dae/structxy_vector.html" title="Container structure for standardized association of the x-y-cartesian vector form. ">xyVector</a> and the <a class="el" href="../../d1/d9f/structrt_vector.html" title="Container structure for standardized association of the radius-theta-polar vector form...">rtVector</a>. Defines the associated creation of the objects, and the logical operator overload associated with vector mathematics. The tigonometric mathematical vector relationships are based on radians. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a98e9997ebb7a629f4db52397d4e0d653"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98e9997ebb7a629f4db52397d4e0d653">&#9670;&nbsp;</a></span>Vector2D() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector2D::Vector2D </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default constructor for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class. Assigns the static origin of the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class to this <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> object. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> by value. </dd></dl>
+
+</div>
+</div>
+<a id="a0c1db105a3d49bde5056cc19b04f18c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c1db105a3d49bde5056cc19b04f18c2">&#9670;&nbsp;</a></span>Vector2D() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector2D::Vector2D </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>val1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>val2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const VectorType &amp;&#160;</td>
+          <td class="paramname"><em>vectype</em> = <code>VectorType::xy</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class by two double scalar parameters, and the vector input type. Constructs the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> object appropriately based from the vectype parameter. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val1</td><td>either as x value of cartesian input or radius value of polar input. </td></tr>
+    <tr><td class="paramname">val2</td><td>either as y value of cartesian input or theta value of polar input. </td></tr>
+    <tr><td class="paramname">vectype</td><td>of the parameters val1 and val2. Default is VectorType::xy. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> by value. </dd></dl>
+
+</div>
+</div>
+<a id="ab3aae16cfdb6eab642f832d82de2ac5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3aae16cfdb6eab642f832d82de2ac5c">&#9670;&nbsp;</a></span>Vector2D() <span class="overload">[3/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector2D::Vector2D </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d5/dae/structxy_vector.html">xyVector</a>&#160;</td>
+          <td class="paramname"><em>vec</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class directly from a <a class="el" href="../../d5/dae/structxy_vector.html" title="Container structure for standardized association of the x-y-cartesian vector form. ">xyVector</a> struct. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vec</td><td>The <a class="el" href="../../d5/dae/structxy_vector.html" title="Container structure for standardized association of the x-y-cartesian vector form. ">xyVector</a> struct used for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> object construction. Used by constant value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> by value. </dd></dl>
+
+</div>
+</div>
+<a id="a3253f7c676f03f9d460d6b473934a1ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3253f7c676f03f9d460d6b473934a1ff">&#9670;&nbsp;</a></span>Vector2D() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector2D::Vector2D </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d1/d9f/structrt_vector.html">rtVector</a>&#160;</td>
+          <td class="paramname"><em>vec</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class directly from a <a class="el" href="../../d1/d9f/structrt_vector.html" title="Container structure for standardized association of the radius-theta-polar vector form...">rtVector</a> struct. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vec</td><td>The <a class="el" href="../../d1/d9f/structrt_vector.html" title="Container structure for standardized association of the radius-theta-polar vector form...">rtVector</a> struct used for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> object construction. Used by constant value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> by value. </dd></dl>
+
+</div>
+</div>
+<a id="a658f4dd52408392ab5ad5fb36112a5c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a658f4dd52408392ab5ad5fb36112a5c8">&#9670;&nbsp;</a></span>Vector2D() <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector2D::Vector2D </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copy constructor for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rhs</td><td><a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> value that is used to assign to this. Used by constant reference. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> by value. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2760dd54ac65996966d1b9077cbecb06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2760dd54ac65996966d1b9077cbecb06">&#9670;&nbsp;</a></span>getRTVector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/d9f/structrt_vector.html">rtVector</a> Vector2D::getRTVector </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allows the <a class="el" href="../../d1/d9f/structrt_vector.html" title="Container structure for standardized association of the radius-theta-polar vector form...">rtVector</a> struct value of the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> object to be querried. Fundamentally the polar representation of the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> position. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d1/d9f/structrt_vector.html" title="Container structure for standardized association of the radius-theta-polar vector form...">rtVector</a> struct. </dd></dl>
+
+</div>
+</div>
+<a id="a4bc415751c246ae44727ef4f6b80d80c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bc415751c246ae44727ef4f6b80d80c">&#9670;&nbsp;</a></span>getXYVector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/dae/structxy_vector.html">xyVector</a> Vector2D::getXYVector </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allows the <a class="el" href="../../d5/dae/structxy_vector.html" title="Container structure for standardized association of the x-y-cartesian vector form. ">xyVector</a> struct value of the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> object to be querried. Fundamentally the cartesian representation of the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> position. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d5/dae/structxy_vector.html" title="Container structure for standardized association of the x-y-cartesian vector form. ">xyVector</a> struct. </dd></dl>
+
+</div>
+</div>
+<a id="a73d35a880a2f3d262b14ac8aaf5914db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73d35a880a2f3d262b14ac8aaf5914db">&#9670;&nbsp;</a></span>magnitude() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Vector2D::magnitude </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Static function that calculates the vector magnitude of a <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> object. Uses the origin as a comparative mathematical reference. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>The input <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> object being querried. Used by constant reference. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>double of the vector magnitude result by value. </dd></dl>
+
+</div>
+</div>
+<a id="ac7b3cebbfa7c84c9750c30a6c030ffa8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7b3cebbfa7c84c9750c30a6c030ffa8">&#9670;&nbsp;</a></span>magnitude() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Vector2D::magnitude </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Static function that calculates the relative vector magnitude between two <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> objects. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>The first <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> object being querried. Used by constant reference. </td></tr>
+    <tr><td class="paramname">rhs</td><td>The second <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> object being queried. Used by constant reference. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>double of the vector magnitude result by value. </dd></dl>
+
+</div>
+</div>
+<a id="a79cfa577c38cb866d088166d6729a47d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79cfa577c38cb866d088166d6729a47d">&#9670;&nbsp;</a></span>normalize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> Vector2D::normalize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Normalize function of a <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> object. Normalises the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> object, to a unirary magnitude/radius, creates a new <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> objectfor the returned result. This <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> object remains costant under query. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> of the normalized <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> object by value. </dd></dl>
+
+</div>
+</div>
+<a id="a257aa1ca3260a4cacaa1171f67bf7910"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a257aa1ca3260a4cacaa1171f67bf7910">&#9670;&nbsp;</a></span>operator*() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> Vector2D::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>newVector2D = thisVector2D * rhsVector2D: The vector multiplication and create operator overload defined for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rhs</td><td>The <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> value that this is multiplied with. Used by constant reference. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> of outcome by value. </dd></dl>
+
+</div>
+</div>
+<a id="a7ade542889c8e483b5cc536b2bf4f053"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ade542889c8e483b5cc536b2bf4f053">&#9670;&nbsp;</a></span>operator*() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> Vector2D::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>scalar</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>newVector2D = thisVector2D * scalar: The scalar multiplication and create operator overload defined for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scalar</td><td>The double value that this is multiplied with. Used by constant reference. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> of outcome by value. </dd></dl>
+
+</div>
+</div>
+<a id="a7fe58ba3258641c02c7ea4499d42a089"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fe58ba3258641c02c7ea4499d42a089">&#9670;&nbsp;</a></span>operator*=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp; Vector2D::operator*= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>thisVector2D = thisVector2D * rhsVector2D: The vector multiplication and assignment operator overload defined for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rhs</td><td>The <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> value that is multiplied with this. Used by constant reference. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> of this as the outcome by reference. </dd></dl>
+
+</div>
+</div>
+<a id="abd5d60f6e25137acab01b1d82da6819a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd5d60f6e25137acab01b1d82da6819a">&#9670;&nbsp;</a></span>operator*=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp; Vector2D::operator*= </td>
+          <td>(</td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>scale</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>thisVector2D = thisVector2D * scalar: The scalar multiplication and assignment operator overload defined for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scale</td><td>The double value that is multiplied with this. Used by constant reference. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> of this as the outcome by reference. </dd></dl>
+
+</div>
+</div>
+<a id="a142a352f6cb2406fee15d153a275439c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a142a352f6cb2406fee15d153a275439c">&#9670;&nbsp;</a></span>operator+()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> Vector2D::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>newVector2D = thisVector2D + rhsVector2D: The vector addition and create operator overload defined for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rhs</td><td>The <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> value that this is added with. Used by constant reference. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> of outcome by value. </dd></dl>
+
+</div>
+</div>
+<a id="affc6e2a6034a4c4249a3e8b17f633069"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affc6e2a6034a4c4249a3e8b17f633069">&#9670;&nbsp;</a></span>operator+=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp; Vector2D::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>thisVector2d = thisVector2D + rhsVector2D: The vector addition and assignment operator overload defined for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rhs</td><td>The <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> value that is added to this. Used by constant reference. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> of this as the outcome by reference. </dd></dl>
+
+</div>
+</div>
+<a id="a803ee7e8cc2bfac23eb9e3aeebd5be3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a803ee7e8cc2bfac23eb9e3aeebd5be3f">&#9670;&nbsp;</a></span>operator-()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> Vector2D::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>newVector2D = thisVector2D - rhsVector2D: The vector subtraction and create operator overload defined for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rhs</td><td>The <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> value that this has subtracted off with. Used by constant reference. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> of outcome by value. </dd></dl>
+
+</div>
+</div>
+<a id="a16532303ee3e0a340f0515c1f0675fbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16532303ee3e0a340f0515c1f0675fbd">&#9670;&nbsp;</a></span>operator-=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp; Vector2D::operator-= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>thisVector2D = thisVector2D - rhsVector2D: The vector subtraction and assignment operator overload defined for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rhs</td><td>The <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> value that is subtracted from this. Used by constant reference. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> of this as the outcome by reference. </dd></dl>
+
+</div>
+</div>
+<a id="adc10dc721432ed17e94602640bb24346"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc10dc721432ed17e94602640bb24346">&#9670;&nbsp;</a></span>operator/()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> Vector2D::operator/ </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>scalar</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>newVector2D = thisVector2D / scalar: The scalar division and create operator overload defined for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scalar</td><td>The double value that this is divided with. Used by constant reference. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> of outcome by value. </dd></dl>
+
+</div>
+</div>
+<a id="a72a388dec12b808190830a35be86a1f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72a388dec12b808190830a35be86a1f7">&#9670;&nbsp;</a></span>operator/=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp; Vector2D::operator/= </td>
+          <td>(</td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>scale</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>thisVector2D = thisVector2D / scalar: The scalar division and assignment operator overload defined for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scale</td><td>The double value that divides this. Used by constant reference. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> of this as the outcome by reference. </dd></dl>
+
+</div>
+</div>
+<a id="abfa56cdcf167527e7c5efd54c4c1bffe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfa56cdcf167527e7c5efd54c4c1bffe">&#9670;&nbsp;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp; Vector2D::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>thisVector2D = rhsVector2D: The assignment operator overload defined for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rhs</td><td>The <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> value that this must be assigned. Used by constant reference. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> of this assignment by reference. </dd></dl>
+
+</div>
+</div>
+<a id="a41f425fcd08fb82c7e72e132fb51136f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41f425fcd08fb82c7e72e132fb51136f">&#9670;&nbsp;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Vector2D::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>thisVector2D == rhsVector2D: The equivalancy operator overload defined for the <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rhs</td><td>The <a class="el" href="../../d9/d40/class_vector2_d.html" title="Defines the base mathematical element used, the Vector2D element. Contains structs of two self-contai...">Vector2D</a> value that this is compared against. Used by constent reference. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>boolean of the equivalency. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>D:/Users/Tim-PC/Documents/Software_II/Project/ProjectFiles/game-source-code/<a class="el" href="../../d1/dae/_vector2_d_8h_source.html">Vector2D.h</a></li>
 <li>D:/Users/Tim-PC/Documents/Software_II/Project/ProjectFiles/game-source-code/Vector2D.cpp</li>

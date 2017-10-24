@@ -16,11 +16,7 @@ const std::shared_ptr<RepositioryInterface> Application::getGameRepository()
 {
 	return _repository;
 }
-std::shared_ptr<RepositioryInterface> Application::_repository = nullptr;
-std::shared_ptr<GameManager> Application::_gameManager = nullptr;
 
-void InitialiseApplication(std::shared_ptr<RepositioryInterface> repository);
-const std::shared_ptr<RepositioryInterface> getGameRepository();
 void Application::LoadScene(int index)
 {
 	_gameManager->LoadScene(index);
@@ -37,3 +33,6 @@ const unsigned int Application::currentSceneIndex()
 {
 	return _gameManager->getSceneIndex();
 }
+
+std::shared_ptr<RepositioryInterface> Application::_repository = nullptr;
+std::shared_ptr<GameManager> Application::_gameManager = nullptr;

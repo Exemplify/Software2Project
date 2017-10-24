@@ -18,14 +18,33 @@ Inheritance diagram for Lose\+Scene\+Factory\+:\begin{figure}[H]
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_lose_scene_factory_adfe18ba674cdd988bb78e3cd3218796f}\label{class_lose_scene_factory_adfe18ba674cdd988bb78e3cd3218796f}} 
-virtual std\+::shared\+\_\+ptr$<$ \hyperlink{class_background_factory}{Background\+Factory} $>$ {\bfseries get\+Factory} () const override
-\end{DoxyCompactItemize}
+virtual std\+::shared\+\_\+ptr$<$ \hyperlink{class_background_factory}{Background\+Factory} $>$ \hyperlink{class_lose_scene_factory_adfe18ba674cdd988bb78e3cd3218796f}{get\+Factory} () const override
+\begin{DoxyCompactList}\small\item\em returns the appropriate \hyperlink{class_scene}{Scene} Background Factory for the specific Menu \hyperlink{class_scene}{Scene} \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
 Creates the \hyperlink{class_scene}{Scene} that is displayed when the player loses the game. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_lose_scene_factory_adfe18ba674cdd988bb78e3cd3218796f}\label{class_lose_scene_factory_adfe18ba674cdd988bb78e3cd3218796f}} 
+\index{Lose\+Scene\+Factory@{Lose\+Scene\+Factory}!get\+Factory@{get\+Factory}}
+\index{get\+Factory@{get\+Factory}!Lose\+Scene\+Factory@{Lose\+Scene\+Factory}}
+\subsubsection{\texorpdfstring{get\+Factory()}{getFactory()}}
+{\footnotesize\ttfamily virtual std\+::shared\+\_\+ptr$<$\hyperlink{class_background_factory}{Background\+Factory}$>$ Lose\+Scene\+Factory\+::get\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+returns the appropriate \hyperlink{class_scene}{Scene} Background Factory for the specific Menu \hyperlink{class_scene}{Scene} 
+
+\begin{DoxyReturn}{Returns}
+A factory object that is used to create the menu \hyperlink{class_splash_screen}{Splash\+Screen} Objects 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_menu_scene_factory_ad0f60a16fdbb10c6d7ba3311dafa2e76}{Menu\+Scene\+Factory}.
+
+
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

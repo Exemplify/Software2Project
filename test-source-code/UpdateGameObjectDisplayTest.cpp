@@ -7,7 +7,6 @@
 TEST_CASE("1.0 The Sprite graphic is updated correctly according to the GameObject provided")
 {
 	UpdateGameObjectDisplay updateObject;
-	
 	SUBCASE("1.1 Exception thrown when a graphic doesnt exist")
 	{
 		GraphicObject falseGraphic("FakeGraphic.jpeg", "FakeGraphic");

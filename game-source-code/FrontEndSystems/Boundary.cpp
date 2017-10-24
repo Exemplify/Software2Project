@@ -1,12 +1,12 @@
 #include "Boundary.h"
 
+const unsigned int DEFAULT_WIDTH = 1920;
+const unsigned int DEFAULT_HEIGHT = 1080;
 // default boundary is set to the screen bounds 
 Boundary::Boundary()
 {
-	auto gameRepo = Application::getGameRepository();
-	auto gameData = gameRepo->getGameScreenSize();
-	_xBound = gameData[0]/2;
-	_yBound = gameData[1]/2;
+	_xBound = DEFAULT_HEIGHT/2;
+	_yBound = DEFAULT_HEIGHT/2;
 }
 // constructor that uses the defined bounds for the boundary
 Boundary::Boundary(double xbound, double ybound):

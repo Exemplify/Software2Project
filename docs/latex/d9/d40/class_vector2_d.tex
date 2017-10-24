@@ -1,74 +1,64 @@
 \hypertarget{class_vector2_d}{}\section{Vector2D Class Reference}
 \label{class_vector2_d}\index{Vector2D@{Vector2D}}
+
+
+Defines the base mathematical element used, the \hyperlink{class_vector2_d}{Vector2D} element. Contains structs of two self-\/contained vector types, the \hyperlink{structxy_vector}{xy\+Vector} and the \hyperlink{structrt_vector}{rt\+Vector}. Defines the associated creation of the objects, and the logical operator overload associated with vector mathematics. The tigonometric mathematical vector relationships are based on radians.  
+
+
+
+
+{\ttfamily \#include $<$Vector2\+D.\+h$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_vector2_d_a0c1db105a3d49bde5056cc19b04f18c2}\label{class_vector2_d_a0c1db105a3d49bde5056cc19b04f18c2}} 
-{\bfseries Vector2D} (double val1, double val2, const Vector\+Type \&vectype=Vector\+Type\+::xy)
-\item 
-\mbox{\Hypertarget{class_vector2_d_ab3aae16cfdb6eab642f832d82de2ac5c}\label{class_vector2_d_ab3aae16cfdb6eab642f832d82de2ac5c}} 
-{\bfseries Vector2D} (const \hyperlink{structxy_vector}{xy\+Vector} vec)
-\item 
-\mbox{\Hypertarget{class_vector2_d_a3253f7c676f03f9d460d6b473934a1ff}\label{class_vector2_d_a3253f7c676f03f9d460d6b473934a1ff}} 
-{\bfseries Vector2D} (const \hyperlink{structrt_vector}{rt\+Vector} vec)
-\item 
-\mbox{\Hypertarget{class_vector2_d_a658f4dd52408392ab5ad5fb36112a5c8}\label{class_vector2_d_a658f4dd52408392ab5ad5fb36112a5c8}} 
-{\bfseries Vector2D} (const \hyperlink{class_vector2_d}{Vector2D} \&rhs)
-\item 
-\mbox{\Hypertarget{class_vector2_d_a4bc415751c246ae44727ef4f6b80d80c}\label{class_vector2_d_a4bc415751c246ae44727ef4f6b80d80c}} 
-\hyperlink{structxy_vector}{xy\+Vector} {\bfseries get\+X\+Y\+Vector} () const
-\item 
-\mbox{\Hypertarget{class_vector2_d_a2760dd54ac65996966d1b9077cbecb06}\label{class_vector2_d_a2760dd54ac65996966d1b9077cbecb06}} 
-\hyperlink{structrt_vector}{rt\+Vector} {\bfseries get\+R\+T\+Vector} () const
-\item 
-\mbox{\Hypertarget{class_vector2_d_abfa56cdcf167527e7c5efd54c4c1bffe}\label{class_vector2_d_abfa56cdcf167527e7c5efd54c4c1bffe}} 
-\hyperlink{class_vector2_d}{Vector2D} \& {\bfseries operator=} (const \hyperlink{class_vector2_d}{Vector2D} \&rhs)
-\item 
-\mbox{\Hypertarget{class_vector2_d_a41f425fcd08fb82c7e72e132fb51136f}\label{class_vector2_d_a41f425fcd08fb82c7e72e132fb51136f}} 
-bool {\bfseries operator==} (const \hyperlink{class_vector2_d}{Vector2D} \&rhs) const
-\item 
-\mbox{\Hypertarget{class_vector2_d_a142a352f6cb2406fee15d153a275439c}\label{class_vector2_d_a142a352f6cb2406fee15d153a275439c}} 
-\hyperlink{class_vector2_d}{Vector2D} {\bfseries operator+} (const \hyperlink{class_vector2_d}{Vector2D} \&rhs) const
-\item 
-\mbox{\Hypertarget{class_vector2_d_a803ee7e8cc2bfac23eb9e3aeebd5be3f}\label{class_vector2_d_a803ee7e8cc2bfac23eb9e3aeebd5be3f}} 
-\hyperlink{class_vector2_d}{Vector2D} {\bfseries operator-\/} (const \hyperlink{class_vector2_d}{Vector2D} \&rhs) const
-\item 
-\mbox{\Hypertarget{class_vector2_d_a257aa1ca3260a4cacaa1171f67bf7910}\label{class_vector2_d_a257aa1ca3260a4cacaa1171f67bf7910}} 
-\hyperlink{class_vector2_d}{Vector2D} {\bfseries operator$\ast$} (const \hyperlink{class_vector2_d}{Vector2D} \&rhs) const
-\item 
-\mbox{\Hypertarget{class_vector2_d_a7ade542889c8e483b5cc536b2bf4f053}\label{class_vector2_d_a7ade542889c8e483b5cc536b2bf4f053}} 
-\hyperlink{class_vector2_d}{Vector2D} {\bfseries operator$\ast$} (const double \&scalar) const
-\item 
-\mbox{\Hypertarget{class_vector2_d_adc10dc721432ed17e94602640bb24346}\label{class_vector2_d_adc10dc721432ed17e94602640bb24346}} 
-\hyperlink{class_vector2_d}{Vector2D} {\bfseries operator/} (const double \&scalar) const
-\item 
-\mbox{\Hypertarget{class_vector2_d_affc6e2a6034a4c4249a3e8b17f633069}\label{class_vector2_d_affc6e2a6034a4c4249a3e8b17f633069}} 
-\hyperlink{class_vector2_d}{Vector2D} \& {\bfseries operator+=} (const \hyperlink{class_vector2_d}{Vector2D} \&rhs)
-\item 
-\mbox{\Hypertarget{class_vector2_d_a16532303ee3e0a340f0515c1f0675fbd}\label{class_vector2_d_a16532303ee3e0a340f0515c1f0675fbd}} 
-\hyperlink{class_vector2_d}{Vector2D} \& {\bfseries operator-\/=} (const \hyperlink{class_vector2_d}{Vector2D} \&rhs)
-\item 
-\mbox{\Hypertarget{class_vector2_d_a7fe58ba3258641c02c7ea4499d42a089}\label{class_vector2_d_a7fe58ba3258641c02c7ea4499d42a089}} 
-\hyperlink{class_vector2_d}{Vector2D} \& {\bfseries operator$\ast$=} (const \hyperlink{class_vector2_d}{Vector2D} \&rhs)
-\item 
-\mbox{\Hypertarget{class_vector2_d_abd5d60f6e25137acab01b1d82da6819a}\label{class_vector2_d_abd5d60f6e25137acab01b1d82da6819a}} 
-\hyperlink{class_vector2_d}{Vector2D} \& {\bfseries operator$\ast$=} (const double scale)
-\item 
-\mbox{\Hypertarget{class_vector2_d_a72a388dec12b808190830a35be86a1f7}\label{class_vector2_d_a72a388dec12b808190830a35be86a1f7}} 
-\hyperlink{class_vector2_d}{Vector2D} \& {\bfseries operator/=} (const double scale)
-\item 
-\mbox{\Hypertarget{class_vector2_d_a79cfa577c38cb866d088166d6729a47d}\label{class_vector2_d_a79cfa577c38cb866d088166d6729a47d}} 
-\hyperlink{class_vector2_d}{Vector2D} {\bfseries normalize} () const
-\end{DoxyCompactItemize}
+\hyperlink{class_vector2_d_a98e9997ebb7a629f4db52397d4e0d653}{Vector2D} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \hyperlink{class_vector2_d}{Vector2D} class. Assigns the static origin of the \hyperlink{class_vector2_d}{Vector2D} class to this \hyperlink{class_vector2_d}{Vector2D} object. \end{DoxyCompactList}\item 
+\hyperlink{class_vector2_d_a0c1db105a3d49bde5056cc19b04f18c2}{Vector2D} (double val1, double val2, const Vector\+Type \&vectype=Vector\+Type\+::xy)
+\begin{DoxyCompactList}\small\item\em Constructor for the \hyperlink{class_vector2_d}{Vector2D} class by two double scalar parameters, and the vector input type. Constructs the \hyperlink{class_vector2_d}{Vector2D} object appropriately based from the vectype parameter. \end{DoxyCompactList}\item 
+\hyperlink{class_vector2_d_ab3aae16cfdb6eab642f832d82de2ac5c}{Vector2D} (const \hyperlink{structxy_vector}{xy\+Vector} vec)
+\begin{DoxyCompactList}\small\item\em Constructor for the \hyperlink{class_vector2_d}{Vector2D} class directly from a \hyperlink{structxy_vector}{xy\+Vector} struct. \end{DoxyCompactList}\item 
+\hyperlink{class_vector2_d_a3253f7c676f03f9d460d6b473934a1ff}{Vector2D} (const \hyperlink{structrt_vector}{rt\+Vector} vec)
+\begin{DoxyCompactList}\small\item\em Constructor for the \hyperlink{class_vector2_d}{Vector2D} class directly from a \hyperlink{structrt_vector}{rt\+Vector} struct. \end{DoxyCompactList}\item 
+\hyperlink{class_vector2_d_a658f4dd52408392ab5ad5fb36112a5c8}{Vector2D} (const \hyperlink{class_vector2_d}{Vector2D} \&rhs)
+\begin{DoxyCompactList}\small\item\em Copy constructor for the \hyperlink{class_vector2_d}{Vector2D} class. \end{DoxyCompactList}\item 
+\hyperlink{structxy_vector}{xy\+Vector} \hyperlink{class_vector2_d_a4bc415751c246ae44727ef4f6b80d80c}{get\+X\+Y\+Vector} () const
+\begin{DoxyCompactList}\small\item\em Allows the \hyperlink{structxy_vector}{xy\+Vector} struct value of the \hyperlink{class_vector2_d}{Vector2D} object to be querried. Fundamentally the cartesian representation of the \hyperlink{class_vector2_d}{Vector2D} position. \end{DoxyCompactList}\item 
+\hyperlink{structrt_vector}{rt\+Vector} \hyperlink{class_vector2_d_a2760dd54ac65996966d1b9077cbecb06}{get\+R\+T\+Vector} () const
+\begin{DoxyCompactList}\small\item\em Allows the \hyperlink{structrt_vector}{rt\+Vector} struct value of the \hyperlink{class_vector2_d}{Vector2D} object to be querried. Fundamentally the polar representation of the \hyperlink{class_vector2_d}{Vector2D} position. \end{DoxyCompactList}\item 
+\hyperlink{class_vector2_d}{Vector2D} \& \hyperlink{class_vector2_d_abfa56cdcf167527e7c5efd54c4c1bffe}{operator=} (const \hyperlink{class_vector2_d}{Vector2D} \&rhs)
+\begin{DoxyCompactList}\small\item\em this\+Vector2D = rhs\+Vector2D\+: The assignment operator overload defined for the \hyperlink{class_vector2_d}{Vector2D} class. \end{DoxyCompactList}\item 
+bool \hyperlink{class_vector2_d_a41f425fcd08fb82c7e72e132fb51136f}{operator==} (const \hyperlink{class_vector2_d}{Vector2D} \&rhs) const
+\begin{DoxyCompactList}\small\item\em this\+Vector2D == rhs\+Vector2D\+: The equivalancy operator overload defined for the \hyperlink{class_vector2_d}{Vector2D} class. \end{DoxyCompactList}\item 
+\hyperlink{class_vector2_d}{Vector2D} \hyperlink{class_vector2_d_a142a352f6cb2406fee15d153a275439c}{operator+} (const \hyperlink{class_vector2_d}{Vector2D} \&rhs) const
+\begin{DoxyCompactList}\small\item\em new\+Vector2D = this\+Vector2D + rhs\+Vector2D\+: The vector addition and create operator overload defined for the \hyperlink{class_vector2_d}{Vector2D} class. \end{DoxyCompactList}\item 
+\hyperlink{class_vector2_d}{Vector2D} \hyperlink{class_vector2_d_a803ee7e8cc2bfac23eb9e3aeebd5be3f}{operator-\/} (const \hyperlink{class_vector2_d}{Vector2D} \&rhs) const
+\begin{DoxyCompactList}\small\item\em new\+Vector2D = this\+Vector2D -\/ rhs\+Vector2D\+: The vector subtraction and create operator overload defined for the \hyperlink{class_vector2_d}{Vector2D} class. \end{DoxyCompactList}\item 
+\hyperlink{class_vector2_d}{Vector2D} \hyperlink{class_vector2_d_a257aa1ca3260a4cacaa1171f67bf7910}{operator$\ast$} (const \hyperlink{class_vector2_d}{Vector2D} \&rhs) const
+\begin{DoxyCompactList}\small\item\em new\+Vector2D = this\+Vector2D $\ast$ rhs\+Vector2D\+: The vector multiplication and create operator overload defined for the \hyperlink{class_vector2_d}{Vector2D} class. \end{DoxyCompactList}\item 
+\hyperlink{class_vector2_d}{Vector2D} \hyperlink{class_vector2_d_a7ade542889c8e483b5cc536b2bf4f053}{operator$\ast$} (const double \&scalar) const
+\begin{DoxyCompactList}\small\item\em new\+Vector2D = this\+Vector2D $\ast$ scalar\+: The scalar multiplication and create operator overload defined for the \hyperlink{class_vector2_d}{Vector2D} class. \end{DoxyCompactList}\item 
+\hyperlink{class_vector2_d}{Vector2D} \hyperlink{class_vector2_d_adc10dc721432ed17e94602640bb24346}{operator/} (const double \&scalar) const
+\begin{DoxyCompactList}\small\item\em new\+Vector2D = this\+Vector2D / scalar\+: The scalar division and create operator overload defined for the \hyperlink{class_vector2_d}{Vector2D} class. \end{DoxyCompactList}\item 
+\hyperlink{class_vector2_d}{Vector2D} \& \hyperlink{class_vector2_d_affc6e2a6034a4c4249a3e8b17f633069}{operator+=} (const \hyperlink{class_vector2_d}{Vector2D} \&rhs)
+\begin{DoxyCompactList}\small\item\em this\+Vector2d = this\+Vector2D + rhs\+Vector2D\+: The vector addition and assignment operator overload defined for the \hyperlink{class_vector2_d}{Vector2D} class. \end{DoxyCompactList}\item 
+\hyperlink{class_vector2_d}{Vector2D} \& \hyperlink{class_vector2_d_a16532303ee3e0a340f0515c1f0675fbd}{operator-\/=} (const \hyperlink{class_vector2_d}{Vector2D} \&rhs)
+\begin{DoxyCompactList}\small\item\em this\+Vector2D = this\+Vector2D -\/ rhs\+Vector2D\+: The vector subtraction and assignment operator overload defined for the \hyperlink{class_vector2_d}{Vector2D} class. \end{DoxyCompactList}\item 
+\hyperlink{class_vector2_d}{Vector2D} \& \hyperlink{class_vector2_d_a7fe58ba3258641c02c7ea4499d42a089}{operator$\ast$=} (const \hyperlink{class_vector2_d}{Vector2D} \&rhs)
+\begin{DoxyCompactList}\small\item\em this\+Vector2D = this\+Vector2D $\ast$ rhs\+Vector2D\+: The vector multiplication and assignment operator overload defined for the \hyperlink{class_vector2_d}{Vector2D} class. \end{DoxyCompactList}\item 
+\hyperlink{class_vector2_d}{Vector2D} \& \hyperlink{class_vector2_d_abd5d60f6e25137acab01b1d82da6819a}{operator$\ast$=} (const double scale)
+\begin{DoxyCompactList}\small\item\em this\+Vector2D = this\+Vector2D $\ast$ scalar\+: The scalar multiplication and assignment operator overload defined for the \hyperlink{class_vector2_d}{Vector2D} class. \end{DoxyCompactList}\item 
+\hyperlink{class_vector2_d}{Vector2D} \& \hyperlink{class_vector2_d_a72a388dec12b808190830a35be86a1f7}{operator/=} (const double scale)
+\begin{DoxyCompactList}\small\item\em this\+Vector2D = this\+Vector2D / scalar\+: The scalar division and assignment operator overload defined for the \hyperlink{class_vector2_d}{Vector2D} class. \end{DoxyCompactList}\item 
+\hyperlink{class_vector2_d}{Vector2D} \hyperlink{class_vector2_d_a79cfa577c38cb866d088166d6729a47d}{normalize} () const
+\begin{DoxyCompactList}\small\item\em Normalize function of a \hyperlink{class_vector2_d}{Vector2D} object. Normalises the \hyperlink{class_vector2_d}{Vector2D} object, to a unirary magnitude/radius, creates a new \hyperlink{class_vector2_d}{Vector2D} objectfor the returned result. This \hyperlink{class_vector2_d}{Vector2D} object remains costant under query. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_vector2_d_a73d35a880a2f3d262b14ac8aaf5914db}\label{class_vector2_d_a73d35a880a2f3d262b14ac8aaf5914db}} 
-static double {\bfseries magnitude} (const \hyperlink{class_vector2_d}{Vector2D} \&lhs)
-\item 
-\mbox{\Hypertarget{class_vector2_d_ac7b3cebbfa7c84c9750c30a6c030ffa8}\label{class_vector2_d_ac7b3cebbfa7c84c9750c30a6c030ffa8}} 
-static double {\bfseries magnitude} (const \hyperlink{class_vector2_d}{Vector2D} \&lhs, const \hyperlink{class_vector2_d}{Vector2D} \&rhs)
-\end{DoxyCompactItemize}
+static double \hyperlink{class_vector2_d_a73d35a880a2f3d262b14ac8aaf5914db}{magnitude} (const \hyperlink{class_vector2_d}{Vector2D} \&lhs)
+\begin{DoxyCompactList}\small\item\em Static function that calculates the vector magnitude of a \hyperlink{class_vector2_d}{Vector2D} object. Uses the origin as a comparative mathematical reference. \end{DoxyCompactList}\item 
+static double \hyperlink{class_vector2_d_ac7b3cebbfa7c84c9750c30a6c030ffa8}{magnitude} (const \hyperlink{class_vector2_d}{Vector2D} \&lhs, const \hyperlink{class_vector2_d}{Vector2D} \&rhs)
+\begin{DoxyCompactList}\small\item\em Static function that calculates the relative vector magnitude between two \hyperlink{class_vector2_d}{Vector2D} objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -91,17 +81,17 @@ static \hyperlink{class_vector2_d}{Vector2D} {\bfseries down} \{0, -\/1\}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_vector2_d_a86eb002af3d4ce9ee892691165577bd9}\label{class_vector2_d_a86eb002af3d4ce9ee892691165577bd9}} 
-void {\bfseries radius} ()
-\item 
+void \hyperlink{class_vector2_d_a86eb002af3d4ce9ee892691165577bd9}{radius} ()
+\begin{DoxyCompactList}\small\item\em Private function to calculate the radius from the \hyperlink{structxy_vector}{xy\+Vector} struct, to be privately stored in the \hyperlink{structrt_vector}{rt\+Vector} struct. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_vector2_d_a77801c0448846bc99cea64b232e262ed}\label{class_vector2_d_a77801c0448846bc99cea64b232e262ed}} 
-void {\bfseries theta} ()
-\item 
+void \hyperlink{class_vector2_d_a77801c0448846bc99cea64b232e262ed}{theta} ()
+\begin{DoxyCompactList}\small\item\em Private function to calculate the theta/angle from the \hyperlink{structxy_vector}{xy\+Vector} struct, to be privately stored in the \hyperlink{structrt_vector}{rt\+Vector} struct. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_vector2_d_a2aa1adc699bfc5a490875d26c1e6da04}\label{class_vector2_d_a2aa1adc699bfc5a490875d26c1e6da04}} 
-void {\bfseries x\+Val} ()
-\item 
+void \hyperlink{class_vector2_d_a2aa1adc699bfc5a490875d26c1e6da04}{x\+Val} ()
+\begin{DoxyCompactList}\small\item\em Private function to calculate the x-\/cartesian value from the \hyperlink{structrt_vector}{rt\+Vector} struct, to be privately stored in the \hyperlink{structxy_vector}{xy\+Vector} struct. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_vector2_d_ab202ce3f9065cdbf5d981b0f34c66feb}\label{class_vector2_d_ab202ce3f9065cdbf5d981b0f34c66feb}} 
-void {\bfseries y\+Val} ()
-\end{DoxyCompactItemize}
+void \hyperlink{class_vector2_d_ab202ce3f9065cdbf5d981b0f34c66feb}{y\+Val} ()
+\begin{DoxyCompactList}\small\item\em Private function to calculate the y-\/cartesian value from the \hyperlink{structrt_vector}{rt\+Vector} struct, to be privately stored in the \hyperlink{structxy_vector}{xy\+Vector} struct. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -117,6 +107,397 @@ void {\bfseries y\+Val} ()
 \mbox{\Hypertarget{class_vector2_d_a50a94297b6c05c07ee29900a438492a9}\label{class_vector2_d_a50a94297b6c05c07ee29900a438492a9}} 
 static double {\bfseries magnitude\+\_\+tolerance} = 0.\+000000001
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines the base mathematical element used, the \hyperlink{class_vector2_d}{Vector2D} element. Contains structs of two self-\/contained vector types, the \hyperlink{structxy_vector}{xy\+Vector} and the \hyperlink{structrt_vector}{rt\+Vector}. Defines the associated creation of the objects, and the logical operator overload associated with vector mathematics. The tigonometric mathematical vector relationships are based on radians. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_vector2_d_a98e9997ebb7a629f4db52397d4e0d653}\label{class_vector2_d_a98e9997ebb7a629f4db52397d4e0d653}} 
+\index{Vector2D@{Vector2D}!Vector2D@{Vector2D}}
+\index{Vector2D@{Vector2D}!Vector2D@{Vector2D}}
+\subsubsection{\texorpdfstring{Vector2\+D()}{Vector2D()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily Vector2\+D\+::\+Vector2D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for the \hyperlink{class_vector2_d}{Vector2D} class. Assigns the static origin of the \hyperlink{class_vector2_d}{Vector2D} class to this \hyperlink{class_vector2_d}{Vector2D} object. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_vector2_d}{Vector2D} by value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vector2_d_a0c1db105a3d49bde5056cc19b04f18c2}\label{class_vector2_d_a0c1db105a3d49bde5056cc19b04f18c2}} 
+\index{Vector2D@{Vector2D}!Vector2D@{Vector2D}}
+\index{Vector2D@{Vector2D}!Vector2D@{Vector2D}}
+\subsubsection{\texorpdfstring{Vector2\+D()}{Vector2D()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily Vector2\+D\+::\+Vector2D (\begin{DoxyParamCaption}\item[{double}]{val1,  }\item[{double}]{val2,  }\item[{const Vector\+Type \&}]{vectype = {\ttfamily VectorType\+:\+:xy} }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \hyperlink{class_vector2_d}{Vector2D} class by two double scalar parameters, and the vector input type. Constructs the \hyperlink{class_vector2_d}{Vector2D} object appropriately based from the vectype parameter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val1} & either as x value of cartesian input or radius value of polar input. \\
+\hline
+{\em val2} & either as y value of cartesian input or theta value of polar input. \\
+\hline
+{\em vectype} & of the parameters val1 and val2. Default is Vector\+Type\+::xy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_vector2_d}{Vector2D} by value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vector2_d_ab3aae16cfdb6eab642f832d82de2ac5c}\label{class_vector2_d_ab3aae16cfdb6eab642f832d82de2ac5c}} 
+\index{Vector2D@{Vector2D}!Vector2D@{Vector2D}}
+\index{Vector2D@{Vector2D}!Vector2D@{Vector2D}}
+\subsubsection{\texorpdfstring{Vector2\+D()}{Vector2D()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily Vector2\+D\+::\+Vector2D (\begin{DoxyParamCaption}\item[{const \hyperlink{structxy_vector}{xy\+Vector}}]{vec }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \hyperlink{class_vector2_d}{Vector2D} class directly from a \hyperlink{structxy_vector}{xy\+Vector} struct. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & The \hyperlink{structxy_vector}{xy\+Vector} struct used for the \hyperlink{class_vector2_d}{Vector2D} object construction. Used by constant value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_vector2_d}{Vector2D} by value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vector2_d_a3253f7c676f03f9d460d6b473934a1ff}\label{class_vector2_d_a3253f7c676f03f9d460d6b473934a1ff}} 
+\index{Vector2D@{Vector2D}!Vector2D@{Vector2D}}
+\index{Vector2D@{Vector2D}!Vector2D@{Vector2D}}
+\subsubsection{\texorpdfstring{Vector2\+D()}{Vector2D()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily Vector2\+D\+::\+Vector2D (\begin{DoxyParamCaption}\item[{const \hyperlink{structrt_vector}{rt\+Vector}}]{vec }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \hyperlink{class_vector2_d}{Vector2D} class directly from a \hyperlink{structrt_vector}{rt\+Vector} struct. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & The \hyperlink{structrt_vector}{rt\+Vector} struct used for the \hyperlink{class_vector2_d}{Vector2D} object construction. Used by constant value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_vector2_d}{Vector2D} by value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vector2_d_a658f4dd52408392ab5ad5fb36112a5c8}\label{class_vector2_d_a658f4dd52408392ab5ad5fb36112a5c8}} 
+\index{Vector2D@{Vector2D}!Vector2D@{Vector2D}}
+\index{Vector2D@{Vector2D}!Vector2D@{Vector2D}}
+\subsubsection{\texorpdfstring{Vector2\+D()}{Vector2D()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily Vector2\+D\+::\+Vector2D (\begin{DoxyParamCaption}\item[{const \hyperlink{class_vector2_d}{Vector2D} \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+Copy constructor for the \hyperlink{class_vector2_d}{Vector2D} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & \hyperlink{class_vector2_d}{Vector2D} value that is used to assign to this. Used by constant reference. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_vector2_d}{Vector2D} by value. 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_vector2_d_a2760dd54ac65996966d1b9077cbecb06}\label{class_vector2_d_a2760dd54ac65996966d1b9077cbecb06}} 
+\index{Vector2D@{Vector2D}!get\+R\+T\+Vector@{get\+R\+T\+Vector}}
+\index{get\+R\+T\+Vector@{get\+R\+T\+Vector}!Vector2D@{Vector2D}}
+\subsubsection{\texorpdfstring{get\+R\+T\+Vector()}{getRTVector()}}
+{\footnotesize\ttfamily \hyperlink{structrt_vector}{rt\+Vector} Vector2\+D\+::get\+R\+T\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Allows the \hyperlink{structrt_vector}{rt\+Vector} struct value of the \hyperlink{class_vector2_d}{Vector2D} object to be querried. Fundamentally the polar representation of the \hyperlink{class_vector2_d}{Vector2D} position. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{structrt_vector}{rt\+Vector} struct. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vector2_d_a4bc415751c246ae44727ef4f6b80d80c}\label{class_vector2_d_a4bc415751c246ae44727ef4f6b80d80c}} 
+\index{Vector2D@{Vector2D}!get\+X\+Y\+Vector@{get\+X\+Y\+Vector}}
+\index{get\+X\+Y\+Vector@{get\+X\+Y\+Vector}!Vector2D@{Vector2D}}
+\subsubsection{\texorpdfstring{get\+X\+Y\+Vector()}{getXYVector()}}
+{\footnotesize\ttfamily \hyperlink{structxy_vector}{xy\+Vector} Vector2\+D\+::get\+X\+Y\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Allows the \hyperlink{structxy_vector}{xy\+Vector} struct value of the \hyperlink{class_vector2_d}{Vector2D} object to be querried. Fundamentally the cartesian representation of the \hyperlink{class_vector2_d}{Vector2D} position. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{structxy_vector}{xy\+Vector} struct. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vector2_d_a73d35a880a2f3d262b14ac8aaf5914db}\label{class_vector2_d_a73d35a880a2f3d262b14ac8aaf5914db}} 
+\index{Vector2D@{Vector2D}!magnitude@{magnitude}}
+\index{magnitude@{magnitude}!Vector2D@{Vector2D}}
+\subsubsection{\texorpdfstring{magnitude()}{magnitude()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double Vector2\+D\+::magnitude (\begin{DoxyParamCaption}\item[{const \hyperlink{class_vector2_d}{Vector2D} \&}]{lhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Static function that calculates the vector magnitude of a \hyperlink{class_vector2_d}{Vector2D} object. Uses the origin as a comparative mathematical reference. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lhs} & The input \hyperlink{class_vector2_d}{Vector2D} object being querried. Used by constant reference. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double of the vector magnitude result by value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vector2_d_ac7b3cebbfa7c84c9750c30a6c030ffa8}\label{class_vector2_d_ac7b3cebbfa7c84c9750c30a6c030ffa8}} 
+\index{Vector2D@{Vector2D}!magnitude@{magnitude}}
+\index{magnitude@{magnitude}!Vector2D@{Vector2D}}
+\subsubsection{\texorpdfstring{magnitude()}{magnitude()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily double Vector2\+D\+::magnitude (\begin{DoxyParamCaption}\item[{const \hyperlink{class_vector2_d}{Vector2D} \&}]{lhs,  }\item[{const \hyperlink{class_vector2_d}{Vector2D} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Static function that calculates the relative vector magnitude between two \hyperlink{class_vector2_d}{Vector2D} objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lhs} & The first \hyperlink{class_vector2_d}{Vector2D} object being querried. Used by constant reference. \\
+\hline
+{\em rhs} & The second \hyperlink{class_vector2_d}{Vector2D} object being queried. Used by constant reference. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double of the vector magnitude result by value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vector2_d_a79cfa577c38cb866d088166d6729a47d}\label{class_vector2_d_a79cfa577c38cb866d088166d6729a47d}} 
+\index{Vector2D@{Vector2D}!normalize@{normalize}}
+\index{normalize@{normalize}!Vector2D@{Vector2D}}
+\subsubsection{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily \hyperlink{class_vector2_d}{Vector2D} Vector2\+D\+::normalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Normalize function of a \hyperlink{class_vector2_d}{Vector2D} object. Normalises the \hyperlink{class_vector2_d}{Vector2D} object, to a unirary magnitude/radius, creates a new \hyperlink{class_vector2_d}{Vector2D} objectfor the returned result. This \hyperlink{class_vector2_d}{Vector2D} object remains costant under query. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_vector2_d}{Vector2D} of the normalized \hyperlink{class_vector2_d}{Vector2D} object by value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vector2_d_a257aa1ca3260a4cacaa1171f67bf7910}\label{class_vector2_d_a257aa1ca3260a4cacaa1171f67bf7910}} 
+\index{Vector2D@{Vector2D}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Vector2D@{Vector2D}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{class_vector2_d}{Vector2D} Vector2\+D\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \hyperlink{class_vector2_d}{Vector2D} \&}]{rhs }\end{DoxyParamCaption}) const}
+
+
+
+new\+Vector2D = this\+Vector2D $\ast$ rhs\+Vector2D\+: The vector multiplication and create operator overload defined for the \hyperlink{class_vector2_d}{Vector2D} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The \hyperlink{class_vector2_d}{Vector2D} value that this is multiplied with. Used by constant reference. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_vector2_d}{Vector2D} of outcome by value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vector2_d_a7ade542889c8e483b5cc536b2bf4f053}\label{class_vector2_d_a7ade542889c8e483b5cc536b2bf4f053}} 
+\index{Vector2D@{Vector2D}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Vector2D@{Vector2D}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{class_vector2_d}{Vector2D} Vector2\+D\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const double \&}]{scalar }\end{DoxyParamCaption}) const}
+
+
+
+new\+Vector2D = this\+Vector2D $\ast$ scalar\+: The scalar multiplication and create operator overload defined for the \hyperlink{class_vector2_d}{Vector2D} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & The double value that this is multiplied with. Used by constant reference. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_vector2_d}{Vector2D} of outcome by value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vector2_d_a7fe58ba3258641c02c7ea4499d42a089}\label{class_vector2_d_a7fe58ba3258641c02c7ea4499d42a089}} 
+\index{Vector2D@{Vector2D}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!Vector2D@{Vector2D}}
+\subsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{class_vector2_d}{Vector2D} \& Vector2\+D\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const \hyperlink{class_vector2_d}{Vector2D} \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+this\+Vector2D = this\+Vector2D $\ast$ rhs\+Vector2D\+: The vector multiplication and assignment operator overload defined for the \hyperlink{class_vector2_d}{Vector2D} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The \hyperlink{class_vector2_d}{Vector2D} value that is multiplied with this. Used by constant reference. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_vector2_d}{Vector2D} of this as the outcome by reference. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vector2_d_abd5d60f6e25137acab01b1d82da6819a}\label{class_vector2_d_abd5d60f6e25137acab01b1d82da6819a}} 
+\index{Vector2D@{Vector2D}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!Vector2D@{Vector2D}}
+\subsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{class_vector2_d}{Vector2D} \& Vector2\+D\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const double}]{scale }\end{DoxyParamCaption})}
+
+
+
+this\+Vector2D = this\+Vector2D $\ast$ scalar\+: The scalar multiplication and assignment operator overload defined for the \hyperlink{class_vector2_d}{Vector2D} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & The double value that is multiplied with this. Used by constant reference. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_vector2_d}{Vector2D} of this as the outcome by reference. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vector2_d_a142a352f6cb2406fee15d153a275439c}\label{class_vector2_d_a142a352f6cb2406fee15d153a275439c}} 
+\index{Vector2D@{Vector2D}!operator+@{operator+}}
+\index{operator+@{operator+}!Vector2D@{Vector2D}}
+\subsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \hyperlink{class_vector2_d}{Vector2D} Vector2\+D\+::operator+ (\begin{DoxyParamCaption}\item[{const \hyperlink{class_vector2_d}{Vector2D} \&}]{rhs }\end{DoxyParamCaption}) const}
+
+
+
+new\+Vector2D = this\+Vector2D + rhs\+Vector2D\+: The vector addition and create operator overload defined for the \hyperlink{class_vector2_d}{Vector2D} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The \hyperlink{class_vector2_d}{Vector2D} value that this is added with. Used by constant reference. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_vector2_d}{Vector2D} of outcome by value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vector2_d_affc6e2a6034a4c4249a3e8b17f633069}\label{class_vector2_d_affc6e2a6034a4c4249a3e8b17f633069}} 
+\index{Vector2D@{Vector2D}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Vector2D@{Vector2D}}
+\subsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily \hyperlink{class_vector2_d}{Vector2D} \& Vector2\+D\+::operator+= (\begin{DoxyParamCaption}\item[{const \hyperlink{class_vector2_d}{Vector2D} \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+this\+Vector2d = this\+Vector2D + rhs\+Vector2D\+: The vector addition and assignment operator overload defined for the \hyperlink{class_vector2_d}{Vector2D} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The \hyperlink{class_vector2_d}{Vector2D} value that is added to this. Used by constant reference. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_vector2_d}{Vector2D} of this as the outcome by reference. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vector2_d_a803ee7e8cc2bfac23eb9e3aeebd5be3f}\label{class_vector2_d_a803ee7e8cc2bfac23eb9e3aeebd5be3f}} 
+\index{Vector2D@{Vector2D}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Vector2D@{Vector2D}}
+\subsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \hyperlink{class_vector2_d}{Vector2D} Vector2\+D\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \hyperlink{class_vector2_d}{Vector2D} \&}]{rhs }\end{DoxyParamCaption}) const}
+
+
+
+new\+Vector2D = this\+Vector2D -\/ rhs\+Vector2D\+: The vector subtraction and create operator overload defined for the \hyperlink{class_vector2_d}{Vector2D} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The \hyperlink{class_vector2_d}{Vector2D} value that this has subtracted off with. Used by constant reference. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_vector2_d}{Vector2D} of outcome by value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vector2_d_a16532303ee3e0a340f0515c1f0675fbd}\label{class_vector2_d_a16532303ee3e0a340f0515c1f0675fbd}} 
+\index{Vector2D@{Vector2D}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!Vector2D@{Vector2D}}
+\subsubsection{\texorpdfstring{operator-\/=()}{operator-=()}}
+{\footnotesize\ttfamily \hyperlink{class_vector2_d}{Vector2D} \& Vector2\+D\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \hyperlink{class_vector2_d}{Vector2D} \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+this\+Vector2D = this\+Vector2D -\/ rhs\+Vector2D\+: The vector subtraction and assignment operator overload defined for the \hyperlink{class_vector2_d}{Vector2D} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The \hyperlink{class_vector2_d}{Vector2D} value that is subtracted from this. Used by constant reference. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_vector2_d}{Vector2D} of this as the outcome by reference. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vector2_d_adc10dc721432ed17e94602640bb24346}\label{class_vector2_d_adc10dc721432ed17e94602640bb24346}} 
+\index{Vector2D@{Vector2D}!operator/@{operator/}}
+\index{operator/@{operator/}!Vector2D@{Vector2D}}
+\subsubsection{\texorpdfstring{operator/()}{operator/()}}
+{\footnotesize\ttfamily \hyperlink{class_vector2_d}{Vector2D} Vector2\+D\+::operator/ (\begin{DoxyParamCaption}\item[{const double \&}]{scalar }\end{DoxyParamCaption}) const}
+
+
+
+new\+Vector2D = this\+Vector2D / scalar\+: The scalar division and create operator overload defined for the \hyperlink{class_vector2_d}{Vector2D} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & The double value that this is divided with. Used by constant reference. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_vector2_d}{Vector2D} of outcome by value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vector2_d_a72a388dec12b808190830a35be86a1f7}\label{class_vector2_d_a72a388dec12b808190830a35be86a1f7}} 
+\index{Vector2D@{Vector2D}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!Vector2D@{Vector2D}}
+\subsubsection{\texorpdfstring{operator/=()}{operator/=()}}
+{\footnotesize\ttfamily \hyperlink{class_vector2_d}{Vector2D} \& Vector2\+D\+::operator/= (\begin{DoxyParamCaption}\item[{const double}]{scale }\end{DoxyParamCaption})}
+
+
+
+this\+Vector2D = this\+Vector2D / scalar\+: The scalar division and assignment operator overload defined for the \hyperlink{class_vector2_d}{Vector2D} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & The double value that divides this. Used by constant reference. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_vector2_d}{Vector2D} of this as the outcome by reference. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vector2_d_abfa56cdcf167527e7c5efd54c4c1bffe}\label{class_vector2_d_abfa56cdcf167527e7c5efd54c4c1bffe}} 
+\index{Vector2D@{Vector2D}!operator=@{operator=}}
+\index{operator=@{operator=}!Vector2D@{Vector2D}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \hyperlink{class_vector2_d}{Vector2D} \& Vector2\+D\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{class_vector2_d}{Vector2D} \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+this\+Vector2D = rhs\+Vector2D\+: The assignment operator overload defined for the \hyperlink{class_vector2_d}{Vector2D} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The \hyperlink{class_vector2_d}{Vector2D} value that this must be assigned. Used by constant reference. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_vector2_d}{Vector2D} of this assignment by reference. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vector2_d_a41f425fcd08fb82c7e72e132fb51136f}\label{class_vector2_d_a41f425fcd08fb82c7e72e132fb51136f}} 
+\index{Vector2D@{Vector2D}!operator==@{operator==}}
+\index{operator==@{operator==}!Vector2D@{Vector2D}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Vector2\+D\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{class_vector2_d}{Vector2D} \&}]{rhs }\end{DoxyParamCaption}) const}
+
+
+
+this\+Vector2D == rhs\+Vector2D\+: The equivalancy operator overload defined for the \hyperlink{class_vector2_d}{Vector2D} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The \hyperlink{class_vector2_d}{Vector2D} value that this is compared against. Used by constent reference. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean of the equivalency. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

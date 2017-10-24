@@ -5,5 +5,4 @@ TEST_CASE("Default delta time is returned correctly")
 {
 	CHECK(GameTime::getDeltaTime() == 1);
 	
-	
 }

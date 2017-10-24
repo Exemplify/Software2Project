@@ -35,6 +35,7 @@ parabolic_coeff{para_coef},
 max_enemies{m_enm}
 {}
 
+
 bool GameObjectData::operator==(const GameObjectData& rhs) const
 {
 	return 	collider_size == rhs.collider_size 			&&
@@ -66,5 +67,4 @@ bool GameStateData::operator ==(const GameStateData& rhs) const
 	return 	screen_size_x == rhs.screen_size_x 	&&
 			screen_size_y == rhs.screen_size_y 	&&
 			gameName == rhs.gameName;
-	
 }

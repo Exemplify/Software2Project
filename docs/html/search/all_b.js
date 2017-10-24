@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['magnitude',['magnitude',['../d9/d40/class_vector2_d.html#a73d35a880a2f3d262b14ac8aaf5914db',1,'Vector2D::magnitude(const Vector2D &amp;lhs)'],['../d9/d40/class_vector2_d.html#ac7b3cebbfa7c84c9750c30a6c030ffa8',1,'Vector2D::magnitude(const Vector2D &amp;lhs, const Vector2D &amp;rhs)']]],
   ['max_5fcollider_5fsize',['max_collider_size',['../d1/dd2/class_size_reduction.html#aa58dd5c70892ea019a7e6c86e2027f8f',1,'SizeReduction']]],
   ['max_5fnumber_5fof_5fenemies',['MAX_NUMBER_OF_ENEMIES',['../dc/d01/class_enemy_controller.html#aca04264b909526dadc67a41f8c826aee',1,'EnemyController']]],
   ['max_5fpercentage',['MAX_PERCENTAGE',['../df/def/class_random_enemy_factory.html#ac3e384acfa1fa3927d3a3643647072e9',1,'RandomEnemyFactory']]],

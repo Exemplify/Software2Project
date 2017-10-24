@@ -25,7 +25,7 @@ public:
 	 * @param max_enemies The maximum number of enemies that the EnemyController will create
 	 * @param enemySpawnDelay The time delay between spawning an enemy object
 	 */
-	EnemyController(unsigned int max_enemies, double enemySpawnDelay);
+	EnemyController(const GameObject& gameObject, unsigned int max_enemies, double enemySpawnDelay);
 	/**
 	 * @brief Creates enemies based on the spawn delay
 	 */

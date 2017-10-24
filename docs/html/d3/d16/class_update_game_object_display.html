@@ -70,6 +70,11 @@ $(function() {
 <div class="title">UpdateGameObjectDisplay Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Updates the Sprite position and scale for each GameOject.  
+ <a href="../../d3/d16/class_update_game_object_display.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../dc/da8/_update_game_object_display_8h_source.html">UpdateGameObjectDisplay.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -97,7 +102,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a51ae3f07958294b737885c9a0bd86153"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, std::shared_ptr&lt; <a class="el" href="../../d4/dc0/struct_sprite_info.html">SpriteInfo</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d16/class_update_game_object_display.html#a51ae3f07958294b737885c9a0bd86153">_spriteInfoTable</a></td></tr>
 <tr class="separator:a51ae3f07958294b737885c9a0bd86153"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Updates the Sprite position and scale for each GameOject. </p>
+<p>contains a hash table that stores the individual sprites and corresponding textures for the specific key provided within the <a class="el" href="../../d2/d83/class_graphic_object.html" title="This is the Utility class with the display manager, It stores the name of the object and location of ...">GraphicObject</a> composition of the <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a>. Updates the screen position and scale of the sprite for each game object provided. If the sprite and texture do not exist inside of the hash table it is created and added into it. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a10502ed4d422e5bab6b5f3591d392c55"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a10502ed4d422e5bab6b5f3591d392c55">&#9670;&nbsp;</a></span>CheckIfSpriteInfoExists()</h2>
 

@@ -1,15 +1,39 @@
+#include "trompeloeil.hpp"
+#include "doctest.h"
+#include "../game-source-code/BackEndSystems/DatabaseInterface.h"
+#include "../game-source-code/BackEndSystems/GameData.h"
+#include "../game-source-code/BackEndSystems/DatabaseInterface.h"
 #include "../game-source-code/BackEndSystems/PlayerFactory.h"
 #include "../game-source-code/BackEndSystems/PlayerProjectileFactory.h"
-#include "../game-source-code/BackEndSystems/EnemyFactory.h"
-#include "../game-source-code/BackEndSystems/EnemyControllerFactory.h"
+#include "../game-source-code/BackEndSystems/LinearEnemyFactory.h"
+#include "../game-source-code/BackEndSystems/ParabolicEnemyFactory.h"
+#include "../game-source-code/BackEndSystems/SpiralEnemyFactory.h"
 #include "../game-source-code/BackEndSystems/EnemyProjectileFactory.h"
-#include "../game-source-code/BackEndSystems/WinScreenBackgroundFactory.h"
-#include "../game-source-code/BackEndSystems/LoseScreenBackgroundFactory.h"
-#include "../game-source-code/BackEndSystems/GameScreenBackgroundFactory.h"
-#include "../game-source-code/BackEndSystems/SplashScreenBackgroundFactory.h"
+#include "../game-source-code/BackEndSystems/EnemyControllerFactory.h"
+#include "../game-source-code/BackEndSystems/BackgroundFactory.h"
+#include "../game-source-code/FrontEndSystems/Enemy.h"
+#include "../game-source-code/FrontEndSystems/SplashScreen.h"
+#include "../game-source-code/FrontEndSystems/EnemyController.h"
+#include "../game-source-code/FrontEndSystems/EnemyProjectile.h"
+#include "../game-source-code/FrontEndSystems/Player.h"
+#include "../game-source-code/FrontEndSystems/PlayerProjectile.h"
 #include "../game-source-code/FrontEndSystems/GraphicObject.h"
 #include "../game-source-code/Vector2D.h"
-#include "doctest.h"
+#include <string>
+
+extern template struct trompeloeil::reporter<trompeloeil::specialized>;
+////////////////////////////////// Database mock object //////////////////////////////////////////
+
+class MockDatabaseInterface: public DatabaseInterface
+{
+public:
+	MAKE_MOCK0(getGameStateData, GameStateData(void), override);
+	MAKE_MOCK1(getGameObjectData, GameObjectData(std::string), override);
+	MAKE_MOCK1(setGameStateData, void(GameStateData), override);
+	MAKE_MOCK2(setGameObjectData, void(std::string, GameObjectData), override);
+};
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
 
 template <typename first, typename second>
 struct TypePair
@@ -20,76 +44,54 @@ struct TypePair
 
 typedef doctest::Types<
 	TypePair<PlayerFactory, Player>,
-	TypePair<EnemyFactory, Enemy>,
+	TypePair<PlayerProjectileFactory, PlayerProjectile>,
+	TypePair<LinearEnemyFactory, Enemy>,
+	TypePair<SpiralEnemyFactory, Enemy>, 
+	TypePair<ParabolicEnemyFactory, Enemy>, 
+	TypePair<EnemyProjectileFactory, EnemyProjectile>,
 	TypePair<EnemyControllerFactory, EnemyController>,
-	TypePair<EnemyProjectileFactory, Projectile>,
-	TypePair<PlayerProjectileFactory, Projectile>,
-	TypePair<WinScreenBackgroundFactory, SplashScreen>,
-	TypePair<LoseScreenBackgroundFactory, SplashScreen>,
-	TypePair<GameScreenBackgroundFactory, SplashScreen>,
-	TypePair<SplashScreenBackgroundFactory, SplashScreen>
+	TypePair<BackgroundFactory, SplashScreen>
 	> FactoryPairs;
+	
 
+// requires mocking frame work to implement the database interface
 TEST_CASE_TEMPLATE("Factories Return the correct object types", T, FactoryPairs)
 {
+	
+	auto MockDatabase_ptr = std::make_shared<MockDatabaseInterface>();
 	typedef typename T::A FactoryType;
 	typedef typename T::B ObjectType;
-	
+	std::string testString;
 	FactoryType factory;
-	auto gameObject = factory.getGameObject();
-	auto castedObject = std::dynamic_pointer_cast<ObjectType>(gameObject);
-	REQUIRE(castedObject.get() != nullptr);
-	
-	switch(castedObject->getType())
+	GameObjectData mockData{1, 2, 3, 4, "5", "6", 7, 8, 9, 10, 11, 12, 13, 14, 15, 16};
+	REQUIRE_CALL(*MockDatabase_ptr, getGameObjectData(ANY(std::string))).RETURN(mockData).TIMES(AT_LEAST(1));
+	auto gameObject = factory.getGameObject(MockDatabase_ptr);
+	SUBCASE("1.1. The Object created is of the correct type")
 	{
-		case GameObjectType::player:
-			SUBCASE("1.1 The player object has the correct graphic")
-			{
-				auto testGraphic = castedObject->getGraphicObject();
-				CHECK_EQ(testGraphic.getTextureLocation(), "resources/playerSprite.png");
-				CHECK_EQ(testGraphic.getGraphicName(), "player");
-			}
-			SUBCASE("1.2 The player Obejct has the correct starting position")
-			{
-				Vector2D correctStartPos{0,-400, VectorType::xy};
-				CHECK_EQ(castedObject->getPosition(), correctStartPos);
-			}
-			SUBCASE("1.3 The player Object has the correct scale")
-			{
-				xyVector correctScale{0.25f,0.25f};
-				CHECK_EQ(castedObject->getScale(), correctScale);
-			}
-			break;
-			
-		case GameObjectType::enemy:
-			SUBCASE("2.1 The Enemy object has the correct graphic")
-			{
-				auto testGraphic = castedObject->getGraphicObject();
-				CHECK_EQ(testGraphic.getTextureLocation(), "resources/AdamHabib.png");
-				CHECK_EQ(testGraphic.getGraphicName(), "enemy");
-			}
-			SUBCASE("2.2 The Enemy object has the correct scale")
-			{
-				xyVector correctScale{0.25f,0.25f};
-				CHECK_EQ(castedObject->getScale(), correctScale);
-			}
-			break;
-			
-		case GameObjectType::enemyBullet:
-			SUBCASE("3.1 The Enemy Projectile object has the correct graphic")
-			{
-				auto testGraphic = castedObject->getGraphicObject();
-				CHECK_EQ(testGraphic.getTextureLocation(), "resources/SouthAfricanPS.png");
-				CHECK_EQ(testGraphic.getGraphicName(), "enemyBullet");
-			}
-			SUBCASE("3.2 The Enemy Projectile object has the correct scale")
-			{
-				xyVector correctScale{0.1, 0.1};
-				CHECK_EQ(castedObject->getScale(), correctScale);
-			}
-			
-		default:
-			break;
+		auto castedObject = std::dynamic_pointer_cast<ObjectType>(gameObject);
+		REQUIRE(castedObject.get() != nullptr);
 	}
+	SUBCASE("1.2. The GameObject has the correct position")
+	{
+		auto position = gameObject->getPosition();
+		auto xyVec = position.getXYVector();
+		CHECK_EQ(xyVec.x, mockData.PosX);
+		CHECK_EQ(xyVec.y, mockData.PosY);
+	}
+	SUBCASE("1.3. The GameObject has the correct scale")
+	{
+		auto scale = gameObject->getScale();
+		CHECK_EQ(scale.x, mockData.scaleX);
+		CHECK_EQ(scale.y, mockData.scaleY);
+	}
+	SUBCASE("1.4. The GameObject has the correct graphic object")
+	{
+		auto graphic = gameObject->getGraphicObject();
+		CHECK_EQ(graphic.getTextureLocation(), mockData.graphic_location);
+		CHECK_EQ(graphic.getGraphicName(), mockData.graphic_name);
+	}
+
 }
+
+
 

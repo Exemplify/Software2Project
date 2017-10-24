@@ -1,5 +1,14 @@
 \hypertarget{class_update_game_object_display}{}\section{Update\+Game\+Object\+Display Class Reference}
 \label{class_update_game_object_display}\index{Update\+Game\+Object\+Display@{Update\+Game\+Object\+Display}}
+
+
+Updates the Sprite position and scale for each Game\+Oject.  
+
+
+
+
+{\ttfamily \#include $<$Update\+Game\+Object\+Display.\+h$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -22,6 +31,11 @@ bool \hyperlink{class_update_game_object_display_a10502ed4d422e5bab6b5f3591d392c
 std\+::unordered\+\_\+map$<$ std\+::string, std\+::shared\+\_\+ptr$<$ \hyperlink{struct_sprite_info}{Sprite\+Info} $>$ $>$ \hyperlink{class_update_game_object_display_a51ae3f07958294b737885c9a0bd86153}{\+\_\+sprite\+Info\+Table}
 \end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Updates the Sprite position and scale for each Game\+Oject. 
+
+contains a hash table that stores the individual sprites and corresponding textures for the specific key provided within the \hyperlink{class_graphic_object}{Graphic\+Object} composition of the \hyperlink{class_game_object}{Game\+Object}. Updates the screen position and scale of the sprite for each game object provided. If the sprite and texture do not exist inside of the hash table it is created and added into it. 
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{class_update_game_object_display_a10502ed4d422e5bab6b5f3591d392c55}\label{class_update_game_object_display_a10502ed4d422e5bab6b5f3591d392c55}} 

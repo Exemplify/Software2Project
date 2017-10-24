@@ -14,6 +14,5 @@ var searchData=
   ['determinegameobjectchanges',['DetermineGameObjectChanges',['../d3/d16/class_update_game_object_display.html#ac17a26f7563060fb9d4a0eb8959b1d29',1,'UpdateGameObjectDisplay']]],
   ['determinemovedirection',['determineMoveDirection',['../d8/d6d/class_player_move.html#a8118719df3dd369686b41a0ec77cd8e0',1,'PlayerMove']]],
   ['displaymanager',['DisplayManager',['../d8/db2/class_display_manager.html',1,'DisplayManager'],['../d8/db2/class_display_manager.html#a5cae0a0f81cbd2457eca8d35733a0516',1,'DisplayManager::DisplayManager()']]],
-  ['draw',['Draw',['../d8/db2/class_display_manager.html#a59cef8980a225ca13757e362a92891d1',1,'DisplayManager']]],
-  ['drawgameobject',['DrawGameObject',['../d6/dc6/class_draw_game_object.html',1,'']]]
+  ['draw',['Draw',['../d8/db2/class_display_manager.html#a59cef8980a225ca13757e362a92891d1',1,'DisplayManager']]]
 ];

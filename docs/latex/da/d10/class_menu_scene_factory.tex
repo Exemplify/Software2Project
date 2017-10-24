@@ -20,9 +20,8 @@ Inheritance diagram for Menu\+Scene\+Factory\+:\begin{figure}[H]
 \item 
 virtual std\+::list$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$ $>$ \hyperlink{class_menu_scene_factory_ade1881c377fa61d1d8fa11c1d30f4ddd}{get\+Game\+Obect\+List} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$ database) const final
 \begin{DoxyCompactList}\small\item\em Returns the game\+Object list required for the construction of the specific \hyperlink{class_scene}{Scene}. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_menu_scene_factory_ad0f60a16fdbb10c6d7ba3311dafa2e76}\label{class_menu_scene_factory_ad0f60a16fdbb10c6d7ba3311dafa2e76}} 
-virtual std\+::shared\+\_\+ptr$<$ \hyperlink{class_background_factory}{Background\+Factory} $>$ {\bfseries get\+Factory} () const =0
-\end{DoxyCompactItemize}
+virtual std\+::shared\+\_\+ptr$<$ \hyperlink{class_background_factory}{Background\+Factory} $>$ \hyperlink{class_menu_scene_factory_ad0f60a16fdbb10c6d7ba3311dafa2e76}{get\+Factory} () const =0
+\begin{DoxyCompactList}\small\item\em returns the appropriate \hyperlink{class_scene}{Scene} Background Factory for the specific Menu \hyperlink{class_scene}{Scene} \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -30,6 +29,23 @@ virtual std\+::shared\+\_\+ptr$<$ \hyperlink{class_background_factory}{Backgroun
 Creates the various Menu\+Scenes within the game. 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_menu_scene_factory_ad0f60a16fdbb10c6d7ba3311dafa2e76}\label{class_menu_scene_factory_ad0f60a16fdbb10c6d7ba3311dafa2e76}} 
+\index{Menu\+Scene\+Factory@{Menu\+Scene\+Factory}!get\+Factory@{get\+Factory}}
+\index{get\+Factory@{get\+Factory}!Menu\+Scene\+Factory@{Menu\+Scene\+Factory}}
+\subsubsection{\texorpdfstring{get\+Factory()}{getFactory()}}
+{\footnotesize\ttfamily virtual std\+::shared\+\_\+ptr$<$\hyperlink{class_background_factory}{Background\+Factory}$>$ Menu\+Scene\+Factory\+::get\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+returns the appropriate \hyperlink{class_scene}{Scene} Background Factory for the specific Menu \hyperlink{class_scene}{Scene} 
+
+\begin{DoxyReturn}{Returns}
+A factory object that is used to create the menu \hyperlink{class_splash_screen}{Splash\+Screen} Objects 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_lose_scene_factory_adfe18ba674cdd988bb78e3cd3218796f}{Lose\+Scene\+Factory}, \hyperlink{class_splash_scene_factory_a08e3da2eb18122670b40c3520462db51}{Splash\+Scene\+Factory}, and \hyperlink{class_win_scene_factory_af2e1c7ae34601b5f4017937d7bd381bb}{Win\+Scene\+Factory}.
+
 \mbox{\Hypertarget{class_menu_scene_factory_ade1881c377fa61d1d8fa11c1d30f4ddd}\label{class_menu_scene_factory_ade1881c377fa61d1d8fa11c1d30f4ddd}} 
 \index{Menu\+Scene\+Factory@{Menu\+Scene\+Factory}!get\+Game\+Obect\+List@{get\+Game\+Obect\+List}}
 \index{get\+Game\+Obect\+List@{get\+Game\+Obect\+List}!Menu\+Scene\+Factory@{Menu\+Scene\+Factory}}

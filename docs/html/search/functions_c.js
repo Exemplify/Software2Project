@@ -1,12 +1,14 @@
 var searchData=
 [
-  ['parabolicmove',['ParabolicMove',['../d3/da6/class_parabolic_move.html#a94fb02788b26d03abccee8254401902d',1,'ParabolicMove']]],
-  ['physicsobject',['PhysicsObject',['../d6/db5/class_physics_object.html#a0dd37cc0f9535b676d3df937eaeb4780',1,'PhysicsObject::PhysicsObject()'],['../d6/db5/class_physics_object.html#a8a92618716bd764c63f0ca80436a950c',1,'PhysicsObject::PhysicsObject(const GameObject &amp;gameObject, const double &amp;objectSize)']]],
-  ['player',['Player',['../d8/d53/class_player.html#a65468a4fb563e8df6f2d1ae4fc341bc9',1,'Player']]],
-  ['playermove',['PlayerMove',['../d8/d6d/class_player_move.html#afac691eb4cb3f0fbbf1876b5991e3a80',1,'PlayerMove']]],
-  ['playerprojectile',['PlayerProjectile',['../d5/df1/class_player_projectile.html#a81e6c16b0d8ce85bad2e8e4b30d2607e',1,'PlayerProjectile']]],
-  ['playerprojectilecollision',['PlayerProjectileCollision',['../dd/d7a/class_enemy.html#a9c4e7e1c9f79650d1f0dd3c72ae9c82d',1,'Enemy']]],
-  ['playgame',['PlayGame',['../da/d1c/class_splash_screen.html#a008328b85475bd01e326f94f20bf9217',1,'SplashScreen']]],
-  ['positionadaptor',['PositionAdaptor',['../dd/dad/class_game_object_data_adaptor.html#a5ed602ccf6cb6b189dde62c037af59ad',1,'GameObjectDataAdaptor']]],
-  ['projectile',['Projectile',['../db/dbe/class_projectile.html#a4ff1ec79a15e7821ac5ccfd6dda9205f',1,'Projectile']]]
+  ['operator_2a',['operator*',['../d9/d40/class_vector2_d.html#a257aa1ca3260a4cacaa1171f67bf7910',1,'Vector2D::operator*(const Vector2D &amp;rhs) const'],['../d9/d40/class_vector2_d.html#a7ade542889c8e483b5cc536b2bf4f053',1,'Vector2D::operator*(const double &amp;scalar) const']]],
+  ['operator_2a_3d',['operator*=',['../d9/d40/class_vector2_d.html#a7fe58ba3258641c02c7ea4499d42a089',1,'Vector2D::operator*=(const Vector2D &amp;rhs)'],['../d9/d40/class_vector2_d.html#abd5d60f6e25137acab01b1d82da6819a',1,'Vector2D::operator*=(const double scale)']]],
+  ['operator_2b',['operator+',['../d9/d40/class_vector2_d.html#a142a352f6cb2406fee15d153a275439c',1,'Vector2D']]],
+  ['operator_2b_3d',['operator+=',['../d9/d40/class_vector2_d.html#affc6e2a6034a4c4249a3e8b17f633069',1,'Vector2D']]],
+  ['operator_2d',['operator-',['../d9/d40/class_vector2_d.html#a803ee7e8cc2bfac23eb9e3aeebd5be3f',1,'Vector2D']]],
+  ['operator_2d_3d',['operator-=',['../d9/d40/class_vector2_d.html#a16532303ee3e0a340f0515c1f0675fbd',1,'Vector2D']]],
+  ['operator_2f',['operator/',['../d9/d40/class_vector2_d.html#adc10dc721432ed17e94602640bb24346',1,'Vector2D']]],
+  ['operator_2f_3d',['operator/=',['../d9/d40/class_vector2_d.html#a72a388dec12b808190830a35be86a1f7',1,'Vector2D']]],
+  ['operator_3d',['operator=',['../d9/d40/class_vector2_d.html#abfa56cdcf167527e7c5efd54c4c1bffe',1,'Vector2D']]],
+  ['operator_3d_3d',['operator==',['../d2/dec/struct_game_object_data.html#a6dfcd617b8aeb50e4a3944b58cf5590e',1,'GameObjectData::operator==()'],['../d5/dae/structxy_vector.html#a7aca10ebc499fdf7944792741edec285',1,'xyVector::operator==()'],['../d9/d40/class_vector2_d.html#a41f425fcd08fb82c7e72e132fb51136f',1,'Vector2D::operator==()']]],
+  ['outofbounds',['OutOfBounds',['../d5/dda/class_boundary.html#a92d424b11ae1362dcb0b352c9c6aaed3',1,'Boundary']]]
 ];
