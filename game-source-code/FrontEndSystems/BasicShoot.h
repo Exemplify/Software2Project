@@ -3,14 +3,12 @@
 #include "ShootInterface.h"
 /**
  * @class NonProjectileObjectShot
- * @file BasicShoot.h
  * @brief Exception thrown if an object that doesnt derive from Projectile is used
  */
 class NonProjectileObjectShot{};
 
 /**
  * @class BasicShoot
- * @file BasicShoot.h
  * @brief Used to create a basic shoot component which creates a single projectile and shoots it in a straightline towards a target.
  */
 class BasicShoot : public ShootInterface

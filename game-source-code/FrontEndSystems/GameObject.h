@@ -7,14 +7,19 @@
 #include "../Vector2D.h"
 #include "GraphicObject.h"
 
+// Forward declaration of scene as both objects need to know about each other
 class Scene;
 
-// ensures that an object cannot be destroyed when it should only exist from within a scene
+/**
+ * @class DestroyedObjectOutsideScene
+ * @brief Exception that is thrown when an object is destroyed and it does not exist inside of a Scene 
+ */
 class DestroyedObjectOutsideScene{};
-// The different object types used to identify whic object to draw and to 
-// determine when a specific collision has occured
 
 
+/**
+* The Various GameObjectTypes that exist within the game
+*/
 enum class GameObjectType
 {
 	gameObject,

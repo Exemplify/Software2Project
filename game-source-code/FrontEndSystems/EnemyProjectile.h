@@ -4,8 +4,9 @@
 
 /**
  * @class EnemyProjectile
- * @file EnemyProjectile.h
- * @brief Used to represent the enemy projectile and how it interacts with the various objects, inherits from Projectile
+ * @brief Used to represent the enemy projectile and how it interacts with the various objects
+ * @details The template design pattern is used to create the EnemyProjectile
+ * from the base Projectile object so that only the most necessary functions are overriden to vary the PlayerProjectile and the EnemyProjectile
  */
 class EnemyProjectile : public Projectile
 {

@@ -4,12 +4,12 @@
 #include <memory>
 #include <assert.h>
 
-const double max_distance = 450;
+
 Projectile::Projectile(const PhysicsObject& physicsObject, const std::shared_ptr<MovableInterface>& move, const Boundary& destroyBounds):
 PhysicsObject(physicsObject),
 _destroyBounds{destroyBounds},
 _moveComp{move},
-_sizeReduction{max_distance, _scale, _objectSize}
+_sizeReduction{_scale, _objectSize}
 {}
 void Projectile::Start()
 {

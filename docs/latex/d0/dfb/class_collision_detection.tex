@@ -1,35 +1,102 @@
 \hypertarget{class_collision_detection}{}\section{Collision\+Detection Class Reference}
 \label{class_collision_detection}\index{Collision\+Detection@{Collision\+Detection}}
+
+
+Determines when Physics\+Objects have collided with each other.  
+
+
+
+
+{\ttfamily \#include $<$Collision\+Detection.\+h$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_collision_detection_a3f9bc79550f37b2c929dfef9ea1a82e3}\label{class_collision_detection_a3f9bc79550f37b2c929dfef9ea1a82e3}} 
-{\bfseries Collision\+Detection} (Render\+Window $\ast$disp\+Window)
-\item 
-\mbox{\Hypertarget{class_collision_detection_ad100d45a6884ee0b9e714833af04553c}\label{class_collision_detection_ad100d45a6884ee0b9e714833af04553c}} 
-void {\bfseries initialize\+Collision\+Thread} ()
-\end{DoxyCompactItemize}
+\hyperlink{class_collision_detection_a2f88d35b750b96c0da3b09460d8f02bd}{Collision\+Detection} (sf\+::\+Render\+Window $\ast$disp\+Window)
+\begin{DoxyCompactList}\small\item\em Constructs the \hyperlink{class_collision_detection}{Collision\+Detection} object with the specific Render\+Window that is required to create a \hyperlink{class_collision_detection}{Collision\+Detection} loop. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_collision_detection_a6fcb59ac9cafa41ba26912f72c1bf990}\label{class_collision_detection_a6fcb59ac9cafa41ba26912f72c1bf990}} 
+void \hyperlink{class_collision_detection_a6fcb59ac9cafa41ba26912f72c1bf990}{Initialize\+Collision\+Thread} ()
+\begin{DoxyCompactList}\small\item\em Initialises the \hyperlink{class_collision_detection}{Collision\+Detection} thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_collision_detection_a1eda3727a959c4aa24fad3ef46a7b530}\label{class_collision_detection_a1eda3727a959c4aa24fad3ef46a7b530}} 
-void {\bfseries run\+Collision\+Thread} ()
-\item 
-\mbox{\Hypertarget{class_collision_detection_a9b39c9264288db71452ce2f66a79c4f1}\label{class_collision_detection_a9b39c9264288db71452ce2f66a79c4f1}} 
-void {\bfseries check\+Collisions} ()
-\item 
-\mbox{\Hypertarget{class_collision_detection_af3a234d784ff1995558364dbcd0936ab}\label{class_collision_detection_af3a234d784ff1995558364dbcd0936ab}} 
-void {\bfseries check\+Objects} (shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$ game\+Obj1, shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$ game\+Obj2)
-\end{DoxyCompactItemize}
+void \hyperlink{class_collision_detection_a1eda3727a959c4aa24fad3ef46a7b530}{run\+Collision\+Thread} ()
+\begin{DoxyCompactList}\small\item\em Contains the Collision Detection loop, checks for collisions on each iteration of the loop. \end{DoxyCompactList}\item 
+void \hyperlink{class_collision_detection_a9b39c9264288db71452ce2f66a79c4f1}{check\+Collisions} ()
+\begin{DoxyCompactList}\small\item\em Loops through each \hyperlink{class_game_object}{Game\+Object} and determines if it has collided with a different one. \end{DoxyCompactList}\item 
+void \hyperlink{class_collision_detection_a5c7daf7f877c7f9418d36944c4728b75}{check\+Objects} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$ game\+Obj1, std\+::shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$ game\+Obj2)
+\begin{DoxyCompactList}\small\item\em Checks if the two Physics\+Objects have collided with each other by dynamically casting the provided Game\+Objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_collision_detection_a6ff887986bbe096d995d535748c94d56}\label{class_collision_detection_a6ff887986bbe096d995d535748c94d56}} 
-Render\+Window $\ast$ {\bfseries \+\_\+dispwindow\+\_\+ptr}
+sf\+::\+Render\+Window $\ast$ \hyperlink{class_collision_detection_a7a894b4bc38b6987d4cf8135df01d83b}{\+\_\+dispwindow\+\_\+ptr}
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+Determines when Physics\+Objects have collided with each other. 
+
+Runs in a seperate thread and copies the list of Game\+Objects stored within the \hyperlink{class_scene}{Scene} 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_collision_detection_a2f88d35b750b96c0da3b09460d8f02bd}\label{class_collision_detection_a2f88d35b750b96c0da3b09460d8f02bd}} 
+\index{Collision\+Detection@{Collision\+Detection}!Collision\+Detection@{Collision\+Detection}}
+\index{Collision\+Detection@{Collision\+Detection}!Collision\+Detection@{Collision\+Detection}}
+\subsubsection{\texorpdfstring{Collision\+Detection()}{CollisionDetection()}}
+{\footnotesize\ttfamily Collision\+Detection\+::\+Collision\+Detection (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window $\ast$}]{disp\+Window }\end{DoxyParamCaption})}
+
+
+
+Constructs the \hyperlink{class_collision_detection}{Collision\+Detection} object with the specific Render\+Window that is required to create a \hyperlink{class_collision_detection}{Collision\+Detection} loop. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em disp\+Window} & The Render\+Window that is used for the game loop \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_collision_detection_a9b39c9264288db71452ce2f66a79c4f1}\label{class_collision_detection_a9b39c9264288db71452ce2f66a79c4f1}} 
+\index{Collision\+Detection@{Collision\+Detection}!check\+Collisions@{check\+Collisions}}
+\index{check\+Collisions@{check\+Collisions}!Collision\+Detection@{Collision\+Detection}}
+\subsubsection{\texorpdfstring{check\+Collisions()}{checkCollisions()}}
+{\footnotesize\ttfamily void Collision\+Detection\+::check\+Collisions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Loops through each \hyperlink{class_game_object}{Game\+Object} and determines if it has collided with a different one. 
+
+It is necesary to iterate through each element and compare it with every other element, each coparison only needs to be done once. This is achieved by starting from the first element (assuming it is the most left element) it compares itself to all elements of the container not including itself. \mbox{\Hypertarget{class_collision_detection_a5c7daf7f877c7f9418d36944c4728b75}\label{class_collision_detection_a5c7daf7f877c7f9418d36944c4728b75}} 
+\index{Collision\+Detection@{Collision\+Detection}!check\+Objects@{check\+Objects}}
+\index{check\+Objects@{check\+Objects}!Collision\+Detection@{Collision\+Detection}}
+\subsubsection{\texorpdfstring{check\+Objects()}{checkObjects()}}
+{\footnotesize\ttfamily void Collision\+Detection\+::check\+Objects (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$}]{game\+Obj1,  }\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$}]{game\+Obj2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Checks if the two Physics\+Objects have collided with each other by dynamically casting the provided Game\+Objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\+Obj1} & primary \hyperlink{class_game_object}{Game\+Object}, if a collision has occured collision\+Occured is called \\
+\hline
+{\em game\+Obj2} & secondary \hyperlink{class_game_object}{Game\+Object}, used to check if collision has occure with primary \hyperlink{class_game_object}{Game\+Object} \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_collision_detection_a7a894b4bc38b6987d4cf8135df01d83b}\label{class_collision_detection_a7a894b4bc38b6987d4cf8135df01d83b}} 
+\index{Collision\+Detection@{Collision\+Detection}!\+\_\+dispwindow\+\_\+ptr@{\+\_\+dispwindow\+\_\+ptr}}
+\index{\+\_\+dispwindow\+\_\+ptr@{\+\_\+dispwindow\+\_\+ptr}!Collision\+Detection@{Collision\+Detection}}
+\subsubsection{\texorpdfstring{\+\_\+dispwindow\+\_\+ptr}{\_dispwindow\_ptr}}
+{\footnotesize\ttfamily sf\+::\+Render\+Window$\ast$ Collision\+Detection\+::\+\_\+dispwindow\+\_\+ptr\hspace{0.3cm}{\ttfamily [private]}}
+
+pointer to the Render\+Window used for the game 
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Collision\+Detection.\+h\item 
-D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Collision\+Detection.\+cpp\end{DoxyCompactItemize}
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Collision\+Detection.\+h\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Collision\+Detection.\+cpp\end{DoxyCompactItemize}

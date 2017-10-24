@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['move',['move',['../d8/d53/class_player.html#ae02ee46d8c20dd0697b975f935b09839',1,'Player::move()'],['../db/dbe/class_projectile.html#a52c04ac421a4add1a2920bd57eb56fe5',1,'Projectile::Move()']]]
+  ['linearmove',['LinearMove',['../df/d70/class_linear_move.html#aa519e010d95eaaa372d3a45ba873d715',1,'LinearMove']]],
+  ['loadscene',['LoadScene',['../de/d6b/class_application.html#ac73bbfb4af8c54f6ae777863b7fa7099',1,'Application::LoadScene()'],['../db/d10/class_game_manager.html#a09b8801bcfdd8d5cbc52e27895b84e3b',1,'GameManager::LoadScene()']]]
 ];

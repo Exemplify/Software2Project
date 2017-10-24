@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['operator_3d',['operator=',['../d2/d83/class_graphic_object.html#a4026dc4e922a5053b6c0e3d1a9b28b63',1,'GraphicObject']]]
+  ['nonprojectileobjectshot',['NonProjectileObjectShot',['../dc/dcd/class_non_projectile_object_shot.html',1,'']]],
+  ['nullgraphic',['NullGraphic',['../d2/d83/class_graphic_object.html#a3a6832e8f4af96da2935d3c69757107c',1,'GraphicObject']]],
+  ['numberofenemieskilled',['numberOfEnemiesKilled',['../dc/d01/class_enemy_controller.html#a2b2fdb5b40b75f719838da0386861da5',1,'EnemyController']]]
 ];

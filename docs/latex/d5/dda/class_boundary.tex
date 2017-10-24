@@ -1,44 +1,166 @@
 \hypertarget{class_boundary}{}\section{Boundary Class Reference}
 \label{class_boundary}\index{Boundary@{Boundary}}
+
+
+\hyperlink{class_boundary}{Boundary} class used to represent a region of space centred around the origin, is able to determine if a specific point exists inside or outside of the bounds.  
+
+
+
+
+{\ttfamily \#include $<$Boundary.\+h$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_boundary_a1ebdbcf1f4bfc6c98ec89e0f15754a59}\label{class_boundary_a1ebdbcf1f4bfc6c98ec89e0f15754a59}} 
+\hyperlink{class_boundary_a7c4c8db45b13dab630e4c6ed7a958e71}{Boundary} ()
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
 \hyperlink{class_boundary_a1ebdbcf1f4bfc6c98ec89e0f15754a59}{Boundary} (double xbound, double ybound)
-\begin{DoxyCompactList}\small\item\em implementation of constructor should be moved to the cpp file \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_boundary_a9c6a5bbcb06d977512fb871f1ab86f5b}\label{class_boundary_a9c6a5bbcb06d977512fb871f1ab86f5b}} 
-bool {\bfseries Out\+Of\+Bounds} (const \hyperlink{class_vector2_d}{Vector2D}$<$ double $>$ \&object\+Position) const
-\item 
-bool \hyperlink{class_boundary_aeb7b795c19f8ad23d8509444a33d473c}{inside\+Of\+Bounds} (const \hyperlink{class_vector2_d}{Vector2D}$<$ double $>$ \&object\+Position) const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Creates a boundary with the specified x and y bound. \end{DoxyCompactList}\item 
+bool \hyperlink{class_boundary_a92d424b11ae1362dcb0b352c9c6aaed3}{Out\+Of\+Bounds} (const \hyperlink{class_vector2_d}{Vector2D} \&object\+Position) const
+\begin{DoxyCompactList}\small\item\em Determines if a specific \hyperlink{class_vector2_d}{Vector2D} position is outside of the defined bounds. \end{DoxyCompactList}\item 
+bool \hyperlink{class_boundary_ae307f83cb40ccaa89e37f58d007c4e6b}{inside\+Of\+Bounds} (const \hyperlink{class_vector2_d}{Vector2D} \&object\+Position) const
+\begin{DoxyCompactList}\small\item\em Determines if a specific \hyperlink{class_vector2_d}{Vector2D} position is inside of the defined bounds. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_boundary_a5063de08946b8303ddeff4c2b72e202e}\label{class_boundary_a5063de08946b8303ddeff4c2b72e202e}} 
-bool {\bfseries Checky\+Outof\+Bounds} (double y\+Pos) const
-\item 
-\mbox{\Hypertarget{class_boundary_a10d2d43b80364ce04cb22b90c9b54493}\label{class_boundary_a10d2d43b80364ce04cb22b90c9b54493}} 
-bool {\bfseries Checkx\+Outof\+Bounds} (double x\+Pos) const
-\end{DoxyCompactItemize}
+bool \hyperlink{class_boundary_a5063de08946b8303ddeff4c2b72e202e}{Checky\+Outof\+Bounds} (double y\+Pos) const
+\begin{DoxyCompactList}\small\item\em Checks if the y position specified is within the y bounds. \end{DoxyCompactList}\item 
+bool \hyperlink{class_boundary_a10d2d43b80364ce04cb22b90c9b54493}{Checkx\+Outof\+Bounds} (double x\+Pos) const
+\begin{DoxyCompactList}\small\item\em Checks if the x position specified is within the x bounds. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_boundary_a55685a68cc9b709898bdbe632d2dfeec}\label{class_boundary_a55685a68cc9b709898bdbe632d2dfeec}} 
-double {\bfseries \+\_\+x\+Bound}
+double \hyperlink{class_boundary_a55685a68cc9b709898bdbe632d2dfeec}{\+\_\+x\+Bound}
 \item 
-\mbox{\Hypertarget{class_boundary_a709e9e1f24faec6d4a35b50e6faffb8e}\label{class_boundary_a709e9e1f24faec6d4a35b50e6faffb8e}} 
-double {\bfseries \+\_\+y\+Bound}
+double \hyperlink{class_boundary_a709e9e1f24faec6d4a35b50e6faffb8e}{\+\_\+y\+Bound}
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+\hyperlink{class_boundary}{Boundary} class used to represent a region of space centred around the origin, is able to determine if a specific point exists inside or outside of the bounds. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_boundary_a7c4c8db45b13dab630e4c6ed7a958e71}\label{class_boundary_a7c4c8db45b13dab630e4c6ed7a958e71}} 
+\index{Boundary@{Boundary}!Boundary@{Boundary}}
+\index{Boundary@{Boundary}!Boundary@{Boundary}}
+\subsubsection{\texorpdfstring{Boundary()}{Boundary()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Boundary\+::\+Boundary (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default Constructor. 
+
+Creates the a boundary object with the current screen position as the default bounds \mbox{\Hypertarget{class_boundary_a1ebdbcf1f4bfc6c98ec89e0f15754a59}\label{class_boundary_a1ebdbcf1f4bfc6c98ec89e0f15754a59}} 
+\index{Boundary@{Boundary}!Boundary@{Boundary}}
+\index{Boundary@{Boundary}!Boundary@{Boundary}}
+\subsubsection{\texorpdfstring{Boundary()}{Boundary()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Boundary\+::\+Boundary (\begin{DoxyParamCaption}\item[{double}]{xbound,  }\item[{double}]{ybound }\end{DoxyParamCaption})}
+
+
+
+Creates a boundary with the specified x and y bound. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xbound} & the distance of the boundary from the origin on the x axis \\
+\hline
+{\em ybound} & the distance of the boundary from the origin on the y axis \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_boundary_aeb7b795c19f8ad23d8509444a33d473c}\label{class_boundary_aeb7b795c19f8ad23d8509444a33d473c}} 
+\mbox{\Hypertarget{class_boundary_a10d2d43b80364ce04cb22b90c9b54493}\label{class_boundary_a10d2d43b80364ce04cb22b90c9b54493}} 
+\index{Boundary@{Boundary}!Checkx\+Outof\+Bounds@{Checkx\+Outof\+Bounds}}
+\index{Checkx\+Outof\+Bounds@{Checkx\+Outof\+Bounds}!Boundary@{Boundary}}
+\subsubsection{\texorpdfstring{Checkx\+Outof\+Bounds()}{CheckxOutofBounds()}}
+{\footnotesize\ttfamily bool Boundary\+::\+Checkx\+Outof\+Bounds (\begin{DoxyParamCaption}\item[{double}]{x\+Pos }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Checks if the x position specified is within the x bounds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Pos} & The x position that is tested \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a bool whether the x position specified is greater than or less than the x coordinate of the boundary 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_boundary_a5063de08946b8303ddeff4c2b72e202e}\label{class_boundary_a5063de08946b8303ddeff4c2b72e202e}} 
+\index{Boundary@{Boundary}!Checky\+Outof\+Bounds@{Checky\+Outof\+Bounds}}
+\index{Checky\+Outof\+Bounds@{Checky\+Outof\+Bounds}!Boundary@{Boundary}}
+\subsubsection{\texorpdfstring{Checky\+Outof\+Bounds()}{CheckyOutofBounds()}}
+{\footnotesize\ttfamily bool Boundary\+::\+Checky\+Outof\+Bounds (\begin{DoxyParamCaption}\item[{double}]{y\+Pos }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Checks if the y position specified is within the y bounds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y\+Pos} & The y position that is tested \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a bool whether the y position specified is greater than or less than the y coordinate of the boundary 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_boundary_ae307f83cb40ccaa89e37f58d007c4e6b}\label{class_boundary_ae307f83cb40ccaa89e37f58d007c4e6b}} 
 \index{Boundary@{Boundary}!inside\+Of\+Bounds@{inside\+Of\+Bounds}}
 \index{inside\+Of\+Bounds@{inside\+Of\+Bounds}!Boundary@{Boundary}}
 \subsubsection{\texorpdfstring{inside\+Of\+Bounds()}{insideOfBounds()}}
-{\footnotesize\ttfamily bool Boundary\+::inside\+Of\+Bounds (\begin{DoxyParamCaption}\item[{const \hyperlink{class_vector2_d}{Vector2D}$<$ double $>$ \&}]{object\+Position }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily bool Boundary\+::inside\+Of\+Bounds (\begin{DoxyParamCaption}\item[{const \hyperlink{class_vector2_d}{Vector2D} \&}]{object\+Position }\end{DoxyParamCaption}) const}
 
-Replace with return !\+Outof\+Boounds (de morgans theorem) 
+
+
+Determines if a specific \hyperlink{class_vector2_d}{Vector2D} position is inside of the defined bounds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object\+Position} & The specific position that is tested with the bounds \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a bool whether the specified position is inside of the boundary 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_boundary_a92d424b11ae1362dcb0b352c9c6aaed3}\label{class_boundary_a92d424b11ae1362dcb0b352c9c6aaed3}} 
+\index{Boundary@{Boundary}!Out\+Of\+Bounds@{Out\+Of\+Bounds}}
+\index{Out\+Of\+Bounds@{Out\+Of\+Bounds}!Boundary@{Boundary}}
+\subsubsection{\texorpdfstring{Out\+Of\+Bounds()}{OutOfBounds()}}
+{\footnotesize\ttfamily bool Boundary\+::\+Out\+Of\+Bounds (\begin{DoxyParamCaption}\item[{const \hyperlink{class_vector2_d}{Vector2D} \&}]{object\+Position }\end{DoxyParamCaption}) const}
+
+
+
+Determines if a specific \hyperlink{class_vector2_d}{Vector2D} position is outside of the defined bounds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object\+Position} & The specific position that is tested with the bounds \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a bool whether the specified position is outside of the boundary 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_boundary_a55685a68cc9b709898bdbe632d2dfeec}\label{class_boundary_a55685a68cc9b709898bdbe632d2dfeec}} 
+\index{Boundary@{Boundary}!\+\_\+x\+Bound@{\+\_\+x\+Bound}}
+\index{\+\_\+x\+Bound@{\+\_\+x\+Bound}!Boundary@{Boundary}}
+\subsubsection{\texorpdfstring{\+\_\+x\+Bound}{\_xBound}}
+{\footnotesize\ttfamily double Boundary\+::\+\_\+x\+Bound\hspace{0.3cm}{\ttfamily [private]}}
+
+The x value of the boundary specified \mbox{\Hypertarget{class_boundary_a709e9e1f24faec6d4a35b50e6faffb8e}\label{class_boundary_a709e9e1f24faec6d4a35b50e6faffb8e}} 
+\index{Boundary@{Boundary}!\+\_\+y\+Bound@{\+\_\+y\+Bound}}
+\index{\+\_\+y\+Bound@{\+\_\+y\+Bound}!Boundary@{Boundary}}
+\subsubsection{\texorpdfstring{\+\_\+y\+Bound}{\_yBound}}
+{\footnotesize\ttfamily double Boundary\+::\+\_\+y\+Bound\hspace{0.3cm}{\ttfamily [private]}}
+
+The y value of the boundary specified 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

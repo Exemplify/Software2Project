@@ -7,7 +7,6 @@
 
 
 const double DEG_2_RAD = 3.141592653589793f/180.0f;
-const double MAX_DISTANCE = 450; 
 
 /**
  * @brief 
@@ -22,7 +21,7 @@ PhysicsObject{physicsObject},
 _shootDelay{shootDelay},
 _enemyShoot{shootComp},
 _screenBounds{},
-_sizeReduction{MAX_DISTANCE, _scale, _objectSize},
+_sizeReduction{_scale, _objectSize},
 _moveComp{moveComp}
 {
 	_type = GameObjectType::enemy;
@@ -47,6 +46,7 @@ void Enemy::AssignEnemyController(const std::shared_ptr<GameObject>& enemyContro
 	_enemyController = std::dynamic_pointer_cast<EnemyController>(enemyController);
 	assert(_enemyController != nullptr);
 }
+
 Vector2D Enemy::GenerateRandomMoveDirection()
 {
 	const auto MAX_DEGREE_RAND_VALUE = 360;

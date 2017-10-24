@@ -2,7 +2,7 @@
 \label{class_splash_screen}\index{Splash\+Screen@{Splash\+Screen}}
 
 
-requires Seperation of Concerns  
+\hyperlink{class_splash_screen}{Splash\+Screen} is used to represent a background image within the game and has the responsibility of loading the game scene and exiting the game.  
 
 
 
@@ -18,38 +18,45 @@ Inheritance diagram for Splash\+Screen\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_splash_screen_aff0a7efdddd95c010d4983515ccb7d69}\label{class_splash_screen_aff0a7efdddd95c010d4983515ccb7d69}} 
-{\bfseries Splash\+Screen} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_graphic_object}{Graphic\+Object} $>$ graphic\+Object, \hyperlink{structxy_vector}{xy\+Vector} scale)
-\item 
+\hyperlink{class_splash_screen_afefa0db946b214828634c7f2550677e6}{Splash\+Screen} (const \hyperlink{class_game_object}{Game\+Object} \&game\+Object)
+\begin{DoxyCompactList}\small\item\em The constructor for a splashscreen takes in a gameobject which is copied into the base gameobject of class to define the base parameters. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_splash_screen_af78b8eab226a89fec389e53cbf3ed9e8}\label{class_splash_screen_af78b8eab226a89fec389e53cbf3ed9e8}} 
 void \hyperlink{class_splash_screen_af78b8eab226a89fec389e53cbf3ed9e8}{Update} () override
-\begin{DoxyCompactList}\small\item\em could aslo be used as a friendship with scene \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_splash_screen_ade64be3c5beadcf67968758e0579fa58}\label{class_splash_screen_ade64be3c5beadcf67968758e0579fa58}} 
-virtual \hyperlink{class_splash_screen}{Splash\+Screen} $\ast$ {\bfseries Clone} () override
-\item 
-\mbox{\Hypertarget{class_splash_screen_a3ec49990d3882d7f1c17cdfd37a4c133}\label{class_splash_screen_a3ec49990d3882d7f1c17cdfd37a4c133}} 
-const std\+::shared\+\_\+ptr$<$ \hyperlink{class_graphic_object}{Graphic\+Object} $>$ {\bfseries get\+Graphic\+Object} () override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Checks for user input to identify if the Game \hyperlink{class_scene}{Scene} should be loaded/\+Restarted or if the game should exit. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_splash_screen_a5d9ac6cec631b24cc947dda245e7d151}\label{class_splash_screen_a5d9ac6cec631b24cc947dda245e7d151}} 
-void {\bfseries Quit\+Game} ()
-\item 
+void \hyperlink{class_splash_screen_a5d9ac6cec631b24cc947dda245e7d151}{Quit\+Game} ()
+\begin{DoxyCompactList}\small\item\em Quits the game when escape is pressed. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_splash_screen_a008328b85475bd01e326f94f20bf9217}\label{class_splash_screen_a008328b85475bd01e326f94f20bf9217}} 
-void {\bfseries Play\+Game} ()
-\end{DoxyCompactItemize}
-\subsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{class_splash_screen_a02280054f7b1e6cce017d7c12c175d76}\label{class_splash_screen_a02280054f7b1e6cce017d7c12c175d76}} 
-std\+::shared\+\_\+ptr$<$ \hyperlink{class_graphic_object}{Graphic\+Object} $>$ {\bfseries \+\_\+graphic\+Object}
-\end{DoxyCompactItemize}
+void \hyperlink{class_splash_screen_a008328b85475bd01e326f94f20bf9217}{Play\+Game} ()
+\begin{DoxyCompactList}\small\item\em Loads the game \hyperlink{class_scene}{Scene} when Enter is pressed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
-requires Seperation of Concerns 
+\hyperlink{class_splash_screen}{Splash\+Screen} is used to represent a background image within the game and has the responsibility of loading the game scene and exiting the game. 
+
+The class responsibilities of this class are should rather be seperated into a Background\+Object and a Menu\+Controller object it is currently designed incorrectly 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_splash_screen_afefa0db946b214828634c7f2550677e6}\label{class_splash_screen_afefa0db946b214828634c7f2550677e6}} 
+\index{Splash\+Screen@{Splash\+Screen}!Splash\+Screen@{Splash\+Screen}}
+\index{Splash\+Screen@{Splash\+Screen}!Splash\+Screen@{Splash\+Screen}}
+\subsubsection{\texorpdfstring{Splash\+Screen()}{SplashScreen()}}
+{\footnotesize\ttfamily Splash\+Screen\+::\+Splash\+Screen (\begin{DoxyParamCaption}\item[{const \hyperlink{class_game_object}{Game\+Object} \&}]{game\+Object }\end{DoxyParamCaption})}
+
+
+
+The constructor for a splashscreen takes in a gameobject which is copied into the base gameobject of class to define the base parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\+Object} & \hyperlink{class_game_object}{Game\+Object} that contains the base parameters for the current instance of the \hyperlink{class_splash_screen}{Splash\+Screen} \\
+\hline
+\end{DoxyParams}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

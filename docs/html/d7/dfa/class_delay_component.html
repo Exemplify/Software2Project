@@ -63,6 +63,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../da/d97/class_delay_component-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -70,43 +71,150 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p><a class="el" href="../../d7/dfa/class_delay_component.html" title="DelayComponent is used to create and manage all delays for the game logic, it uses the delta time val...">DelayComponent</a> is used to create and manage all delays for the game logic, it uses the delta time value stored within the <a class="el" href="../../d9/db6/class_game_time.html" title="Determines the time that it takes for a single frame. ">GameTime</a> class.  
+ <a href="../../d7/dfa/class_delay_component.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="../../d1/d78/_delay_component_8h_source.html">DelayComponent.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:adcfaeb65d23778a3468156b34140c7f5"><td class="memItemLeft" align="right" valign="top"><a id="adcfaeb65d23778a3468156b34140c7f5"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dfa/class_delay_component.html#adcfaeb65d23778a3468156b34140c7f5">DelayComponent</a> ()</td></tr>
-<tr class="memdesc:adcfaeb65d23778a3468156b34140c7f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">default constructor should be removed <br /></td></tr>
-<tr class="separator:adcfaeb65d23778a3468156b34140c7f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab69fe25b426b7ac1696840ad1f56c35"><td class="memItemLeft" align="right" valign="top"><a id="aab69fe25b426b7ac1696840ad1f56c35"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dfa/class_delay_component.html#aab69fe25b426b7ac1696840ad1f56c35">DelayComponent</a> (double value, bool immediateUse=false)</td></tr>
-<tr class="memdesc:aab69fe25b426b7ac1696840ad1f56c35"><td class="mdescLeft">&#160;</td><td class="mdescRight">immediateUse should be renamed to delayFinished <br /></td></tr>
-<tr class="separator:aab69fe25b426b7ac1696840ad1f56c35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2c7023f723523ba2e42ae047d9b6092"><td class="memItemLeft" align="right" valign="top"><a id="ac2c7023f723523ba2e42ae047d9b6092"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>reduceTime</b> ()</td></tr>
-<tr class="separator:ac2c7023f723523ba2e42ae047d9b6092"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8942e663b1a92471ea79f0e7203d30bc"><td class="memItemLeft" align="right" valign="top"><a id="a8942e663b1a92471ea79f0e7203d30bc"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>DelayFinished</b> ()</td></tr>
+<tr class="memitem:a14ff75c76f9e0292f52aadd9e58bec81"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dfa/class_delay_component.html#a14ff75c76f9e0292f52aadd9e58bec81">DelayComponent</a> (double value, bool InitialUseBeforeDelay=false)</td></tr>
+<tr class="memdesc:a14ff75c76f9e0292f52aadd9e58bec81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor: Creates a delay component that uses the specific time value provided.  <a href="#a14ff75c76f9e0292f52aadd9e58bec81">More...</a><br /></td></tr>
+<tr class="separator:a14ff75c76f9e0292f52aadd9e58bec81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8942e663b1a92471ea79f0e7203d30bc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dfa/class_delay_component.html#a8942e663b1a92471ea79f0e7203d30bc">DelayFinished</a> ()</td></tr>
+<tr class="memdesc:a8942e663b1a92471ea79f0e7203d30bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">reduces the delay value and then checks if it is finished  <a href="#a8942e663b1a92471ea79f0e7203d30bc">More...</a><br /></td></tr>
 <tr class="separator:a8942e663b1a92471ea79f0e7203d30bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a539b563338fb30932c96f087dd7a0f5b"><td class="memItemLeft" align="right" valign="top"><a id="a539b563338fb30932c96f087dd7a0f5b"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dfa/class_delay_component.html#a539b563338fb30932c96f087dd7a0f5b">resetDelay</a> ()</td></tr>
-<tr class="memdesc:a539b563338fb30932c96f087dd7a0f5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">should and a default argument that can be changed to change the delay rate <br /></td></tr>
+<tr class="memdesc:a539b563338fb30932c96f087dd7a0f5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the delay to original value. <br /></td></tr>
 <tr class="separator:a539b563338fb30932c96f087dd7a0f5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ac2c7023f723523ba2e42ae047d9b6092"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dfa/class_delay_component.html#ac2c7023f723523ba2e42ae047d9b6092">reduceTime</a> ()</td></tr>
+<tr class="separator:ac2c7023f723523ba2e42ae047d9b6092"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a33d6e279ece1ab6197688c5916dad96d"><td class="memItemLeft" align="right" valign="top"><a id="a33d6e279ece1ab6197688c5916dad96d"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>_currentValue</b></td></tr>
+<tr class="memitem:a33d6e279ece1ab6197688c5916dad96d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dfa/class_delay_component.html#a33d6e279ece1ab6197688c5916dad96d">_currentValue</a></td></tr>
 <tr class="separator:a33d6e279ece1ab6197688c5916dad96d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36f26c01438d1c0347d06888d3b841ac"><td class="memItemLeft" align="right" valign="top"><a id="a36f26c01438d1c0347d06888d3b841ac"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>_delayValue</b></td></tr>
+<tr class="memitem:a36f26c01438d1c0347d06888d3b841ac"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dfa/class_delay_component.html#a36f26c01438d1c0347d06888d3b841ac">_delayValue</a></td></tr>
 <tr class="separator:a36f26c01438d1c0347d06888d3b841ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a821cd453973fced990ae204967e011ff"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dfa/class_delay_component.html#a821cd453973fced990ae204967e011ff">_delayFinished</a></td></tr>
 <tr class="separator:a821cd453973fced990ae204967e011ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>could require some rethinking because a lot of the responsibility is on the client to call the appropriate functions Functions should be incorporated into one so that the client only needs to check if the delay has finished </p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
+<div class="textblock"><p><a class="el" href="../../d7/dfa/class_delay_component.html" title="DelayComponent is used to create and manage all delays for the game logic, it uses the delta time val...">DelayComponent</a> is used to create and manage all delays for the game logic, it uses the delta time value stored within the <a class="el" href="../../d9/db6/class_game_time.html" title="Determines the time that it takes for a single frame. ">GameTime</a> class. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a14ff75c76f9e0292f52aadd9e58bec81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14ff75c76f9e0292f52aadd9e58bec81">&#9670;&nbsp;</a></span>DelayComponent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DelayComponent::DelayComponent </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>InitialUseBeforeDelay</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor: Creates a delay component that uses the specific time value provided. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The specific time value that represent the length of the delay until it is finished </td></tr>
+    <tr><td class="paramname">InitialUseBeforeDelay</td><td>Allows the client to set whether the delay is initially true until use </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a8942e663b1a92471ea79f0e7203d30bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8942e663b1a92471ea79f0e7203d30bc">&#9670;&nbsp;</a></span>DelayFinished()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DelayComponent::DelayFinished </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>reduces the delay value and then checks if it is finished </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if the delay is finished </dd></dl>
+
+</div>
+</div>
+<a id="ac2c7023f723523ba2e42ae047d9b6092"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2c7023f723523ba2e42ae047d9b6092">&#9670;&nbsp;</a></span>reduceTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DelayComponent::reduceTime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Reduces the delay time by <a class="el" href="../../d9/db6/class_game_time.html" title="Determines the time that it takes for a single frame. ">GameTime</a> deltaTime, is called by DelayFinished </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a33d6e279ece1ab6197688c5916dad96d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33d6e279ece1ab6197688c5916dad96d">&#9670;&nbsp;</a></span>_currentValue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double DelayComponent::_currentValue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The current value of time until the delay is finished </p>
+
+</div>
+</div>
 <a id="a821cd453973fced990ae204967e011ff"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a821cd453973fced990ae204967e011ff">&#9670;&nbsp;</a></span>_delayFinished</h2>
 
@@ -126,7 +234,30 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>_delayValue</b></td
   </tr>
 </table>
 </div><div class="memdoc">
-<p>redundant can be replaced in the delay finished function call by the boolean check repeats code by using multiple if statements that check the same thing </p>
+<p>The boolean stored for whether the delay has finished </p>
+
+</div>
+</div>
+<a id="a36f26c01438d1c0347d06888d3b841ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36f26c01438d1c0347d06888d3b841ac">&#9670;&nbsp;</a></span>_delayValue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double DelayComponent::_delayValue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The original value of the delay </p>
 
 </div>
 </div>

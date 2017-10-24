@@ -28,36 +28,39 @@ struct GameObjectData
 	double para_coef,
 	unsigned int m_enm
 	);
+	/**
+	 * @brief Determines if two GameObjectDatas are equal
+	 */
 	bool operator==( const GameObjectData& rhs) const;
 	
 	// Base GameObject information 
 	
 	// Position
-	double PosX;
-	double PosY;
+	double PosX = 0;
+	double PosY = 0;
 	// Scale 
-	double scaleX;
-	double scaleY;
+	double scaleX = 1;
+	double scaleY = 1;
 	
 	// Graphic Object
-	std::string graphic_name;
-	std::string graphic_location;
+	std::string graphic_name = "Null";
+	std::string graphic_location = "NullGraphic.png";
 	
 	// Physics Object Information
-	double move_speed;
-	double collider_size;
+	double move_speed = 0;
+	double collider_size = 0;
 	
 	// Player Information
-	double player_shoot_delay;
-	double player_shoot_speed;
-	double player_projectile_destry_region;
+	double player_shoot_delay = 0;
+	double player_shoot_speed = 0;
+	double player_projectile_destry_region = 0;
 	
 	// Enemy Informtation 
-	double enemy_spawn_delay;
-	double enemy_shoot_delay;
-	double enemy_angular_speed;
-	double parabolic_coeff;
-	unsigned int max_enemies;
+	double enemy_spawn_delay = 0;
+	double enemy_shoot_delay = 0;
+	double enemy_angular_speed = 0;
+	double parabolic_coeff = 0;
+	unsigned int max_enemies = 0;
 };
 
 /**
@@ -70,9 +73,9 @@ struct GameStateData
 	{}
 	GameStateData(unsigned int scr_sz_x, unsigned int scr_sz_y, std::string gameName);
 	bool operator ==(const GameStateData& rhs) const;
-	unsigned int screen_size_x;
-	unsigned int screen_size_y;
-	std::string gameName; 
+	unsigned int screen_size_x = 1920;
+	unsigned int screen_size_y = 1080;
+	std::string gameName = "Game"; 
 };
 
 

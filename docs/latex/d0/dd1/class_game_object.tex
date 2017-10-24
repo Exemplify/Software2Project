@@ -1,9 +1,18 @@
 \hypertarget{class_game_object}{}\section{Game\+Object Class Reference}
 \label{class_game_object}\index{Game\+Object@{Game\+Object}}
+
+
+The base class that is used for all game logic systems.  
+
+
+
+
+{\ttfamily \#include $<$Game\+Object.\+h$>$}
+
 Inheritance diagram for Game\+Object\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.695548cm]{d0/dd1/class_game_object}
+\includegraphics[height=2.527076cm]{d0/dd1/class_game_object}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -11,71 +20,110 @@ Inheritance diagram for Game\+Object\+:\begin{figure}[H]
 \item 
 \mbox{\Hypertarget{class_game_object_a0348e3ee2e83d56eafca7a3547f432c4}\label{class_game_object_a0348e3ee2e83d56eafca7a3547f432c4}} 
 \hyperlink{class_game_object_a0348e3ee2e83d56eafca7a3547f432c4}{Game\+Object} ()
-\begin{DoxyCompactList}\small\item\em default constructor should be removed however is useful for testing \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_game_object_a4abdb4988a1aa49541cee2dc996834fc}\label{class_game_object_a4abdb4988a1aa49541cee2dc996834fc}} 
-{\bfseries Game\+Object} (const \hyperlink{class_game_object}{Game\+Object} \&copy\+Obj)
-\item 
-\mbox{\Hypertarget{class_game_object_aae2936e26f070d83d9b1c69dad5bfceb}\label{class_game_object_aae2936e26f070d83d9b1c69dad5bfceb}} 
-{\bfseries Game\+Object} (\hyperlink{class_vector2_d}{Vector2D}$<$ double $>$ starting\+Position)
-\item 
-\mbox{\Hypertarget{class_game_object_a8d8c6203c094bc5d9e4c917e66b7b1e9}\label{class_game_object_a8d8c6203c094bc5d9e4c917e66b7b1e9}} 
-{\bfseries Game\+Object} (\hyperlink{class_vector2_d}{Vector2D}$<$ double $>$ starting\+Position, \hyperlink{structxy_vector}{xy\+Vector} scale)
-\item 
-\mbox{\Hypertarget{class_game_object_ac7ecc123dacaba955077420caabf5e64}\label{class_game_object_ac7ecc123dacaba955077420caabf5e64}} 
+\begin{DoxyCompactList}\small\item\em Default Constructor -\/ Creates the object using default values. \end{DoxyCompactList}\item 
+\hyperlink{class_game_object_a780db39d3dc5b54c4dffe2f429f9b656}{Game\+Object} (const \hyperlink{class_graphic_object}{Graphic\+Object} \&graphic)
+\begin{DoxyCompactList}\small\item\em Constructs an object with a specific \hyperlink{class_graphic_object}{Graphic\+Object}. \end{DoxyCompactList}\item 
+\hyperlink{class_game_object_a93186927c126a290592e3d7c13906f18}{Game\+Object} (const \hyperlink{structxy_vector}{xy\+Vector} \&scale)
+\begin{DoxyCompactList}\small\item\em Constructs an object with a specific scale. \end{DoxyCompactList}\item 
+\hyperlink{class_game_object_a8a9022df605afb6be63d0dcca07667d6}{Game\+Object} (const \hyperlink{class_vector2_d}{Vector2D} \&starting\+Position)
+\begin{DoxyCompactList}\small\item\em Constructs an object with a specific starting position. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_object_adc9ac2a346e947a0dd6f7bd94ecea8af}\label{class_game_object_adc9ac2a346e947a0dd6f7bd94ecea8af}} 
+\hyperlink{class_game_object_adc9ac2a346e947a0dd6f7bd94ecea8af}{Game\+Object} (const \hyperlink{class_vector2_d}{Vector2D} \&starting\+Position, const \hyperlink{structxy_vector}{xy\+Vector} \&scale, const \hyperlink{class_graphic_object}{Graphic\+Object} \&graphic\+Object)
+\begin{DoxyCompactList}\small\item\em Constructor used to specify the main members of the gameobject. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_game_object_aeeb2162f2779e5591a372a1568bc5c68}{Start} ()
+\begin{DoxyCompactList}\small\item\em Used for initialisation of the objects parameters when it is instantiated. \end{DoxyCompactList}\item 
 virtual void \hyperlink{class_game_object_ac7ecc123dacaba955077420caabf5e64}{Update} ()
-\begin{DoxyCompactList}\small\item\em could aslo be used as a friendship with scene \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_game_object_a7cc83eeefc6e3d112e2a7fc1fb037a9c}\label{class_game_object_a7cc83eeefc6e3d112e2a7fc1fb037a9c}} 
-bool {\bfseries is\+Active} ()
-\item 
-\mbox{\Hypertarget{class_game_object_a6ddc58c7cc733a538228d4948da14b8f}\label{class_game_object_a6ddc58c7cc733a538228d4948da14b8f}} 
-\hyperlink{class_vector2_d}{Vector2D}$<$ double $>$ {\bfseries get\+Position} () const
-\item 
-\mbox{\Hypertarget{class_game_object_af12345846c74b72bc50c779c00b55851}\label{class_game_object_af12345846c74b72bc50c779c00b55851}} 
-Game\+Object\+Type {\bfseries get\+Type} () const
-\item 
-\mbox{\Hypertarget{class_game_object_a9f4aec664bbb4fa5ecfa3d1a7d630d2a}\label{class_game_object_a9f4aec664bbb4fa5ecfa3d1a7d630d2a}} 
-std\+::shared\+\_\+ptr$<$ \hyperlink{class_scene}{Scene} $>$ {\bfseries get\+Scene} () const
-\item 
-\mbox{\Hypertarget{class_game_object_ab7854c363f11c202ea2177b33ce293e0}\label{class_game_object_ab7854c363f11c202ea2177b33ce293e0}} 
-\hyperlink{structxy_vector}{xy\+Vector} {\bfseries get\+Scale} () const
-\item 
-\mbox{\Hypertarget{class_game_object_a32bd3769c0a9d09f0624dfdc22a032f3}\label{class_game_object_a32bd3769c0a9d09f0624dfdc22a032f3}} 
-virtual const std\+::shared\+\_\+ptr$<$ \hyperlink{class_graphic_object}{Graphic\+Object} $>$ {\bfseries get\+Graphic\+Object} ()=0
-\item 
-\mbox{\Hypertarget{class_game_object_a200218792aa0076011d69be696e3d3d4}\label{class_game_object_a200218792aa0076011d69be696e3d3d4}} 
-void {\bfseries set\+Active} (bool active\+\_\+state)
-\item 
+\begin{DoxyCompactList}\small\item\em Update is a virtual method that is used to interface with the Back End System of the Game operations. \end{DoxyCompactList}\item 
+bool \hyperlink{class_game_object_a7cc83eeefc6e3d112e2a7fc1fb037a9c}{is\+Active} ()
+\begin{DoxyCompactList}\small\item\em get function that allows a client to determine if the \hyperlink{class_game_object}{Game\+Object} is active \end{DoxyCompactList}\item 
+\hyperlink{class_vector2_d}{Vector2D} \hyperlink{class_game_object_ae3b21cc28e2c1bce6707699d0312eee8}{get\+Position} () const
+\begin{DoxyCompactList}\small\item\em get function used to return the Position of the object, used in the collision\+Detection calculations and the presentation layer \end{DoxyCompactList}\item 
+Game\+Object\+Type \hyperlink{class_game_object_af12345846c74b72bc50c779c00b55851}{get\+Type} () const
+\begin{DoxyCompactList}\small\item\em get function used to return the Game\+Object\+Type of the object, used in the collision\+Detection calculations \end{DoxyCompactList}\item 
+const \hyperlink{structxy_vector}{xy\+Vector} \& \hyperlink{class_game_object_a0e0c63e1c3deedae400d62d3ecab8ef3}{get\+Scale} () const
+\begin{DoxyCompactList}\small\item\em get function used to return the scale of the object, used in the presentation layer \end{DoxyCompactList}\item 
+virtual const \hyperlink{class_graphic_object}{Graphic\+Object} \& \hyperlink{class_game_object_af44533690a46d5f41aeaa2c16bf867b9}{get\+Graphic\+Object} () const
+\begin{DoxyCompactList}\small\item\em Returns the \hyperlink{class_graphic_object}{Graphic\+Object} of the current \hyperlink{class_game_object}{Game\+Object} to interface with the presentation layer. \end{DoxyCompactList}\item 
+void \hyperlink{class_game_object_a200218792aa0076011d69be696e3d3d4}{set\+Active} (bool active\+\_\+state)
+\begin{DoxyCompactList}\small\item\em Sets the active state of the \hyperlink{class_game_object}{Game\+Object}, if it is unactive it does not update, get displayed by the game or cause collisions. \end{DoxyCompactList}\item 
 void \hyperlink{class_game_object_a9e1420c027ce937f9958a41ad280080b}{set\+Scene} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_scene}{Scene} $>$ scene)
-\item 
-\mbox{\Hypertarget{class_game_object_aba6be15984fdea37907c296619856e99}\label{class_game_object_aba6be15984fdea37907c296619856e99}} 
-virtual \hyperlink{class_game_object}{Game\+Object} $\ast$ {\bfseries Clone} ()=0
-\item 
-\mbox{\Hypertarget{class_game_object_abf1959fad10ea04673a182029f1f81b9}\label{class_game_object_abf1959fad10ea04673a182029f1f81b9}} 
-void {\bfseries Destroy} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em sets the \hyperlink{class_scene}{Scene} pointer of the Gameobject, used to know which \hyperlink{class_scene}{Scene} the \hyperlink{class_game_object}{Game\+Object} exists in \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 std\+::shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$ \hyperlink{class_game_object_ac52291835ad2f3f36363589af0d3ae84}{Find\+Game\+Object\+By\+Type} (Game\+Object\+Type search\+Type)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Searches the list of available Game\+Objects from the \hyperlink{class_scene}{Scene} object and returns the first object that matches the specifc Game\+Object\+Type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_object_abf1959fad10ea04673a182029f1f81b9}\label{class_game_object_abf1959fad10ea04673a182029f1f81b9}} 
+void \hyperlink{class_game_object_abf1959fad10ea04673a182029f1f81b9}{Destroy} ()
+\begin{DoxyCompactList}\small\item\em Removes the current \hyperlink{class_game_object}{Game\+Object} from the \hyperlink{class_game_object}{Game\+Object} list stored within the current scene. Ensures that the object does not get updated or displayed by the Presentation layer, will be removed from memory once the remaining pointers go out of scope. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_game_object_a9b76f90eef67b329538d15b4eeed67a1}\label{class_game_object_a9b76f90eef67b329538d15b4eeed67a1}} 
-\hyperlink{structxy_vector}{xy\+Vector} {\bfseries \+\_\+scale}
+\hyperlink{structxy_vector}{xy\+Vector} \hyperlink{class_game_object_a9b76f90eef67b329538d15b4eeed67a1}{\+\_\+scale}
 \item 
-\mbox{\Hypertarget{class_game_object_ab8cae1a41ad1443d085c397b5e6d5609}\label{class_game_object_ab8cae1a41ad1443d085c397b5e6d5609}} 
-std\+::shared\+\_\+ptr$<$ \hyperlink{class_scene}{Scene} $>$ {\bfseries \+\_\+scene}
+std\+::shared\+\_\+ptr$<$ \hyperlink{class_scene}{Scene} $>$ \hyperlink{class_game_object_ab8cae1a41ad1443d085c397b5e6d5609}{\+\_\+scene}
 \item 
-\mbox{\Hypertarget{class_game_object_aebfec45400aff20c8eab3fbf00be0aea}\label{class_game_object_aebfec45400aff20c8eab3fbf00be0aea}} 
-Game\+Object\+Type {\bfseries \+\_\+type}
+Game\+Object\+Type \hyperlink{class_game_object_aebfec45400aff20c8eab3fbf00be0aea}{\+\_\+type}
 \item 
-\mbox{\Hypertarget{class_game_object_afcd024cb6bf627118f952122861744b3}\label{class_game_object_afcd024cb6bf627118f952122861744b3}} 
-\hyperlink{class_vector2_d}{Vector2D}$<$ double $>$ {\bfseries \+\_\+position}
+\hyperlink{class_vector2_d}{Vector2D} \hyperlink{class_game_object_af86156ef21da475d68de98761cf75512}{\+\_\+position}
 \item 
-\mbox{\Hypertarget{class_game_object_aef11019578aad93f96240b79a1141a07}\label{class_game_object_aef11019578aad93f96240b79a1141a07}} 
-bool {\bfseries \+\_\+active} = true
+\hyperlink{class_graphic_object}{Graphic\+Object} \hyperlink{class_game_object_a07c043ba60b622f256ed18dfb46c0410}{\+\_\+graphic\+Object}
+\item 
+bool \hyperlink{class_game_object_aef11019578aad93f96240b79a1141a07}{\+\_\+active} = true
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The base class that is used for all game logic systems. 
+
+Gameobject is used as a base class from which the various types of game logic elements are derived from. Every game object exist inside of the game space this invariance means that every game object must have a vector position. The position is used by the Presentation Layer (\hyperlink{class_display_manager}{Display\+Manager}) and the \hyperlink{class_collision_detection}{Collision\+Detection}. \hyperlink{class_game_manager}{Game\+Manager} and \hyperlink{class_scene}{Scene} work together to call the update function for each \hyperlink{class_game_object}{Game\+Object} which acts as the Domain Layer. The virtual functions are overriden by the derived classes to define specific game behaviour. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_game_object_a780db39d3dc5b54c4dffe2f429f9b656}\label{class_game_object_a780db39d3dc5b54c4dffe2f429f9b656}} 
+\index{Game\+Object@{Game\+Object}!Game\+Object@{Game\+Object}}
+\index{Game\+Object@{Game\+Object}!Game\+Object@{Game\+Object}}
+\subsubsection{\texorpdfstring{Game\+Object()}{GameObject()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Game\+Object\+::\+Game\+Object (\begin{DoxyParamCaption}\item[{const \hyperlink{class_graphic_object}{Graphic\+Object} \&}]{graphic }\end{DoxyParamCaption})}
+
+
+
+Constructs an object with a specific \hyperlink{class_graphic_object}{Graphic\+Object}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graphic} & defines the Game\+Objects \hyperlink{class_graphic_object}{Graphic\+Object} composition \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_game_object_a93186927c126a290592e3d7c13906f18}\label{class_game_object_a93186927c126a290592e3d7c13906f18}} 
+\index{Game\+Object@{Game\+Object}!Game\+Object@{Game\+Object}}
+\index{Game\+Object@{Game\+Object}!Game\+Object@{Game\+Object}}
+\subsubsection{\texorpdfstring{Game\+Object()}{GameObject()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Game\+Object\+::\+Game\+Object (\begin{DoxyParamCaption}\item[{const \hyperlink{structxy_vector}{xy\+Vector} \&}]{scale }\end{DoxyParamCaption})}
+
+
+
+Constructs an object with a specific scale. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & The desired scale for the \hyperlink{class_game_object}{Game\+Object} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_game_object_a8a9022df605afb6be63d0dcca07667d6}\label{class_game_object_a8a9022df605afb6be63d0dcca07667d6}} 
+\index{Game\+Object@{Game\+Object}!Game\+Object@{Game\+Object}}
+\index{Game\+Object@{Game\+Object}!Game\+Object@{Game\+Object}}
+\subsubsection{\texorpdfstring{Game\+Object()}{GameObject()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Game\+Object\+::\+Game\+Object (\begin{DoxyParamCaption}\item[{const \hyperlink{class_vector2_d}{Vector2D} \&}]{starting\+Position }\end{DoxyParamCaption})}
+
+
+
+Constructs an object with a specific starting position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em starting\+Position} & The desired starting position for the \hyperlink{class_game_object}{Game\+Object} \\
+\hline
+\end{DoxyParams}
 
 
 \subsection{Member Function Documentation}
@@ -85,13 +133,181 @@ bool {\bfseries \+\_\+active} = true
 \subsubsection{\texorpdfstring{Find\+Game\+Object\+By\+Type()}{FindGameObjectByType()}}
 {\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$ Game\+Object\+::\+Find\+Game\+Object\+By\+Type (\begin{DoxyParamCaption}\item[{Game\+Object\+Type}]{search\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
-could be replaced with a std find \mbox{\Hypertarget{class_game_object_a9e1420c027ce937f9958a41ad280080b}\label{class_game_object_a9e1420c027ce937f9958a41ad280080b}} 
+
+
+Searches the list of available Game\+Objects from the \hyperlink{class_scene}{Scene} object and returns the first object that matches the specifc Game\+Object\+Type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em search\+Type} & The Game\+Object\+Type that is being searched for, used to find a specific object of a specific type. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a pointer to the object of the desired type. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_game_object_af44533690a46d5f41aeaa2c16bf867b9}\label{class_game_object_af44533690a46d5f41aeaa2c16bf867b9}} 
+\index{Game\+Object@{Game\+Object}!get\+Graphic\+Object@{get\+Graphic\+Object}}
+\index{get\+Graphic\+Object@{get\+Graphic\+Object}!Game\+Object@{Game\+Object}}
+\subsubsection{\texorpdfstring{get\+Graphic\+Object()}{getGraphicObject()}}
+{\footnotesize\ttfamily const \hyperlink{class_graphic_object}{Graphic\+Object} \& Game\+Object\+::get\+Graphic\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the \hyperlink{class_graphic_object}{Graphic\+Object} of the current \hyperlink{class_game_object}{Game\+Object} to interface with the presentation layer. 
+
+\begin{DoxyReturn}{Returns}
+Returns the \hyperlink{class_graphic_object}{Graphic\+Object} composition object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_game_object_ae3b21cc28e2c1bce6707699d0312eee8}\label{class_game_object_ae3b21cc28e2c1bce6707699d0312eee8}} 
+\index{Game\+Object@{Game\+Object}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!Game\+Object@{Game\+Object}}
+\subsubsection{\texorpdfstring{get\+Position()}{getPosition()}}
+{\footnotesize\ttfamily \hyperlink{class_vector2_d}{Vector2D} Game\+Object\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get function used to return the Position of the object, used in the collision\+Detection calculations and the presentation layer 
+
+\begin{DoxyReturn}{Returns}
+Returns the \hyperlink{class_vector2_d}{Vector2D} composition object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_game_object_a0e0c63e1c3deedae400d62d3ecab8ef3}\label{class_game_object_a0e0c63e1c3deedae400d62d3ecab8ef3}} 
+\index{Game\+Object@{Game\+Object}!get\+Scale@{get\+Scale}}
+\index{get\+Scale@{get\+Scale}!Game\+Object@{Game\+Object}}
+\subsubsection{\texorpdfstring{get\+Scale()}{getScale()}}
+{\footnotesize\ttfamily const \hyperlink{structxy_vector}{xy\+Vector}\& Game\+Object\+::get\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get function used to return the scale of the object, used in the presentation layer 
+
+\begin{DoxyReturn}{Returns}
+Returns the \hyperlink{structxy_vector}{xy\+Vector} composition object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_game_object_af12345846c74b72bc50c779c00b55851}\label{class_game_object_af12345846c74b72bc50c779c00b55851}} 
+\index{Game\+Object@{Game\+Object}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!Game\+Object@{Game\+Object}}
+\subsubsection{\texorpdfstring{get\+Type()}{getType()}}
+{\footnotesize\ttfamily Game\+Object\+Type Game\+Object\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get function used to return the Game\+Object\+Type of the object, used in the collision\+Detection calculations 
+
+\begin{DoxyReturn}{Returns}
+Returns the \hyperlink{structxy_vector}{xy\+Vector} composition object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_game_object_a7cc83eeefc6e3d112e2a7fc1fb037a9c}\label{class_game_object_a7cc83eeefc6e3d112e2a7fc1fb037a9c}} 
+\index{Game\+Object@{Game\+Object}!is\+Active@{is\+Active}}
+\index{is\+Active@{is\+Active}!Game\+Object@{Game\+Object}}
+\subsubsection{\texorpdfstring{is\+Active()}{isActive()}}
+{\footnotesize\ttfamily bool Game\+Object\+::is\+Active (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get function that allows a client to determine if the \hyperlink{class_game_object}{Game\+Object} is active 
+
+\begin{DoxyReturn}{Returns}
+Returns the boolean that represents the Game\+Objects active state 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_game_object_a200218792aa0076011d69be696e3d3d4}\label{class_game_object_a200218792aa0076011d69be696e3d3d4}} 
+\index{Game\+Object@{Game\+Object}!set\+Active@{set\+Active}}
+\index{set\+Active@{set\+Active}!Game\+Object@{Game\+Object}}
+\subsubsection{\texorpdfstring{set\+Active()}{setActive()}}
+{\footnotesize\ttfamily void Game\+Object\+::set\+Active (\begin{DoxyParamCaption}\item[{bool}]{active\+\_\+state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the active state of the \hyperlink{class_game_object}{Game\+Object}, if it is unactive it does not update, get displayed by the game or cause collisions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em active\+\_\+state} & the desired state of the Gameobject \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_game_object_a9e1420c027ce937f9958a41ad280080b}\label{class_game_object_a9e1420c027ce937f9958a41ad280080b}} 
 \index{Game\+Object@{Game\+Object}!set\+Scene@{set\+Scene}}
 \index{set\+Scene@{set\+Scene}!Game\+Object@{Game\+Object}}
 \subsubsection{\texorpdfstring{set\+Scene()}{setScene()}}
 {\footnotesize\ttfamily void Game\+Object\+::set\+Scene (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_scene}{Scene} $>$}]{scene }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-needs to be reconsidered only \hyperlink{class_scene}{Scene} class needs access to this method may be worthwhile making a frienship class here to ensure a tightly coupled relationship between scene and gameobject Need to ask about this Edit\+: Game Obejct should never exist outside of a scene so should require a scene object in the constructor 
+
+
+sets the \hyperlink{class_scene}{Scene} pointer of the Gameobject, used to know which \hyperlink{class_scene}{Scene} the \hyperlink{class_game_object}{Game\+Object} exists in 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & The \hyperlink{class_scene}{Scene} pointer that is copied \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_game_object_aeeb2162f2779e5591a372a1568bc5c68}\label{class_game_object_aeeb2162f2779e5591a372a1568bc5c68}} 
+\index{Game\+Object@{Game\+Object}!Start@{Start}}
+\index{Start@{Start}!Game\+Object@{Game\+Object}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily virtual void Game\+Object\+::\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Used for initialisation of the objects parameters when it is instantiated. 
+
+Start is used to define the various intitialisation parameters that an object may require to be set before it exists inside of the game scene. The \hyperlink{class_scene}{Scene} Object calls this function when it is instantiated 
+
+Reimplemented in \hyperlink{class_enemy_a64ee0cc6fb8a3424d486537efb8205d8}{Enemy}, and \hyperlink{class_projectile_a27a59059730a66a37feec766ebe08fa2}{Projectile}.
+
+\mbox{\Hypertarget{class_game_object_ac7ecc123dacaba955077420caabf5e64}\label{class_game_object_ac7ecc123dacaba955077420caabf5e64}} 
+\index{Game\+Object@{Game\+Object}!Update@{Update}}
+\index{Update@{Update}!Game\+Object@{Game\+Object}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily virtual void Game\+Object\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Update is a virtual method that is used to interface with the Back End System of the Game operations. 
+
+Update is managed by the scene object which iterates through the list of Game\+Objects composed within it. For each \hyperlink{class_game_object}{Game\+Object} the Update function is called once per frame. This function is overriden by the various derived classes, it is given a default return that does nothing, this enables derived classes to implement it only when necessary. 
+
+Reimplemented in \hyperlink{class_enemy_a614ad271f07ecf63cb3e665155b7e258}{Enemy}, \hyperlink{class_projectile_a1f9df5dd65fed410d4e897eb63edc1c9}{Projectile}, \hyperlink{class_enemy_controller_af36ec67442d30c7519581b83ad6c00db}{Enemy\+Controller}, \hyperlink{class_player_a5e17be3418fa0ac0192c05efaf3dc8bd}{Player}, and \hyperlink{class_splash_screen_af78b8eab226a89fec389e53cbf3ed9e8}{Splash\+Screen}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_game_object_aef11019578aad93f96240b79a1141a07}\label{class_game_object_aef11019578aad93f96240b79a1141a07}} 
+\index{Game\+Object@{Game\+Object}!\+\_\+active@{\+\_\+active}}
+\index{\+\_\+active@{\+\_\+active}!Game\+Object@{Game\+Object}}
+\subsubsection{\texorpdfstring{\+\_\+active}{\_active}}
+{\footnotesize\ttfamily bool Game\+Object\+::\+\_\+active = true\hspace{0.3cm}{\ttfamily [protected]}}
+
+Returns the active state of the object, does not get displayed or updated when not active \mbox{\Hypertarget{class_game_object_a07c043ba60b622f256ed18dfb46c0410}\label{class_game_object_a07c043ba60b622f256ed18dfb46c0410}} 
+\index{Game\+Object@{Game\+Object}!\+\_\+graphic\+Object@{\+\_\+graphic\+Object}}
+\index{\+\_\+graphic\+Object@{\+\_\+graphic\+Object}!Game\+Object@{Game\+Object}}
+\subsubsection{\texorpdfstring{\+\_\+graphic\+Object}{\_graphicObject}}
+{\footnotesize\ttfamily \hyperlink{class_graphic_object}{Graphic\+Object} Game\+Object\+::\+\_\+graphic\+Object\hspace{0.3cm}{\ttfamily [protected]}}
+
+The \hyperlink{class_graphic_object}{Graphic\+Object} composition used to identify the specific Sprite the \hyperlink{class_game_object}{Game\+Object} \mbox{\Hypertarget{class_game_object_af86156ef21da475d68de98761cf75512}\label{class_game_object_af86156ef21da475d68de98761cf75512}} 
+\index{Game\+Object@{Game\+Object}!\+\_\+position@{\+\_\+position}}
+\index{\+\_\+position@{\+\_\+position}!Game\+Object@{Game\+Object}}
+\subsubsection{\texorpdfstring{\+\_\+position}{\_position}}
+{\footnotesize\ttfamily \hyperlink{class_vector2_d}{Vector2D} Game\+Object\+::\+\_\+position\hspace{0.3cm}{\ttfamily [protected]}}
+
+The \hyperlink{class_vector2_d}{Vector2D} composition used to represent the objects position in the game\textquotesingle{}s Vector space \mbox{\Hypertarget{class_game_object_a9b76f90eef67b329538d15b4eeed67a1}\label{class_game_object_a9b76f90eef67b329538d15b4eeed67a1}} 
+\index{Game\+Object@{Game\+Object}!\+\_\+scale@{\+\_\+scale}}
+\index{\+\_\+scale@{\+\_\+scale}!Game\+Object@{Game\+Object}}
+\subsubsection{\texorpdfstring{\+\_\+scale}{\_scale}}
+{\footnotesize\ttfamily \hyperlink{structxy_vector}{xy\+Vector} Game\+Object\+::\+\_\+scale\hspace{0.3cm}{\ttfamily [protected]}}
+
+\hyperlink{structxy_vector}{xy\+Vector} representing the scale of the object \mbox{\Hypertarget{class_game_object_ab8cae1a41ad1443d085c397b5e6d5609}\label{class_game_object_ab8cae1a41ad1443d085c397b5e6d5609}} 
+\index{Game\+Object@{Game\+Object}!\+\_\+scene@{\+\_\+scene}}
+\index{\+\_\+scene@{\+\_\+scene}!Game\+Object@{Game\+Object}}
+\subsubsection{\texorpdfstring{\+\_\+scene}{\_scene}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\hyperlink{class_scene}{Scene}$>$ Game\+Object\+::\+\_\+scene\hspace{0.3cm}{\ttfamily [protected]}}
+
+The \hyperlink{class_scene}{Scene} that the object exists in \mbox{\Hypertarget{class_game_object_aebfec45400aff20c8eab3fbf00be0aea}\label{class_game_object_aebfec45400aff20c8eab3fbf00be0aea}} 
+\index{Game\+Object@{Game\+Object}!\+\_\+type@{\+\_\+type}}
+\index{\+\_\+type@{\+\_\+type}!Game\+Object@{Game\+Object}}
+\subsubsection{\texorpdfstring{\+\_\+type}{\_type}}
+{\footnotesize\ttfamily Game\+Object\+Type Game\+Object\+::\+\_\+type\hspace{0.3cm}{\ttfamily [protected]}}
+
+The Game\+Object\+Type representation of the object 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

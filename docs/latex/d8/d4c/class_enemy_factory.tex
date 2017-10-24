@@ -1,0 +1,75 @@
+\hypertarget{class_enemy_factory}{}\section{Enemy\+Factory Class Reference}
+\label{class_enemy_factory}\index{Enemy\+Factory@{Enemy\+Factory}}
+
+
+\hyperlink{class_enemy}{Enemy} Factory is the base class to the various types of enemies that are constructed.  
+
+
+
+
+{\ttfamily \#include $<$Enemy\+Factory.\+h$>$}
+
+Inheritance diagram for Enemy\+Factory\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{d8/d4c/class_enemy_factory}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$ \hyperlink{class_enemy_factory_acb6ad18d5ef69a27927907fa9a444c7d}{get\+Game\+Object} (const std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$ \&database) final
+\begin{DoxyCompactList}\small\item\em Function call used to create an \hyperlink{class_enemy}{Enemy} Object. \end{DoxyCompactList}\item 
+virtual std\+::shared\+\_\+ptr$<$ \hyperlink{class_movable_interface}{Movable\+Interface} $>$ \hyperlink{class_enemy_factory_ae064082d650e676960cb84ebb60ba216}{get\+Movable\+Type} (const \hyperlink{struct_game_object_data}{Game\+Object\+Data} \&data)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function used to assign the various Movable\+Interfaces that the Enemy\+Objects use. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_enemy}{Enemy} Factory is the base class to the various types of enemies that are constructed. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_enemy_factory_acb6ad18d5ef69a27927907fa9a444c7d}\label{class_enemy_factory_acb6ad18d5ef69a27927907fa9a444c7d}} 
+\index{Enemy\+Factory@{Enemy\+Factory}!get\+Game\+Object@{get\+Game\+Object}}
+\index{get\+Game\+Object@{get\+Game\+Object}!Enemy\+Factory@{Enemy\+Factory}}
+\subsubsection{\texorpdfstring{get\+Game\+Object()}{getGameObject()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$ Enemy\+Factory\+::get\+Game\+Object (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$ \&}]{database }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Function call used to create an \hyperlink{class_enemy}{Enemy} Object. 
+
+\begin{DoxyReturn}{Returns}
+Returns an \hyperlink{class_enemy}{Enemy} Object with the specific characteristics for this game
+\end{DoxyReturn}
+Creates the required parameters for each object and passes them by value to ensure that the information is copied to the object This is done so that the default object information is not changed. 
+
+Reimplemented from \hyperlink{class_physics_object_factory_a2644107d0c455c3307559cd824a7c9a8}{Physics\+Object\+Factory}.
+
+\mbox{\Hypertarget{class_enemy_factory_ae064082d650e676960cb84ebb60ba216}\label{class_enemy_factory_ae064082d650e676960cb84ebb60ba216}} 
+\index{Enemy\+Factory@{Enemy\+Factory}!get\+Movable\+Type@{get\+Movable\+Type}}
+\index{get\+Movable\+Type@{get\+Movable\+Type}!Enemy\+Factory@{Enemy\+Factory}}
+\subsubsection{\texorpdfstring{get\+Movable\+Type()}{getMovableType()}}
+{\footnotesize\ttfamily virtual std\+::shared\+\_\+ptr$<$\hyperlink{class_movable_interface}{Movable\+Interface}$>$ Enemy\+Factory\+::get\+Movable\+Type (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_game_object_data}{Game\+Object\+Data} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function used to assign the various Movable\+Interfaces that the Enemy\+Objects use. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The \hyperlink{struct_game_object_data}{Game\+Object\+Data} specific to the \hyperlink{class_enemy}{Enemy} being constructed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the \hyperlink{class_movable_interface}{Movable\+Interface} for the specific \hyperlink{class_enemy}{Enemy} that is being constructed 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_parabolic_enemy_factory_aaf1f3323e4c723f669a11c20a7e38efe}{Parabolic\+Enemy\+Factory}, \hyperlink{class_spiral_enemy_factory_aa05ff998b19ec4ef7ddd86ff24f70cba}{Spiral\+Enemy\+Factory}, and \hyperlink{class_linear_enemy_factory_ad8b2931b7f31f9f8e13d3c9d804469bf}{Linear\+Enemy\+Factory}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Enemy\+Factory.\+h\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Enemy\+Factory.\+cpp\end{DoxyCompactItemize}

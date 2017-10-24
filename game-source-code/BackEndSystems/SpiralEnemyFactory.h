@@ -2,6 +2,10 @@
 #define SPIRAL_ENEM_FAC_H
 #include "EnemyFactory.h"
 
+/**
+ * @class SpiralEnemyFactory
+ * @brief Generates an Enemy that has a Spiral Movement Pattern
+ */
 class SpiralEnemyFactory: public EnemyFactory
 {
 public:

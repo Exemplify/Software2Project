@@ -67,21 +67,28 @@ $(function() {
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="../../d1/d8c/class_game_object-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">GameObject Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">GameObject Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>The base class that is used for all game logic systems.  
+ <a href="../../d0/dd1/class_game_object.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../df/d91/_game_object_8h_source.html">GameObject.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for GameObject:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="../../d0/dd1/class_game_object.png" usemap="#GameObject_map" alt=""/>
   <map id="GameObject_map" name="GameObject_map">
-<area href="../../dc/d01/class_enemy_controller.html" title="needs copy constructor and assignment opperator " alt="EnemyController" shape="rect" coords="0,112,269,136"/>
-<area href="../../d6/db5/class_physics_object.html" title="May not need to inherit from GameObject. " alt="PhysicsObject" shape="rect" coords="279,112,548,136"/>
-<area href="../../da/d1c/class_splash_screen.html" title="requires Seperation of Concerns " alt="SplashScreen" shape="rect" coords="558,112,827,136"/>
-<area href="../../dd/d7a/class_enemy.html" alt="Enemy" shape="rect" coords="0,168,269,192"/>
-<area href="../../d8/d53/class_player.html" title="Character rework required here as well. " alt="Player" shape="rect" coords="279,168,548,192"/>
-<area href="../../db/dbe/class_projectile.html" alt="Projectile" shape="rect" coords="558,168,827,192"/>
+<area href="../../dc/d01/class_enemy_controller.html" title="Enemy controller is responsible for spawning and monitoring new enemy objects. " alt="EnemyController" shape="rect" coords="0,112,269,136"/>
+<area href="../../d6/db5/class_physics_object.html" title="Acts as the main interface between the collisionDetection and the game logic. " alt="PhysicsObject" shape="rect" coords="279,112,548,136"/>
+<area href="../../da/d1c/class_splash_screen.html" title="SplashScreen is used to represent a background image within the game and has the responsibility of lo..." alt="SplashScreen" shape="rect" coords="558,112,827,136"/>
+<area href="../../dd/d7a/class_enemy.html" title="The basic Enemy Object representation. " alt="Enemy" shape="rect" coords="0,168,269,192"/>
+<area href="../../d8/d53/class_player.html" title="Player is used to contain the responsibilities of the object that the user controls. " alt="Player" shape="rect" coords="279,168,548,192"/>
+<area href="../../db/dbe/class_projectile.html" title="The base class for all the projectiles that exist within the game. " alt="Projectile" shape="rect" coords="558,168,827,192"/>
+<area href="../../da/db2/class_enemy_projectile.html" title="Used to represent the enemy projectile and how it interacts with the various objects. " alt="EnemyProjectile" shape="rect" coords="418,224,687,248"/>
+<area href="../../d5/df1/class_player_projectile.html" title="Used to represent the PlayerProjectile within the game. " alt="PlayerProjectile" shape="rect" coords="697,224,966,248"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -89,74 +96,156 @@ Inheritance diagram for GameObject:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0348e3ee2e83d56eafca7a3547f432c4"><td class="memItemLeft" align="right" valign="top"><a id="a0348e3ee2e83d56eafca7a3547f432c4"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#a0348e3ee2e83d56eafca7a3547f432c4">GameObject</a> ()</td></tr>
-<tr class="memdesc:a0348e3ee2e83d56eafca7a3547f432c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">default constructor should be removed however is useful for testing <br /></td></tr>
+<tr class="memdesc:a0348e3ee2e83d56eafca7a3547f432c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Constructor - Creates the object using default values. <br /></td></tr>
 <tr class="separator:a0348e3ee2e83d56eafca7a3547f432c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4abdb4988a1aa49541cee2dc996834fc"><td class="memItemLeft" align="right" valign="top"><a id="a4abdb4988a1aa49541cee2dc996834fc"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>GameObject</b> (const <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a> &amp;copyObj)</td></tr>
-<tr class="separator:a4abdb4988a1aa49541cee2dc996834fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae2936e26f070d83d9b1c69dad5bfceb"><td class="memItemLeft" align="right" valign="top"><a id="aae2936e26f070d83d9b1c69dad5bfceb"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>GameObject</b> (<a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&lt; double &gt; startingPosition)</td></tr>
-<tr class="separator:aae2936e26f070d83d9b1c69dad5bfceb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d8c6203c094bc5d9e4c917e66b7b1e9"><td class="memItemLeft" align="right" valign="top"><a id="a8d8c6203c094bc5d9e4c917e66b7b1e9"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>GameObject</b> (<a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&lt; double &gt; startingPosition, <a class="el" href="../../d5/dae/structxy_vector.html">xyVector</a> scale)</td></tr>
-<tr class="separator:a8d8c6203c094bc5d9e4c917e66b7b1e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7ecc123dacaba955077420caabf5e64"><td class="memItemLeft" align="right" valign="top"><a id="ac7ecc123dacaba955077420caabf5e64"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#ac7ecc123dacaba955077420caabf5e64">Update</a> ()</td></tr>
-<tr class="memdesc:ac7ecc123dacaba955077420caabf5e64"><td class="mdescLeft">&#160;</td><td class="mdescRight">could aslo be used as a friendship with scene <br /></td></tr>
+<tr class="memitem:a780db39d3dc5b54c4dffe2f429f9b656"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#a780db39d3dc5b54c4dffe2f429f9b656">GameObject</a> (const <a class="el" href="../../d2/d83/class_graphic_object.html">GraphicObject</a> &amp;graphic)</td></tr>
+<tr class="memdesc:a780db39d3dc5b54c4dffe2f429f9b656"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an object with a specific <a class="el" href="../../d2/d83/class_graphic_object.html" title="This is the Utility class with the display manager, It stores the name of the object and location of ...">GraphicObject</a>.  <a href="#a780db39d3dc5b54c4dffe2f429f9b656">More...</a><br /></td></tr>
+<tr class="separator:a780db39d3dc5b54c4dffe2f429f9b656"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93186927c126a290592e3d7c13906f18"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#a93186927c126a290592e3d7c13906f18">GameObject</a> (const <a class="el" href="../../d5/dae/structxy_vector.html">xyVector</a> &amp;scale)</td></tr>
+<tr class="memdesc:a93186927c126a290592e3d7c13906f18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an object with a specific scale.  <a href="#a93186927c126a290592e3d7c13906f18">More...</a><br /></td></tr>
+<tr class="separator:a93186927c126a290592e3d7c13906f18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a9022df605afb6be63d0dcca07667d6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#a8a9022df605afb6be63d0dcca07667d6">GameObject</a> (const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;startingPosition)</td></tr>
+<tr class="memdesc:a8a9022df605afb6be63d0dcca07667d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an object with a specific starting position.  <a href="#a8a9022df605afb6be63d0dcca07667d6">More...</a><br /></td></tr>
+<tr class="separator:a8a9022df605afb6be63d0dcca07667d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc9ac2a346e947a0dd6f7bd94ecea8af"><td class="memItemLeft" align="right" valign="top"><a id="adc9ac2a346e947a0dd6f7bd94ecea8af"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#adc9ac2a346e947a0dd6f7bd94ecea8af">GameObject</a> (const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;startingPosition, const <a class="el" href="../../d5/dae/structxy_vector.html">xyVector</a> &amp;scale, const <a class="el" href="../../d2/d83/class_graphic_object.html">GraphicObject</a> &amp;graphicObject)</td></tr>
+<tr class="memdesc:adc9ac2a346e947a0dd6f7bd94ecea8af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor used to specify the main members of the gameobject. <br /></td></tr>
+<tr class="separator:adc9ac2a346e947a0dd6f7bd94ecea8af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeeb2162f2779e5591a372a1568bc5c68"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#aeeb2162f2779e5591a372a1568bc5c68">Start</a> ()</td></tr>
+<tr class="memdesc:aeeb2162f2779e5591a372a1568bc5c68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used for initialisation of the objects parameters when it is instantiated.  <a href="#aeeb2162f2779e5591a372a1568bc5c68">More...</a><br /></td></tr>
+<tr class="separator:aeeb2162f2779e5591a372a1568bc5c68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7ecc123dacaba955077420caabf5e64"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#ac7ecc123dacaba955077420caabf5e64">Update</a> ()</td></tr>
+<tr class="memdesc:ac7ecc123dacaba955077420caabf5e64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update is a virtual method that is used to interface with the Back End System of the Game operations.  <a href="#ac7ecc123dacaba955077420caabf5e64">More...</a><br /></td></tr>
 <tr class="separator:ac7ecc123dacaba955077420caabf5e64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7cc83eeefc6e3d112e2a7fc1fb037a9c"><td class="memItemLeft" align="right" valign="top"><a id="a7cc83eeefc6e3d112e2a7fc1fb037a9c"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isActive</b> ()</td></tr>
+<tr class="memitem:a7cc83eeefc6e3d112e2a7fc1fb037a9c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#a7cc83eeefc6e3d112e2a7fc1fb037a9c">isActive</a> ()</td></tr>
+<tr class="memdesc:a7cc83eeefc6e3d112e2a7fc1fb037a9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">get function that allows a client to determine if the <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a> is active  <a href="#a7cc83eeefc6e3d112e2a7fc1fb037a9c">More...</a><br /></td></tr>
 <tr class="separator:a7cc83eeefc6e3d112e2a7fc1fb037a9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ddc58c7cc733a538228d4948da14b8f"><td class="memItemLeft" align="right" valign="top"><a id="a6ddc58c7cc733a538228d4948da14b8f"></a>
-<a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getPosition</b> () const</td></tr>
-<tr class="separator:a6ddc58c7cc733a538228d4948da14b8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af12345846c74b72bc50c779c00b55851"><td class="memItemLeft" align="right" valign="top"><a id="af12345846c74b72bc50c779c00b55851"></a>
-GameObjectType&#160;</td><td class="memItemRight" valign="bottom"><b>getType</b> () const</td></tr>
+<tr class="memitem:ae3b21cc28e2c1bce6707699d0312eee8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#ae3b21cc28e2c1bce6707699d0312eee8">getPosition</a> () const</td></tr>
+<tr class="memdesc:ae3b21cc28e2c1bce6707699d0312eee8"><td class="mdescLeft">&#160;</td><td class="mdescRight">get function used to return the Position of the object, used in the collisionDetection calculations and the presentation layer  <a href="#ae3b21cc28e2c1bce6707699d0312eee8">More...</a><br /></td></tr>
+<tr class="separator:ae3b21cc28e2c1bce6707699d0312eee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af12345846c74b72bc50c779c00b55851"><td class="memItemLeft" align="right" valign="top">GameObjectType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#af12345846c74b72bc50c779c00b55851">getType</a> () const</td></tr>
+<tr class="memdesc:af12345846c74b72bc50c779c00b55851"><td class="mdescLeft">&#160;</td><td class="mdescRight">get function used to return the GameObjectType of the object, used in the collisionDetection calculations  <a href="#af12345846c74b72bc50c779c00b55851">More...</a><br /></td></tr>
 <tr class="separator:af12345846c74b72bc50c779c00b55851"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f4aec664bbb4fa5ecfa3d1a7d630d2a"><td class="memItemLeft" align="right" valign="top"><a id="a9f4aec664bbb4fa5ecfa3d1a7d630d2a"></a>
-std::shared_ptr&lt; <a class="el" href="../../d6/db5/class_scene.html">Scene</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getScene</b> () const</td></tr>
-<tr class="separator:a9f4aec664bbb4fa5ecfa3d1a7d630d2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7854c363f11c202ea2177b33ce293e0"><td class="memItemLeft" align="right" valign="top"><a id="ab7854c363f11c202ea2177b33ce293e0"></a>
-<a class="el" href="../../d5/dae/structxy_vector.html">xyVector</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getScale</b> () const</td></tr>
-<tr class="separator:ab7854c363f11c202ea2177b33ce293e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32bd3769c0a9d09f0624dfdc22a032f3"><td class="memItemLeft" align="right" valign="top"><a id="a32bd3769c0a9d09f0624dfdc22a032f3"></a>
-virtual const std::shared_ptr&lt; <a class="el" href="../../d2/d83/class_graphic_object.html">GraphicObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getGraphicObject</b> ()=0</td></tr>
-<tr class="separator:a32bd3769c0a9d09f0624dfdc22a032f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a200218792aa0076011d69be696e3d3d4"><td class="memItemLeft" align="right" valign="top"><a id="a200218792aa0076011d69be696e3d3d4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setActive</b> (bool active_state)</td></tr>
+<tr class="memitem:a0e0c63e1c3deedae400d62d3ecab8ef3"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d5/dae/structxy_vector.html">xyVector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#a0e0c63e1c3deedae400d62d3ecab8ef3">getScale</a> () const</td></tr>
+<tr class="memdesc:a0e0c63e1c3deedae400d62d3ecab8ef3"><td class="mdescLeft">&#160;</td><td class="mdescRight">get function used to return the scale of the object, used in the presentation layer  <a href="#a0e0c63e1c3deedae400d62d3ecab8ef3">More...</a><br /></td></tr>
+<tr class="separator:a0e0c63e1c3deedae400d62d3ecab8ef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af44533690a46d5f41aeaa2c16bf867b9"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="../../d2/d83/class_graphic_object.html">GraphicObject</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#af44533690a46d5f41aeaa2c16bf867b9">getGraphicObject</a> () const</td></tr>
+<tr class="memdesc:af44533690a46d5f41aeaa2c16bf867b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="../../d2/d83/class_graphic_object.html" title="This is the Utility class with the display manager, It stores the name of the object and location of ...">GraphicObject</a> of the current <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a> to interface with the presentation layer.  <a href="#af44533690a46d5f41aeaa2c16bf867b9">More...</a><br /></td></tr>
+<tr class="separator:af44533690a46d5f41aeaa2c16bf867b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a200218792aa0076011d69be696e3d3d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#a200218792aa0076011d69be696e3d3d4">setActive</a> (bool active_state)</td></tr>
+<tr class="memdesc:a200218792aa0076011d69be696e3d3d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the active state of the <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a>, if it is unactive it does not update, get displayed by the game or cause collisions.  <a href="#a200218792aa0076011d69be696e3d3d4">More...</a><br /></td></tr>
 <tr class="separator:a200218792aa0076011d69be696e3d3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e1420c027ce937f9958a41ad280080b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#a9e1420c027ce937f9958a41ad280080b">setScene</a> (std::shared_ptr&lt; <a class="el" href="../../d6/db5/class_scene.html">Scene</a> &gt; scene)</td></tr>
+<tr class="memdesc:a9e1420c027ce937f9958a41ad280080b"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the <a class="el" href="../../d6/db5/class_scene.html" title="Scene is used to store and operate on the various gameobjects that define the functionality of the cu...">Scene</a> pointer of the Gameobject, used to know which <a class="el" href="../../d6/db5/class_scene.html" title="Scene is used to store and operate on the various gameobjects that define the functionality of the cu...">Scene</a> the <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a> exists in  <a href="#a9e1420c027ce937f9958a41ad280080b">More...</a><br /></td></tr>
 <tr class="separator:a9e1420c027ce937f9958a41ad280080b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba6be15984fdea37907c296619856e99"><td class="memItemLeft" align="right" valign="top"><a id="aba6be15984fdea37907c296619856e99"></a>
-virtual <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>Clone</b> ()=0</td></tr>
-<tr class="separator:aba6be15984fdea37907c296619856e99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf1959fad10ea04673a182029f1f81b9"><td class="memItemLeft" align="right" valign="top"><a id="abf1959fad10ea04673a182029f1f81b9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Destroy</b> ()</td></tr>
-<tr class="separator:abf1959fad10ea04673a182029f1f81b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:ac52291835ad2f3f36363589af0d3ae84"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#ac52291835ad2f3f36363589af0d3ae84">FindGameObjectByType</a> (GameObjectType searchType)</td></tr>
+<tr class="memdesc:ac52291835ad2f3f36363589af0d3ae84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches the list of available GameObjects from the <a class="el" href="../../d6/db5/class_scene.html" title="Scene is used to store and operate on the various gameobjects that define the functionality of the cu...">Scene</a> object and returns the first object that matches the specifc GameObjectType.  <a href="#ac52291835ad2f3f36363589af0d3ae84">More...</a><br /></td></tr>
 <tr class="separator:ac52291835ad2f3f36363589af0d3ae84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf1959fad10ea04673a182029f1f81b9"><td class="memItemLeft" align="right" valign="top"><a id="abf1959fad10ea04673a182029f1f81b9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#abf1959fad10ea04673a182029f1f81b9">Destroy</a> ()</td></tr>
+<tr class="memdesc:abf1959fad10ea04673a182029f1f81b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the current <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a> from the <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a> list stored within the current scene. Ensures that the object does not get updated or displayed by the Presentation layer, will be removed from memory once the remaining pointers go out of scope. <br /></td></tr>
+<tr class="separator:abf1959fad10ea04673a182029f1f81b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a9b76f90eef67b329538d15b4eeed67a1"><td class="memItemLeft" align="right" valign="top"><a id="a9b76f90eef67b329538d15b4eeed67a1"></a>
-<a class="el" href="../../d5/dae/structxy_vector.html">xyVector</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_scale</b></td></tr>
+<tr class="memitem:a9b76f90eef67b329538d15b4eeed67a1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/dae/structxy_vector.html">xyVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#a9b76f90eef67b329538d15b4eeed67a1">_scale</a></td></tr>
 <tr class="separator:a9b76f90eef67b329538d15b4eeed67a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8cae1a41ad1443d085c397b5e6d5609"><td class="memItemLeft" align="right" valign="top"><a id="ab8cae1a41ad1443d085c397b5e6d5609"></a>
-std::shared_ptr&lt; <a class="el" href="../../d6/db5/class_scene.html">Scene</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_scene</b></td></tr>
+<tr class="memitem:ab8cae1a41ad1443d085c397b5e6d5609"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="../../d6/db5/class_scene.html">Scene</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#ab8cae1a41ad1443d085c397b5e6d5609">_scene</a></td></tr>
 <tr class="separator:ab8cae1a41ad1443d085c397b5e6d5609"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebfec45400aff20c8eab3fbf00be0aea"><td class="memItemLeft" align="right" valign="top"><a id="aebfec45400aff20c8eab3fbf00be0aea"></a>
-GameObjectType&#160;</td><td class="memItemRight" valign="bottom"><b>_type</b></td></tr>
+<tr class="memitem:aebfec45400aff20c8eab3fbf00be0aea"><td class="memItemLeft" align="right" valign="top">GameObjectType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#aebfec45400aff20c8eab3fbf00be0aea">_type</a></td></tr>
 <tr class="separator:aebfec45400aff20c8eab3fbf00be0aea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afcd024cb6bf627118f952122861744b3"><td class="memItemLeft" align="right" valign="top"><a id="afcd024cb6bf627118f952122861744b3"></a>
-<a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_position</b></td></tr>
-<tr class="separator:afcd024cb6bf627118f952122861744b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef11019578aad93f96240b79a1141a07"><td class="memItemLeft" align="right" valign="top"><a id="aef11019578aad93f96240b79a1141a07"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>_active</b> = true</td></tr>
+<tr class="memitem:af86156ef21da475d68de98761cf75512"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#af86156ef21da475d68de98761cf75512">_position</a></td></tr>
+<tr class="separator:af86156ef21da475d68de98761cf75512"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07c043ba60b622f256ed18dfb46c0410"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d83/class_graphic_object.html">GraphicObject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#a07c043ba60b622f256ed18dfb46c0410">_graphicObject</a></td></tr>
+<tr class="separator:a07c043ba60b622f256ed18dfb46c0410"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef11019578aad93f96240b79a1141a07"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#aef11019578aad93f96240b79a1141a07">_active</a> = true</td></tr>
 <tr class="separator:aef11019578aad93f96240b79a1141a07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The base class that is used for all game logic systems. </p>
+<p>Gameobject is used as a base class from which the various types of game logic elements are derived from. Every game object exist inside of the game space this invariance means that every game object must have a vector position. The position is used by the Presentation Layer (<a class="el" href="../../d8/db2/class_display_manager.html" title="Display manager is in charge of running and managing the presentation layer. ">DisplayManager</a>) and the <a class="el" href="../../d0/dfb/class_collision_detection.html" title="Determines when PhysicsObjects have collided with each other. ">CollisionDetection</a>. <a class="el" href="../../db/d10/class_game_manager.html" title="GameManager is responsible for intialising and maintaining the game state, and updating the game loop...">GameManager</a> and <a class="el" href="../../d6/db5/class_scene.html" title="Scene is used to store and operate on the various gameobjects that define the functionality of the cu...">Scene</a> work together to call the update function for each <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a> which acts as the Domain Layer. The virtual functions are overriden by the derived classes to define specific game behaviour. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a780db39d3dc5b54c4dffe2f429f9b656"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a780db39d3dc5b54c4dffe2f429f9b656">&#9670;&nbsp;</a></span>GameObject() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameObject::GameObject </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d2/d83/class_graphic_object.html">GraphicObject</a> &amp;&#160;</td>
+          <td class="paramname"><em>graphic</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs an object with a specific <a class="el" href="../../d2/d83/class_graphic_object.html" title="This is the Utility class with the display manager, It stores the name of the object and location of ...">GraphicObject</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">graphic</td><td>defines the GameObjects <a class="el" href="../../d2/d83/class_graphic_object.html" title="This is the Utility class with the display manager, It stores the name of the object and location of ...">GraphicObject</a> composition </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a93186927c126a290592e3d7c13906f18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93186927c126a290592e3d7c13906f18">&#9670;&nbsp;</a></span>GameObject() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameObject::GameObject </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d5/dae/structxy_vector.html">xyVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>scale</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs an object with a specific scale. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scale</td><td>The desired scale for the <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8a9022df605afb6be63d0dcca07667d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a9022df605afb6be63d0dcca07667d6">&#9670;&nbsp;</a></span>GameObject() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameObject::GameObject </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;&#160;</td>
+          <td class="paramname"><em>startingPosition</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs an object with a specific starting position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">startingPosition</td><td>The desired starting position for the <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="ac52291835ad2f3f36363589af0d3ae84"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac52291835ad2f3f36363589af0d3ae84">&#9670;&nbsp;</a></span>FindGameObjectByType()</h2>
@@ -181,7 +270,189 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_active</b> = true</t
   </tr>
 </table>
 </div><div class="memdoc">
-<p>could be replaced with a std find </p>
+
+<p>Searches the list of available GameObjects from the <a class="el" href="../../d6/db5/class_scene.html" title="Scene is used to store and operate on the various gameobjects that define the functionality of the cu...">Scene</a> object and returns the first object that matches the specifc GameObjectType. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">searchType</td><td>The GameObjectType that is being searched for, used to find a specific object of a specific type. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns a pointer to the object of the desired type. </dd></dl>
+
+</div>
+</div>
+<a id="af44533690a46d5f41aeaa2c16bf867b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af44533690a46d5f41aeaa2c16bf867b9">&#9670;&nbsp;</a></span>getGraphicObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d2/d83/class_graphic_object.html">GraphicObject</a> &amp; GameObject::getGraphicObject </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the <a class="el" href="../../d2/d83/class_graphic_object.html" title="This is the Utility class with the display manager, It stores the name of the object and location of ...">GraphicObject</a> of the current <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a> to interface with the presentation layer. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns the <a class="el" href="../../d2/d83/class_graphic_object.html" title="This is the Utility class with the display manager, It stores the name of the object and location of ...">GraphicObject</a> composition object </dd></dl>
+
+</div>
+</div>
+<a id="ae3b21cc28e2c1bce6707699d0312eee8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3b21cc28e2c1bce6707699d0312eee8">&#9670;&nbsp;</a></span>getPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> GameObject::getPosition </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get function used to return the Position of the object, used in the collisionDetection calculations and the presentation layer </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns the <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> composition object </dd></dl>
+
+</div>
+</div>
+<a id="a0e0c63e1c3deedae400d62d3ecab8ef3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e0c63e1c3deedae400d62d3ecab8ef3">&#9670;&nbsp;</a></span>getScale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d5/dae/structxy_vector.html">xyVector</a>&amp; GameObject::getScale </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get function used to return the scale of the object, used in the presentation layer </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns the <a class="el" href="../../d5/dae/structxy_vector.html">xyVector</a> composition object </dd></dl>
+
+</div>
+</div>
+<a id="af12345846c74b72bc50c779c00b55851"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af12345846c74b72bc50c779c00b55851">&#9670;&nbsp;</a></span>getType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameObjectType GameObject::getType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get function used to return the GameObjectType of the object, used in the collisionDetection calculations </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns the <a class="el" href="../../d5/dae/structxy_vector.html">xyVector</a> composition object </dd></dl>
+
+</div>
+</div>
+<a id="a7cc83eeefc6e3d112e2a7fc1fb037a9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cc83eeefc6e3d112e2a7fc1fb037a9c">&#9670;&nbsp;</a></span>isActive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GameObject::isActive </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get function that allows a client to determine if the <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a> is active </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns the boolean that represents the GameObjects active state </dd></dl>
+
+</div>
+</div>
+<a id="a200218792aa0076011d69be696e3d3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a200218792aa0076011d69be696e3d3d4">&#9670;&nbsp;</a></span>setActive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameObject::setActive </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>active_state</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the active state of the <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a>, if it is unactive it does not update, get displayed by the game or cause collisions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">active_state</td><td>the desired state of the Gameobject </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -208,7 +479,213 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_active</b> = true</t
   </tr>
 </table>
 </div><div class="memdoc">
-<p>needs to be reconsidered only <a class="el" href="../../d6/db5/class_scene.html">Scene</a> class needs access to this method may be worthwhile making a frienship class here to ensure a tightly coupled relationship between scene and gameobject Need to ask about this Edit: Game Obejct should never exist outside of a scene so should require a scene object in the constructor </p>
+
+<p>sets the <a class="el" href="../../d6/db5/class_scene.html" title="Scene is used to store and operate on the various gameobjects that define the functionality of the cu...">Scene</a> pointer of the Gameobject, used to know which <a class="el" href="../../d6/db5/class_scene.html" title="Scene is used to store and operate on the various gameobjects that define the functionality of the cu...">Scene</a> the <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a> exists in </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scene</td><td>The <a class="el" href="../../d6/db5/class_scene.html" title="Scene is used to store and operate on the various gameobjects that define the functionality of the cu...">Scene</a> pointer that is copied </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aeeb2162f2779e5591a372a1568bc5c68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeeb2162f2779e5591a372a1568bc5c68">&#9670;&nbsp;</a></span>Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GameObject::Start </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Used for initialisation of the objects parameters when it is instantiated. </p>
+<p>Start is used to define the various intitialisation parameters that an object may require to be set before it exists inside of the game scene. The <a class="el" href="../../d6/db5/class_scene.html" title="Scene is used to store and operate on the various gameobjects that define the functionality of the cu...">Scene</a> Object calls this function when it is instantiated </p>
+
+<p>Reimplemented in <a class="el" href="../../dd/d7a/class_enemy.html#a64ee0cc6fb8a3424d486537efb8205d8">Enemy</a>, and <a class="el" href="../../db/dbe/class_projectile.html#a27a59059730a66a37feec766ebe08fa2">Projectile</a>.</p>
+
+</div>
+</div>
+<a id="ac7ecc123dacaba955077420caabf5e64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7ecc123dacaba955077420caabf5e64">&#9670;&nbsp;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void GameObject::Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Update is a virtual method that is used to interface with the Back End System of the Game operations. </p>
+<p>Update is managed by the scene object which iterates through the list of GameObjects composed within it. For each <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a> the Update function is called once per frame. This function is overriden by the various derived classes, it is given a default return that does nothing, this enables derived classes to implement it only when necessary. </p>
+
+<p>Reimplemented in <a class="el" href="../../dd/d7a/class_enemy.html#a614ad271f07ecf63cb3e665155b7e258">Enemy</a>, <a class="el" href="../../db/dbe/class_projectile.html#a1f9df5dd65fed410d4e897eb63edc1c9">Projectile</a>, <a class="el" href="../../dc/d01/class_enemy_controller.html#af36ec67442d30c7519581b83ad6c00db">EnemyController</a>, <a class="el" href="../../d8/d53/class_player.html#a5e17be3418fa0ac0192c05efaf3dc8bd">Player</a>, and <a class="el" href="../../da/d1c/class_splash_screen.html#af78b8eab226a89fec389e53cbf3ed9e8">SplashScreen</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="aef11019578aad93f96240b79a1141a07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef11019578aad93f96240b79a1141a07">&#9670;&nbsp;</a></span>_active</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GameObject::_active = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns the active state of the object, does not get displayed or updated when not active </p>
+
+</div>
+</div>
+<a id="a07c043ba60b622f256ed18dfb46c0410"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07c043ba60b622f256ed18dfb46c0410">&#9670;&nbsp;</a></span>_graphicObject</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d83/class_graphic_object.html">GraphicObject</a> GameObject::_graphicObject</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The <a class="el" href="../../d2/d83/class_graphic_object.html" title="This is the Utility class with the display manager, It stores the name of the object and location of ...">GraphicObject</a> composition used to identify the specific Sprite the <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a> </p>
+
+</div>
+</div>
+<a id="af86156ef21da475d68de98761cf75512"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af86156ef21da475d68de98761cf75512">&#9670;&nbsp;</a></span>_position</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> GameObject::_position</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> composition used to represent the objects position in the game's Vector space </p>
+
+</div>
+</div>
+<a id="a9b76f90eef67b329538d15b4eeed67a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b76f90eef67b329538d15b4eeed67a1">&#9670;&nbsp;</a></span>_scale</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/dae/structxy_vector.html">xyVector</a> GameObject::_scale</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><a class="el" href="../../d5/dae/structxy_vector.html">xyVector</a> representing the scale of the object </p>
+
+</div>
+</div>
+<a id="ab8cae1a41ad1443d085c397b5e6d5609"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8cae1a41ad1443d085c397b5e6d5609">&#9670;&nbsp;</a></span>_scene</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="../../d6/db5/class_scene.html">Scene</a>&gt; GameObject::_scene</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The <a class="el" href="../../d6/db5/class_scene.html" title="Scene is used to store and operate on the various gameobjects that define the functionality of the cu...">Scene</a> that the object exists in </p>
+
+</div>
+</div>
+<a id="aebfec45400aff20c8eab3fbf00be0aea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebfec45400aff20c8eab3fbf00be0aea">&#9670;&nbsp;</a></span>_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameObjectType GameObject::_type</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The GameObjectType representation of the object </p>
 
 </div>
 </div>

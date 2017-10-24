@@ -1,0 +1,78 @@
+\hypertarget{class_shoot_interface}{}\section{Shoot\+Interface Class Reference}
+\label{class_shoot_interface}\index{Shoot\+Interface@{Shoot\+Interface}}
+
+
+The Interface used to define the various methods of creating and shooting \hyperlink{class_projectile}{Projectile} objects.  
+
+
+
+
+{\ttfamily \#include $<$Shoot\+Interface.\+h$>$}
+
+Inheritance diagram for Shoot\+Interface\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d9/d8a/class_shoot_interface}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_shoot_interface_a67205cc4e2fed90fa8c1ec93b30b864d}{Shoot} (\hyperlink{class_vector2_d}{Vector2D} start\+Position, \hyperlink{class_vector2_d}{Vector2D} target, std\+::shared\+\_\+ptr$<$ \hyperlink{class_scene}{Scene} $>$ scene)=0
+\begin{DoxyCompactList}\small\item\em Shoots a \hyperlink{class_projectile}{Projectile} object in a way defined by the derived class, used as the main interface with the client. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::shared\+\_\+ptr$<$ \hyperlink{class_projectile}{Projectile} $>$ \hyperlink{class_shoot_interface_ad274b0c66a0a42bf194b32b704c8bfea}{get\+Projectile} ()=0
+\begin{DoxyCompactList}\small\item\em determines the projectile object used for the specific shoot component \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The Interface used to define the various methods of creating and shooting \hyperlink{class_projectile}{Projectile} objects. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_shoot_interface_ad274b0c66a0a42bf194b32b704c8bfea}\label{class_shoot_interface_ad274b0c66a0a42bf194b32b704c8bfea}} 
+\index{Shoot\+Interface@{Shoot\+Interface}!get\+Projectile@{get\+Projectile}}
+\index{get\+Projectile@{get\+Projectile}!Shoot\+Interface@{Shoot\+Interface}}
+\subsubsection{\texorpdfstring{get\+Projectile()}{getProjectile()}}
+{\footnotesize\ttfamily virtual std\+::shared\+\_\+ptr$<$\hyperlink{class_projectile}{Projectile}$>$ Shoot\+Interface\+::get\+Projectile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+determines the projectile object used for the specific shoot component 
+
+\begin{DoxyReturn}{Returns}
+Returns the desired projectile 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_basic_shoot_ab5058d147ca9d9cc4cc4210e9e092de5}{Basic\+Shoot}.
+
+\mbox{\Hypertarget{class_shoot_interface_a67205cc4e2fed90fa8c1ec93b30b864d}\label{class_shoot_interface_a67205cc4e2fed90fa8c1ec93b30b864d}} 
+\index{Shoot\+Interface@{Shoot\+Interface}!Shoot@{Shoot}}
+\index{Shoot@{Shoot}!Shoot\+Interface@{Shoot\+Interface}}
+\subsubsection{\texorpdfstring{Shoot()}{Shoot()}}
+{\footnotesize\ttfamily virtual void Shoot\+Interface\+::\+Shoot (\begin{DoxyParamCaption}\item[{\hyperlink{class_vector2_d}{Vector2D}}]{start\+Position,  }\item[{\hyperlink{class_vector2_d}{Vector2D}}]{target,  }\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_scene}{Scene} $>$}]{scene }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Shoots a \hyperlink{class_projectile}{Projectile} object in a way defined by the derived class, used as the main interface with the client. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Position} & The starting position of the \hyperlink{class_projectile}{Projectile} \\
+\hline
+{\em target} & The target that the projectile moves towards \\
+\hline
+{\em scene} & The scene that the projectile is instantiated into \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_basic_shoot_a8bed811408d1afa3ecf0454ae78f2303}{Basic\+Shoot}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Shoot\+Interface.\+h\end{DoxyCompactItemize}

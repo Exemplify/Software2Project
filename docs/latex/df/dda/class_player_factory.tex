@@ -1,0 +1,75 @@
+\hypertarget{class_player_factory}{}\section{Player\+Factory Class Reference}
+\label{class_player_factory}\index{Player\+Factory@{Player\+Factory}}
+
+
+Derived class from the \hyperlink{class_game_object_factory}{Game\+Object\+Factory} interface used to construct the player object.  
+
+
+
+
+{\ttfamily \#include $<$Player\+Factory.\+h$>$}
+
+Inheritance diagram for Player\+Factory\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{df/dda/class_player_factory}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$ \hyperlink{class_player_factory_ab92534e7d2d6887ecf9e4ed8131a8112}{get\+Game\+Object} (const std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$ \&database) override
+\begin{DoxyCompactList}\small\item\em Constructs the player object. \end{DoxyCompactList}\item 
+virtual \hyperlink{struct_game_object_data}{Game\+Object\+Data} \hyperlink{class_player_factory_aca4e809430541d77acd4c588c4381715}{get\+Object\+Data} (const std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$ \&database) override
+\begin{DoxyCompactList}\small\item\em used to obtain the specific \hyperlink{struct_game_object_data}{Game\+Object\+Data} defined for the current factory \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Derived class from the \hyperlink{class_game_object_factory}{Game\+Object\+Factory} interface used to construct the player object. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_player_factory_ab92534e7d2d6887ecf9e4ed8131a8112}\label{class_player_factory_ab92534e7d2d6887ecf9e4ed8131a8112}} 
+\index{Player\+Factory@{Player\+Factory}!get\+Game\+Object@{get\+Game\+Object}}
+\index{get\+Game\+Object@{get\+Game\+Object}!Player\+Factory@{Player\+Factory}}
+\subsubsection{\texorpdfstring{get\+Game\+Object()}{getGameObject()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$ Player\+Factory\+::get\+Game\+Object (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$ \&}]{database }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Constructs the player object. 
+
+\begin{DoxyReturn}{Returns}
+Returns the construted player object 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_physics_object_factory_a2644107d0c455c3307559cd824a7c9a8}{Physics\+Object\+Factory}.
+
+\mbox{\Hypertarget{class_player_factory_aca4e809430541d77acd4c588c4381715}\label{class_player_factory_aca4e809430541d77acd4c588c4381715}} 
+\index{Player\+Factory@{Player\+Factory}!get\+Object\+Data@{get\+Object\+Data}}
+\index{get\+Object\+Data@{get\+Object\+Data}!Player\+Factory@{Player\+Factory}}
+\subsubsection{\texorpdfstring{get\+Object\+Data()}{getObjectData()}}
+{\footnotesize\ttfamily \hyperlink{struct_game_object_data}{Game\+Object\+Data} Player\+Factory\+::get\+Object\+Data (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$ \&}]{database }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+used to obtain the specific \hyperlink{struct_game_object_data}{Game\+Object\+Data} defined for the current factory 
+
+
+\begin{DoxyParams}{Parameters}
+{\em database} & The specific \hyperlink{class_database_interface}{Database\+Interface} that contains the information about the Game\+Objects \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{struct_game_object_data}{Game\+Object\+Data} required for the construction of the object 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_physics_object_factory_aa59f52d3adc1fac676f4a8a3c2de9ba9}{Physics\+Object\+Factory}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Player\+Factory.\+h\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Player\+Factory.\+cpp\end{DoxyCompactItemize}

@@ -15,7 +15,6 @@ std::shared_ptr<GameObject> RandomEnemyFactory::getGameObject(const std::shared_
 
 std::shared_ptr<GameObjectFactory> RandomEnemyFactory::getRandomFactory()
 {
-	srand(time(NULL));
 	auto randomMovementPercent = rand()%MAX_PERCENTAGE;
 	std::shared_ptr<GameObjectFactory> factory_ptr;
 	if(randomMovementPercent > SPIRAL_PERCENTAGE_VALUE)

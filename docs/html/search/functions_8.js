@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['loadscene',['LoadScene',['../db/d10/class_game_manager.html#a09b8801bcfdd8d5cbc52e27895b84e3b',1,'GameManager']]]
+  ['keyinput',['KeyInput',['../d6/d94/class_event_manager.html#a279b1d4e14cd98c1b3789a5276be2b3a',1,'EventManager']]]
 ];

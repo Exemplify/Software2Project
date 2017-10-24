@@ -1,0 +1,107 @@
+\hypertarget{class_application}{}\section{Application Class Reference}
+\label{class_application}\index{Application@{Application}}
+
+
+\hyperlink{class_application}{Application} acts as the main interface between the game objects and the game system. It allows game objects to access information about the current state of the game and to load scenes when certain conditions are met. It also provides game objects with access to the \hyperlink{class_repository}{Repository} object so that new game\+Objects can be instantiated into the current scene of the game.  
+
+
+
+
+{\ttfamily \#include $<$Application.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_application_a642282f8aa7f2d10b35cf828792038ee}\label{class_application_a642282f8aa7f2d10b35cf828792038ee}} 
+{\bfseries Application} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_repositiory_interface}{Repositiory\+Interface} $>$ repository)
+\item 
+\mbox{\Hypertarget{class_application_a12f09b1508e9a881c97786cd07dab53a}\label{class_application_a12f09b1508e9a881c97786cd07dab53a}} 
+void \hyperlink{class_application_a12f09b1508e9a881c97786cd07dab53a}{Run\+Application} ()
+\begin{DoxyCompactList}\small\item\em Runs the application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const std\+::shared\+\_\+ptr$<$ \hyperlink{class_repositiory_interface}{Repositiory\+Interface} $>$ \hyperlink{class_application_aa895ae75cdb47ab91584c32b0db0ca06}{get\+Game\+Repository} ()
+\begin{DoxyCompactList}\small\item\em getter used to provide global access to the repository object used within the game system. The object is returned as a constant pointer to ensure that it cannot be changed. \end{DoxyCompactList}\item 
+static void \hyperlink{class_application_ac73bbfb4af8c54f6ae777863b7fa7099}{Load\+Scene} (int index)
+\begin{DoxyCompactList}\small\item\em Callback used to change the active scene to a different one at a particular index. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_application_ab105d17f9a88e55db9b64b6b0e190b12}\label{class_application_ab105d17f9a88e55db9b64b6b0e190b12}} 
+static void \hyperlink{class_application_ab105d17f9a88e55db9b64b6b0e190b12}{Close\+Application} ()
+\begin{DoxyCompactList}\small\item\em Closes the Current application window. \end{DoxyCompactList}\item 
+static const unsigned int \hyperlink{class_application_aaad856399fbe63c7f14a95fc59d0111f}{current\+Scene\+Index} ()
+\begin{DoxyCompactList}\small\item\em obtains the scene index of the game \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::shared\+\_\+ptr$<$ \hyperlink{class_repositiory_interface}{Repositiory\+Interface} $>$ \hyperlink{class_application_af7e1a832b2f8dbc3a283cb29f7a89c01}{\+\_\+repository} = nullptr
+\item 
+static std\+::shared\+\_\+ptr$<$ \hyperlink{class_game_manager}{Game\+Manager} $>$ \hyperlink{class_application_a4e102be4f84b7a22a159f6030bc022bd}{\+\_\+game\+Manager} = nullptr
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_application}{Application} acts as the main interface between the game objects and the game system. It allows game objects to access information about the current state of the game and to load scenes when certain conditions are met. It also provides game objects with access to the \hyperlink{class_repository}{Repository} object so that new game\+Objects can be instantiated into the current scene of the game. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_application_aaad856399fbe63c7f14a95fc59d0111f}\label{class_application_aaad856399fbe63c7f14a95fc59d0111f}} 
+\index{Application@{Application}!current\+Scene\+Index@{current\+Scene\+Index}}
+\index{current\+Scene\+Index@{current\+Scene\+Index}!Application@{Application}}
+\subsubsection{\texorpdfstring{current\+Scene\+Index()}{currentSceneIndex()}}
+{\footnotesize\ttfamily const unsigned int Application\+::current\+Scene\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+obtains the scene index of the game 
+
+\begin{DoxyReturn}{Returns}
+Returns the scene index that is currently being used 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_application_aa895ae75cdb47ab91584c32b0db0ca06}\label{class_application_aa895ae75cdb47ab91584c32b0db0ca06}} 
+\index{Application@{Application}!get\+Game\+Repository@{get\+Game\+Repository}}
+\index{get\+Game\+Repository@{get\+Game\+Repository}!Application@{Application}}
+\subsubsection{\texorpdfstring{get\+Game\+Repository()}{getGameRepository()}}
+{\footnotesize\ttfamily const std\+::shared\+\_\+ptr$<$ \hyperlink{class_repositiory_interface}{Repositiory\+Interface} $>$ Application\+::get\+Game\+Repository (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+getter used to provide global access to the repository object used within the game system. The object is returned as a constant pointer to ensure that it cannot be changed. 
+
+\begin{DoxyReturn}{Returns}
+Returns the repository object used within the game 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_application_ac73bbfb4af8c54f6ae777863b7fa7099}\label{class_application_ac73bbfb4af8c54f6ae777863b7fa7099}} 
+\index{Application@{Application}!Load\+Scene@{Load\+Scene}}
+\index{Load\+Scene@{Load\+Scene}!Application@{Application}}
+\subsubsection{\texorpdfstring{Load\+Scene()}{LoadScene()}}
+{\footnotesize\ttfamily void Application\+::\+Load\+Scene (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Callback used to change the active scene to a different one at a particular index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index value of the desired \hyperlink{class_scene}{Scene} that the game needs to change to. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_application_a4e102be4f84b7a22a159f6030bc022bd}\label{class_application_a4e102be4f84b7a22a159f6030bc022bd}} 
+\index{Application@{Application}!\+\_\+game\+Manager@{\+\_\+game\+Manager}}
+\index{\+\_\+game\+Manager@{\+\_\+game\+Manager}!Application@{Application}}
+\subsubsection{\texorpdfstring{\+\_\+game\+Manager}{\_gameManager}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{class_game_manager}{Game\+Manager} $>$ Application\+::\+\_\+game\+Manager = nullptr\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\hyperlink{class_game_manager}{Game\+Manager} object used to run the initialise and run the game loop \mbox{\Hypertarget{class_application_af7e1a832b2f8dbc3a283cb29f7a89c01}\label{class_application_af7e1a832b2f8dbc3a283cb29f7a89c01}} 
+\index{Application@{Application}!\+\_\+repository@{\+\_\+repository}}
+\index{\+\_\+repository@{\+\_\+repository}!Application@{Application}}
+\subsubsection{\texorpdfstring{\+\_\+repository}{\_repository}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{class_repositiory_interface}{Repositiory\+Interface} $>$ Application\+::\+\_\+repository = nullptr\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Repository\+Interface object that can only be initialised once at runtime 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Application.\+h\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Application.\+cpp\end{DoxyCompactItemize}

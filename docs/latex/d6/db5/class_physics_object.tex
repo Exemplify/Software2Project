@@ -2,7 +2,7 @@
 \label{class_physics_object}\index{Physics\+Object@{Physics\+Object}}
 
 
-May not need to inherit from \hyperlink{class_game_object}{Game\+Object}.  
+Acts as the main interface between the collision\+Detection and the game logic.  
 
 
 
@@ -12,42 +12,99 @@ May not need to inherit from \hyperlink{class_game_object}{Game\+Object}.
 Inheritance diagram for Physics\+Object\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.695548cm]{d6/db5/class_physics_object}
+\includegraphics[height=2.527076cm]{d6/db5/class_physics_object}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_physics_object_a7307a6ac792f79c61950d2374ac4c8be}\label{class_physics_object_a7307a6ac792f79c61950d2374ac4c8be}} 
-{\bfseries Physics\+Object} (double object\+Speed, \hyperlink{class_vector2_d}{Vector2D}$<$ double $>$ position)
-\item 
-\mbox{\Hypertarget{class_physics_object_ae2731efbba254476cb8447226ab4f6b9}\label{class_physics_object_ae2731efbba254476cb8447226ab4f6b9}} 
-virtual \hyperlink{class_physics_object}{Physics\+Object} $\ast$ {\bfseries Clone} ()=0
-\item 
-\mbox{\Hypertarget{class_physics_object_ac228aff566334e195f9c68d1e0cfb1bf}\label{class_physics_object_ac228aff566334e195f9c68d1e0cfb1bf}} 
-void {\bfseries set\+Speed} (double new\+Speed)
-\item 
-\mbox{\Hypertarget{class_physics_object_a73f26275a7b7a9234c49d421dfbe1178}\label{class_physics_object_a73f26275a7b7a9234c49d421dfbe1178}} 
-double {\bfseries get\+Size} ()
-\item 
-\mbox{\Hypertarget{class_physics_object_a1d30c43515d263abd4ae98907aa20b0d}\label{class_physics_object_a1d30c43515d263abd4ae98907aa20b0d}} 
-virtual void {\bfseries collision\+Action} (Game\+Object\+Type object\+Type)=0
-\end{DoxyCompactItemize}
+\mbox{\Hypertarget{class_physics_object_a0dd37cc0f9535b676d3df937eaeb4780}\label{class_physics_object_a0dd37cc0f9535b676d3df937eaeb4780}} 
+\hyperlink{class_physics_object_a0dd37cc0f9535b676d3df937eaeb4780}{Physics\+Object} ()
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_physics_object_a8a92618716bd764c63f0ca80436a950c}{Physics\+Object} (const \hyperlink{class_game_object}{Game\+Object} \&game\+Object, const double \&object\+Size)
+\begin{DoxyCompactList}\small\item\em Constructs the physics object based on the parameters provided. \end{DoxyCompactList}\item 
+double \hyperlink{class_physics_object_adc592e9846ebedea3d58d50c5ada1c12}{get\+Size} () const
+\begin{DoxyCompactList}\small\item\em gets the current size of the object \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_physics_object_a16163f4e5bf781b3814d024c9f44a276}{collision\+Action} (const Game\+Object\+Type \&object\+Type)
+\begin{DoxyCompactList}\small\item\em Virtual function that is called whenever a collision occurs between this object and a different one. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_physics_object_a78112cdfb51ef4f1b3fbab6af4a9a592}\label{class_physics_object_a78112cdfb51ef4f1b3fbab6af4a9a592}} 
-double {\bfseries \+\_\+object\+Speed}
-\item 
-\mbox{\Hypertarget{class_physics_object_a417a7eb051cfcfdbf8dfd0cc0875fa0d}\label{class_physics_object_a417a7eb051cfcfdbf8dfd0cc0875fa0d}} 
-double {\bfseries \+\_\+object\+Size}
+double \hyperlink{class_physics_object_a417a7eb051cfcfdbf8dfd0cc0875fa0d}{\+\_\+object\+Size}
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
-May not need to inherit from \hyperlink{class_game_object}{Game\+Object}. 
+Acts as the main interface between the collision\+Detection and the game logic. 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+Provides the size for the collision\+Detection to check as well as a function call for when a collision occurs. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_physics_object_a8a92618716bd764c63f0ca80436a950c}\label{class_physics_object_a8a92618716bd764c63f0ca80436a950c}} 
+\index{Physics\+Object@{Physics\+Object}!Physics\+Object@{Physics\+Object}}
+\index{Physics\+Object@{Physics\+Object}!Physics\+Object@{Physics\+Object}}
+\subsubsection{\texorpdfstring{Physics\+Object()}{PhysicsObject()}}
+{\footnotesize\ttfamily Physics\+Object\+::\+Physics\+Object (\begin{DoxyParamCaption}\item[{const \hyperlink{class_game_object}{Game\+Object} \&}]{game\+Object,  }\item[{const double \&}]{object\+Size }\end{DoxyParamCaption})}
+
+
+
+Constructs the physics object based on the parameters provided. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\+Object} & A copy of the gameobject is made and is applied to the object \\
+\hline
+{\em object\+Size} & The radial size of the object and its area of collision \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_physics_object_a16163f4e5bf781b3814d024c9f44a276}\label{class_physics_object_a16163f4e5bf781b3814d024c9f44a276}} 
+\index{Physics\+Object@{Physics\+Object}!collision\+Action@{collision\+Action}}
+\index{collision\+Action@{collision\+Action}!Physics\+Object@{Physics\+Object}}
+\subsubsection{\texorpdfstring{collision\+Action()}{collisionAction()}}
+{\footnotesize\ttfamily void Physics\+Object\+::collision\+Action (\begin{DoxyParamCaption}\item[{const Game\+Object\+Type \&}]{object\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual function that is called whenever a collision occurs between this object and a different one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object\+Type} & The Game\+Object\+Type of the object that was collided with \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_enemy_ac59660a58fac8d0ffdcb97c0717fa089}{Enemy}, \hyperlink{class_player_a1089079d7149a7fce6226935a6ce2f9c}{Player}, \hyperlink{class_player_projectile_a22fcdd7296d95b97ae60b4d20d8a57bd}{Player\+Projectile}, and \hyperlink{class_enemy_projectile_a4b3233a5ba7a3df66070cd6cdaa0362a}{Enemy\+Projectile}.
+
+\mbox{\Hypertarget{class_physics_object_adc592e9846ebedea3d58d50c5ada1c12}\label{class_physics_object_adc592e9846ebedea3d58d50c5ada1c12}} 
+\index{Physics\+Object@{Physics\+Object}!get\+Size@{get\+Size}}
+\index{get\+Size@{get\+Size}!Physics\+Object@{Physics\+Object}}
+\subsubsection{\texorpdfstring{get\+Size()}{getSize()}}
+{\footnotesize\ttfamily double Physics\+Object\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+gets the current size of the object 
+
+\begin{DoxyReturn}{Returns}
+Returns the object size 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_physics_object_a417a7eb051cfcfdbf8dfd0cc0875fa0d}\label{class_physics_object_a417a7eb051cfcfdbf8dfd0cc0875fa0d}} 
+\index{Physics\+Object@{Physics\+Object}!\+\_\+object\+Size@{\+\_\+object\+Size}}
+\index{\+\_\+object\+Size@{\+\_\+object\+Size}!Physics\+Object@{Physics\+Object}}
+\subsubsection{\texorpdfstring{\+\_\+object\+Size}{\_objectSize}}
+{\footnotesize\ttfamily double Physics\+Object\+::\+\_\+object\+Size\hspace{0.3cm}{\ttfamily [protected]}}
+
+The radial collision size of the object 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Physics\+Object.\+h\end{DoxyCompactItemize}
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Physics\+Object.\+h\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Physics\+Object.\+cpp\end{DoxyCompactItemize}

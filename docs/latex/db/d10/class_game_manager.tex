@@ -2,7 +2,7 @@
 \label{class_game_manager}\index{Game\+Manager@{Game\+Manager}}
 
 
-Needs to be converted into a singleton.  
+\hyperlink{class_game_manager}{Game\+Manager} is responsible for intialising and maintaining the game state, and updating the game loop through the composition of different \hyperlink{class_scene}{Scene} objects that exist within the game, it communicates with the \hyperlink{class_event_manager}{Event\+Manager}, \hyperlink{class_display_manager}{Display\+Manager} and \hyperlink{class_collision_detection}{Collision\+Detection} classes regarding the state of the game.  
 
 
 
@@ -12,89 +12,196 @@ Needs to be converted into a singleton.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_game_manager_aa0e2424dc1a39d380e5b6605b179bf05}\label{class_game_manager_aa0e2424dc1a39d380e5b6605b179bf05}} 
-\hyperlink{class_game_manager_aa0e2424dc1a39d380e5b6605b179bf05}{Game\+Manager} ()
-\begin{DoxyCompactList}\small\item\em redundant default constructor \end{DoxyCompactList}\item 
+\hyperlink{class_game_manager_a05f6a37de95fcea1313fe4476b95941d}{Game\+Manager} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_repositiory_interface}{Repositiory\+Interface} $>$ repository)
+\begin{DoxyCompactList}\small\item\em Constructs the \hyperlink{class_game_manager}{Game\+Manager} object neccesary for the Game loop. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_manager_a5baa570812ae717f809fe0dc48bde22e}\label{class_game_manager_a5baa570812ae717f809fe0dc48bde22e}} 
 void \hyperlink{class_game_manager_a5baa570812ae717f809fe0dc48bde22e}{Game\+Loop} ()
-\item 
-void \hyperlink{class_game_manager_a65e593032333cee8723ad08ebfe897fc}{Add\+Scene} (scene\+\_\+ptr new\+Scene)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Runs the main game loop of the game, and updates the various Game\+Objects Stored inside of the active\+Scene. \end{DoxyCompactList}\item 
+void \hyperlink{class_game_manager_a09b8801bcfdd8d5cbc52e27895b84e3b}{Load\+Scene} (unsigned int index)
+\begin{DoxyCompactList}\small\item\em Changes the active \hyperlink{class_scene}{Scene} to the \hyperlink{class_scene}{Scene} at the desired Scene\+Index. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_game_manager_acbd9fb84f9e18c8cb585738d5c89a2b9}\label{class_game_manager_acbd9fb84f9e18c8cb585738d5c89a2b9}} 
 static void \hyperlink{class_game_manager_acbd9fb84f9e18c8cb585738d5c89a2b9}{Exit} ()
-\begin{DoxyCompactList}\small\item\em Exit function needs to be moved into \hyperlink{class_scene}{Scene} or a seperate Application class. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_game_manager_a09b8801bcfdd8d5cbc52e27895b84e3b}\label{class_game_manager_a09b8801bcfdd8d5cbc52e27895b84e3b}} 
-static void \hyperlink{class_game_manager_a09b8801bcfdd8d5cbc52e27895b84e3b}{Load\+Scene} (unsigned int index)
-\begin{DoxyCompactList}\small\item\em Should be called from an application class but remains inside of game\+Manager. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_game_manager_ac8de938e05092ef365c77ba7a3c2c0d7}\label{class_game_manager_ac8de938e05092ef365c77ba7a3c2c0d7}} 
-static int {\bfseries get\+Scene} ()
-\item 
-\mbox{\Hypertarget{class_game_manager_a4eb94c6171bf3292eb57b291e2174289}\label{class_game_manager_a4eb94c6171bf3292eb57b291e2174289}} 
-static const bool {\bfseries game\+Closed} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Closes the game window. \end{DoxyCompactList}\item 
+static int \hyperlink{class_game_manager_aa4835b5fc96bfdbf6170a8673baf5552}{get\+Scene\+Index} ()
+\begin{DoxyCompactList}\small\item\em Returns the current scene index. \end{DoxyCompactList}\item 
+static const bool \hyperlink{class_game_manager_a4eb94c6171bf3292eb57b291e2174289}{game\+Closed} ()
+\begin{DoxyCompactList}\small\item\em Identifies whether the game has been closed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_game_manager_a969dd909c6b70310843d34e2490736b4}\label{class_game_manager_a969dd909c6b70310843d34e2490736b4}} 
-static scene\+\_\+ptr {\bfseries active\+Scene} = N\+U\+LL
+static std\+::shared\+\_\+ptr$<$ \hyperlink{class_scene}{Scene} $>$ \hyperlink{class_game_manager_a969dd909c6b70310843d34e2490736b4}{active\+Scene} = N\+U\+LL
 \end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_game_manager_a8344695f2ba7324b00c5da8b79d8b399}\label{class_game_manager_a8344695f2ba7324b00c5da8b79d8b399}} 
-void \hyperlink{class_game_manager_a8344695f2ba7324b00c5da8b79d8b399}{initialise\+Window} (Render\+Window \&\+\_\+game\+Window)
-\begin{DoxyCompactList}\small\item\em some responsibilites can be moved into the display manager \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{class_game_manager_a0a4c03ef0451371a98204c18c1faf9fd}{initialise\+Window} (sf\+::\+Render\+Window \&\+\_\+game\+Window)
+\begin{DoxyCompactList}\small\item\em Initialises the sfml Render\+Window to the properties defined by the default window settings. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_game_manager_a0c8d94cc2688f7774f380bc05614695b}\label{class_game_manager_a0c8d94cc2688f7774f380bc05614695b}} 
-Render\+Window {\bfseries \+\_\+window}
+std\+::shared\+\_\+ptr$<$ \hyperlink{class_repositiory_interface}{Repositiory\+Interface} $>$ \hyperlink{class_game_manager_adf8ffad3969c2bee2332eb3ea58a3c9c}{\+\_\+repository}
 \item 
-\mbox{\Hypertarget{class_game_manager_ad5f241117fe31fc2086aa7330b7bf41a}\label{class_game_manager_ad5f241117fe31fc2086aa7330b7bf41a}} 
-\hyperlink{class_game_time}{Game\+Time} $\ast$ \hyperlink{class_game_manager_ad5f241117fe31fc2086aa7330b7bf41a}{\+\_\+game\+Time}
-\begin{DoxyCompactList}\small\item\em convert to unique pointer \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_game_manager_a06843f28cb1609e41da7eee19be9aa87}\label{class_game_manager_a06843f28cb1609e41da7eee19be9aa87}} 
-\hyperlink{struct_window_settings}{Window\+Settings} {\bfseries \+\_\+default\+Setup}
+sf\+::\+Render\+Window \hyperlink{class_game_manager_a0c91609e7557e4e97a0e4be541254a38}{\+\_\+window}
 \item 
-\mbox{\Hypertarget{class_game_manager_a4b6f0c427c2efd2ec775a03a75dc8be8}\label{class_game_manager_a4b6f0c427c2efd2ec775a03a75dc8be8}} 
-\hyperlink{class_event_manager}{Event\+Manager} {\bfseries \+\_\+event\+Manager}
+std\+::unique\+\_\+ptr$<$ \hyperlink{class_game_time}{Game\+Time} $>$ \hyperlink{class_game_manager_ae08fe7df616e789e4858645b56d9b73b}{\+\_\+game\+Time}
+\item 
+\hyperlink{struct_window_settings}{Window\+Settings} \hyperlink{class_game_manager_a06843f28cb1609e41da7eee19be9aa87}{\+\_\+default\+Setup}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{class_scene}{Scene} $>$ $>$ \hyperlink{class_game_manager_a6be6c6b38c1b95d7fd84819eba50e618}{\+\_\+game\+\_\+scenes}
 \end{DoxyCompactItemize}
 \subsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_game_manager_aedb575ca538853f3d7053b33bef238e0}\label{class_game_manager_aedb575ca538853f3d7053b33bef238e0}} 
-static int {\bfseries \+\_\+scene\+\_\+index} = 0
+static int \hyperlink{class_game_manager_aedb575ca538853f3d7053b33bef238e0}{\+\_\+scene\+\_\+index} = 0
 \item 
-\mbox{\Hypertarget{class_game_manager_a07c75a9507a0d82f88a0b62d808fcf3c}\label{class_game_manager_a07c75a9507a0d82f88a0b62d808fcf3c}} 
-static bool {\bfseries close\+Window} = false
-\item 
-\mbox{\Hypertarget{class_game_manager_ad84fda242e092622be5228019305f507}\label{class_game_manager_ad84fda242e092622be5228019305f507}} 
-static std\+::vector$<$ scene\+\_\+ptr $>$ {\bfseries \+\_\+game\+\_\+scenes} \{\}
-\item 
-\mbox{\Hypertarget{class_game_manager_a8704a6222b652d2dc99d16102ec820bc}\label{class_game_manager_a8704a6222b652d2dc99d16102ec820bc}} 
-static scene\+\_\+ptr {\bfseries original\+\_\+active\+Scene} = N\+U\+LL
+static bool \hyperlink{class_game_manager_a07c75a9507a0d82f88a0b62d808fcf3c}{close\+Window} = false
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Needs to be converted into a singleton. 
+\hyperlink{class_game_manager}{Game\+Manager} is responsible for intialising and maintaining the game state, and updating the game loop through the composition of different \hyperlink{class_scene}{Scene} objects that exist within the game, it communicates with the \hyperlink{class_event_manager}{Event\+Manager}, \hyperlink{class_display_manager}{Display\+Manager} and \hyperlink{class_collision_detection}{Collision\+Detection} classes regarding the state of the game. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_game_manager_a05f6a37de95fcea1313fe4476b95941d}\label{class_game_manager_a05f6a37de95fcea1313fe4476b95941d}} 
+\index{Game\+Manager@{Game\+Manager}!Game\+Manager@{Game\+Manager}}
+\index{Game\+Manager@{Game\+Manager}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{Game\+Manager()}{GameManager()}}
+{\footnotesize\ttfamily Game\+Manager\+::\+Game\+Manager (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_repositiory_interface}{Repositiory\+Interface} $>$}]{repository }\end{DoxyParamCaption})}
+
+
+
+Constructs the \hyperlink{class_game_manager}{Game\+Manager} object neccesary for the Game loop. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em repository} & The instance of the \hyperlink{class_repository}{Repository} used to generate the Scenes for the game \\
+\hline
+\end{DoxyParams}
+
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_game_manager_a65e593032333cee8723ad08ebfe897fc}\label{class_game_manager_a65e593032333cee8723ad08ebfe897fc}} 
-\index{Game\+Manager@{Game\+Manager}!Add\+Scene@{Add\+Scene}}
-\index{Add\+Scene@{Add\+Scene}!Game\+Manager@{Game\+Manager}}
-\subsubsection{\texorpdfstring{Add\+Scene()}{AddScene()}}
-{\footnotesize\ttfamily void Game\+Manager\+::\+Add\+Scene (\begin{DoxyParamCaption}\item[{scene\+\_\+ptr}]{new\+Scene }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_game_manager_acbd9fb84f9e18c8cb585738d5c89a2b9}\label{class_game_manager_acbd9fb84f9e18c8cb585738d5c89a2b9}} 
+\index{Game\+Manager@{Game\+Manager}!Exit@{Exit}}
+\index{Exit@{Exit}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{Exit()}{Exit()}}
+{\footnotesize\ttfamily void Game\+Manager\+::\+Exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-still needs to be fixed so that the game scene and menu scenes can be reloaded \mbox{\Hypertarget{class_game_manager_a5baa570812ae717f809fe0dc48bde22e}\label{class_game_manager_a5baa570812ae717f809fe0dc48bde22e}} 
-\index{Game\+Manager@{Game\+Manager}!Game\+Loop@{Game\+Loop}}
-\index{Game\+Loop@{Game\+Loop}!Game\+Manager@{Game\+Manager}}
-\subsubsection{\texorpdfstring{Game\+Loop()}{GameLoop()}}
-{\footnotesize\ttfamily void Game\+Manager\+::\+Game\+Loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Put a guard mutex here to ensure no other threads are accessing the gameobject list when the window closes 
+
+Closes the game window. 
+
+Exit function needs to be moved into \hyperlink{class_scene}{Scene} or a seperate \hyperlink{class_application}{Application} class. \mbox{\Hypertarget{class_game_manager_a4eb94c6171bf3292eb57b291e2174289}\label{class_game_manager_a4eb94c6171bf3292eb57b291e2174289}} 
+\index{Game\+Manager@{Game\+Manager}!game\+Closed@{game\+Closed}}
+\index{game\+Closed@{game\+Closed}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{game\+Closed()}{gameClosed()}}
+{\footnotesize\ttfamily static const bool Game\+Manager\+::game\+Closed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Identifies whether the game has been closed. 
+
+\begin{DoxyReturn}{Returns}
+Returns a constant bool whether the game is closed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_game_manager_aa4835b5fc96bfdbf6170a8673baf5552}\label{class_game_manager_aa4835b5fc96bfdbf6170a8673baf5552}} 
+\index{Game\+Manager@{Game\+Manager}!get\+Scene\+Index@{get\+Scene\+Index}}
+\index{get\+Scene\+Index@{get\+Scene\+Index}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{get\+Scene\+Index()}{getSceneIndex()}}
+{\footnotesize\ttfamily static int Game\+Manager\+::get\+Scene\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns the current scene index. 
+
+\begin{DoxyReturn}{Returns}
+The Current \hyperlink{class_scene}{Scene} Index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_game_manager_a0a4c03ef0451371a98204c18c1faf9fd}\label{class_game_manager_a0a4c03ef0451371a98204c18c1faf9fd}} 
+\index{Game\+Manager@{Game\+Manager}!initialise\+Window@{initialise\+Window}}
+\index{initialise\+Window@{initialise\+Window}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{initialise\+Window()}{initialiseWindow()}}
+{\footnotesize\ttfamily void Game\+Manager\+::initialise\+Window (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{\+\_\+game\+Window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialises the sfml Render\+Window to the properties defined by the default window settings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+game\+Window} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_game_manager_a09b8801bcfdd8d5cbc52e27895b84e3b}\label{class_game_manager_a09b8801bcfdd8d5cbc52e27895b84e3b}} 
+\index{Game\+Manager@{Game\+Manager}!Load\+Scene@{Load\+Scene}}
+\index{Load\+Scene@{Load\+Scene}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{Load\+Scene()}{LoadScene()}}
+{\footnotesize\ttfamily void Game\+Manager\+::\+Load\+Scene (\begin{DoxyParamCaption}\item[{unsigned int}]{index }\end{DoxyParamCaption})}
+
+
+
+Changes the active \hyperlink{class_scene}{Scene} to the \hyperlink{class_scene}{Scene} at the desired Scene\+Index. 
+
+Should be called from an application class but remains inside of game\+Manager.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index for which the desired scene is located \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_game_manager_a06843f28cb1609e41da7eee19be9aa87}\label{class_game_manager_a06843f28cb1609e41da7eee19be9aa87}} 
+\index{Game\+Manager@{Game\+Manager}!\+\_\+default\+Setup@{\+\_\+default\+Setup}}
+\index{\+\_\+default\+Setup@{\+\_\+default\+Setup}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{\+\_\+default\+Setup}{\_defaultSetup}}
+{\footnotesize\ttfamily \hyperlink{struct_window_settings}{Window\+Settings} Game\+Manager\+::\+\_\+default\+Setup\hspace{0.3cm}{\ttfamily [private]}}
+
+the default Setup information for the game \mbox{\Hypertarget{class_game_manager_a6be6c6b38c1b95d7fd84819eba50e618}\label{class_game_manager_a6be6c6b38c1b95d7fd84819eba50e618}} 
+\index{Game\+Manager@{Game\+Manager}!\+\_\+game\+\_\+scenes@{\+\_\+game\+\_\+scenes}}
+\index{\+\_\+game\+\_\+scenes@{\+\_\+game\+\_\+scenes}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{\+\_\+game\+\_\+scenes}{\_game\_scenes}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::shared\+\_\+ptr$<$\hyperlink{class_scene}{Scene}$>$ $>$ Game\+Manager\+::\+\_\+game\+\_\+scenes\hspace{0.3cm}{\ttfamily [private]}}
+
+A vector of \hyperlink{class_scene}{Scene} Objects used to represent the different Scenes of the game \mbox{\Hypertarget{class_game_manager_ae08fe7df616e789e4858645b56d9b73b}\label{class_game_manager_ae08fe7df616e789e4858645b56d9b73b}} 
+\index{Game\+Manager@{Game\+Manager}!\+\_\+game\+Time@{\+\_\+game\+Time}}
+\index{\+\_\+game\+Time@{\+\_\+game\+Time}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{\+\_\+game\+Time}{\_gameTime}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\hyperlink{class_game_time}{Game\+Time}$>$ Game\+Manager\+::\+\_\+game\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+A unique pointer to a \hyperlink{class_game_time}{Game\+Time} object, used to update the time between frames \mbox{\Hypertarget{class_game_manager_adf8ffad3969c2bee2332eb3ea58a3c9c}\label{class_game_manager_adf8ffad3969c2bee2332eb3ea58a3c9c}} 
+\index{Game\+Manager@{Game\+Manager}!\+\_\+repository@{\+\_\+repository}}
+\index{\+\_\+repository@{\+\_\+repository}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{\+\_\+repository}{\_repository}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\hyperlink{class_repositiory_interface}{Repositiory\+Interface}$>$ Game\+Manager\+::\+\_\+repository\hspace{0.3cm}{\ttfamily [private]}}
+
+The Repository\+Interface used to generate the Scenes for the game \mbox{\Hypertarget{class_game_manager_aedb575ca538853f3d7053b33bef238e0}\label{class_game_manager_aedb575ca538853f3d7053b33bef238e0}} 
+\index{Game\+Manager@{Game\+Manager}!\+\_\+scene\+\_\+index@{\+\_\+scene\+\_\+index}}
+\index{\+\_\+scene\+\_\+index@{\+\_\+scene\+\_\+index}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{\+\_\+scene\+\_\+index}{\_scene\_index}}
+{\footnotesize\ttfamily int Game\+Manager\+::\+\_\+scene\+\_\+index = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+The current \hyperlink{class_scene}{Scene} Index for the game \mbox{\Hypertarget{class_game_manager_a0c91609e7557e4e97a0e4be541254a38}\label{class_game_manager_a0c91609e7557e4e97a0e4be541254a38}} 
+\index{Game\+Manager@{Game\+Manager}!\+\_\+window@{\+\_\+window}}
+\index{\+\_\+window@{\+\_\+window}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{\+\_\+window}{\_window}}
+{\footnotesize\ttfamily sf\+::\+Render\+Window Game\+Manager\+::\+\_\+window\hspace{0.3cm}{\ttfamily [private]}}
+
+The sfml Render\+Window used for the game \mbox{\Hypertarget{class_game_manager_a969dd909c6b70310843d34e2490736b4}\label{class_game_manager_a969dd909c6b70310843d34e2490736b4}} 
+\index{Game\+Manager@{Game\+Manager}!active\+Scene@{active\+Scene}}
+\index{active\+Scene@{active\+Scene}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{active\+Scene}{activeScene}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{class_scene}{Scene} $>$ Game\+Manager\+::active\+Scene = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}}
+
+public static variable that represents the active \hyperlink{class_scene}{Scene} -\/ Bad design reveals too much information \mbox{\Hypertarget{class_game_manager_a07c75a9507a0d82f88a0b62d808fcf3c}\label{class_game_manager_a07c75a9507a0d82f88a0b62d808fcf3c}} 
+\index{Game\+Manager@{Game\+Manager}!close\+Window@{close\+Window}}
+\index{close\+Window@{close\+Window}!Game\+Manager@{Game\+Manager}}
+\subsubsection{\texorpdfstring{close\+Window}{closeWindow}}
+{\footnotesize\ttfamily bool Game\+Manager\+::close\+Window = false\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+bool used to identify when the game should be closed 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

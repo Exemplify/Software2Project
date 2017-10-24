@@ -1,0 +1,90 @@
+\hypertarget{class_spiral_move}{}\section{Spiral\+Move Class Reference}
+\label{class_spiral_move}\index{Spiral\+Move@{Spiral\+Move}}
+
+
+Used to move a \hyperlink{class_game_object}{Game\+Object} in a spiral originating from the centre of the screen.  
+
+
+
+
+{\ttfamily \#include $<$Spiral\+Move.\+h$>$}
+
+Inheritance diagram for Spiral\+Move\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d5/dcf/class_spiral_move}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_spiral_move_a60daaf7772f017481a253898ef4f3e6d}{Spiral\+Move} (const double \&radial\+Speed, const double \&angular\+Speed)
+\begin{DoxyCompactList}\small\item\em Constructs a \hyperlink{class_spiral_move}{Spiral\+Move} object with the specific speeds defined. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_spiral_move_a74b22995f5f3c00c623ecaa3adb2ab8e}{Move} (\hyperlink{class_vector2_d}{Vector2D} \&current\+Position) override
+\begin{DoxyCompactList}\small\item\em overrides the pure virtual function from Move\+Interface \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{class_spiral_move_a50cae711a780fdf56fffcb279df63f37}{\+\_\+angular\+Speed}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Used to move a \hyperlink{class_game_object}{Game\+Object} in a spiral originating from the centre of the screen. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_spiral_move_a60daaf7772f017481a253898ef4f3e6d}\label{class_spiral_move_a60daaf7772f017481a253898ef4f3e6d}} 
+\index{Spiral\+Move@{Spiral\+Move}!Spiral\+Move@{Spiral\+Move}}
+\index{Spiral\+Move@{Spiral\+Move}!Spiral\+Move@{Spiral\+Move}}
+\subsubsection{\texorpdfstring{Spiral\+Move()}{SpiralMove()}}
+{\footnotesize\ttfamily Spiral\+Move\+::\+Spiral\+Move (\begin{DoxyParamCaption}\item[{const double \&}]{radial\+Speed,  }\item[{const double \&}]{angular\+Speed }\end{DoxyParamCaption})}
+
+
+
+Constructs a \hyperlink{class_spiral_move}{Spiral\+Move} object with the specific speeds defined. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em radial\+Speed} & the speed that the object moves radially outwards from the centre is defined \\
+\hline
+{\em angular\+Speed} & the speed that the object rotates around the centre is defined \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_spiral_move_a74b22995f5f3c00c623ecaa3adb2ab8e}\label{class_spiral_move_a74b22995f5f3c00c623ecaa3adb2ab8e}} 
+\index{Spiral\+Move@{Spiral\+Move}!Move@{Move}}
+\index{Move@{Move}!Spiral\+Move@{Spiral\+Move}}
+\subsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily void Spiral\+Move\+::\+Move (\begin{DoxyParamCaption}\item[{\hyperlink{class_vector2_d}{Vector2D} \&}]{current\+Position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+overrides the pure virtual function from Move\+Interface 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Position} & Referenced \hyperlink{class_vector2_d}{Vector2D} object for the current position that is then adjusted accordingly \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_movable_interface_a899cc1c78eacbee13b906c6770e7f025}{Movable\+Interface}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_spiral_move_a50cae711a780fdf56fffcb279df63f37}\label{class_spiral_move_a50cae711a780fdf56fffcb279df63f37}} 
+\index{Spiral\+Move@{Spiral\+Move}!\+\_\+angular\+Speed@{\+\_\+angular\+Speed}}
+\index{\+\_\+angular\+Speed@{\+\_\+angular\+Speed}!Spiral\+Move@{Spiral\+Move}}
+\subsubsection{\texorpdfstring{\+\_\+angular\+Speed}{\_angularSpeed}}
+{\footnotesize\ttfamily double Spiral\+Move\+::\+\_\+angular\+Speed\hspace{0.3cm}{\ttfamily [private]}}
+
+The speed that the object rotates around the centre of the screen 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Spiral\+Move.\+h\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Spiral\+Move.\+cpp\end{DoxyCompactItemize}

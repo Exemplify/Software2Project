@@ -1,33 +1,108 @@
 \hypertarget{class_input}{}\section{Input Class Reference}
 \label{class_input}\index{Input@{Input}}
+
+
+Responsible for supplying the Front\+End\+System with access to the input of the user by interfaceing with sfml.  
+
+
+
+
+{\ttfamily \#include $<$Input.\+h$>$}
+
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_input_a137d26e571405f42b63c955958fd7c92}\label{class_input_a137d26e571405f42b63c955958fd7c92}} 
-static void {\bfseries clear} ()
-\item 
-\mbox{\Hypertarget{class_input_abb8551549ffe7b1474aca91ce3509d57}\label{class_input_abb8551549ffe7b1474aca91ce3509d57}} 
-static bool {\bfseries Is\+Button\+Pressed} (Keys key)
-\item 
-\mbox{\Hypertarget{class_input_a5c4b1c67c7d3e28d4af79601c81ed8bb}\label{class_input_a5c4b1c67c7d3e28d4af79601c81ed8bb}} 
-static int {\bfseries get\+Axis} (Axis axis)
-\item 
-\mbox{\Hypertarget{class_input_a851f7b43b30dcf7166af7c548d21316f}\label{class_input_a851f7b43b30dcf7166af7c548d21316f}} 
-static void {\bfseries set\+Button} (Keys key, bool state)
-\end{DoxyCompactItemize}
+static bool \hyperlink{class_input_abb8551549ffe7b1474aca91ce3509d57}{Is\+Button\+Pressed} (Keys key)
+\begin{DoxyCompactList}\small\item\em returns a boolean for the specific key that is pressed , returns true if the Key has been pressed \end{DoxyCompactList}\item 
+static int \hyperlink{class_input_a5c4b1c67c7d3e28d4af79601c81ed8bb}{get\+Axis} (Axis axis)
+\begin{DoxyCompactList}\small\item\em Provides directional information inherintly,. \end{DoxyCompactList}\item 
+static void \hyperlink{class_input_a851f7b43b30dcf7166af7c548d21316f}{set\+Button} (Keys key, bool state)
+\begin{DoxyCompactList}\small\item\em Sets the specific Key to the desired state of whether it is pressed or not. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_input_a7419956b2d6001cef104b8abdf242477}\label{class_input_a7419956b2d6001cef104b8abdf242477}} 
-static int {\bfseries Check\+Button\+For\+Axis} (Keys negative\+Key, Keys positive\+Key)
+static int \hyperlink{class_input_a7419956b2d6001cef104b8abdf242477}{Check\+Button\+For\+Axis} (Keys negative\+Key, Keys positive\+Key)
 \end{DoxyCompactItemize}
 \subsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_input_affef708e1d603d97a7218b64eab063b5}\label{class_input_affef708e1d603d97a7218b64eab063b5}} 
-static std\+::vector$<$ bool $>$ {\bfseries \+\_\+buttons}
+static std\+::vector$<$ bool $>$ \hyperlink{class_input_affef708e1d603d97a7218b64eab063b5}{\+\_\+buttons}
 \end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Responsible for supplying the Front\+End\+System with access to the input of the user by interfaceing with sfml. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_input_a7419956b2d6001cef104b8abdf242477}\label{class_input_a7419956b2d6001cef104b8abdf242477}} 
+\index{Input@{Input}!Check\+Button\+For\+Axis@{Check\+Button\+For\+Axis}}
+\index{Check\+Button\+For\+Axis@{Check\+Button\+For\+Axis}!Input@{Input}}
+\subsubsection{\texorpdfstring{Check\+Button\+For\+Axis()}{CheckButtonForAxis()}}
+{\footnotesize\ttfamily int Input\+::\+Check\+Button\+For\+Axis (\begin{DoxyParamCaption}\item[{Keys}]{negative\+Key,  }\item[{Keys}]{positive\+Key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Uses the buttons to determine direction from button presses \mbox{\Hypertarget{class_input_a5c4b1c67c7d3e28d4af79601c81ed8bb}\label{class_input_a5c4b1c67c7d3e28d4af79601c81ed8bb}} 
+\index{Input@{Input}!get\+Axis@{get\+Axis}}
+\index{get\+Axis@{get\+Axis}!Input@{Input}}
+\subsubsection{\texorpdfstring{get\+Axis()}{getAxis()}}
+{\footnotesize\ttfamily int Input\+::get\+Axis (\begin{DoxyParamCaption}\item[{Axis}]{axis }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Provides directional information inherintly,. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & The axis that the input occurs on \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a -\/1, 0, or 1 depending on the direction and axis that was pressed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_input_abb8551549ffe7b1474aca91ce3509d57}\label{class_input_abb8551549ffe7b1474aca91ce3509d57}} 
+\index{Input@{Input}!Is\+Button\+Pressed@{Is\+Button\+Pressed}}
+\index{Is\+Button\+Pressed@{Is\+Button\+Pressed}!Input@{Input}}
+\subsubsection{\texorpdfstring{Is\+Button\+Pressed()}{IsButtonPressed()}}
+{\footnotesize\ttfamily bool Input\+::\+Is\+Button\+Pressed (\begin{DoxyParamCaption}\item[{Keys}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+returns a boolean for the specific key that is pressed , returns true if the Key has been pressed 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The specific key that needs to be checked if an input is detected \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_input_a851f7b43b30dcf7166af7c548d21316f}\label{class_input_a851f7b43b30dcf7166af7c548d21316f}} 
+\index{Input@{Input}!set\+Button@{set\+Button}}
+\index{set\+Button@{set\+Button}!Input@{Input}}
+\subsubsection{\texorpdfstring{set\+Button()}{setButton()}}
+{\footnotesize\ttfamily void Input\+::set\+Button (\begin{DoxyParamCaption}\item[{Keys}]{key,  }\item[{bool}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Sets the specific Key to the desired state of whether it is pressed or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & the specific key that is pressed or released \\
+\hline
+{\em state} & the desired state \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_input_affef708e1d603d97a7218b64eab063b5}\label{class_input_affef708e1d603d97a7218b64eab063b5}} 
+\index{Input@{Input}!\+\_\+buttons@{\+\_\+buttons}}
+\index{\+\_\+buttons@{\+\_\+buttons}!Input@{Input}}
+\subsubsection{\texorpdfstring{\+\_\+buttons}{\_buttons}}
+{\footnotesize\ttfamily std\+::vector$<$ bool $>$ Input\+::\+\_\+buttons\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+a vector of bools that are indexed by the enumerator 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

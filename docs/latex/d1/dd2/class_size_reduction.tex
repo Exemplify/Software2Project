@@ -1,0 +1,91 @@
+\hypertarget{class_size_reduction}{}\section{Size\+Reduction Class Reference}
+\label{class_size_reduction}\index{Size\+Reduction@{Size\+Reduction}}
+
+
+U\+Sed to reduce the size of an \hyperlink{class_game_object}{Game\+Object} based off its proximity with the centre of the screen.  
+
+
+
+
+{\ttfamily \#include $<$Size\+Reduction.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_size_reduction_a2e274f3e867ac457d0fd354351426035}{Size\+Reduction} (const \hyperlink{structxy_vector}{xy\+Vector} \&\hyperlink{class_size_reduction_a99ace47c7794d51e539712a3c2bc8642}{max\+\_\+scale}, const double \&\hyperlink{class_size_reduction_aa58dd5c70892ea019a7e6c86e2027f8f}{max\+\_\+collider\+\_\+size})
+\begin{DoxyCompactList}\small\item\em Constructs a \hyperlink{class_size_reduction}{Size\+Reduction} Object with the maximum scale and maximum collider size of the \hyperlink{class_game_object}{Game\+Object} specified. \end{DoxyCompactList}\item 
+void \hyperlink{class_size_reduction_aee72365a4e351318fb49ae5c8c6da0f7}{Reduce\+Size} (const \hyperlink{class_vector2_d}{Vector2D} \&position, \hyperlink{structxy_vector}{xy\+Vector} \&scale, double \&collider\+Size)
+\begin{DoxyCompactList}\small\item\em Reduces the referenced scale and collider\+Size based on the proximity to the center of the screen and the maximum scale and collider size provided on construction of the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structxy_vector}{xy\+Vector} \hyperlink{class_size_reduction_a99ace47c7794d51e539712a3c2bc8642}{max\+\_\+scale}
+\item 
+double \hyperlink{class_size_reduction_aa58dd5c70892ea019a7e6c86e2027f8f}{max\+\_\+collider\+\_\+size}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+U\+Sed to reduce the size of an \hyperlink{class_game_object}{Game\+Object} based off its proximity with the centre of the screen. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_size_reduction_a2e274f3e867ac457d0fd354351426035}\label{class_size_reduction_a2e274f3e867ac457d0fd354351426035}} 
+\index{Size\+Reduction@{Size\+Reduction}!Size\+Reduction@{Size\+Reduction}}
+\index{Size\+Reduction@{Size\+Reduction}!Size\+Reduction@{Size\+Reduction}}
+\subsubsection{\texorpdfstring{Size\+Reduction()}{SizeReduction()}}
+{\footnotesize\ttfamily Size\+Reduction\+::\+Size\+Reduction (\begin{DoxyParamCaption}\item[{const \hyperlink{structxy_vector}{xy\+Vector} \&}]{max\+\_\+scale,  }\item[{const double \&}]{max\+\_\+collider\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Constructs a \hyperlink{class_size_reduction}{Size\+Reduction} Object with the maximum scale and maximum collider size of the \hyperlink{class_game_object}{Game\+Object} specified. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+\_\+scale} & The maximum scale of the \hyperlink{class_game_object}{Game\+Object} \\
+\hline
+{\em max\+\_\+collider\+\_\+size} & The maximum collider size of the \hyperlink{class_game_object}{Game\+Object} \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_size_reduction_aee72365a4e351318fb49ae5c8c6da0f7}\label{class_size_reduction_aee72365a4e351318fb49ae5c8c6da0f7}} 
+\index{Size\+Reduction@{Size\+Reduction}!Reduce\+Size@{Reduce\+Size}}
+\index{Reduce\+Size@{Reduce\+Size}!Size\+Reduction@{Size\+Reduction}}
+\subsubsection{\texorpdfstring{Reduce\+Size()}{ReduceSize()}}
+{\footnotesize\ttfamily void Size\+Reduction\+::\+Reduce\+Size (\begin{DoxyParamCaption}\item[{const \hyperlink{class_vector2_d}{Vector2D} \&}]{position,  }\item[{\hyperlink{structxy_vector}{xy\+Vector} \&}]{scale,  }\item[{double \&}]{collider\+Size }\end{DoxyParamCaption})}
+
+
+
+Reduces the referenced scale and collider\+Size based on the proximity to the center of the screen and the maximum scale and collider size provided on construction of the object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The position of the object relative to the origin(\+Screen centre) \\
+\hline
+{\em scale} & Referenced scale of the \hyperlink{class_game_object}{Game\+Object} that is varying its size \\
+\hline
+{\em collider\+Size} & Referenced collider size of the \hyperlink{class_game_object}{Game\+Object} that is varying its size \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_size_reduction_aa58dd5c70892ea019a7e6c86e2027f8f}\label{class_size_reduction_aa58dd5c70892ea019a7e6c86e2027f8f}} 
+\index{Size\+Reduction@{Size\+Reduction}!max\+\_\+collider\+\_\+size@{max\+\_\+collider\+\_\+size}}
+\index{max\+\_\+collider\+\_\+size@{max\+\_\+collider\+\_\+size}!Size\+Reduction@{Size\+Reduction}}
+\subsubsection{\texorpdfstring{max\+\_\+collider\+\_\+size}{max\_collider\_size}}
+{\footnotesize\ttfamily double Size\+Reduction\+::max\+\_\+collider\+\_\+size\hspace{0.3cm}{\ttfamily [private]}}
+
+Maximum collider size that will be set at the maximum distance of the screen \mbox{\Hypertarget{class_size_reduction_a99ace47c7794d51e539712a3c2bc8642}\label{class_size_reduction_a99ace47c7794d51e539712a3c2bc8642}} 
+\index{Size\+Reduction@{Size\+Reduction}!max\+\_\+scale@{max\+\_\+scale}}
+\index{max\+\_\+scale@{max\+\_\+scale}!Size\+Reduction@{Size\+Reduction}}
+\subsubsection{\texorpdfstring{max\+\_\+scale}{max\_scale}}
+{\footnotesize\ttfamily \hyperlink{structxy_vector}{xy\+Vector} Size\+Reduction\+::max\+\_\+scale\hspace{0.3cm}{\ttfamily [private]}}
+
+Maximum scale of that will be set at the maximum distance of the screen 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Size\+Reduction.\+h\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Size\+Reduction.\+cpp\end{DoxyCompactItemize}

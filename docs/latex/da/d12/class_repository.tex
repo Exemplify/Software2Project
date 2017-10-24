@@ -1,0 +1,157 @@
+\hypertarget{class_repository}{}\section{Repository Class Reference}
+\label{class_repository}\index{Repository@{Repository}}
+
+
+\hyperlink{class_repository}{Repository} object used to create the specific scenes and objects defined for the current game implementation.  
+
+
+
+
+{\ttfamily \#include $<$Repository.\+h$>$}
+
+Inheritance diagram for Repository\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{da/d12/class_repository}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_repository_a0464c81256d66e31e9d5849d3ae0dfb2}{Repository} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_data_mapper_interface}{Data\+Mapper\+Interface} $>$ data\+Mapper, std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$ runtime\+\_\+database)
+\begin{DoxyCompactList}\small\item\em Constructs the repository object used by the game to create the various Game\+Objects and Scenes for the current game. \end{DoxyCompactList}\item 
+virtual std\+::shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$ \hyperlink{class_repository_ab239e9b04db0524e168d54201bcd7076}{get\+Game\+Objectby\+Type\+During\+Runtime} (Game\+Object\+Type objtype) const override
+\begin{DoxyCompactList}\small\item\em Used to generate a specific \hyperlink{class_game_object}{Game\+Object} during runtime of the game, is only defined for the various game\+Objects that are created during game runtime. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{class_scene}{Scene} $>$ $>$ \hyperlink{class_repository_ad49505f4ec3a15d0812ede7ff82b8be2}{get\+Game\+Scenes} () const override
+\begin{DoxyCompactList}\small\item\em Used to create the various scenes for the game. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ unsigned int $>$ \hyperlink{class_repository_ab369b3a1d2957b2bd3130c8c348343dd}{get\+Game\+Screen\+Size} () const override
+\begin{DoxyCompactList}\small\item\em Obtains the Size of the Screen from the \hyperlink{class_database_interface}{Database\+Interface}. \end{DoxyCompactList}\item 
+virtual std\+::string \hyperlink{class_repository_a9bdfb4cab4ece2af1e45ef5ef06b9e49}{get\+Game\+Name} () const override
+\begin{DoxyCompactList}\small\item\em Obtains the game name from the \hyperlink{class_database_interface}{Database\+Interface}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{class_data_mapper_interface}{Data\+Mapper\+Interface} $>$ \hyperlink{class_repository_a0bcbb13dbddc52d69c4b2d46a7730023}{\+\_\+data\+Mapper}
+\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$ \hyperlink{class_repository_afe9b5f2e11e176745c227276c07bcdcb}{\+\_\+runtime\+\_\+database}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_repository}{Repository} object used to create the specific scenes and objects defined for the current game implementation. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_repository_a0464c81256d66e31e9d5849d3ae0dfb2}\label{class_repository_a0464c81256d66e31e9d5849d3ae0dfb2}} 
+\index{Repository@{Repository}!Repository@{Repository}}
+\index{Repository@{Repository}!Repository@{Repository}}
+\subsubsection{\texorpdfstring{Repository()}{Repository()}}
+{\footnotesize\ttfamily Repository\+::\+Repository (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_data_mapper_interface}{Data\+Mapper\+Interface} $>$}]{data\+Mapper,  }\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$}]{runtime\+\_\+database }\end{DoxyParamCaption})}
+
+
+
+Constructs the repository object used by the game to create the various Game\+Objects and Scenes for the current game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em datamapper} & the \hyperlink{class_data_mapper_interface}{Data\+Mapper\+Interface} used to update the \+\_\+runtime\+\_\+database \\
+\hline
+{\em runtime\+\_\+database} & The \hyperlink{class_database_interface}{Database\+Interface} that stores the information of the game during game runtime \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_repository_a9bdfb4cab4ece2af1e45ef5ef06b9e49}\label{class_repository_a9bdfb4cab4ece2af1e45ef5ef06b9e49}} 
+\index{Repository@{Repository}!get\+Game\+Name@{get\+Game\+Name}}
+\index{get\+Game\+Name@{get\+Game\+Name}!Repository@{Repository}}
+\subsubsection{\texorpdfstring{get\+Game\+Name()}{getGameName()}}
+{\footnotesize\ttfamily std\+::string Repository\+::get\+Game\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Obtains the game name from the \hyperlink{class_database_interface}{Database\+Interface}. 
+
+\begin{DoxyReturn}{Returns}
+Returns the Name of the Game as a string 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_repositiory_interface_aa40617b92b721ec087dd69f3986e9efd}{Repositiory\+Interface}.
+
+\mbox{\Hypertarget{class_repository_ab239e9b04db0524e168d54201bcd7076}\label{class_repository_ab239e9b04db0524e168d54201bcd7076}} 
+\index{Repository@{Repository}!get\+Game\+Objectby\+Type\+During\+Runtime@{get\+Game\+Objectby\+Type\+During\+Runtime}}
+\index{get\+Game\+Objectby\+Type\+During\+Runtime@{get\+Game\+Objectby\+Type\+During\+Runtime}!Repository@{Repository}}
+\subsubsection{\texorpdfstring{get\+Game\+Objectby\+Type\+During\+Runtime()}{getGameObjectbyTypeDuringRuntime()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$ Repository\+::get\+Game\+Objectby\+Type\+During\+Runtime (\begin{DoxyParamCaption}\item[{Game\+Object\+Type}]{objtype }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Used to generate a specific \hyperlink{class_game_object}{Game\+Object} during runtime of the game, is only defined for the various game\+Objects that are created during game runtime. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em objtype} & The Game\+Object\+Type that represents the object that needs to be created \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the desired \hyperlink{class_game_object}{Game\+Object} 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_repositiory_interface_a7341b8009f262949e26759327b0a8ae4}{Repositiory\+Interface}.
+
+\mbox{\Hypertarget{class_repository_ad49505f4ec3a15d0812ede7ff82b8be2}\label{class_repository_ad49505f4ec3a15d0812ede7ff82b8be2}} 
+\index{Repository@{Repository}!get\+Game\+Scenes@{get\+Game\+Scenes}}
+\index{get\+Game\+Scenes@{get\+Game\+Scenes}!Repository@{Repository}}
+\subsubsection{\texorpdfstring{get\+Game\+Scenes()}{getGameScenes()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{class_scene}{Scene} $>$ $>$ Repository\+::get\+Game\+Scenes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Used to create the various scenes for the game. 
+
+\begin{DoxyReturn}{Returns}
+Returns a Vector of shared pointers of Scenes that are to exist in the game 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_repositiory_interface_a29a0f0fadd317082cb504bbb1161d50d}{Repositiory\+Interface}.
+
+\mbox{\Hypertarget{class_repository_ab369b3a1d2957b2bd3130c8c348343dd}\label{class_repository_ab369b3a1d2957b2bd3130c8c348343dd}} 
+\index{Repository@{Repository}!get\+Game\+Screen\+Size@{get\+Game\+Screen\+Size}}
+\index{get\+Game\+Screen\+Size@{get\+Game\+Screen\+Size}!Repository@{Repository}}
+\subsubsection{\texorpdfstring{get\+Game\+Screen\+Size()}{getGameScreenSize()}}
+{\footnotesize\ttfamily std\+::vector$<$ unsigned int $>$ Repository\+::get\+Game\+Screen\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Obtains the Size of the Screen from the \hyperlink{class_database_interface}{Database\+Interface}. 
+
+\begin{DoxyReturn}{Returns}
+Returns the Screen Size of the game 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_repositiory_interface_a428e935faa2fd5790cbccc09f1066ef6}{Repositiory\+Interface}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_repository_a0bcbb13dbddc52d69c4b2d46a7730023}\label{class_repository_a0bcbb13dbddc52d69c4b2d46a7730023}} 
+\index{Repository@{Repository}!\+\_\+data\+Mapper@{\+\_\+data\+Mapper}}
+\index{\+\_\+data\+Mapper@{\+\_\+data\+Mapper}!Repository@{Repository}}
+\subsubsection{\texorpdfstring{\+\_\+data\+Mapper}{\_dataMapper}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\hyperlink{class_data_mapper_interface}{Data\+Mapper\+Interface}$>$ Repository\+::\+\_\+data\+Mapper\hspace{0.3cm}{\ttfamily [private]}}
+
+The \hyperlink{class_data_mapper_interface}{Data\+Mapper\+Interface} used to update the \+\_\+runtime\+\_\+database \mbox{\Hypertarget{class_repository_afe9b5f2e11e176745c227276c07bcdcb}\label{class_repository_afe9b5f2e11e176745c227276c07bcdcb}} 
+\index{Repository@{Repository}!\+\_\+runtime\+\_\+database@{\+\_\+runtime\+\_\+database}}
+\index{\+\_\+runtime\+\_\+database@{\+\_\+runtime\+\_\+database}!Repository@{Repository}}
+\subsubsection{\texorpdfstring{\+\_\+runtime\+\_\+database}{\_runtime\_database}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\hyperlink{class_database_interface}{Database\+Interface}$>$ Repository\+::\+\_\+runtime\+\_\+database\hspace{0.3cm}{\ttfamily [private]}}
+
+The \hyperlink{class_database_interface}{Database\+Interface} used to store the game object information at during runtime of the application 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Repository.\+h\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Repository.\+cpp\end{DoxyCompactItemize}

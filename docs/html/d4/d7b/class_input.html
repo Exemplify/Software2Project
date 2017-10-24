@@ -70,34 +70,213 @@ $(function() {
 <div class="title">Input Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Responsible for supplying the FrontEndSystem with access to the input of the user by interfaceing with sfml.  
+ <a href="../../d4/d7b/class_input.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d2/d94/_input_8h_source.html">Input.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a137d26e571405f42b63c955958fd7c92"><td class="memItemLeft" align="right" valign="top"><a id="a137d26e571405f42b63c955958fd7c92"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr>
-<tr class="separator:a137d26e571405f42b63c955958fd7c92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb8551549ffe7b1474aca91ce3509d57"><td class="memItemLeft" align="right" valign="top"><a id="abb8551549ffe7b1474aca91ce3509d57"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsButtonPressed</b> (Keys key)</td></tr>
+<tr class="memitem:abb8551549ffe7b1474aca91ce3509d57"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d7b/class_input.html#abb8551549ffe7b1474aca91ce3509d57">IsButtonPressed</a> (Keys key)</td></tr>
+<tr class="memdesc:abb8551549ffe7b1474aca91ce3509d57"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns a boolean for the specific key that is pressed , returns true if the Key has been pressed  <a href="#abb8551549ffe7b1474aca91ce3509d57">More...</a><br /></td></tr>
 <tr class="separator:abb8551549ffe7b1474aca91ce3509d57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c4b1c67c7d3e28d4af79601c81ed8bb"><td class="memItemLeft" align="right" valign="top"><a id="a5c4b1c67c7d3e28d4af79601c81ed8bb"></a>
-static int&#160;</td><td class="memItemRight" valign="bottom"><b>getAxis</b> (Axis axis)</td></tr>
+<tr class="memitem:a5c4b1c67c7d3e28d4af79601c81ed8bb"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d7b/class_input.html#a5c4b1c67c7d3e28d4af79601c81ed8bb">getAxis</a> (Axis axis)</td></tr>
+<tr class="memdesc:a5c4b1c67c7d3e28d4af79601c81ed8bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides directional information inherintly,.  <a href="#a5c4b1c67c7d3e28d4af79601c81ed8bb">More...</a><br /></td></tr>
 <tr class="separator:a5c4b1c67c7d3e28d4af79601c81ed8bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a851f7b43b30dcf7166af7c548d21316f"><td class="memItemLeft" align="right" valign="top"><a id="a851f7b43b30dcf7166af7c548d21316f"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>setButton</b> (Keys key, bool state)</td></tr>
+<tr class="memitem:a851f7b43b30dcf7166af7c548d21316f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d7b/class_input.html#a851f7b43b30dcf7166af7c548d21316f">setButton</a> (Keys key, bool state)</td></tr>
+<tr class="memdesc:a851f7b43b30dcf7166af7c548d21316f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the specific Key to the desired state of whether it is pressed or not.  <a href="#a851f7b43b30dcf7166af7c548d21316f">More...</a><br /></td></tr>
 <tr class="separator:a851f7b43b30dcf7166af7c548d21316f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
-<tr class="memitem:a7419956b2d6001cef104b8abdf242477"><td class="memItemLeft" align="right" valign="top"><a id="a7419956b2d6001cef104b8abdf242477"></a>
-static int&#160;</td><td class="memItemRight" valign="bottom"><b>CheckButtonForAxis</b> (Keys negativeKey, Keys positiveKey)</td></tr>
+<tr class="memitem:a7419956b2d6001cef104b8abdf242477"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d7b/class_input.html#a7419956b2d6001cef104b8abdf242477">CheckButtonForAxis</a> (Keys negativeKey, Keys positiveKey)</td></tr>
 <tr class="separator:a7419956b2d6001cef104b8abdf242477"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
-<tr class="memitem:affef708e1d603d97a7218b64eab063b5"><td class="memItemLeft" align="right" valign="top"><a id="affef708e1d603d97a7218b64eab063b5"></a>
-static std::vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_buttons</b></td></tr>
+<tr class="memitem:affef708e1d603d97a7218b64eab063b5"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d7b/class_input.html#affef708e1d603d97a7218b64eab063b5">_buttons</a></td></tr>
 <tr class="separator:affef708e1d603d97a7218b64eab063b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Responsible for supplying the FrontEndSystem with access to the input of the user by interfaceing with sfml. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7419956b2d6001cef104b8abdf242477"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7419956b2d6001cef104b8abdf242477">&#9670;&nbsp;</a></span>CheckButtonForAxis()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Input::CheckButtonForAxis </td>
+          <td>(</td>
+          <td class="paramtype">Keys&#160;</td>
+          <td class="paramname"><em>negativeKey</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Keys&#160;</td>
+          <td class="paramname"><em>positiveKey</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Uses the buttons to determine direction from button presses </p>
+
+</div>
+</div>
+<a id="a5c4b1c67c7d3e28d4af79601c81ed8bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c4b1c67c7d3e28d4af79601c81ed8bb">&#9670;&nbsp;</a></span>getAxis()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Input::getAxis </td>
+          <td>(</td>
+          <td class="paramtype">Axis&#160;</td>
+          <td class="paramname"><em>axis</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Provides directional information inherintly,. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">axis</td><td>The axis that the input occurs on </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns a -1, 0, or 1 depending on the direction and axis that was pressed </dd></dl>
+
+</div>
+</div>
+<a id="abb8551549ffe7b1474aca91ce3509d57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb8551549ffe7b1474aca91ce3509d57">&#9670;&nbsp;</a></span>IsButtonPressed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Input::IsButtonPressed </td>
+          <td>(</td>
+          <td class="paramtype">Keys&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>returns a boolean for the specific key that is pressed , returns true if the Key has been pressed </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The specific key that needs to be checked if an input is detected </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a851f7b43b30dcf7166af7c548d21316f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a851f7b43b30dcf7166af7c548d21316f">&#9670;&nbsp;</a></span>setButton()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Input::setButton </td>
+          <td>(</td>
+          <td class="paramtype">Keys&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>state</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the specific Key to the desired state of whether it is pressed or not. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>the specific key that is pressed or released </td></tr>
+    <tr><td class="paramname">state</td><td>the desired state </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="affef708e1d603d97a7218b64eab063b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affef708e1d603d97a7218b64eab063b5">&#9670;&nbsp;</a></span>_buttons</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; bool &gt; Input::_buttons</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>a vector of bools that are indexed by the enumerator </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>D:/Users/Tim-PC/Documents/Software_II/Project/ProjectFiles/game-source-code/BackEndSystems/<a class="el" href="../../d2/d94/_input_8h_source.html">Input.h</a></li>
 <li>D:/Users/Tim-PC/Documents/Software_II/Project/ProjectFiles/game-source-code/BackEndSystems/Input.cpp</li>

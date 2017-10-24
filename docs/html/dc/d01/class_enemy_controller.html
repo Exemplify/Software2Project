@@ -71,7 +71,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>needs copy constructor and assignment opperator  
+<p><a class="el" href="../../dd/d7a/class_enemy.html" title="The basic Enemy Object representation. ">Enemy</a> controller is responsible for spawning and monitoring new enemy objects.  
  <a href="../../dc/d01/class_enemy_controller.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d2/da3/_enemy_controller_8h_source.html">EnemyController.h</a>&gt;</code></p>
@@ -81,123 +81,180 @@ Inheritance diagram for EnemyController:</div>
  <div class="center">
   <img src="../../dc/d01/class_enemy_controller.png" usemap="#EnemyController_map" alt=""/>
   <map id="EnemyController_map" name="EnemyController_map">
-<area href="../../d0/dd1/class_game_object.html" alt="GameObject" shape="rect" coords="0,56,269,80"/>
+<area href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. " alt="GameObject" shape="rect" coords="0,56,269,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a316e9275d1a1f46fef09907458e5e286"><td class="memItemLeft" align="right" valign="top"><a id="a316e9275d1a1f46fef09907458e5e286"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d01/class_enemy_controller.html#a316e9275d1a1f46fef09907458e5e286">EnemyController</a> ()</td></tr>
-<tr class="memdesc:a316e9275d1a1f46fef09907458e5e286"><td class="mdescLeft">&#160;</td><td class="mdescRight">will need to be modified to incorporate the delay component <br /></td></tr>
-<tr class="separator:a316e9275d1a1f46fef09907458e5e286"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3364fe98342c659a62633e9e003ef0f6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d01/class_enemy_controller.html#a3364fe98342c659a62633e9e003ef0f6">EnemyController</a> (unsigned int max_enemies, double enemySpawnDelay)</td></tr>
+<tr class="memdesc:a3364fe98342c659a62633e9e003ef0f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an <a class="el" href="../../dc/d01/class_enemy_controller.html" title="Enemy controller is responsible for spawning and monitoring new enemy objects. ">EnemyController</a> Object.  <a href="#a3364fe98342c659a62633e9e003ef0f6">More...</a><br /></td></tr>
+<tr class="separator:a3364fe98342c659a62633e9e003ef0f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af36ec67442d30c7519581b83ad6c00db"><td class="memItemLeft" align="right" valign="top"><a id="af36ec67442d30c7519581b83ad6c00db"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d01/class_enemy_controller.html#af36ec67442d30c7519581b83ad6c00db">Update</a> () override</td></tr>
-<tr class="memdesc:af36ec67442d30c7519581b83ad6c00db"><td class="mdescLeft">&#160;</td><td class="mdescRight">could aslo be used as a friendship with scene <br /></td></tr>
+<tr class="memdesc:af36ec67442d30c7519581b83ad6c00db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates enemies based on the spawn delay. <br /></td></tr>
 <tr class="separator:af36ec67442d30c7519581b83ad6c00db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a011030dd51b78317ecb16356bf6591dc"><td class="memItemLeft" align="right" valign="top"><a id="a011030dd51b78317ecb16356bf6591dc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EnemyKilled</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d01/class_enemy_controller.html#a011030dd51b78317ecb16356bf6591dc">EnemyKilled</a> ()</td></tr>
+<tr class="memdesc:a011030dd51b78317ecb16356bf6591dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by the EnemyObject to inform the <a class="el" href="../../dc/d01/class_enemy_controller.html" title="Enemy controller is responsible for spawning and monitoring new enemy objects. ">EnemyController</a> that it has been destroyed by the <a class="el" href="../../d8/d53/class_player.html" title="Player is used to contain the responsibilities of the object that the user controls. ">Player</a> object. <br /></td></tr>
 <tr class="separator:a011030dd51b78317ecb16356bf6591dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1166e21eb78c9d70296adc56d74caff"><td class="memItemLeft" align="right" valign="top"><a id="ac1166e21eb78c9d70296adc56d74caff"></a>
-const std::shared_ptr&lt; <a class="el" href="../../d2/d83/class_graphic_object.html">GraphicObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d01/class_enemy_controller.html#ac1166e21eb78c9d70296adc56d74caff">getGraphicObject</a> () override</td></tr>
-<tr class="memdesc:ac1166e21eb78c9d70296adc56d74caff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clone function Needs completing. <br /></td></tr>
-<tr class="separator:ac1166e21eb78c9d70296adc56d74caff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e48995e2828fb54d7df203985c0f855"><td class="memItemLeft" align="right" valign="top"><a id="a3e48995e2828fb54d7df203985c0f855"></a>
-virtual <a class="el" href="../../dc/d01/class_enemy_controller.html">EnemyController</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>Clone</b> () override</td></tr>
-<tr class="separator:a3e48995e2828fb54d7df203985c0f855"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a182dba707716f8079bb6e67e8c5ed4ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d01/class_enemy_controller.html#a182dba707716f8079bb6e67e8c5ed4ad">EnemyOutofBounds</a> ()</td></tr>
+<tr class="memdesc:a182dba707716f8079bb6e67e8c5ed4ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by the EnemyObject to inform the <a class="el" href="../../dc/d01/class_enemy_controller.html" title="Enemy controller is responsible for spawning and monitoring new enemy objects. ">EnemyController</a> that it has been destroyed by the moving out of bounds.  <a href="#a182dba707716f8079bb6e67e8c5ed4ad">More...</a><br /></td></tr>
+<tr class="separator:a182dba707716f8079bb6e67e8c5ed4ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_game_object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_game_object')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a></td></tr>
 <tr class="memitem:a0348e3ee2e83d56eafca7a3547f432c4 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="a0348e3ee2e83d56eafca7a3547f432c4"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#a0348e3ee2e83d56eafca7a3547f432c4">GameObject</a> ()</td></tr>
-<tr class="memdesc:a0348e3ee2e83d56eafca7a3547f432c4 inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">default constructor should be removed however is useful for testing <br /></td></tr>
+<tr class="memdesc:a0348e3ee2e83d56eafca7a3547f432c4 inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Constructor - Creates the object using default values. <br /></td></tr>
 <tr class="separator:a0348e3ee2e83d56eafca7a3547f432c4 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4abdb4988a1aa49541cee2dc996834fc inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="a4abdb4988a1aa49541cee2dc996834fc"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>GameObject</b> (const <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a> &amp;copyObj)</td></tr>
-<tr class="separator:a4abdb4988a1aa49541cee2dc996834fc inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae2936e26f070d83d9b1c69dad5bfceb inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="aae2936e26f070d83d9b1c69dad5bfceb"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>GameObject</b> (<a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&lt; double &gt; startingPosition)</td></tr>
-<tr class="separator:aae2936e26f070d83d9b1c69dad5bfceb inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d8c6203c094bc5d9e4c917e66b7b1e9 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="a8d8c6203c094bc5d9e4c917e66b7b1e9"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>GameObject</b> (<a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&lt; double &gt; startingPosition, <a class="el" href="../../d5/dae/structxy_vector.html">xyVector</a> scale)</td></tr>
-<tr class="separator:a8d8c6203c094bc5d9e4c917e66b7b1e9 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7cc83eeefc6e3d112e2a7fc1fb037a9c inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="a7cc83eeefc6e3d112e2a7fc1fb037a9c"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isActive</b> ()</td></tr>
+<tr class="memitem:a780db39d3dc5b54c4dffe2f429f9b656 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#a780db39d3dc5b54c4dffe2f429f9b656">GameObject</a> (const <a class="el" href="../../d2/d83/class_graphic_object.html">GraphicObject</a> &amp;graphic)</td></tr>
+<tr class="memdesc:a780db39d3dc5b54c4dffe2f429f9b656 inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an object with a specific <a class="el" href="../../d2/d83/class_graphic_object.html" title="This is the Utility class with the display manager, It stores the name of the object and location of ...">GraphicObject</a>.  <a href="../../d0/dd1/class_game_object.html#a780db39d3dc5b54c4dffe2f429f9b656">More...</a><br /></td></tr>
+<tr class="separator:a780db39d3dc5b54c4dffe2f429f9b656 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93186927c126a290592e3d7c13906f18 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#a93186927c126a290592e3d7c13906f18">GameObject</a> (const <a class="el" href="../../d5/dae/structxy_vector.html">xyVector</a> &amp;scale)</td></tr>
+<tr class="memdesc:a93186927c126a290592e3d7c13906f18 inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an object with a specific scale.  <a href="../../d0/dd1/class_game_object.html#a93186927c126a290592e3d7c13906f18">More...</a><br /></td></tr>
+<tr class="separator:a93186927c126a290592e3d7c13906f18 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a9022df605afb6be63d0dcca07667d6 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#a8a9022df605afb6be63d0dcca07667d6">GameObject</a> (const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;startingPosition)</td></tr>
+<tr class="memdesc:a8a9022df605afb6be63d0dcca07667d6 inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an object with a specific starting position.  <a href="../../d0/dd1/class_game_object.html#a8a9022df605afb6be63d0dcca07667d6">More...</a><br /></td></tr>
+<tr class="separator:a8a9022df605afb6be63d0dcca07667d6 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc9ac2a346e947a0dd6f7bd94ecea8af inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="adc9ac2a346e947a0dd6f7bd94ecea8af"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#adc9ac2a346e947a0dd6f7bd94ecea8af">GameObject</a> (const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;startingPosition, const <a class="el" href="../../d5/dae/structxy_vector.html">xyVector</a> &amp;scale, const <a class="el" href="../../d2/d83/class_graphic_object.html">GraphicObject</a> &amp;graphicObject)</td></tr>
+<tr class="memdesc:adc9ac2a346e947a0dd6f7bd94ecea8af inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor used to specify the main members of the gameobject. <br /></td></tr>
+<tr class="separator:adc9ac2a346e947a0dd6f7bd94ecea8af inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeeb2162f2779e5591a372a1568bc5c68 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#aeeb2162f2779e5591a372a1568bc5c68">Start</a> ()</td></tr>
+<tr class="memdesc:aeeb2162f2779e5591a372a1568bc5c68 inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used for initialisation of the objects parameters when it is instantiated.  <a href="../../d0/dd1/class_game_object.html#aeeb2162f2779e5591a372a1568bc5c68">More...</a><br /></td></tr>
+<tr class="separator:aeeb2162f2779e5591a372a1568bc5c68 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cc83eeefc6e3d112e2a7fc1fb037a9c inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#a7cc83eeefc6e3d112e2a7fc1fb037a9c">isActive</a> ()</td></tr>
+<tr class="memdesc:a7cc83eeefc6e3d112e2a7fc1fb037a9c inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">get function that allows a client to determine if the <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a> is active  <a href="../../d0/dd1/class_game_object.html#a7cc83eeefc6e3d112e2a7fc1fb037a9c">More...</a><br /></td></tr>
 <tr class="separator:a7cc83eeefc6e3d112e2a7fc1fb037a9c inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ddc58c7cc733a538228d4948da14b8f inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="a6ddc58c7cc733a538228d4948da14b8f"></a>
-<a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getPosition</b> () const</td></tr>
-<tr class="separator:a6ddc58c7cc733a538228d4948da14b8f inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af12345846c74b72bc50c779c00b55851 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="af12345846c74b72bc50c779c00b55851"></a>
-GameObjectType&#160;</td><td class="memItemRight" valign="bottom"><b>getType</b> () const</td></tr>
+<tr class="memitem:ae3b21cc28e2c1bce6707699d0312eee8 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#ae3b21cc28e2c1bce6707699d0312eee8">getPosition</a> () const</td></tr>
+<tr class="memdesc:ae3b21cc28e2c1bce6707699d0312eee8 inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">get function used to return the Position of the object, used in the collisionDetection calculations and the presentation layer  <a href="../../d0/dd1/class_game_object.html#ae3b21cc28e2c1bce6707699d0312eee8">More...</a><br /></td></tr>
+<tr class="separator:ae3b21cc28e2c1bce6707699d0312eee8 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af12345846c74b72bc50c779c00b55851 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">GameObjectType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#af12345846c74b72bc50c779c00b55851">getType</a> () const</td></tr>
+<tr class="memdesc:af12345846c74b72bc50c779c00b55851 inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">get function used to return the GameObjectType of the object, used in the collisionDetection calculations  <a href="../../d0/dd1/class_game_object.html#af12345846c74b72bc50c779c00b55851">More...</a><br /></td></tr>
 <tr class="separator:af12345846c74b72bc50c779c00b55851 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f4aec664bbb4fa5ecfa3d1a7d630d2a inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="a9f4aec664bbb4fa5ecfa3d1a7d630d2a"></a>
-std::shared_ptr&lt; <a class="el" href="../../d6/db5/class_scene.html">Scene</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getScene</b> () const</td></tr>
-<tr class="separator:a9f4aec664bbb4fa5ecfa3d1a7d630d2a inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7854c363f11c202ea2177b33ce293e0 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="ab7854c363f11c202ea2177b33ce293e0"></a>
-<a class="el" href="../../d5/dae/structxy_vector.html">xyVector</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getScale</b> () const</td></tr>
-<tr class="separator:ab7854c363f11c202ea2177b33ce293e0 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a200218792aa0076011d69be696e3d3d4 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="a200218792aa0076011d69be696e3d3d4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setActive</b> (bool active_state)</td></tr>
+<tr class="memitem:a0e0c63e1c3deedae400d62d3ecab8ef3 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d5/dae/structxy_vector.html">xyVector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#a0e0c63e1c3deedae400d62d3ecab8ef3">getScale</a> () const</td></tr>
+<tr class="memdesc:a0e0c63e1c3deedae400d62d3ecab8ef3 inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">get function used to return the scale of the object, used in the presentation layer  <a href="../../d0/dd1/class_game_object.html#a0e0c63e1c3deedae400d62d3ecab8ef3">More...</a><br /></td></tr>
+<tr class="separator:a0e0c63e1c3deedae400d62d3ecab8ef3 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af44533690a46d5f41aeaa2c16bf867b9 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="../../d2/d83/class_graphic_object.html">GraphicObject</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#af44533690a46d5f41aeaa2c16bf867b9">getGraphicObject</a> () const</td></tr>
+<tr class="memdesc:af44533690a46d5f41aeaa2c16bf867b9 inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="../../d2/d83/class_graphic_object.html" title="This is the Utility class with the display manager, It stores the name of the object and location of ...">GraphicObject</a> of the current <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a> to interface with the presentation layer.  <a href="../../d0/dd1/class_game_object.html#af44533690a46d5f41aeaa2c16bf867b9">More...</a><br /></td></tr>
+<tr class="separator:af44533690a46d5f41aeaa2c16bf867b9 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a200218792aa0076011d69be696e3d3d4 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#a200218792aa0076011d69be696e3d3d4">setActive</a> (bool active_state)</td></tr>
+<tr class="memdesc:a200218792aa0076011d69be696e3d3d4 inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the active state of the <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a>, if it is unactive it does not update, get displayed by the game or cause collisions.  <a href="../../d0/dd1/class_game_object.html#a200218792aa0076011d69be696e3d3d4">More...</a><br /></td></tr>
 <tr class="separator:a200218792aa0076011d69be696e3d3d4 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e1420c027ce937f9958a41ad280080b inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#a9e1420c027ce937f9958a41ad280080b">setScene</a> (std::shared_ptr&lt; <a class="el" href="../../d6/db5/class_scene.html">Scene</a> &gt; scene)</td></tr>
+<tr class="memdesc:a9e1420c027ce937f9958a41ad280080b inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the <a class="el" href="../../d6/db5/class_scene.html" title="Scene is used to store and operate on the various gameobjects that define the functionality of the cu...">Scene</a> pointer of the Gameobject, used to know which <a class="el" href="../../d6/db5/class_scene.html" title="Scene is used to store and operate on the various gameobjects that define the functionality of the cu...">Scene</a> the <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a> exists in  <a href="../../d0/dd1/class_game_object.html#a9e1420c027ce937f9958a41ad280080b">More...</a><br /></td></tr>
 <tr class="separator:a9e1420c027ce937f9958a41ad280080b inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf1959fad10ea04673a182029f1f81b9 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="abf1959fad10ea04673a182029f1f81b9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Destroy</b> ()</td></tr>
-<tr class="separator:abf1959fad10ea04673a182029f1f81b9 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a84eabc12a38617b5ff05c6e896e97531"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d01/class_enemy_controller.html#a84eabc12a38617b5ff05c6e896e97531">SpawnEnemyCountDown</a> ()</td></tr>
-<tr class="memdesc:a84eabc12a38617b5ff05c6e896e97531"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delay code needs to be replaced with a delaycomponent.  <a href="#a84eabc12a38617b5ff05c6e896e97531">More...</a><br /></td></tr>
+<tr class="memitem:a84eabc12a38617b5ff05c6e896e97531"><td class="memItemLeft" align="right" valign="top"><a id="a84eabc12a38617b5ff05c6e896e97531"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d01/class_enemy_controller.html#a84eabc12a38617b5ff05c6e896e97531">SpawnEnemyCountDown</a> ()</td></tr>
+<tr class="memdesc:a84eabc12a38617b5ff05c6e896e97531"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if an <a class="el" href="../../dd/d7a/class_enemy.html" title="The basic Enemy Object representation. ">Enemy</a> can be spawned due to the spawn delay, calls SpawnEnemy if it can be. <br /></td></tr>
 <tr class="separator:a84eabc12a38617b5ff05c6e896e97531"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5298e79a0bf598ed8684efb8a6a3927"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d01/class_enemy_controller.html#ab5298e79a0bf598ed8684efb8a6a3927">SpawnEnemy</a> ()</td></tr>
+<tr class="memitem:ab5298e79a0bf598ed8684efb8a6a3927"><td class="memItemLeft" align="right" valign="top"><a id="ab5298e79a0bf598ed8684efb8a6a3927"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d01/class_enemy_controller.html#ab5298e79a0bf598ed8684efb8a6a3927">SpawnEnemy</a> ()</td></tr>
+<tr class="memdesc:ab5298e79a0bf598ed8684efb8a6a3927"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an enemy and adds it to the same <a class="el" href="../../d6/db5/class_scene.html" title="Scene is used to store and operate on the various gameobjects that define the functionality of the cu...">Scene</a> as the <a class="el" href="../../dc/d01/class_enemy_controller.html" title="Enemy controller is responsible for spawning and monitoring new enemy objects. ">EnemyController</a>. <br /></td></tr>
 <tr class="separator:ab5298e79a0bf598ed8684efb8a6a3927"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a6d275f518464e59e77a1870c5032fb28"><td class="memItemLeft" align="right" valign="top"><a id="a6d275f518464e59e77a1870c5032fb28"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>numberOfEnemiesKilled</b> = 0</td></tr>
-<tr class="separator:a6d275f518464e59e77a1870c5032fb28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a1e1d9a6da84fe5ed2896e83767782f"><td class="memItemLeft" align="right" valign="top"><a id="a6a1e1d9a6da84fe5ed2896e83767782f"></a>
-const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d01/class_enemy_controller.html#a6a1e1d9a6da84fe5ed2896e83767782f">MAX_NUMBER_OF_ENEMIES</a> = 10</td></tr>
-<tr class="memdesc:a6a1e1d9a6da84fe5ed2896e83767782f"><td class="mdescLeft">&#160;</td><td class="mdescRight">delay code needs to moved to a database and a delaycomponent <br /></td></tr>
-<tr class="separator:a6a1e1d9a6da84fe5ed2896e83767782f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99ae7c9259c27e9cd74e0b6c1b471ad9"><td class="memItemLeft" align="right" valign="top"><a id="a99ae7c9259c27e9cd74e0b6c1b471ad9"></a>
-const double&#160;</td><td class="memItemRight" valign="bottom"><b>ENEMY_SPAWN_DELAY</b> = 3</td></tr>
-<tr class="separator:a99ae7c9259c27e9cd74e0b6c1b471ad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66c173677d7d1f157877f0d273050c40"><td class="memItemLeft" align="right" valign="top"><a id="a66c173677d7d1f157877f0d273050c40"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>_timeBetweenSpawns</b></td></tr>
-<tr class="separator:a66c173677d7d1f157877f0d273050c40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64e8ff5b6342971e836389ce80bfd247"><td class="memItemLeft" align="right" valign="top"><a id="a64e8ff5b6342971e836389ce80bfd247"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>enemyCount</b> = 0</td></tr>
-<tr class="separator:a64e8ff5b6342971e836389ce80bfd247"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b2fdb5b40b75f719838da0386861da5"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d01/class_enemy_controller.html#a2b2fdb5b40b75f719838da0386861da5">numberOfEnemiesKilled</a></td></tr>
+<tr class="separator:a2b2fdb5b40b75f719838da0386861da5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca04264b909526dadc67a41f8c826aee"><td class="memItemLeft" align="right" valign="top">const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d01/class_enemy_controller.html#aca04264b909526dadc67a41f8c826aee">MAX_NUMBER_OF_ENEMIES</a></td></tr>
+<tr class="separator:aca04264b909526dadc67a41f8c826aee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6136b2e8750227e8adf729c9de5232b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/dfa/class_delay_component.html">DelayComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d01/class_enemy_controller.html#af6136b2e8750227e8adf729c9de5232b">_enemySpawnDelay</a></td></tr>
+<tr class="separator:af6136b2e8750227e8adf729c9de5232b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a673e9320e737999189b943216f6d379b"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d01/class_enemy_controller.html#a673e9320e737999189b943216f6d379b">enemyCount</a></td></tr>
+<tr class="separator:a673e9320e737999189b943216f6d379b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_class_game_object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_game_object')"><img src="../../closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a></td></tr>
 <tr class="memitem:ac52291835ad2f3f36363589af0d3ae84 inherit pro_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#ac52291835ad2f3f36363589af0d3ae84">FindGameObjectByType</a> (GameObjectType searchType)</td></tr>
+<tr class="memdesc:ac52291835ad2f3f36363589af0d3ae84 inherit pro_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches the list of available GameObjects from the <a class="el" href="../../d6/db5/class_scene.html" title="Scene is used to store and operate on the various gameobjects that define the functionality of the cu...">Scene</a> object and returns the first object that matches the specifc GameObjectType.  <a href="../../d0/dd1/class_game_object.html#ac52291835ad2f3f36363589af0d3ae84">More...</a><br /></td></tr>
 <tr class="separator:ac52291835ad2f3f36363589af0d3ae84 inherit pro_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf1959fad10ea04673a182029f1f81b9 inherit pro_methods_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="abf1959fad10ea04673a182029f1f81b9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#abf1959fad10ea04673a182029f1f81b9">Destroy</a> ()</td></tr>
+<tr class="memdesc:abf1959fad10ea04673a182029f1f81b9 inherit pro_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the current <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a> from the <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a> list stored within the current scene. Ensures that the object does not get updated or displayed by the Presentation layer, will be removed from memory once the remaining pointers go out of scope. <br /></td></tr>
+<tr class="separator:abf1959fad10ea04673a182029f1f81b9 inherit pro_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_game_object"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_game_object')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a></td></tr>
-<tr class="memitem:a9b76f90eef67b329538d15b4eeed67a1 inherit pro_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="a9b76f90eef67b329538d15b4eeed67a1"></a>
-<a class="el" href="../../d5/dae/structxy_vector.html">xyVector</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_scale</b></td></tr>
+<tr class="memitem:a9b76f90eef67b329538d15b4eeed67a1 inherit pro_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/dae/structxy_vector.html">xyVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#a9b76f90eef67b329538d15b4eeed67a1">_scale</a></td></tr>
 <tr class="separator:a9b76f90eef67b329538d15b4eeed67a1 inherit pro_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8cae1a41ad1443d085c397b5e6d5609 inherit pro_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="ab8cae1a41ad1443d085c397b5e6d5609"></a>
-std::shared_ptr&lt; <a class="el" href="../../d6/db5/class_scene.html">Scene</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_scene</b></td></tr>
+<tr class="memitem:ab8cae1a41ad1443d085c397b5e6d5609 inherit pro_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="../../d6/db5/class_scene.html">Scene</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#ab8cae1a41ad1443d085c397b5e6d5609">_scene</a></td></tr>
 <tr class="separator:ab8cae1a41ad1443d085c397b5e6d5609 inherit pro_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebfec45400aff20c8eab3fbf00be0aea inherit pro_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="aebfec45400aff20c8eab3fbf00be0aea"></a>
-GameObjectType&#160;</td><td class="memItemRight" valign="bottom"><b>_type</b></td></tr>
+<tr class="memitem:aebfec45400aff20c8eab3fbf00be0aea inherit pro_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top">GameObjectType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#aebfec45400aff20c8eab3fbf00be0aea">_type</a></td></tr>
 <tr class="separator:aebfec45400aff20c8eab3fbf00be0aea inherit pro_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afcd024cb6bf627118f952122861744b3 inherit pro_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="afcd024cb6bf627118f952122861744b3"></a>
-<a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_position</b></td></tr>
-<tr class="separator:afcd024cb6bf627118f952122861744b3 inherit pro_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef11019578aad93f96240b79a1141a07 inherit pro_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="aef11019578aad93f96240b79a1141a07"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>_active</b> = true</td></tr>
+<tr class="memitem:af86156ef21da475d68de98761cf75512 inherit pro_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#af86156ef21da475d68de98761cf75512">_position</a></td></tr>
+<tr class="separator:af86156ef21da475d68de98761cf75512 inherit pro_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07c043ba60b622f256ed18dfb46c0410 inherit pro_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d83/class_graphic_object.html">GraphicObject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#a07c043ba60b622f256ed18dfb46c0410">_graphicObject</a></td></tr>
+<tr class="separator:a07c043ba60b622f256ed18dfb46c0410 inherit pro_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef11019578aad93f96240b79a1141a07 inherit pro_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#aef11019578aad93f96240b79a1141a07">_active</a> = true</td></tr>
 <tr class="separator:aef11019578aad93f96240b79a1141a07 inherit pro_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>needs copy constructor and assignment opperator </p>
-<p>loading the next scene needs to be removed from this object and placed into a "SceneController" which is responsible for the scene state, including win/lose condition checks as well as information about the state of the game, score graphics display etc </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ab5298e79a0bf598ed8684efb8a6a3927"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab5298e79a0bf598ed8684efb8a6a3927">&#9670;&nbsp;</a></span>SpawnEnemy()</h2>
+<div class="textblock"><p><a class="el" href="../../dd/d7a/class_enemy.html" title="The basic Enemy Object representation. ">Enemy</a> controller is responsible for spawning and monitoring new enemy objects. </p>
+<p>The number of enemies spawned and destroyed is moitored. When an enemy goes out of bounds it is destroyed and created a new. The enemy objects have access to the <a class="el" href="../../dc/d01/class_enemy_controller.html" title="Enemy controller is responsible for spawning and monitoring new enemy objects. ">EnemyController</a> to communicate with it when they are destroyed by the player and when they leave the bounds of the screen. If all the enemies have been destroyed the <a class="el" href="../../dc/d01/class_enemy_controller.html" title="Enemy controller is responsible for spawning and monitoring new enemy objects. ">EnemyController</a> changes scenes to the WinScreen </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a3364fe98342c659a62633e9e003ef0f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3364fe98342c659a62633e9e003ef0f6">&#9670;&nbsp;</a></span>EnemyController()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">EnemyController::EnemyController </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>max_enemies</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>enemySpawnDelay</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs an <a class="el" href="../../dc/d01/class_enemy_controller.html" title="Enemy controller is responsible for spawning and monitoring new enemy objects. ">EnemyController</a> Object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">max_enemies</td><td>The maximum number of enemies that the <a class="el" href="../../dc/d01/class_enemy_controller.html" title="Enemy controller is responsible for spawning and monitoring new enemy objects. ">EnemyController</a> will create </td></tr>
+    <tr><td class="paramname">enemySpawnDelay</td><td>The time delay between spawning an enemy object </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a182dba707716f8079bb6e67e8c5ed4ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a182dba707716f8079bb6e67e8c5ed4ad">&#9670;&nbsp;</a></span>EnemyOutofBounds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EnemyController::EnemyOutofBounds </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Called by the EnemyObject to inform the <a class="el" href="../../dc/d01/class_enemy_controller.html" title="Enemy controller is responsible for spawning and monitoring new enemy objects. ">EnemyController</a> that it has been destroyed by the moving out of bounds. </p>
+<p>spawns a new enemy without checking the delay as the enemy has already been spawned </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="af6136b2e8750227e8adf729c9de5232b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6136b2e8750227e8adf729c9de5232b">&#9670;&nbsp;</a></span>_enemySpawnDelay</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -206,10 +263,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_active</b> = true</t
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void EnemyController::SpawnEnemy </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname"><a class="el" href="../../d7/dfa/class_delay_component.html">DelayComponent</a> EnemyController::_enemySpawnDelay</td>
         </tr>
       </table>
   </td>
@@ -218,12 +272,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_active</b> = true</t
   </tr>
 </table>
 </div><div class="memdoc">
-<p>needs to be updated to use _scene variable from <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a> </p>
+<p>The delay component used to track the delay between enemy spawns </p>
 
 </div>
 </div>
-<a id="a84eabc12a38617b5ff05c6e896e97531"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a84eabc12a38617b5ff05c6e896e97531">&#9670;&nbsp;</a></span>SpawnEnemyCountDown()</h2>
+<a id="a673e9320e737999189b943216f6d379b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a673e9320e737999189b943216f6d379b">&#9670;&nbsp;</a></span>enemyCount</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -232,10 +286,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_active</b> = true</t
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void EnemyController::SpawnEnemyCountDown </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">unsigned int EnemyController::enemyCount</td>
         </tr>
       </table>
   </td>
@@ -244,9 +295,53 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_active</b> = true</t
   </tr>
 </table>
 </div><div class="memdoc">
+<p>The current number of enemies that have been spawned </p>
 
-<p>Delay code needs to be replaced with a delaycomponent. </p>
-<p>needs to be replaced with delay functions </p>
+</div>
+</div>
+<a id="aca04264b909526dadc67a41f8c826aee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca04264b909526dadc67a41f8c826aee">&#9670;&nbsp;</a></span>MAX_NUMBER_OF_ENEMIES</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const unsigned int EnemyController::MAX_NUMBER_OF_ENEMIES</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The maximum number of enemies that the <a class="el" href="../../dc/d01/class_enemy_controller.html" title="Enemy controller is responsible for spawning and monitoring new enemy objects. ">EnemyController</a> can create </p>
+
+</div>
+</div>
+<a id="a2b2fdb5b40b75f719838da0386861da5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b2fdb5b40b75f719838da0386861da5">&#9670;&nbsp;</a></span>numberOfEnemiesKilled</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int EnemyController::numberOfEnemiesKilled</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Tracks the number of enemies that the player has destroyed </p>
 
 </div>
 </div>

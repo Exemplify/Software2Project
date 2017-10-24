@@ -18,8 +18,17 @@ using std::string;
 class GraphicObject
 {
 public:
+	/**
+	 * @brief Default constructor - creates a NullGraphic object 
+	 */
 	GraphicObject();
-	GraphicObject& operator=(const GraphicObject& rhs);
+	
+	/**
+	* @brief Standard Constructor, creates a Graphic Object with the client specified parameters
+	* @param textureLocation The texture location for the image that the object uses
+	* @param graphicName The name of that corresponds to objects that use the same image
+	* @details Checks if the reserved graphicName "Null" is used, throws GraphicNameReservedforNullGraphic if Null is used
+	*/
 	GraphicObject(string textureLocation, string graphicName);
 	
 	/**
@@ -32,7 +41,9 @@ public:
 	 * @return Returns a constant string that represents the location of the image file that is being used
 	 */
 	const string& getTextureLocation() const {return _textureLocation;}
-	const static GraphicObject NullGraphic;
+
+	const static GraphicObject NullGraphic; /**<Represents the Null object for the GraphicObject class, consists of an image with a single transparent pixel and a name of Null*/
+	
 	virtual ~GraphicObject() = default;
 
 protected:

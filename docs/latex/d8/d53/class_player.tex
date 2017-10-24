@@ -2,7 +2,7 @@
 \label{class_player}\index{Player@{Player}}
 
 
-\hyperlink{class_character}{Character} rework required here as well.  
+\hyperlink{class_player}{Player} is used to contain the responsibilities of the object that the user controls.  
 
 
 
@@ -18,85 +18,104 @@ Inheritance diagram for Player\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}\label{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}} 
-\hyperlink{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}{Player} ()
-\begin{DoxyCompactList}\small\item\em Redundant constructors need to be reworked. \end{DoxyCompactList}\item 
-\hyperlink{class_player_afb985ed4c767e1ad824655b9f5f9d597}{Player} (\hyperlink{class_vector2_d}{Vector2D}$<$ double $>$ \&start\+Position, \hyperlink{class_character}{Character} player\+Stats)
-\begin{DoxyCompactList}\small\item\em \hyperlink{class_player}{Player} constructor needs to be reworked too much database implementation is used. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_player_a066cb6500937804121fd4ceb15595b3f}\label{class_player_a066cb6500937804121fd4ceb15595b3f}} 
-{\bfseries Player} (\hyperlink{class_vector2_d}{Vector2D}$<$ double $>$ \&start\+Position, \hyperlink{class_character}{Character} player\+Stats, std\+::shared\+\_\+ptr$<$ \hyperlink{class_graphic_object}{Graphic\+Object} $>$ bullet\+Graphic)
-\item 
-\mbox{\Hypertarget{class_player_ad5023c3701c11222e09906b41c604135}\label{class_player_ad5023c3701c11222e09906b41c604135}} 
-virtual \hyperlink{class_player}{Player} $\ast$ \hyperlink{class_player_ad5023c3701c11222e09906b41c604135}{Clone} () override
-\begin{DoxyCompactList}\small\item\em Clone still in development. \end{DoxyCompactList}\item 
+\hyperlink{class_player_a65468a4fb563e8df6f2d1ae4fc341bc9}{Player} (const \hyperlink{class_physics_object}{Physics\+Object} \&physics\+Object, const std\+::shared\+\_\+ptr$<$ \hyperlink{class_movable_interface}{Movable\+Interface} $>$ \&move, const std\+::shared\+\_\+ptr$<$ \hyperlink{class_shoot_interface}{Shoot\+Interface} $>$ \&shoot, const double \&shoot\+Delay)
+\begin{DoxyCompactList}\small\item\em Constructs the player used for the game with the corresponding parameters. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_player_a5e17be3418fa0ac0192c05efaf3dc8bd}\label{class_player_a5e17be3418fa0ac0192c05efaf3dc8bd}} 
 void \hyperlink{class_player_a5e17be3418fa0ac0192c05efaf3dc8bd}{Update} () override
-\begin{DoxyCompactList}\small\item\em could aslo be used as a friendship with scene \end{DoxyCompactList}\item 
-virtual void \hyperlink{class_player_a965e7e8baf9b270e1b22784b890bc74d}{collision\+Action} (Game\+Object\+Type object\+Type) override
-\item 
-\mbox{\Hypertarget{class_player_a0bee9292374b568f74c2f9240fba0d36}\label{class_player_a0bee9292374b568f74c2f9240fba0d36}} 
-const std\+::shared\+\_\+ptr$<$ \hyperlink{class_graphic_object}{Graphic\+Object} $>$ {\bfseries get\+Graphic\+Object} () override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Checks for input from the user to determine the players appropriate response. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_player_a1089079d7149a7fce6226935a6ce2f9c}{collision\+Action} (const Game\+Object\+Type \&object\+Type) override
+\begin{DoxyCompactList}\small\item\em Checks if the \hyperlink{class_player}{Player} has collided with the \hyperlink{class_enemy}{Enemy} or the \hyperlink{class_enemy_projectile}{Enemy\+Projectile}, then responds accordingly. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_player_ae02ee46d8c20dd0697b975f935b09839}\label{class_player_ae02ee46d8c20dd0697b975f935b09839}} 
-void \hyperlink{class_player_ae02ee46d8c20dd0697b975f935b09839}{move} ()
-\begin{DoxyCompactList}\small\item\em needs to be put into a movement interface \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_player_a54bee4abe93eea15c48fdbd85e4fdbd5}\label{class_player_a54bee4abe93eea15c48fdbd85e4fdbd5}} 
 void \hyperlink{class_player_a54bee4abe93eea15c48fdbd85e4fdbd5}{Shoot\+Conditional\+Check} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Checks if the conditions for shooting have been met ie. The delay is finished and the user has pressed the correct button. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_player_ada278ae5d697b54e4f06129235a15abe}\label{class_player_ada278ae5d697b54e4f06129235a15abe}} 
-\hyperlink{class_character}{Character} \hyperlink{class_player_ada278ae5d697b54e4f06129235a15abe}{\+\_\+player\+Stats}
-\begin{DoxyCompactList}\small\item\em character needs to be adjusted and the additional components pushed into it \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_player_a39dd8190de0f476b7e7f65e4e7b0c464}\label{class_player_a39dd8190de0f476b7e7f65e4e7b0c464}} 
-std\+::shared\+\_\+ptr$<$ \hyperlink{class_graphic_object}{Graphic\+Object} $>$ {\bfseries \+\_\+graphic\+Object}
+\hyperlink{class_delay_component}{Delay\+Component} \hyperlink{class_player_a6d672baf3630a81a32a8b9565129f559}{\+\_\+shoot\+Delay}
 \item 
-\mbox{\Hypertarget{class_player_a6d672baf3630a81a32a8b9565129f559}\label{class_player_a6d672baf3630a81a32a8b9565129f559}} 
-\hyperlink{class_delay_component}{Delay\+Component} {\bfseries \+\_\+shoot\+Delay}
+std\+::shared\+\_\+ptr$<$ \hyperlink{class_shoot_interface}{Shoot\+Interface} $>$ \hyperlink{class_player_af8bc99499c9a085235de04e04e4b7689}{\+\_\+shoot\+Comp}
 \item 
-\mbox{\Hypertarget{class_player_a042205598416a7090d81d60b95f4ceec}\label{class_player_a042205598416a7090d81d60b95f4ceec}} 
-\hyperlink{class_shoot_component}{Shoot\+Component} {\bfseries \+\_\+shoot\+Comp}
+std\+::shared\+\_\+ptr$<$ \hyperlink{class_movable_interface}{Movable\+Interface} $>$ \hyperlink{class_player_a6823a96878a4eadeb1ee6e6a31381ccd}{\+\_\+move\+Comp}
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
-\hyperlink{class_character}{Character} rework required here as well. 
+\hyperlink{class_player}{Player} is used to contain the responsibilities of the object that the user controls. 
+
+\hyperlink{class_player}{Player} Description
+
+The \hyperlink{class_player}{Player} is required to respond to various inputs and events from the user. 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_player_afb985ed4c767e1ad824655b9f5f9d597}\label{class_player_afb985ed4c767e1ad824655b9f5f9d597}} 
+\mbox{\Hypertarget{class_player_a65468a4fb563e8df6f2d1ae4fc341bc9}\label{class_player_a65468a4fb563e8df6f2d1ae4fc341bc9}} 
 \index{Player@{Player}!Player@{Player}}
 \index{Player@{Player}!Player@{Player}}
 \subsubsection{\texorpdfstring{Player()}{Player()}}
-{\footnotesize\ttfamily Player\+::\+Player (\begin{DoxyParamCaption}\item[{\hyperlink{class_vector2_d}{Vector2D}$<$ double $>$ \&}]{start\+Position,  }\item[{\hyperlink{class_character}{Character}}]{player\+Stats }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Player\+::\+Player (\begin{DoxyParamCaption}\item[{const \hyperlink{class_physics_object}{Physics\+Object} \&}]{physics\+Object,  }\item[{const std\+::shared\+\_\+ptr$<$ \hyperlink{class_movable_interface}{Movable\+Interface} $>$ \&}]{move,  }\item[{const std\+::shared\+\_\+ptr$<$ \hyperlink{class_shoot_interface}{Shoot\+Interface} $>$ \&}]{shoot,  }\item[{const double \&}]{shoot\+Delay }\end{DoxyParamCaption})}
 
 
 
-\hyperlink{class_player}{Player} constructor needs to be reworked too much database implementation is used. 
+Constructs the player used for the game with the corresponding parameters. 
 
-Needs to be stored in a database 
+
+\begin{DoxyParams}{Parameters}
+{\em physics\+Object} & The properties of the physics object specified are copied to the player \\
+\hline
+{\em move} & A \hyperlink{class_movable_interface}{Movable\+Interface} defined for the player\textquotesingle{}s specific movement style \\
+\hline
+{\em shoot} & The \hyperlink{class_shoot_interface}{Shoot\+Interface} defined for the player\textquotesingle{}s specific shoot style \\
+\hline
+{\em shoot\+Delay} & The amount of time required before the player can shoot again after having shot \\
+\hline
+\end{DoxyParams}
+
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_player_a965e7e8baf9b270e1b22784b890bc74d}\label{class_player_a965e7e8baf9b270e1b22784b890bc74d}} 
+\mbox{\Hypertarget{class_player_a1089079d7149a7fce6226935a6ce2f9c}\label{class_player_a1089079d7149a7fce6226935a6ce2f9c}} 
 \index{Player@{Player}!collision\+Action@{collision\+Action}}
 \index{collision\+Action@{collision\+Action}!Player@{Player}}
 \subsubsection{\texorpdfstring{collision\+Action()}{collisionAction()}}
-{\footnotesize\ttfamily void Player\+::collision\+Action (\begin{DoxyParamCaption}\item[{Game\+Object\+Type}]{object\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Player\+::collision\+Action (\begin{DoxyParamCaption}\item[{const Game\+Object\+Type \&}]{object\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
-Magic Number needs to be removed (can be replaced by an enumerator class or static variable) 
 
-Implements \hyperlink{class_physics_object}{Physics\+Object}.
 
-\mbox{\Hypertarget{class_player_a54bee4abe93eea15c48fdbd85e4fdbd5}\label{class_player_a54bee4abe93eea15c48fdbd85e4fdbd5}} 
-\index{Player@{Player}!Shoot\+Conditional\+Check@{Shoot\+Conditional\+Check}}
-\index{Shoot\+Conditional\+Check@{Shoot\+Conditional\+Check}!Player@{Player}}
-\subsubsection{\texorpdfstring{Shoot\+Conditional\+Check()}{ShootConditionalCheck()}}
-{\footnotesize\ttfamily void Player\+::\+Shoot\+Conditional\+Check (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+Checks if the \hyperlink{class_player}{Player} has collided with the \hyperlink{class_enemy}{Enemy} or the \hyperlink{class_enemy_projectile}{Enemy\+Projectile}, then responds accordingly. 
 
-Shoot Delay reduce\+Time must be removed and incorportaed into Delay\+Finished 
+
+\begin{DoxyParams}{Parameters}
+{\em object\+Type} & The Game\+Object\+Type that the player has collided with \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_physics_object_a16163f4e5bf781b3814d024c9f44a276}{Physics\+Object}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_player_a6823a96878a4eadeb1ee6e6a31381ccd}\label{class_player_a6823a96878a4eadeb1ee6e6a31381ccd}} 
+\index{Player@{Player}!\+\_\+move\+Comp@{\+\_\+move\+Comp}}
+\index{\+\_\+move\+Comp@{\+\_\+move\+Comp}!Player@{Player}}
+\subsubsection{\texorpdfstring{\+\_\+move\+Comp}{\_moveComp}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\hyperlink{class_movable_interface}{Movable\+Interface}$>$ Player\+::\+\_\+move\+Comp\hspace{0.3cm}{\ttfamily [private]}}
+
+The \hyperlink{class_movable_interface}{Movable\+Interface} that the player uses \mbox{\Hypertarget{class_player_af8bc99499c9a085235de04e04e4b7689}\label{class_player_af8bc99499c9a085235de04e04e4b7689}} 
+\index{Player@{Player}!\+\_\+shoot\+Comp@{\+\_\+shoot\+Comp}}
+\index{\+\_\+shoot\+Comp@{\+\_\+shoot\+Comp}!Player@{Player}}
+\subsubsection{\texorpdfstring{\+\_\+shoot\+Comp}{\_shootComp}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\hyperlink{class_shoot_interface}{Shoot\+Interface}$>$ Player\+::\+\_\+shoot\+Comp\hspace{0.3cm}{\ttfamily [private]}}
+
+The \hyperlink{class_shoot_interface}{Shoot\+Interface} that the player uses \mbox{\Hypertarget{class_player_a6d672baf3630a81a32a8b9565129f559}\label{class_player_a6d672baf3630a81a32a8b9565129f559}} 
+\index{Player@{Player}!\+\_\+shoot\+Delay@{\+\_\+shoot\+Delay}}
+\index{\+\_\+shoot\+Delay@{\+\_\+shoot\+Delay}!Player@{Player}}
+\subsubsection{\texorpdfstring{\+\_\+shoot\+Delay}{\_shootDelay}}
+{\footnotesize\ttfamily \hyperlink{class_delay_component}{Delay\+Component} Player\+::\+\_\+shoot\+Delay\hspace{0.3cm}{\ttfamily [private]}}
+
+The delay between player shots 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

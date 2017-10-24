@@ -23,7 +23,7 @@ Vector2D::Vector2D(double val1, double val2, const VectorType& vectype)
         xVal();
         yVal();
         theta();
-    }
+    } 
 }
 
 // Vector Constructor for xyVector

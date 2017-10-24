@@ -1,5 +1,14 @@
 \hypertarget{class_scene}{}\section{Scene Class Reference}
 \label{class_scene}\index{Scene@{Scene}}
+
+
+\hyperlink{class_scene}{Scene} is used to store and operate on the various gameobjects that define the functionality of the current scene.  
+
+
+
+
+{\ttfamily \#include $<$Scene.\+h$>$}
+
 Inheritance diagram for Scene\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,53 +18,92 @@ Inheritance diagram for Scene\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_scene_a0caa1ccf717fe21059f20b0c4a57cde6}\label{class_scene_a0caa1ccf717fe21059f20b0c4a57cde6}} 
-\hyperlink{class_scene_a0caa1ccf717fe21059f20b0c4a57cde6}{Scene} (const \hyperlink{class_scene}{Scene} \&rhs)
-\begin{DoxyCompactList}\small\item\em Currently needs to be fixed. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_scene_a1d902efeacc113ceb2dd79a976b04a77}\label{class_scene_a1d902efeacc113ceb2dd79a976b04a77}} 
-void {\bfseries Scene\+Update} ()
-\item 
+void \hyperlink{class_scene_a1d902efeacc113ceb2dd79a976b04a77}{Scene\+Update} ()
+\begin{DoxyCompactList}\small\item\em Runs the Update function of all of the Game\+Objects stored within \hyperlink{class_scene}{Scene}. \end{DoxyCompactList}\item 
 void \hyperlink{class_scene_a3dd730cba4a22bf75e54c4b644c26976}{Instantiate} (shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$ game\+Obj)
-\item 
-\mbox{\Hypertarget{class_scene_ae418f788bfbf2551d89e907d1d4cf2f6}\label{class_scene_ae418f788bfbf2551d89e907d1d4cf2f6}} 
-void {\bfseries Destroy\+Game\+Object} (game\+Obj\+\_\+ptr game\+Object)
-\item 
-\mbox{\Hypertarget{class_scene_a0696711d2b1452f3d6f42f7a92f4218d}\label{class_scene_a0696711d2b1452f3d6f42f7a92f4218d}} 
-std\+::vector$<$ game\+Obj\+\_\+ptr $>$ {\bfseries get\+Game\+Object\+List} () const
-\item 
-\mbox{\Hypertarget{class_scene_a64a47e6503f634ea2b76fa2078538716}\label{class_scene_a64a47e6503f634ea2b76fa2078538716}} 
-\hyperlink{class_scene}{Scene} \& {\bfseries operator=} (const \hyperlink{class_scene}{Scene} \&rhs)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Adds the specified \hyperlink{class_game_object}{Game\+Object} pointer to the scene. \end{DoxyCompactList}\item 
+void \hyperlink{class_scene_a2e47a6610a3bb6e85373f5b297645754}{Destroy\+Game\+Object} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$ game\+Object)
+\begin{DoxyCompactList}\small\item\em Removes the current Instance of the \hyperlink{class_game_object}{Game\+Object} from the \hyperlink{class_scene}{Scene}. \end{DoxyCompactList}\item 
+std\+::list$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$ $>$ \hyperlink{class_scene_a717b5fcf248038c51b205b022301318f}{get\+Game\+Object\+List} () const
+\begin{DoxyCompactList}\small\item\em Returns the List of Game\+Objects stored to provide the collision\+Detection and \hyperlink{class_display_manager}{Display\+Manager} with neccessary information. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_scene_a29183cf37f5227ea9a82d2a15c42336c}\label{class_scene_a29183cf37f5227ea9a82d2a15c42336c}} 
-std\+::mutex {\bfseries \+\_\+game\+Object\+\_\+list\+\_\+mutex}
+std\+::mutex \hyperlink{class_scene_a29183cf37f5227ea9a82d2a15c42336c}{\+\_\+game\+Object\+\_\+list\+\_\+mutex}
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-std\+::vector$<$ game\+Obj\+\_\+ptr $>$ \hyperlink{class_scene_af1956432917d14b0a0b26103dbcb5bcd}{\+\_\+game\+Object\+\_\+list}
+std\+::list$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$ $>$ \hyperlink{class_scene_a3ce74c2bdeb1bca46221645b309aa8cf}{\+\_\+game\+Object\+\_\+list}
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+\hyperlink{class_scene}{Scene} is used to store and operate on the various gameobjects that define the functionality of the current scene. 
+
+A scene object is used to contain each of the gameobjects that will be required for the current scenes functionallity. Each scene represents a different functionallity of the game. This includes the a splash Screen and the main scene. The \hyperlink{class_scene}{Scene} is responsible for running the Update on each gameobject that is stored within it. The active scene passes information about the current state of the game to the Collision Detection and Display Manager Classes. 
+
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_scene_a2e47a6610a3bb6e85373f5b297645754}\label{class_scene_a2e47a6610a3bb6e85373f5b297645754}} 
+\index{Scene@{Scene}!Destroy\+Game\+Object@{Destroy\+Game\+Object}}
+\index{Destroy\+Game\+Object@{Destroy\+Game\+Object}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{Destroy\+Game\+Object()}{DestroyGameObject()}}
+{\footnotesize\ttfamily void Scene\+::\+Destroy\+Game\+Object (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$}]{game\+Object }\end{DoxyParamCaption})}
+
+
+
+Removes the current Instance of the \hyperlink{class_game_object}{Game\+Object} from the \hyperlink{class_scene}{Scene}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\+Object} & The \hyperlink{class_game_object}{Game\+Object} instance that is removed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_scene_a717b5fcf248038c51b205b022301318f}\label{class_scene_a717b5fcf248038c51b205b022301318f}} 
+\index{Scene@{Scene}!get\+Game\+Object\+List@{get\+Game\+Object\+List}}
+\index{get\+Game\+Object\+List@{get\+Game\+Object\+List}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{get\+Game\+Object\+List()}{getGameObjectList()}}
+{\footnotesize\ttfamily std\+::list$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$ $>$ Scene\+::get\+Game\+Object\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the List of Game\+Objects stored to provide the collision\+Detection and \hyperlink{class_display_manager}{Display\+Manager} with neccessary information. 
+
+\begin{DoxyReturn}{Returns}
+The List of Game\+Objects Stored within the \hyperlink{class_scene}{Scene} Object 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_scene_a3dd730cba4a22bf75e54c4b644c26976}\label{class_scene_a3dd730cba4a22bf75e54c4b644c26976}} 
 \index{Scene@{Scene}!Instantiate@{Instantiate}}
 \index{Instantiate@{Instantiate}!Scene@{Scene}}
 \subsubsection{\texorpdfstring{Instantiate()}{Instantiate()}}
 {\footnotesize\ttfamily void Scene\+::\+Instantiate (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$}]{game\+Obj }\end{DoxyParamCaption})}
 
-Seems redundant to do duplicate the game object pointer 
+
+
+Adds the specified \hyperlink{class_game_object}{Game\+Object} pointer to the scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\+Obj} & The specific \hyperlink{class_game_object}{Game\+Object} that is added to the \hyperlink{class_scene}{Scene} \\
+\hline
+\end{DoxyParams}
+
 
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{class_scene_af1956432917d14b0a0b26103dbcb5bcd}\label{class_scene_af1956432917d14b0a0b26103dbcb5bcd}} 
+\mbox{\Hypertarget{class_scene_a3ce74c2bdeb1bca46221645b309aa8cf}\label{class_scene_a3ce74c2bdeb1bca46221645b309aa8cf}} 
 \index{Scene@{Scene}!\+\_\+game\+Object\+\_\+list@{\+\_\+game\+Object\+\_\+list}}
 \index{\+\_\+game\+Object\+\_\+list@{\+\_\+game\+Object\+\_\+list}!Scene@{Scene}}
 \subsubsection{\texorpdfstring{\+\_\+game\+Object\+\_\+list}{\_gameObject\_list}}
-{\footnotesize\ttfamily std\+::vector$<$game\+Obj\+\_\+ptr$>$ Scene\+::\+\_\+game\+Object\+\_\+list\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily std\+::list$<$std\+::shared\+\_\+ptr$<$\hyperlink{class_game_object}{Game\+Object}$>$ $>$ Scene\+::\+\_\+game\+Object\+\_\+list\hspace{0.3cm}{\ttfamily [private]}}
 
-would be better to use a doubly linked list instead of a vector since it has a better time effeciency when it deals with insertion and deletion of elements 
+A doubly linked list used to store the various game objects of the \mbox{\Hypertarget{class_scene_a29183cf37f5227ea9a82d2a15c42336c}\label{class_scene_a29183cf37f5227ea9a82d2a15c42336c}} 
+\index{Scene@{Scene}!\+\_\+game\+Object\+\_\+list\+\_\+mutex@{\+\_\+game\+Object\+\_\+list\+\_\+mutex}}
+\index{\+\_\+game\+Object\+\_\+list\+\_\+mutex@{\+\_\+game\+Object\+\_\+list\+\_\+mutex}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{\+\_\+game\+Object\+\_\+list\+\_\+mutex}{\_gameObject\_list\_mutex}}
+{\footnotesize\ttfamily std\+::mutex Scene\+::\+\_\+game\+Object\+\_\+list\+\_\+mutex}
+
+The mutex object used to enusre that the \hyperlink{class_game_object}{Game\+Object} list is not accessed by the different threads at the same time 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

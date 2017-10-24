@@ -1,0 +1,83 @@
+\hypertarget{class_player_projectile}{}\section{Player\+Projectile Class Reference}
+\label{class_player_projectile}\index{Player\+Projectile@{Player\+Projectile}}
+
+
+Used to represent the \hyperlink{class_player_projectile}{Player\+Projectile} within the game.  
+
+
+
+
+{\ttfamily \#include $<$Player\+Projectile.\+h$>$}
+
+Inheritance diagram for Player\+Projectile\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{d5/df1/class_player_projectile}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_player_projectile_a81e6c16b0d8ce85bad2e8e4b30d2607e}{Player\+Projectile} (const \hyperlink{class_physics_object}{Physics\+Object} \&physics\+Object, const std\+::shared\+\_\+ptr$<$ \hyperlink{class_movable_interface}{Movable\+Interface} $>$ \&move, const \hyperlink{class_boundary}{Boundary} \&destroy\+Bounds)
+\begin{DoxyCompactList}\small\item\em Constructs the \hyperlink{class_player_projectile}{Player\+Projectile} Object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_player_projectile_a05a6c103f9fbae57bfc811e477ab7b5b}\label{class_player_projectile_a05a6c103f9fbae57bfc811e477ab7b5b}} 
+virtual void \hyperlink{class_player_projectile_a05a6c103f9fbae57bfc811e477ab7b5b}{Destroy\+Self} () override
+\begin{DoxyCompactList}\small\item\em Destroyed itself when the object is close to the centre of the screen (inside the \hyperlink{class_boundary}{Boundary} defined) \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_player_projectile_a22fcdd7296d95b97ae60b4d20d8a57bd}{collision\+Action} (const Game\+Object\+Type \&object\+Type) override
+\begin{DoxyCompactList}\small\item\em Destroys itself when the object collides with the various types of enemy objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Used to represent the \hyperlink{class_player_projectile}{Player\+Projectile} within the game. 
+
+The template design pattern is used to create the \hyperlink{class_player_projectile}{Player\+Projectile} from the base \hyperlink{class_projectile}{Projectile} object so that only the most necessary functions are overriden to vary the \hyperlink{class_player_projectile}{Player\+Projectile} and the \hyperlink{class_enemy_projectile}{Enemy\+Projectile} 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_player_projectile_a81e6c16b0d8ce85bad2e8e4b30d2607e}\label{class_player_projectile_a81e6c16b0d8ce85bad2e8e4b30d2607e}} 
+\index{Player\+Projectile@{Player\+Projectile}!Player\+Projectile@{Player\+Projectile}}
+\index{Player\+Projectile@{Player\+Projectile}!Player\+Projectile@{Player\+Projectile}}
+\subsubsection{\texorpdfstring{Player\+Projectile()}{PlayerProjectile()}}
+{\footnotesize\ttfamily Player\+Projectile\+::\+Player\+Projectile (\begin{DoxyParamCaption}\item[{const \hyperlink{class_physics_object}{Physics\+Object} \&}]{physics\+Object,  }\item[{const std\+::shared\+\_\+ptr$<$ \hyperlink{class_movable_interface}{Movable\+Interface} $>$ \&}]{move,  }\item[{const \hyperlink{class_boundary}{Boundary} \&}]{destroy\+Bounds }\end{DoxyParamCaption})}
+
+
+
+Constructs the \hyperlink{class_player_projectile}{Player\+Projectile} Object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em physics\+Object} & Base \hyperlink{class_physics_object}{Physics\+Object} members are copied \\
+\hline
+{\em move} & The \hyperlink{class_movable_interface}{Movable\+Interface} that defined the movement style for the projectile \\
+\hline
+{\em destroy\+Bounds} & The region in which the Porjectile is destroyed when it is inside of it \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_player_projectile_a22fcdd7296d95b97ae60b4d20d8a57bd}\label{class_player_projectile_a22fcdd7296d95b97ae60b4d20d8a57bd}} 
+\index{Player\+Projectile@{Player\+Projectile}!collision\+Action@{collision\+Action}}
+\index{collision\+Action@{collision\+Action}!Player\+Projectile@{Player\+Projectile}}
+\subsubsection{\texorpdfstring{collision\+Action()}{collisionAction()}}
+{\footnotesize\ttfamily void Player\+Projectile\+::collision\+Action (\begin{DoxyParamCaption}\item[{const Game\+Object\+Type \&}]{object\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Destroys itself when the object collides with the various types of enemy objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object\+Type} & The Game\+Object\+Type representing the type of object that was collided with \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_physics_object_a16163f4e5bf781b3814d024c9f44a276}{Physics\+Object}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Player\+Projectile.\+h\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Player\+Projectile.\+cpp\end{DoxyCompactItemize}

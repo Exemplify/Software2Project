@@ -62,54 +62,169 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-static-attribs">Static Private Attributes</a> &#124;
-<a href="#friends">Friends</a> &#124;
 <a href="../../da/de9/class_game_time-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">GameTime Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Determines the time that it takes for a single frame.  
+ <a href="../../d9/db6/class_game_time.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d2/daa/_game_time_8h_source.html">GameTime.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ab3b7fbfbc2a94e223d349b3dd48f76d3"><td class="memItemLeft" align="right" valign="top"><a id="ab3b7fbfbc2a94e223d349b3dd48f76d3"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db6/class_game_time.html#ab3b7fbfbc2a94e223d349b3dd48f76d3">GameTime</a> ()</td></tr>
+<tr class="memdesc:ab3b7fbfbc2a94e223d349b3dd48f76d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the <a class="el" href="../../d9/db6/class_game_time.html" title="Determines the time that it takes for a single frame. ">GameTime</a> object and seeds the random generator. <br /></td></tr>
+<tr class="separator:ab3b7fbfbc2a94e223d349b3dd48f76d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a424d4e2f4745a85897620751ff5153b9"><td class="memItemLeft" align="right" valign="top"><a id="a424d4e2f4745a85897620751ff5153b9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db6/class_game_time.html#a424d4e2f4745a85897620751ff5153b9">TimeFrame</a> ()</td></tr>
+<tr class="memdesc:a424d4e2f4745a85897620751ff5153b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Times the current frame and determines the new delta time. <br /></td></tr>
+<tr class="separator:a424d4e2f4745a85897620751ff5153b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aa5ea84c887116ef68d1331617c5a81c3"><td class="memItemLeft" align="right" valign="top"><a id="aa5ea84c887116ef68d1331617c5a81c3"></a>
-static double&#160;</td><td class="memItemRight" valign="bottom"><b>getDeltaTime</b> ()</td></tr>
+<tr class="memitem:aa5ea84c887116ef68d1331617c5a81c3"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db6/class_game_time.html#aa5ea84c887116ef68d1331617c5a81c3">getDeltaTime</a> ()</td></tr>
+<tr class="memdesc:aa5ea84c887116ef68d1331617c5a81c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the difference in time between the last frame and the current frame.  <a href="#aa5ea84c887116ef68d1331617c5a81c3">More...</a><br /></td></tr>
 <tr class="separator:aa5ea84c887116ef68d1331617c5a81c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:ac8a380f740f5bc39e98fda3e069c0bb3"><td class="memItemLeft" align="right" valign="top"><a id="ac8a380f740f5bc39e98fda3e069c0bb3"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>calcProcessTime</b> ()</td></tr>
+<tr class="memitem:ac8a380f740f5bc39e98fda3e069c0bb3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db6/class_game_time.html#ac8a380f740f5bc39e98fda3e069c0bb3">calcProcessTime</a> ()</td></tr>
+<tr class="memdesc:ac8a380f740f5bc39e98fda3e069c0bb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the amount of time that has passes since the game began running, converts it into a double and returns the value.  <a href="#ac8a380f740f5bc39e98fda3e069c0bb3">More...</a><br /></td></tr>
 <tr class="separator:ac8a380f740f5bc39e98fda3e069c0bb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8575cb09f1e07b90678eedaf92776a97"><td class="memItemLeft" align="right" valign="top"><a id="a8575cb09f1e07b90678eedaf92776a97"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>calcDeltaTime</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db6/class_game_time.html#a8575cb09f1e07b90678eedaf92776a97">calcDeltaTime</a> ()</td></tr>
+<tr class="memdesc:a8575cb09f1e07b90678eedaf92776a97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the time between the current frame and the last frame. <br /></td></tr>
 <tr class="separator:a8575cb09f1e07b90678eedaf92776a97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec3fa5e495f783524701418f5d679071"><td class="memItemLeft" align="right" valign="top"><a id="aec3fa5e495f783524701418f5d679071"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>calcCurrentTime</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db6/class_game_time.html#aec3fa5e495f783524701418f5d679071">calcCurrentTime</a> ()</td></tr>
+<tr class="memdesc:aec3fa5e495f783524701418f5d679071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the time up until the current frame. <br /></td></tr>
 <tr class="separator:aec3fa5e495f783524701418f5d679071"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a424d4e2f4745a85897620751ff5153b9"><td class="memItemLeft" align="right" valign="top"><a id="a424d4e2f4745a85897620751ff5153b9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db6/class_game_time.html#a424d4e2f4745a85897620751ff5153b9">TimeFrame</a> ()</td></tr>
-<tr class="memdesc:a424d4e2f4745a85897620751ff5153b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">should make this a friend method rather than a friend class <br /></td></tr>
-<tr class="separator:a424d4e2f4745a85897620751ff5153b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
-<tr class="memitem:a080d9deb72c675f0d68f9ad72eec66c3"><td class="memItemLeft" align="right" valign="top"><a id="a080d9deb72c675f0d68f9ad72eec66c3"></a>
-static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db6/class_game_time.html#a080d9deb72c675f0d68f9ad72eec66c3">_current_time</a> = 0</td></tr>
-<tr class="memdesc:a080d9deb72c675f0d68f9ad72eec66c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">variables and names need to be changed to make it more understandable <br /></td></tr>
+<tr class="memitem:a080d9deb72c675f0d68f9ad72eec66c3"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db6/class_game_time.html#a080d9deb72c675f0d68f9ad72eec66c3">_current_time</a> = 0</td></tr>
+<tr class="memdesc:a080d9deb72c675f0d68f9ad72eec66c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">variables and names need to be changed to make it more understandable  <a href="#a080d9deb72c675f0d68f9ad72eec66c3">More...</a><br /></td></tr>
 <tr class="separator:a080d9deb72c675f0d68f9ad72eec66c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39c7a52db277a99fd6dfcb457b432d7d"><td class="memItemLeft" align="right" valign="top"><a id="a39c7a52db277a99fd6dfcb457b432d7d"></a>
-static double&#160;</td><td class="memItemRight" valign="bottom"><b>_deltaTime</b> = 1</td></tr>
+<tr class="memitem:a39c7a52db277a99fd6dfcb457b432d7d"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db6/class_game_time.html#a39c7a52db277a99fd6dfcb457b432d7d">_deltaTime</a> = 1</td></tr>
 <tr class="separator:a39c7a52db277a99fd6dfcb457b432d7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
-Friends</h2></td></tr>
-<tr class="memitem:a140a2a29511147897abbb772733f6c2c"><td class="memItemLeft" align="right" valign="top"><a id="a140a2a29511147897abbb772733f6c2c"></a>
-class&#160;</td><td class="memItemRight" valign="bottom"><b>GameManager</b></td></tr>
-<tr class="separator:a140a2a29511147897abbb772733f6c2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Determines the time that it takes for a single frame. </p>
+<p>Used to create smooth interactions between the Game logic and the BackEndSystems </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac8a380f740f5bc39e98fda3e069c0bb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8a380f740f5bc39e98fda3e069c0bb3">&#9670;&nbsp;</a></span>calcProcessTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double GameTime::calcProcessTime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determines the amount of time that has passes since the game began running, converts it into a double and returns the value. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns the amount of time that has passed since the game began </dd></dl>
+
+</div>
+</div>
+<a id="aa5ea84c887116ef68d1331617c5a81c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5ea84c887116ef68d1331617c5a81c3">&#9670;&nbsp;</a></span>getDeltaTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double GameTime::getDeltaTime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the difference in time between the last frame and the current frame. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns the difference in time between the last frame and the current frame </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a080d9deb72c675f0d68f9ad72eec66c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a080d9deb72c675f0d68f9ad72eec66c3">&#9670;&nbsp;</a></span>_current_time</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double GameTime::_current_time = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>variables and names need to be changed to make it more understandable </p>
+<p>current time up till the current frame </p>
+
+</div>
+</div>
+<a id="a39c7a52db277a99fd6dfcb457b432d7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39c7a52db277a99fd6dfcb457b432d7d">&#9670;&nbsp;</a></span>_deltaTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double GameTime::_deltaTime = 1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>change in time between frames </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>D:/Users/Tim-PC/Documents/Software_II/Project/ProjectFiles/game-source-code/BackEndSystems/<a class="el" href="../../d2/daa/_game_time_8h_source.html">GameTime.h</a></li>
 <li>D:/Users/Tim-PC/Documents/Software_II/Project/ProjectFiles/game-source-code/BackEndSystems/GameTime.cpp</li>

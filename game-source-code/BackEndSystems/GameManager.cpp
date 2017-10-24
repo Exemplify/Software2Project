@@ -3,14 +3,10 @@
 #include "CollisionDetection.h"
 #include <mutex>
 
+
+
 std::shared_ptr<Scene> GameManager::activeScene = NULL;
-
-
 bool GameManager::closeWindow = false;
-class SceneDoesntExist{};
-
-
-
 
 void GameManager::GameLoop()
 {
@@ -24,6 +20,9 @@ void GameManager::GameLoop()
 	_displayThread.InitialiseThread();
     CollisionDetection collisionDetection(&_window);
 	collisionDetection.InitializeCollisionThread();
+	
+	//Creates the event manager
+	EventManager eventManager;
 
     // The main game loop
     while (_window.isOpen())
@@ -31,7 +30,7 @@ void GameManager::GameLoop()
 		// Determines the Time Between each frame
 		_gameTime->TimeFrame();
         // check all the window's events that were triggered since the last iteration of the loop
-		_eventManager.EventLoop(_window);
+		eventManager.EventLoop(_window);
 		// Calls the SceneUpdate function to run the game functionality
 		if(activeScene != NULL)
 			activeScene->SceneUpdate();
@@ -74,11 +73,9 @@ void GameManager::LoadScene(unsigned int index)
 }
 
 
-GameManager::GameManager(std::shared_ptr<RepositioryInterface> repository, int startingSceneindex):
+GameManager::GameManager(std::shared_ptr<RepositioryInterface> repository):
 _repository{repository},
 _defaultSetup{repository->getGameScreenSize().at(0),repository->getGameScreenSize().at(1), repository->getGameName()},
 _game_scenes{repository->getGameScenes()} 
-{
-	_scene_index = startingSceneindex;
-}
+{}
 int GameManager::_scene_index = 0;

@@ -9,9 +9,11 @@
 #include "MovableInterface.h"
 #include "EnemyController.h"
 
-/// Needs to be changed into a polymorphic interaction where different characters define different movement types
-/// requires a large amount of redesign for a better implementation
-/// Needs a copy constructor and assignment opperator
+/**
+ * @class Enemy
+ * @brief The basic Enemy Object representation
+ * @details Uses various interface composition objects to vary the behaviour of the Enemy Object
+ */
 class Enemy: public PhysicsObject
 {
 public:
@@ -51,7 +53,6 @@ private:
 	// Private Members 
 	DelayComponent _shootDelay; /**< delay used between each shot per object*/
 	std::shared_ptr<ShootInterface> _enemyShoot; /**<ShootInterface used to specify the specific type of shooting*/
-	// Boundary object used to detect when the object is outside the screen
 	Boundary _screenBounds; /**<Default boundary used to test if the enemy is outside of the screen*/
 	SizeReduction _sizeReduction; /**<SizeReduction component used to scale the enemy as it moves towards or away from the centre of the screen*/
 	std::shared_ptr<MovableInterface> _moveComp; /**<MoveableInterface used to move the enemy in a specific way*/

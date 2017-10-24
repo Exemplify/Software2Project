@@ -1,0 +1,136 @@
+\hypertarget{class_random_enemy_factory}{}\section{Random\+Enemy\+Factory Class Reference}
+\label{class_random_enemy_factory}\index{Random\+Enemy\+Factory@{Random\+Enemy\+Factory}}
+
+
+Used to construct a specific enemy at Random.  
+
+
+
+
+{\ttfamily \#include $<$Random\+Enemy\+Factory.\+h$>$}
+
+Inheritance diagram for Random\+Enemy\+Factory\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{df/def/class_random_enemy_factory}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$ \hyperlink{class_random_enemy_factory_a5099fcf010a5cf2f53fd7c874a1925a9}{get\+Game\+Object} (const std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$ \&database) override
+\begin{DoxyCompactList}\small\item\em Constructs a Random \hyperlink{class_enemy}{Enemy} by using the defined \hyperlink{class_enemy}{Enemy} Factories. \end{DoxyCompactList}\item 
+\hyperlink{struct_game_object_data}{Game\+Object\+Data} \hyperlink{class_random_enemy_factory_a7c007b44a5e5e59fecc0b8cd2a6a9dc3}{get\+Object\+Data} (const std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$ \&database)
+\begin{DoxyCompactList}\small\item\em used to obtain the specific \hyperlink{struct_game_object_data}{Game\+Object\+Data} defined for the current factory \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{class_game_object_factory}{Game\+Object\+Factory} $>$ \hyperlink{class_random_enemy_factory_a8a9643918f3e727aac7e41c6187a9d9a}{get\+Random\+Factory} ()
+\begin{DoxyCompactList}\small\item\em Creates an \hyperlink{class_enemy_factory}{Enemy\+Factory} at Random. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const unsigned int \hyperlink{class_random_enemy_factory_ac912e49add9d56e8b12d3881ce1cc656}{S\+P\+I\+R\+A\+L\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+G\+E\+\_\+\+V\+A\+L\+UE} = 80
+\item 
+const unsigned int \hyperlink{class_random_enemy_factory_ad52b65e560c09a560d7be11c97997f5c}{L\+I\+N\+E\+A\+R\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+G\+E\+\_\+\+V\+A\+L\+UE} = 30
+\item 
+const unsigned int \hyperlink{class_random_enemy_factory_a64c95136e3e30f504755037e3f804372}{P\+A\+R\+A\+B\+O\+L\+I\+C\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+G\+E\+\_\+\+V\+A\+L\+UE} = 0
+\item 
+const unsigned int \hyperlink{class_random_enemy_factory_ac3e384acfa1fa3927d3a3643647072e9}{M\+A\+X\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+GE} = 100
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Used to construct a specific enemy at Random. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_random_enemy_factory_a5099fcf010a5cf2f53fd7c874a1925a9}\label{class_random_enemy_factory_a5099fcf010a5cf2f53fd7c874a1925a9}} 
+\index{Random\+Enemy\+Factory@{Random\+Enemy\+Factory}!get\+Game\+Object@{get\+Game\+Object}}
+\index{get\+Game\+Object@{get\+Game\+Object}!Random\+Enemy\+Factory@{Random\+Enemy\+Factory}}
+\subsubsection{\texorpdfstring{get\+Game\+Object()}{getGameObject()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$ Random\+Enemy\+Factory\+::get\+Game\+Object (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$ \&}]{database }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Constructs a Random \hyperlink{class_enemy}{Enemy} by using the defined \hyperlink{class_enemy}{Enemy} Factories. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em database} & The \hyperlink{class_database_interface}{Database\+Interface} that contains the information about the various Game\+Objects \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns The Random \hyperlink{class_enemy}{Enemy} Constructed 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_game_object_factory_a5b684a6e77fb82c041f1721eb07c553d}{Game\+Object\+Factory}.
+
+\mbox{\Hypertarget{class_random_enemy_factory_a7c007b44a5e5e59fecc0b8cd2a6a9dc3}\label{class_random_enemy_factory_a7c007b44a5e5e59fecc0b8cd2a6a9dc3}} 
+\index{Random\+Enemy\+Factory@{Random\+Enemy\+Factory}!get\+Object\+Data@{get\+Object\+Data}}
+\index{get\+Object\+Data@{get\+Object\+Data}!Random\+Enemy\+Factory@{Random\+Enemy\+Factory}}
+\subsubsection{\texorpdfstring{get\+Object\+Data()}{getObjectData()}}
+{\footnotesize\ttfamily \hyperlink{struct_game_object_data}{Game\+Object\+Data} Random\+Enemy\+Factory\+::get\+Object\+Data (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$ \&}]{database }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+used to obtain the specific \hyperlink{struct_game_object_data}{Game\+Object\+Data} defined for the current factory 
+
+
+\begin{DoxyParams}{Parameters}
+{\em database} & The specific \hyperlink{class_database_interface}{Database\+Interface} that contains the information about the Game\+Objects \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{struct_game_object_data}{Game\+Object\+Data} required for the construction of the object 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_game_object_factory_ae9358fbb3ef2d3b127320341760d3ff9}{Game\+Object\+Factory}.
+
+\mbox{\Hypertarget{class_random_enemy_factory_a8a9643918f3e727aac7e41c6187a9d9a}\label{class_random_enemy_factory_a8a9643918f3e727aac7e41c6187a9d9a}} 
+\index{Random\+Enemy\+Factory@{Random\+Enemy\+Factory}!get\+Random\+Factory@{get\+Random\+Factory}}
+\index{get\+Random\+Factory@{get\+Random\+Factory}!Random\+Enemy\+Factory@{Random\+Enemy\+Factory}}
+\subsubsection{\texorpdfstring{get\+Random\+Factory()}{getRandomFactory()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{class_game_object_factory}{Game\+Object\+Factory} $>$ Random\+Enemy\+Factory\+::get\+Random\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates an \hyperlink{class_enemy_factory}{Enemy\+Factory} at Random. 
+
+\begin{DoxyReturn}{Returns}
+Returns the constructed \hyperlink{class_enemy_factory}{Enemy\+Factory} 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_random_enemy_factory_ad52b65e560c09a560d7be11c97997f5c}\label{class_random_enemy_factory_ad52b65e560c09a560d7be11c97997f5c}} 
+\index{Random\+Enemy\+Factory@{Random\+Enemy\+Factory}!L\+I\+N\+E\+A\+R\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+G\+E\+\_\+\+V\+A\+L\+UE@{L\+I\+N\+E\+A\+R\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+G\+E\+\_\+\+V\+A\+L\+UE}}
+\index{L\+I\+N\+E\+A\+R\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+G\+E\+\_\+\+V\+A\+L\+UE@{L\+I\+N\+E\+A\+R\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+G\+E\+\_\+\+V\+A\+L\+UE}!Random\+Enemy\+Factory@{Random\+Enemy\+Factory}}
+\subsubsection{\texorpdfstring{L\+I\+N\+E\+A\+R\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+G\+E\+\_\+\+V\+A\+L\+UE}{LINEAR\_PERCENTAGE\_VALUE}}
+{\footnotesize\ttfamily const unsigned int Random\+Enemy\+Factory\+::\+L\+I\+N\+E\+A\+R\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+G\+E\+\_\+\+V\+A\+L\+UE = 30\hspace{0.3cm}{\ttfamily [private]}}
+
+The value that the generated number needs to be greater than to create a Linear \hyperlink{class_enemy}{Enemy} \mbox{\Hypertarget{class_random_enemy_factory_ac3e384acfa1fa3927d3a3643647072e9}\label{class_random_enemy_factory_ac3e384acfa1fa3927d3a3643647072e9}} 
+\index{Random\+Enemy\+Factory@{Random\+Enemy\+Factory}!M\+A\+X\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+GE@{M\+A\+X\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+GE}}
+\index{M\+A\+X\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+GE@{M\+A\+X\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+GE}!Random\+Enemy\+Factory@{Random\+Enemy\+Factory}}
+\subsubsection{\texorpdfstring{M\+A\+X\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+GE}{MAX\_PERCENTAGE}}
+{\footnotesize\ttfamily const unsigned int Random\+Enemy\+Factory\+::\+M\+A\+X\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+GE = 100\hspace{0.3cm}{\ttfamily [private]}}
+
+The maximum value that can be generated \mbox{\Hypertarget{class_random_enemy_factory_a64c95136e3e30f504755037e3f804372}\label{class_random_enemy_factory_a64c95136e3e30f504755037e3f804372}} 
+\index{Random\+Enemy\+Factory@{Random\+Enemy\+Factory}!P\+A\+R\+A\+B\+O\+L\+I\+C\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+G\+E\+\_\+\+V\+A\+L\+UE@{P\+A\+R\+A\+B\+O\+L\+I\+C\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+G\+E\+\_\+\+V\+A\+L\+UE}}
+\index{P\+A\+R\+A\+B\+O\+L\+I\+C\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+G\+E\+\_\+\+V\+A\+L\+UE@{P\+A\+R\+A\+B\+O\+L\+I\+C\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+G\+E\+\_\+\+V\+A\+L\+UE}!Random\+Enemy\+Factory@{Random\+Enemy\+Factory}}
+\subsubsection{\texorpdfstring{P\+A\+R\+A\+B\+O\+L\+I\+C\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+G\+E\+\_\+\+V\+A\+L\+UE}{PARABOLIC\_PERCENTAGE\_VALUE}}
+{\footnotesize\ttfamily const unsigned int Random\+Enemy\+Factory\+::\+P\+A\+R\+A\+B\+O\+L\+I\+C\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+G\+E\+\_\+\+V\+A\+L\+UE = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+The value that the generated number needs to be greater than to create a Parabolic \hyperlink{class_enemy}{Enemy} \mbox{\Hypertarget{class_random_enemy_factory_ac912e49add9d56e8b12d3881ce1cc656}\label{class_random_enemy_factory_ac912e49add9d56e8b12d3881ce1cc656}} 
+\index{Random\+Enemy\+Factory@{Random\+Enemy\+Factory}!S\+P\+I\+R\+A\+L\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+G\+E\+\_\+\+V\+A\+L\+UE@{S\+P\+I\+R\+A\+L\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+G\+E\+\_\+\+V\+A\+L\+UE}}
+\index{S\+P\+I\+R\+A\+L\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+G\+E\+\_\+\+V\+A\+L\+UE@{S\+P\+I\+R\+A\+L\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+G\+E\+\_\+\+V\+A\+L\+UE}!Random\+Enemy\+Factory@{Random\+Enemy\+Factory}}
+\subsubsection{\texorpdfstring{S\+P\+I\+R\+A\+L\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+G\+E\+\_\+\+V\+A\+L\+UE}{SPIRAL\_PERCENTAGE\_VALUE}}
+{\footnotesize\ttfamily const unsigned int Random\+Enemy\+Factory\+::\+S\+P\+I\+R\+A\+L\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+G\+E\+\_\+\+V\+A\+L\+UE = 80\hspace{0.3cm}{\ttfamily [private]}}
+
+The value that the generated number needs to be greater than to create a Spiral \hyperlink{class_enemy}{Enemy} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Random\+Enemy\+Factory.\+h\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Random\+Enemy\+Factory.\+cpp\end{DoxyCompactItemize}

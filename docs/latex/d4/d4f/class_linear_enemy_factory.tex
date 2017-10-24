@@ -1,0 +1,80 @@
+\hypertarget{class_linear_enemy_factory}{}\section{Linear\+Enemy\+Factory Class Reference}
+\label{class_linear_enemy_factory}\index{Linear\+Enemy\+Factory@{Linear\+Enemy\+Factory}}
+
+
+Constructs an \hyperlink{class_enemy}{Enemy} that moves in a straight line from the origin outwards.  
+
+
+
+
+{\ttfamily \#include $<$Linear\+Enemy\+Factory.\+h$>$}
+
+Inheritance diagram for Linear\+Enemy\+Factory\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{d4/d4f/class_linear_enemy_factory}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::shared\+\_\+ptr$<$ \hyperlink{class_movable_interface}{Movable\+Interface} $>$ \hyperlink{class_linear_enemy_factory_ad8b2931b7f31f9f8e13d3c9d804469bf}{get\+Movable\+Type} (const \hyperlink{struct_game_object_data}{Game\+Object\+Data} \&data) override
+\begin{DoxyCompactList}\small\item\em Pure virtual function used to assign the various Movable\+Interfaces that the Enemy\+Objects use. \end{DoxyCompactList}\item 
+virtual \hyperlink{struct_game_object_data}{Game\+Object\+Data} \hyperlink{class_linear_enemy_factory_a9d959b8a414e30ad4813d5d3740eafee}{get\+Object\+Data} (const std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$ \&database) override
+\begin{DoxyCompactList}\small\item\em used to obtain the specific \hyperlink{struct_game_object_data}{Game\+Object\+Data} defined for the current factory \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Constructs an \hyperlink{class_enemy}{Enemy} that moves in a straight line from the origin outwards. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_linear_enemy_factory_ad8b2931b7f31f9f8e13d3c9d804469bf}\label{class_linear_enemy_factory_ad8b2931b7f31f9f8e13d3c9d804469bf}} 
+\index{Linear\+Enemy\+Factory@{Linear\+Enemy\+Factory}!get\+Movable\+Type@{get\+Movable\+Type}}
+\index{get\+Movable\+Type@{get\+Movable\+Type}!Linear\+Enemy\+Factory@{Linear\+Enemy\+Factory}}
+\subsubsection{\texorpdfstring{get\+Movable\+Type()}{getMovableType()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{class_movable_interface}{Movable\+Interface} $>$ Linear\+Enemy\+Factory\+::get\+Movable\+Type (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_game_object_data}{Game\+Object\+Data} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Pure virtual function used to assign the various Movable\+Interfaces that the Enemy\+Objects use. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The \hyperlink{struct_game_object_data}{Game\+Object\+Data} specific to the \hyperlink{class_enemy}{Enemy} being constructed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the \hyperlink{class_movable_interface}{Movable\+Interface} for the specific \hyperlink{class_enemy}{Enemy} that is being constructed 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_enemy_factory_ae064082d650e676960cb84ebb60ba216}{Enemy\+Factory}.
+
+\mbox{\Hypertarget{class_linear_enemy_factory_a9d959b8a414e30ad4813d5d3740eafee}\label{class_linear_enemy_factory_a9d959b8a414e30ad4813d5d3740eafee}} 
+\index{Linear\+Enemy\+Factory@{Linear\+Enemy\+Factory}!get\+Object\+Data@{get\+Object\+Data}}
+\index{get\+Object\+Data@{get\+Object\+Data}!Linear\+Enemy\+Factory@{Linear\+Enemy\+Factory}}
+\subsubsection{\texorpdfstring{get\+Object\+Data()}{getObjectData()}}
+{\footnotesize\ttfamily \hyperlink{struct_game_object_data}{Game\+Object\+Data} Linear\+Enemy\+Factory\+::get\+Object\+Data (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$ \&}]{database }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+used to obtain the specific \hyperlink{struct_game_object_data}{Game\+Object\+Data} defined for the current factory 
+
+
+\begin{DoxyParams}{Parameters}
+{\em database} & The specific \hyperlink{class_database_interface}{Database\+Interface} that contains the information about the Game\+Objects \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{struct_game_object_data}{Game\+Object\+Data} required for the construction of the object 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_physics_object_factory_aa59f52d3adc1fac676f4a8a3c2de9ba9}{Physics\+Object\+Factory}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Linear\+Enemy\+Factory.\+h\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Linear\+Enemy\+Factory.\+cpp\end{DoxyCompactItemize}

@@ -6,6 +6,10 @@
 #include <list>
 #include <memory>
 
+/**
+ * @class MenuSceneFactory
+ * @brief Creates the various MenuScenes within the game
+ */
 class MenuSceneFactory: public SceneFactory
 {
 protected:

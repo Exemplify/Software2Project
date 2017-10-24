@@ -7,7 +7,6 @@
 
 /**
  * @class DelayComponent
- * @file DelayComponent.h
  * @brief DelayComponent is used to create and manage all delays for the game logic, it uses the delta time value stored within the GameTime class.
  */
 class DelayComponent

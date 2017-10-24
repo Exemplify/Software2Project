@@ -1,0 +1,86 @@
+\hypertarget{class_game_object_data_adaptor}{}\section{Game\+Object\+Data\+Adaptor Class Reference}
+\label{class_game_object_data_adaptor}\index{Game\+Object\+Data\+Adaptor@{Game\+Object\+Data\+Adaptor}}
+
+
+Static class used to covert \hyperlink{struct_game_object_data}{Game\+Object\+Data} into the parameters required to construct a \hyperlink{class_game_object}{Game\+Object}.  
+
+
+
+
+{\ttfamily \#include $<$Game\+Object\+Data\+Adaptor.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{structxy_vector}{xy\+Vector} \hyperlink{class_game_object_data_adaptor_aaaee19dcb6f182d26eb22f516760d67d}{Scale\+Adaptor} (const \hyperlink{struct_game_object_data}{Game\+Object\+Data} \&data)
+\begin{DoxyCompactList}\small\item\em Converts \hyperlink{struct_game_object_data}{Game\+Object\+Data} into a \hyperlink{structxy_vector}{xy\+Vector} for the Game\+Objects scale. \end{DoxyCompactList}\item 
+static \hyperlink{class_vector2_d}{Vector2D} \hyperlink{class_game_object_data_adaptor_a5ed602ccf6cb6b189dde62c037af59ad}{Position\+Adaptor} (const \hyperlink{struct_game_object_data}{Game\+Object\+Data} \&data)
+\begin{DoxyCompactList}\small\item\em Converts \hyperlink{struct_game_object_data}{Game\+Object\+Data} into a \hyperlink{class_vector2_d}{Vector2D} for the Game\+Objects position. \end{DoxyCompactList}\item 
+static \hyperlink{class_graphic_object}{Graphic\+Object} \hyperlink{class_game_object_data_adaptor_aecb0cb3d75f42cf440a1fe23ccf81324}{graphic\+Object\+Adaptor} (const \hyperlink{struct_game_object_data}{Game\+Object\+Data} \&data)
+\begin{DoxyCompactList}\small\item\em Converts \hyperlink{struct_game_object_data}{Game\+Object\+Data} into a \hyperlink{class_graphic_object}{Graphic\+Object} for the Game\+Objects graphic\+Object composition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Static class used to covert \hyperlink{struct_game_object_data}{Game\+Object\+Data} into the parameters required to construct a \hyperlink{class_game_object}{Game\+Object}. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game_object_data_adaptor_aecb0cb3d75f42cf440a1fe23ccf81324}\label{class_game_object_data_adaptor_aecb0cb3d75f42cf440a1fe23ccf81324}} 
+\index{Game\+Object\+Data\+Adaptor@{Game\+Object\+Data\+Adaptor}!graphic\+Object\+Adaptor@{graphic\+Object\+Adaptor}}
+\index{graphic\+Object\+Adaptor@{graphic\+Object\+Adaptor}!Game\+Object\+Data\+Adaptor@{Game\+Object\+Data\+Adaptor}}
+\subsubsection{\texorpdfstring{graphic\+Object\+Adaptor()}{graphicObjectAdaptor()}}
+{\footnotesize\ttfamily \hyperlink{class_graphic_object}{Graphic\+Object} Game\+Object\+Data\+Adaptor\+::graphic\+Object\+Adaptor (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_game_object_data}{Game\+Object\+Data} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Converts \hyperlink{struct_game_object_data}{Game\+Object\+Data} into a \hyperlink{class_graphic_object}{Graphic\+Object} for the Game\+Objects graphic\+Object composition. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The \hyperlink{struct_game_object_data}{Game\+Object\+Data} that is converted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the constructed \hyperlink{class_graphic_object}{Graphic\+Object} from the provided data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_game_object_data_adaptor_a5ed602ccf6cb6b189dde62c037af59ad}\label{class_game_object_data_adaptor_a5ed602ccf6cb6b189dde62c037af59ad}} 
+\index{Game\+Object\+Data\+Adaptor@{Game\+Object\+Data\+Adaptor}!Position\+Adaptor@{Position\+Adaptor}}
+\index{Position\+Adaptor@{Position\+Adaptor}!Game\+Object\+Data\+Adaptor@{Game\+Object\+Data\+Adaptor}}
+\subsubsection{\texorpdfstring{Position\+Adaptor()}{PositionAdaptor()}}
+{\footnotesize\ttfamily \hyperlink{class_vector2_d}{Vector2D} Game\+Object\+Data\+Adaptor\+::\+Position\+Adaptor (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_game_object_data}{Game\+Object\+Data} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Converts \hyperlink{struct_game_object_data}{Game\+Object\+Data} into a \hyperlink{class_vector2_d}{Vector2D} for the Game\+Objects position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The \hyperlink{struct_game_object_data}{Game\+Object\+Data} that is converted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the \hyperlink{class_vector2_d}{Vector2D} for the Game\+Objects position 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_game_object_data_adaptor_aaaee19dcb6f182d26eb22f516760d67d}\label{class_game_object_data_adaptor_aaaee19dcb6f182d26eb22f516760d67d}} 
+\index{Game\+Object\+Data\+Adaptor@{Game\+Object\+Data\+Adaptor}!Scale\+Adaptor@{Scale\+Adaptor}}
+\index{Scale\+Adaptor@{Scale\+Adaptor}!Game\+Object\+Data\+Adaptor@{Game\+Object\+Data\+Adaptor}}
+\subsubsection{\texorpdfstring{Scale\+Adaptor()}{ScaleAdaptor()}}
+{\footnotesize\ttfamily \hyperlink{structxy_vector}{xy\+Vector} Game\+Object\+Data\+Adaptor\+::\+Scale\+Adaptor (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_game_object_data}{Game\+Object\+Data} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Converts \hyperlink{struct_game_object_data}{Game\+Object\+Data} into a \hyperlink{structxy_vector}{xy\+Vector} for the Game\+Objects scale. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The \hyperlink{struct_game_object_data}{Game\+Object\+Data} that is converted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the \hyperlink{structxy_vector}{xy\+Vector} for the Game\+Objects scale 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Game\+Object\+Data\+Adaptor.\+h\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Game\+Object\+Data\+Adaptor.\+cpp\end{DoxyCompactItemize}

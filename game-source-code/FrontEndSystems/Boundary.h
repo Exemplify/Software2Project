@@ -8,7 +8,6 @@
 // centered at the origin
 /**
  * @class Boundary
- * @file Boundary.h
  * @brief Boundary class used to represent a region of space centred around the origin, is able to determine if a specific point exists inside or outside of the bounds
  */
 class Boundary

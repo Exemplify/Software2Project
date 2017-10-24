@@ -30,6 +30,8 @@ void EnemyController::SpawnEnemyCountDown()
 		// spawns an enemy and resets the delay
 		SpawnEnemy();
 		_enemySpawnDelay.resetDelay();
+		// increases the number of enemies that have been spawned
+		enemyCount++;
 	}
 }
 
@@ -43,8 +45,6 @@ void EnemyController::SpawnEnemy()
 	assert(enemyCast != nullptr);
 	enemyCast->AssignEnemyController(shared_from_this());
 	_scene->Instantiate(enemy);
-	// increases the number of enemies that have been spawned
-	enemyCount++;
 }
 // Spawns a new enemy as the one that goes out of bounds is destroyed
 void EnemyController::EnemyOutofBounds()

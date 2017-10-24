@@ -81,13 +81,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5cae0a0f81cbd2457eca8d35733a0516"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/db2/class_display_manager.html#a5cae0a0f81cbd2457eca8d35733a0516">DisplayManager</a> (RenderWindow &amp;renderWindow)</td></tr>
 <tr class="memdesc:a5cae0a0f81cbd2457eca8d35733a0516"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the <a class="el" href="../../d8/db2/class_display_manager.html" title="Display manager is in charge of running and managing the presentation layer. ">DisplayManager</a> Object with the corresponding RenderWindow, initialises the display thread on construction.  <a href="#a5cae0a0f81cbd2457eca8d35733a0516">More...</a><br /></td></tr>
 <tr class="separator:a5cae0a0f81cbd2457eca8d35733a0516"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1c3eaf2694410423b6b1eca6a58436f"><td class="memItemLeft" align="right" valign="top"><a id="ab1c3eaf2694410423b6b1eca6a58436f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/db2/class_display_manager.html#ab1c3eaf2694410423b6b1eca6a58436f">InitialiseThread</a> ()</td></tr>
+<tr class="memdesc:ab1c3eaf2694410423b6b1eca6a58436f"><td class="mdescLeft">&#160;</td><td class="mdescRight">used to intialises the display loop for the game inside of a seperate thread <br /></td></tr>
+<tr class="separator:ab1c3eaf2694410423b6b1eca6a58436f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4c9d79e08490e64602cf562a16d8834"><td class="memItemLeft" align="right" valign="top"><a id="ae4c9d79e08490e64602cf562a16d8834"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/db2/class_display_manager.html#ae4c9d79e08490e64602cf562a16d8834">~DisplayManager</a> ()</td></tr>
+<tr class="memdesc:ae4c9d79e08490e64602cf562a16d8834"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor sets the _displaywindow_ptr to null_ptr Doesnt delete the window as other objects may still be using it. <br /></td></tr>
+<tr class="separator:ae4c9d79e08490e64602cf562a16d8834"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:ab1c3eaf2694410423b6b1eca6a58436f"><td class="memItemLeft" align="right" valign="top"><a id="ab1c3eaf2694410423b6b1eca6a58436f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/db2/class_display_manager.html#ab1c3eaf2694410423b6b1eca6a58436f">InitialiseThread</a> ()</td></tr>
-<tr class="memdesc:ab1c3eaf2694410423b6b1eca6a58436f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Intialises the display loop. <br /></td></tr>
-<tr class="separator:ab1c3eaf2694410423b6b1eca6a58436f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79b7a390f3a2a09e7209d271e589e705"><td class="memItemLeft" align="right" valign="top"><a id="a79b7a390f3a2a09e7209d271e589e705"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/db2/class_display_manager.html#a79b7a390f3a2a09e7209d271e589e705">renderThread</a> ()</td></tr>
 <tr class="memdesc:a79b7a390f3a2a09e7209d271e589e705"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the display loop and is created in a seperate thread. <br /></td></tr>
@@ -106,9 +110,7 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Display manager is in charge of running and managing the presentation layer. </p>
-<dl class="section author"><dt>Author</dt><dd>Timothy McBride </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>09/10/2017</dd></dl>
-<p>It creates a seperate thread which is used to run the display loop. The drawGameObject class is used to draw each of the <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a>'s currently being used by the window. </p>
+<p>It creates a seperate thread which is used to run the display loop. The drawGameObject class is used to draw each of the <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a>'s currently being used by the window. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a5cae0a0f81cbd2457eca8d35733a0516"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5cae0a0f81cbd2457eca8d35733a0516">&#9670;&nbsp;</a></span>DisplayManager()</h2>
@@ -179,7 +181,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Composition object responsible for for displaying each <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a> and the its corresponding Sprite&gt; </p>
+<p>Composition object responsible for displaying each <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a> and the its corresponding Sprite&gt; </p>
 
 </div>
 </div>

@@ -2,97 +2,138 @@
 \label{class_projectile}\index{Projectile@{Projectile}}
 
 
+The base class for all the projectiles that exist within the game.  
+
+
+
+
 {\ttfamily \#include $<$Projectile.\+h$>$}
 
 Inheritance diagram for Projectile\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=4.000000cm]{db/dbe/class_projectile}
+\includegraphics[height=5.000000cm]{db/dbe/class_projectile}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_projectile_ac536ed2aad56af866a2078b9a85aa16d}\label{class_projectile_ac536ed2aad56af866a2078b9a85aa16d}} 
-\hyperlink{class_projectile_ac536ed2aad56af866a2078b9a85aa16d}{Projectile} ()
-\begin{DoxyCompactList}\small\item\em Constructors need to be redesigned. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_projectile_a45f5e2eb6db9f673670e9de0aa9b9bab}\label{class_projectile_a45f5e2eb6db9f673670e9de0aa9b9bab}} 
-{\bfseries Projectile} (Game\+Object\+Type projectile\+Type)
-\item 
-\mbox{\Hypertarget{class_projectile_a6d13e20ed5be714a7efd4be89791ea94}\label{class_projectile_a6d13e20ed5be714a7efd4be89791ea94}} 
-\hyperlink{class_projectile_a6d13e20ed5be714a7efd4be89791ea94}{Projectile} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_graphic_object}{Graphic\+Object} $>$ bullet\+Graphic, Game\+Object\+Type projectile\+Type, \hyperlink{structxy_vector}{xy\+Vector} scale)
-\begin{DoxyCompactList}\small\item\em Constructor Needs a Database Dependency. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_projectile_a60b9863678645f9605bf938ef6df7938}\label{class_projectile_a60b9863678645f9605bf938ef6df7938}} 
-{\bfseries Projectile} (const \hyperlink{class_projectile}{Projectile} \&copy\+Projectile)
-\item 
-\mbox{\Hypertarget{class_projectile_ad057a8aeadb0064aacd0f93b2d6de158}\label{class_projectile_ad057a8aeadb0064aacd0f93b2d6de158}} 
-virtual void \hyperlink{class_projectile_ad057a8aeadb0064aacd0f93b2d6de158}{Update} () override
-\begin{DoxyCompactList}\small\item\em could aslo be used as a friendship with scene \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_projectile_aedb2c1ee7933578088e4d2a60d9c0f5c}\label{class_projectile_aedb2c1ee7933578088e4d2a60d9c0f5c}} 
-void {\bfseries Initialise} (\hyperlink{class_vector2_d}{Vector2D}$<$ double $>$ starting\+Pos, \hyperlink{class_vector2_d}{Vector2D}$<$ double $>$ direction, double move\+Speed)
-\item 
-\mbox{\Hypertarget{class_projectile_a8dae5b6cc0293fc6c85797fcf2019492}\label{class_projectile_a8dae5b6cc0293fc6c85797fcf2019492}} 
-virtual void \hyperlink{class_projectile_a8dae5b6cc0293fc6c85797fcf2019492}{collision\+Action} (Game\+Object\+Type object\+Type) override
-\begin{DoxyCompactList}\small\item\em polymorphism will reduce this complexity \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_projectile_a639f52184c8b9720ca8c36371303332d}\label{class_projectile_a639f52184c8b9720ca8c36371303332d}} 
-virtual const std\+::shared\+\_\+ptr$<$ \hyperlink{class_graphic_object}{Graphic\+Object} $>$ {\bfseries get\+Graphic\+Object} () override
-\item 
-\mbox{\Hypertarget{class_projectile_a39653a4aa80df0364e15854f0f5e389d}\label{class_projectile_a39653a4aa80df0364e15854f0f5e389d}} 
-virtual \hyperlink{class_projectile}{Projectile} $\ast$ \hyperlink{class_projectile_a39653a4aa80df0364e15854f0f5e389d}{Clone} () override
-\begin{DoxyCompactList}\small\item\em Clone Function Still in development. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_projectile_add4d983566a326200ea1d7c74737e108}\label{class_projectile_add4d983566a326200ea1d7c74737e108}} 
-\hyperlink{class_projectile_add4d983566a326200ea1d7c74737e108}{$\sim$\+Projectile} () override
-\begin{DoxyCompactList}\small\item\em Needs the virtual tag. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Private Member Functions}
+\hyperlink{class_projectile_a4ff1ec79a15e7821ac5ccfd6dda9205f}{Projectile} (const \hyperlink{class_physics_object}{Physics\+Object} \&physics\+Object, const std\+::shared\+\_\+ptr$<$ \hyperlink{class_movable_interface}{Movable\+Interface} $>$ \&move, const \hyperlink{class_boundary}{Boundary} \&destroy\+Bounds)
+\begin{DoxyCompactList}\small\item\em Constructs the base projectile with the various members that it requires. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_projectile_a27a59059730a66a37feec766ebe08fa2}\label{class_projectile_a27a59059730a66a37feec766ebe08fa2}} 
+virtual void \hyperlink{class_projectile_a27a59059730a66a37feec766ebe08fa2}{Start} () final
+\begin{DoxyCompactList}\small\item\em Intialises the objects members, use of final prevents any derived objects from overriding the function. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_projectile_a1f9df5dd65fed410d4e897eb63edc1c9}{Update} () final
+\begin{DoxyCompactList}\small\item\em Used to Update the various members of the class, called once per frame. \end{DoxyCompactList}\item 
+void \hyperlink{class_projectile_a8c1501698a272f3ae0def6bdc6b3d763}{Initialise} (const \hyperlink{class_vector2_d}{Vector2D} \&starting\+Pos, const \hyperlink{class_vector2_d}{Vector2D} \&direction)
+\begin{DoxyCompactList}\small\item\em used to define the characteristics of the projectile once is has been created by the copy constructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{class_projectile_ac128cf116d9fd114bce2a49af797da1f}{Destroy\+Self} ()
-\begin{DoxyCompactList}\small\item\em should be virtual \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_projectile_a52c04ac421a4add1a2920bd57eb56fe5}\label{class_projectile_a52c04ac421a4add1a2920bd57eb56fe5}} 
-void \hyperlink{class_projectile_a52c04ac421a4add1a2920bd57eb56fe5}{Move} ()
-\begin{DoxyCompactList}\small\item\em Needs a moveable component. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_projectile_a28ae398ce317354ed435019e6b50c4ff}\label{class_projectile_a28ae398ce317354ed435019e6b50c4ff}} 
-void {\bfseries Destroy\+Player\+Projectile} ()
+virtual void \hyperlink{class_projectile_ab2f4025b6f9b5caa20e0a4c5c248d603}{Destroy\+Self} ()=0
+\begin{DoxyCompactList}\small\item\em Used to identify when the object needs to destroy itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_projectile_a2ece9bc68fb806b8ac7eababcc3ac9f1}\label{class_projectile_a2ece9bc68fb806b8ac7eababcc3ac9f1}} 
-void {\bfseries Destroy\+Enemy\+Projectile} ()
+\hyperlink{class_boundary}{Boundary} \hyperlink{class_projectile_a2904a8119d6703c781e4d54c345b75b7}{\+\_\+destroy\+Bounds}
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_projectile_a09ce3faf8a832bd07390d93cb97a4fcb}\label{class_projectile_a09ce3faf8a832bd07390d93cb97a4fcb}} 
-\hyperlink{class_vector2_d}{Vector2D}$<$ double $>$ {\bfseries \+\_\+direction}
+std\+::shared\+\_\+ptr$<$ \hyperlink{class_movable_interface}{Movable\+Interface} $>$ \hyperlink{class_projectile_afd6f6c2b3c202adb129a9cbfcd62ea1f}{\+\_\+move\+Comp}
 \item 
-\mbox{\Hypertarget{class_projectile_a67ee06b3b2dcf15482c9866920a8e825}\label{class_projectile_a67ee06b3b2dcf15482c9866920a8e825}} 
-std\+::shared\+\_\+ptr$<$ \hyperlink{class_graphic_object}{Graphic\+Object} $>$ {\bfseries \+\_\+bullet\+Graphic}
-\item 
-\mbox{\Hypertarget{class_projectile_a9ec636b54686a4889b433566763b6646}\label{class_projectile_a9ec636b54686a4889b433566763b6646}} 
-\hyperlink{class_boundary}{Boundary} \hyperlink{class_projectile_a9ec636b54686a4889b433566763b6646}{\+\_\+enemy\+Destroy\+Bounds}
-\begin{DoxyCompactList}\small\item\em Need to remove both boundaries, should be passed through the constructor redundant information. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_projectile_a29ce4100add75a6e82860c28343a34cf}\label{class_projectile_a29ce4100add75a6e82860c28343a34cf}} 
-\hyperlink{class_boundary}{Boundary} {\bfseries \+\_\+player\+Destroy\+Bounds}
-\item 
-\mbox{\Hypertarget{class_projectile_a24c0fc8a55acd5fd13c4165404bb7817}\label{class_projectile_a24c0fc8a55acd5fd13c4165404bb7817}} 
-double {\bfseries \+\_\+move\+Speed}
+\hyperlink{class_size_reduction}{Size\+Reduction} \hyperlink{class_projectile_adaf2c52cd2491197174be5a5faeca052}{\+\_\+size\+Reduction}
 \end{DoxyCompactItemize}
-\subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
-Object needs to be converted into a polymorphic object, one for player and one for enemy with virtual destorys and boundaries corresponds to the type information in a better way 
+The base class for all the projectiles that exist within the game. 
+
+uses the template design pattern to define functionality that is shared between the different projectiles and has pure virtual functions that must be overriden to allow for different variants of projectiles 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_projectile_a4ff1ec79a15e7821ac5ccfd6dda9205f}\label{class_projectile_a4ff1ec79a15e7821ac5ccfd6dda9205f}} 
+\index{Projectile@{Projectile}!Projectile@{Projectile}}
+\index{Projectile@{Projectile}!Projectile@{Projectile}}
+\subsubsection{\texorpdfstring{Projectile()}{Projectile()}}
+{\footnotesize\ttfamily Projectile\+::\+Projectile (\begin{DoxyParamCaption}\item[{const \hyperlink{class_physics_object}{Physics\+Object} \&}]{physics\+Object,  }\item[{const std\+::shared\+\_\+ptr$<$ \hyperlink{class_movable_interface}{Movable\+Interface} $>$ \&}]{move,  }\item[{const \hyperlink{class_boundary}{Boundary} \&}]{destroy\+Bounds }\end{DoxyParamCaption})}
+
+
+
+Constructs the base projectile with the various members that it requires. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em physics\+Object} & The base physics object copies the properties defined \\
+\hline
+{\em move} & A \hyperlink{class_movable_interface}{Movable\+Interface} object that defines the various ways that the projectile can move \\
+\hline
+{\em destroy\+Bounds} & The boundary that defines when the projectile is destroyed \\
+\hline
+\end{DoxyParams}
+
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_projectile_ac128cf116d9fd114bce2a49af797da1f}\label{class_projectile_ac128cf116d9fd114bce2a49af797da1f}} 
+\mbox{\Hypertarget{class_projectile_ab2f4025b6f9b5caa20e0a4c5c248d603}\label{class_projectile_ab2f4025b6f9b5caa20e0a4c5c248d603}} 
 \index{Projectile@{Projectile}!Destroy\+Self@{Destroy\+Self}}
 \index{Destroy\+Self@{Destroy\+Self}!Projectile@{Projectile}}
 \subsubsection{\texorpdfstring{Destroy\+Self()}{DestroySelf()}}
-{\footnotesize\ttfamily void Projectile\+::\+Destroy\+Self (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily virtual void Projectile\+::\+Destroy\+Self (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
 
 
 
-should be virtual 
+Used to identify when the object needs to destroy itself. 
 
-Destroy Self needs to become virtual and then cascade responsibilities for each type down the tree. 
+This is usually called when the object goes out of the defined boundary that it exists in 
+
+Implemented in \hyperlink{class_player_projectile_a05a6c103f9fbae57bfc811e477ab7b5b}{Player\+Projectile}, and \hyperlink{class_enemy_projectile_a6ea9e3418fd05ca7ecee016019206f70}{Enemy\+Projectile}.
+
+\mbox{\Hypertarget{class_projectile_a8c1501698a272f3ae0def6bdc6b3d763}\label{class_projectile_a8c1501698a272f3ae0def6bdc6b3d763}} 
+\index{Projectile@{Projectile}!Initialise@{Initialise}}
+\index{Initialise@{Initialise}!Projectile@{Projectile}}
+\subsubsection{\texorpdfstring{Initialise()}{Initialise()}}
+{\footnotesize\ttfamily void Projectile\+::\+Initialise (\begin{DoxyParamCaption}\item[{const \hyperlink{class_vector2_d}{Vector2D} \&}]{starting\+Pos,  }\item[{const \hyperlink{class_vector2_d}{Vector2D} \&}]{direction }\end{DoxyParamCaption})}
+
+
+
+used to define the characteristics of the projectile once is has been created by the copy constructor 
+
+This is necessary because the start position and direction of the projectile are assigned during runtime \mbox{\Hypertarget{class_projectile_a1f9df5dd65fed410d4e897eb63edc1c9}\label{class_projectile_a1f9df5dd65fed410d4e897eb63edc1c9}} 
+\index{Projectile@{Projectile}!Update@{Update}}
+\index{Update@{Update}!Projectile@{Projectile}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Projectile\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Used to Update the various members of the class, called once per frame. 
+
+This implementation of Update is used to move the object, reduced its scale based on the proximity to the centre of the screen and check if it should be destroyed. 
+
+Reimplemented from \hyperlink{class_game_object_ac7ecc123dacaba955077420caabf5e64}{Game\+Object}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_projectile_a2904a8119d6703c781e4d54c345b75b7}\label{class_projectile_a2904a8119d6703c781e4d54c345b75b7}} 
+\index{Projectile@{Projectile}!\+\_\+destroy\+Bounds@{\+\_\+destroy\+Bounds}}
+\index{\+\_\+destroy\+Bounds@{\+\_\+destroy\+Bounds}!Projectile@{Projectile}}
+\subsubsection{\texorpdfstring{\+\_\+destroy\+Bounds}{\_destroyBounds}}
+{\footnotesize\ttfamily \hyperlink{class_boundary}{Boundary} Projectile\+::\+\_\+destroy\+Bounds\hspace{0.3cm}{\ttfamily [protected]}}
+
+The boundary that is used to identify when the projectile should be destroyed \mbox{\Hypertarget{class_projectile_afd6f6c2b3c202adb129a9cbfcd62ea1f}\label{class_projectile_afd6f6c2b3c202adb129a9cbfcd62ea1f}} 
+\index{Projectile@{Projectile}!\+\_\+move\+Comp@{\+\_\+move\+Comp}}
+\index{\+\_\+move\+Comp@{\+\_\+move\+Comp}!Projectile@{Projectile}}
+\subsubsection{\texorpdfstring{\+\_\+move\+Comp}{\_moveComp}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\hyperlink{class_movable_interface}{Movable\+Interface}$>$ Projectile\+::\+\_\+move\+Comp\hspace{0.3cm}{\ttfamily [private]}}
+
+Defines the particular movement pattern for the projectile \mbox{\Hypertarget{class_projectile_adaf2c52cd2491197174be5a5faeca052}\label{class_projectile_adaf2c52cd2491197174be5a5faeca052}} 
+\index{Projectile@{Projectile}!\+\_\+size\+Reduction@{\+\_\+size\+Reduction}}
+\index{\+\_\+size\+Reduction@{\+\_\+size\+Reduction}!Projectile@{Projectile}}
+\subsubsection{\texorpdfstring{\+\_\+size\+Reduction}{\_sizeReduction}}
+{\footnotesize\ttfamily \hyperlink{class_size_reduction}{Size\+Reduction} Projectile\+::\+\_\+size\+Reduction\hspace{0.3cm}{\ttfamily [private]}}
+
+Changes the size of the projectile with relation to the proximity of the object to the centre of the screen 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
