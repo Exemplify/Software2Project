@@ -15,6 +15,3 @@ int main()
 	application->RunApplication(); 
 	return EXIT_SUCCESS;
 }
-
-
-

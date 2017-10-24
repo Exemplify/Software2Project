@@ -52,9 +52,8 @@ typedef doctest::Types<
 	TypePair<EnemyControllerFactory, EnemyController>,
 	TypePair<BackgroundFactory, SplashScreen>
 	> FactoryPairs;
-	
 
-// requires mocking frame work to implement the database interface
+
 TEST_CASE_TEMPLATE("Factories Return the correct object types", T, FactoryPairs)
 {
 	
@@ -90,7 +89,6 @@ TEST_CASE_TEMPLATE("Factories Return the correct object types", T, FactoryPairs)
 		CHECK_EQ(graphic.getTextureLocation(), mockData.graphic_location);
 		CHECK_EQ(graphic.getGraphicName(), mockData.graphic_name);
 	}
-
 }
 
 
