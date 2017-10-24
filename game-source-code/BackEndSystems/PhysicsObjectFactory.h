@@ -2,7 +2,10 @@
 #define PHYSICS_OBJ_FAC_H
 #include "GameObjectFactory.h"
 
-
+/**
+ * @class PhysicsObjectFactory
+ * @brief Used to construct a physics Object within the game
+ */
 class PhysicsObjectFactory : public GameObjectFactory
 {
 public:

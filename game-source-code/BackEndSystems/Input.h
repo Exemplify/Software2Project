@@ -2,39 +2,55 @@
 #define INPUT_H
 #include <vector>
 
-// Enumerator used to represent the keys uses a Count key to keep track of the current number of keys recorded
-/// Should rename count to NumberOfKeys
+/**
+* @brief Enemurator class that represents the specific keys 
+*/
 enum class Keys
 {
 	space,
 	left,
 	right,
 	esc,
-	Count
+	enter,
+	NumberOfKeys
 };
-// Axis is used to inherintly get direction instead of a key press simplifies the code required for directional movement
+/**
+* @brief Enumerator class that represents particular Axis 
+*/
 enum class Axis
 {
 	horizontal,
 	vertical
 };
-
+/**
+ * @class Input
+ * @brief Responsible for supplying the FrontEndSystem with access to the input of the user by interfaceing with sfml
+ */
 class Input
 {
 public:
-	// Used to set every bool to false
-	static void clear();
-	// returns a boolean for the specific key that is pressed 
+
+	/**
+	 * @brief returns a boolean for the specific key that is pressed , returns true if the Key has been pressed
+	 * @param key The specific key that needs to be checked if an input is detected
+	 * @return 
+	 */
 	static bool IsButtonPressed(Keys key); 
-	// returns an -1, 1, or 0 to identify the direction of movement by the axis
+	/**
+	 * @brief Provides directional information inherintly, 
+	 * @param axis The axis that the input occurs on 
+	 * @return Returns a -1, 0, or 1 depending on the direction and axis that was pressed
+	 */
 	static int getAxis(Axis axis);
-	// sets the state of a button either true or false, would prefer if it were private but is required for testing
+	/**
+	 * @brief Sets the specific Key to the desired state of whether it is pressed or not
+	 * @param key the specific key that is pressed or released 
+	 * @param state the desired state 
+	 */
 	static void setButton(Keys key, bool state);
 private:
-	// a vector of bools that are indexed by the enumerator
-	static std::vector<bool> _buttons;
-	// Uses the buttons to determine direction from button presses
-	static int CheckButtonForAxis(Keys negativeKey, Keys positiveKey);
+	static std::vector<bool> _buttons; /**<a vector of bools that are indexed by the enumerator*/
+	static int CheckButtonForAxis(Keys negativeKey, Keys positiveKey); /**<Uses the buttons to determine direction from button presses*/
 };
 
 #endif

@@ -1,0 +1,83 @@
+\hypertarget{class_physics_object_factory}{}\section{Physics\+Object\+Factory Class Reference}
+\label{class_physics_object_factory}\index{Physics\+Object\+Factory@{Physics\+Object\+Factory}}
+
+
+Used to construct a physics Object within the game.  
+
+
+
+
+{\ttfamily \#include $<$Physics\+Object\+Factory.\+h$>$}
+
+Inheritance diagram for Physics\+Object\+Factory\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.871795cm]{de/dc7/class_physics_object_factory}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$ \hyperlink{class_physics_object_factory_a2644107d0c455c3307559cd824a7c9a8}{get\+Game\+Object} (const std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$ \&database) override
+\begin{DoxyCompactList}\small\item\em virtual function used to create the desired class specified by the derived class \end{DoxyCompactList}\item 
+virtual \hyperlink{struct_game_object_data}{Game\+Object\+Data} \hyperlink{class_physics_object_factory_aa59f52d3adc1fac676f4a8a3c2de9ba9}{get\+Object\+Data} (const std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$ \&database) override=0
+\begin{DoxyCompactList}\small\item\em used to obtain the specific \hyperlink{struct_game_object_data}{Game\+Object\+Data} defined for the current factory \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Used to construct a physics Object within the game. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_physics_object_factory_a2644107d0c455c3307559cd824a7c9a8}\label{class_physics_object_factory_a2644107d0c455c3307559cd824a7c9a8}} 
+\index{Physics\+Object\+Factory@{Physics\+Object\+Factory}!get\+Game\+Object@{get\+Game\+Object}}
+\index{get\+Game\+Object@{get\+Game\+Object}!Physics\+Object\+Factory@{Physics\+Object\+Factory}}
+\subsubsection{\texorpdfstring{get\+Game\+Object()}{getGameObject()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$ Physics\+Object\+Factory\+::get\+Game\+Object (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$ \&}]{database }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+virtual function used to create the desired class specified by the derived class 
+
+\begin{DoxyReturn}{Returns}
+Returns the constructed \hyperlink{class_game_object}{Game\+Object} object 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_game_object_factory_a5b684a6e77fb82c041f1721eb07c553d}{Game\+Object\+Factory}.
+
+
+
+Reimplemented in \hyperlink{class_player_factory_ab92534e7d2d6887ecf9e4ed8131a8112}{Player\+Factory}, \hyperlink{class_enemy_factory_acb6ad18d5ef69a27927907fa9a444c7d}{Enemy\+Factory}, \hyperlink{class_enemy_projectile_factory_a081c6bea7032956c278fdf4ff62d530a}{Enemy\+Projectile\+Factory}, and \hyperlink{class_player_projectile_factory_a804a9f591ce6f0a7fb04f35ff685ff57}{Player\+Projectile\+Factory}.
+
+\mbox{\Hypertarget{class_physics_object_factory_aa59f52d3adc1fac676f4a8a3c2de9ba9}\label{class_physics_object_factory_aa59f52d3adc1fac676f4a8a3c2de9ba9}} 
+\index{Physics\+Object\+Factory@{Physics\+Object\+Factory}!get\+Object\+Data@{get\+Object\+Data}}
+\index{get\+Object\+Data@{get\+Object\+Data}!Physics\+Object\+Factory@{Physics\+Object\+Factory}}
+\subsubsection{\texorpdfstring{get\+Object\+Data()}{getObjectData()}}
+{\footnotesize\ttfamily virtual \hyperlink{struct_game_object_data}{Game\+Object\+Data} Physics\+Object\+Factory\+::get\+Object\+Data (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$ \&}]{database }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [pure virtual]}}
+
+
+
+used to obtain the specific \hyperlink{struct_game_object_data}{Game\+Object\+Data} defined for the current factory 
+
+
+\begin{DoxyParams}{Parameters}
+{\em database} & The specific \hyperlink{class_database_interface}{Database\+Interface} that contains the information about the Game\+Objects \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{struct_game_object_data}{Game\+Object\+Data} required for the construction of the object 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_game_object_factory_ae9358fbb3ef2d3b127320341760d3ff9}{Game\+Object\+Factory}.
+
+
+
+Implemented in \hyperlink{class_enemy_projectile_factory_a1ef660e5962f29b7353054c6480477c7}{Enemy\+Projectile\+Factory}, \hyperlink{class_player_factory_aca4e809430541d77acd4c588c4381715}{Player\+Factory}, \hyperlink{class_player_projectile_factory_a702ae964c9dc653140fad4e17f38f60a}{Player\+Projectile\+Factory}, \hyperlink{class_parabolic_enemy_factory_acc62c48a8eb5af162910dc48d9fe8900}{Parabolic\+Enemy\+Factory}, \hyperlink{class_spiral_enemy_factory_a230709a0781c4364aa062b0bd441ec4d}{Spiral\+Enemy\+Factory}, and \hyperlink{class_linear_enemy_factory_a9d959b8a414e30ad4813d5d3740eafee}{Linear\+Enemy\+Factory}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Physics\+Object\+Factory.\+h\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Physics\+Object\+Factory.\+cpp\end{DoxyCompactItemize}

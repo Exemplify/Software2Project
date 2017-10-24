@@ -4,7 +4,6 @@
 
 /**
  * @class ParabolicMove
- * @file ParabolicMove.h
  * @brief Complex movement pattern which causes an position to change in a parabolic shape through the origin
  */
 class ParabolicMove : public MovableInterface

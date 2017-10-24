@@ -1,0 +1,194 @@
+\hypertarget{class_data_mapper}{}\section{Data\+Mapper Class Reference}
+\label{class_data_mapper}\index{Data\+Mapper@{Data\+Mapper}}
+
+
+\hyperlink{class_data_mapper}{Data\+Mapper} is responsible for mapping data recieved from the \hyperlink{class_read_from_file}{Read\+From\+File} object into usable datatypes and interfacing with the desired datatbase to update the information in it.  
+
+
+
+
+{\ttfamily \#include $<$Datamapper.\+h$>$}
+
+Inheritance diagram for Data\+Mapper\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{dd/da0/class_data_mapper}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_data_mapper_a4603cf7c03ad31b454669ad61e64919f}{Data\+Mapper} (std\+::string gameobject\+\_\+datafile, std\+::string gamestate\+\_\+datafile)
+\begin{DoxyCompactList}\small\item\em Constructs the \hyperlink{class_data_mapper}{Data\+Mapper} Object with two strings that represent the data files of the game. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_data_mapper_ade3e27146120b3cb74d556e8b9e48526}{Update\+Game\+Time\+Database} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$ database) override
+\begin{DoxyCompactList}\small\item\em Updates the the provided database with information stored in the datafiles provided. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{class_data_mapper_a46e3c795a3ec96a58dd1006079b0938d}{Get\+I\+D\+From\+String} (const std\+::string \&I\+D\+\_\+\+Line)
+\begin{DoxyCompactList}\small\item\em Gets the ID of the object frm the string provided used as the key to store the information in the \hyperlink{class_database_interface}{Database\+Interface}. \end{DoxyCompactList}\item 
+\hyperlink{struct_game_object_data}{Game\+Object\+Data} \hyperlink{class_data_mapper_a69d2e0ba874a2e3b0dd9752c1c72db34}{get\+Object\+Data\+From\+String} (const std\+::string \&Data\+Line)
+\begin{DoxyCompactList}\small\item\em Converts and Constructs the \hyperlink{struct_game_object_data}{Game\+Object\+Data} from the string provided. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{class_data_mapper_a296af9345fd16e4397251efef8726a74}{Split\+Game\+Object\+Data\+String} (const std\+::string \&Data\+Line)
+\begin{DoxyCompactList}\small\item\em Splits the string up into a vector of multiple strings seperated by spaces. \end{DoxyCompactList}\item 
+void \hyperlink{class_data_mapper_af92f7728727500d39ff4aa1d6ca2b81b}{Update\+Game\+Object\+Database\+Info} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$ database)
+\begin{DoxyCompactList}\small\item\em Updates the \hyperlink{struct_game_object_data}{Game\+Object\+Data} of the database. \end{DoxyCompactList}\item 
+void \hyperlink{class_data_mapper_aefb6246f9bf9fc9974cd52a1b46d165e}{Update\+Game\+State\+Database\+Info} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$ database)
+\begin{DoxyCompactList}\small\item\em Updates the Game\+State data of the database. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{class_data_mapper_a7906ac7e6e95631428095246fcdefecb}{\+\_\+gameobject\+\_\+datafile}
+\item 
+std\+::string \hyperlink{class_data_mapper_ad64f65ef0ca4a3ed5e0ded4318ee3357}{\+\_\+gamestate\+\_\+datafile}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_data_mapper}{Data\+Mapper} is responsible for mapping data recieved from the \hyperlink{class_read_from_file}{Read\+From\+File} object into usable datatypes and interfacing with the desired datatbase to update the information in it. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_data_mapper_a4603cf7c03ad31b454669ad61e64919f}\label{class_data_mapper_a4603cf7c03ad31b454669ad61e64919f}} 
+\index{Data\+Mapper@{Data\+Mapper}!Data\+Mapper@{Data\+Mapper}}
+\index{Data\+Mapper@{Data\+Mapper}!Data\+Mapper@{Data\+Mapper}}
+\subsubsection{\texorpdfstring{Data\+Mapper()}{DataMapper()}}
+{\footnotesize\ttfamily Data\+Mapper\+::\+Data\+Mapper (\begin{DoxyParamCaption}\item[{std\+::string}]{gameobject\+\_\+datafile,  }\item[{std\+::string}]{gamestate\+\_\+datafile }\end{DoxyParamCaption})}
+
+
+
+Constructs the \hyperlink{class_data_mapper}{Data\+Mapper} Object with two strings that represent the data files of the game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gameobject\+\_\+datafile} & The datafile that contains the information about the various Game\+Objects of the game \\
+\hline
+{\em gamestate\+\_\+datafile} & The datafile that contains the information about the state of the game, ie screen size \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_data_mapper_a46e3c795a3ec96a58dd1006079b0938d}\label{class_data_mapper_a46e3c795a3ec96a58dd1006079b0938d}} 
+\index{Data\+Mapper@{Data\+Mapper}!Get\+I\+D\+From\+String@{Get\+I\+D\+From\+String}}
+\index{Get\+I\+D\+From\+String@{Get\+I\+D\+From\+String}!Data\+Mapper@{Data\+Mapper}}
+\subsubsection{\texorpdfstring{Get\+I\+D\+From\+String()}{GetIDFromString()}}
+{\footnotesize\ttfamily std\+::string Data\+Mapper\+::\+Get\+I\+D\+From\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{I\+D\+\_\+\+Line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Gets the ID of the object frm the string provided used as the key to store the information in the \hyperlink{class_database_interface}{Database\+Interface}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em I\+D\+\_\+\+Line} & The line obtained from the text file that contains the ID -\/ assumes the correct format is used within the text file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns the ID of the object obtained from the string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_mapper_a69d2e0ba874a2e3b0dd9752c1c72db34}\label{class_data_mapper_a69d2e0ba874a2e3b0dd9752c1c72db34}} 
+\index{Data\+Mapper@{Data\+Mapper}!get\+Object\+Data\+From\+String@{get\+Object\+Data\+From\+String}}
+\index{get\+Object\+Data\+From\+String@{get\+Object\+Data\+From\+String}!Data\+Mapper@{Data\+Mapper}}
+\subsubsection{\texorpdfstring{get\+Object\+Data\+From\+String()}{getObjectDataFromString()}}
+{\footnotesize\ttfamily \hyperlink{struct_game_object_data}{Game\+Object\+Data} Data\+Mapper\+::get\+Object\+Data\+From\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{Data\+Line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Converts and Constructs the \hyperlink{struct_game_object_data}{Game\+Object\+Data} from the string provided. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Data\+Line} & a string containing the various object information \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a \hyperlink{struct_game_object_data}{Game\+Object\+Data} constructed from the information provided by the string of data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_mapper_a296af9345fd16e4397251efef8726a74}\label{class_data_mapper_a296af9345fd16e4397251efef8726a74}} 
+\index{Data\+Mapper@{Data\+Mapper}!Split\+Game\+Object\+Data\+String@{Split\+Game\+Object\+Data\+String}}
+\index{Split\+Game\+Object\+Data\+String@{Split\+Game\+Object\+Data\+String}!Data\+Mapper@{Data\+Mapper}}
+\subsubsection{\texorpdfstring{Split\+Game\+Object\+Data\+String()}{SplitGameObjectDataString()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Data\+Mapper\+::\+Split\+Game\+Object\+Data\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{Data\+Line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Splits the string up into a vector of multiple strings seperated by spaces. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Data\+Line} & a string containing the various object information \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a vector of strings each representing a specific element of the \hyperlink{struct_game_object_data}{Game\+Object\+Data} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_data_mapper_af92f7728727500d39ff4aa1d6ca2b81b}\label{class_data_mapper_af92f7728727500d39ff4aa1d6ca2b81b}} 
+\index{Data\+Mapper@{Data\+Mapper}!Update\+Game\+Object\+Database\+Info@{Update\+Game\+Object\+Database\+Info}}
+\index{Update\+Game\+Object\+Database\+Info@{Update\+Game\+Object\+Database\+Info}!Data\+Mapper@{Data\+Mapper}}
+\subsubsection{\texorpdfstring{Update\+Game\+Object\+Database\+Info()}{UpdateGameObjectDatabaseInfo()}}
+{\footnotesize\ttfamily void Data\+Mapper\+::\+Update\+Game\+Object\+Database\+Info (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$}]{database }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Updates the \hyperlink{struct_game_object_data}{Game\+Object\+Data} of the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em database} & the \hyperlink{class_database_interface}{Database\+Interface} that is updated \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_data_mapper_aefb6246f9bf9fc9974cd52a1b46d165e}\label{class_data_mapper_aefb6246f9bf9fc9974cd52a1b46d165e}} 
+\index{Data\+Mapper@{Data\+Mapper}!Update\+Game\+State\+Database\+Info@{Update\+Game\+State\+Database\+Info}}
+\index{Update\+Game\+State\+Database\+Info@{Update\+Game\+State\+Database\+Info}!Data\+Mapper@{Data\+Mapper}}
+\subsubsection{\texorpdfstring{Update\+Game\+State\+Database\+Info()}{UpdateGameStateDatabaseInfo()}}
+{\footnotesize\ttfamily void Data\+Mapper\+::\+Update\+Game\+State\+Database\+Info (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$}]{database }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Updates the Game\+State data of the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em database} & the \hyperlink{class_database_interface}{Database\+Interface} that is updated \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_data_mapper_ade3e27146120b3cb74d556e8b9e48526}\label{class_data_mapper_ade3e27146120b3cb74d556e8b9e48526}} 
+\index{Data\+Mapper@{Data\+Mapper}!Update\+Game\+Time\+Database@{Update\+Game\+Time\+Database}}
+\index{Update\+Game\+Time\+Database@{Update\+Game\+Time\+Database}!Data\+Mapper@{Data\+Mapper}}
+\subsubsection{\texorpdfstring{Update\+Game\+Time\+Database()}{UpdateGameTimeDatabase()}}
+{\footnotesize\ttfamily void Data\+Mapper\+::\+Update\+Game\+Time\+Database (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$}]{database }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Updates the the provided database with information stored in the datafiles provided. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em database} & The \hyperlink{class_database_interface}{Database\+Interface} that gets updated with the information \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_data_mapper_interface_a4a16cab058079e14c1e6169d8038696f}{Data\+Mapper\+Interface}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_data_mapper_a7906ac7e6e95631428095246fcdefecb}\label{class_data_mapper_a7906ac7e6e95631428095246fcdefecb}} 
+\index{Data\+Mapper@{Data\+Mapper}!\+\_\+gameobject\+\_\+datafile@{\+\_\+gameobject\+\_\+datafile}}
+\index{\+\_\+gameobject\+\_\+datafile@{\+\_\+gameobject\+\_\+datafile}!Data\+Mapper@{Data\+Mapper}}
+\subsubsection{\texorpdfstring{\+\_\+gameobject\+\_\+datafile}{\_gameobject\_datafile}}
+{\footnotesize\ttfamily std\+::string Data\+Mapper\+::\+\_\+gameobject\+\_\+datafile\hspace{0.3cm}{\ttfamily [private]}}
+
+The datafile that contains the information about the various Game\+Objects of the game \mbox{\Hypertarget{class_data_mapper_ad64f65ef0ca4a3ed5e0ded4318ee3357}\label{class_data_mapper_ad64f65ef0ca4a3ed5e0ded4318ee3357}} 
+\index{Data\+Mapper@{Data\+Mapper}!\+\_\+gamestate\+\_\+datafile@{\+\_\+gamestate\+\_\+datafile}}
+\index{\+\_\+gamestate\+\_\+datafile@{\+\_\+gamestate\+\_\+datafile}!Data\+Mapper@{Data\+Mapper}}
+\subsubsection{\texorpdfstring{\+\_\+gamestate\+\_\+datafile}{\_gamestate\_datafile}}
+{\footnotesize\ttfamily std\+::string Data\+Mapper\+::\+\_\+gamestate\+\_\+datafile\hspace{0.3cm}{\ttfamily [private]}}
+
+The datafile that contains the information about the state of the game, ie screen size 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Datamapper.\+h\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Data\+Mapper.\+cpp\end{DoxyCompactItemize}

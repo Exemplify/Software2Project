@@ -2,50 +2,107 @@
 \label{class_delay_component}\index{Delay\+Component@{Delay\+Component}}
 
 
+\hyperlink{class_delay_component}{Delay\+Component} is used to create and manage all delays for the game logic, it uses the delta time value stored within the \hyperlink{class_game_time}{Game\+Time} class.  
+
+
+
+
 {\ttfamily \#include $<$Delay\+Component.\+h$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_delay_component_adcfaeb65d23778a3468156b34140c7f5}\label{class_delay_component_adcfaeb65d23778a3468156b34140c7f5}} 
-\hyperlink{class_delay_component_adcfaeb65d23778a3468156b34140c7f5}{Delay\+Component} ()
-\begin{DoxyCompactList}\small\item\em default constructor should be removed \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_delay_component_aab69fe25b426b7ac1696840ad1f56c35}\label{class_delay_component_aab69fe25b426b7ac1696840ad1f56c35}} 
-\hyperlink{class_delay_component_aab69fe25b426b7ac1696840ad1f56c35}{Delay\+Component} (double value, bool immediate\+Use=false)
-\begin{DoxyCompactList}\small\item\em immediate\+Use should be renamed to delay\+Finished \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_delay_component_ac2c7023f723523ba2e42ae047d9b6092}\label{class_delay_component_ac2c7023f723523ba2e42ae047d9b6092}} 
-void {\bfseries reduce\+Time} ()
-\item 
-\mbox{\Hypertarget{class_delay_component_a8942e663b1a92471ea79f0e7203d30bc}\label{class_delay_component_a8942e663b1a92471ea79f0e7203d30bc}} 
-bool {\bfseries Delay\+Finished} ()
-\item 
+\hyperlink{class_delay_component_a14ff75c76f9e0292f52aadd9e58bec81}{Delay\+Component} (double value, bool Initial\+Use\+Before\+Delay=false)
+\begin{DoxyCompactList}\small\item\em Constructor\+: Creates a delay component that uses the specific time value provided. \end{DoxyCompactList}\item 
+bool \hyperlink{class_delay_component_a8942e663b1a92471ea79f0e7203d30bc}{Delay\+Finished} ()
+\begin{DoxyCompactList}\small\item\em reduces the delay value and then checks if it is finished \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_delay_component_a539b563338fb30932c96f087dd7a0f5b}\label{class_delay_component_a539b563338fb30932c96f087dd7a0f5b}} 
 void \hyperlink{class_delay_component_a539b563338fb30932c96f087dd7a0f5b}{reset\+Delay} ()
-\begin{DoxyCompactList}\small\item\em should and a default argument that can be changed to change the delay rate \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Resets the delay to original value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_delay_component_ac2c7023f723523ba2e42ae047d9b6092}{reduce\+Time} ()
+\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_delay_component_a33d6e279ece1ab6197688c5916dad96d}\label{class_delay_component_a33d6e279ece1ab6197688c5916dad96d}} 
-double {\bfseries \+\_\+current\+Value}
+double \hyperlink{class_delay_component_a33d6e279ece1ab6197688c5916dad96d}{\+\_\+current\+Value}
 \item 
-\mbox{\Hypertarget{class_delay_component_a36f26c01438d1c0347d06888d3b841ac}\label{class_delay_component_a36f26c01438d1c0347d06888d3b841ac}} 
-double {\bfseries \+\_\+delay\+Value}
+double \hyperlink{class_delay_component_a36f26c01438d1c0347d06888d3b841ac}{\+\_\+delay\+Value}
 \item 
 bool \hyperlink{class_delay_component_a821cd453973fced990ae204967e011ff}{\+\_\+delay\+Finished}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-could require some rethinking because a lot of the responsibility is on the client to call the appropriate functions Functions should be incorporated into one so that the client only needs to check if the delay has finished 
+\hyperlink{class_delay_component}{Delay\+Component} is used to create and manage all delays for the game logic, it uses the delta time value stored within the \hyperlink{class_game_time}{Game\+Time} class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_delay_component_a14ff75c76f9e0292f52aadd9e58bec81}\label{class_delay_component_a14ff75c76f9e0292f52aadd9e58bec81}} 
+\index{Delay\+Component@{Delay\+Component}!Delay\+Component@{Delay\+Component}}
+\index{Delay\+Component@{Delay\+Component}!Delay\+Component@{Delay\+Component}}
+\subsubsection{\texorpdfstring{Delay\+Component()}{DelayComponent()}}
+{\footnotesize\ttfamily Delay\+Component\+::\+Delay\+Component (\begin{DoxyParamCaption}\item[{double}]{value,  }\item[{bool}]{Initial\+Use\+Before\+Delay = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Constructor\+: Creates a delay component that uses the specific time value provided. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The specific time value that represent the length of the delay until it is finished \\
+\hline
+{\em Initial\+Use\+Before\+Delay} & Allows the client to set whether the delay is initially true until use \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_delay_component_a8942e663b1a92471ea79f0e7203d30bc}\label{class_delay_component_a8942e663b1a92471ea79f0e7203d30bc}} 
+\index{Delay\+Component@{Delay\+Component}!Delay\+Finished@{Delay\+Finished}}
+\index{Delay\+Finished@{Delay\+Finished}!Delay\+Component@{Delay\+Component}}
+\subsubsection{\texorpdfstring{Delay\+Finished()}{DelayFinished()}}
+{\footnotesize\ttfamily bool Delay\+Component\+::\+Delay\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+reduces the delay value and then checks if it is finished 
+
+\begin{DoxyReturn}{Returns}
+Returns true if the delay is finished 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_delay_component_ac2c7023f723523ba2e42ae047d9b6092}\label{class_delay_component_ac2c7023f723523ba2e42ae047d9b6092}} 
+\index{Delay\+Component@{Delay\+Component}!reduce\+Time@{reduce\+Time}}
+\index{reduce\+Time@{reduce\+Time}!Delay\+Component@{Delay\+Component}}
+\subsubsection{\texorpdfstring{reduce\+Time()}{reduceTime()}}
+{\footnotesize\ttfamily void Delay\+Component\+::reduce\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Reduces the delay time by \hyperlink{class_game_time}{Game\+Time} delta\+Time, is called by Delay\+Finished 
 
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{class_delay_component_a821cd453973fced990ae204967e011ff}\label{class_delay_component_a821cd453973fced990ae204967e011ff}} 
+\mbox{\Hypertarget{class_delay_component_a33d6e279ece1ab6197688c5916dad96d}\label{class_delay_component_a33d6e279ece1ab6197688c5916dad96d}} 
+\index{Delay\+Component@{Delay\+Component}!\+\_\+current\+Value@{\+\_\+current\+Value}}
+\index{\+\_\+current\+Value@{\+\_\+current\+Value}!Delay\+Component@{Delay\+Component}}
+\subsubsection{\texorpdfstring{\+\_\+current\+Value}{\_currentValue}}
+{\footnotesize\ttfamily double Delay\+Component\+::\+\_\+current\+Value\hspace{0.3cm}{\ttfamily [private]}}
+
+The current value of time until the delay is finished \mbox{\Hypertarget{class_delay_component_a821cd453973fced990ae204967e011ff}\label{class_delay_component_a821cd453973fced990ae204967e011ff}} 
 \index{Delay\+Component@{Delay\+Component}!\+\_\+delay\+Finished@{\+\_\+delay\+Finished}}
 \index{\+\_\+delay\+Finished@{\+\_\+delay\+Finished}!Delay\+Component@{Delay\+Component}}
 \subsubsection{\texorpdfstring{\+\_\+delay\+Finished}{\_delayFinished}}
 {\footnotesize\ttfamily bool Delay\+Component\+::\+\_\+delay\+Finished\hspace{0.3cm}{\ttfamily [private]}}
 
-redundant can be replaced in the delay finished function call by the boolean check repeats code by using multiple if statements that check the same thing 
+The boolean stored for whether the delay has finished \mbox{\Hypertarget{class_delay_component_a36f26c01438d1c0347d06888d3b841ac}\label{class_delay_component_a36f26c01438d1c0347d06888d3b841ac}} 
+\index{Delay\+Component@{Delay\+Component}!\+\_\+delay\+Value@{\+\_\+delay\+Value}}
+\index{\+\_\+delay\+Value@{\+\_\+delay\+Value}!Delay\+Component@{Delay\+Component}}
+\subsubsection{\texorpdfstring{\+\_\+delay\+Value}{\_delayValue}}
+{\footnotesize\ttfamily double Delay\+Component\+::\+\_\+delay\+Value\hspace{0.3cm}{\ttfamily [private]}}
+
+The original value of the delay 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

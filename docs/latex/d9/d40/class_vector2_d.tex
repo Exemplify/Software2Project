@@ -1,109 +1,125 @@
-\hypertarget{class_vector2_d}{}\section{Vector2D$<$ T $>$ Class Template Reference}
-\label{class_vector2_d}\index{Vector2\+D$<$ T $>$@{Vector2\+D$<$ T $>$}}
+\hypertarget{class_vector2_d}{}\section{Vector2D Class Reference}
+\label{class_vector2_d}\index{Vector2D@{Vector2D}}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_vector2_d_a3fe91726229151ed3eff9aeecbb4c353}\label{class_vector2_d_a3fe91726229151ed3eff9aeecbb4c353}} 
-{\bfseries Vector2D} (T val1, T val2, T phi, const Vector\+Type \&vectype=Vector\+Type\+::xyp)
+\mbox{\Hypertarget{class_vector2_d_a0c1db105a3d49bde5056cc19b04f18c2}\label{class_vector2_d_a0c1db105a3d49bde5056cc19b04f18c2}} 
+{\bfseries Vector2D} (double val1, double val2, const Vector\+Type \&vectype=Vector\+Type\+::xy)
 \item 
-\mbox{\Hypertarget{class_vector2_d_aad4e97ea1e0ef66c31a002209c51256b}\label{class_vector2_d_aad4e97ea1e0ef66c31a002209c51256b}} 
-{\bfseries Vector2D} (const vector$<$ T $>$ \&vec, const Vector\+Type \&vectype=Vector\+Type\+::xyp)
+\mbox{\Hypertarget{class_vector2_d_ab3aae16cfdb6eab642f832d82de2ac5c}\label{class_vector2_d_ab3aae16cfdb6eab642f832d82de2ac5c}} 
+{\bfseries Vector2D} (const \hyperlink{structxy_vector}{xy\+Vector} vec)
 \item 
-\mbox{\Hypertarget{class_vector2_d_acd8431330929b93d97d4549848aa229c}\label{class_vector2_d_acd8431330929b93d97d4549848aa229c}} 
-{\bfseries Vector2D} (const \hyperlink{class_vector2_d}{Vector2D}$<$ T $>$ \&rhs)
+\mbox{\Hypertarget{class_vector2_d_a3253f7c676f03f9d460d6b473934a1ff}\label{class_vector2_d_a3253f7c676f03f9d460d6b473934a1ff}} 
+{\bfseries Vector2D} (const \hyperlink{structrt_vector}{rt\+Vector} vec)
 \item 
-\mbox{\Hypertarget{class_vector2_d_a2f3fe0560fcbf8a673c1385ce7455ffc}\label{class_vector2_d_a2f3fe0560fcbf8a673c1385ce7455ffc}} 
-vector$<$ T $>$ {\bfseries xyp\+Vector} () const
+\mbox{\Hypertarget{class_vector2_d_a658f4dd52408392ab5ad5fb36112a5c8}\label{class_vector2_d_a658f4dd52408392ab5ad5fb36112a5c8}} 
+{\bfseries Vector2D} (const \hyperlink{class_vector2_d}{Vector2D} \&rhs)
 \item 
-\mbox{\Hypertarget{class_vector2_d_aac220a4be6fe3a90cdb39ae6bbc7c530}\label{class_vector2_d_aac220a4be6fe3a90cdb39ae6bbc7c530}} 
-vector$<$ T $>$ {\bfseries rtp\+Vector} ()
+\mbox{\Hypertarget{class_vector2_d_a4bc415751c246ae44727ef4f6b80d80c}\label{class_vector2_d_a4bc415751c246ae44727ef4f6b80d80c}} 
+\hyperlink{structxy_vector}{xy\+Vector} {\bfseries get\+X\+Y\+Vector} () const
 \item 
-\mbox{\Hypertarget{class_vector2_d_a48012be2debc9e98895466e182dd2809}\label{class_vector2_d_a48012be2debc9e98895466e182dd2809}} 
-bool {\bfseries operator==} (const \hyperlink{class_vector2_d}{Vector2D}$<$ T $>$ \&rhs) const
+\mbox{\Hypertarget{class_vector2_d_a2760dd54ac65996966d1b9077cbecb06}\label{class_vector2_d_a2760dd54ac65996966d1b9077cbecb06}} 
+\hyperlink{structrt_vector}{rt\+Vector} {\bfseries get\+R\+T\+Vector} () const
 \item 
-\mbox{\Hypertarget{class_vector2_d_a57c89e2117c24b4ed6757ad9becbdd9c}\label{class_vector2_d_a57c89e2117c24b4ed6757ad9becbdd9c}} 
-\hyperlink{class_vector2_d}{Vector2D}$<$ T $>$ {\bfseries operator+} (const \hyperlink{class_vector2_d}{Vector2D}$<$ T $>$ \&rhs) const
+\mbox{\Hypertarget{class_vector2_d_abfa56cdcf167527e7c5efd54c4c1bffe}\label{class_vector2_d_abfa56cdcf167527e7c5efd54c4c1bffe}} 
+\hyperlink{class_vector2_d}{Vector2D} \& {\bfseries operator=} (const \hyperlink{class_vector2_d}{Vector2D} \&rhs)
 \item 
-\mbox{\Hypertarget{class_vector2_d_a322709c9ed0691606ba2545de90df155}\label{class_vector2_d_a322709c9ed0691606ba2545de90df155}} 
-\hyperlink{class_vector2_d}{Vector2D}$<$ T $>$ {\bfseries operator-\/} (const \hyperlink{class_vector2_d}{Vector2D}$<$ T $>$ \&rhs) const
+\mbox{\Hypertarget{class_vector2_d_a41f425fcd08fb82c7e72e132fb51136f}\label{class_vector2_d_a41f425fcd08fb82c7e72e132fb51136f}} 
+bool {\bfseries operator==} (const \hyperlink{class_vector2_d}{Vector2D} \&rhs) const
 \item 
-\mbox{\Hypertarget{class_vector2_d_af818b11548beb3d812061cc23c8f7738}\label{class_vector2_d_af818b11548beb3d812061cc23c8f7738}} 
-\hyperlink{class_vector2_d}{Vector2D}$<$ T $>$ {\bfseries operator$\ast$} (const \hyperlink{class_vector2_d}{Vector2D}$<$ T $>$ \&rhs) const
+\mbox{\Hypertarget{class_vector2_d_a142a352f6cb2406fee15d153a275439c}\label{class_vector2_d_a142a352f6cb2406fee15d153a275439c}} 
+\hyperlink{class_vector2_d}{Vector2D} {\bfseries operator+} (const \hyperlink{class_vector2_d}{Vector2D} \&rhs) const
 \item 
-\mbox{\Hypertarget{class_vector2_d_a25e6a98a37733d5307cd29c72102a2b3}\label{class_vector2_d_a25e6a98a37733d5307cd29c72102a2b3}} 
-\hyperlink{class_vector2_d}{Vector2D}$<$ T $>$ {\bfseries operator$\ast$} (const T \&scalar) const
+\mbox{\Hypertarget{class_vector2_d_a803ee7e8cc2bfac23eb9e3aeebd5be3f}\label{class_vector2_d_a803ee7e8cc2bfac23eb9e3aeebd5be3f}} 
+\hyperlink{class_vector2_d}{Vector2D} {\bfseries operator-\/} (const \hyperlink{class_vector2_d}{Vector2D} \&rhs) const
 \item 
-\mbox{\Hypertarget{class_vector2_d_a29c36f3be2df4ef95114487dc765bd11}\label{class_vector2_d_a29c36f3be2df4ef95114487dc765bd11}} 
-\hyperlink{class_vector2_d}{Vector2D}$<$ T $>$ {\bfseries operator/} (const T \&scalar) const
+\mbox{\Hypertarget{class_vector2_d_a257aa1ca3260a4cacaa1171f67bf7910}\label{class_vector2_d_a257aa1ca3260a4cacaa1171f67bf7910}} 
+\hyperlink{class_vector2_d}{Vector2D} {\bfseries operator$\ast$} (const \hyperlink{class_vector2_d}{Vector2D} \&rhs) const
 \item 
-\mbox{\Hypertarget{class_vector2_d_a2a04e7b0b8c9c0dcf466653104495fc4}\label{class_vector2_d_a2a04e7b0b8c9c0dcf466653104495fc4}} 
-\hyperlink{class_vector2_d}{Vector2D}$<$ T $>$ \& {\bfseries operator+=} (const \hyperlink{class_vector2_d}{Vector2D}$<$ T $>$ \&rhs)
+\mbox{\Hypertarget{class_vector2_d_a7ade542889c8e483b5cc536b2bf4f053}\label{class_vector2_d_a7ade542889c8e483b5cc536b2bf4f053}} 
+\hyperlink{class_vector2_d}{Vector2D} {\bfseries operator$\ast$} (const double \&scalar) const
 \item 
-\mbox{\Hypertarget{class_vector2_d_aea6860422a4f30cf7c6cf72d6fcdaf62}\label{class_vector2_d_aea6860422a4f30cf7c6cf72d6fcdaf62}} 
-\hyperlink{class_vector2_d}{Vector2D}$<$ T $>$ \& {\bfseries operator-\/=} (const \hyperlink{class_vector2_d}{Vector2D}$<$ T $>$ \&rhs)
+\mbox{\Hypertarget{class_vector2_d_adc10dc721432ed17e94602640bb24346}\label{class_vector2_d_adc10dc721432ed17e94602640bb24346}} 
+\hyperlink{class_vector2_d}{Vector2D} {\bfseries operator/} (const double \&scalar) const
 \item 
-\mbox{\Hypertarget{class_vector2_d_acb2dcee0abd8d5dbad45c1ee5cf9ad85}\label{class_vector2_d_acb2dcee0abd8d5dbad45c1ee5cf9ad85}} 
-\hyperlink{class_vector2_d}{Vector2D}$<$ T $>$ \& {\bfseries operator$\ast$=} (const \hyperlink{class_vector2_d}{Vector2D}$<$ T $>$ \&rhs)
+\mbox{\Hypertarget{class_vector2_d_affc6e2a6034a4c4249a3e8b17f633069}\label{class_vector2_d_affc6e2a6034a4c4249a3e8b17f633069}} 
+\hyperlink{class_vector2_d}{Vector2D} \& {\bfseries operator+=} (const \hyperlink{class_vector2_d}{Vector2D} \&rhs)
 \item 
-\mbox{\Hypertarget{class_vector2_d_a8ddc2d65ec361dc829711022c41eb407}\label{class_vector2_d_a8ddc2d65ec361dc829711022c41eb407}} 
-\hyperlink{class_vector2_d}{Vector2D}$<$ T $>$ \& {\bfseries operator$\ast$=} (const T scale)
+\mbox{\Hypertarget{class_vector2_d_a16532303ee3e0a340f0515c1f0675fbd}\label{class_vector2_d_a16532303ee3e0a340f0515c1f0675fbd}} 
+\hyperlink{class_vector2_d}{Vector2D} \& {\bfseries operator-\/=} (const \hyperlink{class_vector2_d}{Vector2D} \&rhs)
 \item 
-\mbox{\Hypertarget{class_vector2_d_a8cb83514b70eb0dc90a699c375a7af37}\label{class_vector2_d_a8cb83514b70eb0dc90a699c375a7af37}} 
-\hyperlink{class_vector2_d}{Vector2D}$<$ T $>$ \& {\bfseries operator/=} (const T scale)
+\mbox{\Hypertarget{class_vector2_d_a7fe58ba3258641c02c7ea4499d42a089}\label{class_vector2_d_a7fe58ba3258641c02c7ea4499d42a089}} 
+\hyperlink{class_vector2_d}{Vector2D} \& {\bfseries operator$\ast$=} (const \hyperlink{class_vector2_d}{Vector2D} \&rhs)
 \item 
-\mbox{\Hypertarget{class_vector2_d_ab85a8ff67d6067d4e365ea55c748283d}\label{class_vector2_d_ab85a8ff67d6067d4e365ea55c748283d}} 
-\hyperlink{class_vector2_d}{Vector2D}$<$ T $>$ {\bfseries normalize} () const
+\mbox{\Hypertarget{class_vector2_d_abd5d60f6e25137acab01b1d82da6819a}\label{class_vector2_d_abd5d60f6e25137acab01b1d82da6819a}} 
+\hyperlink{class_vector2_d}{Vector2D} \& {\bfseries operator$\ast$=} (const double scale)
+\item 
+\mbox{\Hypertarget{class_vector2_d_a72a388dec12b808190830a35be86a1f7}\label{class_vector2_d_a72a388dec12b808190830a35be86a1f7}} 
+\hyperlink{class_vector2_d}{Vector2D} \& {\bfseries operator/=} (const double scale)
+\item 
+\mbox{\Hypertarget{class_vector2_d_a79cfa577c38cb866d088166d6729a47d}\label{class_vector2_d_a79cfa577c38cb866d088166d6729a47d}} 
+\hyperlink{class_vector2_d}{Vector2D} {\bfseries normalize} () const
 \end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_vector2_d_a8e8ba14195521bf6f0be330118cbd23b}\label{class_vector2_d_a8e8ba14195521bf6f0be330118cbd23b}} 
-static T {\bfseries magnitude} (const \hyperlink{class_vector2_d}{Vector2D}$<$ T $>$ \&lhs)
+\mbox{\Hypertarget{class_vector2_d_a73d35a880a2f3d262b14ac8aaf5914db}\label{class_vector2_d_a73d35a880a2f3d262b14ac8aaf5914db}} 
+static double {\bfseries magnitude} (const \hyperlink{class_vector2_d}{Vector2D} \&lhs)
 \item 
-\mbox{\Hypertarget{class_vector2_d_af4af950a69d3e9bab0ace6195a3563da}\label{class_vector2_d_af4af950a69d3e9bab0ace6195a3563da}} 
-static T {\bfseries magnitude} (const \hyperlink{class_vector2_d}{Vector2D}$<$ T $>$ \&lhs, const \hyperlink{class_vector2_d}{Vector2D}$<$ T $>$ \&rhs)
+\mbox{\Hypertarget{class_vector2_d_ac7b3cebbfa7c84c9750c30a6c030ffa8}\label{class_vector2_d_ac7b3cebbfa7c84c9750c30a6c030ffa8}} 
+static double {\bfseries magnitude} (const \hyperlink{class_vector2_d}{Vector2D} \&lhs, const \hyperlink{class_vector2_d}{Vector2D} \&rhs)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_vector2_d_aa7a23308562639dc04b9fe30b2e30008}\label{class_vector2_d_aa7a23308562639dc04b9fe30b2e30008}} 
+static \hyperlink{class_vector2_d}{Vector2D} {\bfseries origin} \{0,0\}
+\item 
+\mbox{\Hypertarget{class_vector2_d_aa48eacf081c0ffd578ff0687bd261580}\label{class_vector2_d_aa48eacf081c0ffd578ff0687bd261580}} 
+static \hyperlink{class_vector2_d}{Vector2D} {\bfseries right} \{1, 0\}
+\item 
+\mbox{\Hypertarget{class_vector2_d_a9de8398e8d132c017571a911bf20d242}\label{class_vector2_d_a9de8398e8d132c017571a911bf20d242}} 
+static \hyperlink{class_vector2_d}{Vector2D} {\bfseries left} \{-\/1, 0\}
+\item 
+\mbox{\Hypertarget{class_vector2_d_a5ea1302008e7f6827a1153cd3d5f3ef7}\label{class_vector2_d_a5ea1302008e7f6827a1153cd3d5f3ef7}} 
+static \hyperlink{class_vector2_d}{Vector2D} {\bfseries up} \{0, 1\}
+\item 
+\mbox{\Hypertarget{class_vector2_d_aadd75c5ef76f3f4071c6fe1a2dc27c7b}\label{class_vector2_d_aadd75c5ef76f3f4071c6fe1a2dc27c7b}} 
+static \hyperlink{class_vector2_d}{Vector2D} {\bfseries down} \{0, -\/1\}
 \end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_vector2_d_a7f687846d5a25c2c23488ddf6cb0f407}\label{class_vector2_d_a7f687846d5a25c2c23488ddf6cb0f407}} 
+\mbox{\Hypertarget{class_vector2_d_a86eb002af3d4ce9ee892691165577bd9}\label{class_vector2_d_a86eb002af3d4ce9ee892691165577bd9}} 
 void {\bfseries radius} ()
 \item 
-\mbox{\Hypertarget{class_vector2_d_a4d566aae857d04bedbc1cc078a84cf85}\label{class_vector2_d_a4d566aae857d04bedbc1cc078a84cf85}} 
+\mbox{\Hypertarget{class_vector2_d_a77801c0448846bc99cea64b232e262ed}\label{class_vector2_d_a77801c0448846bc99cea64b232e262ed}} 
 void {\bfseries theta} ()
 \item 
-\mbox{\Hypertarget{class_vector2_d_a5d93604e93eb2fc712a77b49f618020b}\label{class_vector2_d_a5d93604e93eb2fc712a77b49f618020b}} 
+\mbox{\Hypertarget{class_vector2_d_a2aa1adc699bfc5a490875d26c1e6da04}\label{class_vector2_d_a2aa1adc699bfc5a490875d26c1e6da04}} 
 void {\bfseries x\+Val} ()
 \item 
-\mbox{\Hypertarget{class_vector2_d_a37ea419cf9315b798a2a78498591a66c}\label{class_vector2_d_a37ea419cf9315b798a2a78498591a66c}} 
+\mbox{\Hypertarget{class_vector2_d_ab202ce3f9065cdbf5d981b0f34c66feb}\label{class_vector2_d_ab202ce3f9065cdbf5d981b0f34c66feb}} 
 void {\bfseries y\+Val} ()
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_vector2_d_a8f8fc33b4c41c5b0f29351d160e55e43}\label{class_vector2_d_a8f8fc33b4c41c5b0f29351d160e55e43}} 
-T {\bfseries \+\_\+x\+\_\+val}
+\mbox{\Hypertarget{class_vector2_d_a151b8b70d16a3bf4544af58c2a721242}\label{class_vector2_d_a151b8b70d16a3bf4544af58c2a721242}} 
+\hyperlink{structxy_vector}{xy\+Vector} {\bfseries \+\_\+xyvec}
 \item 
-\mbox{\Hypertarget{class_vector2_d_aa0dd951527b98a9ecebb0ab2f260dbeb}\label{class_vector2_d_aa0dd951527b98a9ecebb0ab2f260dbeb}} 
-T {\bfseries \+\_\+y\+\_\+val}
-\item 
-\mbox{\Hypertarget{class_vector2_d_a524454b2dd476421734786f847c3f2b3}\label{class_vector2_d_a524454b2dd476421734786f847c3f2b3}} 
-T {\bfseries \+\_\+radius}
-\item 
-\mbox{\Hypertarget{class_vector2_d_aab1750b8605c28bbfe47ed41cf526f3f}\label{class_vector2_d_aab1750b8605c28bbfe47ed41cf526f3f}} 
-T {\bfseries \+\_\+theta}
-\item 
-\mbox{\Hypertarget{class_vector2_d_aefc834f88cb43eceb3c44f09bcd266b6}\label{class_vector2_d_aefc834f88cb43eceb3c44f09bcd266b6}} 
-T {\bfseries \+\_\+phi}
+\mbox{\Hypertarget{class_vector2_d_a97b229bece3801330df9ef710d0296e9}\label{class_vector2_d_a97b229bece3801330df9ef710d0296e9}} 
+\hyperlink{structrt_vector}{rt\+Vector} {\bfseries \+\_\+rtvec}
 \end{DoxyCompactItemize}
 \subsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_vector2_d_a8205b796e7a3e791bf9ede4d1ccdc6ff}\label{class_vector2_d_a8205b796e7a3e791bf9ede4d1ccdc6ff}} 
-static \hyperlink{class_vector2_d}{Vector2D}$<$ T $>$ {\bfseries \+\_\+origin}
+\mbox{\Hypertarget{class_vector2_d_a50a94297b6c05c07ee29900a438492a9}\label{class_vector2_d_a50a94297b6c05c07ee29900a438492a9}} 
+static double {\bfseries magnitude\+\_\+tolerance} = 0.\+000000001
 \end{DoxyCompactItemize}
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/Vector2\+D.\+hpp\end{DoxyCompactItemize}
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/Vector2\+D.\+h\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/Vector2\+D.\+cpp\end{DoxyCompactItemize}

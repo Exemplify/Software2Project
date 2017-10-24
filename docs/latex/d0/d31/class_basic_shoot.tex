@@ -1,0 +1,138 @@
+\hypertarget{class_basic_shoot}{}\section{Basic\+Shoot Class Reference}
+\label{class_basic_shoot}\index{Basic\+Shoot@{Basic\+Shoot}}
+
+
+Used to create a basic shoot component which creates a single projectile and shoots it in a straightline towards a target.  
+
+
+
+
+{\ttfamily \#include $<$Basic\+Shoot.\+h$>$}
+
+Inheritance diagram for Basic\+Shoot\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d0/d31/class_basic_shoot}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_basic_shoot_a7594a4b840d698baa8d4a51027078727}{Basic\+Shoot} (Game\+Object\+Type projectile\+Type)
+\begin{DoxyCompactList}\small\item\em Constructs the \hyperlink{class_basic_shoot}{Basic\+Shoot} Object used to create a projectile that fires in a straight line to a target. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_basic_shoot_a8bed811408d1afa3ecf0454ae78f2303}{Shoot} (\hyperlink{class_vector2_d}{Vector2D} start\+Position, \hyperlink{class_vector2_d}{Vector2D} target, std\+::shared\+\_\+ptr$<$ \hyperlink{class_scene}{Scene} $>$ scene) override
+\begin{DoxyCompactList}\small\item\em Shoots a \hyperlink{class_projectile}{Projectile} object in a way defined by the derived class, used as the main interface with the client. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::shared\+\_\+ptr$<$ \hyperlink{class_projectile}{Projectile} $>$ \hyperlink{class_basic_shoot_ab5058d147ca9d9cc4cc4210e9e092de5}{get\+Projectile} () override
+\begin{DoxyCompactList}\small\item\em Overriden function used to get the projectile used by the \hyperlink{class_basic_shoot}{Basic\+Shoot} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_vector2_d}{Vector2D} \hyperlink{class_basic_shoot_aafe1225544d200da3e0c084d33dac60a}{Calculate\+Shoot\+Direction} (\hyperlink{class_vector2_d}{Vector2D} start\+Position, \hyperlink{class_vector2_d}{Vector2D} target)
+\begin{DoxyCompactList}\small\item\em Calculates the direction that the projectile from the start position to the target. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Game\+Object\+Type \hyperlink{class_basic_shoot_a3dfb89cab41f16d9bcb1e94f521978fe}{\+\_\+projectile\+Type}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Used to create a basic shoot component which creates a single projectile and shoots it in a straightline towards a target. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_basic_shoot_a7594a4b840d698baa8d4a51027078727}\label{class_basic_shoot_a7594a4b840d698baa8d4a51027078727}} 
+\index{Basic\+Shoot@{Basic\+Shoot}!Basic\+Shoot@{Basic\+Shoot}}
+\index{Basic\+Shoot@{Basic\+Shoot}!Basic\+Shoot@{Basic\+Shoot}}
+\subsubsection{\texorpdfstring{Basic\+Shoot()}{BasicShoot()}}
+{\footnotesize\ttfamily Basic\+Shoot\+::\+Basic\+Shoot (\begin{DoxyParamCaption}\item[{Game\+Object\+Type}]{projectile\+Type }\end{DoxyParamCaption})}
+
+
+
+Constructs the \hyperlink{class_basic_shoot}{Basic\+Shoot} Object used to create a projectile that fires in a straight line to a target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em projectile\+Type} & The Game\+Object\+Type used to define the specific \hyperlink{class_projectile}{Projectile} that is created and shot \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_basic_shoot_aafe1225544d200da3e0c084d33dac60a}\label{class_basic_shoot_aafe1225544d200da3e0c084d33dac60a}} 
+\index{Basic\+Shoot@{Basic\+Shoot}!Calculate\+Shoot\+Direction@{Calculate\+Shoot\+Direction}}
+\index{Calculate\+Shoot\+Direction@{Calculate\+Shoot\+Direction}!Basic\+Shoot@{Basic\+Shoot}}
+\subsubsection{\texorpdfstring{Calculate\+Shoot\+Direction()}{CalculateShootDirection()}}
+{\footnotesize\ttfamily \hyperlink{class_vector2_d}{Vector2D} Basic\+Shoot\+::\+Calculate\+Shoot\+Direction (\begin{DoxyParamCaption}\item[{\hyperlink{class_vector2_d}{Vector2D}}]{start\+Position,  }\item[{\hyperlink{class_vector2_d}{Vector2D}}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Calculates the direction that the projectile from the start position to the target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Position} & The starting position of the projectile \\
+\hline
+{\em target} & The target that the projectile needs to move towards \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a \hyperlink{class_vector2_d}{Vector2D} that represents the unit direction from the start position to the target 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_basic_shoot_ab5058d147ca9d9cc4cc4210e9e092de5}\label{class_basic_shoot_ab5058d147ca9d9cc4cc4210e9e092de5}} 
+\index{Basic\+Shoot@{Basic\+Shoot}!get\+Projectile@{get\+Projectile}}
+\index{get\+Projectile@{get\+Projectile}!Basic\+Shoot@{Basic\+Shoot}}
+\subsubsection{\texorpdfstring{get\+Projectile()}{getProjectile()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{class_projectile}{Projectile} $>$ Basic\+Shoot\+::get\+Projectile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Overriden function used to get the projectile used by the \hyperlink{class_basic_shoot}{Basic\+Shoot} object. 
+
+Uses the \hyperlink{class_repository}{Repository} to construct the specific projectile object that is defined by the \+\_\+projectile\+Type \begin{DoxyReturn}{Returns}
+Returns the generated projectile that needs to be shot by the shoot component 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_shoot_interface_ad274b0c66a0a42bf194b32b704c8bfea}{Shoot\+Interface}.
+
+\mbox{\Hypertarget{class_basic_shoot_a8bed811408d1afa3ecf0454ae78f2303}\label{class_basic_shoot_a8bed811408d1afa3ecf0454ae78f2303}} 
+\index{Basic\+Shoot@{Basic\+Shoot}!Shoot@{Shoot}}
+\index{Shoot@{Shoot}!Basic\+Shoot@{Basic\+Shoot}}
+\subsubsection{\texorpdfstring{Shoot()}{Shoot()}}
+{\footnotesize\ttfamily void Basic\+Shoot\+::\+Shoot (\begin{DoxyParamCaption}\item[{\hyperlink{class_vector2_d}{Vector2D}}]{start\+Position,  }\item[{\hyperlink{class_vector2_d}{Vector2D}}]{target,  }\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_scene}{Scene} $>$}]{scene }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Shoots a \hyperlink{class_projectile}{Projectile} object in a way defined by the derived class, used as the main interface with the client. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Position} & The starting position of the \hyperlink{class_projectile}{Projectile} \\
+\hline
+{\em target} & The target that the projectile moves towards \\
+\hline
+{\em scene} & The scene that the projectile is instantiated into \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_shoot_interface_a67205cc4e2fed90fa8c1ec93b30b864d}{Shoot\+Interface}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_basic_shoot_a3dfb89cab41f16d9bcb1e94f521978fe}\label{class_basic_shoot_a3dfb89cab41f16d9bcb1e94f521978fe}} 
+\index{Basic\+Shoot@{Basic\+Shoot}!\+\_\+projectile\+Type@{\+\_\+projectile\+Type}}
+\index{\+\_\+projectile\+Type@{\+\_\+projectile\+Type}!Basic\+Shoot@{Basic\+Shoot}}
+\subsubsection{\texorpdfstring{\+\_\+projectile\+Type}{\_projectileType}}
+{\footnotesize\ttfamily Game\+Object\+Type Basic\+Shoot\+::\+\_\+projectile\+Type\hspace{0.3cm}{\ttfamily [private]}}
+
+The Game\+Object\+Type used to deferentiat the various projectiles that can be created 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Basic\+Shoot.\+h\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Basic\+Shoot.\+cpp\end{DoxyCompactItemize}

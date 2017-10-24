@@ -1,0 +1,76 @@
+\hypertarget{class_scene_factory}{}\section{Scene\+Factory Class Reference}
+\label{class_scene_factory}\index{Scene\+Factory@{Scene\+Factory}}
+
+
+Base class used to create the various scenes within the game.  
+
+
+
+
+{\ttfamily \#include $<$Scene\+Factory.\+h$>$}
+
+Inheritance diagram for Scene\+Factory\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d8/d70/class_scene_factory}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{class_scene}{Scene} $>$ \hyperlink{class_scene_factory_a9721384ff0d8703f0ef28bf9061fe402}{get\+Scene} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$ database) const
+\begin{DoxyCompactList}\small\item\em Constructs the \hyperlink{class_scene}{Scene} defined by the type of \hyperlink{class_scene}{Scene} factory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::list$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$ $>$ \hyperlink{class_scene_factory_a2c8541230e95df49d2ab39b7c6ecdb78}{get\+Game\+Obect\+List} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$ database) const =0
+\begin{DoxyCompactList}\small\item\em Returns the game\+Object list required for the construction of the specific \hyperlink{class_scene}{Scene}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class used to create the various scenes within the game. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_scene_factory_a2c8541230e95df49d2ab39b7c6ecdb78}\label{class_scene_factory_a2c8541230e95df49d2ab39b7c6ecdb78}} 
+\index{Scene\+Factory@{Scene\+Factory}!get\+Game\+Obect\+List@{get\+Game\+Obect\+List}}
+\index{get\+Game\+Obect\+List@{get\+Game\+Obect\+List}!Scene\+Factory@{Scene\+Factory}}
+\subsubsection{\texorpdfstring{get\+Game\+Obect\+List()}{getGameObectList()}}
+{\footnotesize\ttfamily virtual std\+::list$<$std\+::shared\+\_\+ptr$<$\hyperlink{class_game_object}{Game\+Object}$>$ $>$ Scene\+Factory\+::get\+Game\+Obect\+List (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$}]{database }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Returns the game\+Object list required for the construction of the specific \hyperlink{class_scene}{Scene}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em database} & The \hyperlink{class_database_interface}{Database\+Interface} that contains the information about the various Game\+Objects \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_menu_scene_factory_ade1881c377fa61d1d8fa11c1d30f4ddd}{Menu\+Scene\+Factory}, and \hyperlink{class_game_scene_factory_a2db801c1a1703a14a00c7b6e8bdca5b0}{Game\+Scene\+Factory}.
+
+\mbox{\Hypertarget{class_scene_factory_a9721384ff0d8703f0ef28bf9061fe402}\label{class_scene_factory_a9721384ff0d8703f0ef28bf9061fe402}} 
+\index{Scene\+Factory@{Scene\+Factory}!get\+Scene@{get\+Scene}}
+\index{get\+Scene@{get\+Scene}!Scene\+Factory@{Scene\+Factory}}
+\subsubsection{\texorpdfstring{get\+Scene()}{getScene()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{class_scene}{Scene} $>$ Scene\+Factory\+::get\+Scene (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$}]{database }\end{DoxyParamCaption}) const}
+
+
+
+Constructs the \hyperlink{class_scene}{Scene} defined by the type of \hyperlink{class_scene}{Scene} factory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em database} & The \hyperlink{class_database_interface}{Database\+Interface} that contains the information about the various Game\+Objects \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the Constructed \hyperlink{class_scene}{Scene} 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Scene\+Factory.\+h\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Scene\+Factory.\+cpp\end{DoxyCompactItemize}

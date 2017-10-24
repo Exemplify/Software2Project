@@ -5,7 +5,6 @@
 
 /**
  * @class MovableInterface
- * @file MovableInterface.h
  * @brief Defines the interfaces for any MovableObject Compositions
  */
 class MovableInterface

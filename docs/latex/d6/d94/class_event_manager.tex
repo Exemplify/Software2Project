@@ -2,7 +2,7 @@
 \label{class_event_manager}\index{Event\+Manager@{Event\+Manager}}
 
 
-can be converted into a singleton  
+Event Manager has the responsibility of controlling and running the event loop.  
 
 
 
@@ -12,31 +12,54 @@ can be converted into a singleton
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_event_manager_a89099b22114f158b5c530edfea52371d}\label{class_event_manager_a89099b22114f158b5c530edfea52371d}} 
-\hyperlink{class_event_manager_a89099b22114f158b5c530edfea52371d}{Event\+Manager} ()
-\begin{DoxyCompactList}\small\item\em redundant constructors should be removed, only a default is necessary with the event loop function \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_event_manager_a8951d1cf3aabe678cd37c64317497519}\label{class_event_manager_a8951d1cf3aabe678cd37c64317497519}} 
-{\bfseries Event\+Manager} (Render\+Window $\ast$event\+Window)
-\item 
-\mbox{\Hypertarget{class_event_manager_a3e90c3658f1fc88b45ba1b8fda4f2c10}\label{class_event_manager_a3e90c3658f1fc88b45ba1b8fda4f2c10}} 
-void {\bfseries Event\+Loop} (Render\+Window \&event\+Window)
-\end{DoxyCompactItemize}
+void \hyperlink{class_event_manager_a3e90c3658f1fc88b45ba1b8fda4f2c10}{Event\+Loop} (Render\+Window \&event\+Window)
+\begin{DoxyCompactList}\small\item\em The Event loop determines when an sfml event has been triggered, is used to detect when user input is detected. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_event_manager_a279b1d4e14cd98c1b3789a5276be2b3a}\label{class_event_manager_a279b1d4e14cd98c1b3789a5276be2b3a}} 
-void {\bfseries Key\+Input} (const Event \&event, bool state)
-\end{DoxyCompactItemize}
-\subsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{class_event_manager_a1909a88890831dfd326b4a9032c48ac2}\label{class_event_manager_a1909a88890831dfd326b4a9032c48ac2}} 
-std\+::shared\+\_\+ptr$<$ Render\+Window $>$ \hyperlink{class_event_manager_a1909a88890831dfd326b4a9032c48ac2}{\+\_\+event\+Window}
-\begin{DoxyCompactList}\small\item\em redundant shared pointer \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{class_event_manager_a279b1d4e14cd98c1b3789a5276be2b3a}{Key\+Input} (const Event \&event, bool state)
+\begin{DoxyCompactList}\small\item\em Asssigns the state to the input class for whether a key has been pressed or released. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-can be converted into a singleton 
+Event Manager has the responsibility of controlling and running the event loop. 
+
+Is used to detect when specific events are triggered, it runs inside of the main thread as per the recommendation of sfml 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_event_manager_a3e90c3658f1fc88b45ba1b8fda4f2c10}\label{class_event_manager_a3e90c3658f1fc88b45ba1b8fda4f2c10}} 
+\index{Event\+Manager@{Event\+Manager}!Event\+Loop@{Event\+Loop}}
+\index{Event\+Loop@{Event\+Loop}!Event\+Manager@{Event\+Manager}}
+\subsubsection{\texorpdfstring{Event\+Loop()}{EventLoop()}}
+{\footnotesize\ttfamily void Event\+Manager\+::\+Event\+Loop (\begin{DoxyParamCaption}\item[{Render\+Window \&}]{event\+Window }\end{DoxyParamCaption})}
+
+
+
+The Event loop determines when an sfml event has been triggered, is used to detect when user input is detected. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event\+Window} & The referecne to the Render\+Window used by the Game\+Loop \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_event_manager_a279b1d4e14cd98c1b3789a5276be2b3a}\label{class_event_manager_a279b1d4e14cd98c1b3789a5276be2b3a}} 
+\index{Event\+Manager@{Event\+Manager}!Key\+Input@{Key\+Input}}
+\index{Key\+Input@{Key\+Input}!Event\+Manager@{Event\+Manager}}
+\subsubsection{\texorpdfstring{Key\+Input()}{KeyInput()}}
+{\footnotesize\ttfamily void Event\+Manager\+::\+Key\+Input (\begin{DoxyParamCaption}\item[{const Event \&}]{event,  }\item[{bool}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Asssigns the state to the input class for whether a key has been pressed or released. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The Event that was triggered \\
+\hline
+{\em state} & the state as to whether the key should be set released or pressed \\
+\hline
+\end{DoxyParams}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

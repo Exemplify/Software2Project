@@ -1,0 +1,57 @@
+\hypertarget{class_menu_scene_factory}{}\section{Menu\+Scene\+Factory Class Reference}
+\label{class_menu_scene_factory}\index{Menu\+Scene\+Factory@{Menu\+Scene\+Factory}}
+
+
+Creates the various Menu\+Scenes within the game.  
+
+
+
+
+{\ttfamily \#include $<$Menu\+Scene\+Factory.\+h$>$}
+
+Inheritance diagram for Menu\+Scene\+Factory\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{da/d10/class_menu_scene_factory}
+\end{center}
+\end{figure}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::list$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$ $>$ \hyperlink{class_menu_scene_factory_ade1881c377fa61d1d8fa11c1d30f4ddd}{get\+Game\+Obect\+List} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$ database) const final
+\begin{DoxyCompactList}\small\item\em Returns the game\+Object list required for the construction of the specific \hyperlink{class_scene}{Scene}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_menu_scene_factory_ad0f60a16fdbb10c6d7ba3311dafa2e76}\label{class_menu_scene_factory_ad0f60a16fdbb10c6d7ba3311dafa2e76}} 
+virtual std\+::shared\+\_\+ptr$<$ \hyperlink{class_background_factory}{Background\+Factory} $>$ {\bfseries get\+Factory} () const =0
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Creates the various Menu\+Scenes within the game. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_menu_scene_factory_ade1881c377fa61d1d8fa11c1d30f4ddd}\label{class_menu_scene_factory_ade1881c377fa61d1d8fa11c1d30f4ddd}} 
+\index{Menu\+Scene\+Factory@{Menu\+Scene\+Factory}!get\+Game\+Obect\+List@{get\+Game\+Obect\+List}}
+\index{get\+Game\+Obect\+List@{get\+Game\+Obect\+List}!Menu\+Scene\+Factory@{Menu\+Scene\+Factory}}
+\subsubsection{\texorpdfstring{get\+Game\+Obect\+List()}{getGameObectList()}}
+{\footnotesize\ttfamily std\+::list$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$ $>$ Menu\+Scene\+Factory\+::get\+Game\+Obect\+List (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$}]{database }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Returns the game\+Object list required for the construction of the specific \hyperlink{class_scene}{Scene}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em database} & The \hyperlink{class_database_interface}{Database\+Interface} that contains the information about the various Game\+Objects \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_scene_factory_a2c8541230e95df49d2ab39b7c6ecdb78}{Scene\+Factory}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Menu\+Scene\+Factory.\+h\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Menu\+Scene\+Factory.\+cpp\end{DoxyCompactItemize}

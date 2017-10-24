@@ -37,7 +37,7 @@ public:
 private:
 	
 	RenderWindow* _dispwindow_ptr; /**<A pointer to the corresponding RenderWindow that needs images displayed to it>*/
-	UpdateGameObjectDisplay _updateGameObjectDisplay; /**<Composition object responsible for for displaying each GameObject and the its corresponding Sprite>*/
+	UpdateGameObjectDisplay _updateGameObjectDisplay; /**<Composition object responsible for displaying each GameObject and the its corresponding Sprite>*/
 
 	/**
 	 * @brief Runs the display loop and is created in a seperate thread

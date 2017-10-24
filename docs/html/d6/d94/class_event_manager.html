@@ -64,47 +64,105 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d6/d77/class_event_manager-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">EventManager Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>can be converted into a singleton  
+<p>Event Manager has the responsibility of controlling and running the event loop.  
  <a href="../../d6/d94/class_event_manager.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../db/d36/_event_manager_8h_source.html">EventManager.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a89099b22114f158b5c530edfea52371d"><td class="memItemLeft" align="right" valign="top"><a id="a89099b22114f158b5c530edfea52371d"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d94/class_event_manager.html#a89099b22114f158b5c530edfea52371d">EventManager</a> ()</td></tr>
-<tr class="memdesc:a89099b22114f158b5c530edfea52371d"><td class="mdescLeft">&#160;</td><td class="mdescRight">redundant constructors should be removed, only a default is necessary with the event loop function <br /></td></tr>
-<tr class="separator:a89099b22114f158b5c530edfea52371d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8951d1cf3aabe678cd37c64317497519"><td class="memItemLeft" align="right" valign="top"><a id="a8951d1cf3aabe678cd37c64317497519"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>EventManager</b> (RenderWindow *eventWindow)</td></tr>
-<tr class="separator:a8951d1cf3aabe678cd37c64317497519"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e90c3658f1fc88b45ba1b8fda4f2c10"><td class="memItemLeft" align="right" valign="top"><a id="a3e90c3658f1fc88b45ba1b8fda4f2c10"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EventLoop</b> (RenderWindow &amp;eventWindow)</td></tr>
+<tr class="memitem:a3e90c3658f1fc88b45ba1b8fda4f2c10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d94/class_event_manager.html#a3e90c3658f1fc88b45ba1b8fda4f2c10">EventLoop</a> (RenderWindow &amp;eventWindow)</td></tr>
+<tr class="memdesc:a3e90c3658f1fc88b45ba1b8fda4f2c10"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Event loop determines when an sfml event has been triggered, is used to detect when user input is detected.  <a href="#a3e90c3658f1fc88b45ba1b8fda4f2c10">More...</a><br /></td></tr>
 <tr class="separator:a3e90c3658f1fc88b45ba1b8fda4f2c10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a279b1d4e14cd98c1b3789a5276be2b3a"><td class="memItemLeft" align="right" valign="top"><a id="a279b1d4e14cd98c1b3789a5276be2b3a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>KeyInput</b> (const Event &amp;event, bool state)</td></tr>
+<tr class="memitem:a279b1d4e14cd98c1b3789a5276be2b3a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d94/class_event_manager.html#a279b1d4e14cd98c1b3789a5276be2b3a">KeyInput</a> (const Event &amp;event, bool state)</td></tr>
+<tr class="memdesc:a279b1d4e14cd98c1b3789a5276be2b3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asssigns the state to the input class for whether a key has been pressed or released.  <a href="#a279b1d4e14cd98c1b3789a5276be2b3a">More...</a><br /></td></tr>
 <tr class="separator:a279b1d4e14cd98c1b3789a5276be2b3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a1909a88890831dfd326b4a9032c48ac2"><td class="memItemLeft" align="right" valign="top"><a id="a1909a88890831dfd326b4a9032c48ac2"></a>
-std::shared_ptr&lt; RenderWindow &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d94/class_event_manager.html#a1909a88890831dfd326b4a9032c48ac2">_eventWindow</a></td></tr>
-<tr class="memdesc:a1909a88890831dfd326b4a9032c48ac2"><td class="mdescLeft">&#160;</td><td class="mdescRight">redundant shared pointer <br /></td></tr>
-<tr class="separator:a1909a88890831dfd326b4a9032c48ac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>can be converted into a singleton </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+<div class="textblock"><p>Event Manager has the responsibility of controlling and running the event loop. </p>
+<p>Is used to detect when specific events are triggered, it runs inside of the main thread as per the recommendation of sfml </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3e90c3658f1fc88b45ba1b8fda4f2c10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e90c3658f1fc88b45ba1b8fda4f2c10">&#9670;&nbsp;</a></span>EventLoop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventManager::EventLoop </td>
+          <td>(</td>
+          <td class="paramtype">RenderWindow &amp;&#160;</td>
+          <td class="paramname"><em>eventWindow</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The Event loop determines when an sfml event has been triggered, is used to detect when user input is detected. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">eventWindow</td><td>The referecne to the RenderWindow used by the GameLoop </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a279b1d4e14cd98c1b3789a5276be2b3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a279b1d4e14cd98c1b3789a5276be2b3a">&#9670;&nbsp;</a></span>KeyInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EventManager::KeyInput </td>
+          <td>(</td>
+          <td class="paramtype">const Event &amp;&#160;</td>
+          <td class="paramname"><em>event</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>state</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Asssigns the state to the input class for whether a key has been pressed or released. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>The Event that was triggered </td></tr>
+    <tr><td class="paramname">state</td><td>the state as to whether the key should be set released or pressed </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>D:/Users/Tim-PC/Documents/Software_II/Project/ProjectFiles/game-source-code/BackEndSystems/<a class="el" href="../../db/d36/_event_manager_8h_source.html">EventManager.h</a></li>
 <li>D:/Users/Tim-PC/Documents/Software_II/Project/ProjectFiles/game-source-code/BackEndSystems/EventManager.cpp</li>
 </ul>

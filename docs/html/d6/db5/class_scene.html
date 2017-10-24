@@ -70,6 +70,11 @@ $(function() {
 <div class="title">Scene Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><a class="el" href="../../d6/db5/class_scene.html" title="Scene is used to store and operate on the various gameobjects that define the functionality of the cu...">Scene</a> is used to store and operate on the various gameobjects that define the functionality of the current scene.  
+ <a href="../../d6/db5/class_scene.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../de/d56/_scene_8h_source.html">Scene.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Scene:</div>
 <div class="dyncontent">
@@ -81,37 +86,80 @@ Inheritance diagram for Scene:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0caa1ccf717fe21059f20b0c4a57cde6"><td class="memItemLeft" align="right" valign="top"><a id="a0caa1ccf717fe21059f20b0c4a57cde6"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/db5/class_scene.html#a0caa1ccf717fe21059f20b0c4a57cde6">Scene</a> (const <a class="el" href="../../d6/db5/class_scene.html">Scene</a> &amp;rhs)</td></tr>
-<tr class="memdesc:a0caa1ccf717fe21059f20b0c4a57cde6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Currently needs to be fixed. <br /></td></tr>
-<tr class="separator:a0caa1ccf717fe21059f20b0c4a57cde6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d902efeacc113ceb2dd79a976b04a77"><td class="memItemLeft" align="right" valign="top"><a id="a1d902efeacc113ceb2dd79a976b04a77"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SceneUpdate</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/db5/class_scene.html#a1d902efeacc113ceb2dd79a976b04a77">SceneUpdate</a> ()</td></tr>
+<tr class="memdesc:a1d902efeacc113ceb2dd79a976b04a77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the Update function of all of the GameObjects stored within <a class="el" href="../../d6/db5/class_scene.html" title="Scene is used to store and operate on the various gameobjects that define the functionality of the cu...">Scene</a>. <br /></td></tr>
 <tr class="separator:a1d902efeacc113ceb2dd79a976b04a77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3dd730cba4a22bf75e54c4b644c26976"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/db5/class_scene.html#a3dd730cba4a22bf75e54c4b644c26976">Instantiate</a> (shared_ptr&lt; <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a> &gt; gameObj)</td></tr>
+<tr class="memdesc:a3dd730cba4a22bf75e54c4b644c26976"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the specified <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a> pointer to the scene.  <a href="#a3dd730cba4a22bf75e54c4b644c26976">More...</a><br /></td></tr>
 <tr class="separator:a3dd730cba4a22bf75e54c4b644c26976"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae418f788bfbf2551d89e907d1d4cf2f6"><td class="memItemLeft" align="right" valign="top"><a id="ae418f788bfbf2551d89e907d1d4cf2f6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>DestroyGameObject</b> (gameObj_ptr gameObject)</td></tr>
-<tr class="separator:ae418f788bfbf2551d89e907d1d4cf2f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0696711d2b1452f3d6f42f7a92f4218d"><td class="memItemLeft" align="right" valign="top"><a id="a0696711d2b1452f3d6f42f7a92f4218d"></a>
-std::vector&lt; gameObj_ptr &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getGameObjectList</b> () const</td></tr>
-<tr class="separator:a0696711d2b1452f3d6f42f7a92f4218d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64a47e6503f634ea2b76fa2078538716"><td class="memItemLeft" align="right" valign="top"><a id="a64a47e6503f634ea2b76fa2078538716"></a>
-<a class="el" href="../../d6/db5/class_scene.html">Scene</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="../../d6/db5/class_scene.html">Scene</a> &amp;rhs)</td></tr>
-<tr class="separator:a64a47e6503f634ea2b76fa2078538716"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e47a6610a3bb6e85373f5b297645754"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/db5/class_scene.html#a2e47a6610a3bb6e85373f5b297645754">DestroyGameObject</a> (std::shared_ptr&lt; <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a> &gt; gameObject)</td></tr>
+<tr class="memdesc:a2e47a6610a3bb6e85373f5b297645754"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the current Instance of the <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a> from the <a class="el" href="../../d6/db5/class_scene.html" title="Scene is used to store and operate on the various gameobjects that define the functionality of the cu...">Scene</a>.  <a href="#a2e47a6610a3bb6e85373f5b297645754">More...</a><br /></td></tr>
+<tr class="separator:a2e47a6610a3bb6e85373f5b297645754"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a717b5fcf248038c51b205b022301318f"><td class="memItemLeft" align="right" valign="top">std::list&lt; std::shared_ptr&lt; <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/db5/class_scene.html#a717b5fcf248038c51b205b022301318f">getGameObjectList</a> () const</td></tr>
+<tr class="memdesc:a717b5fcf248038c51b205b022301318f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the List of GameObjects stored to provide the collisionDetection and <a class="el" href="../../d8/db2/class_display_manager.html" title="Display manager is in charge of running and managing the presentation layer. ">DisplayManager</a> with neccessary information.  <a href="#a717b5fcf248038c51b205b022301318f">More...</a><br /></td></tr>
+<tr class="separator:a717b5fcf248038c51b205b022301318f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a29183cf37f5227ea9a82d2a15c42336c"><td class="memItemLeft" align="right" valign="top"><a id="a29183cf37f5227ea9a82d2a15c42336c"></a>
-std::mutex&#160;</td><td class="memItemRight" valign="bottom"><b>_gameObject_list_mutex</b></td></tr>
+<tr class="memitem:a29183cf37f5227ea9a82d2a15c42336c"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/db5/class_scene.html#a29183cf37f5227ea9a82d2a15c42336c">_gameObject_list_mutex</a></td></tr>
 <tr class="separator:a29183cf37f5227ea9a82d2a15c42336c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:af1956432917d14b0a0b26103dbcb5bcd"><td class="memItemLeft" align="right" valign="top">std::vector&lt; gameObj_ptr &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/db5/class_scene.html#af1956432917d14b0a0b26103dbcb5bcd">_gameObject_list</a></td></tr>
-<tr class="separator:af1956432917d14b0a0b26103dbcb5bcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ce74c2bdeb1bca46221645b309aa8cf"><td class="memItemLeft" align="right" valign="top">std::list&lt; std::shared_ptr&lt; <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/db5/class_scene.html#a3ce74c2bdeb1bca46221645b309aa8cf">_gameObject_list</a></td></tr>
+<tr class="separator:a3ce74c2bdeb1bca46221645b309aa8cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="../../d6/db5/class_scene.html" title="Scene is used to store and operate on the various gameobjects that define the functionality of the cu...">Scene</a> is used to store and operate on the various gameobjects that define the functionality of the current scene. </p>
+<p>A scene object is used to contain each of the gameobjects that will be required for the current scenes functionallity. Each scene represents a different functionallity of the game. This includes the a splash Screen and the main scene. The <a class="el" href="../../d6/db5/class_scene.html" title="Scene is used to store and operate on the various gameobjects that define the functionality of the cu...">Scene</a> is responsible for running the Update on each gameobject that is stored within it. The active scene passes information about the current state of the game to the Collision Detection and Display Manager Classes. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2e47a6610a3bb6e85373f5b297645754"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e47a6610a3bb6e85373f5b297645754">&#9670;&nbsp;</a></span>DestroyGameObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Scene::DestroyGameObject </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a> &gt;&#160;</td>
+          <td class="paramname"><em>gameObject</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Removes the current Instance of the <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a> from the <a class="el" href="../../d6/db5/class_scene.html" title="Scene is used to store and operate on the various gameobjects that define the functionality of the cu...">Scene</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gameObject</td><td>The <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a> instance that is removed </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a717b5fcf248038c51b205b022301318f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a717b5fcf248038c51b205b022301318f">&#9670;&nbsp;</a></span>getGameObjectList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::list&lt; std::shared_ptr&lt; <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a> &gt; &gt; Scene::getGameObjectList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the List of GameObjects stored to provide the collisionDetection and <a class="el" href="../../d8/db2/class_display_manager.html" title="Display manager is in charge of running and managing the presentation layer. ">DisplayManager</a> with neccessary information. </p>
+<dl class="section return"><dt>Returns</dt><dd>The List of GameObjects Stored within the <a class="el" href="../../d6/db5/class_scene.html" title="Scene is used to store and operate on the various gameobjects that define the functionality of the cu...">Scene</a> Object </dd></dl>
+
+</div>
+</div>
 <a id="a3dd730cba4a22bf75e54c4b644c26976"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3dd730cba4a22bf75e54c4b644c26976">&#9670;&nbsp;</a></span>Instantiate()</h2>
 
@@ -127,13 +175,20 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Seems redundant to do duplicate the game object pointer </p>
+
+<p>Adds the specified <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a> pointer to the scene. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gameObj</td><td>The specific <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a> that is added to the <a class="el" href="../../d6/db5/class_scene.html" title="Scene is used to store and operate on the various gameobjects that define the functionality of the cu...">Scene</a> </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="af1956432917d14b0a0b26103dbcb5bcd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1956432917d14b0a0b26103dbcb5bcd">&#9670;&nbsp;</a></span>_gameObject_list</h2>
+<a id="a3ce74c2bdeb1bca46221645b309aa8cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ce74c2bdeb1bca46221645b309aa8cf">&#9670;&nbsp;</a></span>_gameObject_list</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -142,7 +197,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;gameObj_ptr&gt; Scene::_gameObject_list</td>
+          <td class="memname">std::list&lt;std::shared_ptr&lt;<a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a>&gt; &gt; Scene::_gameObject_list</td>
         </tr>
       </table>
   </td>
@@ -151,7 +206,22 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>would be better to use a doubly linked list instead of a vector since it has a better time effeciency when it deals with insertion and deletion of elements </p>
+<p>A doubly linked list used to store the various game objects of the </p>
+
+</div>
+</div>
+<a id="a29183cf37f5227ea9a82d2a15c42336c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29183cf37f5227ea9a82d2a15c42336c">&#9670;&nbsp;</a></span>_gameObject_list_mutex</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::mutex Scene::_gameObject_list_mutex</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The mutex object used to enusre that the <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a> list is not accessed by the different threads at the same time </p>
 
 </div>
 </div>

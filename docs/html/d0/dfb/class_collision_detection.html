@@ -70,37 +70,171 @@ $(function() {
 <div class="title">CollisionDetection Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Determines when PhysicsObjects have collided with each other.  
+ <a href="../../d0/dfb/class_collision_detection.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d2/d51/_collision_detection_8h_source.html">CollisionDetection.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3f9bc79550f37b2c929dfef9ea1a82e3"><td class="memItemLeft" align="right" valign="top"><a id="a3f9bc79550f37b2c929dfef9ea1a82e3"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>CollisionDetection</b> (RenderWindow *dispWindow)</td></tr>
-<tr class="separator:a3f9bc79550f37b2c929dfef9ea1a82e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad100d45a6884ee0b9e714833af04553c"><td class="memItemLeft" align="right" valign="top"><a id="ad100d45a6884ee0b9e714833af04553c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>initializeCollisionThread</b> ()</td></tr>
-<tr class="separator:ad100d45a6884ee0b9e714833af04553c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f88d35b750b96c0da3b09460d8f02bd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dfb/class_collision_detection.html#a2f88d35b750b96c0da3b09460d8f02bd">CollisionDetection</a> (sf::RenderWindow *dispWindow)</td></tr>
+<tr class="memdesc:a2f88d35b750b96c0da3b09460d8f02bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the <a class="el" href="../../d0/dfb/class_collision_detection.html" title="Determines when PhysicsObjects have collided with each other. ">CollisionDetection</a> object with the specific RenderWindow that is required to create a <a class="el" href="../../d0/dfb/class_collision_detection.html" title="Determines when PhysicsObjects have collided with each other. ">CollisionDetection</a> loop.  <a href="#a2f88d35b750b96c0da3b09460d8f02bd">More...</a><br /></td></tr>
+<tr class="separator:a2f88d35b750b96c0da3b09460d8f02bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fcb59ac9cafa41ba26912f72c1bf990"><td class="memItemLeft" align="right" valign="top"><a id="a6fcb59ac9cafa41ba26912f72c1bf990"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dfb/class_collision_detection.html#a6fcb59ac9cafa41ba26912f72c1bf990">InitializeCollisionThread</a> ()</td></tr>
+<tr class="memdesc:a6fcb59ac9cafa41ba26912f72c1bf990"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises the <a class="el" href="../../d0/dfb/class_collision_detection.html" title="Determines when PhysicsObjects have collided with each other. ">CollisionDetection</a> thread. <br /></td></tr>
+<tr class="separator:a6fcb59ac9cafa41ba26912f72c1bf990"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a1eda3727a959c4aa24fad3ef46a7b530"><td class="memItemLeft" align="right" valign="top"><a id="a1eda3727a959c4aa24fad3ef46a7b530"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>runCollisionThread</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dfb/class_collision_detection.html#a1eda3727a959c4aa24fad3ef46a7b530">runCollisionThread</a> ()</td></tr>
+<tr class="memdesc:a1eda3727a959c4aa24fad3ef46a7b530"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the Collision Detection loop, checks for collisions on each iteration of the loop. <br /></td></tr>
 <tr class="separator:a1eda3727a959c4aa24fad3ef46a7b530"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b39c9264288db71452ce2f66a79c4f1"><td class="memItemLeft" align="right" valign="top"><a id="a9b39c9264288db71452ce2f66a79c4f1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>checkCollisions</b> ()</td></tr>
+<tr class="memitem:a9b39c9264288db71452ce2f66a79c4f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dfb/class_collision_detection.html#a9b39c9264288db71452ce2f66a79c4f1">checkCollisions</a> ()</td></tr>
+<tr class="memdesc:a9b39c9264288db71452ce2f66a79c4f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loops through each <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a> and determines if it has collided with a different one.  <a href="#a9b39c9264288db71452ce2f66a79c4f1">More...</a><br /></td></tr>
 <tr class="separator:a9b39c9264288db71452ce2f66a79c4f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3a234d784ff1995558364dbcd0936ab"><td class="memItemLeft" align="right" valign="top"><a id="af3a234d784ff1995558364dbcd0936ab"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>checkObjects</b> (shared_ptr&lt; <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a> &gt; gameObj1, shared_ptr&lt; <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a> &gt; gameObj2)</td></tr>
-<tr class="separator:af3a234d784ff1995558364dbcd0936ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c7daf7f877c7f9418d36944c4728b75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dfb/class_collision_detection.html#a5c7daf7f877c7f9418d36944c4728b75">checkObjects</a> (std::shared_ptr&lt; <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a> &gt; gameObj1, std::shared_ptr&lt; <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a> &gt; gameObj2)</td></tr>
+<tr class="memdesc:a5c7daf7f877c7f9418d36944c4728b75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the two PhysicsObjects have collided with each other by dynamically casting the provided GameObjects.  <a href="#a5c7daf7f877c7f9418d36944c4728b75">More...</a><br /></td></tr>
+<tr class="separator:a5c7daf7f877c7f9418d36944c4728b75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a6ff887986bbe096d995d535748c94d56"><td class="memItemLeft" align="right" valign="top"><a id="a6ff887986bbe096d995d535748c94d56"></a>
-RenderWindow *&#160;</td><td class="memItemRight" valign="bottom"><b>_dispwindow_ptr</b></td></tr>
-<tr class="separator:a6ff887986bbe096d995d535748c94d56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a894b4bc38b6987d4cf8135df01d83b"><td class="memItemLeft" align="right" valign="top">sf::RenderWindow *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dfb/class_collision_detection.html#a7a894b4bc38b6987d4cf8135df01d83b">_dispwindow_ptr</a></td></tr>
+<tr class="separator:a7a894b4bc38b6987d4cf8135df01d83b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Determines when PhysicsObjects have collided with each other. </p>
+<p>Runs in a seperate thread and copies the list of GameObjects stored within the <a class="el" href="../../d6/db5/class_scene.html" title="Scene is used to store and operate on the various gameobjects that define the functionality of the cu...">Scene</a> </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a2f88d35b750b96c0da3b09460d8f02bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f88d35b750b96c0da3b09460d8f02bd">&#9670;&nbsp;</a></span>CollisionDetection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CollisionDetection::CollisionDetection </td>
+          <td>(</td>
+          <td class="paramtype">sf::RenderWindow *&#160;</td>
+          <td class="paramname"><em>dispWindow</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs the <a class="el" href="../../d0/dfb/class_collision_detection.html" title="Determines when PhysicsObjects have collided with each other. ">CollisionDetection</a> object with the specific RenderWindow that is required to create a <a class="el" href="../../d0/dfb/class_collision_detection.html" title="Determines when PhysicsObjects have collided with each other. ">CollisionDetection</a> loop. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dispWindow</td><td>The RenderWindow that is used for the game loop </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9b39c9264288db71452ce2f66a79c4f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b39c9264288db71452ce2f66a79c4f1">&#9670;&nbsp;</a></span>checkCollisions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CollisionDetection::checkCollisions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Loops through each <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a> and determines if it has collided with a different one. </p>
+<p>It is necesary to iterate through each element and compare it with every other element, each coparison only needs to be done once. This is achieved by starting from the first element (assuming it is the most left element) it compares itself to all elements of the container not including itself. </p>
+
+</div>
+</div>
+<a id="a5c7daf7f877c7f9418d36944c4728b75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c7daf7f877c7f9418d36944c4728b75">&#9670;&nbsp;</a></span>checkObjects()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CollisionDetection::checkObjects </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a> &gt;&#160;</td>
+          <td class="paramname"><em>gameObj1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a> &gt;&#160;</td>
+          <td class="paramname"><em>gameObj2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if the two PhysicsObjects have collided with each other by dynamically casting the provided GameObjects. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gameObj1</td><td>primary <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a>, if a collision has occured collisionOccured is called </td></tr>
+    <tr><td class="paramname">gameObj2</td><td>secondary <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a>, used to check if collision has occure with primary <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a7a894b4bc38b6987d4cf8135df01d83b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a894b4bc38b6987d4cf8135df01d83b">&#9670;&nbsp;</a></span>_dispwindow_ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::RenderWindow* CollisionDetection::_dispwindow_ptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>pointer to the RenderWindow used for the game </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>D:/Users/Tim-PC/Documents/Software_II/Project/ProjectFiles/game-source-code/FrontEndSystems/<a class="el" href="../../d2/d51/_collision_detection_8h_source.html">CollisionDetection.h</a></li>
-<li>D:/Users/Tim-PC/Documents/Software_II/Project/ProjectFiles/game-source-code/FrontEndSystems/CollisionDetection.cpp</li>
+<li>D:/Users/Tim-PC/Documents/Software_II/Project/ProjectFiles/game-source-code/BackEndSystems/<a class="el" href="../../d2/d51/_collision_detection_8h_source.html">CollisionDetection.h</a></li>
+<li>D:/Users/Tim-PC/Documents/Software_II/Project/ProjectFiles/game-source-code/BackEndSystems/CollisionDetection.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

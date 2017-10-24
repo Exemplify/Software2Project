@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7eprojectile',['~Projectile',['../db/dbe/class_projectile.html#add4d983566a326200ea1d7c74737e108',1,'Projectile']]]
+  ['timeframe',['TimeFrame',['../d9/db6/class_game_time.html#a424d4e2f4745a85897620751ff5153b9',1,'GameTime']]]
 ];

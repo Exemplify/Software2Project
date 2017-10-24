@@ -7,7 +7,10 @@
 #include <list>
 #include <memory>
 
-
+/**
+ * @class LoseSceneFactory
+ * @brief Creates the Scene that is displayed when the player loses the game
+ */
 class LoseSceneFactory: public MenuSceneFactory
 {
 protected:

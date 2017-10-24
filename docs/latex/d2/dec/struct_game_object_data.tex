@@ -1,0 +1,80 @@
+\hypertarget{struct_game_object_data}{}\section{Game\+Object\+Data Class Reference}
+\label{struct_game_object_data}\index{Game\+Object\+Data@{Game\+Object\+Data}}
+
+
+A struct that is used to represent all of the information used for game object initialisation.  
+
+
+
+
+{\ttfamily \#include $<$Game\+Data.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_game_object_data_a0baf6abe71f79dc7d7efdf9848b82718}\label{struct_game_object_data_a0baf6abe71f79dc7d7efdf9848b82718}} 
+{\bfseries Game\+Object\+Data} (double p\+\_\+x, double p\+\_\+y, double s\+\_\+x, double s\+\_\+y, std\+::string g\+\_\+n, std\+::string g\+\_\+l, double m\+\_\+s, double col\+\_\+siz, double p\+\_\+sh\+\_\+del, double p\+\_\+sh\+\_\+sp, double p\+\_\+pro\+\_\+dest\+\_\+reg, double enm\+\_\+spa\+\_\+del, double enm\+\_\+sh\+\_\+del, double enm\+\_\+an\+\_\+sp, double para\+\_\+coef, unsigned int m\+\_\+enm)
+\item 
+\mbox{\Hypertarget{struct_game_object_data_a6dfcd617b8aeb50e4a3944b58cf5590e}\label{struct_game_object_data_a6dfcd617b8aeb50e4a3944b58cf5590e}} 
+bool \hyperlink{struct_game_object_data_a6dfcd617b8aeb50e4a3944b58cf5590e}{operator==} (const \hyperlink{struct_game_object_data}{Game\+Object\+Data} \&rhs) const
+\begin{DoxyCompactList}\small\item\em Determines if two Game\+Object\+Datas are equal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_game_object_data_a4b5355c5441e656b0471aa9a7c95f317}\label{struct_game_object_data_a4b5355c5441e656b0471aa9a7c95f317}} 
+double {\bfseries PosX} = 0
+\item 
+\mbox{\Hypertarget{struct_game_object_data_a05f269615fa3a200e403b82c64ed5d0b}\label{struct_game_object_data_a05f269615fa3a200e403b82c64ed5d0b}} 
+double {\bfseries PosY} = 0
+\item 
+\mbox{\Hypertarget{struct_game_object_data_af239b2cb2ec2ce76addeef706808a7e8}\label{struct_game_object_data_af239b2cb2ec2ce76addeef706808a7e8}} 
+double {\bfseries scaleX} = 1
+\item 
+\mbox{\Hypertarget{struct_game_object_data_a1211a2ce5ecb3fa9d558f32e15944d4f}\label{struct_game_object_data_a1211a2ce5ecb3fa9d558f32e15944d4f}} 
+double {\bfseries scaleY} = 1
+\item 
+\mbox{\Hypertarget{struct_game_object_data_af3118348a1a1a5e0a1bb554a88c9269e}\label{struct_game_object_data_af3118348a1a1a5e0a1bb554a88c9269e}} 
+std\+::string {\bfseries graphic\+\_\+name} = \char`\"{}Null\char`\"{}
+\item 
+\mbox{\Hypertarget{struct_game_object_data_a3c37e0c2c0e7bde6175d101467610242}\label{struct_game_object_data_a3c37e0c2c0e7bde6175d101467610242}} 
+std\+::string {\bfseries graphic\+\_\+location} = \char`\"{}Null\+Graphic.\+png\char`\"{}
+\item 
+\mbox{\Hypertarget{struct_game_object_data_aad5f3a3df2d0057e38bf168aa3a550fa}\label{struct_game_object_data_aad5f3a3df2d0057e38bf168aa3a550fa}} 
+double {\bfseries move\+\_\+speed} = 0
+\item 
+\mbox{\Hypertarget{struct_game_object_data_a73750fae67f346c77192bb4e891576f0}\label{struct_game_object_data_a73750fae67f346c77192bb4e891576f0}} 
+double {\bfseries collider\+\_\+size} = 0
+\item 
+\mbox{\Hypertarget{struct_game_object_data_a752d35a34e94ad3e9a82eef0bdee6236}\label{struct_game_object_data_a752d35a34e94ad3e9a82eef0bdee6236}} 
+double {\bfseries player\+\_\+shoot\+\_\+delay} = 0
+\item 
+\mbox{\Hypertarget{struct_game_object_data_a0a53b12fb9f565f20446b1e5150346e8}\label{struct_game_object_data_a0a53b12fb9f565f20446b1e5150346e8}} 
+double {\bfseries player\+\_\+shoot\+\_\+speed} = 0
+\item 
+\mbox{\Hypertarget{struct_game_object_data_a6a48de920f85ec56618b60aae531a583}\label{struct_game_object_data_a6a48de920f85ec56618b60aae531a583}} 
+double {\bfseries player\+\_\+projectile\+\_\+destry\+\_\+region} = 0
+\item 
+\mbox{\Hypertarget{struct_game_object_data_a71ac523abe4fdfb74d3661b84a5cbb0b}\label{struct_game_object_data_a71ac523abe4fdfb74d3661b84a5cbb0b}} 
+double {\bfseries enemy\+\_\+spawn\+\_\+delay} = 0
+\item 
+\mbox{\Hypertarget{struct_game_object_data_a8501415af53900b1d98ae73e836e4abd}\label{struct_game_object_data_a8501415af53900b1d98ae73e836e4abd}} 
+double {\bfseries enemy\+\_\+shoot\+\_\+delay} = 0
+\item 
+\mbox{\Hypertarget{struct_game_object_data_a253e5f337879b88a89dfbf2874d5e655}\label{struct_game_object_data_a253e5f337879b88a89dfbf2874d5e655}} 
+double {\bfseries enemy\+\_\+angular\+\_\+speed} = 0
+\item 
+\mbox{\Hypertarget{struct_game_object_data_a8787302d15d2bf0d6b3818460ec8d7a3}\label{struct_game_object_data_a8787302d15d2bf0d6b3818460ec8d7a3}} 
+double {\bfseries parabolic\+\_\+coeff} = 0
+\item 
+\mbox{\Hypertarget{struct_game_object_data_a4b27cd49cdc78b3d977d81e8c88f2c1e}\label{struct_game_object_data_a4b27cd49cdc78b3d977d81e8c88f2c1e}} 
+unsigned int {\bfseries max\+\_\+enemies} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A struct that is used to represent all of the information used for game object initialisation. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Game\+Data.\+h\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Game\+Data.\+cpp\end{DoxyCompactItemize}

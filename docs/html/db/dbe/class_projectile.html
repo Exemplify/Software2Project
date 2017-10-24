@@ -63,13 +63,17 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d6/d33/class_projectile-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Projectile Class Reference</div>  </div>
+<div class="title">Projectile Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>The base class for all the projectiles that exist within the game.  
+ <a href="../../db/dbe/class_projectile.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d4/d0c/_projectile_8h_source.html">Projectile.h</a>&gt;</code></p>
 <div class="dynheader">
@@ -78,166 +82,175 @@ Inheritance diagram for Projectile:</div>
  <div class="center">
   <img src="../../db/dbe/class_projectile.png" usemap="#Projectile_map" alt=""/>
   <map id="Projectile_map" name="Projectile_map">
-<area href="../../d6/db5/class_physics_object.html" title="May not need to inherit from GameObject. " alt="PhysicsObject" shape="rect" coords="0,112,269,136"/>
-<area href="../../d0/dd1/class_game_object.html" alt="GameObject" shape="rect" coords="0,56,269,80"/>
+<area href="../../d6/db5/class_physics_object.html" title="Acts as the main interface between the collisionDetection and the game logic. " alt="PhysicsObject" shape="rect" coords="139,112,408,136"/>
+<area href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. " alt="GameObject" shape="rect" coords="139,56,408,80"/>
+<area href="../../da/db2/class_enemy_projectile.html" title="Used to represent the enemy projectile and how it interacts with the various objects. " alt="EnemyProjectile" shape="rect" coords="0,224,269,248"/>
+<area href="../../d5/df1/class_player_projectile.html" title="Used to represent the PlayerProjectile within the game. " alt="PlayerProjectile" shape="rect" coords="279,224,548,248"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac536ed2aad56af866a2078b9a85aa16d"><td class="memItemLeft" align="right" valign="top"><a id="ac536ed2aad56af866a2078b9a85aa16d"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbe/class_projectile.html#ac536ed2aad56af866a2078b9a85aa16d">Projectile</a> ()</td></tr>
-<tr class="memdesc:ac536ed2aad56af866a2078b9a85aa16d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructors need to be redesigned. <br /></td></tr>
-<tr class="separator:ac536ed2aad56af866a2078b9a85aa16d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45f5e2eb6db9f673670e9de0aa9b9bab"><td class="memItemLeft" align="right" valign="top"><a id="a45f5e2eb6db9f673670e9de0aa9b9bab"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Projectile</b> (GameObjectType projectileType)</td></tr>
-<tr class="separator:a45f5e2eb6db9f673670e9de0aa9b9bab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d13e20ed5be714a7efd4be89791ea94"><td class="memItemLeft" align="right" valign="top"><a id="a6d13e20ed5be714a7efd4be89791ea94"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbe/class_projectile.html#a6d13e20ed5be714a7efd4be89791ea94">Projectile</a> (std::shared_ptr&lt; <a class="el" href="../../d2/d83/class_graphic_object.html">GraphicObject</a> &gt; bulletGraphic, GameObjectType projectileType, <a class="el" href="../../d5/dae/structxy_vector.html">xyVector</a> scale)</td></tr>
-<tr class="memdesc:a6d13e20ed5be714a7efd4be89791ea94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor Needs a Database Dependency. <br /></td></tr>
-<tr class="separator:a6d13e20ed5be714a7efd4be89791ea94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60b9863678645f9605bf938ef6df7938"><td class="memItemLeft" align="right" valign="top"><a id="a60b9863678645f9605bf938ef6df7938"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Projectile</b> (const <a class="el" href="../../db/dbe/class_projectile.html">Projectile</a> &amp;copyProjectile)</td></tr>
-<tr class="separator:a60b9863678645f9605bf938ef6df7938"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad057a8aeadb0064aacd0f93b2d6de158"><td class="memItemLeft" align="right" valign="top"><a id="ad057a8aeadb0064aacd0f93b2d6de158"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbe/class_projectile.html#ad057a8aeadb0064aacd0f93b2d6de158">Update</a> () override</td></tr>
-<tr class="memdesc:ad057a8aeadb0064aacd0f93b2d6de158"><td class="mdescLeft">&#160;</td><td class="mdescRight">could aslo be used as a friendship with scene <br /></td></tr>
-<tr class="separator:ad057a8aeadb0064aacd0f93b2d6de158"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aedb2c1ee7933578088e4d2a60d9c0f5c"><td class="memItemLeft" align="right" valign="top"><a id="aedb2c1ee7933578088e4d2a60d9c0f5c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Initialise</b> (<a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&lt; double &gt; startingPos, <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&lt; double &gt; direction, double moveSpeed)</td></tr>
-<tr class="separator:aedb2c1ee7933578088e4d2a60d9c0f5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8dae5b6cc0293fc6c85797fcf2019492"><td class="memItemLeft" align="right" valign="top"><a id="a8dae5b6cc0293fc6c85797fcf2019492"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbe/class_projectile.html#a8dae5b6cc0293fc6c85797fcf2019492">collisionAction</a> (GameObjectType objectType) override</td></tr>
-<tr class="memdesc:a8dae5b6cc0293fc6c85797fcf2019492"><td class="mdescLeft">&#160;</td><td class="mdescRight">polymorphism will reduce this complexity <br /></td></tr>
-<tr class="separator:a8dae5b6cc0293fc6c85797fcf2019492"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a639f52184c8b9720ca8c36371303332d"><td class="memItemLeft" align="right" valign="top"><a id="a639f52184c8b9720ca8c36371303332d"></a>
-virtual const std::shared_ptr&lt; <a class="el" href="../../d2/d83/class_graphic_object.html">GraphicObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getGraphicObject</b> () override</td></tr>
-<tr class="separator:a639f52184c8b9720ca8c36371303332d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39653a4aa80df0364e15854f0f5e389d"><td class="memItemLeft" align="right" valign="top"><a id="a39653a4aa80df0364e15854f0f5e389d"></a>
-virtual <a class="el" href="../../db/dbe/class_projectile.html">Projectile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbe/class_projectile.html#a39653a4aa80df0364e15854f0f5e389d">Clone</a> () override</td></tr>
-<tr class="memdesc:a39653a4aa80df0364e15854f0f5e389d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clone Function Still in development. <br /></td></tr>
-<tr class="separator:a39653a4aa80df0364e15854f0f5e389d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add4d983566a326200ea1d7c74737e108"><td class="memItemLeft" align="right" valign="top"><a id="add4d983566a326200ea1d7c74737e108"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbe/class_projectile.html#add4d983566a326200ea1d7c74737e108">~Projectile</a> () override</td></tr>
-<tr class="memdesc:add4d983566a326200ea1d7c74737e108"><td class="mdescLeft">&#160;</td><td class="mdescRight">Needs the virtual tag. <br /></td></tr>
-<tr class="separator:add4d983566a326200ea1d7c74737e108"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ff1ec79a15e7821ac5ccfd6dda9205f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbe/class_projectile.html#a4ff1ec79a15e7821ac5ccfd6dda9205f">Projectile</a> (const <a class="el" href="../../d6/db5/class_physics_object.html">PhysicsObject</a> &amp;physicsObject, const std::shared_ptr&lt; <a class="el" href="../../dd/d92/class_movable_interface.html">MovableInterface</a> &gt; &amp;move, const <a class="el" href="../../d5/dda/class_boundary.html">Boundary</a> &amp;destroyBounds)</td></tr>
+<tr class="memdesc:a4ff1ec79a15e7821ac5ccfd6dda9205f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the base projectile with the various members that it requires.  <a href="#a4ff1ec79a15e7821ac5ccfd6dda9205f">More...</a><br /></td></tr>
+<tr class="separator:a4ff1ec79a15e7821ac5ccfd6dda9205f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27a59059730a66a37feec766ebe08fa2"><td class="memItemLeft" align="right" valign="top"><a id="a27a59059730a66a37feec766ebe08fa2"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbe/class_projectile.html#a27a59059730a66a37feec766ebe08fa2">Start</a> () final</td></tr>
+<tr class="memdesc:a27a59059730a66a37feec766ebe08fa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Intialises the objects members, use of final prevents any derived objects from overriding the function. <br /></td></tr>
+<tr class="separator:a27a59059730a66a37feec766ebe08fa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f9df5dd65fed410d4e897eb63edc1c9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbe/class_projectile.html#a1f9df5dd65fed410d4e897eb63edc1c9">Update</a> () final</td></tr>
+<tr class="memdesc:a1f9df5dd65fed410d4e897eb63edc1c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to Update the various members of the class, called once per frame.  <a href="#a1f9df5dd65fed410d4e897eb63edc1c9">More...</a><br /></td></tr>
+<tr class="separator:a1f9df5dd65fed410d4e897eb63edc1c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c1501698a272f3ae0def6bdc6b3d763"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbe/class_projectile.html#a8c1501698a272f3ae0def6bdc6b3d763">Initialise</a> (const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;startingPos, const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;direction)</td></tr>
+<tr class="memdesc:a8c1501698a272f3ae0def6bdc6b3d763"><td class="mdescLeft">&#160;</td><td class="mdescRight">used to define the characteristics of the projectile once is has been created by the copy constructor  <a href="#a8c1501698a272f3ae0def6bdc6b3d763">More...</a><br /></td></tr>
+<tr class="separator:a8c1501698a272f3ae0def6bdc6b3d763"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_physics_object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_physics_object')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d6/db5/class_physics_object.html">PhysicsObject</a></td></tr>
-<tr class="memitem:a7307a6ac792f79c61950d2374ac4c8be inherit pub_methods_class_physics_object"><td class="memItemLeft" align="right" valign="top"><a id="a7307a6ac792f79c61950d2374ac4c8be"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>PhysicsObject</b> (double objectSpeed, <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&lt; double &gt; position)</td></tr>
-<tr class="separator:a7307a6ac792f79c61950d2374ac4c8be inherit pub_methods_class_physics_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac228aff566334e195f9c68d1e0cfb1bf inherit pub_methods_class_physics_object"><td class="memItemLeft" align="right" valign="top"><a id="ac228aff566334e195f9c68d1e0cfb1bf"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setSpeed</b> (double newSpeed)</td></tr>
-<tr class="separator:ac228aff566334e195f9c68d1e0cfb1bf inherit pub_methods_class_physics_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73f26275a7b7a9234c49d421dfbe1178 inherit pub_methods_class_physics_object"><td class="memItemLeft" align="right" valign="top"><a id="a73f26275a7b7a9234c49d421dfbe1178"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>getSize</b> ()</td></tr>
-<tr class="separator:a73f26275a7b7a9234c49d421dfbe1178 inherit pub_methods_class_physics_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dd37cc0f9535b676d3df937eaeb4780 inherit pub_methods_class_physics_object"><td class="memItemLeft" align="right" valign="top"><a id="a0dd37cc0f9535b676d3df937eaeb4780"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/db5/class_physics_object.html#a0dd37cc0f9535b676d3df937eaeb4780">PhysicsObject</a> ()</td></tr>
+<tr class="memdesc:a0dd37cc0f9535b676d3df937eaeb4780 inherit pub_methods_class_physics_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Constructor. <br /></td></tr>
+<tr class="separator:a0dd37cc0f9535b676d3df937eaeb4780 inherit pub_methods_class_physics_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a92618716bd764c63f0ca80436a950c inherit pub_methods_class_physics_object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/db5/class_physics_object.html#a8a92618716bd764c63f0ca80436a950c">PhysicsObject</a> (const <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a> &amp;gameObject, const double &amp;objectSize)</td></tr>
+<tr class="memdesc:a8a92618716bd764c63f0ca80436a950c inherit pub_methods_class_physics_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the physics object based on the parameters provided.  <a href="../../d6/db5/class_physics_object.html#a8a92618716bd764c63f0ca80436a950c">More...</a><br /></td></tr>
+<tr class="separator:a8a92618716bd764c63f0ca80436a950c inherit pub_methods_class_physics_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc592e9846ebedea3d58d50c5ada1c12 inherit pub_methods_class_physics_object"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/db5/class_physics_object.html#adc592e9846ebedea3d58d50c5ada1c12">getSize</a> () const</td></tr>
+<tr class="memdesc:adc592e9846ebedea3d58d50c5ada1c12 inherit pub_methods_class_physics_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">gets the current size of the object  <a href="../../d6/db5/class_physics_object.html#adc592e9846ebedea3d58d50c5ada1c12">More...</a><br /></td></tr>
+<tr class="separator:adc592e9846ebedea3d58d50c5ada1c12 inherit pub_methods_class_physics_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16163f4e5bf781b3814d024c9f44a276 inherit pub_methods_class_physics_object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/db5/class_physics_object.html#a16163f4e5bf781b3814d024c9f44a276">collisionAction</a> (const GameObjectType &amp;objectType)</td></tr>
+<tr class="memdesc:a16163f4e5bf781b3814d024c9f44a276 inherit pub_methods_class_physics_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual function that is called whenever a collision occurs between this object and a different one.  <a href="../../d6/db5/class_physics_object.html#a16163f4e5bf781b3814d024c9f44a276">More...</a><br /></td></tr>
+<tr class="separator:a16163f4e5bf781b3814d024c9f44a276 inherit pub_methods_class_physics_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_game_object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_game_object')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a></td></tr>
 <tr class="memitem:a0348e3ee2e83d56eafca7a3547f432c4 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="a0348e3ee2e83d56eafca7a3547f432c4"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#a0348e3ee2e83d56eafca7a3547f432c4">GameObject</a> ()</td></tr>
-<tr class="memdesc:a0348e3ee2e83d56eafca7a3547f432c4 inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">default constructor should be removed however is useful for testing <br /></td></tr>
+<tr class="memdesc:a0348e3ee2e83d56eafca7a3547f432c4 inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Constructor - Creates the object using default values. <br /></td></tr>
 <tr class="separator:a0348e3ee2e83d56eafca7a3547f432c4 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4abdb4988a1aa49541cee2dc996834fc inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="a4abdb4988a1aa49541cee2dc996834fc"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>GameObject</b> (const <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a> &amp;copyObj)</td></tr>
-<tr class="separator:a4abdb4988a1aa49541cee2dc996834fc inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae2936e26f070d83d9b1c69dad5bfceb inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="aae2936e26f070d83d9b1c69dad5bfceb"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>GameObject</b> (<a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&lt; double &gt; startingPosition)</td></tr>
-<tr class="separator:aae2936e26f070d83d9b1c69dad5bfceb inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d8c6203c094bc5d9e4c917e66b7b1e9 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="a8d8c6203c094bc5d9e4c917e66b7b1e9"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>GameObject</b> (<a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&lt; double &gt; startingPosition, <a class="el" href="../../d5/dae/structxy_vector.html">xyVector</a> scale)</td></tr>
-<tr class="separator:a8d8c6203c094bc5d9e4c917e66b7b1e9 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7cc83eeefc6e3d112e2a7fc1fb037a9c inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="a7cc83eeefc6e3d112e2a7fc1fb037a9c"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isActive</b> ()</td></tr>
+<tr class="memitem:a780db39d3dc5b54c4dffe2f429f9b656 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#a780db39d3dc5b54c4dffe2f429f9b656">GameObject</a> (const <a class="el" href="../../d2/d83/class_graphic_object.html">GraphicObject</a> &amp;graphic)</td></tr>
+<tr class="memdesc:a780db39d3dc5b54c4dffe2f429f9b656 inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an object with a specific <a class="el" href="../../d2/d83/class_graphic_object.html" title="This is the Utility class with the display manager, It stores the name of the object and location of ...">GraphicObject</a>.  <a href="../../d0/dd1/class_game_object.html#a780db39d3dc5b54c4dffe2f429f9b656">More...</a><br /></td></tr>
+<tr class="separator:a780db39d3dc5b54c4dffe2f429f9b656 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93186927c126a290592e3d7c13906f18 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#a93186927c126a290592e3d7c13906f18">GameObject</a> (const <a class="el" href="../../d5/dae/structxy_vector.html">xyVector</a> &amp;scale)</td></tr>
+<tr class="memdesc:a93186927c126a290592e3d7c13906f18 inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an object with a specific scale.  <a href="../../d0/dd1/class_game_object.html#a93186927c126a290592e3d7c13906f18">More...</a><br /></td></tr>
+<tr class="separator:a93186927c126a290592e3d7c13906f18 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a9022df605afb6be63d0dcca07667d6 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#a8a9022df605afb6be63d0dcca07667d6">GameObject</a> (const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;startingPosition)</td></tr>
+<tr class="memdesc:a8a9022df605afb6be63d0dcca07667d6 inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an object with a specific starting position.  <a href="../../d0/dd1/class_game_object.html#a8a9022df605afb6be63d0dcca07667d6">More...</a><br /></td></tr>
+<tr class="separator:a8a9022df605afb6be63d0dcca07667d6 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc9ac2a346e947a0dd6f7bd94ecea8af inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="adc9ac2a346e947a0dd6f7bd94ecea8af"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#adc9ac2a346e947a0dd6f7bd94ecea8af">GameObject</a> (const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;startingPosition, const <a class="el" href="../../d5/dae/structxy_vector.html">xyVector</a> &amp;scale, const <a class="el" href="../../d2/d83/class_graphic_object.html">GraphicObject</a> &amp;graphicObject)</td></tr>
+<tr class="memdesc:adc9ac2a346e947a0dd6f7bd94ecea8af inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor used to specify the main members of the gameobject. <br /></td></tr>
+<tr class="separator:adc9ac2a346e947a0dd6f7bd94ecea8af inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cc83eeefc6e3d112e2a7fc1fb037a9c inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#a7cc83eeefc6e3d112e2a7fc1fb037a9c">isActive</a> ()</td></tr>
+<tr class="memdesc:a7cc83eeefc6e3d112e2a7fc1fb037a9c inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">get function that allows a client to determine if the <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a> is active  <a href="../../d0/dd1/class_game_object.html#a7cc83eeefc6e3d112e2a7fc1fb037a9c">More...</a><br /></td></tr>
 <tr class="separator:a7cc83eeefc6e3d112e2a7fc1fb037a9c inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ddc58c7cc733a538228d4948da14b8f inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="a6ddc58c7cc733a538228d4948da14b8f"></a>
-<a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getPosition</b> () const</td></tr>
-<tr class="separator:a6ddc58c7cc733a538228d4948da14b8f inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af12345846c74b72bc50c779c00b55851 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="af12345846c74b72bc50c779c00b55851"></a>
-GameObjectType&#160;</td><td class="memItemRight" valign="bottom"><b>getType</b> () const</td></tr>
+<tr class="memitem:ae3b21cc28e2c1bce6707699d0312eee8 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#ae3b21cc28e2c1bce6707699d0312eee8">getPosition</a> () const</td></tr>
+<tr class="memdesc:ae3b21cc28e2c1bce6707699d0312eee8 inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">get function used to return the Position of the object, used in the collisionDetection calculations and the presentation layer  <a href="../../d0/dd1/class_game_object.html#ae3b21cc28e2c1bce6707699d0312eee8">More...</a><br /></td></tr>
+<tr class="separator:ae3b21cc28e2c1bce6707699d0312eee8 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af12345846c74b72bc50c779c00b55851 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">GameObjectType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#af12345846c74b72bc50c779c00b55851">getType</a> () const</td></tr>
+<tr class="memdesc:af12345846c74b72bc50c779c00b55851 inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">get function used to return the GameObjectType of the object, used in the collisionDetection calculations  <a href="../../d0/dd1/class_game_object.html#af12345846c74b72bc50c779c00b55851">More...</a><br /></td></tr>
 <tr class="separator:af12345846c74b72bc50c779c00b55851 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f4aec664bbb4fa5ecfa3d1a7d630d2a inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="a9f4aec664bbb4fa5ecfa3d1a7d630d2a"></a>
-std::shared_ptr&lt; <a class="el" href="../../d6/db5/class_scene.html">Scene</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getScene</b> () const</td></tr>
-<tr class="separator:a9f4aec664bbb4fa5ecfa3d1a7d630d2a inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7854c363f11c202ea2177b33ce293e0 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="ab7854c363f11c202ea2177b33ce293e0"></a>
-<a class="el" href="../../d5/dae/structxy_vector.html">xyVector</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getScale</b> () const</td></tr>
-<tr class="separator:ab7854c363f11c202ea2177b33ce293e0 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a200218792aa0076011d69be696e3d3d4 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="a200218792aa0076011d69be696e3d3d4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setActive</b> (bool active_state)</td></tr>
+<tr class="memitem:a0e0c63e1c3deedae400d62d3ecab8ef3 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d5/dae/structxy_vector.html">xyVector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#a0e0c63e1c3deedae400d62d3ecab8ef3">getScale</a> () const</td></tr>
+<tr class="memdesc:a0e0c63e1c3deedae400d62d3ecab8ef3 inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">get function used to return the scale of the object, used in the presentation layer  <a href="../../d0/dd1/class_game_object.html#a0e0c63e1c3deedae400d62d3ecab8ef3">More...</a><br /></td></tr>
+<tr class="separator:a0e0c63e1c3deedae400d62d3ecab8ef3 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af44533690a46d5f41aeaa2c16bf867b9 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="../../d2/d83/class_graphic_object.html">GraphicObject</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#af44533690a46d5f41aeaa2c16bf867b9">getGraphicObject</a> () const</td></tr>
+<tr class="memdesc:af44533690a46d5f41aeaa2c16bf867b9 inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="../../d2/d83/class_graphic_object.html" title="This is the Utility class with the display manager, It stores the name of the object and location of ...">GraphicObject</a> of the current <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a> to interface with the presentation layer.  <a href="../../d0/dd1/class_game_object.html#af44533690a46d5f41aeaa2c16bf867b9">More...</a><br /></td></tr>
+<tr class="separator:af44533690a46d5f41aeaa2c16bf867b9 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a200218792aa0076011d69be696e3d3d4 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#a200218792aa0076011d69be696e3d3d4">setActive</a> (bool active_state)</td></tr>
+<tr class="memdesc:a200218792aa0076011d69be696e3d3d4 inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the active state of the <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a>, if it is unactive it does not update, get displayed by the game or cause collisions.  <a href="../../d0/dd1/class_game_object.html#a200218792aa0076011d69be696e3d3d4">More...</a><br /></td></tr>
 <tr class="separator:a200218792aa0076011d69be696e3d3d4 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e1420c027ce937f9958a41ad280080b inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#a9e1420c027ce937f9958a41ad280080b">setScene</a> (std::shared_ptr&lt; <a class="el" href="../../d6/db5/class_scene.html">Scene</a> &gt; scene)</td></tr>
+<tr class="memdesc:a9e1420c027ce937f9958a41ad280080b inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the <a class="el" href="../../d6/db5/class_scene.html" title="Scene is used to store and operate on the various gameobjects that define the functionality of the cu...">Scene</a> pointer of the Gameobject, used to know which <a class="el" href="../../d6/db5/class_scene.html" title="Scene is used to store and operate on the various gameobjects that define the functionality of the cu...">Scene</a> the <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a> exists in  <a href="../../d0/dd1/class_game_object.html#a9e1420c027ce937f9958a41ad280080b">More...</a><br /></td></tr>
 <tr class="separator:a9e1420c027ce937f9958a41ad280080b inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf1959fad10ea04673a182029f1f81b9 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="abf1959fad10ea04673a182029f1f81b9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Destroy</b> ()</td></tr>
-<tr class="separator:abf1959fad10ea04673a182029f1f81b9 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:ac128cf116d9fd114bce2a49af797da1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbe/class_projectile.html#ac128cf116d9fd114bce2a49af797da1f">DestroySelf</a> ()</td></tr>
-<tr class="memdesc:ac128cf116d9fd114bce2a49af797da1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">should be virtual  <a href="#ac128cf116d9fd114bce2a49af797da1f">More...</a><br /></td></tr>
-<tr class="separator:ac128cf116d9fd114bce2a49af797da1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52c04ac421a4add1a2920bd57eb56fe5"><td class="memItemLeft" align="right" valign="top"><a id="a52c04ac421a4add1a2920bd57eb56fe5"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbe/class_projectile.html#a52c04ac421a4add1a2920bd57eb56fe5">Move</a> ()</td></tr>
-<tr class="memdesc:a52c04ac421a4add1a2920bd57eb56fe5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Needs a moveable component. <br /></td></tr>
-<tr class="separator:a52c04ac421a4add1a2920bd57eb56fe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28ae398ce317354ed435019e6b50c4ff"><td class="memItemLeft" align="right" valign="top"><a id="a28ae398ce317354ed435019e6b50c4ff"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>DestroyPlayerProjectile</b> ()</td></tr>
-<tr class="separator:a28ae398ce317354ed435019e6b50c4ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ece9bc68fb806b8ac7eababcc3ac9f1"><td class="memItemLeft" align="right" valign="top"><a id="a2ece9bc68fb806b8ac7eababcc3ac9f1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>DestroyEnemyProjectile</b> ()</td></tr>
-<tr class="separator:a2ece9bc68fb806b8ac7eababcc3ac9f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:ab2f4025b6f9b5caa20e0a4c5c248d603"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbe/class_projectile.html#ab2f4025b6f9b5caa20e0a4c5c248d603">DestroySelf</a> ()=0</td></tr>
+<tr class="memdesc:ab2f4025b6f9b5caa20e0a4c5c248d603"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to identify when the object needs to destroy itself.  <a href="#ab2f4025b6f9b5caa20e0a4c5c248d603">More...</a><br /></td></tr>
+<tr class="separator:ab2f4025b6f9b5caa20e0a4c5c248d603"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_class_game_object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_game_object')"><img src="../../closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a></td></tr>
+<tr class="memitem:ac52291835ad2f3f36363589af0d3ae84 inherit pro_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#ac52291835ad2f3f36363589af0d3ae84">FindGameObjectByType</a> (GameObjectType searchType)</td></tr>
+<tr class="memdesc:ac52291835ad2f3f36363589af0d3ae84 inherit pro_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches the list of available GameObjects from the <a class="el" href="../../d6/db5/class_scene.html" title="Scene is used to store and operate on the various gameobjects that define the functionality of the cu...">Scene</a> object and returns the first object that matches the specifc GameObjectType.  <a href="../../d0/dd1/class_game_object.html#ac52291835ad2f3f36363589af0d3ae84">More...</a><br /></td></tr>
+<tr class="separator:ac52291835ad2f3f36363589af0d3ae84 inherit pro_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf1959fad10ea04673a182029f1f81b9 inherit pro_methods_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="abf1959fad10ea04673a182029f1f81b9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#abf1959fad10ea04673a182029f1f81b9">Destroy</a> ()</td></tr>
+<tr class="memdesc:abf1959fad10ea04673a182029f1f81b9 inherit pro_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the current <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a> from the <a class="el" href="../../d0/dd1/class_game_object.html" title="The base class that is used for all game logic systems. ">GameObject</a> list stored within the current scene. Ensures that the object does not get updated or displayed by the Presentation layer, will be removed from memory once the remaining pointers go out of scope. <br /></td></tr>
+<tr class="separator:abf1959fad10ea04673a182029f1f81b9 inherit pro_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a2904a8119d6703c781e4d54c345b75b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/dda/class_boundary.html">Boundary</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbe/class_projectile.html#a2904a8119d6703c781e4d54c345b75b7">_destroyBounds</a></td></tr>
+<tr class="separator:a2904a8119d6703c781e4d54c345b75b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_class_physics_object"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_physics_object')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../d6/db5/class_physics_object.html">PhysicsObject</a></td></tr>
+<tr class="memitem:a417a7eb051cfcfdbf8dfd0cc0875fa0d inherit pro_attribs_class_physics_object"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/db5/class_physics_object.html#a417a7eb051cfcfdbf8dfd0cc0875fa0d">_objectSize</a></td></tr>
+<tr class="separator:a417a7eb051cfcfdbf8dfd0cc0875fa0d inherit pro_attribs_class_physics_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_class_game_object"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_game_object')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a></td></tr>
+<tr class="memitem:a9b76f90eef67b329538d15b4eeed67a1 inherit pro_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/dae/structxy_vector.html">xyVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#a9b76f90eef67b329538d15b4eeed67a1">_scale</a></td></tr>
+<tr class="separator:a9b76f90eef67b329538d15b4eeed67a1 inherit pro_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8cae1a41ad1443d085c397b5e6d5609 inherit pro_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="../../d6/db5/class_scene.html">Scene</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#ab8cae1a41ad1443d085c397b5e6d5609">_scene</a></td></tr>
+<tr class="separator:ab8cae1a41ad1443d085c397b5e6d5609 inherit pro_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebfec45400aff20c8eab3fbf00be0aea inherit pro_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top">GameObjectType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#aebfec45400aff20c8eab3fbf00be0aea">_type</a></td></tr>
+<tr class="separator:aebfec45400aff20c8eab3fbf00be0aea inherit pro_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af86156ef21da475d68de98761cf75512 inherit pro_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#af86156ef21da475d68de98761cf75512">_position</a></td></tr>
+<tr class="separator:af86156ef21da475d68de98761cf75512 inherit pro_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07c043ba60b622f256ed18dfb46c0410 inherit pro_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d83/class_graphic_object.html">GraphicObject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#a07c043ba60b622f256ed18dfb46c0410">_graphicObject</a></td></tr>
+<tr class="separator:a07c043ba60b622f256ed18dfb46c0410 inherit pro_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef11019578aad93f96240b79a1141a07 inherit pro_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#aef11019578aad93f96240b79a1141a07">_active</a> = true</td></tr>
+<tr class="separator:aef11019578aad93f96240b79a1141a07 inherit pro_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a09ce3faf8a832bd07390d93cb97a4fcb"><td class="memItemLeft" align="right" valign="top"><a id="a09ce3faf8a832bd07390d93cb97a4fcb"></a>
-<a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_direction</b></td></tr>
-<tr class="separator:a09ce3faf8a832bd07390d93cb97a4fcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67ee06b3b2dcf15482c9866920a8e825"><td class="memItemLeft" align="right" valign="top"><a id="a67ee06b3b2dcf15482c9866920a8e825"></a>
-std::shared_ptr&lt; <a class="el" href="../../d2/d83/class_graphic_object.html">GraphicObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_bulletGraphic</b></td></tr>
-<tr class="separator:a67ee06b3b2dcf15482c9866920a8e825"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ec636b54686a4889b433566763b6646"><td class="memItemLeft" align="right" valign="top"><a id="a9ec636b54686a4889b433566763b6646"></a>
-<a class="el" href="../../d5/dda/class_boundary.html">Boundary</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbe/class_projectile.html#a9ec636b54686a4889b433566763b6646">_enemyDestroyBounds</a></td></tr>
-<tr class="memdesc:a9ec636b54686a4889b433566763b6646"><td class="mdescLeft">&#160;</td><td class="mdescRight">Need to remove both boundaries, should be passed through the constructor redundant information. <br /></td></tr>
-<tr class="separator:a9ec636b54686a4889b433566763b6646"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29ce4100add75a6e82860c28343a34cf"><td class="memItemLeft" align="right" valign="top"><a id="a29ce4100add75a6e82860c28343a34cf"></a>
-<a class="el" href="../../d5/dda/class_boundary.html">Boundary</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_playerDestroyBounds</b></td></tr>
-<tr class="separator:a29ce4100add75a6e82860c28343a34cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24c0fc8a55acd5fd13c4165404bb7817"><td class="memItemLeft" align="right" valign="top"><a id="a24c0fc8a55acd5fd13c4165404bb7817"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>_moveSpeed</b></td></tr>
-<tr class="separator:a24c0fc8a55acd5fd13c4165404bb7817"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_methods_class_game_object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_game_object')"><img src="../../closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a></td></tr>
-<tr class="memitem:ac52291835ad2f3f36363589af0d3ae84 inherit pro_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dd1/class_game_object.html#ac52291835ad2f3f36363589af0d3ae84">FindGameObjectByType</a> (GameObjectType searchType)</td></tr>
-<tr class="separator:ac52291835ad2f3f36363589af0d3ae84 inherit pro_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_attribs_class_physics_object"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_physics_object')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../d6/db5/class_physics_object.html">PhysicsObject</a></td></tr>
-<tr class="memitem:a78112cdfb51ef4f1b3fbab6af4a9a592 inherit pro_attribs_class_physics_object"><td class="memItemLeft" align="right" valign="top"><a id="a78112cdfb51ef4f1b3fbab6af4a9a592"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>_objectSpeed</b></td></tr>
-<tr class="separator:a78112cdfb51ef4f1b3fbab6af4a9a592 inherit pro_attribs_class_physics_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a417a7eb051cfcfdbf8dfd0cc0875fa0d inherit pro_attribs_class_physics_object"><td class="memItemLeft" align="right" valign="top"><a id="a417a7eb051cfcfdbf8dfd0cc0875fa0d"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>_objectSize</b></td></tr>
-<tr class="separator:a417a7eb051cfcfdbf8dfd0cc0875fa0d inherit pro_attribs_class_physics_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_attribs_class_game_object"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_game_object')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a></td></tr>
-<tr class="memitem:a9b76f90eef67b329538d15b4eeed67a1 inherit pro_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="a9b76f90eef67b329538d15b4eeed67a1"></a>
-<a class="el" href="../../d5/dae/structxy_vector.html">xyVector</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_scale</b></td></tr>
-<tr class="separator:a9b76f90eef67b329538d15b4eeed67a1 inherit pro_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8cae1a41ad1443d085c397b5e6d5609 inherit pro_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="ab8cae1a41ad1443d085c397b5e6d5609"></a>
-std::shared_ptr&lt; <a class="el" href="../../d6/db5/class_scene.html">Scene</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_scene</b></td></tr>
-<tr class="separator:ab8cae1a41ad1443d085c397b5e6d5609 inherit pro_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebfec45400aff20c8eab3fbf00be0aea inherit pro_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="aebfec45400aff20c8eab3fbf00be0aea"></a>
-GameObjectType&#160;</td><td class="memItemRight" valign="bottom"><b>_type</b></td></tr>
-<tr class="separator:aebfec45400aff20c8eab3fbf00be0aea inherit pro_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afcd024cb6bf627118f952122861744b3 inherit pro_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="afcd024cb6bf627118f952122861744b3"></a>
-<a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_position</b></td></tr>
-<tr class="separator:afcd024cb6bf627118f952122861744b3 inherit pro_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef11019578aad93f96240b79a1141a07 inherit pro_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top"><a id="aef11019578aad93f96240b79a1141a07"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>_active</b> = true</td></tr>
-<tr class="separator:aef11019578aad93f96240b79a1141a07 inherit pro_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd6f6c2b3c202adb129a9cbfcd62ea1f"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="../../dd/d92/class_movable_interface.html">MovableInterface</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbe/class_projectile.html#afd6f6c2b3c202adb129a9cbfcd62ea1f">_moveComp</a></td></tr>
+<tr class="separator:afd6f6c2b3c202adb129a9cbfcd62ea1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaf2c52cd2491197174be5a5faeca052"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/dd2/class_size_reduction.html">SizeReduction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbe/class_projectile.html#adaf2c52cd2491197174be5a5faeca052">_sizeReduction</a></td></tr>
+<tr class="separator:adaf2c52cd2491197174be5a5faeca052"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Object needs to be converted into a polymorphic object, one for player and one for enemy with virtual destorys and boundaries corresponds to the type information in a better way </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ac128cf116d9fd114bce2a49af797da1f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac128cf116d9fd114bce2a49af797da1f">&#9670;&nbsp;</a></span>DestroySelf()</h2>
+<div class="textblock"><p>The base class for all the projectiles that exist within the game. </p>
+<p>uses the template design pattern to define functionality that is shared between the different projectiles and has pure virtual functions that must be overriden to allow for different variants of projectiles </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a4ff1ec79a15e7821ac5ccfd6dda9205f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ff1ec79a15e7821ac5ccfd6dda9205f">&#9670;&nbsp;</a></span>Projectile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Projectile::Projectile </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d6/db5/class_physics_object.html">PhysicsObject</a> &amp;&#160;</td>
+          <td class="paramname"><em>physicsObject</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="../../dd/d92/class_movable_interface.html">MovableInterface</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>move</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d5/dda/class_boundary.html">Boundary</a> &amp;&#160;</td>
+          <td class="paramname"><em>destroyBounds</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs the base projectile with the various members that it requires. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">physicsObject</td><td>The base physics object copies the properties defined </td></tr>
+    <tr><td class="paramname">move</td><td>A <a class="el" href="../../dd/d92/class_movable_interface.html" title="Defines the interfaces for any MovableObject Compositions. ">MovableInterface</a> object that defines the various ways that the projectile can move </td></tr>
+    <tr><td class="paramname">destroyBounds</td><td>The boundary that defines when the projectile is destroyed </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab2f4025b6f9b5caa20e0a4c5c248d603"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2f4025b6f9b5caa20e0a4c5c248d603">&#9670;&nbsp;</a></span>DestroySelf()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -246,10 +259,122 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_active</b> = true</t
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Projectile::DestroySelf </td>
+          <td class="memname">virtual void Projectile::DestroySelf </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Used to identify when the object needs to destroy itself. </p>
+<p>This is usually called when the object goes out of the defined boundary that it exists in </p>
+
+<p>Implemented in <a class="el" href="../../d5/df1/class_player_projectile.html#a05a6c103f9fbae57bfc811e477ab7b5b">PlayerProjectile</a>, and <a class="el" href="../../da/db2/class_enemy_projectile.html#a6ea9e3418fd05ca7ecee016019206f70">EnemyProjectile</a>.</p>
+
+</div>
+</div>
+<a id="a8c1501698a272f3ae0def6bdc6b3d763"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c1501698a272f3ae0def6bdc6b3d763">&#9670;&nbsp;</a></span>Initialise()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Projectile::Initialise </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;&#160;</td>
+          <td class="paramname"><em>startingPos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> &amp;&#160;</td>
+          <td class="paramname"><em>direction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>used to define the characteristics of the projectile once is has been created by the copy constructor </p>
+<p>This is necessary because the start position and direction of the projectile are assigned during runtime </p>
+
+</div>
+</div>
+<a id="a1f9df5dd65fed410d4e897eb63edc1c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f9df5dd65fed410d4e897eb63edc1c9">&#9670;&nbsp;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Projectile::Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Used to Update the various members of the class, called once per frame. </p>
+<p>This implementation of Update is used to move the object, reduced its scale based on the proximity to the centre of the screen and check if it should be destroyed. </p>
+
+<p>Reimplemented from <a class="el" href="../../d0/dd1/class_game_object.html#ac7ecc123dacaba955077420caabf5e64">GameObject</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a2904a8119d6703c781e4d54c345b75b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2904a8119d6703c781e4d54c345b75b7">&#9670;&nbsp;</a></span>_destroyBounds</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/dda/class_boundary.html">Boundary</a> Projectile::_destroyBounds</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The boundary that is used to identify when the projectile should be destroyed </p>
+
+</div>
+</div>
+<a id="afd6f6c2b3c202adb129a9cbfcd62ea1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd6f6c2b3c202adb129a9cbfcd62ea1f">&#9670;&nbsp;</a></span>_moveComp</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="../../dd/d92/class_movable_interface.html">MovableInterface</a>&gt; Projectile::_moveComp</td>
         </tr>
       </table>
   </td>
@@ -258,9 +383,30 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_active</b> = true</t
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Defines the particular movement pattern for the projectile </p>
 
-<p>should be virtual </p>
-<p>Destroy Self needs to become virtual and then cascade responsibilities for each type down the tree. </p>
+</div>
+</div>
+<a id="adaf2c52cd2491197174be5a5faeca052"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adaf2c52cd2491197174be5a5faeca052">&#9670;&nbsp;</a></span>_sizeReduction</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/dd2/class_size_reduction.html">SizeReduction</a> Projectile::_sizeReduction</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Changes the size of the projectile with relation to the proximity of the object to the centre of the screen </p>
 
 </div>
 </div>

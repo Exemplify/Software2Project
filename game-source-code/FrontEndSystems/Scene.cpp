@@ -3,7 +3,6 @@
 #include <mutex>
 #include "../BackEndSystems/GameManager.h"
 
-using gameObj_ptr = std::shared_ptr<GameObject>;
 
 
 // Scene Update is run from a gamemanager object within the gameloop 
@@ -25,12 +24,12 @@ void Scene::SceneUpdate()
 	}
 }
 // returns the game object list
-std::list<gameObj_ptr> Scene::getGameObjectList() const
+std::list<std::shared_ptr<GameObject>> Scene::getGameObjectList() const
 {
 	return _gameObject_list;
 }
 // Adds a GameObject pointer to the current list of gameobjects in the scene
-void Scene::Instantiate(gameObj_ptr gameObj)
+void Scene::Instantiate(std::shared_ptr<GameObject> gameObj)
 {
 	gameObj->Start();
 	// sets the scene of the gameobject to the scene that it was added to
@@ -38,7 +37,7 @@ void Scene::Instantiate(gameObj_ptr gameObj)
 	_gameObject_list.push_back(gameObj);
 }
 // Removes the specific gameObject from the current list of gameobjects
-void Scene::DestroyGameObject(gameObj_ptr gameObj)
+void Scene::DestroyGameObject(std::shared_ptr<GameObject> gameObj)
 {
 	// iterates through the _gameObject list until it finds the specific game object
 	// std remove does not work
@@ -52,10 +51,4 @@ void Scene::DestroyGameObject(gameObj_ptr gameObj)
 			break;
 		}
 	}
-}
-// Assignment opperator
-Scene& Scene::operator =(const Scene& rhs)
-{
-	_gameObject_list = rhs._gameObject_list;
-	return *this;
 }

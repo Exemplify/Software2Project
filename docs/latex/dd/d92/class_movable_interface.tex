@@ -1,0 +1,111 @@
+\hypertarget{class_movable_interface}{}\section{Movable\+Interface Class Reference}
+\label{class_movable_interface}\index{Movable\+Interface@{Movable\+Interface}}
+
+
+Defines the interfaces for any Movable\+Object Compositions.  
+
+
+
+
+{\ttfamily \#include $<$Movable\+Interface.\+h$>$}
+
+Inheritance diagram for Movable\+Interface\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{dd/d92/class_movable_interface}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_movable_interface_a480a181d92f826515483b8ba57e4f030}{Movable\+Interface} (double move\+Speed)
+\begin{DoxyCompactList}\small\item\em Constructor used to identify the move\+Speed of the object, direction is defaulted to right. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_movable_interface_a899cc1c78eacbee13b906c6770e7f025}{Move} (\hyperlink{class_vector2_d}{Vector2D} \&current\+Position)=0
+\begin{DoxyCompactList}\small\item\em Changes the \hyperlink{class_vector2_d}{Vector2D} that is passed in by reference to the appropriate value determined by the implementation. \end{DoxyCompactList}\item 
+void \hyperlink{class_movable_interface_ac03895780649f51c762907e8ef3a7694}{set\+Direction} (const \hyperlink{class_vector2_d}{Vector2D} \&direction)
+\begin{DoxyCompactList}\small\item\em Sets the direction to a specific value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{class_movable_interface_aa9715fd066607de7e71ee7f891ae1dbd}{\+\_\+movespeed}
+\item 
+\hyperlink{class_vector2_d}{Vector2D} \hyperlink{class_movable_interface_aea3e1edf8c32ebe5fd37dc02d659c10d}{\+\_\+direction}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines the interfaces for any Movable\+Object Compositions. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_movable_interface_a480a181d92f826515483b8ba57e4f030}\label{class_movable_interface_a480a181d92f826515483b8ba57e4f030}} 
+\index{Movable\+Interface@{Movable\+Interface}!Movable\+Interface@{Movable\+Interface}}
+\index{Movable\+Interface@{Movable\+Interface}!Movable\+Interface@{Movable\+Interface}}
+\subsubsection{\texorpdfstring{Movable\+Interface()}{MovableInterface()}}
+{\footnotesize\ttfamily Movable\+Interface\+::\+Movable\+Interface (\begin{DoxyParamCaption}\item[{double}]{move\+Speed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor used to identify the move\+Speed of the object, direction is defaulted to right. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em move\+Speed} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_movable_interface_a899cc1c78eacbee13b906c6770e7f025}\label{class_movable_interface_a899cc1c78eacbee13b906c6770e7f025}} 
+\index{Movable\+Interface@{Movable\+Interface}!Move@{Move}}
+\index{Move@{Move}!Movable\+Interface@{Movable\+Interface}}
+\subsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily virtual void Movable\+Interface\+::\+Move (\begin{DoxyParamCaption}\item[{\hyperlink{class_vector2_d}{Vector2D} \&}]{current\+Position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Changes the \hyperlink{class_vector2_d}{Vector2D} that is passed in by reference to the appropriate value determined by the implementation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Position} & the current position that is adjusted \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_linear_move_a3a7b76828adfaefaaf7b687be499709d}{Linear\+Move}, \hyperlink{class_player_move_a1c39885d4126c63441250eae23ac718a}{Player\+Move}, \hyperlink{class_spiral_move_a74b22995f5f3c00c623ecaa3adb2ab8e}{Spiral\+Move}, and \hyperlink{class_parabolic_move_a577831644247ca57aa1c2c88843c779b}{Parabolic\+Move}.
+
+\mbox{\Hypertarget{class_movable_interface_ac03895780649f51c762907e8ef3a7694}\label{class_movable_interface_ac03895780649f51c762907e8ef3a7694}} 
+\index{Movable\+Interface@{Movable\+Interface}!set\+Direction@{set\+Direction}}
+\index{set\+Direction@{set\+Direction}!Movable\+Interface@{Movable\+Interface}}
+\subsubsection{\texorpdfstring{set\+Direction()}{setDirection()}}
+{\footnotesize\ttfamily void Movable\+Interface\+::set\+Direction (\begin{DoxyParamCaption}\item[{const \hyperlink{class_vector2_d}{Vector2D} \&}]{direction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the direction to a specific value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em direction} & the desired direction \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_movable_interface_aea3e1edf8c32ebe5fd37dc02d659c10d}\label{class_movable_interface_aea3e1edf8c32ebe5fd37dc02d659c10d}} 
+\index{Movable\+Interface@{Movable\+Interface}!\+\_\+direction@{\+\_\+direction}}
+\index{\+\_\+direction@{\+\_\+direction}!Movable\+Interface@{Movable\+Interface}}
+\subsubsection{\texorpdfstring{\+\_\+direction}{\_direction}}
+{\footnotesize\ttfamily \hyperlink{class_vector2_d}{Vector2D} Movable\+Interface\+::\+\_\+direction\hspace{0.3cm}{\ttfamily [protected]}}
+
+The direction that the object moves in \mbox{\Hypertarget{class_movable_interface_aa9715fd066607de7e71ee7f891ae1dbd}\label{class_movable_interface_aa9715fd066607de7e71ee7f891ae1dbd}} 
+\index{Movable\+Interface@{Movable\+Interface}!\+\_\+movespeed@{\+\_\+movespeed}}
+\index{\+\_\+movespeed@{\+\_\+movespeed}!Movable\+Interface@{Movable\+Interface}}
+\subsubsection{\texorpdfstring{\+\_\+movespeed}{\_movespeed}}
+{\footnotesize\ttfamily double Movable\+Interface\+::\+\_\+movespeed\hspace{0.3cm}{\ttfamily [protected]}}
+
+The movement speed of the object 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Movable\+Interface.\+h\end{DoxyCompactItemize}

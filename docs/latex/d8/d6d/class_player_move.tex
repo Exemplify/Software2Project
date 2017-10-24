@@ -1,0 +1,94 @@
+\hypertarget{class_player_move}{}\section{Player\+Move Class Reference}
+\label{class_player_move}\index{Player\+Move@{Player\+Move}}
+
+
+\hyperlink{class_player_move}{Player\+Move} is responsible for determining how the \hyperlink{class_player}{Player} Object moves.  
+
+
+
+
+{\ttfamily \#include $<$Player\+Move.\+h$>$}
+
+Inheritance diagram for Player\+Move\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d8/d6d/class_player_move}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_player_move_afac691eb4cb3f0fbbf1876b5991e3a80}{Player\+Move} (double move\+Speed)
+\begin{DoxyCompactList}\small\item\em Constructs the \hyperlink{class_player_move}{Player\+Move} object with a desired speed. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_player_move_a1c39885d4126c63441250eae23ac718a}{Move} (\hyperlink{class_vector2_d}{Vector2D} \&current\+Position) override
+\begin{DoxyCompactList}\small\item\em Moves the provided \hyperlink{class_vector2_d}{Vector2D} in a circle based on input from the user. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_player_move_a8118719df3dd369686b41a0ec77cd8e0}{determine\+Move\+Direction} ()
+\begin{DoxyCompactList}\small\item\em determines the direction of movement based off of the user input \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_player_move}{Player\+Move} is responsible for determining how the \hyperlink{class_player}{Player} Object moves. 
+
+\hyperlink{class_player_move}{Player\+Move} checks for an input from the user then changes the position 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_player_move_afac691eb4cb3f0fbbf1876b5991e3a80}\label{class_player_move_afac691eb4cb3f0fbbf1876b5991e3a80}} 
+\index{Player\+Move@{Player\+Move}!Player\+Move@{Player\+Move}}
+\index{Player\+Move@{Player\+Move}!Player\+Move@{Player\+Move}}
+\subsubsection{\texorpdfstring{Player\+Move()}{PlayerMove()}}
+{\footnotesize\ttfamily Player\+Move\+::\+Player\+Move (\begin{DoxyParamCaption}\item[{double}]{move\+Speed }\end{DoxyParamCaption})}
+
+
+
+Constructs the \hyperlink{class_player_move}{Player\+Move} object with a desired speed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em move\+Speed} & The desired movement speed for the player \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_player_move_a8118719df3dd369686b41a0ec77cd8e0}\label{class_player_move_a8118719df3dd369686b41a0ec77cd8e0}} 
+\index{Player\+Move@{Player\+Move}!determine\+Move\+Direction@{determine\+Move\+Direction}}
+\index{determine\+Move\+Direction@{determine\+Move\+Direction}!Player\+Move@{Player\+Move}}
+\subsubsection{\texorpdfstring{determine\+Move\+Direction()}{determineMoveDirection()}}
+{\footnotesize\ttfamily int Player\+Move\+::determine\+Move\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+determines the direction of movement based off of the user input 
+
+\begin{DoxyReturn}{Returns}
+returns an integer of -\/1,0,1 depending on the users input 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_player_move_a1c39885d4126c63441250eae23ac718a}\label{class_player_move_a1c39885d4126c63441250eae23ac718a}} 
+\index{Player\+Move@{Player\+Move}!Move@{Move}}
+\index{Move@{Move}!Player\+Move@{Player\+Move}}
+\subsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily void Player\+Move\+::\+Move (\begin{DoxyParamCaption}\item[{\hyperlink{class_vector2_d}{Vector2D} \&}]{current\+Position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Moves the provided \hyperlink{class_vector2_d}{Vector2D} in a circle based on input from the user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Position} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_movable_interface_a899cc1c78eacbee13b906c6770e7f025}{Movable\+Interface}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Player\+Move.\+h\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Player\+Move.\+cpp\end{DoxyCompactItemize}

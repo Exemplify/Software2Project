@@ -5,7 +5,10 @@
 #include <memory>
 #include "GameData.h"
 #include "DatabaseInterface.h"
-
+/**
+ * @class DataMapperInterface
+ * @brief Is the interface used to update the specific DatabaseInterface required for the game.
+ */
 class DataMapperInterface
 {
 public:

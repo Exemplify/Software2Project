@@ -5,7 +5,6 @@
 
 /**
  * @class LinearMove
- * @file LinearMove.h
  * @brief A basic implementation of the MovableInterface, causes an object to move in a straight line along a specific direction
  */
 class LinearMove: public MovableInterface

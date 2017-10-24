@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nullgraphic',['NullGraphic',['../d2/d83/class_graphic_object.html#a3a6832e8f4af96da2935d3c69757107c',1,'GraphicObject']]]
+  ['closewindow',['closeWindow',['../db/d10/class_game_manager.html#a07c75a9507a0d82f88a0b62d808fcf3c',1,'GameManager']]]
 ];

@@ -13,9 +13,16 @@
 #include "../FrontEndSystems/Scene.h"
 #include "GameTime.h"
 
+/**
+ * @class SceneDoesntExist
+ * @brief Exception thrown if a scene does not exist at the specific index that is requested
+ */
+class SceneDoesntExist{};
 
-// Struct that contains the default settings for the window 
-/// must be moved into a database class
+/**
+ * @class WindowSettings
+ * @brief Contains the Default settings for the Game Window, is assigned default information from the repository
+ */
 struct WindowSettings
 {
 	WindowSettings(unsigned int screen_width, unsigned int screen_height, std::string game_name):
@@ -23,54 +30,73 @@ struct WindowSettings
 	screenHeight{screen_height},
 	gameName{game_name}
 	{}
-    unsigned int screenWidth;
-	unsigned int screenHeight;
-	std::string gameName;
-	Uint32 winStyle = sf::Style::Default;
+    unsigned int screenWidth; /**<Screen Width of the game*/
+	unsigned int screenHeight;/**<Screen Height of the game*/
+	std::string gameName; /**<Name of the game*/
+	Uint32 winStyle = sf::Style::Default; /**<*/
 };
-// forwared declaration for game time
+
 /**
  * @class GameManager
- * @brief GameManager is responsible for intialising and maintaining the game state,  and updating the game loop through the composition of different Scene objects that exist within the game, 
+ * @brief GameManager is responsible for intialising and maintaining the game state, and updating the game loop through the composition of different Scene objects that exist within the game, 
  * it communicates with the EventManager, DisplayManager and CollisionDetection classes regarding the state of the game
  */
 class GameManager
 {
 public:
-	/// redundant default constructor
-	GameManager(std::shared_ptr<RepositioryInterface> repository, int startingSceneindex = 0);
-	// The main game loop game only starts when this is called
+	/**
+	* @brief Constructs the GameManager object neccesary for the Game loop
+	* @param repository The instance of the Repository used to generate the Scenes for the game
+	*/
+	GameManager(std::shared_ptr<RepositioryInterface> repository);
+	/**
+	 * @brief Runs the main game loop of the game, and updates the various GameObjects Stored inside of the activeScene
+	 */
 	void GameLoop();
-	// the current scene that is being used by the game and the collection of objects insied of it
-	static std::shared_ptr<Scene> activeScene;
-	// Exit is used to close the game
+	
+	/**
+	 * @brief Closes the game window 
+	 */
 	static void Exit();
-	// Load Scene is used to change game scenes 
+	/**
+	 * @brief Changes the active Scene to the Scene at the desired SceneIndex
+	 * @param index The index for which the desired scene is located
+	 */
 	void LoadScene(unsigned int index);
+	/**
+	 * @brief Returns the current scene index
+	 * @return The Current Scene Index
+	 */
 	static int getSceneIndex()
 	{
 		return _scene_index;
 	}
-
-	// returns the current scenes index within the vector of scenes 
+	/**
+	 * @brief Identifies whether the game has been closed 
+	 * @return Returns a constant bool whether the game is closed
+	 */
 	static const bool gameClosed()
 	{return closeWindow;} 
+
+	static std::shared_ptr<Scene> activeScene; /**<public static variable that represents the active Scene - Bad design reveals too much information*/
 private:
-	std::shared_ptr<RepositioryInterface> _repository;
-	sf::RenderWindow _window;
-	std::unique_ptr<GameTime> _gameTime;
+	std::shared_ptr<RepositioryInterface> _repository; /**<The RepositoryInterface used to generate the Scenes for the game*/
+	sf::RenderWindow _window; /**<The sfml RenderWindow used for the game*/
+	std::unique_ptr<GameTime> _gameTime; /**<A unique pointer to a GameTime object, used to update the time between frames*/
 	// represents the current scene that the game is in
-	static int _scene_index;
+	static int _scene_index; /**<The current Scene Index for the game*/
     // Variables
-	WindowSettings _defaultSetup;
+	WindowSettings _defaultSetup; /**<the default Setup information for the game*/
 	// Backend Objects 
-	static bool closeWindow;
-	EventManager _eventManager;
+	static bool closeWindow; /**<bool used to identify when the game should be closed*/
 	// Scene Objects
-	std::vector<std::shared_ptr<Scene>> _game_scenes;
+	std::vector<std::shared_ptr<Scene>> _game_scenes; /**<A vector of Scene Objects used to represent the different Scenes of the game*/
 		
-	// Initialises the sfml RenderWindow, specifies the required size and informatio
-    void initialiseWindow(sf::RenderWindow&_gameWindow);
+	/**
+	 * @brief Initialises the sfml RenderWindow to the properties defined by the default window settings
+	 * @param _gameWindow
+	 */
+    void initialiseWindow(sf::RenderWindow&_gameWindow); 
 };
 
 #endif

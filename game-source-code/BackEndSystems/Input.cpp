@@ -2,12 +2,7 @@
 #include <algorithm>
 
 
-std::vector<bool> Input::_buttons(static_cast<int>(Keys::Count));
-
-void Input::clear()
-{
-	std::replace(std::begin(_buttons), std::end(_buttons), true, false);
-}
+std::vector<bool> Input::_buttons(static_cast<int>(Keys::NumberOfKeys));
 
 bool Input::IsButtonPressed(Keys key)
 {

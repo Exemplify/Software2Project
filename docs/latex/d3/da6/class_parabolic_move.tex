@@ -1,0 +1,113 @@
+\hypertarget{class_parabolic_move}{}\section{Parabolic\+Move Class Reference}
+\label{class_parabolic_move}\index{Parabolic\+Move@{Parabolic\+Move}}
+
+
+Complex movement pattern which causes an position to change in a parabolic shape through the origin.  
+
+
+
+
+{\ttfamily \#include $<$Parabolic\+Move.\+h$>$}
+
+Inheritance diagram for Parabolic\+Move\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d3/da6/class_parabolic_move}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_parabolic_move_a94fb02788b26d03abccee8254401902d}{Parabolic\+Move} (const double \&parabolic\+\_\+coefficient, const double \&movespeed)
+\begin{DoxyCompactList}\small\item\em Constructs a \hyperlink{class_parabolic_move}{Parabolic\+Move} Object with the specified parameters. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_parabolic_move_a577831644247ca57aa1c2c88843c779b}{Move} (\hyperlink{class_vector2_d}{Vector2D} \&current\+Position) override
+\begin{DoxyCompactList}\small\item\em varies the \hyperlink{class_vector2_d}{Vector2D} in a parabolic way, by using the equation of a parabola that passes through the origin \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{class_parabolic_move_a1fde73a6298c970648344e0e232659d5}{Move\+Speed} (const \hyperlink{class_vector2_d}{Vector2D} \&position)
+\begin{DoxyCompactList}\small\item\em Determines the movespeed of the object based on its proximity to the origin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{class_parabolic_move_a4ae7c298df76cb1a0f5f7d6f85c0977c}{\+\_\+parabolic\+\_\+coefficient}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Complex movement pattern which causes an position to change in a parabolic shape through the origin. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_parabolic_move_a94fb02788b26d03abccee8254401902d}\label{class_parabolic_move_a94fb02788b26d03abccee8254401902d}} 
+\index{Parabolic\+Move@{Parabolic\+Move}!Parabolic\+Move@{Parabolic\+Move}}
+\index{Parabolic\+Move@{Parabolic\+Move}!Parabolic\+Move@{Parabolic\+Move}}
+\subsubsection{\texorpdfstring{Parabolic\+Move()}{ParabolicMove()}}
+{\footnotesize\ttfamily Parabolic\+Move\+::\+Parabolic\+Move (\begin{DoxyParamCaption}\item[{const double \&}]{parabolic\+\_\+coefficient,  }\item[{const double \&}]{movespeed }\end{DoxyParamCaption})}
+
+
+
+Constructs a \hyperlink{class_parabolic_move}{Parabolic\+Move} Object with the specified parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parabolic\+\_\+coefficient} & the desired coefficient value used to determine the spread of the parabola \\
+\hline
+{\em movespeed} & the movement speed used to determine how fast a position changes \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_parabolic_move_a577831644247ca57aa1c2c88843c779b}\label{class_parabolic_move_a577831644247ca57aa1c2c88843c779b}} 
+\index{Parabolic\+Move@{Parabolic\+Move}!Move@{Move}}
+\index{Move@{Move}!Parabolic\+Move@{Parabolic\+Move}}
+\subsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily void Parabolic\+Move\+::\+Move (\begin{DoxyParamCaption}\item[{\hyperlink{class_vector2_d}{Vector2D} \&}]{current\+Position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+varies the \hyperlink{class_vector2_d}{Vector2D} in a parabolic way, by using the equation of a parabola that passes through the origin 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Position} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_movable_interface_a899cc1c78eacbee13b906c6770e7f025}{Movable\+Interface}.
+
+\mbox{\Hypertarget{class_parabolic_move_a1fde73a6298c970648344e0e232659d5}\label{class_parabolic_move_a1fde73a6298c970648344e0e232659d5}} 
+\index{Parabolic\+Move@{Parabolic\+Move}!Move\+Speed@{Move\+Speed}}
+\index{Move\+Speed@{Move\+Speed}!Parabolic\+Move@{Parabolic\+Move}}
+\subsubsection{\texorpdfstring{Move\+Speed()}{MoveSpeed()}}
+{\footnotesize\ttfamily double Parabolic\+Move\+::\+Move\+Speed (\begin{DoxyParamCaption}\item[{const \hyperlink{class_vector2_d}{Vector2D} \&}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Determines the movespeed of the object based on its proximity to the origin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & the current position of the object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns the determined movement speed of the object 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_parabolic_move_a4ae7c298df76cb1a0f5f7d6f85c0977c}\label{class_parabolic_move_a4ae7c298df76cb1a0f5f7d6f85c0977c}} 
+\index{Parabolic\+Move@{Parabolic\+Move}!\+\_\+parabolic\+\_\+coefficient@{\+\_\+parabolic\+\_\+coefficient}}
+\index{\+\_\+parabolic\+\_\+coefficient@{\+\_\+parabolic\+\_\+coefficient}!Parabolic\+Move@{Parabolic\+Move}}
+\subsubsection{\texorpdfstring{\+\_\+parabolic\+\_\+coefficient}{\_parabolic\_coefficient}}
+{\footnotesize\ttfamily double Parabolic\+Move\+::\+\_\+parabolic\+\_\+coefficient\hspace{0.3cm}{\ttfamily [private]}}
+
+The coeficient value used to determine the spread of the parabola 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Parabolic\+Move.\+h\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Parabolic\+Move.\+cpp\end{DoxyCompactItemize}

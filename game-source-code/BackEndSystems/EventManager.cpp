@@ -1,9 +1,7 @@
 #include "EventManager.h"
 #include "Input.h"
 
-EventManager::EventManager(RenderWindow* eventWindow):
-_eventWindow(eventWindow)
-{}
+
 // performs the sfml event loop
 void EventManager::EventLoop(RenderWindow& eventWindow)
 {
@@ -47,6 +45,8 @@ void EventManager::KeyInput(const Event& event, bool state)
 		case Keyboard::Key::Space:
 			Input::setButton(Keys::space,state);
 			break;
+		case Keyboard::Key::Return:
+			Input::setButton(Keys::enter,state);
 		default:
 			break;
 	}

@@ -7,7 +7,10 @@
 #include <list>
 #include <memory>
 
-
+/**
+ * @class SplashSceneFactory
+ * @brief Creates the Splash Screen Scene for the game
+ */
 class SplashSceneFactory: public MenuSceneFactory
 {
 protected:

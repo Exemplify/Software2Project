@@ -1,0 +1,114 @@
+\hypertarget{class_background_factory}{}\section{Background\+Factory Class Reference}
+\label{class_background_factory}\index{Background\+Factory@{Background\+Factory}}
+
+
+\hyperlink{class_background_factory}{Background\+Factory} uses the template design pattern to create the various \hyperlink{class_splash_screen}{Splash\+Screen} objects used within the game.  
+
+
+
+
+{\ttfamily \#include $<$Background\+Factory.\+h$>$}
+
+Inheritance diagram for Background\+Factory\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d1/d41/class_background_factory}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_background_factory_a002c292a123aaf3f47f7c70a0abf9406}{Background\+Factory} (std\+::string background\+ID)
+\begin{DoxyCompactList}\small\item\em Costructs a \hyperlink{class_background_factory}{Background\+Factory} which creates the specific \hyperlink{class_splash_screen}{Splash\+Screen} defined by the background\+ID provided. \end{DoxyCompactList}\item 
+virtual std\+::shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$ \hyperlink{class_background_factory_a17793b3ec704137388b70f53361691c3}{get\+Game\+Object} (const std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$ \&database) final
+\begin{DoxyCompactList}\small\item\em Function call used to create a \hyperlink{class_game_object}{Game\+Object} used as a background. \end{DoxyCompactList}\item 
+virtual \hyperlink{struct_game_object_data}{Game\+Object\+Data} \hyperlink{class_background_factory_aed13815bcb56568c4b465b5a531ee053}{get\+Object\+Data} (const std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$ \&database) final
+\begin{DoxyCompactList}\small\item\em used to obtain the specific \hyperlink{struct_game_object_data}{Game\+Object\+Data} defined for the current factory \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{class_background_factory_a88dfa3ed001d4975bc8a76f5603d5017}{\+\_\+background\+ID}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_background_factory}{Background\+Factory} uses the template design pattern to create the various \hyperlink{class_splash_screen}{Splash\+Screen} objects used within the game. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_background_factory_a002c292a123aaf3f47f7c70a0abf9406}\label{class_background_factory_a002c292a123aaf3f47f7c70a0abf9406}} 
+\index{Background\+Factory@{Background\+Factory}!Background\+Factory@{Background\+Factory}}
+\index{Background\+Factory@{Background\+Factory}!Background\+Factory@{Background\+Factory}}
+\subsubsection{\texorpdfstring{Background\+Factory()}{BackgroundFactory()}}
+{\footnotesize\ttfamily Background\+Factory\+::\+Background\+Factory (\begin{DoxyParamCaption}\item[{std\+::string}]{background\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Costructs a \hyperlink{class_background_factory}{Background\+Factory} which creates the specific \hyperlink{class_splash_screen}{Splash\+Screen} defined by the background\+ID provided. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em background\+ID} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_background_factory_a17793b3ec704137388b70f53361691c3}\label{class_background_factory_a17793b3ec704137388b70f53361691c3}} 
+\index{Background\+Factory@{Background\+Factory}!get\+Game\+Object@{get\+Game\+Object}}
+\index{get\+Game\+Object@{get\+Game\+Object}!Background\+Factory@{Background\+Factory}}
+\subsubsection{\texorpdfstring{get\+Game\+Object()}{getGameObject()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$ Background\+Factory\+::get\+Game\+Object (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$ \&}]{database }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+Function call used to create a \hyperlink{class_game_object}{Game\+Object} used as a background. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em database} & The specific \hyperlink{class_database_interface}{Database\+Interface} that contains the information about the Game\+Objects \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a \hyperlink{class_game_object}{Game\+Object} with the specific graphic object for a specific background 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_game_object_factory_a5b684a6e77fb82c041f1721eb07c553d}{Game\+Object\+Factory}.
+
+\mbox{\Hypertarget{class_background_factory_aed13815bcb56568c4b465b5a531ee053}\label{class_background_factory_aed13815bcb56568c4b465b5a531ee053}} 
+\index{Background\+Factory@{Background\+Factory}!get\+Object\+Data@{get\+Object\+Data}}
+\index{get\+Object\+Data@{get\+Object\+Data}!Background\+Factory@{Background\+Factory}}
+\subsubsection{\texorpdfstring{get\+Object\+Data()}{getObjectData()}}
+{\footnotesize\ttfamily \hyperlink{struct_game_object_data}{Game\+Object\+Data} Background\+Factory\+::get\+Object\+Data (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$ \&}]{database }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [final]}, {\ttfamily [virtual]}}
+
+
+
+used to obtain the specific \hyperlink{struct_game_object_data}{Game\+Object\+Data} defined for the current factory 
+
+
+\begin{DoxyParams}{Parameters}
+{\em database} & The specific \hyperlink{class_database_interface}{Database\+Interface} that contains the information about the Game\+Objects \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{struct_game_object_data}{Game\+Object\+Data} required for the construction of the object 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_game_object_factory_ae9358fbb3ef2d3b127320341760d3ff9}{Game\+Object\+Factory}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_background_factory_a88dfa3ed001d4975bc8a76f5603d5017}\label{class_background_factory_a88dfa3ed001d4975bc8a76f5603d5017}} 
+\index{Background\+Factory@{Background\+Factory}!\+\_\+background\+ID@{\+\_\+background\+ID}}
+\index{\+\_\+background\+ID@{\+\_\+background\+ID}!Background\+Factory@{Background\+Factory}}
+\subsubsection{\texorpdfstring{\+\_\+background\+ID}{\_backgroundID}}
+{\footnotesize\ttfamily std\+::string Background\+Factory\+::\+\_\+background\+ID\hspace{0.3cm}{\ttfamily [private]}}
+
+The specific \hyperlink{class_splash_screen}{Splash\+Screen} Object that is created 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Background\+Factory.\+h\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Background\+Factory.\+cpp\end{DoxyCompactItemize}

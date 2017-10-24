@@ -4,6 +4,10 @@
 #include "../FrontEndSystems/GameObject.h"
 #include <list>
 #include <memory>
+/**
+ * @class GameSceneFactory
+ * @brief Constructs the Scene that is used for the main game 
+ */
 class GameSceneFactory: public SceneFactory
 {
 protected:

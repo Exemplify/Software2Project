@@ -1,0 +1,75 @@
+\hypertarget{class_enemy_controller_factory}{}\section{Enemy\+Controller\+Factory Class Reference}
+\label{class_enemy_controller_factory}\index{Enemy\+Controller\+Factory@{Enemy\+Controller\+Factory}}
+
+
+\hyperlink{class_enemy_controller_factory}{Enemy\+Controller\+Factory} is responsible for the construction of any \hyperlink{class_enemy_controller}{Enemy\+Controller} objects.  
+
+
+
+
+{\ttfamily \#include $<$Enemy\+Controller\+Factory.\+h$>$}
+
+Inheritance diagram for Enemy\+Controller\+Factory\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d5/d7d/class_enemy_controller_factory}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$ \hyperlink{class_enemy_controller_factory_a6ab6c433cc498c7353a1ab2eb213664d}{get\+Game\+Object} (const std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$ \&database) override
+\begin{DoxyCompactList}\small\item\em Function call used to create an \hyperlink{class_enemy_controller}{Enemy\+Controller} Object. \end{DoxyCompactList}\item 
+virtual \hyperlink{struct_game_object_data}{Game\+Object\+Data} \hyperlink{class_enemy_controller_factory_a27d4819c1174490c22f2e111f32ca2ec}{get\+Object\+Data} (const std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$ \&database) override
+\begin{DoxyCompactList}\small\item\em used to obtain the specific \hyperlink{struct_game_object_data}{Game\+Object\+Data} defined for the current factory \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_enemy_controller_factory}{Enemy\+Controller\+Factory} is responsible for the construction of any \hyperlink{class_enemy_controller}{Enemy\+Controller} objects. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_enemy_controller_factory_a6ab6c433cc498c7353a1ab2eb213664d}\label{class_enemy_controller_factory_a6ab6c433cc498c7353a1ab2eb213664d}} 
+\index{Enemy\+Controller\+Factory@{Enemy\+Controller\+Factory}!get\+Game\+Object@{get\+Game\+Object}}
+\index{get\+Game\+Object@{get\+Game\+Object}!Enemy\+Controller\+Factory@{Enemy\+Controller\+Factory}}
+\subsubsection{\texorpdfstring{get\+Game\+Object()}{getGameObject()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{class_game_object}{Game\+Object} $>$ Enemy\+Controller\+Factory\+::get\+Game\+Object (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$ \&}]{database }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Function call used to create an \hyperlink{class_enemy_controller}{Enemy\+Controller} Object. 
+
+\begin{DoxyReturn}{Returns}
+Returns an \hyperlink{class_enemy_controller}{Enemy\+Controller} Object with the specific characteristics for this game 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_game_object_factory_a5b684a6e77fb82c041f1721eb07c553d}{Game\+Object\+Factory}.
+
+\mbox{\Hypertarget{class_enemy_controller_factory_a27d4819c1174490c22f2e111f32ca2ec}\label{class_enemy_controller_factory_a27d4819c1174490c22f2e111f32ca2ec}} 
+\index{Enemy\+Controller\+Factory@{Enemy\+Controller\+Factory}!get\+Object\+Data@{get\+Object\+Data}}
+\index{get\+Object\+Data@{get\+Object\+Data}!Enemy\+Controller\+Factory@{Enemy\+Controller\+Factory}}
+\subsubsection{\texorpdfstring{get\+Object\+Data()}{getObjectData()}}
+{\footnotesize\ttfamily \hyperlink{struct_game_object_data}{Game\+Object\+Data} Enemy\+Controller\+Factory\+::get\+Object\+Data (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \hyperlink{class_database_interface}{Database\+Interface} $>$ \&}]{database }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+used to obtain the specific \hyperlink{struct_game_object_data}{Game\+Object\+Data} defined for the current factory 
+
+
+\begin{DoxyParams}{Parameters}
+{\em database} & The specific \hyperlink{class_database_interface}{Database\+Interface} that contains the information about the Game\+Objects \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{struct_game_object_data}{Game\+Object\+Data} required for the construction of the object 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_game_object_factory_ae9358fbb3ef2d3b127320341760d3ff9}{Game\+Object\+Factory}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Enemy\+Controller\+Factory.\+h\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Enemy\+Controller\+Factory.\+cpp\end{DoxyCompactItemize}

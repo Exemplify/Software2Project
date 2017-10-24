@@ -14,6 +14,11 @@ public:
 	 * @return Returns an An EnemyProjectile Object with the specific characteristics for this game
 	 */
 	virtual std::shared_ptr<GameObject> getGameObject(const std::shared_ptr<DatabaseInterface>& database) override;
+	/**
+	* @brief used to obtain the specific GameObjectData defined for the current factory
+	* @param database The specific DatabaseInterface that contains the information about the GameObject
+	* @return The GameObjectData required for the construction of the object
+	*/
 	virtual GameObjectData getObjectData(const std::shared_ptr<DatabaseInterface>& database) override;
 };
 

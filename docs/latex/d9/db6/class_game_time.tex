@@ -1,42 +1,100 @@
 \hypertarget{class_game_time}{}\section{Game\+Time Class Reference}
 \label{class_game_time}\index{Game\+Time@{Game\+Time}}
+
+
+Determines the time that it takes for a single frame.  
+
+
+
+
+{\ttfamily \#include $<$Game\+Time.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_game_time_ab3b7fbfbc2a94e223d349b3dd48f76d3}\label{class_game_time_ab3b7fbfbc2a94e223d349b3dd48f76d3}} 
+\hyperlink{class_game_time_ab3b7fbfbc2a94e223d349b3dd48f76d3}{Game\+Time} ()
+\begin{DoxyCompactList}\small\item\em Constructs the \hyperlink{class_game_time}{Game\+Time} object and seeds the random generator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_time_a424d4e2f4745a85897620751ff5153b9}\label{class_game_time_a424d4e2f4745a85897620751ff5153b9}} 
+void \hyperlink{class_game_time_a424d4e2f4745a85897620751ff5153b9}{Time\+Frame} ()
+\begin{DoxyCompactList}\small\item\em Times the current frame and determines the new delta time. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_game_time_aa5ea84c887116ef68d1331617c5a81c3}\label{class_game_time_aa5ea84c887116ef68d1331617c5a81c3}} 
-static double {\bfseries get\+Delta\+Time} ()
-\end{DoxyCompactItemize}
+static double \hyperlink{class_game_time_aa5ea84c887116ef68d1331617c5a81c3}{get\+Delta\+Time} ()
+\begin{DoxyCompactList}\small\item\em Returns the difference in time between the last frame and the current frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_game_time_ac8a380f740f5bc39e98fda3e069c0bb3}\label{class_game_time_ac8a380f740f5bc39e98fda3e069c0bb3}} 
-double {\bfseries calc\+Process\+Time} ()
-\item 
+double \hyperlink{class_game_time_ac8a380f740f5bc39e98fda3e069c0bb3}{calc\+Process\+Time} ()
+\begin{DoxyCompactList}\small\item\em Determines the amount of time that has passes since the game began running, converts it into a double and returns the value. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_game_time_a8575cb09f1e07b90678eedaf92776a97}\label{class_game_time_a8575cb09f1e07b90678eedaf92776a97}} 
-void {\bfseries calc\+Delta\+Time} ()
-\item 
+void \hyperlink{class_game_time_a8575cb09f1e07b90678eedaf92776a97}{calc\+Delta\+Time} ()
+\begin{DoxyCompactList}\small\item\em Calculates the time between the current frame and the last frame. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_game_time_aec3fa5e495f783524701418f5d679071}\label{class_game_time_aec3fa5e495f783524701418f5d679071}} 
-void {\bfseries calc\+Current\+Time} ()
-\item 
-\mbox{\Hypertarget{class_game_time_a424d4e2f4745a85897620751ff5153b9}\label{class_game_time_a424d4e2f4745a85897620751ff5153b9}} 
-void \hyperlink{class_game_time_a424d4e2f4745a85897620751ff5153b9}{Time\+Frame} ()
-\begin{DoxyCompactList}\small\item\em should make this a friend method rather than a friend class \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{class_game_time_aec3fa5e495f783524701418f5d679071}{calc\+Current\+Time} ()
+\begin{DoxyCompactList}\small\item\em Calculates the time up until the current frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_game_time_a080d9deb72c675f0d68f9ad72eec66c3}\label{class_game_time_a080d9deb72c675f0d68f9ad72eec66c3}} 
 static double \hyperlink{class_game_time_a080d9deb72c675f0d68f9ad72eec66c3}{\+\_\+current\+\_\+time} = 0
 \begin{DoxyCompactList}\small\item\em variables and names need to be changed to make it more understandable \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_game_time_a39c7a52db277a99fd6dfcb457b432d7d}\label{class_game_time_a39c7a52db277a99fd6dfcb457b432d7d}} 
-static double {\bfseries \+\_\+delta\+Time} = 1
-\end{DoxyCompactItemize}
-\subsection*{Friends}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{class_game_time_a140a2a29511147897abbb772733f6c2c}\label{class_game_time_a140a2a29511147897abbb772733f6c2c}} 
-class {\bfseries Game\+Manager}
+static double \hyperlink{class_game_time_a39c7a52db277a99fd6dfcb457b432d7d}{\+\_\+delta\+Time} = 1
 \end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Determines the time that it takes for a single frame. 
+
+Used to create smooth interactions between the Game logic and the Back\+End\+Systems 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game_time_ac8a380f740f5bc39e98fda3e069c0bb3}\label{class_game_time_ac8a380f740f5bc39e98fda3e069c0bb3}} 
+\index{Game\+Time@{Game\+Time}!calc\+Process\+Time@{calc\+Process\+Time}}
+\index{calc\+Process\+Time@{calc\+Process\+Time}!Game\+Time@{Game\+Time}}
+\subsubsection{\texorpdfstring{calc\+Process\+Time()}{calcProcessTime()}}
+{\footnotesize\ttfamily double Game\+Time\+::calc\+Process\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Determines the amount of time that has passes since the game began running, converts it into a double and returns the value. 
+
+\begin{DoxyReturn}{Returns}
+Returns the amount of time that has passed since the game began 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_game_time_aa5ea84c887116ef68d1331617c5a81c3}\label{class_game_time_aa5ea84c887116ef68d1331617c5a81c3}} 
+\index{Game\+Time@{Game\+Time}!get\+Delta\+Time@{get\+Delta\+Time}}
+\index{get\+Delta\+Time@{get\+Delta\+Time}!Game\+Time@{Game\+Time}}
+\subsubsection{\texorpdfstring{get\+Delta\+Time()}{getDeltaTime()}}
+{\footnotesize\ttfamily double Game\+Time\+::get\+Delta\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the difference in time between the last frame and the current frame. 
+
+\begin{DoxyReturn}{Returns}
+Returns the difference in time between the last frame and the current frame 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_game_time_a080d9deb72c675f0d68f9ad72eec66c3}\label{class_game_time_a080d9deb72c675f0d68f9ad72eec66c3}} 
+\index{Game\+Time@{Game\+Time}!\+\_\+current\+\_\+time@{\+\_\+current\+\_\+time}}
+\index{\+\_\+current\+\_\+time@{\+\_\+current\+\_\+time}!Game\+Time@{Game\+Time}}
+\subsubsection{\texorpdfstring{\+\_\+current\+\_\+time}{\_current\_time}}
+{\footnotesize\ttfamily double Game\+Time\+::\+\_\+current\+\_\+time = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+variables and names need to be changed to make it more understandable 
+
+current time up till the current frame \mbox{\Hypertarget{class_game_time_a39c7a52db277a99fd6dfcb457b432d7d}\label{class_game_time_a39c7a52db277a99fd6dfcb457b432d7d}} 
+\index{Game\+Time@{Game\+Time}!\+\_\+delta\+Time@{\+\_\+delta\+Time}}
+\index{\+\_\+delta\+Time@{\+\_\+delta\+Time}!Game\+Time@{Game\+Time}}
+\subsubsection{\texorpdfstring{\+\_\+delta\+Time}{\_deltaTime}}
+{\footnotesize\ttfamily double Game\+Time\+::\+\_\+delta\+Time = 1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+change in time between frames 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

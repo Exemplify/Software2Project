@@ -6,7 +6,10 @@
 #include <list>
 #include <memory>
 
-
+/**
+ * @class WinSceneFactory
+ * @brief Creates the Scene that the player goes to when they Win the gam
+ */
 class WinSceneFactory: public MenuSceneFactory
 {
 protected:

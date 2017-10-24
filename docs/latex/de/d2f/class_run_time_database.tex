@@ -1,0 +1,141 @@
+\hypertarget{class_run_time_database}{}\section{Run\+Time\+Database Class Reference}
+\label{class_run_time_database}\index{Run\+Time\+Database@{Run\+Time\+Database}}
+
+
+This class is responsible for storing a hashtable containing the various information about the different gameobjects used in the game. It also stores the information regarding the game state and provides access functionality as defined by the \hyperlink{class_database_interface}{Database\+Interface} Interface class.  
+
+
+
+
+{\ttfamily \#include $<$Run\+Time\+Database.\+h$>$}
+
+Inheritance diagram for Run\+Time\+Database\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{de/d2f/class_run_time_database}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{struct_game_object_data}{Game\+Object\+Data} \hyperlink{class_run_time_database_aabe246e23f6f8ded2c3b61fcfa396f2a}{get\+Game\+Object\+Data} (std\+::string ID) override
+\begin{DoxyCompactList}\small\item\em Used to obtain the various data that relates to the different Game\+Objects used inside the game. \end{DoxyCompactList}\item 
+virtual \hyperlink{struct_game_state_data}{Game\+State\+Data} \hyperlink{class_run_time_database_a15d6105d3d772f604c42813e50ba4ee3}{get\+Game\+State\+Data} () override
+\begin{DoxyCompactList}\small\item\em Gets the data about the current state of the game. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_run_time_database_af18f09a5166adc6ab075034e272e9c8d}{set\+Game\+State\+Data} (\hyperlink{struct_game_state_data}{Game\+State\+Data} game\+State\+Data) override
+\begin{DoxyCompactList}\small\item\em Sets the \hyperlink{struct_game_state_data}{Game\+State\+Data} inside of the database. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_run_time_database_a9d2c5c2f1eb4dc728d69b9c5dbd1c22d}{set\+Game\+Object\+Data} (std\+::string ID, \hyperlink{struct_game_object_data}{Game\+Object\+Data} game\+Object\+Data) override
+\begin{DoxyCompactList}\small\item\em Sets the object data at the corresponding ID provided into the database. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, \hyperlink{struct_game_object_data}{Game\+Object\+Data} $>$ \hyperlink{class_run_time_database_aec15546ee0f7bf69bd1ba0a74656790d}{\+\_\+game\+Object\+Data}
+\item 
+\hyperlink{struct_game_state_data}{Game\+State\+Data} \hyperlink{class_run_time_database_a1d965e094a4035d1a6c28a566a29cb8e}{\+\_\+game\+State\+Data}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is responsible for storing a hashtable containing the various information about the different gameobjects used in the game. It also stores the information regarding the game state and provides access functionality as defined by the \hyperlink{class_database_interface}{Database\+Interface} Interface class. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_run_time_database_aabe246e23f6f8ded2c3b61fcfa396f2a}\label{class_run_time_database_aabe246e23f6f8ded2c3b61fcfa396f2a}} 
+\index{Run\+Time\+Database@{Run\+Time\+Database}!get\+Game\+Object\+Data@{get\+Game\+Object\+Data}}
+\index{get\+Game\+Object\+Data@{get\+Game\+Object\+Data}!Run\+Time\+Database@{Run\+Time\+Database}}
+\subsubsection{\texorpdfstring{get\+Game\+Object\+Data()}{getGameObjectData()}}
+{\footnotesize\ttfamily \hyperlink{struct_game_object_data}{Game\+Object\+Data} Run\+Time\+Database\+::get\+Game\+Object\+Data (\begin{DoxyParamCaption}\item[{std\+::string}]{ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Used to obtain the various data that relates to the different Game\+Objects used inside the game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ID} & The speciic ID required to return the correct object data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the \hyperlink{struct_game_object_data}{Game\+Object\+Data} relating to the object defined by the ID 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_database_interface_a515afa17b15a4b111ebc1a43e1d0218e}{Database\+Interface}.
+
+\mbox{\Hypertarget{class_run_time_database_a15d6105d3d772f604c42813e50ba4ee3}\label{class_run_time_database_a15d6105d3d772f604c42813e50ba4ee3}} 
+\index{Run\+Time\+Database@{Run\+Time\+Database}!get\+Game\+State\+Data@{get\+Game\+State\+Data}}
+\index{get\+Game\+State\+Data@{get\+Game\+State\+Data}!Run\+Time\+Database@{Run\+Time\+Database}}
+\subsubsection{\texorpdfstring{get\+Game\+State\+Data()}{getGameStateData()}}
+{\footnotesize\ttfamily \hyperlink{struct_game_state_data}{Game\+State\+Data} Run\+Time\+Database\+::get\+Game\+State\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the data about the current state of the game. 
+
+\begin{DoxyReturn}{Returns}
+Returns the \hyperlink{struct_game_state_data}{Game\+State\+Data} which relates to the game, including the game screen size and name 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_database_interface_a5972ccdce7669da4eef8ab82c69fe073}{Database\+Interface}.
+
+\mbox{\Hypertarget{class_run_time_database_a9d2c5c2f1eb4dc728d69b9c5dbd1c22d}\label{class_run_time_database_a9d2c5c2f1eb4dc728d69b9c5dbd1c22d}} 
+\index{Run\+Time\+Database@{Run\+Time\+Database}!set\+Game\+Object\+Data@{set\+Game\+Object\+Data}}
+\index{set\+Game\+Object\+Data@{set\+Game\+Object\+Data}!Run\+Time\+Database@{Run\+Time\+Database}}
+\subsubsection{\texorpdfstring{set\+Game\+Object\+Data()}{setGameObjectData()}}
+{\footnotesize\ttfamily void Run\+Time\+Database\+::set\+Game\+Object\+Data (\begin{DoxyParamCaption}\item[{std\+::string}]{ID,  }\item[{\hyperlink{struct_game_object_data}{Game\+Object\+Data}}]{game\+Object\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the object data at the corresponding ID provided into the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ID} & The ID of the object that neeeds to be set within the database \\
+\hline
+{\em game\+Object\+Data} & The \hyperlink{struct_game_object_data}{Game\+Object\+Data} stored \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_database_interface_ae1914371cb425f71ba750f57f968b491}{Database\+Interface}.
+
+\mbox{\Hypertarget{class_run_time_database_af18f09a5166adc6ab075034e272e9c8d}\label{class_run_time_database_af18f09a5166adc6ab075034e272e9c8d}} 
+\index{Run\+Time\+Database@{Run\+Time\+Database}!set\+Game\+State\+Data@{set\+Game\+State\+Data}}
+\index{set\+Game\+State\+Data@{set\+Game\+State\+Data}!Run\+Time\+Database@{Run\+Time\+Database}}
+\subsubsection{\texorpdfstring{set\+Game\+State\+Data()}{setGameStateData()}}
+{\footnotesize\ttfamily void Run\+Time\+Database\+::set\+Game\+State\+Data (\begin{DoxyParamCaption}\item[{\hyperlink{struct_game_state_data}{Game\+State\+Data}}]{game\+State\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the \hyperlink{struct_game_state_data}{Game\+State\+Data} inside of the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\+State\+Data} & The specific \hyperlink{struct_game_state_data}{Game\+State\+Data} stored within the database \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_database_interface_a0b2f4402583b6ab31c70c713d72ceede}{Database\+Interface}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_run_time_database_aec15546ee0f7bf69bd1ba0a74656790d}\label{class_run_time_database_aec15546ee0f7bf69bd1ba0a74656790d}} 
+\index{Run\+Time\+Database@{Run\+Time\+Database}!\+\_\+game\+Object\+Data@{\+\_\+game\+Object\+Data}}
+\index{\+\_\+game\+Object\+Data@{\+\_\+game\+Object\+Data}!Run\+Time\+Database@{Run\+Time\+Database}}
+\subsubsection{\texorpdfstring{\+\_\+game\+Object\+Data}{\_gameObjectData}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$std\+::string, \hyperlink{struct_game_object_data}{Game\+Object\+Data}$>$ Run\+Time\+Database\+::\+\_\+game\+Object\+Data\hspace{0.3cm}{\ttfamily [protected]}}
+
+Hash Table datastructure used to store the \hyperlink{class_game_object}{Game\+Object} information in the form of \hyperlink{struct_game_object_data}{Game\+Object\+Data} \mbox{\Hypertarget{class_run_time_database_a1d965e094a4035d1a6c28a566a29cb8e}\label{class_run_time_database_a1d965e094a4035d1a6c28a566a29cb8e}} 
+\index{Run\+Time\+Database@{Run\+Time\+Database}!\+\_\+game\+State\+Data@{\+\_\+game\+State\+Data}}
+\index{\+\_\+game\+State\+Data@{\+\_\+game\+State\+Data}!Run\+Time\+Database@{Run\+Time\+Database}}
+\subsubsection{\texorpdfstring{\+\_\+game\+State\+Data}{\_gameStateData}}
+{\footnotesize\ttfamily \hyperlink{struct_game_state_data}{Game\+State\+Data} Run\+Time\+Database\+::\+\_\+game\+State\+Data\hspace{0.3cm}{\ttfamily [protected]}}
+
+Variable that stores the information about the game state 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Run\+Time\+Database.\+h\item 
+D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Run\+Time\+Database.\+cpp\end{DoxyCompactItemize}

@@ -2,6 +2,10 @@
 #define PARABOLIC_ENEM_FAC_H
 #include "EnemyFactory.h"
 
+/**
+ * @class ParabolicEnemyFactory
+ * @brief Constructs an Enemy that is moves in a parabolic fashion from the edges of the screen to the centre of the screen
+ */
 class ParabolicEnemyFactory : public EnemyFactory
 {
 public:
