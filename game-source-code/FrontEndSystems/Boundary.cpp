@@ -5,8 +5,8 @@ const unsigned int DEFAULT_HEIGHT = 1080;
 // default boundary is set to the screen bounds 
 Boundary::Boundary()
 {
-	_xBound = DEFAULT_HEIGHT/2;
-	_yBound = DEFAULT_HEIGHT/2;
+	_xBound = DEFAULT_WIDTH/2+150;
+	_yBound = DEFAULT_HEIGHT/2+150;
 }
 // constructor that uses the defined bounds for the boundary
 Boundary::Boundary(double xbound, double ybound):

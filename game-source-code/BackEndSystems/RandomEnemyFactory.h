@@ -20,7 +20,7 @@ GameObjectData getObjectData(const std::shared_ptr<DatabaseInterface>& database)
 
 private:
 	const unsigned int SPIRAL_PERCENTAGE_VALUE = 80; /**<The value that the generated number needs to be greater than to create a Spiral Enemy*/
-	const unsigned int LINEAR_PERCENTAGE_VALUE = 30; /**<The value that the generated number needs to be greater than to create a Linear Enemy*/
+	const unsigned int LINEAR_PERCENTAGE_VALUE = 40; /**<The value that the generated number needs to be greater than to create a Linear Enemy*/
 	const unsigned int PARABOLIC_PERCENTAGE_VALUE = 0; /**<The value that the generated number needs to be greater than to create a Parabolic Enemy*/
 	const unsigned int MAX_PERCENTAGE = 100; /**<The maximum value that can be generated*/
 	/**

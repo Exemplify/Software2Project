@@ -1,10 +1,12 @@
 #include "ParabolicMove.h"
 #include "../BackEndSystems/GameTime.h"
 
-ParabolicMove::ParabolicMove(const double& parabolic_coefficient, const double& movespeed):
+ParabolicMove::ParabolicMove(const double& movespeed,const double& parabolic_coefficient):
 MovableInterface(movespeed),
 _parabolic_coefficient{parabolic_coefficient}
-{}
+{
+	_movespeed = movespeed;
+}
 
 void ParabolicMove::Move(Vector2D& currentPosition)
 {
