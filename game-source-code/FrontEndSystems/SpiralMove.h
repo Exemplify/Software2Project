@@ -15,7 +15,7 @@ public:
 	 * @param radialSpeed the speed that the object moves radially outwards from the centre is defined
 	 * @param angularSpeed the speed that the object rotates around the centre is defined 
 	 */
-	SpiralMove(const double& radialSpeed, const double& angularSpeed);
+	SpiralMove(const double& radialSpeed, const double& angularSpeed = 1);
 	/**
 	 * @brief overrides the pure virtual function from MoveInterface
 	 * @param currentPosition Referenced Vector2D object for the current position that is then adjusted accordingly

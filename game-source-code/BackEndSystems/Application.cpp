@@ -1,17 +1,18 @@
 #include "Application.h"
 
-Application::Application(std::shared_ptr<RepositioryInterface> repository)
+Application::Application(std::shared_ptr<RepositioryInterface> repository, std::shared_ptr<GameManager> gameManager)
 {
-	if(_repository == nullptr)
+	_repository = repository;
+	if(gameManager == nullptr)
 	{
-		_repository = repository;
 		_gameManager = std::make_shared<GameManager>(repository);
 	}
-	else 
+	else
 	{
-		throw MultipleRepositoryIntialisations();
+		_gameManager = gameManager;
 	}
 }
+
 const std::shared_ptr<RepositioryInterface> Application::getGameRepository()
 {
 	return _repository;

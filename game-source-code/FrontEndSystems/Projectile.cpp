@@ -5,6 +5,10 @@
 #include <assert.h>
 
 
+Projectile::Projectile():
+PhysicsObject()
+{}
+
 Projectile::Projectile(const PhysicsObject& physicsObject, const std::shared_ptr<MovableInterface>& move, const Boundary& destroyBounds):
 PhysicsObject(physicsObject),
 _destroyBounds{destroyBounds},

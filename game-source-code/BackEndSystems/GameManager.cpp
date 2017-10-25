@@ -52,13 +52,11 @@ void GameManager::initialiseWindow(RenderWindow& gameWindow)
     gameWindow.setActive(false);
 }
 
-/// Exit function needs to be moved into Scene or a seperate Application class
 void GameManager::Exit()
 {
 	closeWindow = true;
 }
 // loads a specific scene based off of the current index 
-/// Should be called from an application class but remains inside of gameManager
 void GameManager::LoadScene(unsigned int index)
 {
 	if(_game_scenes.size() <= index)

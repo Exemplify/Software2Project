@@ -15,6 +15,10 @@ class Projectile: public PhysicsObject
 {
 public:
 	/**
+	 * @brief Default Constructor of the projectile abstract class that is used to create a mock projectile object for testing purposes
+	 */
+	Projectile();
+	/**
 	 * @brief Constructs the base projectile with the various members that it requires 
 	 * @param physicsObject The base physics object copies the properties defined
 	 * @param move A MovableInterface object that defines the various ways that the projectile can move
@@ -35,7 +39,7 @@ public:
 	* @brief used to define the characteristics of the projectile once is has been created by the copy constructor
 	* @details This is necessary because the start position and direction of the projectile are assigned during runtime
 	*/
-	void Initialise(const Vector2D& startingPos, const Vector2D& direction);
+	virtual void Initialise(const Vector2D& startingPos, const Vector2D& direction);
 
 	virtual ~Projectile() override = default;
 

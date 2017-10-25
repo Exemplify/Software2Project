@@ -14,7 +14,7 @@ public:
 	 * @param parabolic_coefficient the desired coefficient value used to determine the spread of the parabola
 	 * @param movespeed the movement speed used to determine how fast a position changes
 	 */
-	ParabolicMove(const double& parabolic_coefficient, const double& movespeed);
+	ParabolicMove(const double& movespeed ,const double& parabolic_coefficient = 1);
 	/**
 	 * @brief varies the Vector2D in a parabolic way, by using the equation of a parabola that passes through the origin
 	 * @param currentPosition

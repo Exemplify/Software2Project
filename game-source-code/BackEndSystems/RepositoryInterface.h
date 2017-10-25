@@ -21,7 +21,7 @@ public:
 	 */
 	virtual std::vector<std::shared_ptr<Scene>> getGameScenes() const = 0;
 	/**
-	 * @brief Used to Construct GameObjects that are only created once the game is already running 
+	 * @brief Used to Construct GameObjects that are MAKE_MOCK0()nly created once the game is already running 
 	 * @param objtype The type of GameObject that is required
 	 * @returns Returns the desired GameObject
 	 */

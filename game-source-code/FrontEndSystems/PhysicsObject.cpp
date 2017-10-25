@@ -1,5 +1,9 @@
 #include "PhysicsObject.h"
 
+PhysicsObject::PhysicsObject():
+GameObject(), 
+_objectSize{0}
+{}
 PhysicsObject::PhysicsObject(const GameObject& gameObject, const double& objectSize):
 GameObject{gameObject},
 _objectSize{objectSize}

@@ -20,14 +20,15 @@ public:
 	*/
 	BasicShoot(GameObjectType projectileType);
 	
-	virtual void Shoot(Vector2D startPosition, Vector2D target, std::shared_ptr<Scene> scene) override;
+	virtual void Shoot(Vector2D startPosition, Vector2D target, std::shared_ptr<Scene> scene,  
+			const std::shared_ptr<RepositioryInterface> repository = Application::getGameRepository()) override;
 protected:
 /**
  * @brief Overriden function used to get the projectile used by the BasicShoot object
  * @details Uses the Repository to construct the specific projectile object that is defined by the _projectileType
  * @return Returns the generated projectile that needs to be shot by the shoot component
  */
-	virtual std::shared_ptr<Projectile> getProjectile() override;
+	virtual std::shared_ptr<Projectile> getProjectile(const std::shared_ptr<RepositioryInterface> repository) override;
 private:
 	/**
 	 * @brief Calculates the direction that the projectile from the start position to the target

@@ -5,11 +5,7 @@
 #include "GameManager.h"
 #include <memory>
 #include "DatabaseInterface.h"
-/**
- * @class MultipleRepositoryIntialisations
- * @brief Exception that is thrown if multiple repositories are created at run time.S
- */
-class MultipleRepositoryIntialisations{};
+
 /**
  * @class Application
  * @brief Application acts as the main interface between the game objects and the game system. It allows game objects to access information about the current state of the game
@@ -19,7 +15,7 @@ class MultipleRepositoryIntialisations{};
 class Application
 {
 public:
-	Application(std::shared_ptr<RepositioryInterface> repository);
+	Application(std::shared_ptr<RepositioryInterface> repository, std::shared_ptr<GameManager> gameManager = nullptr);
 	/**
 	 * @brief getter used to provide global access to the repository object used within the game system. The object is returned as a constant pointer to ensure that it cannot be changed.
 	 * @return Returns the repository object used within the game

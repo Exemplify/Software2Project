@@ -52,22 +52,22 @@ public:
 	/**
 	 * @brief Runs the main game loop of the game, and updates the various GameObjects Stored inside of the activeScene
 	 */
-	void GameLoop();
+	virtual void GameLoop();
 	
 	/**
 	 * @brief Closes the game window 
 	 */
-	static void Exit();
+	virtual void Exit();
 	/**
 	 * @brief Changes the active Scene to the Scene at the desired SceneIndex
 	 * @param index The index for which the desired scene is located
 	 */
-	void LoadScene(unsigned int index);
+	virtual void LoadScene(unsigned int index);
 	/**
 	 * @brief Returns the current scene index
 	 * @return The Current Scene Index
 	 */
-	static int getSceneIndex()
+	virtual unsigned int getSceneIndex()
 	{
 		return _scene_index;
 	}

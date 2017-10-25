@@ -9,6 +9,8 @@
 class SizeReduction
 {
 public:
+	SizeReduction()
+	{}
 	/**
 	 * @brief Constructs a SizeReduction Object with the maximum scale and maximum collider size of the GameObject specified
 	 * @param max_scale The maximum scale of the GameObject 
@@ -25,7 +27,7 @@ public:
 	void ReduceSize(const Vector2D& position, xyVector& scale, double& colliderSize);
 private: 
 	xyVector max_scale; /**<Maximum scale of that will be set at the maximum distance of the screen*/
-	double max_collider_size; /**<Maximum collider size that will be set at the maximum distance of the screen*/
+	double max_collider_size = 1; /**<Maximum collider size that will be set at the maximum distance of the screen*/
 };
 
 #endif

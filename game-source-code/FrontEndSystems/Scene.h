@@ -26,7 +26,7 @@ public:
 	 * @brief Adds the specified GameObject pointer to the scene
 	 * @param gameObj The specific GameObject that is added to the Scene
 	 */
-	void Instantiate(shared_ptr<GameObject> gameObj);
+	virtual void Instantiate(shared_ptr<GameObject> gameObj);
 	
 	/**
 	 * @brief Removes the current Instance of the GameObject from the Scene
