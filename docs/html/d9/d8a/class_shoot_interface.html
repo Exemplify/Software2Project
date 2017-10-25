@@ -86,21 +86,21 @@ Inheritance diagram for ShootInterface:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a67205cc4e2fed90fa8c1ec93b30b864d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d8a/class_shoot_interface.html#a67205cc4e2fed90fa8c1ec93b30b864d">Shoot</a> (<a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> startPosition, <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> target, std::shared_ptr&lt; <a class="el" href="../../d6/db5/class_scene.html">Scene</a> &gt; scene)=0</td></tr>
-<tr class="memdesc:a67205cc4e2fed90fa8c1ec93b30b864d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shoots a <a class="el" href="../../db/dbe/class_projectile.html" title="The base class for all the projectiles that exist within the game. ">Projectile</a> object in a way defined by the derived class, used as the main interface with the client.  <a href="#a67205cc4e2fed90fa8c1ec93b30b864d">More...</a><br /></td></tr>
-<tr class="separator:a67205cc4e2fed90fa8c1ec93b30b864d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e8003c123f8f6c43c12a9afc29356b8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d8a/class_shoot_interface.html#a3e8003c123f8f6c43c12a9afc29356b8">Shoot</a> (<a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> startPosition, <a class="el" href="../../d9/d40/class_vector2_d.html">Vector2D</a> target, std::shared_ptr&lt; <a class="el" href="../../d6/db5/class_scene.html">Scene</a> &gt; scene, const std::shared_ptr&lt; <a class="el" href="../../de/daa/class_repositiory_interface.html">RepositioryInterface</a> &gt; repository=<a class="el" href="../../de/d6b/class_application.html#aa895ae75cdb47ab91584c32b0db0ca06">Application::getGameRepository</a>())=0</td></tr>
+<tr class="memdesc:a3e8003c123f8f6c43c12a9afc29356b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shoots a <a class="el" href="../../db/dbe/class_projectile.html" title="The base class for all the projectiles that exist within the game. ">Projectile</a> object in a way defined by the derived class, used as the main interface with the client.  <a href="#a3e8003c123f8f6c43c12a9afc29356b8">More...</a><br /></td></tr>
+<tr class="separator:a3e8003c123f8f6c43c12a9afc29356b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:ad274b0c66a0a42bf194b32b704c8bfea"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="../../db/dbe/class_projectile.html">Projectile</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d8a/class_shoot_interface.html#ad274b0c66a0a42bf194b32b704c8bfea">getProjectile</a> ()=0</td></tr>
-<tr class="memdesc:ad274b0c66a0a42bf194b32b704c8bfea"><td class="mdescLeft">&#160;</td><td class="mdescRight">determines the projectile object used for the specific shoot component  <a href="#ad274b0c66a0a42bf194b32b704c8bfea">More...</a><br /></td></tr>
-<tr class="separator:ad274b0c66a0a42bf194b32b704c8bfea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab93ccb6b21911e121b19dc15196a4e0b"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="../../db/dbe/class_projectile.html">Projectile</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d8a/class_shoot_interface.html#ab93ccb6b21911e121b19dc15196a4e0b">getProjectile</a> (const std::shared_ptr&lt; <a class="el" href="../../de/daa/class_repositiory_interface.html">RepositioryInterface</a> &gt; repository)=0</td></tr>
+<tr class="memdesc:ab93ccb6b21911e121b19dc15196a4e0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">determines the projectile object used for the specific shoot component  <a href="#ab93ccb6b21911e121b19dc15196a4e0b">More...</a><br /></td></tr>
+<tr class="separator:ab93ccb6b21911e121b19dc15196a4e0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The Interface used to define the various methods of creating and shooting <a class="el" href="../../db/dbe/class_projectile.html" title="The base class for all the projectiles that exist within the game. ">Projectile</a> objects. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad274b0c66a0a42bf194b32b704c8bfea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad274b0c66a0a42bf194b32b704c8bfea">&#9670;&nbsp;</a></span>getProjectile()</h2>
+<a id="ab93ccb6b21911e121b19dc15196a4e0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab93ccb6b21911e121b19dc15196a4e0b">&#9670;&nbsp;</a></span>getProjectile()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -111,7 +111,8 @@ Protected Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual std::shared_ptr&lt;<a class="el" href="../../db/dbe/class_projectile.html">Projectile</a>&gt; ShootInterface::getProjectile </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="../../de/daa/class_repositiory_interface.html">RepositioryInterface</a> &gt;&#160;</td>
+          <td class="paramname"><em>repository</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -125,12 +126,12 @@ Protected Member Functions</h2></td></tr>
 <p>determines the projectile object used for the specific shoot component </p>
 <dl class="section return"><dt>Returns</dt><dd>Returns the desired projectile </dd></dl>
 
-<p>Implemented in <a class="el" href="../../d0/d31/class_basic_shoot.html#ab5058d147ca9d9cc4cc4210e9e092de5">BasicShoot</a>.</p>
+<p>Implemented in <a class="el" href="../../d0/d31/class_basic_shoot.html#a2cad5133e2bcdc6441551387b3f2e873">BasicShoot</a>.</p>
 
 </div>
 </div>
-<a id="a67205cc4e2fed90fa8c1ec93b30b864d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67205cc4e2fed90fa8c1ec93b30b864d">&#9670;&nbsp;</a></span>Shoot()</h2>
+<a id="a3e8003c123f8f6c43c12a9afc29356b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e8003c123f8f6c43c12a9afc29356b8">&#9670;&nbsp;</a></span>Shoot()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -154,7 +155,13 @@ Protected Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::shared_ptr&lt; <a class="el" href="../../d6/db5/class_scene.html">Scene</a> &gt;&#160;</td>
-          <td class="paramname"><em>scene</em>&#160;</td>
+          <td class="paramname"><em>scene</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="../../de/daa/class_repositiory_interface.html">RepositioryInterface</a> &gt;&#160;</td>
+          <td class="paramname"><em>repository</em> = <code><a class="el" href="../../de/d6b/class_application.html#aa895ae75cdb47ab91584c32b0db0ca06">Application::getGameRepository</a>()</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -175,16 +182,17 @@ Protected Member Functions</h2></td></tr>
     <tr><td class="paramname">startPosition</td><td>The starting position of the <a class="el" href="../../db/dbe/class_projectile.html" title="The base class for all the projectiles that exist within the game. ">Projectile</a> </td></tr>
     <tr><td class="paramname">target</td><td>The target that the projectile moves towards </td></tr>
     <tr><td class="paramname">scene</td><td>The scene that the projectile is instantiated into </td></tr>
+    <tr><td class="paramname">repository</td><td>The repository used to construct a the projectile object, used for testing </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="../../d0/d31/class_basic_shoot.html#a8bed811408d1afa3ecf0454ae78f2303">BasicShoot</a>.</p>
+<p>Implemented in <a class="el" href="../../d0/d31/class_basic_shoot.html#a8710518507ed4fc20bef204159e05090">BasicShoot</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>D:/Users/Tim-PC/Documents/Software_II/Project/ProjectFiles/game-source-code/FrontEndSystems/<a class="el" href="../../d8/dea/_shoot_interface_8h_source.html">ShootInterface.h</a></li>
+<li>C:/Users/Tim/Documents/SoftwareDev/SoftwareProject/ProjectFiles/game-source-code/FrontEndSystems/<a class="el" href="../../d8/dea/_shoot_interface_8h_source.html">ShootInterface.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

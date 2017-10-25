@@ -85,21 +85,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a05f6a37de95fcea1313fe4476b95941d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the <a class="el" href="../../db/d10/class_game_manager.html" title="GameManager is responsible for intialising and maintaining the game state, and updating the game loop...">GameManager</a> object neccesary for the Game loop.  <a href="#a05f6a37de95fcea1313fe4476b95941d">More...</a><br /></td></tr>
 <tr class="separator:a05f6a37de95fcea1313fe4476b95941d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5baa570812ae717f809fe0dc48bde22e"><td class="memItemLeft" align="right" valign="top"><a id="a5baa570812ae717f809fe0dc48bde22e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d10/class_game_manager.html#a5baa570812ae717f809fe0dc48bde22e">GameLoop</a> ()</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d10/class_game_manager.html#a5baa570812ae717f809fe0dc48bde22e">GameLoop</a> ()</td></tr>
 <tr class="memdesc:a5baa570812ae717f809fe0dc48bde22e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the main game loop of the game, and updates the various GameObjects Stored inside of the activeScene. <br /></td></tr>
 <tr class="separator:a5baa570812ae717f809fe0dc48bde22e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09b8801bcfdd8d5cbc52e27895b84e3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d10/class_game_manager.html#a09b8801bcfdd8d5cbc52e27895b84e3b">LoadScene</a> (unsigned int index)</td></tr>
+<tr class="memitem:acbd9fb84f9e18c8cb585738d5c89a2b9"><td class="memItemLeft" align="right" valign="top"><a id="acbd9fb84f9e18c8cb585738d5c89a2b9"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d10/class_game_manager.html#acbd9fb84f9e18c8cb585738d5c89a2b9">Exit</a> ()</td></tr>
+<tr class="memdesc:acbd9fb84f9e18c8cb585738d5c89a2b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the game window. <br /></td></tr>
+<tr class="separator:acbd9fb84f9e18c8cb585738d5c89a2b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09b8801bcfdd8d5cbc52e27895b84e3b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d10/class_game_manager.html#a09b8801bcfdd8d5cbc52e27895b84e3b">LoadScene</a> (unsigned int index)</td></tr>
 <tr class="memdesc:a09b8801bcfdd8d5cbc52e27895b84e3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the active <a class="el" href="../../d6/db5/class_scene.html" title="Scene is used to store and operate on the various gameobjects that define the functionality of the cu...">Scene</a> to the <a class="el" href="../../d6/db5/class_scene.html" title="Scene is used to store and operate on the various gameobjects that define the functionality of the cu...">Scene</a> at the desired SceneIndex.  <a href="#a09b8801bcfdd8d5cbc52e27895b84e3b">More...</a><br /></td></tr>
 <tr class="separator:a09b8801bcfdd8d5cbc52e27895b84e3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab91d1bf5ce2a0e12f0528f530df47271"><td class="memItemLeft" align="right" valign="top">virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d10/class_game_manager.html#ab91d1bf5ce2a0e12f0528f530df47271">getSceneIndex</a> ()</td></tr>
+<tr class="memdesc:ab91d1bf5ce2a0e12f0528f530df47271"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current scene index.  <a href="#ab91d1bf5ce2a0e12f0528f530df47271">More...</a><br /></td></tr>
+<tr class="separator:ab91d1bf5ce2a0e12f0528f530df47271"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:acbd9fb84f9e18c8cb585738d5c89a2b9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d10/class_game_manager.html#acbd9fb84f9e18c8cb585738d5c89a2b9">Exit</a> ()</td></tr>
-<tr class="memdesc:acbd9fb84f9e18c8cb585738d5c89a2b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the game window.  <a href="#acbd9fb84f9e18c8cb585738d5c89a2b9">More...</a><br /></td></tr>
-<tr class="separator:acbd9fb84f9e18c8cb585738d5c89a2b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4835b5fc96bfdbf6170a8673baf5552"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d10/class_game_manager.html#aa4835b5fc96bfdbf6170a8673baf5552">getSceneIndex</a> ()</td></tr>
-<tr class="memdesc:aa4835b5fc96bfdbf6170a8673baf5552"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current scene index.  <a href="#aa4835b5fc96bfdbf6170a8673baf5552">More...</a><br /></td></tr>
-<tr class="separator:aa4835b5fc96bfdbf6170a8673baf5552"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4eb94c6171bf3292eb57b291e2174289"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d10/class_game_manager.html#a4eb94c6171bf3292eb57b291e2174289">gameClosed</a> ()</td></tr>
 <tr class="memdesc:a4eb94c6171bf3292eb57b291e2174289"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifies whether the game has been closed.  <a href="#a4eb94c6171bf3292eb57b291e2174289">More...</a><br /></td></tr>
 <tr class="separator:a4eb94c6171bf3292eb57b291e2174289"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -165,34 +166,6 @@ Static Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="acbd9fb84f9e18c8cb585738d5c89a2b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acbd9fb84f9e18c8cb585738d5c89a2b9">&#9670;&nbsp;</a></span>Exit()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GameManager::Exit </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Closes the game window. </p>
-<p>Exit function needs to be moved into <a class="el" href="../../d6/db5/class_scene.html" title="Scene is used to store and operate on the various gameobjects that define the functionality of the cu...">Scene</a> or a seperate <a class="el" href="../../de/d6b/class_application.html" title="Application acts as the main interface between the game objects and the game system. It allows game objects to access information about the current state of the game and to load scenes when certain conditions are met. It also provides game objects with access to the Repository object so that new gameObjects can be instantiated into the current scene of the game. ">Application</a> class. </p>
-
-</div>
-</div>
 <a id="a4eb94c6171bf3292eb57b291e2174289"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4eb94c6171bf3292eb57b291e2174289">&#9670;&nbsp;</a></span>gameClosed()</h2>
 
@@ -221,8 +194,8 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="aa4835b5fc96bfdbf6170a8673baf5552"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa4835b5fc96bfdbf6170a8673baf5552">&#9670;&nbsp;</a></span>getSceneIndex()</h2>
+<a id="ab91d1bf5ce2a0e12f0528f530df47271"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab91d1bf5ce2a0e12f0528f530df47271">&#9670;&nbsp;</a></span>getSceneIndex()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -231,7 +204,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static int GameManager::getSceneIndex </td>
+          <td class="memname">virtual unsigned int GameManager::getSceneIndex </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -239,7 +212,7 @@ Static Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -288,6 +261,9 @@ Static Private Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void GameManager::LoadScene </td>
@@ -297,10 +273,14 @@ Static Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Changes the active <a class="el" href="../../d6/db5/class_scene.html" title="Scene is used to store and operate on the various gameobjects that define the functionality of the cu...">Scene</a> to the <a class="el" href="../../d6/db5/class_scene.html" title="Scene is used to store and operate on the various gameobjects that define the functionality of the cu...">Scene</a> at the desired SceneIndex. </p>
-<p>Should be called from an application class but remains inside of gameManager.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">index</td><td>The index for which the desired scene is located </td></tr>
@@ -496,8 +476,8 @@ Static Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>D:/Users/Tim-PC/Documents/Software_II/Project/ProjectFiles/game-source-code/BackEndSystems/<a class="el" href="../../d0/d96/_game_manager_8h_source.html">GameManager.h</a></li>
-<li>D:/Users/Tim-PC/Documents/Software_II/Project/ProjectFiles/game-source-code/BackEndSystems/GameManager.cpp</li>
+<li>C:/Users/Tim/Documents/SoftwareDev/SoftwareProject/ProjectFiles/game-source-code/BackEndSystems/<a class="el" href="../../d0/d96/_game_manager_8h_source.html">GameManager.h</a></li>
+<li>C:/Users/Tim/Documents/SoftwareDev/SoftwareProject/ProjectFiles/game-source-code/BackEndSystems/GameManager.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

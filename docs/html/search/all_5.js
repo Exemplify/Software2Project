@@ -1,7 +1,7 @@
 var searchData=
 [
   ['enemy',['Enemy',['../dd/d7a/class_enemy.html',1,'Enemy'],['../dd/d7a/class_enemy.html#a0e382a7495bdbb9b802d1ed3931b4fc1',1,'Enemy::Enemy()']]],
-  ['enemycontroller',['EnemyController',['../dc/d01/class_enemy_controller.html',1,'EnemyController'],['../dc/d01/class_enemy_controller.html#a3364fe98342c659a62633e9e003ef0f6',1,'EnemyController::EnemyController()']]],
+  ['enemycontroller',['EnemyController',['../dc/d01/class_enemy_controller.html',1,'EnemyController'],['../dc/d01/class_enemy_controller.html#a07159de6348f511017c5415371459d50',1,'EnemyController::EnemyController()']]],
   ['enemycontrollerfactory',['EnemyControllerFactory',['../d5/d7d/class_enemy_controller_factory.html',1,'']]],
   ['enemycount',['enemyCount',['../dc/d01/class_enemy_controller.html#a673e9320e737999189b943216f6d379b',1,'EnemyController']]],
   ['enemyfactory',['EnemyFactory',['../d8/d4c/class_enemy_factory.html',1,'']]],

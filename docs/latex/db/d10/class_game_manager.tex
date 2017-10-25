@@ -15,17 +15,18 @@
 \hyperlink{class_game_manager_a05f6a37de95fcea1313fe4476b95941d}{Game\+Manager} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_repositiory_interface}{Repositiory\+Interface} $>$ repository)
 \begin{DoxyCompactList}\small\item\em Constructs the \hyperlink{class_game_manager}{Game\+Manager} object neccesary for the Game loop. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_game_manager_a5baa570812ae717f809fe0dc48bde22e}\label{class_game_manager_a5baa570812ae717f809fe0dc48bde22e}} 
-void \hyperlink{class_game_manager_a5baa570812ae717f809fe0dc48bde22e}{Game\+Loop} ()
+virtual void \hyperlink{class_game_manager_a5baa570812ae717f809fe0dc48bde22e}{Game\+Loop} ()
 \begin{DoxyCompactList}\small\item\em Runs the main game loop of the game, and updates the various Game\+Objects Stored inside of the active\+Scene. \end{DoxyCompactList}\item 
-void \hyperlink{class_game_manager_a09b8801bcfdd8d5cbc52e27895b84e3b}{Load\+Scene} (unsigned int index)
-\begin{DoxyCompactList}\small\item\em Changes the active \hyperlink{class_scene}{Scene} to the \hyperlink{class_scene}{Scene} at the desired Scene\+Index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\Hypertarget{class_game_manager_acbd9fb84f9e18c8cb585738d5c89a2b9}\label{class_game_manager_acbd9fb84f9e18c8cb585738d5c89a2b9}} 
+virtual void \hyperlink{class_game_manager_acbd9fb84f9e18c8cb585738d5c89a2b9}{Exit} ()
+\begin{DoxyCompactList}\small\item\em Closes the game window. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_game_manager_a09b8801bcfdd8d5cbc52e27895b84e3b}{Load\+Scene} (unsigned int index)
+\begin{DoxyCompactList}\small\item\em Changes the active \hyperlink{class_scene}{Scene} to the \hyperlink{class_scene}{Scene} at the desired Scene\+Index. \end{DoxyCompactList}\item 
+virtual unsigned int \hyperlink{class_game_manager_ab91d1bf5ce2a0e12f0528f530df47271}{get\+Scene\+Index} ()
+\begin{DoxyCompactList}\small\item\em Returns the current scene index. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static void \hyperlink{class_game_manager_acbd9fb84f9e18c8cb585738d5c89a2b9}{Exit} ()
-\begin{DoxyCompactList}\small\item\em Closes the game window. \end{DoxyCompactList}\item 
-static int \hyperlink{class_game_manager_aa4835b5fc96bfdbf6170a8673baf5552}{get\+Scene\+Index} ()
-\begin{DoxyCompactList}\small\item\em Returns the current scene index. \end{DoxyCompactList}\item 
 static const bool \hyperlink{class_game_manager_a4eb94c6171bf3292eb57b291e2174289}{game\+Closed} ()
 \begin{DoxyCompactList}\small\item\em Identifies whether the game has been closed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
@@ -82,17 +83,7 @@ Constructs the \hyperlink{class_game_manager}{Game\+Manager} object neccesary fo
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_game_manager_acbd9fb84f9e18c8cb585738d5c89a2b9}\label{class_game_manager_acbd9fb84f9e18c8cb585738d5c89a2b9}} 
-\index{Game\+Manager@{Game\+Manager}!Exit@{Exit}}
-\index{Exit@{Exit}!Game\+Manager@{Game\+Manager}}
-\subsubsection{\texorpdfstring{Exit()}{Exit()}}
-{\footnotesize\ttfamily void Game\+Manager\+::\+Exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-Closes the game window. 
-
-Exit function needs to be moved into \hyperlink{class_scene}{Scene} or a seperate \hyperlink{class_application}{Application} class. \mbox{\Hypertarget{class_game_manager_a4eb94c6171bf3292eb57b291e2174289}\label{class_game_manager_a4eb94c6171bf3292eb57b291e2174289}} 
+\mbox{\Hypertarget{class_game_manager_a4eb94c6171bf3292eb57b291e2174289}\label{class_game_manager_a4eb94c6171bf3292eb57b291e2174289}} 
 \index{Game\+Manager@{Game\+Manager}!game\+Closed@{game\+Closed}}
 \index{game\+Closed@{game\+Closed}!Game\+Manager@{Game\+Manager}}
 \subsubsection{\texorpdfstring{game\+Closed()}{gameClosed()}}
@@ -105,11 +96,11 @@ Identifies whether the game has been closed.
 \begin{DoxyReturn}{Returns}
 Returns a constant bool whether the game is closed 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_game_manager_aa4835b5fc96bfdbf6170a8673baf5552}\label{class_game_manager_aa4835b5fc96bfdbf6170a8673baf5552}} 
+\mbox{\Hypertarget{class_game_manager_ab91d1bf5ce2a0e12f0528f530df47271}\label{class_game_manager_ab91d1bf5ce2a0e12f0528f530df47271}} 
 \index{Game\+Manager@{Game\+Manager}!get\+Scene\+Index@{get\+Scene\+Index}}
 \index{get\+Scene\+Index@{get\+Scene\+Index}!Game\+Manager@{Game\+Manager}}
 \subsubsection{\texorpdfstring{get\+Scene\+Index()}{getSceneIndex()}}
-{\footnotesize\ttfamily static int Game\+Manager\+::get\+Scene\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+{\footnotesize\ttfamily virtual unsigned int Game\+Manager\+::get\+Scene\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
@@ -137,13 +128,11 @@ Initialises the sfml Render\+Window to the properties defined by the default win
 \index{Game\+Manager@{Game\+Manager}!Load\+Scene@{Load\+Scene}}
 \index{Load\+Scene@{Load\+Scene}!Game\+Manager@{Game\+Manager}}
 \subsubsection{\texorpdfstring{Load\+Scene()}{LoadScene()}}
-{\footnotesize\ttfamily void Game\+Manager\+::\+Load\+Scene (\begin{DoxyParamCaption}\item[{unsigned int}]{index }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Game\+Manager\+::\+Load\+Scene (\begin{DoxyParamCaption}\item[{unsigned int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
 Changes the active \hyperlink{class_scene}{Scene} to the \hyperlink{class_scene}{Scene} at the desired Scene\+Index. 
-
-Should be called from an application class but remains inside of game\+Manager.
 
 
 \begin{DoxyParams}{Parameters}
@@ -205,5 +194,5 @@ bool used to identify when the game should be closed
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Game\+Manager.\+h\item 
-D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Game\+Manager.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Users/\+Tim/\+Documents/\+Software\+Dev/\+Software\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Game\+Manager.\+h\item 
+C\+:/\+Users/\+Tim/\+Documents/\+Software\+Dev/\+Software\+Project/\+Project\+Files/game-\/source-\/code/\+Back\+End\+Systems/Game\+Manager.\+cpp\end{DoxyCompactItemize}

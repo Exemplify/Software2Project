@@ -87,9 +87,9 @@ Inheritance diagram for EnemyController:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3364fe98342c659a62633e9e003ef0f6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d01/class_enemy_controller.html#a3364fe98342c659a62633e9e003ef0f6">EnemyController</a> (unsigned int max_enemies, double enemySpawnDelay)</td></tr>
-<tr class="memdesc:a3364fe98342c659a62633e9e003ef0f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an <a class="el" href="../../dc/d01/class_enemy_controller.html" title="Enemy controller is responsible for spawning and monitoring new enemy objects. ">EnemyController</a> Object.  <a href="#a3364fe98342c659a62633e9e003ef0f6">More...</a><br /></td></tr>
-<tr class="separator:a3364fe98342c659a62633e9e003ef0f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07159de6348f511017c5415371459d50"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d01/class_enemy_controller.html#a07159de6348f511017c5415371459d50">EnemyController</a> (const <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a> &amp;gameObject, unsigned int max_enemies, double enemySpawnDelay)</td></tr>
+<tr class="memdesc:a07159de6348f511017c5415371459d50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an <a class="el" href="../../dc/d01/class_enemy_controller.html" title="Enemy controller is responsible for spawning and monitoring new enemy objects. ">EnemyController</a> Object.  <a href="#a07159de6348f511017c5415371459d50">More...</a><br /></td></tr>
+<tr class="separator:a07159de6348f511017c5415371459d50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af36ec67442d30c7519581b83ad6c00db"><td class="memItemLeft" align="right" valign="top"><a id="af36ec67442d30c7519581b83ad6c00db"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d01/class_enemy_controller.html#af36ec67442d30c7519581b83ad6c00db">Update</a> () override</td></tr>
 <tr class="memdesc:af36ec67442d30c7519581b83ad6c00db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates enemies based on the spawn delay. <br /></td></tr>
@@ -194,8 +194,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <div class="textblock"><p><a class="el" href="../../dd/d7a/class_enemy.html" title="The basic Enemy Object representation. ">Enemy</a> controller is responsible for spawning and monitoring new enemy objects. </p>
 <p>The number of enemies spawned and destroyed is moitored. When an enemy goes out of bounds it is destroyed and created a new. The enemy objects have access to the <a class="el" href="../../dc/d01/class_enemy_controller.html" title="Enemy controller is responsible for spawning and monitoring new enemy objects. ">EnemyController</a> to communicate with it when they are destroyed by the player and when they leave the bounds of the screen. If all the enemies have been destroyed the <a class="el" href="../../dc/d01/class_enemy_controller.html" title="Enemy controller is responsible for spawning and monitoring new enemy objects. ">EnemyController</a> changes scenes to the WinScreen </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a3364fe98342c659a62633e9e003ef0f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3364fe98342c659a62633e9e003ef0f6">&#9670;&nbsp;</a></span>EnemyController()</h2>
+<a id="a07159de6348f511017c5415371459d50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07159de6348f511017c5415371459d50">&#9670;&nbsp;</a></span>EnemyController()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -203,6 +203,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
         <tr>
           <td class="memname">EnemyController::EnemyController </td>
           <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d0/dd1/class_game_object.html">GameObject</a> &amp;&#160;</td>
+          <td class="paramname"><em>gameObject</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>max_enemies</em>, </td>
         </tr>
@@ -346,8 +352,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>D:/Users/Tim-PC/Documents/Software_II/Project/ProjectFiles/game-source-code/FrontEndSystems/<a class="el" href="../../d2/da3/_enemy_controller_8h_source.html">EnemyController.h</a></li>
-<li>D:/Users/Tim-PC/Documents/Software_II/Project/ProjectFiles/game-source-code/FrontEndSystems/EnemyController.cpp</li>
+<li>C:/Users/Tim/Documents/SoftwareDev/SoftwareProject/ProjectFiles/game-source-code/FrontEndSystems/<a class="el" href="../../d2/da3/_enemy_controller_8h_source.html">EnemyController.h</a></li>
+<li>C:/Users/Tim/Documents/SoftwareDev/SoftwareProject/ProjectFiles/game-source-code/FrontEndSystems/EnemyController.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

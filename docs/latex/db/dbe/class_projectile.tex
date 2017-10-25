@@ -18,6 +18,9 @@ Inheritance diagram for Projectile\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{class_projectile_ac536ed2aad56af866a2078b9a85aa16d}\label{class_projectile_ac536ed2aad56af866a2078b9a85aa16d}} 
+\hyperlink{class_projectile_ac536ed2aad56af866a2078b9a85aa16d}{Projectile} ()
+\begin{DoxyCompactList}\small\item\em Default Constructor of the projectile abstract class that is used to create a mock projectile object for testing purposes. \end{DoxyCompactList}\item 
 \hyperlink{class_projectile_a4ff1ec79a15e7821ac5ccfd6dda9205f}{Projectile} (const \hyperlink{class_physics_object}{Physics\+Object} \&physics\+Object, const std\+::shared\+\_\+ptr$<$ \hyperlink{class_movable_interface}{Movable\+Interface} $>$ \&move, const \hyperlink{class_boundary}{Boundary} \&destroy\+Bounds)
 \begin{DoxyCompactList}\small\item\em Constructs the base projectile with the various members that it requires. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_projectile_a27a59059730a66a37feec766ebe08fa2}\label{class_projectile_a27a59059730a66a37feec766ebe08fa2}} 
@@ -25,7 +28,7 @@ virtual void \hyperlink{class_projectile_a27a59059730a66a37feec766ebe08fa2}{Star
 \begin{DoxyCompactList}\small\item\em Intialises the objects members, use of final prevents any derived objects from overriding the function. \end{DoxyCompactList}\item 
 virtual void \hyperlink{class_projectile_a1f9df5dd65fed410d4e897eb63edc1c9}{Update} () final
 \begin{DoxyCompactList}\small\item\em Used to Update the various members of the class, called once per frame. \end{DoxyCompactList}\item 
-void \hyperlink{class_projectile_a8c1501698a272f3ae0def6bdc6b3d763}{Initialise} (const \hyperlink{class_vector2_d}{Vector2D} \&starting\+Pos, const \hyperlink{class_vector2_d}{Vector2D} \&direction)
+virtual void \hyperlink{class_projectile_a8c1501698a272f3ae0def6bdc6b3d763}{Initialise} (const \hyperlink{class_vector2_d}{Vector2D} \&starting\+Pos, const \hyperlink{class_vector2_d}{Vector2D} \&direction)
 \begin{DoxyCompactList}\small\item\em used to define the characteristics of the projectile once is has been created by the copy constructor \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
@@ -92,7 +95,7 @@ Implemented in \hyperlink{class_player_projectile_a05a6c103f9fbae57bfc811e477ab7
 \index{Projectile@{Projectile}!Initialise@{Initialise}}
 \index{Initialise@{Initialise}!Projectile@{Projectile}}
 \subsubsection{\texorpdfstring{Initialise()}{Initialise()}}
-{\footnotesize\ttfamily void Projectile\+::\+Initialise (\begin{DoxyParamCaption}\item[{const \hyperlink{class_vector2_d}{Vector2D} \&}]{starting\+Pos,  }\item[{const \hyperlink{class_vector2_d}{Vector2D} \&}]{direction }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Projectile\+::\+Initialise (\begin{DoxyParamCaption}\item[{const \hyperlink{class_vector2_d}{Vector2D} \&}]{starting\+Pos,  }\item[{const \hyperlink{class_vector2_d}{Vector2D} \&}]{direction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -137,5 +140,5 @@ Changes the size of the projectile with relation to the proximity of the object 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Projectile.\+h\item 
-D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Projectile.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Users/\+Tim/\+Documents/\+Software\+Dev/\+Software\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Projectile.\+h\item 
+C\+:/\+Users/\+Tim/\+Documents/\+Software\+Dev/\+Software\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Projectile.\+cpp\end{DoxyCompactItemize}

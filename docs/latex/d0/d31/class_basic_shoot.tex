@@ -20,12 +20,12 @@ Inheritance diagram for Basic\+Shoot\+:\begin{figure}[H]
 \item 
 \hyperlink{class_basic_shoot_a7594a4b840d698baa8d4a51027078727}{Basic\+Shoot} (Game\+Object\+Type projectile\+Type)
 \begin{DoxyCompactList}\small\item\em Constructs the \hyperlink{class_basic_shoot}{Basic\+Shoot} Object used to create a projectile that fires in a straight line to a target. \end{DoxyCompactList}\item 
-virtual void \hyperlink{class_basic_shoot_a8bed811408d1afa3ecf0454ae78f2303}{Shoot} (\hyperlink{class_vector2_d}{Vector2D} start\+Position, \hyperlink{class_vector2_d}{Vector2D} target, std\+::shared\+\_\+ptr$<$ \hyperlink{class_scene}{Scene} $>$ scene) override
+virtual void \hyperlink{class_basic_shoot_a8710518507ed4fc20bef204159e05090}{Shoot} (\hyperlink{class_vector2_d}{Vector2D} start\+Position, \hyperlink{class_vector2_d}{Vector2D} target, std\+::shared\+\_\+ptr$<$ \hyperlink{class_scene}{Scene} $>$ scene, const std\+::shared\+\_\+ptr$<$ \hyperlink{class_repositiory_interface}{Repositiory\+Interface} $>$ repository=\hyperlink{class_application_aa895ae75cdb47ab91584c32b0db0ca06}{Application\+::get\+Game\+Repository}()) override
 \begin{DoxyCompactList}\small\item\em Shoots a \hyperlink{class_projectile}{Projectile} object in a way defined by the derived class, used as the main interface with the client. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual std\+::shared\+\_\+ptr$<$ \hyperlink{class_projectile}{Projectile} $>$ \hyperlink{class_basic_shoot_ab5058d147ca9d9cc4cc4210e9e092de5}{get\+Projectile} () override
+virtual std\+::shared\+\_\+ptr$<$ \hyperlink{class_projectile}{Projectile} $>$ \hyperlink{class_basic_shoot_a2cad5133e2bcdc6441551387b3f2e873}{get\+Projectile} (const std\+::shared\+\_\+ptr$<$ \hyperlink{class_repositiory_interface}{Repositiory\+Interface} $>$ repository) override
 \begin{DoxyCompactList}\small\item\em Overriden function used to get the projectile used by the \hyperlink{class_basic_shoot}{Basic\+Shoot} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -81,11 +81,11 @@ Calculates the direction that the projectile from the start position to the targ
 \begin{DoxyReturn}{Returns}
 Returns a \hyperlink{class_vector2_d}{Vector2D} that represents the unit direction from the start position to the target 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_basic_shoot_ab5058d147ca9d9cc4cc4210e9e092de5}\label{class_basic_shoot_ab5058d147ca9d9cc4cc4210e9e092de5}} 
+\mbox{\Hypertarget{class_basic_shoot_a2cad5133e2bcdc6441551387b3f2e873}\label{class_basic_shoot_a2cad5133e2bcdc6441551387b3f2e873}} 
 \index{Basic\+Shoot@{Basic\+Shoot}!get\+Projectile@{get\+Projectile}}
 \index{get\+Projectile@{get\+Projectile}!Basic\+Shoot@{Basic\+Shoot}}
 \subsubsection{\texorpdfstring{get\+Projectile()}{getProjectile()}}
-{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{class_projectile}{Projectile} $>$ Basic\+Shoot\+::get\+Projectile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{class_projectile}{Projectile} $>$ Basic\+Shoot\+::get\+Projectile (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \hyperlink{class_repositiory_interface}{Repositiory\+Interface} $>$}]{repository }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
 
 
 
@@ -96,13 +96,13 @@ Returns the generated projectile that needs to be shot by the shoot component
 \end{DoxyReturn}
 
 
-Implements \hyperlink{class_shoot_interface_ad274b0c66a0a42bf194b32b704c8bfea}{Shoot\+Interface}.
+Implements \hyperlink{class_shoot_interface_ab93ccb6b21911e121b19dc15196a4e0b}{Shoot\+Interface}.
 
-\mbox{\Hypertarget{class_basic_shoot_a8bed811408d1afa3ecf0454ae78f2303}\label{class_basic_shoot_a8bed811408d1afa3ecf0454ae78f2303}} 
+\mbox{\Hypertarget{class_basic_shoot_a8710518507ed4fc20bef204159e05090}\label{class_basic_shoot_a8710518507ed4fc20bef204159e05090}} 
 \index{Basic\+Shoot@{Basic\+Shoot}!Shoot@{Shoot}}
 \index{Shoot@{Shoot}!Basic\+Shoot@{Basic\+Shoot}}
 \subsubsection{\texorpdfstring{Shoot()}{Shoot()}}
-{\footnotesize\ttfamily void Basic\+Shoot\+::\+Shoot (\begin{DoxyParamCaption}\item[{\hyperlink{class_vector2_d}{Vector2D}}]{start\+Position,  }\item[{\hyperlink{class_vector2_d}{Vector2D}}]{target,  }\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_scene}{Scene} $>$}]{scene }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Basic\+Shoot\+::\+Shoot (\begin{DoxyParamCaption}\item[{\hyperlink{class_vector2_d}{Vector2D}}]{start\+Position,  }\item[{\hyperlink{class_vector2_d}{Vector2D}}]{target,  }\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_scene}{Scene} $>$}]{scene,  }\item[{const std\+::shared\+\_\+ptr$<$ \hyperlink{class_repositiory_interface}{Repositiory\+Interface} $>$}]{repository = {\ttfamily \hyperlink{class_application_aa895ae75cdb47ab91584c32b0db0ca06}{Application\+::get\+Game\+Repository}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -116,10 +116,12 @@ Shoots a \hyperlink{class_projectile}{Projectile} object in a way defined by the
 \hline
 {\em scene} & The scene that the projectile is instantiated into \\
 \hline
+{\em repository} & The repository used to construct a the projectile object, used for testing \\
+\hline
 \end{DoxyParams}
 
 
-Implements \hyperlink{class_shoot_interface_a67205cc4e2fed90fa8c1ec93b30b864d}{Shoot\+Interface}.
+Implements \hyperlink{class_shoot_interface_a3e8003c123f8f6c43c12a9afc29356b8}{Shoot\+Interface}.
 
 
 
@@ -134,5 +136,5 @@ The Game\+Object\+Type used to deferentiat the various projectiles that can be c
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Basic\+Shoot.\+h\item 
-D\+:/\+Users/\+Tim-\/\+P\+C/\+Documents/\+Software\+\_\+\+I\+I/\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Basic\+Shoot.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Users/\+Tim/\+Documents/\+Software\+Dev/\+Software\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Basic\+Shoot.\+h\item 
+C\+:/\+Users/\+Tim/\+Documents/\+Software\+Dev/\+Software\+Project/\+Project\+Files/game-\/source-\/code/\+Front\+End\+Systems/Basic\+Shoot.\+cpp\end{DoxyCompactItemize}
