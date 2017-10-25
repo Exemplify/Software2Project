@@ -24,7 +24,6 @@ public:
 class MockProjectile: public Projectile
 {
 public:
-	//void Initialise(const Vector2D& startingPos, const Vector2D& direction);
 	MAKE_MOCK2(Initialise, void(const Vector2D&, const Vector2D&), override);
 	MAKE_MOCK0(DestroySelf, void(void));
 };
